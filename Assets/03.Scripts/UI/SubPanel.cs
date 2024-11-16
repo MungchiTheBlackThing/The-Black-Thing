@@ -307,6 +307,13 @@ public class SubPanel : MonoBehaviour
                 }
                 else if (actor == "Player")
                 {
+                    if (korText.Contains("<nickname>"))
+                    {
+                        if (pc)
+                        {
+                            korText = korText.Replace("<nickname>", pc.GetNickName());
+                        }
+                    }
                     determine = 1;
                     if (color == 0) //Black
                     {

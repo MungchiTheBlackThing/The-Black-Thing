@@ -6,6 +6,7 @@ public class SubTuto : MonoBehaviour
 {
     [SerializeField] SubPanel subPanel;
     [SerializeField] TouchGuide touch;
+    [SerializeField] GameObject nickname;
     
     public string prefabPath = "TouchGuide"; 
     public Vector3 guide1 = new Vector3(-810, -145, 0);
@@ -47,5 +48,33 @@ public class SubTuto : MonoBehaviour
         }
         touch.tuto3(selectedDot, determine);
     }
+    public void tutorial_4(GameObject selectedDot, int determine)
+    {
+        GameObject door = GameObject.Find("fix_door");
+        Debug.Log(door);
+        door.transform.GetChild(1).GetComponent<DoorController>().open();
+        subPanel.clickon();
+        if (determine == 0)
+        {
+            subPanel.dotballoon(selectedDot);
+        }
+        else
+        {
+            subPanel.playerballoon(selectedDot);
+        }
+    }
 
+    public void tutorial_5(GameObject selectedDot, int determine)
+    { 
+        if (determine == 0)
+        {
+            subPanel.dotballoon(selectedDot);
+        }
+        else
+        {
+            subPanel.playerballoon(selectedDot);
+        }
+        this.gameObject.SetActive(false);
+        nickname.SetActive(true);
+    }
 }

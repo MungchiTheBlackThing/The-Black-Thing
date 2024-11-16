@@ -8,6 +8,8 @@ public class NicknamePopup : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
     [SerializeField] TMP_InputField nameInputField;
+    [SerializeField] SubTuto subTuto;
+    [SerializeField] SubPanel subPanel;
     // Start is called before the first frame update
     private void OnEnable()
     {
@@ -19,5 +21,7 @@ public class NicknamePopup : MonoBehaviour
     {
         playerController.SetNickName(nameInputField.text);
         playerController.WritePlayerFile();
+        subPanel.gameObject.SetActive(true);
+        this.transform.parent.gameObject.SetActive(false);
     }
 }
