@@ -20,7 +20,8 @@ public enum TutorialState
 public class TutorialManager : GameManager
 {
     private Dictionary<TutorialState, GameState> states;
-    private TutorialState Tutostate;
+    private Dictionary<TutorialState, DotState> dots;
+    protected TutorialState Tutostate;
 
     public TutorialState TutoPattern
     {
@@ -30,13 +31,16 @@ public class TutorialManager : GameManager
 
     TutorialManager()
     {
-        states = new Dictionary<TutorialState, GameState>();
-        states[TutorialState.Sub] = new Tutorial.Sub();
-        states[TutorialState.Main] = new Tutorial.Main();
+       
     }
 
     private void Awake()
     {
+        states = new Dictionary<TutorialState, GameState>();
+        dots = new Dictionary<TutorialState, DotState>();
+        states[TutorialState.Sub] = new Tutorial.Sub();
+        states[TutorialState.Main] = new Tutorial.Main();
+
         if (!Permission.HasUserAuthorizedPermission(Permission.ExternalStorageRead))
         {
             Permission.RequestUserPermission(Permission.ExternalStorageRead);
@@ -179,5 +183,5 @@ public class TutorialManager : GameManager
 
         // 코루틴이 완료되었을 때 100%로 설정
         loadingProgressBar.value += weight;
-    }   
+    }
 }

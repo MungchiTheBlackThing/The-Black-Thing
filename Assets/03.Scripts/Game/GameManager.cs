@@ -353,6 +353,20 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    public void StartTutoMain()
+    {
+        MainDialogue mainState = (MainDialogue)activeState;
+        string fileName = "tutorial_main";
+        if (mainState != null)
+        {
+            if (mainDialoguePanel != null)
+            {
+                mainDialoguePanel.SetActive(true);
+            }
+
+            mainState.StartMain(this, fileName);
+        }
+    }
     public void Delay(string function, float delay)
     {
         Invoke(function, delay);

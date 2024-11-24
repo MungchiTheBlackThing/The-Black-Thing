@@ -77,4 +77,18 @@ public class SubTuto : MonoBehaviour
         this.gameObject.SetActive(false);
         nickname.SetActive(true);
     }
+
+    public void tutorial_7(GameObject selectedDot, int determine)
+    {
+        if (determine == 0)
+        {
+            subPanel.dotballoon(selectedDot);
+        }
+        else
+        {
+            subPanel.playerballoon(selectedDot);
+        }
+        this.gameObject.SetActive(false);
+        nickname.SetActive(true);
+    }
 }

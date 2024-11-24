@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+
 namespace Tutorial
 {
     public class Sub : GameState
@@ -41,17 +42,13 @@ namespace Tutorial
         }
         public void substart()
         {
-
             Debug.Log("튜토리얼 대화 시작");
             subdial.SetActive(true);
             subdial.GetComponent<SubDialogue>().StartSub("tutorial_sub");
-            
         }
     }
     public class Main: MainDialogue
     {
-
-        //멤버 변수 대사 
         public override void Init()
         {
 
@@ -59,7 +56,8 @@ namespace Tutorial
 
         public override void Enter(GameManager manager, DotController dot = null)
         {
-            Debug.Log("튜토리얼 메인 시작");
+            dot.ChangeState(DotPatternState.Main, "body_default1", 14, "face_null");
+            manager.StartTutoMain();
         }
 
         public override void Exit(GameManager manager)

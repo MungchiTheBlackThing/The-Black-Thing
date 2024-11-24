@@ -17,7 +17,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     protected List<DialogueEntry> DialogueEntries = new List<DialogueEntry>();
     public List<object> currentDialogueList = new List<object>();
     public GameObject SystemUI;
-    GameManager manager;
+    public GameManager manager;
     MainPanel mainPanel;
 
     protected int fixedPos = -1;
@@ -30,7 +30,6 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         pos.Add("main_door_open", 16);
         pos.Add("main_web", 17);
     }
-
     public override void Enter(GameManager manager, DotController dot = null)
     {
         if (dot)
@@ -62,12 +61,12 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             if (parts.Length >= 15)
             {
                 int main = int.Parse(parts[0]);
-                if (main == (int)manager.Pattern)
+                if (main == 1 || main == 3) 
                 {
                     DialogueEntry entry = new DialogueEntry
                     {
                         Main = main,
-                        ScriptKey = int.Parse(parts[1]),
+                        ScriptNumber = parts[1],
                         LineKey = int.Parse(parts[2]),
                         Background = parts[3],
                         Actor = parts[4],
@@ -87,7 +86,6 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                     entry.KorText = displayedText;
                     DialogueEntries.Add(entry);
                     currentDialogueList.Add(entry);
-
                 }
             }
             else
@@ -101,7 +99,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     public main GetData(int idx)
     {
         main maindata = new main();
-
+        maindata.ScriptNumber = DialogueEntries[idx].ScriptNumber;
         maindata.LineKey = DialogueEntries[idx].LineKey;
         maindata.Actor = DialogueEntries[idx].Actor;
         maindata.TextType = DialogueEntries[idx].TextType;
@@ -120,6 +118,12 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
     public void StartMain(GameManager manager, string fileName)
     {
+        dot = GameObject.Find("Dot").GetComponent<DotController>();
+        Debug.Log(dot);
+        if (dot)
+        {
+            dot.gameObject.SetActive(true);
+        }
         mainPanel = GameObject.Find("MainDialougue").GetComponent<MainPanel>();
         //델리게이트를 사용해서 옵저버 패턴 구현
         //메인을 시작할때 SystemUI를 끄기 위해서는 아래 주석을 풀어주면 된다.
@@ -135,6 +139,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             Debug.LogError("Dialogue file not found in Resources folder.");
             return;
         }
+        Debug.Log(dialogueData.name);
 
         string[] lines = dialogueData.text.Split('\n');
         LoadData(lines);

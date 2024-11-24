@@ -3,6 +3,7 @@ namespace Assets.Script.DialClass
 
     public struct main
     {
+        public string ScriptNumber;
         public int LineKey;
         public string Actor;
         public string TextType;
@@ -25,7 +26,7 @@ namespace Assets.Script.DialClass
     public class DialogueEntry
     {
         public int Main;
-        public int ScriptKey;
+        public string ScriptNumber;
         public int LineKey;
         public string Background;
         public string Actor;
