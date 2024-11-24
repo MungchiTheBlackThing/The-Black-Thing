@@ -7,11 +7,13 @@ public class SubTuto : MonoBehaviour
     [SerializeField] SubPanel subPanel;
     [SerializeField] TouchGuide touch;
     [SerializeField] GameObject nickname;
+    [SerializeField] TutorialManager tutorialManager;
+    [SerializeField] CameraZoom cameraZoom;
     
     public string prefabPath = "TouchGuide"; 
     public Vector3 guide1 = new Vector3(-810, -145, 0);
     public Vector3 guide2 = new Vector3(-1095, -195, 0);
-
+    static Dictionary<GameObject, int> Recents = new Dictionary<GameObject, int>();
     // Update is called once per frame
     public void tutorial_2(GameObject selectedDot, int determine)
     {
@@ -74,21 +76,19 @@ public class SubTuto : MonoBehaviour
         {
             subPanel.playerballoon(selectedDot);
         }
-        this.gameObject.SetActive(false);
+        //subPanel.gameObject.SetActive(false);
         nickname.SetActive(true);
     }
 
     public void tutorial_7(GameObject selectedDot, int determine)
     {
-        if (determine == 0)
-        {
-            subPanel.dotballoon(selectedDot);
-        }
-        else
-        {
-            subPanel.playerballoon(selectedDot);
-        }
-        this.gameObject.SetActive(false);
-        nickname.SetActive(true);
+        cameraZoom.Zoom();
+        Recents.Add(selectedDot,determine);
+        subPanel.gameObject.SetActive(false);
+    }
+
+    public void tuto7()
+    {
+        tutorialManager.ChangeGameState(TutorialState.Main);
     }
 }

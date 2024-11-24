@@ -38,7 +38,7 @@ namespace Tutorial
 
         public override void Exit(GameManager manager)
         {
-
+            //¸ÞÀÎ¾À ·Îµå?
         }
         public void substart()
         {
@@ -58,6 +58,7 @@ namespace Tutorial
         {
             dot.ChangeState(DotPatternState.Main, "body_default1", 14, "face_null");
             manager.StartTutoMain();
+            manager.ScrollManager.MoveCamera(new Vector3(0, 0, -10), 0);
         }
 
         public override void Exit(GameManager manager)
