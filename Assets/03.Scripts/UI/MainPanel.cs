@@ -157,6 +157,7 @@ public class MainPanel : MonoBehaviour
     }
     public void DialEnd()
     {
+        Debug.Log("∏ﬁ¿Œ ≥°");
         PanelOff();
         mainDialogue.currentDialogueList.Clear();
         dialogueIndex = 0;
@@ -295,7 +296,8 @@ public class MainPanel : MonoBehaviour
             else
             {
                 Debug.Log("NextLineKey is not a valid integer. Moving to the next entry by index.");
-                dialogueIndex++;
+                DialEnd();
+                return;
             }
         }
         else

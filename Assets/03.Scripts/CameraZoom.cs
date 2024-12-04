@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
     Animator animator;
-
     Vector2 originVector;
 
     [SerializeField] SubTuto subTuto;

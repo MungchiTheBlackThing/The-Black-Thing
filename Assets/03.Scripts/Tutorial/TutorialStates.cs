@@ -63,7 +63,17 @@ namespace Tutorial
 
         public override void Exit(GameManager manager)
         {
-
+            Debug.Log("메인 Exit");
+            dot.TriggerMain(false);
+            manager.ScrollManager.StopCamera(false);
+            if (background)
+            {
+                Debug.Log("현재 배경:" + background.name);
+                background.SetActive(false);
+            }
+            //manager.ObjectManager.activeSystemUIDelegate(true);
+            //SystemUI.SetActive(true);
+            
         }
     }
 };
