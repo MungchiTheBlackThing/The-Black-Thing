@@ -30,7 +30,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         pos.Add("main_door_open", 16);
         pos.Add("main_web", 17);
     }
-    public override void Enter(GameManager manager, DotController dot = null)
+    public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         if (dot)
         {
@@ -155,9 +155,9 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         if (SystemUI)
             SystemUI.SetActive(false);
     }
-    public override void Exit(GameManager manager)
+    public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
-        Debug.Log("메인 Exit");
+        Debug.Log("메인 Exit1");
         dot.TriggerMain(false);
         manager.ScrollManager.StopCamera(false);
         if (background)

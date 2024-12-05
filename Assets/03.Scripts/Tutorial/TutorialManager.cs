@@ -8,34 +8,52 @@ using System.Threading.Tasks;
 using UnityEngine.Android;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Runtime.Serialization;
+
 public enum TutorialState
 {
     Sub,
     Main,
-    End,//이 단계로 넘어가면 오류, 다음단계 0으로 이동해야함.
+    End, // 이 단계로 넘어가면 오류, 다음 단계 0으로 이동해야 함.
 };
-
 
 public class TutorialManager : GameManager
 {
     private Dictionary<TutorialState, GameState> states;
     private Dictionary<TutorialState, DotState> dots;
-    protected TutorialState Tutostate;
+    private TutorialState tutostate;
 
-    public TutorialState TutoPattern
+    public TutorialState TutoPattern => tutostate;
+
+    private static TutorialManager instance;
+
+    public static TutorialManager Instance
     {
-        get { return Tutostate; }
-    }
-
-
-    TutorialManager()
-    {
-       
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<TutorialManager>();
+                if (instance == null)
+                {
+                    Debug.LogError("TutorialManager 인스턴스를 찾을 수 없습니다.");
+                }
+            }
+            return instance;
+        }
     }
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         states = new Dictionary<TutorialState, GameState>();
         dots = new Dictionary<TutorialState, DotState>();
         states[TutorialState.Sub] = new Tutorial.Sub();
@@ -50,55 +68,54 @@ public class TutorialManager : GameManager
             Permission.RequestUserPermission(Permission.ExternalStorageWrite);
         }
 
-        pc = GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerController>();
-        //pc.nextPhaseDelegate += ChangeGameState;
-        objectManager = GameObject.FindWithTag("ObjectManager").gameObject.GetComponent<ObjectManager>();
-        scrollManager = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<ScrollManager>();
-    }
-    void Start()
-    {
-        if (mainDialoguePanel)
-        {
-            mainDialoguePanel.GetComponent<MainPanel>().InitializePanels();
-        }
+        pc = GameObject.FindWithTag("Player")?.GetComponent<PlayerController>();
+        if (pc == null) Debug.LogError("PlayerController를 찾을 수 없습니다!");
 
+        objectManager = GameObject.FindWithTag("ObjectManager")?.GetComponent<ObjectManager>();
+        if (objectManager == null) Debug.LogError("ObjectManager를 찾을 수 없습니다!");
+
+        scrollManager = Camera.main?.GetComponent<ScrollManager>();
+        if (scrollManager == null) Debug.LogError("ScrollManager를 찾을 수 없습니다!");
+    }
+
+    private void Start()
+    {
+        mainDialoguePanel?.GetComponent<MainPanel>()?.InitializePanels();
         InitGame();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void ChangeGameState(TutorialState patternState)
     {
-        if (states == null) return;
-
-        if (states.ContainsKey(patternState) == false)
+        if (states == null)
         {
-            Debug.Log("없는 패턴 입니다.");
+            Debug.LogError("states가 초기화되지 않았습니다.");
             return;
         }
+
+        if (!states.ContainsKey(patternState))
+        {
+            Debug.LogError($"'{patternState}'는 유효하지 않은 상태입니다.");
+            return;
+        }
+
         if (activeState != null)
         {
-            activeState.Exit(this); //미리 정리한다.
+            activeState.Exit(this, this); // 'this'는 올바른 TutorialManager를 전달해야 함.
         }
-        Tutostate = patternState;
+
+        tutostate = patternState;
         activeState = states[patternState];
-        activeState.Enter(this, dot);
+        activeState.Enter(this, dot, this);
     }
 
     private void InitGame()
     {
-        //배경을 업로드한다.
-        Int32 hh = Int32.Parse(DateTime.Now.ToString(("HH"))); //현재 시간을 가져온다
+        int hh = DateTime.Now.Hour; // 현재 시간 가져오기
 
-
-        if (hh >= (int)STime.T_DAWN && hh < (int)STime.T_MORNING) //현재시간 >= 3 && 현재시간 <7
+        if (hh >= (int)STime.T_DAWN && hh < (int)STime.T_MORNING)
         {
             time = SITime.Dawn;
-        } //현재시간 >= 7&& 현재시간 <4
+        }
         else if (hh >= (int)STime.T_MORNING && hh < (int)STime.T_EVENING)
         {
             time = SITime.Morning;
@@ -115,73 +132,51 @@ public class TutorialManager : GameManager
         StartCoroutine(LoadDataAsync());
     }
 
-    IEnumerator LoadDataAsync()
+    private IEnumerator LoadDataAsync()
     {
-        float totalProgress = 0f;
-        float backgroundLoadWeight = 0.5f;  // 배경 로드가 전체 작업의 50% 차지
-        float objectLoadWeight = 0.5f;      // 오브젝트 로드가 나머지 50% 차지
-        // 비동기적으로 배경 리소스를 로드
+        float backgroundLoadWeight = 0.5f; // 배경 로드 비중
+        float objectLoadWeight = 0.5f;     // 오브젝트 로드 비중
+
         loadingProgressBar.value = 0;
 
-        ResourceRequest loadOperation = Resources.LoadAsync<GameObject>("Background/" + time.ToString());
-
+        ResourceRequest loadOperation = Resources.LoadAsync<GameObject>("Background/" + time);
         while (!loadOperation.isDone)
         {
-            totalProgress = loadOperation.progress * backgroundLoadWeight;
-            loadingProgressBar.value = totalProgress;
+            loadingProgressBar.value = loadOperation.progress * backgroundLoadWeight;
             yield return null;
         }
 
-        // 로딩이 완료되면 리소스를 가져와서 Instantiate
         if (loadOperation.asset != null)
         {
-            GameObject background = (GameObject)loadOperation.asset;
-            Instantiate<GameObject>(background, objectManager.transform);
+            Instantiate((GameObject)loadOperation.asset, objectManager.transform);
         }
         else
         {
-            Debug.LogError("Background not found!");
+            Debug.LogError("배경 로드 실패!");
         }
 
-        // 풀을 채우는 등 나머지 작업을 수행
-        Coroutine objectLoadCoroutine = StartCoroutine(TrackObjectLoadProgress(time.ToString(), pc.GetChapter(), objectLoadWeight));
+        yield return StartCoroutine(TrackObjectLoadProgress(objectLoadWeight));
 
-        foreach (var state in states)
-        {
-            state.Value.Init();
-        }
-        //코루틴이 끝날때까지 대기
-        yield return objectLoadCoroutine;
-
-        loadingProgressBar.value = 1; //모든 작업이 끝났음.
+        loadingProgressBar.value = 1;
 
         TutorialState patternState = (TutorialState)pc.GetAlreadyEndedPhase();
-        Tutostate = patternState;
+        tutostate = patternState;
         activeState = states[patternState];
-        activeState.Enter(this, dot);
-
+        activeState.Enter(this, dot, this);
     }
 
-    IEnumerator TrackObjectLoadProgress(string path, int chapter, float weight)
+    private IEnumerator TrackObjectLoadProgress(float weight)
     {
-
         float progress = 0f;
-        float previousProgress = 0f;
 
-        // objectManager의 비동기 작업 진행 상황을 추적
         Coroutine loadObjectCoroutine = StartCoroutine(objectManager.LoadObjectAsync(time.ToString(), pc.GetChapter()));
-
-        // objectManager.LoadObjectAsync 코루틴의 진행 상황을 추적 (가정: objectManager에서 진행 상황을 제공할 수 있는 메서드를 제공한다고 가정)
         while (!objectManager.IsLoadObjectComplete())
         {
-            progress = objectManager.GetLoadProgress();  // 진행 상황을 가져옴
-            float totalProgress = (previousProgress + progress) * weight + loadingProgressBar.value;
-            loadingProgressBar.value = totalProgress;
-
+            progress = objectManager.GetLoadProgress();
+            loadingProgressBar.value = progress * weight;
             yield return null;
         }
 
-        // 코루틴이 완료되었을 때 100%로 설정
         loadingProgressBar.value += weight;
     }
 }

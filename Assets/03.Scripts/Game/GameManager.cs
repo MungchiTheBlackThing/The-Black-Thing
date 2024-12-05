@@ -25,7 +25,7 @@ public enum GamePatternState
     End,//이 단계로 넘어가면 오류, 다음단계 0으로 이동해야함.
 };
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour 
 {
     [SerializeField]
     protected DotController dot;
@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     protected ObjectManager objectManager;
     protected ScrollManager scrollManager;
     protected GamePatternState currentPattern;
+    public int TutoNum = 0;
 
     public ObjectManager ObjectManager
     {

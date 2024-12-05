@@ -7,6 +7,6 @@ public abstract class GameState
     protected ObjectManager objectManager = null;
     
     public abstract void Init();
-    public abstract void Enter(GameManager manager,DotController dot = null);
-    public abstract void Exit(GameManager manager);
+    public abstract void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null);
+    public abstract void Exit(GameManager manager, TutorialManager tutomanger = null);
 }

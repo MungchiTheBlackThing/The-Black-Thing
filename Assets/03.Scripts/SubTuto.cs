@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class SubTuto : MonoBehaviour
     public string prefabPath = "TouchGuide"; 
     public Vector3 guide1 = new Vector3(-810, -145, 0);
     public Vector3 guide2 = new Vector3(-1095, -195, 0);
-    static Dictionary<GameObject, int> Recents = new Dictionary<GameObject, int>();
+    static Tuple<GameObject, int> Recents;
     // Update is called once per frame
     public void tutorial_2(GameObject selectedDot, int determine)
     {
@@ -83,12 +84,24 @@ public class SubTuto : MonoBehaviour
     public void tutorial_7(GameObject selectedDot, int determine)
     {
         cameraZoom.Zoom();
-        Recents.Add(selectedDot,determine);
+        Recents = new Tuple<GameObject, int>(selectedDot, determine);
         subPanel.gameObject.SetActive(false);
     }
 
     public void tuto7()
     {
         tutorialManager.ChangeGameState(TutorialState.Main);
+    }
+
+    public void Tuto2Start()
+    {
+        if (Recents.Item2 == 0) 
+        {
+            subPanel.dotballoon(Recents.Item1);
+        }
+        else
+        {
+            subPanel.playerballoon(Recents.Item1);
+        }
     }
 }

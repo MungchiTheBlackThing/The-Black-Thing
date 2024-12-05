@@ -40,7 +40,7 @@ public class Watching : GameState, IResetStateInterface
 
     }
 
-    public override void Enter(GameManager manager, DotController dot = null)
+    public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
 
         if (pattern[manager.Chapter] == EWatching.None)
@@ -68,7 +68,7 @@ public class Watching : GameState, IResetStateInterface
         //Stay일 때 뭉치 등장
     }
 
-    public override void Exit(GameManager manager)
+    public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
         if(watching != null)
         {
@@ -92,12 +92,16 @@ public class MainA : MainDialogue
       
     }
 
-    public override void Enter(GameManager manager, DotController dot = null)
+    public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         ScriptList scriptList = dot.GetMainScriptList(0);
         dot.ChangeState(DotPatternState.Default, scriptList.DotAnim, scriptList.DotPosition);
 
         base.Enter(manager, dot);
+    }
+    public override void Exit(GameManager manager, TutorialManager tutomanger = null)
+    {
+        
     }
 
 }
@@ -111,19 +115,19 @@ public class Thinking : GameState, ILoadingInterface
 
     }
 
-    public override void Enter(GameManager manager, DotController dot = null)
+    public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         //Default값 랜덤으로 사용예정
         Think(manager,dot);
     }
 
-    public void ResetState(GameManager manager, DotController dot = null)
+    public void ResetState(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         DotAnimState anim = (DotAnimState)UnityEngine.Random.Range(0, (int)DotAnimState.anim_eyesblink);
         dot.ChangeState(DotPatternState.Default, anim.ToString());
     }
 
-    public void Think(GameManager manager, DotController dot = null)
+    public void Think(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         //Default값 랜덤으로 사용예정
         DotAnimState anim = (DotAnimState)UnityEngine.Random.Range(0, (int)DotAnimState.anim_eyesblink);
@@ -133,7 +137,7 @@ public class Thinking : GameState, ILoadingInterface
         manager.ShowSubDial();
     }
 
-    public override void Exit(GameManager manager)
+    public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
 
     }
@@ -148,12 +152,16 @@ public class MainB : MainDialogue
 
     }
 
-    public override void Enter(GameManager manager, DotController dot = null)
+    public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         ScriptList scriptList = dot.GetMainScriptList(1);
         dot.ChangeState(DotPatternState.Default, scriptList.DotAnim, scriptList.DotPosition);
 
         base.Enter(manager, dot);
+    }
+    public override void Exit(GameManager manager, TutorialManager tutomanger = null)
+    {
+
     }
 
 }
@@ -164,18 +172,18 @@ public class Writing : GameState, ILoadingInterface, IResetStateInterface
     {
     }
 
-    public override void Enter(GameManager manager, DotController dot = null)
+    public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         Write(manager, dot);
     }
 
-    public void Write(GameManager manager, DotController dot = null)
+    public void Write(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         manager.ObjectManager.PlayThinking();
         dot.ChangeState(DotPatternState.Phase, "anim_diary");
     }
    
-    public override void Exit(GameManager manager)
+    public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
 
     }
@@ -195,7 +203,7 @@ public class Play : GameState, ILoadingInterface
     public override void Init()
     {
     }
-    public override void Enter(GameManager manager, DotController dot = null)
+    public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         this.dot = dot;
         manager.ObjectManager.PlayThinking();
@@ -204,7 +212,7 @@ public class Play : GameState, ILoadingInterface
         dot.TriggerPlay(true);
         dot.ChangeState(DotPatternState.Tirgger, anim, pos);
     }
-    public override void Exit(GameManager manager)
+    public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
         manager.ScrollManager.StopCameraByPlayPhase(false);
     }
@@ -218,13 +226,13 @@ public class Sleeping : GameState, IResetStateInterface
     {
     }
 
-    public override void Enter(GameManager manager, DotController dot = null)
+    public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
 
         Sleep(manager, dot);
         
     }
-    public void Sleep(GameManager manager, DotController dot)
+    public void Sleep(GameManager manager, DotController dot, TutorialManager tutomanger = null)
     {
         this.dot = null;
 
@@ -245,7 +253,7 @@ public class Sleeping : GameState, IResetStateInterface
         dot.Dust.SetActive(true);
     }
 
-    public override void Exit(GameManager manager)
+    public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
         this.dot.Dust.SetActive(false);
     }
@@ -263,7 +271,7 @@ public class NextChapter : GameState
     {
     }
 
-    public override void Enter(GameManager manager, DotController dot = null)
+    public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
 
         //다음 챕터로 넘어가는 달나라를 띄운다.
@@ -274,7 +282,7 @@ public class NextChapter : GameState
 
         manager.ObjectManager.SkipSleeping(true);
     }
-    public override void Exit(GameManager manager)
+    public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
         manager.ObjectManager.SkipSleeping(false);
     }

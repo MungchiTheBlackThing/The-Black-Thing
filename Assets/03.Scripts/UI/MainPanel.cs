@@ -161,7 +161,15 @@ public class MainPanel : MonoBehaviour
         PanelOff();
         mainDialogue.currentDialogueList.Clear();
         dialogueIndex = 0;
-        mainDialogue.Exit(gameManager);
+        Debug.Log(gameManager.GetComponent<TutorialManager>());
+        if (gameManager.GetComponent<TutorialManager>() != null)
+        {
+            gameManager.GetComponent<TutorialManager>().ChangeGameState(TutorialState.Sub);
+        }
+        else
+        {
+            mainDialogue.Exit(gameManager);
+        }
     }
     void PanelOff()
     {

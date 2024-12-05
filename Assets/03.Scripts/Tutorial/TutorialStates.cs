@@ -12,6 +12,7 @@ namespace Tutorial
         private GameObject subdial;
         const int pos = 3;
         const string anim = "anim_default";
+        
         public Sub()
         {
 
@@ -23,20 +24,29 @@ namespace Tutorial
              
         }
 
-        public override void Enter(GameManager manager, DotController dot = null)
+        public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
         {
-            dot.ChangeState(DotPatternState.Default, anim, pos);
-            GameObject door = GameObject.Find("fix_door");
-            Debug.Log(door);
-            door.transform.GetChild(1).GetComponent<DoorController>().DisableTouch();
-            door.transform.GetChild(1).GetComponent<DoorController>().close();
-            manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-            manager.ScrollManager.stopscroll();
-            InvokeHelper.Instance.InvokeAfterDelay(substart, 2f);
-            subdial = manager.subDialoguePanel;
+            if (manager.TutoNum == 0)
+            {
+                dot.ChangeState(DotPatternState.Default, anim, pos);
+                GameObject door = GameObject.Find("fix_door");
+                Debug.Log(door);
+                door.transform.GetChild(1).GetComponent<DoorController>().DisableTouch();
+                door.transform.GetChild(1).GetComponent<DoorController>().close();
+                manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
+                manager.ScrollManager.stopscroll();
+                InvokeHelper.Instance.InvokeAfterDelay(substart, 2f);
+                subdial = manager.subDialoguePanel;
+            }
+            if (manager.TutoNum == 1)
+            {
+                Debug.Log("두번째 튜토리얼 서브");
+                dot.ChangeState(DotPatternState.Default, anim, pos);
+            }
+            
         }
 
-        public override void Exit(GameManager manager)
+        public override void Exit(GameManager manager, TutorialManager tutomanger = null)
         {
             //메인씬 로드?
         }
@@ -54,26 +64,33 @@ namespace Tutorial
 
         }
 
-        public override void Enter(GameManager manager, DotController dot = null)
+        public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger=null)
         {
             dot.ChangeState(DotPatternState.Main, "body_default1", 14, "face_null");
             manager.StartTutoMain();
             manager.ScrollManager.MoveCamera(new Vector3(0, 0, -10), 0);
         }
 
-        public override void Exit(GameManager manager)
+        public override void Exit(GameManager manager, TutorialManager tutomanger)
         {
-            Debug.Log("메인 Exit");
+            Debug.Log("메인 Exit2");
             dot.TriggerMain(false);
+            Debug.Log(tutomanger);
             manager.ScrollManager.StopCamera(false);
             if (background)
             {
                 Debug.Log("현재 배경:" + background.name);
                 background.SetActive(false);
             }
+            manager.TutoNum = 1;
             //manager.ObjectManager.activeSystemUIDelegate(true);
             //SystemUI.SetActive(true);
             
+        }
+
+        public void changestate(GameManager manager)
+        {
+            TutorialManager.Instance.ChangeGameState(TutorialState.Sub);
         }
     }
 };
