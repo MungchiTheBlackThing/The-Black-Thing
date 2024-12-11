@@ -173,4 +173,14 @@ public class SubDialogue : MonoBehaviour
         }
         Debug.Log("끝났을때 서브 번호: " + subseq);
     }
+
+    public void SubContinue()
+    {
+        if (SystemUI)
+            SystemUI = GameObject.Find("SystemUI");
+        Debug.Log("이어서 하기");
+        scroll.stopscroll(); //임시 방편
+        SubPanel.gameObject.SetActive(true);
+        SubPanel.Subcontinue();
+    }
 }

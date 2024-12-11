@@ -787,5 +787,15 @@ public class SubPanel : MonoBehaviour
         subClick.SetActive (true);
     }
 
+    public void Subcontinue()
+    {
+        SubTuto subTuto = gameManager.gameObject.GetComponent<SubTuto>();
 
+        if(subTuto)
+            subTuto.Subcontinue();
+        else
+        {
+            ShowNextDialogue();
+        }
+    }
 }

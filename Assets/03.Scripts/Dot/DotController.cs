@@ -59,6 +59,8 @@ public class DotController : MonoBehaviour
     public GameObject subDialogue;
     [SerializeField]
     public GameObject subPanel;
+
+    public bool tutorial;
     public GameObject Dust
     {
         get { return dust; }

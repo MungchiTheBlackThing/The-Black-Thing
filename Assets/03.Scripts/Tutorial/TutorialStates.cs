@@ -21,17 +21,16 @@ namespace Tutorial
         //멤버 변수 대사 
         public override void Init()
         {
-             
+
         }
 
         public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
         {
+            GameObject door = GameObject.Find("fix_door");
+           
             if (manager.TutoNum == 0)
             {
                 dot.ChangeState(DotPatternState.Default, anim, pos);
-                GameObject door = GameObject.Find("fix_door");
-                Debug.Log(door);
-                door.transform.GetChild(1).GetComponent<DoorController>().DisableTouch();
                 door.transform.GetChild(1).GetComponent<DoorController>().close();
                 manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
                 manager.ScrollManager.stopscroll();
@@ -40,8 +39,11 @@ namespace Tutorial
             }
             if (manager.TutoNum == 1)
             {
+                dot.tutorial = false;
+                manager.ScrollManager.stopscroll();
                 Debug.Log("두번째 튜토리얼 서브");
                 dot.ChangeState(DotPatternState.Default, anim, pos);
+                subdial.GetComponent<SubDialogue>().SubContinue();
             }
             
         }

@@ -93,7 +93,7 @@ public class SubTuto : MonoBehaviour
         tutorialManager.ChangeGameState(TutorialState.Main);
     }
 
-    public void Tuto2Start()
+    public void Subcontinue()
     {
         if (Recents.Item2 == 0) 
         {

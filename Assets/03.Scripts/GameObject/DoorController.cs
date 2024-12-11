@@ -9,7 +9,7 @@ public class DoorController : MonoBehaviour
     [SerializeField]
     bool isDoorOpen = true;
     [SerializeField]
-    GameObject dot;
+    public GameObject dot;
     [SerializeField]
     Collider2D targetCollider;
 
@@ -71,17 +71,20 @@ public class DoorController : MonoBehaviour
             return;
         }
 
-
-        if (isDoorOpen)
+        if (!dot.GetComponent<DotController>().tutorial)
         {
-            //열려있을 경우, 닫아야함
-            close();
+            if (isDoorOpen)
+            {
+                //열려있을 경우, 닫아야함
+                close();
+            }
+            else
+            {
+                //닫아있는 경우, 열어야함
+                open();
+            }
         }
-        else
-        {
-            //닫아있는 경우, 열어야함
-            open();
-        }
+        
     }
     public void close()
     {
