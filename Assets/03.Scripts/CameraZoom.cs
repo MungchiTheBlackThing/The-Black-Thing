@@ -26,11 +26,27 @@ public class CameraZoom : MonoBehaviour
         animator.enabled=true;
         animator.SetTrigger("Zoom");
     }
-    public void Anioff()
+    public void ZoomEnd()
     {
         animator.enabled=false;
         Camera cam = Camera.main;
         cam.orthographicSize = 6.45f;
+        cam.gameObject.transform.position = new Vector3(0, 0, -10);
         subTuto.tuto7();
+    }
+
+    public void ZoomOut()
+    {
+        animator.enabled = true;
+        animator.SetTrigger("ZoomOut");
+        Debug.Log("Ä«¸Þ¶ó ÁÜ¾Æ¿ô");
+        subTuto.zoomout();
+    }
+    public void ZoomOutEnd()
+    {
+        animator.enabled = false;
+        Camera cam = Camera.main;
+        cam.orthographicSize = 6.45f;
+        Debug.Log("ÁÜ¾Æ¿ô ³¡");
     }
 }

@@ -5231,6 +5231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dot: {fileID: 2046645039688417658}
+  TutoNum: 0
   pc: {fileID: 2022455605}
   mainDialoguePanel: {fileID: 2119342186}
   videoController: {fileID: 0}
@@ -63944,6 +63945,7 @@ MonoBehaviour:
   dust: {fileID: 1094932321745963600}
   subDialogue: {fileID: 0}
   subPanel: {fileID: 0}
+  tutorial: 0
 --- !u!212 &2046645039688417659
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -76,6 +76,9 @@ public class TutorialManager : GameManager
 
         scrollManager = Camera.main?.GetComponent<ScrollManager>();
         if (scrollManager == null) Debug.LogError("ScrollManager를 찾을 수 없습니다!");
+
+        cameraZoom = Camera.main?.GetComponent<CameraZoom>();
+        if (cameraZoom == null) Debug.LogError("ScrollManager를 찾을 수 없습니다!");
     }
 
     private void Start()

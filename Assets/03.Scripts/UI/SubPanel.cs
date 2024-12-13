@@ -724,6 +724,7 @@ public class SubPanel : MonoBehaviour
 
     public void dotballoon(GameObject selectedDot)
     {
+        subClick.SetActive(true);
         LocationSet(selectedDot); // 선택한 오브젝트를 활성화
         StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.5f, subClick.GetComponent<Button>()));
         RegisterNextButton(subClick.GetComponent<Button>());
@@ -792,7 +793,9 @@ public class SubPanel : MonoBehaviour
         SubTuto subTuto = gameManager.gameObject.GetComponent<SubTuto>();
 
         if(subTuto)
+        {
             subTuto.Subcontinue();
+        }
         else
         {
             ShowNextDialogue();

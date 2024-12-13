@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     protected SITime time;
     protected ObjectManager objectManager;
     protected ScrollManager scrollManager;
+    protected CameraZoom cameraZoom;
     protected GamePatternState currentPattern;
     public int TutoNum = 0;
 
@@ -46,6 +47,11 @@ public class GameManager : MonoBehaviour
     public ScrollManager ScrollManager
     {
         get { return scrollManager; }
+    }
+
+    public CameraZoom CameraZoom
+    {
+        get { return cameraZoom; }
     }
 
     public GameState CurrentState
@@ -115,6 +121,7 @@ public class GameManager : MonoBehaviour
         pc.nextPhaseDelegate += ChangeGameState;
         objectManager = GameObject.FindWithTag("ObjectManager").gameObject.GetComponent<ObjectManager>();
         scrollManager = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<ScrollManager>();
+        cameraZoom = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<CameraZoom>();
         onVideoEnded += OnVideoCompleted;
     }
 

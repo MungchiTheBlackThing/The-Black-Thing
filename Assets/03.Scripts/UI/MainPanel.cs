@@ -164,7 +164,7 @@ public class MainPanel : MonoBehaviour
         Debug.Log(gameManager.GetComponent<TutorialManager>());
         if (gameManager.GetComponent<TutorialManager>() != null)
         {
-            gameManager.GetComponent<TutorialManager>().ChangeGameState(TutorialState.Sub);
+            gameManager.CameraZoom.ZoomOut();
         }
         else
         {

@@ -60,7 +60,7 @@ public class DotController : MonoBehaviour
     [SerializeField]
     public GameObject subPanel;
 
-    public bool tutorial;
+    public bool tutorial; //DoorControllerø° æ≤¿”
     public GameObject Dust
     {
         get { return dust; }

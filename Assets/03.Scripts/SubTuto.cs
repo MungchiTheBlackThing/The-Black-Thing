@@ -93,6 +93,11 @@ public class SubTuto : MonoBehaviour
         tutorialManager.ChangeGameState(TutorialState.Main);
     }
 
+    public void zoomout()
+    {
+        tutorialManager.ChangeGameState(TutorialState.Sub);
+    }
+
     public void Subcontinue()
     {
         if (Recents.Item2 == 0) 
