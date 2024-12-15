@@ -8,6 +8,7 @@ public class CameraZoom : MonoBehaviour
     Vector2 originVector;
 
     [SerializeField] SubTuto subTuto;
+    [SerializeField] public GameObject dragGuide;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,5 +49,6 @@ public class CameraZoom : MonoBehaviour
         Camera cam = Camera.main;
         cam.orthographicSize = 6.45f;
         Debug.Log("ÁÜ¾Æ¿ô ³¡");
+        dragGuide.SetActive(true);
     }
 }

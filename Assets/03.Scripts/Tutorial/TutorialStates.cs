@@ -43,8 +43,8 @@ namespace Tutorial
                 manager.ScrollManager.stopscroll();
                 manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 0.1f);
                 Debug.Log("두번째 튜토리얼 서브");
-                dot.ChangeState(DotPatternState.Default, anim, pos);
-                InvokeHelper.Instance.InvokeAfterDelay(subcontinue, 4.0f);
+                dot.ChangeState(DotPatternState.Default, anim, 0);
+                //InvokeHelper.Instance.InvokeAfterDelay(subcontinue, 4.0f);
             }
             
         }
