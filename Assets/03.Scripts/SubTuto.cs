@@ -14,7 +14,7 @@ public class SubTuto : MonoBehaviour
     public string prefabPath = "TouchGuide"; 
     public Vector3 guide1 = new Vector3(-810, -145, 0);
     public Vector3 guide2 = new Vector3(-1095, -195, 0);
-    static Tuple<GameObject, int> Recents;
+    public List<(GameObject,int)> Recents = new List<(GameObject,int)> ();
     // Update is called once per frame
     public void tutorial_2(GameObject selectedDot, int determine)
     {
@@ -84,8 +84,15 @@ public class SubTuto : MonoBehaviour
     public void tutorial_7(GameObject selectedDot, int determine)
     {
         cameraZoom.Zoom();
-        Recents = new Tuple<GameObject, int>(selectedDot, determine);
+        Recents.Add((selectedDot, determine));
         subPanel.gameObject.SetActive(false);
+    }
+
+    public void tutorial_8(GameObject selectedDot, int determine)
+    {
+        Recents.Add((selectedDot, determine));
+        tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 0);
+        StartCoroutine(Scroallable());
     }
 
     public void tuto7()
@@ -100,13 +107,19 @@ public class SubTuto : MonoBehaviour
 
     public void Subcontinue()
     {
-        if (Recents.Item2 == 0) 
+        if (Recents.Count > 0 && Recents[Recents.Count - 1].Item2 == 0)
         {
-            subPanel.dotballoon(Recents.Item1);
+            subPanel.dotballoon(Recents[Recents.Count - 1].Item1);
         }
         else
         {
-            subPanel.playerballoon(Recents.Item1);
+            subPanel.playerballoon(Recents[Recents.Count - 1].Item1);
         }
+    }
+
+    public IEnumerator Scroallable()
+    {
+        yield return new WaitForSeconds(1f);
+        cameraZoom.gameObject.GetComponent<ScrollManager>().scrollable();
     }
 }

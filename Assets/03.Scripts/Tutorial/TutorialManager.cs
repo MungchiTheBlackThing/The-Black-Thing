@@ -78,7 +78,10 @@ public class TutorialManager : GameManager
         if (scrollManager == null) Debug.LogError("ScrollManager를 찾을 수 없습니다!");
 
         cameraZoom = Camera.main?.GetComponent<CameraZoom>();
-        if (cameraZoom == null) Debug.LogError("ScrollManager를 찾을 수 없습니다!");
+        if (cameraZoom == null) Debug.LogError("CameraZoom를 찾을 수 없습니다!");
+
+        dot = GameObject.FindWithTag("DotController").GetComponent<DotController>();
+        if (dot == null) Debug.LogError("DotController를 찾을 수 없습니다!");
     }
 
     private void Start()

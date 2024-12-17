@@ -63,6 +63,11 @@ public class GameManager : MonoBehaviour
     {
         get { return time.ToString(); }
     }
+
+    public DotController Dot
+    {
+        get { return dot; }
+    }
     public GamePatternState Pattern
     {
         get { return currentPattern; }
