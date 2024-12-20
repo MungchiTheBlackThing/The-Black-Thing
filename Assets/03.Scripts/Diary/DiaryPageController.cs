@@ -1,87 +1,97 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DiaryPageController : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    private bool isClick;
-    float clickTime = 0.0f;
     [SerializeField]
-    float minClickTime;
+    private List<GameObject> pages; // 페이지 GameObject들을 저장할 리스트
+
+    private int currentPageIndex = 0; // 현재 페이지 인덱스
 
     [SerializeField]
-    TMP_Text title;
+    private float minClickTime = 0.3f; // 꾸욱 클릭 기준 시간
+
+    private bool isClick = false; // 버튼 클릭 여부
+    private float clickTime = 0.0f; // 클릭 시간
 
     [SerializeField]
-    TMP_Text leftPage;
+    private GameManager gameManger; // 다음 페이지 버튼
 
-
-    [SerializeField]
-    TMP_Text subTitle;
-
-    [SerializeField]
-    Image []subImg;
-    [SerializeField]
-    TMP_Text []subTxt;
-
-    TranslateManager translator;
+    public int chapter;
     private void Start()
     {
-        translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
-        translator.translatorDel += Translate;
-    }
-    void Translate(LANGUAGE language, TMP_FontAsset font)
-    {
-        int Idx = (int)language;
-        
-        
-        title.font = font;
-        leftPage.font = font;
-        subTitle.font = font;
-        for(int i=0;i<subTxt.Length;i++)
+        foreach (Transform child in transform)
         {
-            subTxt[i].font = font;
-            //Txt변경
+            pages.Add(child.gameObject);
         }
 
+        chapter = gameManger.Chapter - 1;
+        // 초기화: 첫 페이지 활성화, 나머지 비활성화
+        UpdatePageVisibility();
+        // 버튼 이벤트 추가
     }
 
-    public void OnEnable()
+    private void Update()
     {
-        isClick = false;
-    }
-
-    public void ButtonUp()
-    {
-        isClick = true;
+        if (isClick)
+        {
+            clickTime += Time.deltaTime;
+        }
+        else
+        {
+            clickTime = 0.0f;
+        }
     }
 
     public void ButtonDown()
     {
+        isClick = true;
+    }
+
+    public void ButtonUpNext()
+    {
         isClick = false;
-        Debug.Log("Click 꾸욱");
 
         if (clickTime >= minClickTime)
         {
-            //특정 동작 수행
-            Debug.Log("Click 꾸욱");
+            if (currentPageIndex < chapter)
+            {
+                currentPageIndex++;
+                UpdatePageVisibility();
+            }
+            else
+            {
+                Debug.Log("작성되지 않은 일기");
+            }
         }
     }
-
-    public void Update()
+    public void ButtonUpPrev()
     {
-        if(isClick)
+        isClick = false;
+
+        if (clickTime >= minClickTime)
         {
-            clickTime += Time.deltaTime;
+            Debug.Log("Long Click");
+            if (currentPageIndex > 0)
+            {
+                currentPageIndex--;
+                UpdatePageVisibility();
+            }
+            else
+            {
+                Debug.Log("일기장은 음수가 없다");
+            }
         }
-        else 
+    }
+    private void UpdatePageVisibility()
+    {
+        // 모든 페이지를 비활성화하고 현재 페이지만 활성화
+        for (int i = 0; i < pages.Count; i++)
         {
-            clickTime = 0.0f;
+            pages[i].SetActive(i == currentPageIndex);
         }
+        Debug.Log(currentPageIndex + 1);
     }
 }
