@@ -119,7 +119,11 @@ public class SubTuto : MonoBehaviour
 
     public IEnumerator Scroallable()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
+        GameObject dot = tutorialManager.Dot.gameObject;
+        dot.GetComponent<DotController>().Invisible();
         cameraZoom.gameObject.GetComponent<ScrollManager>().scrollable();
     }
+
+
 }

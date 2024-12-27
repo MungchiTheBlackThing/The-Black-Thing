@@ -31,6 +31,7 @@ namespace Tutorial
             if (manager.TutoNum == 0)
             {
                 dot.ChangeState(DotPatternState.Default, anim, pos);
+                dot.GetComponent<DotController>().tutorial = true;
                 door.transform.GetChild(1).GetComponent<DoorController>().close();
                 manager.ScrollManager.stopscroll();
                 manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);

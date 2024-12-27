@@ -60,7 +60,7 @@ public class DotController : MonoBehaviour
     [SerializeField]
     public GameObject subPanel;
 
-    public bool tutorial; //DoorController에 쓰임
+    public bool tutorial = false; //DoorController에 쓰임
     public GameObject Dust
     {
         get { return dust; }
@@ -263,4 +263,20 @@ public class DotController : MonoBehaviour
         currentState.Enter(this); //실행
     }
 
+    public void Invisible()
+    {
+        SpriteRenderer dotRenderer = this.GetComponent<SpriteRenderer>();
+        Color color = dotRenderer.color;
+        color.a = 0f;
+        dotRenderer.color = color;
+        this.GetComponent<BoxCollider2D>().enabled = false;
+    }
+    public void Visible()
+    {
+        SpriteRenderer dotRenderer = this.GetComponent<SpriteRenderer>();
+        Color color = dotRenderer.color;
+        color.a = 255f;
+        dotRenderer.color = color;
+        this.GetComponent<BoxCollider2D>().enabled = true;
+    }
 }

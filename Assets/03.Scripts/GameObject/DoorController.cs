@@ -37,11 +37,7 @@ public class DoorController : MonoBehaviour
             {
                 if (collider != targetCollider && collider.gameObject == dot)
                 {
-                    SpriteRenderer dotRenderer = dot.GetComponent<SpriteRenderer>();
-                    Color color = dotRenderer.color;
-                    color.a = 0f; 
-                    dotRenderer.color = color;
-                    dot.GetComponent<BoxCollider2D>().enabled = false;
+                    dot.GetComponent<DotController>().Invisible();
                 }
             }
         }
@@ -49,11 +45,7 @@ public class DoorController : MonoBehaviour
         {
             if (dot.GetComponent<BoxCollider2D>().enabled == false)
             {
-                SpriteRenderer dotRenderer = dot.GetComponent<SpriteRenderer>();
-                Color color = dotRenderer.color;
-                color.a = 255f;
-                dotRenderer.color = color;
-                dot.GetComponent<BoxCollider2D>().enabled = true;
+                dot.GetComponent<DotController>().Visible();
             }
         }
     }
