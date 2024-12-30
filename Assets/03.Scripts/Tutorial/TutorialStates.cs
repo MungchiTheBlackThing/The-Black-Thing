@@ -49,8 +49,6 @@ namespace Tutorial
                 GameObject fix_moonradio = GameObject.Find("fix_moonradio");
                 GameObject moonote = Resources.Load<GameObject>("moonnote");
                 Utility.InstantiatePrefab(moonote, fix_moonradio.transform);
-                Moonnote moonnote = moonote.GetComponent<Moonnote>();
-                moonnote.anion();
             }
             
         }

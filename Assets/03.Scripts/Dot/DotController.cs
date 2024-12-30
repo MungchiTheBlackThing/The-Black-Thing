@@ -270,6 +270,8 @@ public class DotController : MonoBehaviour
         color.a = 0f;
         dotRenderer.color = color;
         this.GetComponent<BoxCollider2D>().enabled = false;
+        this.GetComponent<BoxCollider2D>().enabled = true;
+        this.GetComponent<BoxCollider2D>().enabled = false;
     }
     public void Visible()
     {

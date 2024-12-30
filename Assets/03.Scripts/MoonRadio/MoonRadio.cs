@@ -63,6 +63,7 @@ public class MoonRadio : MonoBehaviour
             moonRadioController.SetActive(true);
             screen.SetActive(false);
         }
+        Debug.Log("문라디오 클릭");
     }
 
     public void OpenAlert()

@@ -12,6 +12,8 @@ public class SubTuto : MonoBehaviour
     [SerializeField] CameraZoom cameraZoom;
     [SerializeField] 
     public GameObject UIBalloon;
+    [SerializeField]
+    public Moonnote moonnote;
     
     public string prefabPath = "TouchGuide"; 
     public Vector3 guide1 = new Vector3(-810, -145, 0);
@@ -94,6 +96,7 @@ public class SubTuto : MonoBehaviour
     {
         Recents.Add((selectedDot, determine));
         tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 0);
+        moonnote = GameObject.FindWithTag("moonnote").GetComponent<Moonnote>();
         StartCoroutine(Scroallable());
     }
 
@@ -127,6 +130,7 @@ public class SubTuto : MonoBehaviour
         //cameraZoom.gameObject.GetComponent<ScrollManager>().scrollable();
         // 여기에 다이어리 쪽지 관련 플레이어 말 띄우기, 불빛 애니메이션 실행
         UIBalloon.SetActive(true);
+        moonnote.anion();
     }
 
 
