@@ -192,6 +192,5 @@ public class ScrollManager : MonoBehaviour
         }
         
         transform.position = targetPosition;
-
     }
 }

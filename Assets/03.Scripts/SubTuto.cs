@@ -10,6 +10,8 @@ public class SubTuto : MonoBehaviour
     [SerializeField] GameObject nickname;
     [SerializeField] TutorialManager tutorialManager;
     [SerializeField] CameraZoom cameraZoom;
+    [SerializeField] 
+    public GameObject UIBalloon;
     
     public string prefabPath = "TouchGuide"; 
     public Vector3 guide1 = new Vector3(-810, -145, 0);
@@ -122,7 +124,9 @@ public class SubTuto : MonoBehaviour
         yield return new WaitForSeconds(5f);
         GameObject dot = tutorialManager.Dot.gameObject;
         dot.GetComponent<DotController>().Invisible();
-        cameraZoom.gameObject.GetComponent<ScrollManager>().scrollable();
+        //cameraZoom.gameObject.GetComponent<ScrollManager>().scrollable();
+        // 여기에 다이어리 쪽지 관련 플레이어 말 띄우기, 불빛 애니메이션 실행
+        UIBalloon.SetActive(true);
     }
 
 

@@ -35,17 +35,22 @@ namespace Tutorial
                 door.transform.GetChild(1).GetComponent<DoorController>().close();
                 manager.ScrollManager.stopscroll();
                 manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                InvokeHelper.Instance.InvokeAfterDelay(substart, 2f);
+                Utility.Instance.InvokeAfterDelay(substart, 2f);
                 subdial = manager.subDialoguePanel;
             }
             if (manager.TutoNum == 1)
             {
-                dot.tutorial = false;
+                dot.tutorial = true;
                 manager.ScrollManager.stopscroll();
                 manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 0.1f);
                 Debug.Log("두번째 튜토리얼 서브");
                 dot.ChangeState(DotPatternState.Default, anim, 0);
                 //InvokeHelper.Instance.InvokeAfterDelay(subcontinue, 4.0f);
+                GameObject fix_moonradio = GameObject.Find("fix_moonradio");
+                GameObject moonote = Resources.Load<GameObject>("moonnote");
+                Utility.InstantiatePrefab(moonote, fix_moonradio.transform);
+                Moonnote moonnote = moonote.GetComponent<Moonnote>();
+                moonnote.anion();
             }
             
         }

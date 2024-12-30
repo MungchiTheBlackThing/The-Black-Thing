@@ -16,6 +16,8 @@ public class MoonRadio : MonoBehaviour
     TMP_Text text;
     [SerializeField]
     GameObject screen;
+    [SerializeField]
+    DotController Dot;
 
     TranslateManager translator;
     Animator blinkMoonRadioAnim;
@@ -23,6 +25,7 @@ public class MoonRadio : MonoBehaviour
     private void Start()
     {
         screen = GameObject.Find("Screen");
+        Dot = GameObject.FindWithTag("DotController").GetComponent<DotController>();
         blinkMoonRadioAnim = GetComponent<Animator>();
         moonRadioController = GameObject.Find("MoonRadio").transform.GetChild(0).gameObject;
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
@@ -53,7 +56,7 @@ public class MoonRadio : MonoBehaviour
         }
 
         //시간대가 밤이 아닐 경우에는 아래는 작동하지 않는다.
-        if (moonRadioController.activeSelf == false)
+        if (moonRadioController.activeSelf == false && !Dot.tutorial)
         {
             //밤일 때 speed 1, 밤이 아니면 0
             blinkMoonRadioAnim.SetFloat("speed", 0f);
