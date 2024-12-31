@@ -7474,6 +7474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 201689322}
+  - component: {fileID: 201689323}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -7503,6 +7504,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -25}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &201689323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201689321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f48b9f815f7dc4b87e73eeaece6624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &203004698
 GameObject:
   m_ObjectHideFlags: 0
@@ -24466,7 +24479,7 @@ MonoBehaviour:
   Helper: {fileID: 2038212400}
   MyPageUI: {fileID: 114393}
   TimeUI: {fileID: 1007219007}
-  Default: {fileID: 0}
+  Default: {fileID: 201689321}
   checkList: {fileID: 574559039}
   menu:
   - {fileID: 2143568392}

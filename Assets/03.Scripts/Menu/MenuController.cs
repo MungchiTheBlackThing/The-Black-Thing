@@ -260,4 +260,8 @@ public class MenuController : MonoBehaviour
     {
         TimeUI.SetActive(false);
     }
+    public void tuto()
+    {
+        MenuButAnim.SetFloat("tuto", 1f);
+    }
 }

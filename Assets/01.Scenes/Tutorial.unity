@@ -5324,7 +5324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &201689322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15992,7 +15992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &574559040
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17284,7 +17284,7 @@ GameObject:
   - component: {fileID: 619721726}
   m_Layer: 5
   m_Name: Menu
-  m_TagString: Untagged
+  m_TagString: Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17334,7 +17334,7 @@ MonoBehaviour:
   Helper: {fileID: 2038212400}
   MyPageUI: {fileID: 114393}
   TimeUI: {fileID: 1007219007}
-  Default: {fileID: 0}
+  Default: {fileID: 201689321}
   checkList: {fileID: 574559039}
   menu:
   - {fileID: 2143568392}
@@ -28039,7 +28039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1007219008
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51222,7 +51222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1705030966
 RectTransform:
   m_ObjectHideFlags: 0

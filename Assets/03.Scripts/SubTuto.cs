@@ -130,7 +130,7 @@ public class SubTuto : MonoBehaviour
         //cameraZoom.gameObject.GetComponent<ScrollManager>().scrollable();
         // 여기에 다이어리 쪽지 관련 플레이어 말 띄우기, 불빛 애니메이션 실행
         UIBalloon.SetActive(true);
-        moonnote.anion();
+        moonnote.anion(UIBalloon);
     }
 
 

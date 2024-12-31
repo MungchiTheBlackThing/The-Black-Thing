@@ -10,6 +10,7 @@ public class Moonnote : MonoBehaviour
     public GameObject MoonnoteLight;
     public Animator animator;
     public Transform canvasTransform;
+    public GameObject UIBalloon;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,11 +38,13 @@ public class Moonnote : MonoBehaviour
             Instantiate(MoonnoteUI, canvasTransform);
             MoonnoteUI.SetActive(true);
             MoonnoteLight.SetActive(false);
+            UIBalloon.SetActive(false);
         }
     }
 
-    public void anion()
+    public void anion(GameObject Balloon)
     {
+        UIBalloon = Balloon;
         MoonnoteLight.SetActive(true);
     }
 }
