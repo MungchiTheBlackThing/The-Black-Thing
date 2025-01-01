@@ -7,7 +7,7 @@ public class DoorController : MonoBehaviour
 {
 
     [SerializeField]
-    bool isDoorOpen = true;
+    public bool isDoorOpen = true;
     [SerializeField]
     public GameObject dot;
     [SerializeField]
@@ -28,7 +28,11 @@ public class DoorController : MonoBehaviour
         {
             dot = GameObject.FindWithTag("DotController");
         }
+        CheckDot();
+    }
 
+    public void CheckDot()
+    {
         if (isDoorOpen == false)
         {
             Collider2D[] overlappingColliders = Physics2D.OverlapBoxAll(targetCollider.bounds.center, targetCollider.bounds.size, 0);
@@ -49,12 +53,14 @@ public class DoorController : MonoBehaviour
             }
         }
     }
-
     private void Start()
     {
        
     }
-
+    private void FixedUpdate()
+    {
+        CheckDot();
+    }
     private void OnMouseDown()
     {
         if (EventSystem.current.IsPointerOverGameObject())

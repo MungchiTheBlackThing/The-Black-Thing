@@ -67304,7 +67304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1720718689
 RectTransform:
   m_ObjectHideFlags: 0
@@ -84966,8 +84966,8 @@ MonoBehaviour:
   eyes: {fileID: 4247061019833211656}
   eyesAnim: {fileID: 8638433984340231061}
   dust: {fileID: 1094932321745963600}
-  subDialogue: {fileID: 0}
-  subPanel: {fileID: 0}
+  subDialogue: {fileID: 1720718688}
+  subPanel: {fileID: 1109418667}
   tutorial: 0
 --- !u!212 &2046645039688417659
 SpriteRenderer:
