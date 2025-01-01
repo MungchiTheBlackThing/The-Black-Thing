@@ -68,5 +68,6 @@ public class TimeSkipUIController : MonoBehaviour
     {
         popup.SetActive(false);
         playerController.NextPhase();
+
     }
 }

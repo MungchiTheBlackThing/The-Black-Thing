@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine.Video;
-
+using System.IO;
 public enum EVideoIdx
 {
     SkipPhase,
@@ -26,7 +27,8 @@ public class VideoPlayerController : MonoBehaviour
     RawImage videoImage;
     [SerializeField]
     GameObject[] loading;
-
+    
+    [SerializeField]
     GameObject video;
     bool isVideoPrepared = false;
 
@@ -35,126 +37,119 @@ public class VideoPlayerController : MonoBehaviour
 
     private void Start()
     {
-        video = videoPlayer.transform.parent.gameObject;
+        for(int i=0; i<path.Length; i++)
+        {
+            StartCoroutine(DownloadPhaseVideo(googleURL + path[i], pathForDocumentsFile(loading[i].name + ".mp4")));
+        }
     }
 
-    public void ShowVideo()
+    IEnumerator DownloadPhaseVideo(string url, string path)
     {
-        video.SetActive(true);
-        loading[(int)eVideoIdx].SetActive(true);
-
-        if (videoPlayer.isPrepared)
+        // 파일이 이미 존재하는지 확인
+        if (File.Exists(path))
         {
-            // 비디오가 준비된 경우 바로 재생 시작
-            StartCoroutine(PlayVideo());
+            Debug.Log($"Video already exists at: {path}, using existing file.");
+
+            yield break;
+        }
+
+        UnityWebRequest www = UnityWebRequest.Get(url);
+
+        Debug.Log("Downloading video...");
+        yield return www.SendWebRequest();
+
+        if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError($"Download failed: {www.error}");
         }
         else
         {
-            // 비디오 준비 완료 시 콜백 등록
-            if(eVideoIdx == EVideoIdx.SkipPhase)
-            {
-                videoPlayer.loopPointReached += OnVideoFinished;
-            }
+            Debug.Log("Download complete, saving to disk...");
+            File.WriteAllBytes(path, www.downloadHandler.data);
+            Debug.Log($"Video saved to: {path}");
         }
     }
 
-    public async void CloseVideo(EVideoIdx Idx, bool looping = true)
+    string pathForDocumentsFile(string filename)
     {
+        if (Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            string path = Application.dataPath.Substring(0, Application.dataPath.Length - 5);
+            path = path.Substring(0, path.LastIndexOf('/'));
+            return Path.Combine(Path.Combine(path, "Documents"), filename);
 
-        await PreloadVideoAsync(Idx, looping);
+        }
+        else if (Application.platform == RuntimePlatform.Android)
+        {
+            string path = Application.persistentDataPath;
+            path = path.Substring(0, path.LastIndexOf('/'));
+            return Path.Combine(path, filename);
+        }
+        else
+        {
+            string path = Application.dataPath;
+            path = path.Substring(0, path.LastIndexOf('/'));
+            return Path.Combine(Application.dataPath, filename);
+        }
+    }
 
+
+    public void ShowVideo(EVideoIdx Idx, bool looping = true)
+    {
+        eVideoIdx = Idx;
+        video.SetActive(true);
+        loading[(int)eVideoIdx].SetActive(true);
+
+        videoPlayer.isLooping = looping;
+        videoImage.texture = videoPlayer.texture;
+        videoPlayer.renderMode = VideoRenderMode.RenderTexture; // RenderTexture 모드로 설정
+        RenderTexture renderTexture = new RenderTexture(1920, 1080, 0); // 원하는 해상도로 생성
+        videoPlayer.targetTexture = renderTexture;
+        videoImage.texture = renderTexture;
+        StartCoroutine(PlayVideo(pathForDocumentsFile(loading[(int)eVideoIdx].name + ".mp4")));
+
+        if (eVideoIdx == EVideoIdx.SkipPhase)
+        {
+            videoPlayer.loopPointReached += OnVideoFinished;
+        }
+    }
+
+    public void CloseVideo()
+    {
         if (eVideoIdx == EVideoIdx.NoVideo) return;
 
         video.SetActive(false);
         loading[(int)eVideoIdx].SetActive(false);
-
-    }
-    // 비디오 미리 로드
-    public async Task PreloadVideoAsync(EVideoIdx Idx, bool looping = true)
-    {
-        if (eVideoIdx != Idx)
-        {
-            eVideoIdx = Idx;
-            videoPlayer.source = VideoSource.Url;
-            videoPlayer.url = googleURL + path[(int)Idx];
-            videoPlayer.isLooping = looping;
-
-            // 비동기 준비
-            await PreloadVideoAsync((int)Idx);
-        }
     }
 
-    // 비디오 미리 로드 비동기 함수
-    private async Task PreloadVideoAsync(int Idx)
-    {
-        // 오디오 설정
-        var audioSource = videoPlayer.GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
-            videoPlayer.EnableAudioTrack(0, true);
-            videoPlayer.SetTargetAudioSource(0, audioSource);
-        }
-
-        // 비디오 준비 (비동기)
-        await PrepareVideoAsync();
-    }
-
-    // 비디오 준비 완료를 비동기로 대기하는 함수
-    private Task PrepareVideoAsync()
-    {
-        var tcs = new TaskCompletionSource<bool>();
-
-        videoPlayer.Prepare(); // 비디오 준비 시작
-        StartCoroutine(CheckPrepared(tcs)); // 코루틴으로 준비 상태 체크
-
-        return tcs.Task;
-    }
-
-    // 비디오 준비 상태를 체크하는 코루틴
-    private IEnumerator CheckPrepared(TaskCompletionSource<bool> tcs)
-    {
-        while (!videoPlayer.isPrepared)
-        {
-            yield return null; // 비디오가 준비될 때까지 대기
-        }
-
-        // 준비 완료 시 Task를 성공 상태로 설정
-        tcs.SetResult(true);
-
-        isVideoPrepared = true;
-    }
     // 비디오 재생
-    IEnumerator PlayVideo()
+    IEnumerator PlayVideo(string path)
     {
-        if (isVideoPrepared)
+
+        //if (isVideoPrepared)
         {
             // 미리 준비된 비디오가 있으면 바로 재생
-            videoImage.texture = videoPlayer.texture;
+            videoPlayer.url = path;
+            
+            videoPlayer.Prepare();
+            while (!videoPlayer.isPrepared)
+            {
+                yield return null;
+            }
+
             videoPlayer.Play();
             // 비디오 재생 동안 대기
             while (videoPlayer.isPlaying)
             {
                 yield return null;
             }
-
-            isVideoPrepared = false;
         }
-
-
     }
-
 
     // 비디오 재생이 완료되면 호출되는 콜백
     private void OnVideoFinished(VideoPlayer vp)
     {
         // 비디오가 끝났을 때 GameManager의 메서드 호출
-        gameManager.OnVideoCompleted();
-
-        // 콜백 등록 해제
-        if(eVideoIdx == EVideoIdx.SkipPhase)
-        {
-            videoPlayer.loopPointReached -= OnVideoFinished;
-        }
+        CloseVideo();
     }
 }

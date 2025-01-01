@@ -39,11 +39,13 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 41c805005a6e0234da433967cbe8136a, type: 3}
+  - {fileID: 21300000, guid: a1e205106f551874cbfacd95d996a69e, type: 3}
   - {fileID: 21300000, guid: ede168408d6393f4d9806917bf9873ef, type: 3}
   - {fileID: 21300000, guid: 2cbd5ee0a16a365459d3af6094739f1e, type: 3}
   - {fileID: 21300000, guid: 6683a481617bfd547bd0595c13b78e33, type: 3}
   - {fileID: 21300000, guid: eaa877a1a6ab34c4490904d334ee9ff3, type: 3}
   - {fileID: 21300000, guid: 92841da1d3fcf034b93f91215fe63bb6, type: 3}
+  - {fileID: 21300000, guid: 073d5ea1edd369448a21ab62371920a9, type: 3}
   - {fileID: 21300000, guid: c679acb11fc45df4f9a21b018ca84e67, type: 3}
   - {fileID: 21300000, guid: 91f35ef1ce85882478ae8bc640ee6a22, type: 3}
   - {fileID: 21300000, guid: 57c07b638dcb05647a73cf756f272b25, type: 3}
@@ -53,6 +55,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 6ac017267d705b245a202544e59d6f0d, type: 3}
   - {fileID: 21300000, guid: 9ad1bc26a0683d44bb88ad613da465c0, type: 3}
   - {fileID: 21300000, guid: 74057036a72660c4d92d73bd22eee6da, type: 3}
+  - {fileID: 21300000, guid: f2263176d1b9bb141b59e30c205edd56, type: 3}
   - {fileID: 21300000, guid: 286b8476ab71e45f8914153fcbaf411b, type: 3}
   - {fileID: 21300000, guid: 3f4c66760d2f999479872b8cc84798f2, type: 3}
   - {fileID: 21300000, guid: 269f9f171513e5347b50f291e75bd680, type: 3}
@@ -61,8 +64,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: afc5bf87d46804538a0832fab247a0c4, type: 3}
   - {fileID: 21300000, guid: 2e8ae9a7f98a2714988df8418ae283c7, type: 3}
   - {fileID: 21300000, guid: 7d5cfc980c25ec448b2457c4d4b04125, type: 3}
+  - {fileID: 21300000, guid: 16af57b8324a7594caca7865174afc17, type: 3}
+  - {fileID: 21300000, guid: c3009019e6f526c41b9702fc3b83eec7, type: 3}
   - {fileID: 21300000, guid: 16b57819ef2c84f4c9d208d25ef3fe57, type: 3}
+  - {fileID: 21300000, guid: 544e97e94ebb9534ea3638a08bb83fd9, type: 3}
   - {fileID: 21300000, guid: ebb82e8ae27bf86468ba26cf98eede60, type: 3}
+  - {fileID: 21300000, guid: 742aa4bac0115d04db297716bd08a47b, type: 3}
   - {fileID: 21300000, guid: 10e7ad1b8507eff4f9830249fc629d92, type: 3}
   - {fileID: 21300000, guid: 0e8ab32bda7801741bfb6c71792ac646, type: 3}
   - {fileID: 21300000, guid: 728710cb2b357724a98af7dc4b26e978, type: 3}
@@ -77,11 +84,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: fff827bfedb9d9740a6f2d0f969e6e45, type: 3}
   m_PackedSpriteNamesToIndex:
   - checklist_paper
+  - howto2
   - spalsh_title
   - alert_diary
   - menu_line
   - background_main
   - loading_text
+  - "\uC791\uC740 \uC6B0\uCE21 \uD654\uC0B4\uD45C"
   - Line 43_2693_1795
   - loading_handle
   - checklist_check
@@ -91,6 +100,7 @@ SpriteAtlas:
   - icon_trigger_sub
   - alert_diary
   - name_input
+  - howto1
   - icon_letter
   - Ellipse 108_2693_1796
   - chapterload_0
@@ -99,8 +109,12 @@ SpriteAtlas:
   - icon_poem
   - Ellipse 109_2693_1797
   - chapterload_100
+  - "\uC791\uC740 \uC88C\uCE21 \uD654\uC0B4\uD45C"
+  - howto3
   - alert_moonradio
+  - howto4
   - box2
+  - howto5
   - popup_bigbox
   - icon_whiteX
   - alert_diary

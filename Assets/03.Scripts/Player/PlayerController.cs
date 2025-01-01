@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
         phase += 1;
 
-        if ((GamePatternState)phase > GamePatternState.NextChapter)
+        if (phase > (int)GamePatternState.NextChapter)
         {
             player.currentPhase = GamePatternState.Watching;
             //챕터가 증가함
@@ -313,8 +313,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
             path = path.Substring(0, path.LastIndexOf('/'));
             return Path.Combine(Application.dataPath, filename);
         }
-
     }
+
     void OnApplicationPause(bool pauseStatus)
     {
         if (pauseStatus)

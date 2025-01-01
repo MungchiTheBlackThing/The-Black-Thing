@@ -15,14 +15,14 @@ using System.Runtime.Serialization;
 public enum GamePatternState
 {
     Watching = 0, //Watching 단계
-    MainA, // Main 다이얼로그 A 단계
-    Thinking, // Thinking 단계
-    MainB, // Main 다이얼로그 B 단계
-    Writing, // Writing 단계
-    Play, //Play 단계
-    Sleeping, //Sleeping 단계
-    NextChapter, //Sleeping 단계가 끝나면 기다리든가, 아님 Skip을 눌러서 Watching으로 넘어갈 수 있음. 
-    End,//이 단계로 넘어가면 오류, 다음단계 0으로 이동해야함.
+    MainA,        // Main 다이얼로그 A 단계
+    Thinking,     // Thinking 단계
+    MainB,        // Main 다이얼로그 B 단계
+    Writing,      // Writing 단계
+    Play,         //Play 단계
+    Sleeping,     //Sleeping 단계
+    NextChapter,  //Sleeping 단계가 끝나면 기다리든가, 아님 Skip을 눌러서 Watching으로 넘어갈 수 있음. 
+    End,          //이 단계로 넘어가면 오류, 다음단계 0으로 이동해야함.
 };
 
 public class GameManager : MonoBehaviour 
@@ -75,10 +75,6 @@ public class GameManager : MonoBehaviour
     private Dictionary<GamePatternState, GameState> states;
     public PlayerController pc;
 
-
-    public delegate void OnVideoEndedDelegate();
-
-    OnVideoEndedDelegate onVideoEnded;
     [SerializeField]
     public GameObject mainDialoguePanel;
 
@@ -127,7 +123,6 @@ public class GameManager : MonoBehaviour
         objectManager = GameObject.FindWithTag("ObjectManager").gameObject.GetComponent<ObjectManager>();
         scrollManager = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<ScrollManager>();
         cameraZoom = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<CameraZoom>();
-        onVideoEnded += OnVideoCompleted;
     }
 
     private void Start()
@@ -148,19 +143,6 @@ public class GameManager : MonoBehaviour
         if (value >= 1f)
         {
             Invoke("CloseLoading", 1f);
-        }
-    }
-
-    public void OnVideoCompleted()
-    {
-        //정리
-        if (currentPattern == GamePatternState.Play)
-        {
-            videoController.CloseVideo(EVideoIdx.SkipSleeping, true);
-        }
-        else
-        {
-            videoController.CloseVideo(EVideoIdx.SkipPhase, false);
         }
     }
     void CloseLoading()
@@ -203,7 +185,9 @@ public class GameManager : MonoBehaviour
 
         if (loadingInterface != null)
         {
-            videoController.ShowVideo();
+            EVideoIdx VideoIdx = currentPattern == GamePatternState.NextChapter ? EVideoIdx.SkipSleeping : EVideoIdx.SkipPhase;
+            bool IsLooping = VideoIdx == EVideoIdx.SkipSleeping ? true : false;
+            videoController.ShowVideo(VideoIdx, IsLooping);
         }
     }
 
@@ -245,7 +229,6 @@ public class GameManager : MonoBehaviour
             time = SITime.Night;
         }
 
-        OnVideoCompleted(); //미리 데이터 로드
         StartCoroutine(LoadDataAsync());
     }
 

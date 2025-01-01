@@ -265,7 +265,7 @@ public class Sleeping : GameState, IResetStateInterface
     }
 }
 
-public class NextChapter : GameState
+public class NextChapter : GameState, ILoadingInterface
 {
     public override void Init()
     {

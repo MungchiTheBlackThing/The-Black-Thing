@@ -304,7 +304,6 @@ public class ObjectManager : MonoBehaviour
     {
         pc.SetMoonRadioIdx(1); //한 phase가 지나면 1로 리셋
         skipSleep.SetActive(isActive);//이거 대신 video controller 사용 예정
-    
     }
 
 }

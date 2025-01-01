@@ -262,6 +262,6 @@ public class MenuController : MonoBehaviour
     }
     public void tuto()
     {
-        MenuButAnim.SetFloat("tuto", 1f);
+        //MenuButAnim.SetFloat("tuto", 1f);
     }
 }
