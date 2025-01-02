@@ -91,6 +91,7 @@ public class DiaryPageController : MonoBehaviour
         for (int i = 0; i < pages.Count; i++)
         {
             pages[i].SetActive(i == currentPageIndex);
+            return;
         }
         Debug.Log(currentPageIndex + 1);
     }
