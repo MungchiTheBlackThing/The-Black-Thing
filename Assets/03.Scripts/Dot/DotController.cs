@@ -126,9 +126,11 @@ public class DotController : MonoBehaviour
 
         subDialogue = GameObject.Find("SubDialougue");
         subPanel = GameObject.Find("SubPanel");
-        //subPanel.GetComponent<SubPanel>().InitializePanels();
-        //subDialogue.SetActive(false);
+        subPanel.GetComponent<SubPanel>().InitializePanels();
+        subDialogue.SetActive(false);
     }
+
+    
     void Start()
     {
         chapter = manager.Chapter;

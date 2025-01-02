@@ -7,6 +7,12 @@ public class MenuButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(menuon());
+    }
+    IEnumerator menuon()
+    {
+        yield return new WaitForSeconds(0.2f);
         this.transform.parent.GetComponent<MenuController>().tuto();
     }
+
 }
