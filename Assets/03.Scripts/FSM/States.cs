@@ -182,6 +182,7 @@ public class Writing : GameState, ILoadingInterface, IResetStateInterface
         manager.ObjectManager.PlayThinking();
         manager.ObjectManager.ShowDiary(false);
         dot.ChangeState(DotPatternState.Phase, "anim_diary");
+        //다이어리 업데이트
     }
    
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)

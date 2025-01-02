@@ -11,21 +11,23 @@ public class DiaryUIController : MonoBehaviour
     [SerializeField]
     GameObject guideUI;
     [SerializeField]
+    GameObject popupUI;
+    [SerializeField]
     GameObject openDiaryUI;
     [SerializeField]
     GameObject closeDiaryUI;
 
+
     public void SetActiveGuide()
     {
         guideUI.SetActive(true);
-        SetActive();
+        SetActiveCloseDiary();
     }
 
-    public void SetActive()
+    public void SetActiveCloseDiary()
     {
         closeDiaryUI.SetActive(true);
     }
-
 
     public void OnClickGuide()
     {
@@ -34,12 +36,14 @@ public class DiaryUIController : MonoBehaviour
             guideUI.SetActive(false);
         }
     }
-    public void OnClickOpen()
+    public void OnClickPopupUIOpen()
     {
-        if (closeDiaryUI.activeSelf)
-        {
-            closeDiaryUI.SetActive(false);
-        }
+        popupUI.SetActive(true);
+    }
+
+    public void OnClickDiary()
+    {
+        popupUI.SetActive(false);
         openDiaryUI.SetActive(true);
     }
 
@@ -50,6 +54,11 @@ public class DiaryUIController : MonoBehaviour
         if(gameObject)
         {
             gameObject.SetActive(false);
+        }
+
+        if(openDiaryUI.activeSelf)
+        {
+            openDiaryUI.SetActive(false);
         }
     }
 }

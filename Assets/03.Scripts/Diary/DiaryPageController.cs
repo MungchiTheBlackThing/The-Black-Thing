@@ -1,36 +1,58 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DiaryPageController : MonoBehaviour
+[Serializable]
+public class DiarySubEntry
 {
     [SerializeField]
-    private List<GameObject> pages; // 페이지 GameObject들을 저장할 리스트
-
-    private int currentPageIndex = 0; // 현재 페이지 인덱스
-
+    public string text;
     [SerializeField]
-    private float minClickTime = 0.3f; // 꾸욱 클릭 기준 시간
+    public Sprite image;
+}
+[Serializable]
+public class DiaryEntry
+{
+    [SerializeField]
+    public string title;
+    [SerializeField]
+    public string text;
+    [SerializeField]
+    public string subTitle;
+   
+    [SerializeField] 
+    public DiarySubEntry[] diarySub;
+}
 
+public class DiaryPageController : MonoBehaviour
+{
+  
+    private int currentPageIndex = 0; // 현재 페이지 인덱스
     private bool isClick = false; // 버튼 클릭 여부
     private float clickTime = 0.0f; // 클릭 시간
+    private int maxChapterIdx;
 
     [SerializeField]
-    private GameManager gameManger; // 다음 페이지 버튼
+    List<DiaryEntry> pages; // 페이지 GameObject들을 저장할 리스트
+    [SerializeField]
+    DiaryPage page;
 
-    public int chapter;
-    private void Start()
+    [SerializeField]
+    float minClickTime = 0.3f; // 꾸욱 클릭 기준 시간
+
+    [SerializeField]
+    GameManager gameManger; // 다음 페이지 버튼
+
+    private void OnEnable()
     {
-        foreach (Transform child in transform)
-        {
-            pages.Add(child.gameObject);
-        }
+        maxChapterIdx = gameManger.Chapter - 1;
+        currentPageIndex = maxChapterIdx;
+        isClick = false;
+        clickTime = 0.0f;
 
-        chapter = gameManger.Chapter - 1;
-        // 초기화: 첫 페이지 활성화, 나머지 비활성화
         UpdatePageVisibility();
-        // 버튼 이벤트 추가
     }
 
     private void Update()
@@ -56,7 +78,7 @@ public class DiaryPageController : MonoBehaviour
 
         if (clickTime >= minClickTime)
         {
-            if (currentPageIndex < chapter)
+            if (currentPageIndex < maxChapterIdx)
             {
                 currentPageIndex++;
                 UpdatePageVisibility();
@@ -73,7 +95,6 @@ public class DiaryPageController : MonoBehaviour
 
         if (clickTime >= minClickTime)
         {
-            Debug.Log("Long Click");
             if (currentPageIndex > 0)
             {
                 currentPageIndex--;
@@ -88,10 +109,9 @@ public class DiaryPageController : MonoBehaviour
     private void UpdatePageVisibility()
     {
         // 모든 페이지를 비활성화하고 현재 페이지만 활성화
-        for (int i = 0; i < pages.Count; i++)
-        {
-            pages[i].SetActive(i == currentPageIndex);
-        }
-        Debug.Log(currentPageIndex + 1);
+        DiaryEntry entry = pages[currentPageIndex];
+
+        page.UpdateDiaryPage(entry.title, entry.text, entry.subTitle, entry.diarySub);
+        
     }
 }

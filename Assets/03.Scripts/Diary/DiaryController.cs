@@ -120,7 +120,7 @@ public class DiaryController : BaseObject, ISleepingInterface
         }
         else
         {
-            diaryUI.SetActive();
+            diaryUI.SetActiveCloseDiary();
         }
     }
 
