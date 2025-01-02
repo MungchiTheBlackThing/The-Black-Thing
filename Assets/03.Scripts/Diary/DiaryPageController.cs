@@ -29,21 +29,21 @@ public class DiaryEntry
 public class DiaryPageController : MonoBehaviour
 {
   
-    private int currentPageIndex = 0; // ÇöÀç ÆäÀÌÁö ÀÎµ¦½º
-    private bool isClick = false; // ¹öÆ° Å¬¸¯ ¿©ºÎ
-    private float clickTime = 0.0f; // Å¬¸¯ ½Ã°£
+    private int currentPageIndex = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
+    private bool isClick = false; // ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private float clickTime = 0.0f; // Å¬ï¿½ï¿½ ï¿½Ã°ï¿½
     private int maxChapterIdx;
 
     [SerializeField]
-    List<DiaryEntry> pages; // ÆäÀÌÁö GameObjectµéÀ» ÀúÀåÇÒ ¸®½ºÆ®
+    List<DiaryEntry> pages; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ GameObjectï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
     [SerializeField]
     DiaryPage page;
 
     [SerializeField]
-    float minClickTime = 0.3f; // ²Ù¿í Å¬¸¯ ±âÁØ ½Ã°£
+    float minClickTime = 0.3f; // ï¿½Ù¿ï¿½ Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
     [SerializeField]
-    GameManager gameManger; // ´ÙÀ½ ÆäÀÌÁö ¹öÆ°
+    GameManager gameManger; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°
 
     private void OnEnable()
     {
@@ -85,7 +85,7 @@ public class DiaryPageController : MonoBehaviour
             }
             else
             {
-                Debug.Log("ÀÛ¼ºµÇÁö ¾ÊÀº ÀÏ±â");
+                Debug.Log("ï¿½Û¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï±ï¿½");
             }
         }
     }
@@ -102,13 +102,13 @@ public class DiaryPageController : MonoBehaviour
             }
             else
             {
-                Debug.Log("ÀÏ±âÀåÀº À½¼ö°¡ ¾ø´Ù");
+                Debug.Log("ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
             }
         }
     }
     private void UpdatePageVisibility()
     {
-        // ¸ðµç ÆäÀÌÁö¸¦ ºñÈ°¼ºÈ­ÇÏ°í ÇöÀç ÆäÀÌÁö¸¸ È°¼ºÈ­
+        // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­
         DiaryEntry entry = pages[currentPageIndex];
 
         page.UpdateDiaryPage(entry.title, entry.text, entry.subTitle, entry.diarySub);
