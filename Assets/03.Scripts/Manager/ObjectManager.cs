@@ -295,6 +295,17 @@ public class ObjectManager : MonoBehaviour
             bookPile.SetActive(false);
         }
     }
+
+    public void ShowDiary(bool isActive)
+    {
+
+        GameObject diary = pool.SearchMemory("phase_diary");
+
+        if (diary)
+        {
+            diary.SetActive(isActive);
+        }
+    }
     public void Translate(LANGUAGE language)
     {
         Debug.Log("게임 오브젝트 번역합니다.\n");
