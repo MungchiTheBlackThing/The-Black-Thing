@@ -89,7 +89,7 @@ public class DiaryPageController : MonoBehaviour
         // ��� �������� ��Ȱ��ȭ�ϰ� ���� �������� Ȱ��ȭ
         DiaryEntry entry = pages[currentPageIndex];
 
-        page.UpdateDiaryPage(entry.title, entry.text, entry.subTitle, entry.diarySub);
+        //page.UpdateDiaryPage(entry.title, entry.text, entry.subTitle, entry.diarySub);
         
     }
 }

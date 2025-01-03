@@ -34,8 +34,8 @@ public class DiaryPage : MonoBehaviour
 
         for(int i=0; i<subs.Length; i++)
         {
-            sub_diary[i].text.text = subs[i].text;
-            sub_diary[i].image.sprite = subs[i].image;
+/*            sub_diary[i].text.text = subs[i].text;
+            sub_diary[i].image.sprite = subs[i].image;*/
         }
 
     }
