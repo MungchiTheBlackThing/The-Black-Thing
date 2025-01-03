@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using JetBrains.Annotations;
+using UnityEngine;
 
 [System.Serializable]
 public class MainMenu
@@ -130,6 +131,28 @@ public class WatchingPattern
     public List<string> pattern;
 }
 
+[System.Serializable]
+public class DiarySubEntry
+{
+    [SerializeField]
+    public string[] text;
+    [SerializeField]
+    public string imagePath;
+}
+
+[System.Serializable]
+public class DiaryEntry
+{
+    [SerializeField]
+    int id;
+    [SerializeField]
+    public string[] title;
+    [SerializeField]
+    public string[] text;
+    
+    [SerializeField]
+    public DiarySubEntry[] diarySub;
+}
 
 [System.Serializable]
 public class SettingInfo

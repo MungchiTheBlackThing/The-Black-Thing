@@ -4,28 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
-public class DiarySubEntry
-{
-    [SerializeField]
-    public string text;
-    [SerializeField]
-    public Sprite image;
-}
-[Serializable]
-public class DiaryEntry
-{
-    [SerializeField]
-    public string title;
-    [SerializeField]
-    public string text;
-    [SerializeField]
-    public string subTitle;
-   
-    [SerializeField] 
-    public DiarySubEntry[] diarySub;
-}
-
 public class DiaryPageController : MonoBehaviour
 {
   
