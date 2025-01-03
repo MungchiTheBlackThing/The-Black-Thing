@@ -86,7 +86,7 @@ public class MoonoteController : MonoBehaviour
         {
             Color color = next.targetGraphic.color;
             color.a = 255.0f;
-            next.targetGraphic.color = color;
+            next.targetGraphic.color= color;
             prev.targetGraphic.color = color;
             Debug.Log(currentPageIndex);
         }
