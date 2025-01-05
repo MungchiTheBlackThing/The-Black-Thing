@@ -54,5 +54,17 @@ public class ReadData : MonoBehaviour
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
             DataManager.Instance.PoemData = JsonUtility.FromJson<Poems>(loadedTextAsset.ToString());
         }
+
+        resourceRequest = Resources.LoadAsync<TextAsset>("Json/DiaryData");
+
+        // 로딩이 완료될 때까지 대기
+        yield return resourceRequest;
+
+        // 로딩이 완료되면 Asset에 접근 가능
+        if (resourceRequest.asset != null)
+        {
+            TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
+            DataManager.Instance.DiaryData = JsonUtility.FromJson<DiaryEntry>(loadedTextAsset.ToString());
+        }
     }
 }

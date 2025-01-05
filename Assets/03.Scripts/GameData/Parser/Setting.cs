@@ -132,29 +132,6 @@ public class WatchingPattern
 }
 
 [System.Serializable]
-public class DiarySubEntry
-{
-    [SerializeField]
-    public string[] text;
-    [SerializeField]
-    public string imagePath;
-}
-
-[System.Serializable]
-public class DiaryEntry
-{
-    [SerializeField]
-    int id;
-    [SerializeField]
-    public string[] title;
-    [SerializeField]
-    public string[] text;
-    
-    [SerializeField]
-    public DiarySubEntry[] diarySub;
-}
-
-[System.Serializable]
 public class SettingInfo
 {
     public MainMenu menu;

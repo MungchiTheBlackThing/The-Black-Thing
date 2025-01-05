@@ -62,6 +62,20 @@ public class DataManager : MonoBehaviour
             moonRadioParser = value;
         }
     }
+
+    DiaryEntry diaryData;
+    public DiaryEntry DiaryData
+    {
+        get
+        {
+            return diaryData;
+        }
+        set
+        {
+            diaryData = value;
+        }
+    }
+
     #endregion
     private void Awake()
     {
