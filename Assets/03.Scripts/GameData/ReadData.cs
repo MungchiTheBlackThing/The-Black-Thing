@@ -64,7 +64,7 @@ public class ReadData : MonoBehaviour
         if (resourceRequest.asset != null)
         {
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
-            DataManager.Instance.DiaryData = JsonUtility.FromJson<DiaryEntry>(loadedTextAsset.ToString());
+            DataManager.Instance.DiaryData = JsonUtility.FromJson<Diary>(loadedTextAsset.ToString());
         }
     }
 }

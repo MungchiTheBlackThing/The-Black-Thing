@@ -2,33 +2,60 @@
     "DiaryEntry": [
         {
             "id": 1,
-            "title": [    
+            "title": [
                 "",
                 ""
             ],
-            "Text": [
+            "leftPage": [
                 "",
                 ""
             ],
-            "DiarySubEntry": {
-                "success": {
-                    "text": [
-                        "",
-                        "",
-                        "",
-                        ""
+            "rightPage": {
+                "sub1": {
+                    "success": [
+                        "성공은 꾸준한 노력을 통해 이루어집니다.",
+                        "Success is achieved through consistent effort."
+                    ],
+                    "fail": [
+                        "실패를 두려워하지 말고 도전하세요.",
+                        "Do not fear failure, but embrace challenges."
                     ]
                 },
-                "fail": {
-                    "text": [
-                        "",
-                        "",
-                        "",
-                        ""
+                "sub2": {
+                    "success": [
+                        "성공은 꾸준한 노력을 통해 이루어집니다.",
+                        "Success is achieved through consistent effort."
+                    ],
+                    "fail": [
+                        "실패를 두려워하지 말고 도전하세요.",
+                        "Do not fear failure, but embrace challenges."
+                    ]
+                },
+                "sub3": {
+                    "success": [
+                        "성공은 꾸준한 노력을 통해 이루어집니다.",
+                        "Success is achieved through consistent effort."
+                    ],
+                    "fail": [
+                        "실패를 두려워하지 말고 도전하세요.",
+                        "Do not fear failure, but embrace challenges."
+                    ]
+                },
+                "sub4": {
+                    "success": [
+                        "성공은 꾸준한 노력을 통해 이루어집니다.",
+                        "Success is achieved through consistent effort."
+                    ],
+                    "fail": [
+                        "실패를 두려워하지 말고 도전하세요.",
+                        "Do not fear failure, but embrace challenges."
                     ]
                 }
             },
             "imagePath": [
+                "",
+                "",
+                "",
                 ""
             ]
         }

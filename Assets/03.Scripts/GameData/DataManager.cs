@@ -63,8 +63,8 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    DiaryEntry diaryData;
-    public DiaryEntry DiaryData
+    Diary diaryData;
+    public Diary DiaryData
     {
         get
         {
