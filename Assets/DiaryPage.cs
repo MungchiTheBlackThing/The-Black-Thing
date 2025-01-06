@@ -20,23 +20,35 @@ public class DiaryPage : MonoBehaviour
     TMP_Text title;
     [SerializeField]
     TMP_Text text;
-    [SerializeField]
-    TMP_Text sub_title;
 
     [SerializeField]
     DiarySub[]sub_diary;
 
-    public void UpdateDiaryPage(string title, string text, string sub_title, DiarySubEntry[] subs)
+    public void UpdateDiaryPage(List<string> title, List<string> text, RightPage subs, List<string> imagePath, int languageIdx, List<bool> isSuccess)
     {
-        this.title.text = title;
-        this.text.text = text;
-        this.sub_title.text = sub_title;
+        this.title.text = title[languageIdx];
+        this.text.text = text[languageIdx];
 
-        for(int i=0; i<subs.Length; i++)
+        for(int i=0; i<sub_diary.Length; i++)
         {
-/*            sub_diary[i].text.text = subs[i].text;
-            sub_diary[i].image.sprite = subs[i].image;*/
-        }
+            if (isSuccess[i])
+            {
+                sub_diary[i].text.text = subs.sub[i].success[languageIdx];
+            }
+            else
+            {
+                sub_diary[i].text.text = subs.sub[i].fail[languageIdx];
+            }
 
+            Sprite sprite = Resources.Load<Sprite>(imagePath[i]);
+            if (sprite != null)
+            {
+                sub_diary[i].image.sprite = sprite; // Image에 Sprite 할당
+            }
+            else
+            {
+                Debug.LogError($"이미지 로드 실패: {imagePath[i]}");
+            }
+        }
     }
 }

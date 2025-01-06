@@ -13,8 +13,6 @@ public class DiaryPageController : MonoBehaviour
     private int maxChapterIdx;
 
     [SerializeField]
-    List<DiaryEntry> pages; // ������ GameObject���� ������ ����Ʈ
-    [SerializeField]
     DiaryPage page;
 
     [SerializeField]
@@ -22,6 +20,9 @@ public class DiaryPageController : MonoBehaviour
 
     [SerializeField]
     GameManager gameManger; // ���� ������ ��ư
+
+    [SerializeField]
+    List<Animator> animators;
 
     private void OnEnable()
     {
@@ -61,10 +62,6 @@ public class DiaryPageController : MonoBehaviour
                 currentPageIndex++;
                 UpdatePageVisibility();
             }
-            else
-            {
-                Debug.Log("�ۼ����� ���� �ϱ�");
-            }
         }
     }
     public void ButtonUpPrev()
@@ -78,18 +75,15 @@ public class DiaryPageController : MonoBehaviour
                 currentPageIndex--;
                 UpdatePageVisibility();
             }
-            else
-            {
-                Debug.Log("�ϱ����� ������ ����");
-            }
         }
     }
     private void UpdatePageVisibility()
     {
-        // ��� �������� ��Ȱ��ȭ�ϰ� ���� �������� Ȱ��ȭ
-        DiaryEntry entry = pages[currentPageIndex];
+        DiaryEntry entry = DataManager.Instance.DiaryData.DiaryEntry[currentPageIndex];
+        int language = (int)gameManger.pc.GetLanguage();
 
-        //page.UpdateDiaryPage(entry.title, entry.text, entry.subTitle, entry.diarySub);
-        
+        //서브 성공 여부 확인을 위한 부울 리스트
+        List<bool> sub_success = gameManger.pc.GetSubPhase(gameManger.Chapter);
+        page.UpdateDiaryPage(entry.title, entry.leftPage, entry.rightPage, entry.imagePath, language, sub_success);
     }
 }
