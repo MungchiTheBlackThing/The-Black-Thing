@@ -10395,7 +10395,7 @@ MonoBehaviour:
   page: {fileID: 0}
   minClickTime: 1
   gameManger: {fileID: 0}
-  animators: []
+  diaryAnim: {fileID: 0}
 --- !u!1 &414805989
 GameObject:
   m_ObjectHideFlags: 0
@@ -40330,9 +40330,7 @@ MonoBehaviour:
   page: {fileID: 1708757356}
   minClickTime: 1
   gameManger: {fileID: 199268581}
-  animators:
-  - {fileID: 0}
-  - {fileID: 0}
+  diaryAnim: {fileID: 1091506836}
 --- !u!1 &1403879077
 GameObject:
   m_ObjectHideFlags: 0

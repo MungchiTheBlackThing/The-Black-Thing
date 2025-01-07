@@ -22,7 +22,7 @@ public class DiaryPageController : MonoBehaviour
     GameManager gameManger; // ���� ������ ��ư
 
     [SerializeField]
-    List<Animator> animators;
+    Animator diaryAnim;
 
     private void OnEnable()
     {
@@ -49,30 +49,33 @@ public class DiaryPageController : MonoBehaviour
     public void ButtonDown()
     {
         isClick = true;
+        diaryAnim.SetTrigger("Pressed");
     }
 
     public void ButtonUpNext()
     {
-        isClick = false;
-
+        diaryAnim.SetInteger("Direction", 1);
+        
         if (clickTime >= minClickTime)
         {
             if (currentPageIndex < maxChapterIdx)
             {
                 currentPageIndex++;
+                diaryAnim.SetTrigger("Relased");
                 UpdatePageVisibility();
             }
         }
     }
     public void ButtonUpPrev()
     {
-        isClick = false;
+        diaryAnim.SetInteger("Direction",0);
 
         if (clickTime >= minClickTime)
         {
             if (currentPageIndex > 0)
             {
                 currentPageIndex--;
+                diaryAnim.SetTrigger("Relased");
                 UpdatePageVisibility();
             }
         }
