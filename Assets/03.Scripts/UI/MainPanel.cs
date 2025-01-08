@@ -80,6 +80,12 @@ public class MainPanel : MonoBehaviour
         Selection4Panel = Instantiate(Resources.Load("DialBalloon/Selection4Selection") as GameObject, transform);
         Selection4Panel.SetActive(false);
         Selection4Panel.AddComponent<CanvasGroup>();
+
+        if (MainClick != null && MainClick.transform.parent == transform)
+        {
+            // 자식 오브젝트를 계층 구조에서 마지막으로 이동
+            MainClick.transform.SetSiblingIndex(transform.childCount - 1);
+        }
     }
     void ShowSelection(string options)
     {

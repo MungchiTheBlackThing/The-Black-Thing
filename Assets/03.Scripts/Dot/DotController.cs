@@ -60,7 +60,7 @@ public class DotController : MonoBehaviour
     [SerializeField]
     public GameObject subPanel;
 
-    public bool tutorial = true; //DoorController에 쓰임
+    public bool tutorial = false; //DoorController에 쓰임
     public GameObject Dust
     {
         get { return dust; }

@@ -7,10 +7,13 @@ public class MoonnoteUI : MonoBehaviour
     [SerializeField] GameObject Menu;
 
     private MenuController menuController;
+
+    private DotController dotController;
     // Start is called before the first frame update
     void Start()
     {
         Menu = GameObject.FindWithTag("Menu");
+        dotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
         menuController = Menu.GetComponent<MenuController>();
     }
 
@@ -22,8 +25,12 @@ public class MoonnoteUI : MonoBehaviour
 
     public void Exit()
     {
-        menuController.onlyskipoff();
-        menuController.tuto();
+        if (dotController.tutorial)
+        {
+            menuController.onlyskipoff();
+            menuController.tuto();
+        }
+        
         this.gameObject.SetActive(false);
     }
 }
