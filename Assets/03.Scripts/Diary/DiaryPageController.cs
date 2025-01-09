@@ -7,9 +7,12 @@ using UnityEngine.UI;
 public class DiaryPageController : MonoBehaviour
 {
   
-    private int currentPageIndex = 0; // ���� ������ �ε���
-    private bool isClick = false; // ��ư Ŭ�� ����
-    private float clickTime = 0.0f; // Ŭ�� �ð�
+    int currentPageIndex = 0; // ���� ������ �ε���
+    bool isLeftClick = false; // ��ư Ŭ�� ����
+    bool isRightClick = false; // ��ư Ŭ�� ����
+
+    float leftClickTime = 0.0f; // Ŭ�� �ð�
+    float rightClickTime = 0.0f;
     private int maxChapterIdx;
 
     [SerializeField]
@@ -22,63 +25,103 @@ public class DiaryPageController : MonoBehaviour
     GameManager gameManger; // ���� ������ ��ư
 
     [SerializeField]
-    Animator diaryAnim;
+    Animator leftDiaryAnim;
+
+    [SerializeField]
+    Animator rightDiaryAnim;
 
     private void OnEnable()
     {
         maxChapterIdx = gameManger.Chapter - 1;
         currentPageIndex = maxChapterIdx;
-        isClick = false;
-        clickTime = 0.0f;
-
+        isRightClick = false;
+        isLeftClick = false;
+        leftClickTime = 0.0f;
+        rightClickTime = 0.0f;
         UpdatePageVisibility();
     }
 
     private void Update()
     {
-        if (isClick)
+        if (isLeftClick)
         {
-            clickTime += Time.deltaTime;
+            leftClickTime += Time.deltaTime;
         }
         else
         {
-            clickTime = 0.0f;
+            leftClickTime = 0.0f;
+            isLeftClick = false;
+        }
+
+        if(isRightClick)
+        {
+            rightClickTime += Time.deltaTime;
+        }
+        else
+        {
+            rightClickTime = 0.0f;
+            isRightClick = false;
         }
     }
 
-    public void ButtonDown()
+    public void LeftButtonDown()
     {
-        isClick = true;
-        diaryAnim.SetTrigger("Pressed");
+        isLeftClick = true;
+        leftDiaryAnim.SetBool("isPressed", isLeftClick);
+    }
+
+    public void RightButtonDown()
+    {
+        isRightClick = true;
+        rightDiaryAnim.SetBool("isPressed", isRightClick);
     }
 
     public void ButtonUpNext()
     {
-        diaryAnim.SetInteger("Direction", 1);
-        
-        if (clickTime >= minClickTime)
+        isRightClick = false;
+
+        if (rightClickTime >= minClickTime)
         {
             if (currentPageIndex < maxChapterIdx)
             {
                 currentPageIndex++;
-                diaryAnim.SetTrigger("Relased");
+                rightDiaryAnim.SetTrigger("Relased");
+                rightDiaryAnim.SetBool("isPressed", isRightClick);
                 UpdatePageVisibility();
             }
+            else
+            {
+                rightDiaryAnim.SetBool("isPressed", isRightClick);
+            }
+        }
+        else
+        {
+            rightDiaryAnim.SetBool("isPressed", isRightClick);
         }
     }
+
     public void ButtonUpPrev()
     {
-        diaryAnim.SetInteger("Direction",0);
+        isLeftClick = false;
 
-        if (clickTime >= minClickTime)
+        if (leftClickTime >= minClickTime)
         {
             if (currentPageIndex > 0)
             {
                 currentPageIndex--;
-                diaryAnim.SetTrigger("Relased");
+                leftDiaryAnim.SetTrigger("Relased");
                 UpdatePageVisibility();
             }
+            else
+            {
+                leftDiaryAnim.SetBool("isPressed", isLeftClick);
+            }
         }
+        else
+        {
+            leftDiaryAnim.SetBool("isPressed", isLeftClick);
+        }
+
     }
     private void UpdatePageVisibility()
     {
