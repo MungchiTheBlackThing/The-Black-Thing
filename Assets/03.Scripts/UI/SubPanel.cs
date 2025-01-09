@@ -637,6 +637,7 @@ public class SubPanel : MonoBehaviour
         }
         else
         {
+            // 서브 다이얼로그가 온전히 끝났을 경우
             Debug.Log("Current entry is null. Ending dialogue.");
             DialEnd();
             return;
