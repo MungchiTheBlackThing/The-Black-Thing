@@ -20,6 +20,11 @@ public class TimeSkipUIController : MonoBehaviour
     TMP_Text timeText;
 
     [SerializeField]
+    GameManager gameManager;
+
+    [SerializeField]
+    DotController dotController;
+    [SerializeField]
     ObjectManager objectManager;
 
     float[] timeStamp = { 3600f, 1800f, 7200f, 1800f, 1800f };
@@ -35,6 +40,10 @@ public class TimeSkipUIController : MonoBehaviour
         {
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
+
+        dotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
+
+        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
 
         playerController.nextPhaseDelegate += NextPhase;
 
