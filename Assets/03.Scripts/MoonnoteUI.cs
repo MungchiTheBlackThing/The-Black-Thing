@@ -27,7 +27,7 @@ public class MoonnoteUI : MonoBehaviour
     {
         if (dotController.tutorial)
         {
-            menuController.onlyskipoff();
+            menuController.skipon();
             menuController.tuto();
         }
         

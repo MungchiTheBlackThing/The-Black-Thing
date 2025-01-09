@@ -303,6 +303,11 @@ public class GameManager : MonoBehaviour
             mainState.StartMain(this, fileName);
         }
     }
+
+    public void SubContinue()
+    {
+        subDialoguePanel.GetComponent<SubDialogue>().SubContinue();
+    }
     public void Delay(string function, float delay)
     {
         Invoke(function, delay);

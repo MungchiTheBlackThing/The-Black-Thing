@@ -11179,10 +11179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac1e54430822664bbbafb5ba1ce7452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pages: []
+  page: {fileID: 0}
   minClickTime: 1
   gameManger: {fileID: 0}
-  chapter: 0
+  diaryAnim: {fileID: 0}
 --- !u!1 &414805989
 GameObject:
   m_ObjectHideFlags: 0
@@ -13559,7 +13559,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1007219009}
         m_TargetAssemblyTypeName: TimeSkipUIController, Assembly-CSharp
-        m_MethodName: YesClick
+        m_MethodName: TutoYesClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23510,9 +23510,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2DC\uAC04\uC740 \uC0C1\uB300\uC801\uC778 \uAC83. \uB290\uB9AC\uAC8C
-    \uD750\uB974\uB294\L\uC774 \uAE30\uB2E4\uB9BC\uC758 \uC2DC\uAC04\uC744 \uBE68\uB9AC
-    \uAC10\uC544 \uB118\uAE38\uAE4C\uC694?"
+  m_text: "\uC624\uB298\uC740 \uBB49\uCE58\uB97C \uB9CC\uB09C \uCCAB\uB0A0!\L\uBB49\uCE58\uB97C
+    \uC870\uAE08 \uC77C\uCC0D \uBCF4\uB7EC \uAC08\uAE4C\uC694?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
   m_sharedMaterial: {fileID: 1188920287867902073, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
@@ -23648,6 +23647,7 @@ MonoBehaviour:
   loading:
   - {fileID: 8940817456850249698}
   - {fileID: 1600102976213365414}
+  video: {fileID: 0}
 --- !u!1 &869900723
 GameObject:
   m_ObjectHideFlags: 0
@@ -24316,6 +24316,8 @@ MonoBehaviour:
   - {fileID: 1231716919}
   - {fileID: 1159102270}
   objectManager: {fileID: 606963712}
+  dotController: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!114 &902344435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28082,6 +28084,8 @@ MonoBehaviour:
   - {fileID: 1449470183}
   - {fileID: 1184317142}
   objectManager: {fileID: 606963712}
+  dotController: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!114 &1007219010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41928,10 +41932,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac1e54430822664bbbafb5ba1ce7452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pages: []
+  page: {fileID: 0}
   minClickTime: 1
   gameManger: {fileID: 0}
-  chapter: 0
+  diaryAnim: {fileID: 0}
 --- !u!1 &1403879077
 GameObject:
   m_ObjectHideFlags: 0
@@ -45403,6 +45407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guideUI: {fileID: 1839014981}
+  popupUI: {fileID: 0}
   openDiaryUI: {fileID: 1390598891}
   closeDiaryUI: {fileID: 469792793}
 --- !u!1 &1484038673
@@ -48582,6 +48587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guideUI: {fileID: 1853110056}
+  popupUI: {fileID: 0}
   openDiaryUI: {fileID: 414686711}
   closeDiaryUI: {fileID: 916743592}
 --- !u!1 &1588161402

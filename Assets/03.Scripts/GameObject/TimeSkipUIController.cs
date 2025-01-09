@@ -52,7 +52,7 @@ public class TimeSkipUIController : MonoBehaviour
     {
         if(timeIdx != -1)
         {
-            int hour = (int)time / HOUR; //3600ÃÊ ³ª´®
+            int hour = (int)time / HOUR; //3600ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             int min = ((int)time % HOUR) / MIN;
             timeText.text = (hour).ToString() + "h " + (min).ToString() + "m";
             time -= Time.deltaTime;
@@ -79,7 +79,7 @@ public class TimeSkipUIController : MonoBehaviour
 
         text[0].text = DataManager.Instance.Settings.timeSkip.title[Idx];
 
-        //¾ÆÀÌÄÜ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         text[1].text = DataManager.Instance.Settings.timeSkip.yes[Idx];
         text[2].text = DataManager.Instance.Settings.timeSkip.no[Idx];
 
@@ -105,6 +105,20 @@ public class TimeSkipUIController : MonoBehaviour
     {
         popup.SetActive(false);
         playerController.NextPhase();
+    }
 
+    public void TutoYesClick()
+    {
+        const string anim = "anim_default";
+        popup.SetActive(false);
+        gameManager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 1f);
+        dotController.ChangeState(DotPatternState.Default, anim, 3);
+        StartCoroutine(subcontinue(1.2f));
+    }
+    IEnumerator subcontinue (float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameManager.SubContinue();
+        this.gameObject.SetActive(false);
     }
 }
