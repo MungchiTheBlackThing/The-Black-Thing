@@ -55,16 +55,17 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         translateManager = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
         translateManager.Translate(GetLanguage());
-        //nextPhaseDelegate(player.currentPhase);
-
+        
         successSubDialDelegate += SuccessSubDial;
         currentChapter = GetChapter();
+
     }
     // Update is called once per frame
     //1시간이 되었는지 체크하기 위해서 저정용도
     void Update()
     {
         elapsedTime += Time.deltaTime;
+
     }
     int PhaseIdx = 0;
     void SuccessSubDial(int phase, string subTitle)

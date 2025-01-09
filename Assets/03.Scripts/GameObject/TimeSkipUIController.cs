@@ -17,7 +17,17 @@ public class TimeSkipUIController : MonoBehaviour
     TMP_Text[] text;
 
     [SerializeField]
+    TMP_Text timeText;
+
+    [SerializeField]
     ObjectManager objectManager;
+
+    float[] timeStamp = { 3600f, 1800f, 7200f, 1800f, 1800f };
+    int timeIdx = -1;
+    float time = 0;
+    const int HOUR = 3600;
+    const int MIN = 60;
+
 
     private void Start()
     {
@@ -25,11 +35,38 @@ public class TimeSkipUIController : MonoBehaviour
         {
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
+
+        playerController.nextPhaseDelegate += NextPhase;
+
+        timeIdx = playerController.GetAlreadyEndedPhase();
+        time = timeStamp[timeIdx];
+
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
 
         translator.translatorDel += Translate;
 
         objectManager.activeSystemUIDelegate += ControllActiveState;
+    }
+
+    private void Update()
+    {
+        if(timeIdx != -1)
+        {
+            int hour = (int)time / HOUR; //3600ÃÊ ³ª´®
+            int min = ((int)time % HOUR) / MIN;
+            timeText.text = (hour).ToString() + "h " + (min).ToString() + "m";
+            time -= Time.deltaTime;
+        }
+    }
+
+    void NextPhase(GamePatternState gameState)
+    {
+        Debug.Log("NextPhase");
+        timeIdx = (int)gameState;
+        if(timeIdx < timeStamp.Length)
+        {
+            time = timeStamp[timeIdx];
+        }
     }
 
     public void ControllActiveState(bool InActive)
