@@ -19,12 +19,25 @@ public class TimeSkipUIController : MonoBehaviour
     [SerializeField]
     ObjectManager objectManager;
 
+    [SerializeField]
+    DotController dotController;
+
+    [SerializeField]
+    GameManager gameManager;
+    private void OnEnable()
+    {
+        
+    }
     private void Start()
     {
         if(playerController == null)
         {
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
+        dotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
+
+        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
 
         translator.translatorDel += Translate;
@@ -68,6 +81,20 @@ public class TimeSkipUIController : MonoBehaviour
     {
         popup.SetActive(false);
         playerController.NextPhase();
+    }
 
+    public void TutoYesClick()
+    {
+        const string anim = "anim_default";
+        popup.SetActive(false);
+        gameManager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 1f);
+        dotController.ChangeState(DotPatternState.Default, anim, 3);
+        StartCoroutine(subcontinue(1.2f));
+    }
+    IEnumerator subcontinue (float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameManager.SubContinue();
+        this.gameObject.SetActive(false);
     }
 }
