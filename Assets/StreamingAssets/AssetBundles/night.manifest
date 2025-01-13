@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3240962945
+CRC: 3993540745
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 50233b7fab6af9bbe4a950681fd2fce1
+    Hash: 45d33b3c608eb1452ab193a2d1158e00
   TypeTreeHash:
     serializedVersion: 2
     Hash: 795893c1f35def1f001e034a8b406737
@@ -25,9 +25,9 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Prefabs/Night/main_table.prefab
-- Assets/Prefabs/Night/main_bed.prefab
-- Assets/Prefabs/Night/main_web.prefab
-- Assets/Prefabs/Night/main_door_open.prefab
-- Assets/Prefabs/Night/main_door_close.prefab
+- Assets/09.Image/DialogueMain/Night/main_table.prefab
+- Assets/09.Image/DialogueMain/Night/main_bed.prefab
+- Assets/09.Image/DialogueMain/Night/main_web.prefab
+- Assets/09.Image/DialogueMain/Night/main_door_close.prefab
+- Assets/09.Image/DialogueMain/Night/main_door_open.prefab
 Dependencies: []
