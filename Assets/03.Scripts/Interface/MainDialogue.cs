@@ -149,6 +149,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         mainPanel.ShowNextDialogue();
         manager.ScrollManager.StopCamera(true);
         background = manager.ObjectManager.SetMain(DialogueEntries[0].Background); // 현재 배경이 어떤 값인지 변경
+        Debug.Log("배경:"+ background);
         //배경화면이 켜질 때, 뭉치의 위치도 고장한다.
         //파라미터로 배경값을 전달하면 된다.
         //Day 7을 제외하곤 모두 배경값을 Enter에서 수정하면 되고, 데이 7일때만 변경해준다.
@@ -157,12 +158,17 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     }
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
+        Debug.Log("테스트1");
+    }
+
+    public void MainEnd()
+    {
         Debug.Log("메인 Exit1");
         dot.TriggerMain(false);
         manager.ScrollManager.StopCamera(false);
         if (background)
         {
-            Debug.Log("현재 배경:"+background.name);
+            Debug.Log("현재 배경:" + background.name);
             background.SetActive(false);
         }
         manager.ObjectManager.activeSystemUIDelegate(true);

@@ -53,7 +53,6 @@ public class TimeSkipUIController : MonoBehaviour
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
 
         translator.translatorDel += Translate;
-
         objectManager.activeSystemUIDelegate += ControllActiveState;
     }
 

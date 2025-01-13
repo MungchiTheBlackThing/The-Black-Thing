@@ -5306,6 +5306,7 @@ MonoBehaviour:
   cameraZoom: {fileID: 1526469520}
   UIBalloon: {fileID: 1217076591}
   moonnote: {fileID: 0}
+  SystemUI: {fileID: 1705030965}
   prefabPath: TouchGuide
   guide1: {x: -810, y: -145, z: 0}
   guide2: {x: -1095, y: -195, z: 0}
@@ -24316,9 +24317,10 @@ MonoBehaviour:
   - {fileID: 59862700}
   - {fileID: 1231716919}
   - {fileID: 1159102270}
-  objectManager: {fileID: 606963712}
-  dotController: {fileID: 0}
+  timeText: {fileID: 0}
   gameManager: {fileID: 0}
+  dotController: {fileID: 0}
+  objectManager: {fileID: 606963712}
 --- !u!114 &902344435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28084,9 +28086,10 @@ MonoBehaviour:
   - {fileID: 853746107}
   - {fileID: 1449470183}
   - {fileID: 1184317142}
-  objectManager: {fileID: 606963712}
-  dotController: {fileID: 0}
+  timeText: {fileID: 716807845}
   gameManager: {fileID: 0}
+  dotController: {fileID: 0}
+  objectManager: {fileID: 606963712}
 --- !u!114 &1007219010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42744,7 +42747,7 @@ MonoBehaviour:
   subseq: 1
   SubDialogueEntries: []
   scroll: {fileID: 1526469518}
-  SystemUI: {fileID: 0}
+  SystemUI: {fileID: 1705030965}
   SubPanel: {fileID: 1483283895}
 --- !u!1 &1425035973
 GameObject:

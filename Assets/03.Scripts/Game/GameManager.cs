@@ -282,6 +282,7 @@ public class GameManager : MonoBehaviour
         //await Task.Delay(TimeSpan.FromMinutes(10));
         // 10분 후에 호출되는 작업
         ScriptList script = dot.GetSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크
+        Debug.Log("진행중인 스크립트 키: " + script.ScriptKey);
         DotPatternState dotPattern;
         Debug.Log(script.AnimState + " Sub 진행중");
         if (Enum.TryParse(script.AnimState, true, out dotPattern))

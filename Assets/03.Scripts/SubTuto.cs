@@ -14,6 +14,8 @@ public class SubTuto : MonoBehaviour
     public GameObject UIBalloon;
     [SerializeField]
     public Moonnote moonnote;
+    [SerializeField]
+    GameObject SystemUI;
     
     public string prefabPath = "TouchGuide"; 
     public Vector3 guide1 = new Vector3(-810, -145, 0);
@@ -131,6 +133,7 @@ public class SubTuto : MonoBehaviour
         // 여기에 다이어리 쪽지 관련 플레이어 말 띄우기, 불빛 애니메이션 실행
         UIBalloon.SetActive(true);
         moonnote.anion(UIBalloon);
+        SystemUI.SetActive(true);
     }
 
 

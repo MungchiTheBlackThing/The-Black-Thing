@@ -6,10 +6,14 @@ using TMPro;
 using Assets.Script.DialClass;
 using System;
 using UnityEngine.UIElements;
+using System.Linq;
 
 
 public class ScriptListParser
 {
+
+    [SerializeField]
+    Dictionary<GamePatternState, List<ScriptList>> Stmp;
 
     public void Load(List<List<ScriptList>> InMainStart, List<Dictionary<GamePatternState, List<ScriptList>>> InSubStart)
     {
@@ -29,7 +33,7 @@ public class ScriptListParser
     {
         int preID = 1;
         List<ScriptList> Mtmp = new List<ScriptList>();
-        Dictionary<GamePatternState, List<ScriptList>> Stmp = new Dictionary<GamePatternState, List<ScriptList>>();
+        Stmp = new Dictionary<GamePatternState, List<ScriptList>>();
 
         Stmp[GamePatternState.Watching] = new List<ScriptList>();
         Stmp[GamePatternState.Thinking] = new List<ScriptList>();
@@ -57,10 +61,10 @@ public class ScriptListParser
                     DotPosition = int.Parse(parts[5])
                 };
 
-                // main
-
+                // 메인이랑 서브 분류해서 엔트리 넣어주기 OK
                 if (entry.GameState == GamePatternState.MainA || entry.GameState == GamePatternState.MainB)
                 {
+                    // main
                     Mtmp.Add(entry);
                 }
                 else

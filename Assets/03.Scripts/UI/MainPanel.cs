@@ -174,7 +174,7 @@ public class MainPanel : MonoBehaviour
         }
         else
         {
-            mainDialogue.Exit(gameManager);
+            mainDialogue.MainEnd();
         }
     }
     void PanelOff()

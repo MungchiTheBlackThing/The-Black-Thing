@@ -53,6 +53,7 @@ public class DotController : MonoBehaviour
 
     [SerializeField]
     List<List<ScriptList>> mainScriptLists;
+
     [SerializeField]
     List<Dictionary<GamePatternState,List<ScriptList>>> subScriptLists; //List chapter Dictionary<gamestate,List<ScriptList>>> 
     [SerializeField]
@@ -118,11 +119,11 @@ public class DotController : MonoBehaviour
         states.Add(DotPatternState.Tirgger, new Trigger());
         states.Add(DotPatternState.Tutorial, new DotTutorial());
 
-        ScriptListParser scriptListParser = new ScriptListParser();
+        parser = new ScriptListParser();
         mainScriptLists = new List<List<ScriptList>>();
         subScriptLists = new List<Dictionary<GamePatternState, List<ScriptList>>>();
 
-        scriptListParser.Load(mainScriptLists, subScriptLists);
+        parser.Load(mainScriptLists, subScriptLists);
 
         subDialogue = GameObject.Find("SubDialougue");
         subPanel = GameObject.Find("SubPanel");

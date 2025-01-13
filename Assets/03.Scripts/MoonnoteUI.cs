@@ -29,6 +29,7 @@ public class MoonnoteUI : MonoBehaviour
         {
             menuController.skipon();
             menuController.tuto();
+            dotController.tutorial = false;
         }
         
         this.gameObject.SetActive(false);
