@@ -16113,6 +16113,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skipSleep: {fileID: 1600102976213365414}
+  googlePath:
+  - Time: 2
+    path: 11RepjB6uvnmlJFiDTPIKE0cLGyoFUKNO
+  - Time: 3
+    path: 1cStFtCELu0YbV5-a7SbWPwRfI3uEVmOn
+  - Time: 0
+    path: 1vm-7eTCrBNAs3--geV1qbf2Qi5WTfUNm
+  - Time: 1
+    path: 1Oo6U5oL0-wNNrlQuSRnCGe04MmYDp38Q
 --- !u!1 &611372142
 GameObject:
   m_ObjectHideFlags: 0
@@ -22906,6 +22915,8 @@ MonoBehaviour:
   - {fileID: 1231716919}
   - {fileID: 1159102270}
   timeText: {fileID: 0}
+  gameManager: {fileID: 0}
+  dotController: {fileID: 0}
   objectManager: {fileID: 606963712}
 --- !u!114 &902344435
 MonoBehaviour:
@@ -26645,6 +26656,8 @@ MonoBehaviour:
   - {fileID: 1449470183}
   - {fileID: 1184317142}
   timeText: {fileID: 716807845}
+  gameManager: {fileID: 0}
+  dotController: {fileID: 0}
   objectManager: {fileID: 606963712}
 --- !u!114 &1007219010
 MonoBehaviour:

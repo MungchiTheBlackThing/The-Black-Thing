@@ -13,6 +13,15 @@ using UnityEngine.UI;
 using static ObjectPool;
 using Assets.Script.Reward;
 
+[Serializable]
+public class GooglePath
+{
+    [SerializeField]
+    public SITime Time;
+    [SerializeField]
+    public string path;
+}
+
 public class ObjectManager : MonoBehaviour
 {
     //모든 상태가 오브젝트들을 공유한다.
@@ -35,6 +44,10 @@ public class ObjectManager : MonoBehaviour
     string currentTime;
 
     PlayerController pc;
+
+    [SerializeField]
+    List<GooglePath> googlePath;
+
     //Dictionary<현재 시간, FileID> FileID; 제공
     public ObjectManager()
     {
@@ -135,8 +148,18 @@ public class ObjectManager : MonoBehaviour
     // 비동기 로드를 위한 코루틴
     public IEnumerator LoadObjectAsync(string path, int chapter)
     {
+        string tmpPath = "";
+        for(int idx=0; idx < googlePath.Count; idx++)
+        {
+            if (googlePath[idx].Time.ToString() == path)
+            {
+                tmpPath = googlePath[idx].path;
+                break;
+            }
+        }
 
-        const string MainPath = "https://drive.google.com/uc?export=download&id=1ZlmdZEtzqa7yX37gHmFfibFzSkMz73mG";
+        string MainPath = "https://drive.google.com/uc?export=download&id="+ tmpPath;
+
         Action<AssetBundle> callback = LoadMainBackground;
 
         yield return StartCoroutine(pool.LoadFromMemoryAsync(MainPath, callback));
