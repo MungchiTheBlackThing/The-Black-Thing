@@ -18,8 +18,11 @@ public class SubTuto : MonoBehaviour
     GameObject SystemUI;
     
     public string prefabPath = "TouchGuide"; 
-    public Vector3 guide1 = new Vector3(-810, -145, 0);
-    public Vector3 guide2 = new Vector3(-1095, -195, 0);
+
+    Vector3 guide1 = new Vector3(-810, -145, 0);
+    Vector3 guide2 = new Vector3(-1095, -195, 0);
+    Vector3 guide3 = new Vector3(-1100, -400, 0);
+
     public List<(GameObject,int)> Recents = new List<(GameObject,int)> ();
     // Update is called once per frame
     public void tutorial_2(GameObject selectedDot, int determine)
@@ -136,5 +139,21 @@ public class SubTuto : MonoBehaviour
         SystemUI.SetActive(true);
     }
 
-
+    public void skiptouchGuide()
+    {
+        GameObject touchguide = Resources.Load<GameObject>(prefabPath);
+        if (touchguide != null)
+        {
+            // 인스턴스화 및 활성화
+            GameObject instance = Instantiate(touchguide, subPanel.gameObject.transform);
+            instance.transform.localPosition = guide3;
+            instance.SetActive(true);
+            touch = instance.GetComponent<TouchGuide>();
+        }
+        else
+        {
+            Debug.LogError("프리팹을 찾을 수 없습니다!");
+        }
+        touch.skipGuide();
+    }
 }

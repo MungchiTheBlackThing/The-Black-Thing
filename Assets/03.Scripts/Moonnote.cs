@@ -47,4 +47,16 @@ public class Moonnote : MonoBehaviour
         UIBalloon = Balloon;
         MoonnoteLight.SetActive(true);
     }
+
+    public void disappear()
+    {
+        this.gameObject.GetComponent<Animator>().SetTrigger("Disappear");
+        StartCoroutine(off());
+    }
+
+    IEnumerator off()
+    {
+        yield return new WaitForSeconds(2.0f);
+        this.gameObject.SetActive(false);
+    }
 }

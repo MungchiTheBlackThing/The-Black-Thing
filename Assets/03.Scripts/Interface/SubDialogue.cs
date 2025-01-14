@@ -122,7 +122,7 @@ public class SubDialogue : MonoBehaviour
     public void StartSub(string fileName)
     {
         SubPanel subPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
-        if (SystemUI)
+        if (!SystemUI)
             SystemUI = GameObject.Find("SystemUI");
         TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
 

@@ -25,7 +25,6 @@ public class MoonoteController : MonoBehaviour
 
     private void Start()
     {
-        exit.gameObject.SetActive(false);
         nximage = next.gameObject.GetComponent<Image>();
         pvimage = prev.gameObject.GetComponent<Image>();
         foreach (Transform child in transform)

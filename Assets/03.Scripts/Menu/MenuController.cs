@@ -264,4 +264,14 @@ public class MenuController : MonoBehaviour
     {
         MenuButAnim.SetFloat("tuto", 1f);
     }
+    public void LaterON()
+    {
+        StartCoroutine(later());
+    }
+    IEnumerator later()
+    {
+        yield return new WaitForSeconds(2.5f);
+        skipon();
+        GameObject.FindWithTag("GameController").GetComponent<SubTuto>().skiptouchGuide();
+    }
 }

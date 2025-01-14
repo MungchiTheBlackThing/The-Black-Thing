@@ -837,6 +837,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 0}
+  gameManager: {fileID: 0}
+  ischeck: 0
+  exitbut: {fileID: 8279466840924991746}
 --- !u!1 &8279466841994669098
 GameObject:
   m_ObjectHideFlags: 0

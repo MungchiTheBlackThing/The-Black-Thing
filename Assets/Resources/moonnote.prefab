@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1713119322866466192}
   - component: {fileID: 9175667304436329753}
   - component: {fileID: 3765188882804047741}
+  - component: {fileID: 605855418265501412}
   m_Layer: 0
   m_Name: moonnote
   m_TagString: moonnote
@@ -129,6 +130,27 @@ MonoBehaviour:
   MoonnoteLight: {fileID: 6102458866666328506}
   animator: {fileID: 4520801184293459340}
   canvasTransform: {fileID: 0}
+  UIBalloon: {fileID: 0}
+--- !u!95 &605855418265501412
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3935332156806539029}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f58c4e1876c11564dab068028c301b8a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &6102458866666328506
 GameObject:
   m_ObjectHideFlags: 0

@@ -5308,8 +5308,6 @@ MonoBehaviour:
   moonnote: {fileID: 0}
   SystemUI: {fileID: 1705030965}
   prefabPath: TouchGuide
-  guide1: {x: -810, y: -145, z: 0}
-  guide2: {x: -1095, y: -195, z: 0}
 --- !u!1 &201689321
 GameObject:
   m_ObjectHideFlags: 0
@@ -17093,6 +17091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skipSleep: {fileID: 1600102976213365414}
+  googlePath: []
 --- !u!1 &611372142
 GameObject:
   m_ObjectHideFlags: 0

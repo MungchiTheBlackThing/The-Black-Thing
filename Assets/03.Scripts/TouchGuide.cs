@@ -11,10 +11,13 @@ public class TouchGuide : MonoBehaviour
     [SerializeField] 
     SubPanel subPanel;
 
+    [SerializeField]
+    GameObject Touchground;
+
 
     private void OnEnable()
     {
-        myButton = this.GetComponent<Button>();
+        myButton = this.transform.GetChild(3).GetComponent<Button>();
     }
 
     public void tuto2(GameObject selectedDot, int determine)
@@ -57,7 +60,7 @@ public class TouchGuide : MonoBehaviour
         {
             subPanel.playerballoon(selectedDot);
         }
-        Destroy(myButton.gameObject);
+        Destroy(this.gameObject);
     }
     public void tuto3Click(GameObject selectedDot, int determine)
     {
@@ -73,6 +76,27 @@ public class TouchGuide : MonoBehaviour
         {
             subPanel.playerballoon(selectedDot);
         }
-        Destroy(myButton.gameObject);
+        Destroy(this.gameObject);
+    }
+
+    public void skipGuide()
+    {
+        if (myButton != null)
+        {
+            // 버튼의 onClick 이벤트에 함수 추가
+            myButton.onClick.AddListener(() => skipClick());
+            Touchground.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("Button reference is missing!");
+        }
+    }
+
+    public void skipClick()
+    {
+        TimeSkipUIController timeSkip = GameObject.Find("TimeSkip").GetComponent<TimeSkipUIController>();
+        timeSkip.OnClick();
+        Destroy(this.gameObject);
     }
 }
