@@ -5,6 +5,7 @@ using Assets.Script.DialClass;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class SubDialogue : MonoBehaviour
 {
@@ -165,8 +166,12 @@ public class SubDialogue : MonoBehaviour
         SubPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
         if (!SystemUI)
             SystemUI.SetActive(true);
+
         scroll.scrollable();
-        subseq += 1;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName != "Tutorial")
+            subseq += 1;
+
         if (subseq>4)
         {
             subseq = 1;
