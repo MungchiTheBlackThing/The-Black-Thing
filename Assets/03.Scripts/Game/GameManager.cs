@@ -289,6 +289,7 @@ public class GameManager : MonoBehaviour
         {
             dot.ChangeState(dotPattern, script.DotAnim, script.DotPosition);
             dot.TriggerSub(true);
+            pc.ProgressSubDial(script.ScriptKey);
         }
     }
     public void StartTutoMain()

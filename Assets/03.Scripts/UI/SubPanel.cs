@@ -141,6 +141,7 @@ public class SubPanel : MonoBehaviour
             return;
         }
 
+        
         ShowNextDialogue();
     }
 
@@ -150,6 +151,7 @@ public class SubPanel : MonoBehaviour
         sub.currentDialogueList.Clear();
         dialogueIndex = 0;
         sub.Subexit();
+        pc.successSubDialDelegate(pc.GetAlreadyEndedPhase(), pc.currentReward);
     }
     void PanelOff()
     {
@@ -641,7 +643,7 @@ public class SubPanel : MonoBehaviour
             Debug.Log("Current entry is null. Ending dialogue.");
             DialEnd();
            
-            //pc.successSubDialDelegate(pc.GetAlreadyEndedPhase(), );
+           
             return;
         }
 

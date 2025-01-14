@@ -216,6 +216,32 @@ public class ObjectManager : MonoBehaviour
 
         }
 
+        List<EReward> Reward = pc.GetRewards();
+        for (int rewardIdx = 0; rewardIdx < Reward.Count; rewardIdx++)
+        {
+            tmpPath = "Reward/" + currentTime + "/" + Reward[rewardIdx].ToString();
+
+            //호출 Resource에서 해당 Time부분에 있는 reward 업로드
+            ResourceRequest resourceRequest = Resources.LoadAsync<GameObject>(tmpPath);
+
+            while (!resourceRequest.isDone)
+            {
+                loadProgress = (i + resourceRequest.progress) / totalObjects;  // 진행률 업데이트
+                yield return null;
+            }
+
+            if (resourceRequest.asset != null)
+            {
+                GameObject obj2 = resourceRequest.asset as GameObject;
+
+                // Instantiate를 통해 오브젝트 생성 후 삽입
+                GameObject newObj = Instantiate(obj2, this.transform);
+                pool.InsertMemory(newObj);
+ 
+            }
+
+        }
+
         yield return new WaitForSeconds(1f);
         isObjectLoadComplete = true;
     }

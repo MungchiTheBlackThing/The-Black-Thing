@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public delegate void SuccessSubDialDelegate(int phase, string subTitle);
     public SuccessSubDialDelegate successSubDialDelegate;
 
-
+    public string currentReward = "";
     private void Awake()
     {
         //앞으로 player을 동적으로 생성해서 관리할 예정.. 아직은 미리 초기화해서 사용한다.
@@ -68,8 +68,15 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     }
     int PhaseIdx = 0;
+
+    public void ProgressSubDial(string title)
+    {
+        currentReward = title;
+    }
+
     void SuccessSubDial(int phase, string subTitle)
     {
+        Debug.Log("SuccessSubDial" + subTitle);
         string reward = "reward" + subTitle.Substring(subTitle.IndexOf('_'));
 
         EReward eReward;
