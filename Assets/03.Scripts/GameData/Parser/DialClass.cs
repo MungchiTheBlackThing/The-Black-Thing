@@ -91,5 +91,19 @@ namespace Assets.Script.DialClass
         public string KorText;
         public string EngText;
     }
+    [System.Serializable]
+    public class SubDiary
+    {
+        public int ID;
+        public string ScriptKey;
+        public string SucKorText;
+        public string FailKorText;
+        public string SucEngText;
+        public string FailEngText;
+        public string ArtFilePath;
+    }
+    
+
+    
 }
 
