@@ -5307,6 +5307,8 @@ MonoBehaviour:
   UIBalloon: {fileID: 1217076591}
   moonnote: {fileID: 0}
   SystemUI: {fileID: 1705030965}
+  playerController: {fileID: 2022455605}
+  dotController: {fileID: 2046645039688417658}
   prefabPath: TouchGuide
 --- !u!1 &201689321
 GameObject:
@@ -59656,6 +59658,7 @@ MonoBehaviour:
   nickname: SongSuyoung
   currentChapter: 5
   translateManager: {fileID: 0}
+  currentReward: 
 --- !u!4 &2022455606
 Transform:
   m_ObjectHideFlags: 0

@@ -147,6 +147,7 @@ public class SubPanel : MonoBehaviour
 
     public void DialEnd()
     {
+        Debug.Log("서브 대화 끝");
         PanelOff();
         sub.currentDialogueList.Clear();
         dialogueIndex = 0;

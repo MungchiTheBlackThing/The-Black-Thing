@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SubTuto : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class SubTuto : MonoBehaviour
     public Moonnote moonnote;
     [SerializeField]
     GameObject SystemUI;
+    [SerializeField]
+    PlayerController playerController;
+    [SerializeField]
+    DotController dotController;
     
     public string prefabPath = "TouchGuide"; 
 
@@ -103,6 +108,30 @@ public class SubTuto : MonoBehaviour
         tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 0);
         moonnote = GameObject.FindWithTag("moonnote").GetComponent<Moonnote>();
         StartCoroutine(Scroallable());
+    }
+
+    public void tutorial_9(GameObject selectedDot, int determine)
+    {
+        Recents.Add((selectedDot, determine));
+        dotController.tutorial = false;
+        playerController.NextPhase();
+        playerController.WritePlayerFile();
+        // 메인 1로 넘어가야한다
+        StartCoroutine(LoadSceneCoroutine("MainScene"));
+
+    }
+    private IEnumerator LoadSceneCoroutine(string sceneName)
+    {
+        // 씬 비동기 로드 시작
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+
+        // 로딩이 끝날 때까지 대기
+        while (!asyncOperation.isDone)
+        {
+            // 로딩 진행 상황(0~1 사이 값)을 표시할 수도 있음
+            Debug.Log($"Loading progress: {asyncOperation.progress * 100}%");
+            yield return null;
+        }
     }
 
     public void tuto7()
