@@ -67,7 +67,7 @@ public class SubDiaryParser : MonoBehaviour
 
                 SubDiaryEntries.Add(entry);
 
-                Debug.Log($"서브 다이어리: Success = {successText}, Fail = {failText}");
+                //Debug.Log($"서브 다이어리: Success = {successText}, Fail = {failText}");
             }
         }
     }

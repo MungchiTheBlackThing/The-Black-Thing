@@ -29,7 +29,9 @@ public class MainPanel : MonoBehaviour
     [SerializeField] Button NextButton;
     [SerializeField] private TMP_InputField Textinput;
     [SerializeField] GameObject MainClick;
-    
+    [SerializeField] GameObject BackBut;
+
+    [SerializeField] int backindex = -1;
 
     public int dialogueIndex = 0;  // Current dialogue index
     public int Day = 0;  // Current day
@@ -81,9 +83,15 @@ public class MainPanel : MonoBehaviour
         Selection4Panel.SetActive(false);
         Selection4Panel.AddComponent<CanvasGroup>();
 
-        if (MainClick != null && MainClick.transform.parent == transform)
+       
+
+        if (MainClick != null && BackBut != null && BackBut.transform.parent == transform)
         {
-            // 자식 오브젝트를 계층 구조에서 마지막으로 이동
+            BackBut.transform.SetSiblingIndex(transform.childCount - 1);
+            MainClick.transform.SetSiblingIndex(transform.childCount - 2);
+        }
+        else
+        {
             MainClick.transform.SetSiblingIndex(transform.childCount - 1);
         }
     }
@@ -120,6 +128,7 @@ public class MainPanel : MonoBehaviour
             text.text = selections[i];
         }
     }
+
     public void OnSelectionClicked(int index)
     {
         var currentEntry = mainDialogue.GetData(dialogueIndex);
@@ -133,6 +142,7 @@ public class MainPanel : MonoBehaviour
 
                 if (nextIndex != -1)
                 {
+                    backindex = dialogueIndex;
                     dialogueIndex = nextIndex;
                 }
                 else
@@ -159,6 +169,7 @@ public class MainPanel : MonoBehaviour
         SelectionPanel.SetActive(false);
         Selection3Panel.SetActive(false);
         Selection4Panel.SetActive(false);
+        Debug.Log("돌아갈수 있는 번호: " + backindex);
         ShowNextDialogue();
     }
     public void DialEnd()
@@ -167,6 +178,7 @@ public class MainPanel : MonoBehaviour
         PanelOff();
         mainDialogue.currentDialogueList.Clear();
         dialogueIndex = 0;
+        backindex = -1;
         Debug.Log(gameManager.GetComponent<TutorialManager>());
         if (gameManager.GetComponent<TutorialManager>() != null)
         {
@@ -331,5 +343,14 @@ public class MainPanel : MonoBehaviour
         Textinput.text = "";
         inputfield.text = "";
         EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public void Maincontinue()
+    {
+        if (backindex != -1)
+        {
+            dialogueIndex = backindex;
+            ShowNextDialogue();
+        }
     }
 }

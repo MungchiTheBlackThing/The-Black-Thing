@@ -48526,6 +48526,8 @@ MonoBehaviour:
   NextButton: {fileID: 0}
   Textinput: {fileID: 0}
   MainClick: {fileID: 0}
+  BackBut: {fileID: 0}
+  backindex: 0
   dialogueIndex: 0
   Day: 0
 --- !u!1 &1592872502
@@ -61567,6 +61569,8 @@ MonoBehaviour:
   NextButton: {fileID: 0}
   Textinput: {fileID: 0}
   MainClick: {fileID: 809888060}
+  BackBut: {fileID: 0}
+  backindex: 0
   dialogueIndex: 0
   Day: 0
 --- !u!224 &2119342188
