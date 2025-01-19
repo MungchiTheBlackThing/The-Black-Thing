@@ -18,6 +18,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     public List<object> currentDialogueList = new List<object>();
     public GameObject SystemUI;
     public GameManager manager;
+    public int phase;
     MainPanel mainPanel;
 
     protected int fixedPos = -1;
@@ -42,6 +43,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         this.manager = manager;
         this.dot = dot;
         dot.TriggerMain(true);
+        phase = (int)manager.Pattern;
         //dot 한테 chapterList 에서 해당 위치랑 애니메이션이 변함.
         SystemUI = GameObject.Find("SystemUI");
     }
@@ -61,7 +63,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             if (parts.Length >= 15)
             {
                 int main = int.Parse(parts[0]);
-                if (main == 1 || main == 3) 
+                if (main == phase)
                 {
                     DialogueEntry entry = new DialogueEntry
                     {
