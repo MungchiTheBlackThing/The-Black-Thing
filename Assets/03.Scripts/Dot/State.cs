@@ -28,6 +28,8 @@ public class Idle : DotState
         //IdlePos[animKey][position]을 동작한다(애니메이션 상태전환).
         DotAnimState anim;
 
+        Debug.Log("SubDialogue " + dot.Position);
+
         if (Enum.TryParse(dot.AnimKey, true, out anim))
         {
 
@@ -39,7 +41,6 @@ public class Idle : DotState
 
                 dot.Position = IdlePos[anim][UnityEngine.Random.Range(0, maxIdx)];
             }
-
             dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
             if (anim == DotAnimState.anim_mud)
             {
@@ -141,10 +142,21 @@ public class Sub : DotState
     public override void Enter(DotController dot)
     {
         DotAnimState anim;
+
         if (Enum.TryParse(dot.AnimKey, true, out anim))
         {
+            //dot의 position이 지정되어있는가 확인한다. -1은 지정되지 않음, n은 지정
+            //지정된 경우, IdlePos[animKey][position]을 동작한다(애니메이션 상태전환).
+            if (dot.Position == -1)
+            {
+                int maxIdx = SubPos[anim].Count;
+
+                dot.Position = SubPos[anim][UnityEngine.Random.Range(0, maxIdx)];
+            }
             dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
         }
+        dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
+
     }
 
     //상태를 나갈 때 1회 호출 -> Position -1로 변경

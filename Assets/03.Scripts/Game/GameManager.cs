@@ -10,6 +10,7 @@ using UnityEngine.Android;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Runtime.Serialization;
+using Unity.VisualScripting;
 //여기서 게임 상태 정의 
 //하나의 큰 유한 상태 머신 만들 예정
 public enum GamePatternState
@@ -35,6 +36,10 @@ public class GameManager : MonoBehaviour
     protected CameraZoom cameraZoom;
     protected GamePatternState currentPattern;
     public int TutoNum = 0;
+
+
+    ScriptList preScriptList;
+
     public ObjectManager ObjectManager
     {
         get { return objectManager; }
@@ -88,6 +93,7 @@ public class GameManager : MonoBehaviour
         states[GamePatternState.Play] = new Play();
         states[GamePatternState.Sleeping] = new Sleeping();
         states[GamePatternState.NextChapter] = new NextChapter();
+        preScriptList = null;
     }
     private void Awake()
     {
@@ -153,6 +159,12 @@ public class GameManager : MonoBehaviour
         currentPattern = patternState;
         activeState = states[patternState];
         activeState.Enter(this, dot);
+
+        if(dot.GetSubScriptListCount(patternState) != 0)
+        {
+            //서브 실행
+            ShowSubDial();
+        }
         //C#에서 명시적 형변환은 강제, as 할지말지를 결정.. 즉, 실패 유무를 알고 싶다면, as를 사용한다.
         ILoadingInterface loadingInterface = activeState as ILoadingInterface;
         if (loadingInterface != null)
@@ -263,9 +275,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("showsubdial");
         StartCoroutine(SubDialog(dot));
     }
+
     IEnumerator SubDialog(DotController dot = null)
     {
-        if (dot.GetSubScriptListCount(Pattern) == 0)
+        ScriptList script = dot.GetSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크
+
+        if (script == null)
         {
             //sub가 끝나면 Sleeping에 대한 동작을 수행하겠지...
             //현재 패턴에 대해 더이상 없으면... 
@@ -274,24 +289,32 @@ public class GameManager : MonoBehaviour
             {
                 resetState.ResetState(this, dot);
             }
-            yield return null;
+            yield break;
         }
-        yield return new WaitForSeconds(5f);
+
         //playercontroller SetSubPhase 호출
         // Task.Delay를 사용하여 10분 대기 (600,000 밀리초 = 10분)
         //await Task.Delay(TimeSpan.FromMinutes(10));
         // 10분 후에 호출되는 작업
-        ScriptList script = dot.GetSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크
-        Debug.Log("진행중인 스크립트 키: " + script.ScriptKey);
-        DotPatternState dotPattern;
-        Debug.Log(script.AnimState + " Sub 진행중");
-        if (Enum.TryParse(script.AnimState, true, out dotPattern))
+        
+        dot.TriggerSub(true);
+        pc.ProgressSubDial(script.ScriptKey);
+
+        preScriptList = script;
+
+        //시간 나중에 설정 예정 - 추후 해야하는 일
+        yield return new WaitForSeconds(100f);
+
+        dot.EndSubScriptList(Pattern);
+        script = dot.GetSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크
+
+        if (script != null && script != preScriptList)
         {
-            dot.ChangeState(dotPattern, script.DotAnim, script.DotPosition);
-            dot.TriggerSub(true);
-            pc.ProgressSubDial(script.ScriptKey);
+            //시간이 지나서 다음 서브가 등장해야 함.
+            CurrentState.RunSubScript(dot, this);
         }
     }
+
     public void StartTutoMain()
     {
         MainDialogue mainState = (MainDialogue)activeState;

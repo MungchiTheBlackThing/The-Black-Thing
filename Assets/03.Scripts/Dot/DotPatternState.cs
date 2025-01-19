@@ -100,7 +100,7 @@ public enum DotPatternState
     Sub = 2,
     Main = 3,
     Phase = 4,
-    Tirgger = 5,
+    Trigger = 5,
     Tutorial = 6
 }
 

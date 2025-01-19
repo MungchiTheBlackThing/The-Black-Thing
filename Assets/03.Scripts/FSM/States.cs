@@ -42,13 +42,6 @@ public class Watching : GameState, IResetStateInterface
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
-
-        if (pattern[manager.Chapter] == EWatching.None)
-        {
-            manager.ShowSubDial();
-            return;
-        }
-
         if (objectManager == null)
         {
             objectManager = manager.ObjectManager;
@@ -118,23 +111,28 @@ public class Thinking : GameState, ILoadingInterface
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         //Default값 랜덤으로 사용예정
-        Think(manager,dot);
+
+        if (RunSubScript(dot, manager) == false)
+        {
+            Think(manager, dot);
+        }
     }
 
     public void ResetState(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         DotAnimState anim = (DotAnimState)UnityEngine.Random.Range(0, (int)DotAnimState.anim_eyesblink);
+
         dot.ChangeState(DotPatternState.Default, anim.ToString());
     }
-
     public void Think(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         //Default값 랜덤으로 사용예정
+
         DotAnimState anim = (DotAnimState)UnityEngine.Random.Range(0, (int)DotAnimState.anim_eyesblink);
-        manager.ObjectManager.PlayThinking();
+
         dot.ChangeState(DotPatternState.Default, anim.ToString());
 
-        manager.ShowSubDial();
+        manager.ObjectManager.PlayThinking();
     }
 
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
@@ -174,7 +172,10 @@ public class Writing : GameState, ILoadingInterface, IResetStateInterface
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
-        Write(manager, dot);
+        if(RunSubScript(dot, manager) == false)
+        {
+            Write(manager, dot);
+        }
     }
 
     public void Write(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
@@ -212,7 +213,7 @@ public class Play : GameState, ILoadingInterface
         manager.ScrollManager.StopCameraByPlayPhase(true);
         //카메라 고정
         dot.TriggerPlay(true);
-        dot.ChangeState(DotPatternState.Tirgger, anim, pos);
+        dot.ChangeState(DotPatternState.Trigger, anim, pos);
     }
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
@@ -230,9 +231,10 @@ public class Sleeping : GameState, IResetStateInterface
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
-
-        Sleep(manager, dot);
-        
+        if (RunSubScript(dot, manager) == false)
+        {
+            Sleep(manager, dot);
+        }
     }
     public void Sleep(GameManager manager, DotController dot, TutorialManager tutomanger = null)
     {
@@ -251,7 +253,7 @@ public class Sleeping : GameState, IResetStateInterface
         manager.ObjectManager.PlayThinking();
         sleeping.OpenSleeping();
         this.dot = dot;
-        dot.ChangeState(DotPatternState.Tirgger, "anim_sleep", 10);
+        dot.ChangeState(DotPatternState.Trigger, "anim_sleep", 10);
         dot.Dust.SetActive(true);
     }
 
@@ -262,7 +264,7 @@ public class Sleeping : GameState, IResetStateInterface
 
     public void ResetState(GameManager manager, DotController dot = null)
     {
-        dot.ChangeState(DotPatternState.Tirgger, "anim_sleep", 10);
+        dot.ChangeState(DotPatternState.Trigger, "anim_sleep", 10);
         dot.Dust.SetActive(true);
     }
 }

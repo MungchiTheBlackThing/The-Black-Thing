@@ -116,7 +116,7 @@ public class DotController : MonoBehaviour
         states.Add(DotPatternState.Phase, new Phase());
         states.Add(DotPatternState.Main, new Main());
         states.Add(DotPatternState.Sub, new Sub());
-        states.Add(DotPatternState.Tirgger, new Trigger());
+        states.Add(DotPatternState.Trigger, new Trigger());
         states.Add(DotPatternState.Tutorial, new DotTutorial());
 
         parser = new ScriptListParser();
@@ -158,6 +158,28 @@ public class DotController : MonoBehaviour
         return tmp;
     }
 
+    public void EndSubScriptList(GamePatternState State)
+    {
+        //다음 챕터가 없을 때에는 아무 행위를 하지않는다.
+        if (subScriptLists[chapter - 1][State].Count == 0)
+            return;
+
+        //서브 하나가 끝났을 때 0번째 서브를 뒤에 있는 서브들로 덮어쓰기해서
+        //다음 서브로 넘어갈 수 있도록 한다.
+        for (int i = 1; i < subScriptLists[chapter - 1][State].Count; i++)
+        {
+            subScriptLists[chapter - 1][State][i - 1] = subScriptLists[chapter - 1][State][i];
+            Debug.Log(subScriptLists[chapter - 1][State][i].ScriptKey);
+        }
+
+        int endIdx = subScriptLists[chapter - 1][State].Count - 1;
+
+        //마지막 번호 삭제 (중복)
+        subScriptLists[chapter - 1][State].RemoveAt(endIdx);
+
+        //다음 서브를 트리거할 수 있도록 한다. 
+    }
+
     private void OnMouseDown()
     {
         if (mainAlert.activeSelf)
@@ -187,10 +209,6 @@ public class DotController : MonoBehaviour
             //pc.successSubDialDelegate((int)tmpState,tmp.ScriptKey);
             subScriptLists[chapter - 1][tmpState].RemoveAt(0);
             TriggerSub(false);
-            //sub trigger 해줘 
-            //누르는 순간 보상이 들어올 때 여기에서 보상 추가
-            //완료는 준현이 대화가 끝났을 때 보상 추가
-
         }
     }
 
@@ -263,6 +281,9 @@ public class DotController : MonoBehaviour
         chapter = manager.Chapter;
         //OutPos 가 있다면 해당 Position으로 바껴야함.
         currentState = states[state];
+
+        Debug.Log("Think SubDialogue " + state + " " + Position.ToString());
+
         currentState.Enter(this); //실행
     }
 
