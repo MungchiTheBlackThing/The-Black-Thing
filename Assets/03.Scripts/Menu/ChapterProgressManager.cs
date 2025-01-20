@@ -70,9 +70,12 @@ public class ChapterProgressManager : MonoBehaviour
             }
         }
 
-        for(int i=0;i<subPhaseUI.Count;i++)
+
+        List<bool> SubSuccess = player.GetSubPhase(player.GetChapter());
+
+        for(int i=0;i< SubSuccess.Count;i++)
         {
-            if(subPhaseUIObject[i].activeSelf == false)
+            if (SubSuccess[i] == true)
             {
                 subPhaseUI[i].sprite=Resources.Load<Sprite>(chapterInfo.subFilePath[i]);
             }
