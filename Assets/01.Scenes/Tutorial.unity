@@ -7480,6 +7480,7 @@ MonoBehaviour:
   alter: {fileID: 1014555738}
   detailed_popup: {fileID: 644266274}
   dragIconPrefab: {fileID: 4936116059334874993, guid: c611c0afa3f0849e6ab24d4dfc0e7ce5, type: 3}
+  dotController: {fileID: 0}
 --- !u!1 &271774317
 GameObject:
   m_ObjectHideFlags: 0
@@ -16464,6 +16465,7 @@ MonoBehaviour:
   alter: {fileID: 926985022}
   detailed_popup: {fileID: 574584478}
   dragIconPrefab: {fileID: 4936116059334874993, guid: c611c0afa3f0849e6ab24d4dfc0e7ce5, type: 3}
+  dotController: {fileID: 0}
 --- !u!224 &581850495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17858,7 +17860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &644266275
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35301,7 +35303,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1207581868
@@ -45231,6 +45233,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1526469516}
   canvas: {fileID: 1193627963}
   subClick: {fileID: 310432078}
+  prePos: 0
   dialogueIndex: 0
   Day: 0
 --- !u!1 &1483853040
@@ -64536,6 +64539,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d9b18807219c904885ea277060d936b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 0
+  dotExpression: 
+  animKey: 
   mainAlert: {fileID: 1094932321553057318}
   playAlert: {fileID: 3190399642701286173}
   subAlert: {fileID: 1297682453}

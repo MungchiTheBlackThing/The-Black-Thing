@@ -38,8 +38,9 @@ public class Idle : DotState
             if (dot.Position == -1)
             {
                 int maxIdx = IdlePos[anim].Count;
-
+                
                 dot.Position = IdlePos[anim][UnityEngine.Random.Range(0, maxIdx)];
+                
             }
             dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
             if (anim == DotAnimState.anim_mud)
@@ -50,7 +51,6 @@ public class Idle : DotState
 
             dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
         }
-
     }
 
     //상태를 나갈 때 1회 호출 -> Position -1로 변경
@@ -151,12 +151,14 @@ public class Sub : DotState
             {
                 int maxIdx = SubPos[anim].Count;
 
+                Debug.Log("맥스 인덱스: " + maxIdx);
+
                 dot.Position = SubPos[anim][UnityEngine.Random.Range(0, maxIdx)];
+                Debug.Log("이게 계속 작동되는거 같은데?:" + dot.Position);
             }
             dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
         }
         dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
-
     }
 
     //상태를 나갈 때 1회 호출 -> Position -1로 변경

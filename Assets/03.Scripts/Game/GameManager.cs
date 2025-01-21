@@ -146,6 +146,7 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeGameState(GamePatternState patternState)
     {
+       
         if (states == null) return;
         if (states.ContainsKey(patternState) == false)
         {
@@ -162,6 +163,7 @@ public class GameManager : MonoBehaviour
 
         if(dot.GetSubScriptListCount(patternState) != 0)
         {
+            Debug.Log("changeGameState:Sub");
             //서브 실행
             ShowSubDial();
         }

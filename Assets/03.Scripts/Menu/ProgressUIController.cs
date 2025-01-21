@@ -28,6 +28,8 @@ public class ProgressUIController : MonoBehaviour
     [SerializeField]
     Dictionary<int,GameObject> dragIconList;
 
+    [SerializeField]
+    DotController dotController;
     int curChapter = 1;
     float iconWidth = 0;
 
@@ -41,6 +43,7 @@ public class ProgressUIController : MonoBehaviour
         iconWidth = dragIconPrefab.GetComponent<RectTransform>().rect.width;
         InitScrollSize = new Vector2(dragScroller.GetComponent<RectTransform>().rect.width, dragScroller.GetComponent<RectTransform>().rect.height);
         dragScroller.GetComponent<ScrollRect>().onValueChanged.AddListener(Scroll);
+        dotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
     }
 
     private void OnEnable()
@@ -66,7 +69,7 @@ public class ProgressUIController : MonoBehaviour
         //Lock을 해제한다.
         foreach (var progress in dragIconList)
         {
-            if (progress.Key <= chapter)
+            if (progress.Key <= chapter && !dotController.tutorial)
             {
                 progress.Value.GetComponent<DragIcon>().DestoryLock();
             }

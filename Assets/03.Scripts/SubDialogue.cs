@@ -38,7 +38,7 @@ public class SubDialogue : MonoBehaviour
                 continue;
             }
             string[] parts = ParseCSVLine(line);
-            Debug.Log($"Parsed line {i}: {string.Join(", ", parts)}");
+            //Debug.Log($"Parsed line {i}: {string.Join(", ", parts)}");
 
             if (parts.Length >= 13)
             {
@@ -68,7 +68,7 @@ public class SubDialogue : MonoBehaviour
                     SubDialogueEntries.Add(entry);
                     currentDialogueList.Add(entry);
 
-                    Debug.Log($"Added SubDialogueEntry: {displayedText}");
+                    //Debug.Log($"Added SubDialogueEntry: {displayedText}");
                 }
             }
             else
@@ -182,7 +182,10 @@ public class SubDialogue : MonoBehaviour
     public void SubContinue()
     {
         if (SystemUI)
+        {
             SystemUI = GameObject.Find("SystemUI");
+            SystemUI.SetActive(false);
+        }
         Debug.Log("이어서 하기");
         scroll.stopscroll(); //임시 방편
         SubPanel.gameObject.SetActive(true);

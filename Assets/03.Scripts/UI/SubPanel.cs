@@ -38,6 +38,8 @@ public class SubPanel : MonoBehaviour
     [SerializeField]
     private GameObject subClick;
 
+    [SerializeField]
+    public float prePos;
     public int dialogueIndex = 0;  // Current dialogue index
     public int Day = 0;  // Current day
 
@@ -171,6 +173,8 @@ public class SubPanel : MonoBehaviour
 
     public void ShowNextDialogue()
     {
+        prePos = dotcontroller.Position;
+        
         PanelOff();
         if (dialogueIndex >= sub.currentDialogueList.Count)
         {
@@ -184,6 +188,8 @@ public class SubPanel : MonoBehaviour
         string korText = nextDial.Text;
         int color = nextDial.Color;
         int determine; //dot인지 player인지 구분 dot:0 , pl:1
+        var currentEntry = sub.GetData(dialogueIndex);
+        dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim);
 
         switch (textType)
         {

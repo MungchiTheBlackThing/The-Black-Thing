@@ -11,10 +11,19 @@ using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class DotController : MonoBehaviour
 {
-    private DotState currentState; //현재 상태
+    [SerializeField]
+    private DotState currentState;//현재 상태
+
+    [SerializeField]
     private Dictionary<DotPatternState, DotState> states;
+
+    [SerializeField]
     private float position;
+
+    [SerializeField]
     private string dotExpression; //CSV에 의해서 string 들어옴
+
+    [SerializeField]
     private string animKey; //CSV에 의해서 string으로 들어옴 파싱 해줘야한다.
 
     [SerializeField]
@@ -160,7 +169,7 @@ public class DotController : MonoBehaviour
 
     public void EndSubScriptList(GamePatternState State)
     {
-        //다음 챕터가 없을 때에는 아무 행위를 하지않는다.
+        //다음 챕터?가 없을 때에는 아무 행위를 하지않는다.
         if (subScriptLists[chapter - 1][State].Count == 0)
             return;
 
@@ -169,7 +178,7 @@ public class DotController : MonoBehaviour
         for (int i = 1; i < subScriptLists[chapter - 1][State].Count; i++)
         {
             subScriptLists[chapter - 1][State][i - 1] = subScriptLists[chapter - 1][State][i];
-            Debug.Log(subScriptLists[chapter - 1][State][i].ScriptKey);
+            Debug.Log("다음 서브스크립트 키: " + subScriptLists[chapter - 1][State][i].ScriptKey);
         }
 
         int endIdx = subScriptLists[chapter - 1][State].Count - 1;
@@ -177,7 +186,7 @@ public class DotController : MonoBehaviour
         //마지막 번호 삭제 (중복)
         subScriptLists[chapter - 1][State].RemoveAt(endIdx);
 
-        //다음 서브를 트리거할 수 있도록 한다. 
+        //다음 서브를 트리거할 수 있도록 한다.
     }
 
     private void OnMouseDown()
