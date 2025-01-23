@@ -189,7 +189,7 @@ public class SubPanel : MonoBehaviour
         int color = nextDial.Color;
         int determine; //dot인지 player인지 구분 dot:0 , pl:1
         var currentEntry = sub.GetData(dialogueIndex);
-        dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim);
+        dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim, prePos);
 
         switch (textType)
         {
@@ -624,7 +624,7 @@ public class SubPanel : MonoBehaviour
         var currentEntry = sub.GetData(dialogueIndex);
         if (currentEntry.NextLineKey != null)
         {
-            dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim);
+            dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim, prePos);
             if (int.TryParse(currentEntry.NextLineKey, out int nextLineKey))
             {
                 int nextIndex = sub.currentDialogueList.FindIndex(entry => (entry as SubDialogueEntry)?.LineKey == nextLineKey);
@@ -808,6 +808,7 @@ public class SubPanel : MonoBehaviour
         if(subTuto)
         {
             subTuto.Subcontinue();
+            prePos = dotcontroller.Position;
         }
         else
         {

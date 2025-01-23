@@ -77,7 +77,7 @@ namespace Tutorial
 
         public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger=null)
         {
-            dot.ChangeState(DotPatternState.Main, "body_default1", 14, "face_null");
+            dot.ChangeState(DotPatternState.Main, "body_default1", 16, "face_null");
             manager.StartTutoMain();
             manager.ScrollManager.MoveCamera(new Vector3(0, 0, -10), 0.1f);
         }

@@ -32,6 +32,7 @@ public class ObjectManager : MonoBehaviour
     [SerializeField]
     GameObject skipSleep;
 
+    [SerializeField]
     Dictionary<string, GameObject> mains;
 
     public delegate void ActiveSystemUIDelegate(bool InActive);
@@ -95,7 +96,7 @@ public class ObjectManager : MonoBehaviour
 
     public GameObject SetMain(string background)
     {
-
+        Debug.Log("setmain ¹è°æ: " + background);
         if(mains.ContainsKey(background))
         {
             foreach (var w in mains)

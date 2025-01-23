@@ -18,7 +18,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     public List<object> currentDialogueList = new List<object>();
     public GameObject SystemUI;
     public GameManager manager;
-    public int phase;
+    public int phase = 1;
     MainPanel mainPanel;
 
     protected int fixedPos = -1;
@@ -44,6 +44,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         this.dot = dot;
         dot.TriggerMain(true);
         phase = (int)manager.Pattern;
+        Debug.Log("페이즈:" + phase);
         //dot 한테 chapterList 에서 해당 위치랑 애니메이션이 변함.
         SystemUI = GameObject.Find("SystemUI");
     }
@@ -65,6 +66,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                 int main = int.Parse(parts[0]);
                 if (main == phase)
                 {
+                    Debug.Log("엔트리 시작");
                     DialogueEntry entry = new DialogueEntry
                     {
                         Main = main,
@@ -111,7 +113,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         maindata.NextLineKey = DialogueEntries[idx].NextLineKey;
         fixedPos = pos[DialogueEntries[idx].Background];
 
-        Debug.Log(fixedPos.ToString());
+        Debug.Log("테스트: " + fixedPos.ToString());
         //데이터에 대한 애니메이션으로 변경한다., fixedPos 은 건드리지말길!!! 위치 값인데 항상 고정
         
         dot.ChangeState(DotPatternState.Main, DialogueEntries[idx].DotBody, fixedPos, DialogueEntries[idx].DotExpression);
@@ -145,6 +147,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
         string[] lines = dialogueData.text.Split('\n');
         LoadData(lines);
+        Debug.Log(DialogueEntries[0].Background);
         fixedPos = pos[DialogueEntries[0].Background]; //현재 배경화면이 어떤 값인지 변경해주길
         dot.ChangeState(DotPatternState.Main, "body_default1", fixedPos, "face_null");
 

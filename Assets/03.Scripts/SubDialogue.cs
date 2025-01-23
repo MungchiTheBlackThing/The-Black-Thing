@@ -183,7 +183,6 @@ public class SubDialogue : MonoBehaviour
     {
         if (SystemUI)
         {
-            SystemUI = GameObject.Find("SystemUI");
             SystemUI.SetActive(false);
         }
         Debug.Log("이어서 하기");
