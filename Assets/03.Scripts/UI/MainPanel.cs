@@ -30,7 +30,7 @@ public class MainPanel : MonoBehaviour
     [SerializeField] private TMP_InputField Textinput;
     [SerializeField] GameObject MainClick;
     [SerializeField] GameObject BackBut;
-
+    [SerializeField] public GameObject UITutorial;
     [SerializeField] int backindex = -1;
 
     public int dialogueIndex = 0;  // Current dialogue index
@@ -187,6 +187,7 @@ public class MainPanel : MonoBehaviour
         else
         {
             mainDialogue.MainEnd();
+            BackBut.SetActive(false);
         }
     }
     void PanelOff()

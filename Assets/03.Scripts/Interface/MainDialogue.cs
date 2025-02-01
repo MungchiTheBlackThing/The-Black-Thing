@@ -20,8 +20,13 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     public GameManager manager;
     public int phase = 1;
     MainPanel mainPanel;
+    MenuController menuController;
+    UITutorial uITutorial;
 
     protected int fixedPos = -1;
+
+    protected float prePos;
+    protected string preanimkey;
     
     public MainDialogue()
     {
@@ -47,6 +52,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         Debug.Log("페이즈:" + phase);
         //dot 한테 chapterList 에서 해당 위치랑 애니메이션이 변함.
         SystemUI = GameObject.Find("SystemUI");
+        menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
     }
 
     public void LoadData(string[] lines)
@@ -136,6 +142,9 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //대사를 로드했음 좋겠음.
         //배경화면을 로드한다.
         //카메라를 0,0,10에서 정지시킨다.움직이지 못하게한다.
+
+        prePos = dot.Position;
+        preanimkey = dot.AnimKey;
         TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
 
         if (dialogueData == null)
@@ -178,8 +187,13 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         }
         manager.ObjectManager.activeSystemUIDelegate(true);
         SystemUI.SetActive(true);
-
-        // Dot change state 가 들어와야할거 같음 -> 메인이 꺼졌는데도 큼직만한 뭉치 얼굴이 남아있음
+        dot.ChangeState(DotPatternState.Default, preanimkey, prePos);
+        menuController.tuto();
+        if (phase == 1 && manager.Chapter == 1)
+        {
+            menuController.onlyskipoff();
+            mainPanel.UITutorial.SetActive(true);
+        }
     }
 
     void listclear()
