@@ -142,7 +142,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //대사를 로드했음 좋겠음.
         //배경화면을 로드한다.
         //카메라를 0,0,10에서 정지시킨다.움직이지 못하게한다.
-
+        uITutorial = mainPanel.UITutorial.GetComponent<UITutorial>();
         prePos = dot.Position;
         preanimkey = dot.AnimKey;
         TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
@@ -192,7 +192,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         if (phase == 1 && manager.Chapter == 1)
         {
             menuController.onlyskipoff();
-            mainPanel.UITutorial.SetActive(true);
+            uITutorial.gameObject.SetActive(true);
         }
     }
 

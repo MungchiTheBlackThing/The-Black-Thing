@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -38,8 +39,8 @@ public class MenuController : MonoBehaviour
 
     Animator MenuButAnim;
 
-    bool isOpening = false;
-    
+    public bool isOpening = false;
+    public bool isprogress = false;
     TranslateManager translator;
 
     [SerializeField]
@@ -56,6 +57,7 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     ObjectManager objectManager;
 
+    public static event Action OnMenuOpened;
     private void Start()
     {
         MenuButAnim = GetComponent<Animator>();
@@ -212,6 +214,7 @@ public class MenuController : MonoBehaviour
     {
         //DayProgressUI on,.,
         DayProgressUI.SetActive(true);
+        isprogress = true;
     }
 
     public void onClickHelper()
