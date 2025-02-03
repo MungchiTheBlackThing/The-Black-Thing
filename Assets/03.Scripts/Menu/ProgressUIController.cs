@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System.Text.RegularExpressions;
 
 public class ProgressUIController : MonoBehaviour
-{    
+{ 
     [SerializeField]
     GameObject dragScroller; //스크롤러의 크기를 조절 예정
 
@@ -32,6 +32,9 @@ public class ProgressUIController : MonoBehaviour
     DotController dotController;
     int curChapter = 1;
     float iconWidth = 0;
+    public bool tutorial = false;
+    public bool guide1 = false;
+    public bool guide2 = false;
 
     [Tooltip("Init Rect Size(width,height)")]
     Vector2 InitScrollSize;
@@ -96,7 +99,6 @@ public class ProgressUIController : MonoBehaviour
     {
         for (int i=1;i<=14;i++)
         {
-
             ChapterInfo info = DataManager.Instance.ChapterList.chapters[i];
             GameObject icon = Instantiate(dragIconPrefab,dragScroller.transform.GetChild(0));
             icon.name = info.chapter;
@@ -118,13 +120,14 @@ public class ProgressUIController : MonoBehaviour
 
     public void onClickdragIcon()
     {
+        guide1 = true;
         GameObject day = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
 
         if (day.GetComponent<DragIcon>().isLocking())
         {
             alter.SetActive(true);
         }
-        else
+        else if (!tutorial)
         {
             dragScroller.transform.parent.gameObject.SetActive(false); //메인 다이얼로그 진행
             detailed_popup.SetActive(true); //서브 다이얼로그 설정(진행바)
@@ -133,6 +136,7 @@ public class ProgressUIController : MonoBehaviour
 
             ChapterInfo info = DataManager.Instance.ChapterList.chapters[findChapter];
             detailed_popup.GetComponent<ChapterProgressManager>().PassData(info, player);
+            guide2 = true;
         }
     }
 

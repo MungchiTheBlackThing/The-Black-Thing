@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UITutorial : MonoBehaviour
 {
@@ -8,13 +9,23 @@ public class UITutorial : MonoBehaviour
     [SerializeField] MenuController MenuController;
     [SerializeField] GameObject menuBut;
     [SerializeField] GameObject progressBut;
+    [SerializeField] ProgressUIController progressUIController;
+    [SerializeField] GameObject icon;
+    [SerializeField] GameObject Ch1;
+    [SerializeField] GameObject DayProgress;
+    [SerializeField] GameObject Subicon;
     CanvasGroup tutorialMaskGroup;
     CanvasGroup Spider;
     CanvasGroup Progress;
     GameObject preparent;
+    Vector3 originalPosition;
+
     int presibling;
     private bool G2 = false;
     private bool G3 = false;
+    private bool G4 = false;
+    private bool G5 = false;
+    private bool G6 = false;
     int index = 0;
     // Start is called before the first frame update
     void Start()
@@ -40,9 +51,23 @@ public class UITutorial : MonoBehaviour
 
         if (!G3 && MenuController.isprogress)
         {
-            Guide3();
+            StartCoroutine(Guide3());
             G3 = true;
             MenuController.isprogress = false;
+        }
+
+        if (!G4 && progressUIController.guide1)
+        {
+            Guide4();
+            G4 = true;
+            progressUIController.guide1 = false;
+        }
+
+        if (!G5 && progressUIController.guide2)
+        {
+            Guide5();
+            G5 = true;
+            progressUIController.guide2 = false;
         }
     }
     IEnumerator guide()
@@ -73,33 +98,80 @@ public class UITutorial : MonoBehaviour
         Debug.Log("Guide2");
     }
 
-    public void Guide3()
+    public IEnumerator Guide3()
     {
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
         progressBut.transform.SetParent(preparent.transform);
         progressBut.transform.SetSiblingIndex(presibling);
+        progressUIController.tutorial = true;
+        yield return new WaitForSeconds(0.1f);
+        originalPosition = icon.transform.GetChild(0).position;
+        Ch1 = Instantiate(icon.transform.GetChild(0).gameObject);
+        Ch1.transform.SetParent(this.transform);
+        Ch1.transform.SetAsLastSibling();
+        Ch1.transform.position = originalPosition;
+        Ch1.GetComponent<Button>().onClick.AddListener(progressUIController.onClickdragIcon);
         Debug.Log("Guide3");
     }
     public void Guide4()
     {
-
+        if (index == 2)
+        {
+            progressUIController.tutorial = false;
+            Guideline[index].SetActive(false);
+            index++;
+            Guideline[index].SetActive(true);
+        }
     }
     public void Guide5()
     {
-        if (index >= 6 && index < transform.childCount -1)
+        Guideline[index].SetActive(false);
+        index++;
+        Guideline[index].SetActive(true);
+        Ch1.SetActive(false);
+        Destroy(Ch1);
+        preparent = DayProgress.transform.parent.gameObject;
+        DayProgress.transform.SetParent(this.transform);
+        DayProgress.transform.SetAsLastSibling();
+    }
+    public void Guide6()
+    {
+        if (index >= 4 && index < 7)
         {
             Guideline[index].SetActive(false);
             index++;
             Guideline[index].SetActive(true);
-            Debug.Log(index);
-        }
-        else if(index>=transform.childCount -1)
-        {
-            this.gameObject.SetActive(false);
+            if (index == 6)
+            {
+                DayProgress.transform.SetParent(preparent.transform);
+                DayProgress.transform.SetSiblingIndex(1);
+                Subicon.transform.SetParent(this.transform);
+                Subicon.transform.SetAsLastSibling();
+            }
         }
     }
-
-
+    public void Guide7()
+    {
+        if (index >= 7 && index < transform.childCount -1)
+        {
+            if (index == 7)
+            {
+                Subicon.transform.SetParent(preparent.transform);
+                Subicon.transform.SetSiblingIndex(3);
+            }
+            Guideline[index].SetActive(false);
+            index++;
+            if (index >= transform.childCount - 1)
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                Guideline[index].SetActive(true);
+            }
+            Debug.Log(index);
+        }
+    }
 }
