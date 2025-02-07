@@ -271,6 +271,21 @@ public class MenuController : MonoBehaviour
     {
         StartCoroutine(later());
     }
+
+    public void alloff()
+    {
+        TimeUI.SetActive(false);
+        Default.SetActive(false);
+        checkList.SetActive(false);
+    }
+
+    public void allon()
+    {
+        TimeUI.SetActive(true);
+        Default.SetActive(true);
+        checkList.SetActive(true);
+        tuto();
+    }
     IEnumerator later()
     {
         yield return new WaitForSeconds(2.5f);

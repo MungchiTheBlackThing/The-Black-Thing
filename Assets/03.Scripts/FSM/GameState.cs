@@ -11,6 +11,7 @@ public abstract class GameState
     
     public bool RunSubScript(DotController dot, GameManager manager)
     {
+        Debug.Log("Ã¼Å©¿ë" + dot.GetSubScriptListCount(manager.Pattern));
         if (dot.GetSubScriptListCount(manager.Pattern) == 0)
         {
             return false;

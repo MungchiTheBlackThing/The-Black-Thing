@@ -25,6 +25,7 @@ public class SubDialogue : MonoBehaviour
     public GameObject SystemUI;
     public SubPanel SubPanel;
     GameManager manager;
+    public MenuController menuController;
 
 
     public void LoadSubDialogue(string[] lines)
@@ -132,14 +133,22 @@ public class SubDialogue : MonoBehaviour
             Debug.LogError("Dialogue file not found in Resources folder.");
             return;
         }
+        if (manager.Pattern == GamePatternState.Writing)
+        { 
+            subseq = 3;
+        }
+        if (manager.Pattern == GamePatternState.Sleeping)
+        {
+            subseq = 4;
+        }
         scroll.stopscroll(); //임시 방편
         string[] lines = dialogueData.text.Split('\n');
         LoadSubDialogue(lines);
         
         subPanel.ShowNextDialogue();
         //manager.ScrollManager.StopCamera(true); -> 자꾸 오류 발생함
-        if (SystemUI)
-            SystemUI.SetActive(false);
+        if (menuController)
+            menuController.alloff();
         
     }
 
@@ -163,9 +172,12 @@ public class SubDialogue : MonoBehaviour
 
     public void Subexit()
     {
+        GamePatternState gamePattern = manager.Pattern;
         SubPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
-        if (!SystemUI)
-            SystemUI.SetActive(true);
+        if (menuController)
+        {
+            menuController.allon();
+        }
 
         scroll.scrollable();
         string currentSceneName = SceneManager.GetActiveScene().name;
@@ -176,14 +188,16 @@ public class SubDialogue : MonoBehaviour
         {
             subseq = 1;
         }
+
         Debug.Log("끝났을때 서브 번호: " + subseq);
     }
+    
 
     public void SubContinue()
     {
-        if (SystemUI)
+        if (menuController)
         {
-            SystemUI.SetActive(false);
+            menuController.alloff();
         }
         Debug.Log("이어서 하기");
         scroll.stopscroll(); //임시 방편
