@@ -41,7 +41,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     TranslateManager translateManager;
     [SerializeField]
     GameObject gamemanger;
-
+    [SerializeField]
+    GameObject RewardPopup;
     public delegate void SuccessSubDialDelegate(int phase, string subTitle);
     public SuccessSubDialDelegate successSubDialDelegate;
 
@@ -94,6 +95,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         {
             //플레이어 컨트롤러에 어떤 보상을 받았는지 리스트 추가.
             AddReward(eReward);
+            Debug.Log(eReward);
+            RewardPopup.SetActive(true);
         }
         SetSubPhase(subDialogue.subseq - 2);
     }
@@ -261,6 +264,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     public List<EReward> GetRewards()
     {
+        Debug.Log("리워드 목록: " + player.rewardList);
         return player.rewardList;
     }
 

@@ -75,7 +75,7 @@ public class ObjectManager : MonoBehaviour
 
         if(Enum.TryParse<EReward>(reward,true,out eReward))
         {
-            
+            Debug.Log("데이터매니저 챕터리스트 리워드 길이" + DataManager.Instance.ChapterList.chapters[chapter].reward.Length);
             for (int i = 0; i < DataManager.Instance.ChapterList.chapters[chapter].reward.Length; i++)
             {
                 string tmp = DataManager.Instance.ChapterList.chapters[chapter].reward[i];
