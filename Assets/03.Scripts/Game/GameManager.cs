@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     protected ObjectManager objectManager;
     protected ScrollManager scrollManager;
     protected CameraZoom cameraZoom;
+    [SerializeField]
     protected GamePatternState currentPattern;
     public int TutoNum = 0;
 

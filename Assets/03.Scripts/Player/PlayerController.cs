@@ -39,11 +39,17 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     [SerializeField]
     [Tooltip("번역 매니저")]
     TranslateManager translateManager;
+    [SerializeField]
+    GameObject gamemanger;
 
     public delegate void SuccessSubDialDelegate(int phase, string subTitle);
     public SuccessSubDialDelegate successSubDialDelegate;
 
     public string currentReward = "";
+
+
+    [SerializeField]
+    SubDialogue subDialogue;
     private void Awake()
     {
         //앞으로 player을 동적으로 생성해서 관리할 예정.. 아직은 미리 초기화해서 사용한다.
@@ -67,7 +73,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         elapsedTime += Time.deltaTime;
 
     }
-    int PhaseIdx = 0;
+   
 
     public void ProgressSubDial(string title)
     {
@@ -81,13 +87,15 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
         EReward eReward;
 
+        if (gamemanger.GetComponent<Alertmanager>() != null)    
+            gamemanger.GetComponent<Alertmanager>().Alerton();
         //배열 변수에 넣는다.
         if (Enum.TryParse<EReward>(reward, true, out eReward))
         {
             //플레이어 컨트롤러에 어떤 보상을 받았는지 리스트 추가.
             AddReward(eReward);
         }
-        SetSubPhase(PhaseIdx++);
+        SetSubPhase(subDialogue.subseq - 2);
     }
     public void NextPhase()
     {
@@ -112,8 +120,14 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public void SetSubPhase(int phaseIdx)
     {
         if (phaseIdx < 0 || phaseIdx >= 4) return;
-
-        Debug.Log(GetChapter() * 4 + phaseIdx);
+        Debug.Log("페이즈 인덱스" + phaseIdx);
+        Debug.Log("이거 체크: " + GetChapter() * 4 + phaseIdx);
+        if (gamemanger.GetComponent<Alertmanager>() != null)
+        {
+            gamemanger.GetComponent<Alertmanager>().isAlert = true;
+            gamemanger.GetComponent<Alertmanager>().RewardAlerts[phaseIdx].SetActive(true);
+        }
+            
         player.SetSubPhase(phaseIdx);
     }
 

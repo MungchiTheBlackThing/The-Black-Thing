@@ -18,7 +18,7 @@ public class DragIcon : MonoBehaviour
     string title;
     Sprite sprite;
     string subTitle;
-
+    public GameObject RedAlert;
     public void Settings(int chapter, ChapterInfo info, LANGUAGE language)
     {
         this.chapter=chapter;

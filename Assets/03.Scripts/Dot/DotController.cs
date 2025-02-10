@@ -218,6 +218,7 @@ public class DotController : MonoBehaviour
         {
             subDialogue.SetActive(true);
             string fileName = "sub_ch" + Chapter;
+            Debug.Log(fileName);
             subDialogue.GetComponent<SubDialogue>().StartSub(fileName);
             //int phase, string subTitle
             ScriptList tmp = GetSubScriptList(tmpState);

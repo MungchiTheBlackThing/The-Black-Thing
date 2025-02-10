@@ -21,7 +21,8 @@ public class ChapterProgressManager : MonoBehaviour
     List<Image> subPhaseUI; 
     [SerializeField]
     List<GameObject> subPhaseUIObject;
-
+    [SerializeField]
+    Alertmanager alertmanager;
     public void PassData(ChapterInfo chapterInfo, PlayerController player)
     {
         this.title.text=chapterInfo.title[(int)player.GetLanguage()];
@@ -84,9 +85,16 @@ public class ChapterProgressManager : MonoBehaviour
                 subPhaseUI[i].sprite=Resources.Load<Sprite>(chapterInfo.subLockFilePath[i]);
             }
         }
+        Invoke(nameof(alertoff), 2f);
+    }
+    private void alertoff()
+    {
+        if (alertmanager != null)
+            alertmanager.Alertoff();
     }
 
-    private void OnDisable() {
+    private void OnDisable() 
+    {
         
         for(int i=0;i<phaseEdUI.Count;i++) 
         {
@@ -96,5 +104,7 @@ public class ChapterProgressManager : MonoBehaviour
         {
             phaseIngUI[i].SetActive(false);
         }
+        if (alertmanager != null)
+            alertmanager.Alertoff();
     }
 }

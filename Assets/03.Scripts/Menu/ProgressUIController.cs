@@ -22,7 +22,8 @@ public class ProgressUIController : MonoBehaviour
     [SerializeField]
     GameObject detailed_popup;
 
-
+    [SerializeField]
+    Alertmanager alertmanager;
     [SerializeField]
     GameObject dragIconPrefab;
     [SerializeField]
@@ -68,7 +69,13 @@ public class ProgressUIController : MonoBehaviour
 
         ChapterInfo info = DataManager.Instance.ChapterList.chapters[chapter];
         dragIconList[chapter].SetActive(true);
-        
+
+        if (alertmanager != null && alertmanager.isAlert)
+        {
+            Debug.Log("되냐?");
+            alertmanager.ChapterAlert = dragIconList[chapter].GetComponent<DragIcon>().RedAlert;
+            alertmanager.openChapter();
+        }
         //Lock을 해제한다.
         foreach (var progress in dragIconList)
         {
