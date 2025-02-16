@@ -26,6 +26,7 @@ public class SubDialogue : MonoBehaviour
     public SubPanel SubPanel;
     public GameManager manager;
     public MenuController menuController;
+    public SubTutorial subTutorial;
 
 
     public void LoadSubDialogue(string[] lines)
@@ -187,6 +188,11 @@ public class SubDialogue : MonoBehaviour
         if (subseq>4)
         {
             subseq = 1;
+        }
+        if (subseq == 2 && manager.Chapter == 1)
+        {
+            menuController.onlyskipoff();
+            subTutorial.gameObject.SetActive(true);
         }
 
         Debug.Log("끝났을때 서브 번호: " + subseq);

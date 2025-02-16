@@ -154,7 +154,7 @@ public class UITutorial : MonoBehaviour
     }
     public void Guide7()
     {
-        if (index >= 7 && index < transform.childCount -1)
+        if (index >= 7 && index < transform.childCount)
         {
             if (index == 7)
             {
@@ -163,7 +163,7 @@ public class UITutorial : MonoBehaviour
             }
             Guideline[index].SetActive(false);
             index++;
-            if (index >= transform.childCount - 1)
+            if (index >= transform.childCount)
             {
                 this.gameObject.SetActive(false);
             }

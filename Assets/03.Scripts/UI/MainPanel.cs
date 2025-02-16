@@ -248,8 +248,8 @@ public class MainPanel : MonoBehaviour
                     }
                     PlayPanel.SetActive(true);
                     PlayTextUI.text = $"{korText}";
-                    StartCoroutine(FadeIn(PlayPanel.GetComponent<CanvasGroup>(), 0.5f, PlayPanel.transform.GetChild(0).GetChild(0).GetComponent<Button>()));
-                    RegisterNextButton(PlayPanel.transform.GetChild(0).GetChild(0).GetComponent<Button>());
+                    StartCoroutine(FadeIn(PlayPanel.GetComponent<CanvasGroup>(), 0.5f, PlayPanel.transform.GetChild(0).GetComponent<Button>()));
+                    RegisterNextButton(PlayPanel.transform.GetChild(0).GetComponent<Button>());
                 }
                 break;
             case "selection":

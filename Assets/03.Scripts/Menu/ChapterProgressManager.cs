@@ -95,7 +95,6 @@ public class ChapterProgressManager : MonoBehaviour
 
     private void OnDisable() 
     {
-        
         for(int i=0;i<phaseEdUI.Count;i++) 
         {
             phaseEdUI[i].SetActive(false);

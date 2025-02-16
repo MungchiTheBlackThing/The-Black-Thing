@@ -259,7 +259,11 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     public void AddReward(EReward InRewardName)
     {
-        player.rewardList.Add(InRewardName);
+        // 이미 리스트에 해당 리워드가 없다면 추가
+        if (!player.rewardList.Contains(InRewardName))
+        {
+            player.rewardList.Add(InRewardName);
+        }
     }
 
     public List<EReward> GetRewards()

@@ -22,7 +22,10 @@ public class MainVideo : MonoBehaviour
     [SerializeField] public GameObject Rawimage;
     public VideoPath videoPath;
     // Start is called before the first frame update
-
+    public void Start()
+    {
+        
+    }
     // Update is called once per frame
     public void Setting(int Day, LANGUAGE language)
     {
@@ -55,9 +58,5 @@ public class MainVideo : MonoBehaviour
     {
         Rawimage.transform.SetAsFirstSibling();
         Rawimage.SetActive(false);
-    }
-    private void OnDisable()
-    {
-        Rawimage.transform.SetAsFirstSibling();
     }
 }

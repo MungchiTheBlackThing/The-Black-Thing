@@ -61,6 +61,10 @@ public class GameManager : MonoBehaviour
     {
         get { return time.ToString(); }
     }
+    public int GetSITime
+    {
+        get { return (int)time; }
+    }
     public DotController Dot
     {
         get { return dot; }

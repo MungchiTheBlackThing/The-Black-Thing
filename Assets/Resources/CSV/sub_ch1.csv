@@ -1,6 +1,6 @@
 Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,TextKor,TextEng,NextLineKey,DeathNote,AfterScript,Exeption
 1,3,1,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 이게 뭐야?","<nickname>, what's this?",2,,,
-1,3,2,1,Dot,Sub,anim_eyesblink,text,빵 위에 피어난 거뭇거뭇한 거.,This black smudge on\nthe piece of bread.,28,,,
+1,3,2,1,Dot,Sub,anim_eyesblink,text,빵 위에 피어난 거뭇거뭇한 거.,This black smudge on\nthe piece of bread.,31,,,
 1,3,3,1,Player,Default,anim_eyescorner,selection,"으악, 곰팡이다!|저런, 곰팡이네.","Gah, mold!|Huh. Mold.",4|4,sun|moon,,
 1,3,4,1,Player,Default,anim_eyescorner,text,먹다 만 빵이 있었다는 걸\n까먹었어.... 버려야겠다.,I forgot I had some left-over\nbread. I'd better throw it away.,5,,,
 1,3,5,1,Dot,Sub,anim_eyesblink,text,곰팡이'가 뭐야? 네가\n이걸 싫어하는 게 느껴져.,What's “mold”? I get the sense\nit's something you don't like.,6,,,

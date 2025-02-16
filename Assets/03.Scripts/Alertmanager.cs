@@ -25,7 +25,8 @@ public class Alertmanager : MonoBehaviour
     {
         SpiderAlert.SetActive(false);
         ProgressAlert.SetActive(false);
-        ChapterAlert.SetActive(false);
+        if (isAlert)
+            ChapterAlert.SetActive(false);
         foreach(GameObject alert in RewardAlerts)
         {
             alert.SetActive(false);
