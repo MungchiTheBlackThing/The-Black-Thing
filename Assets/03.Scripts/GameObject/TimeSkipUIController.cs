@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -48,7 +49,11 @@ public class TimeSkipUIController : MonoBehaviour
         playerController.nextPhaseDelegate += NextPhase;
 
         timeIdx = playerController.GetAlreadyEndedPhase();
-        time = timeStamp[timeIdx];
+
+        if(timeIdx < timeStamp.Length)
+        {
+            time = timeStamp[timeIdx];
+        }
 
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
 
