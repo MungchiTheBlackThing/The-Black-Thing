@@ -367,4 +367,23 @@ public class ObjectManager : MonoBehaviour
         skipSleep.SetActive(isActive);//이거 대신 video controller 사용 예정
     }
 
+    public void RewardGlow(EReward eReward)
+    {
+        Transform rewardTransform = this.gameObject.transform.Find(eReward.ToString()+"(Clone)");
+
+        if (rewardTransform != null)
+        {
+            GameObject reward = rewardTransform.gameObject;
+            Debug.Log("밝게 빛날 물체 :" + reward.ToString());
+            var outline = reward.AddComponent<Outline>();
+
+            outline.OutlineMode = Outline.Mode.OutlineAll;
+            outline.OutlineColor = Color.yellow;
+            outline.OutlineWidth = 10f;
+        }
+        else
+        {
+            Debug.Log("못찾음");
+        }
+    }
 }

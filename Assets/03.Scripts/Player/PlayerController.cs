@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     GameObject RewardPopup;
     public delegate void SuccessSubDialDelegate(int phase, string subTitle);
     public SuccessSubDialDelegate successSubDialDelegate;
-
+    [SerializeField] ObjectManager objectManager;
     public string currentReward = "";
 
 
@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
             AddReward(eReward);
             Debug.Log(eReward);
             RewardPopup.SetActive(true);
+            objectManager.RewardGlow(eReward);
         }
         SetSubPhase(subDialogue.subseq - 2);
     }
