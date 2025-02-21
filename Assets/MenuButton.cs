@@ -9,7 +9,7 @@ public class MenuButton : MonoBehaviour
     {
         StartCoroutine(menuon());
     }
-    IEnumerator menuon()
+    public IEnumerator menuon()
     {
         yield return new WaitForSeconds(0.2f);
         this.transform.parent.GetComponent<MenuController>().tuto();

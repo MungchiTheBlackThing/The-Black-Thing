@@ -150,12 +150,18 @@ public class DotController : MonoBehaviour
 
     public ScriptList GetMainScriptList(int index)
     {
+        Debug.Log("GetmainScript");
         return mainScriptLists[chapter - 1][index];
     }
 
     public int GetSubScriptListCount(GamePatternState State) 
     {
-        return subScriptLists[chapter - 1][State].Count;
+        Debug.Log("스테이트:" + State);
+        Debug.Log("GetSubSCript");
+        if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play)
+            return 0;
+        else
+            return subScriptLists[chapter - 1][State].Count;
     }
     public ScriptList GetSubScriptList(GamePatternState State)
     {
@@ -212,6 +218,7 @@ public class DotController : MonoBehaviour
         {
             subDialogue.SetActive(true);
             string fileName = "sub_ch" + Chapter;
+            Debug.Log(fileName);
             subDialogue.GetComponent<SubDialogue>().StartSub(fileName);
             //int phase, string subTitle
             ScriptList tmp = GetSubScriptList(tmpState);

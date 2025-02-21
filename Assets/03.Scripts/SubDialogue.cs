@@ -24,7 +24,9 @@ public class SubDialogue : MonoBehaviour
     public List<object> currentDialogueList = new List<object>();
     public GameObject SystemUI;
     public SubPanel SubPanel;
-    GameManager manager;
+    public GameManager manager;
+    public MenuController menuController;
+    public SubTutorial subTutorial;
 
 
     public void LoadSubDialogue(string[] lines)
@@ -126,11 +128,19 @@ public class SubDialogue : MonoBehaviour
         if (!SystemUI)
             SystemUI = GameObject.Find("SystemUI");
         TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
-
+        Debug.Log(manager.Pattern);
         if (dialogueData == null)
         {
             Debug.LogError("Dialogue file not found in Resources folder.");
             return;
+        }
+        if (manager.Pattern == GamePatternState.Writing)
+        { 
+            subseq = 3;
+        }
+        if (manager.Pattern == GamePatternState.Sleeping)
+        {
+            subseq = 4;
         }
         scroll.stopscroll(); //임시 방편
         string[] lines = dialogueData.text.Split('\n');
@@ -138,8 +148,8 @@ public class SubDialogue : MonoBehaviour
         
         subPanel.ShowNextDialogue();
         //manager.ScrollManager.StopCamera(true); -> 자꾸 오류 발생함
-        if (SystemUI)
-            SystemUI.SetActive(false);
+        if (menuController)
+            menuController.alloff();
         
     }
 
@@ -163,9 +173,12 @@ public class SubDialogue : MonoBehaviour
 
     public void Subexit()
     {
+        GamePatternState gamePattern = manager.Pattern;
         SubPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
-        if (!SystemUI)
-            SystemUI.SetActive(true);
+        if (menuController)
+        {
+            menuController.allon();
+        }
 
         scroll.scrollable();
         string currentSceneName = SceneManager.GetActiveScene().name;
@@ -176,15 +189,21 @@ public class SubDialogue : MonoBehaviour
         {
             subseq = 1;
         }
+        if (subseq == 2 && manager.Chapter == 1)
+        {
+            menuController.onlyskipoff();
+            subTutorial.gameObject.SetActive(true);
+        }
+
         Debug.Log("끝났을때 서브 번호: " + subseq);
     }
+    
 
     public void SubContinue()
     {
-        if (SystemUI)
+        if (menuController)
         {
-            SystemUI = GameObject.Find("SystemUI");
-            SystemUI.SetActive(false);
+            menuController.alloff();
         }
         Debug.Log("이어서 하기");
         scroll.stopscroll(); //임시 방편

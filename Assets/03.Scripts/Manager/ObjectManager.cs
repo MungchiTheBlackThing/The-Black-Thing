@@ -32,6 +32,7 @@ public class ObjectManager : MonoBehaviour
     [SerializeField]
     GameObject skipSleep;
 
+    [SerializeField]
     Dictionary<string, GameObject> mains;
 
     public delegate void ActiveSystemUIDelegate(bool InActive);
@@ -74,7 +75,7 @@ public class ObjectManager : MonoBehaviour
 
         if(Enum.TryParse<EReward>(reward,true,out eReward))
         {
-            
+            Debug.Log("데이터매니저 챕터리스트 리워드 길이" + DataManager.Instance.ChapterList.chapters[chapter].reward.Length);
             for (int i = 0; i < DataManager.Instance.ChapterList.chapters[chapter].reward.Length; i++)
             {
                 string tmp = DataManager.Instance.ChapterList.chapters[chapter].reward[i];
@@ -95,7 +96,7 @@ public class ObjectManager : MonoBehaviour
 
     public GameObject SetMain(string background)
     {
-
+        Debug.Log("setmain 배경: " + background);
         if(mains.ContainsKey(background))
         {
             foreach (var w in mains)
@@ -366,4 +367,23 @@ public class ObjectManager : MonoBehaviour
         skipSleep.SetActive(isActive);//이거 대신 video controller 사용 예정
     }
 
+    public void RewardGlow(EReward eReward)
+    {
+        Transform rewardTransform = this.gameObject.transform.Find(eReward.ToString()+"(Clone)");
+
+        if (rewardTransform != null)
+        {
+            GameObject reward = rewardTransform.gameObject;
+            Debug.Log("밝게 빛날 물체 :" + reward.ToString());
+            var outline = reward.AddComponent<Outline>();
+
+            outline.OutlineMode = Outline.Mode.OutlineAll;
+            outline.OutlineColor = Color.yellow;
+            outline.OutlineWidth = 10f;
+        }
+        else
+        {
+            Debug.Log("못찾음");
+        }
+    }
 }

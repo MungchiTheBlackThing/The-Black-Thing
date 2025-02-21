@@ -18,10 +18,15 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     public List<object> currentDialogueList = new List<object>();
     public GameObject SystemUI;
     public GameManager manager;
-    public int phase;
+    public int phase = 1;
     MainPanel mainPanel;
+    MenuController menuController;
+    UITutorial uITutorial;
 
     protected int fixedPos = -1;
+
+    protected float prePos;
+    protected string preanimkey;
     
     public MainDialogue()
     {
@@ -44,8 +49,10 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         this.dot = dot;
         dot.TriggerMain(true);
         phase = (int)manager.Pattern;
+        Debug.Log("페이즈:" + phase);
         //dot 한테 chapterList 에서 해당 위치랑 애니메이션이 변함.
         SystemUI = GameObject.Find("SystemUI");
+        menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
     }
 
     public void LoadData(string[] lines)
@@ -65,6 +72,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                 int main = int.Parse(parts[0]);
                 if (main == phase)
                 {
+                    Debug.Log("엔트리 시작");
                     DialogueEntry entry = new DialogueEntry
                     {
                         Main = main,
@@ -109,9 +117,10 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
         //이 Text안에서 <name>이 있을 경우 변경
         maindata.NextLineKey = DialogueEntries[idx].NextLineKey;
+        maindata.AnimScene = DialogueEntries[idx].AnimScene;
         fixedPos = pos[DialogueEntries[idx].Background];
 
-        Debug.Log(fixedPos.ToString());
+        Debug.Log("테스트: " + fixedPos.ToString());
         //데이터에 대한 애니메이션으로 변경한다., fixedPos 은 건드리지말길!!! 위치 값인데 항상 고정
         
         dot.ChangeState(DotPatternState.Main, DialogueEntries[idx].DotBody, fixedPos, DialogueEntries[idx].DotExpression);
@@ -134,6 +143,9 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //대사를 로드했음 좋겠음.
         //배경화면을 로드한다.
         //카메라를 0,0,10에서 정지시킨다.움직이지 못하게한다.
+        uITutorial = mainPanel.UITutorial.GetComponent<UITutorial>();
+        prePos = dot.Position;
+        preanimkey = dot.AnimKey;
         TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
 
         if (dialogueData == null)
@@ -145,9 +157,12 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
         string[] lines = dialogueData.text.Split('\n');
         LoadData(lines);
+        Debug.Log(DialogueEntries[0].Background);
         fixedPos = pos[DialogueEntries[0].Background]; //현재 배경화면이 어떤 값인지 변경해주길
         dot.ChangeState(DotPatternState.Main, "body_default1", fixedPos, "face_null");
-
+        mainPanel.Day = manager.Chapter;
+        mainPanel.LANGUAGE = CurrentLanguage;
+        //mainPanel.gameObject.GetComponent<MainVideo>().Setting(manager.Chapter, CurrentLanguage);
         mainPanel.ShowNextDialogue();
         manager.ScrollManager.StopCamera(true);
         background = manager.ObjectManager.SetMain(DialogueEntries[0].Background); // 현재 배경이 어떤 값인지 변경
@@ -155,8 +170,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //배경화면이 켜질 때, 뭉치의 위치도 고장한다.
         //파라미터로 배경값을 전달하면 된다.
         //Day 7을 제외하곤 모두 배경값을 Enter에서 수정하면 되고, 데이 7일때만 변경해준다.
-        if (SystemUI)
-            SystemUI.SetActive(false);
+        if (menuController)
+            menuController.alloff();
     }
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
@@ -174,9 +189,14 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             background.SetActive(false);
         }
         manager.ObjectManager.activeSystemUIDelegate(true);
-        SystemUI.SetActive(true);
-
-        // Dot change state 가 들어와야할거 같음 -> 메인이 꺼졌는데도 큼직만한 뭉치 얼굴이 남아있음
+        menuController.allon();
+        dot.ChangeState(DotPatternState.Default, preanimkey, prePos);
+        menuController.tuto();
+        if (phase == 1 && manager.Chapter == 1)
+        {
+            menuController.onlyskipoff();
+            uITutorial.gameObject.SetActive(true);
+        }
     }
 
     void listclear()

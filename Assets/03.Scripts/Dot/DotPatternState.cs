@@ -98,9 +98,9 @@ public enum DotPatternState
 {
     Default = 1,
     Sub = 2,
-    Main = 3,
-    Phase = 4,
-    Trigger = 5,
+    Phase = 3,
+    Trigger = 4,
+    Main = 5,
     Tutorial = 6
 }
 

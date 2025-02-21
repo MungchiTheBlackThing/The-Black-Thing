@@ -90,8 +90,6 @@ public class Main : DotState
 
     public override void Enter(DotController dot)
     {
-        Debug.Log("뭉치 메인 상태");
-        //2. eyes를 킨다.
         dot.Eyes.SetActive(true);
 
         DotEyes eyes;

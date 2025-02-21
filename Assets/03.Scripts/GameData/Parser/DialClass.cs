@@ -9,6 +9,7 @@ namespace Assets.Script.DialClass
         public string TextType;
         public string Text;
         public string NextLineKey;
+        public string AnimScene;
     }
 
     public struct sub

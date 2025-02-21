@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     protected ObjectManager objectManager;
     protected ScrollManager scrollManager;
     protected CameraZoom cameraZoom;
+    [SerializeField]
     protected GamePatternState currentPattern;
     public int TutoNum = 0;
 
@@ -59,6 +60,10 @@ public class GameManager : MonoBehaviour
     public string Time
     {
         get { return time.ToString(); }
+    }
+    public int GetSITime
+    {
+        get { return (int)time; }
     }
     public DotController Dot
     {

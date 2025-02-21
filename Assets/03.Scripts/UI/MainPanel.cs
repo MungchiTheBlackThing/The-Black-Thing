@@ -30,11 +30,12 @@ public class MainPanel : MonoBehaviour
     [SerializeField] private TMP_InputField Textinput;
     [SerializeField] GameObject MainClick;
     [SerializeField] GameObject BackBut;
-
+    [SerializeField] public GameObject UITutorial;
     [SerializeField] int backindex = -1;
 
     public int dialogueIndex = 0;  // Current dialogue index
     public int Day = 0;  // Current day
+    public LANGUAGE LANGUAGE;
 
     // Start is called before the first frame update
     void OnEnable()
@@ -187,6 +188,7 @@ public class MainPanel : MonoBehaviour
         else
         {
             mainDialogue.MainEnd();
+            BackBut.SetActive(false);
         }
     }
     void PanelOff()
@@ -214,6 +216,7 @@ public class MainPanel : MonoBehaviour
         string textType = mainDial.TextType;
         string actor = mainDial.Actor;
         string korText = mainDial.Text;
+        string animScene = mainDial.AnimScene;
 
         switch (textType)
         {
@@ -228,7 +231,10 @@ public class MainPanel : MonoBehaviour
                             korText = korText.Replace("<nickname>", pc.GetNickName());
                         }
                     }
-
+                    if (animScene == "1")
+                    {
+                        this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                    }
                     DotPanel.SetActive(true);
                     DotTextUI.text = $"{korText}";
                     StartCoroutine(FadeIn(DotPanel.GetComponent<CanvasGroup>(), 0.5f, MainClick.GetComponent<Button>()));
@@ -236,18 +242,30 @@ public class MainPanel : MonoBehaviour
                 }
                 else if (actor == "Player")
                 {
+                    if (animScene == "1")
+                    {
+                        this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                    }
                     PlayPanel.SetActive(true);
                     PlayTextUI.text = $"{korText}";
-                    StartCoroutine(FadeIn(PlayPanel.GetComponent<CanvasGroup>(), 0.5f, PlayPanel.transform.GetChild(0).GetChild(0).GetComponent<Button>()));
-                    RegisterNextButton(PlayPanel.transform.GetChild(0).GetChild(0).GetComponent<Button>());
+                    StartCoroutine(FadeIn(PlayPanel.GetComponent<CanvasGroup>(), 0.5f, PlayPanel.transform.GetChild(0).GetComponent<Button>()));
+                    RegisterNextButton(PlayPanel.transform.GetChild(0).GetComponent<Button>());
                 }
                 break;
             case "selection":
+                if (animScene == "1")
+                {
+                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                }
                 SelectionPanel.SetActive(true);
                 StartCoroutine(FadeIn(SelectionPanel.GetComponent<CanvasGroup>(), 0.5f, SelectionPanel.transform.GetComponentInChildren<Button>()));
                 ShowSelection(korText);
                 break;
             case "textbox":
+                if (animScene == "1")
+                {
+                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                }
                 InputPanel.SetActive(true);
                 InputTextUI.text = korText;
                 Resetinputfield(InputPanel);
@@ -255,12 +273,20 @@ public class MainPanel : MonoBehaviour
                 RegisterNextButton(InputPanel.transform.GetChild(1).GetComponent<Button>());
                 break;
             case "checkbox3":
+                if (animScene == "1")
+                {
+                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                }
                 Checkbox3Panel.SetActive(true);
                 ShowCheckboxOptions(Checkbox3Panel, korText);
                 StartCoroutine(FadeIn(Checkbox3Panel.GetComponent<CanvasGroup>(), 0.5f, Checkbox3Panel.transform.GetChild(1).GetComponent<Button>()));
                 RegisterNextButton(Checkbox3Panel.transform.GetChild(1).GetComponent<Button>());
                 break;
             case "checkbox4":
+                if (animScene == "1")
+                {
+                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                }
                 Checkbox4Panel.SetActive(true);
                 ShowCheckboxOptions(Checkbox4Panel, korText);
                 StartCoroutine(FadeIn(Checkbox4Panel.GetComponent<CanvasGroup>(), 0.5f, Checkbox4Panel.transform.GetChild(1).GetComponent<Button>()));
@@ -268,12 +294,20 @@ public class MainPanel : MonoBehaviour
                 break;
 
             case "selection3":
+                if (animScene == "1")
+                {
+                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                }
                 Selection3Panel.SetActive(true);
                 ShowSelectionOptions(Selection3Panel, korText);
                 StartCoroutine(FadeIn(Selection3Panel.GetComponent<CanvasGroup>(), 0.5f, Selection3Panel.transform.GetChild(1).GetComponent<Button>()));
                 break;
 
             case "selection4":
+                if (animScene == "1")
+                {
+                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                }
                 Selection4Panel.SetActive(true);
                 ShowSelectionOptions(Selection4Panel, korText);
                 StartCoroutine(FadeIn(Selection4Panel.GetComponent<CanvasGroup>(), 0.5f, Selection4Panel.transform.GetChild(1).GetComponent<Button>()));
