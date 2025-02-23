@@ -310,7 +310,7 @@ public class GameManager : MonoBehaviour
         preScriptList = script;
 
         //시간 나중에 설정 예정 - 추후 해야하는 일
-        yield return new WaitForSeconds(100f);
+        yield return new WaitForSeconds(script.Delay * 60);
 
         dot.EndSubScriptList(Pattern);
         script = dot.GetSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크

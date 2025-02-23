@@ -72,6 +72,7 @@ namespace Assets.Script.DialClass
         public string AnimState;
         public string DotAnim;
         public int DotPosition;
+        public int Delay;
     }
 
     [System.Serializable]

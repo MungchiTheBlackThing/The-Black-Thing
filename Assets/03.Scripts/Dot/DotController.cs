@@ -158,8 +158,10 @@ public class DotController : MonoBehaviour
     {
         Debug.Log("스테이트:" + State);
         Debug.Log("GetSubSCript");
-        if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play)
+        if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play || manager.Pattern == GamePatternState.Sleeping )
+        {
             return 0;
+        }
         else
             return subScriptLists[chapter - 1][State].Count;
     }

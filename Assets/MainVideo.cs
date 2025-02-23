@@ -56,7 +56,12 @@ public class MainVideo : MonoBehaviour
     }
     private void OnVideoEnd(VideoPlayer vp)
     {
+        //videoPlayer.gameObject.SetActive(false);
         Rawimage.transform.SetAsFirstSibling();
         Rawimage.SetActive(false);
+    }
+    private void OnDisable()
+    {
+        
     }
 }

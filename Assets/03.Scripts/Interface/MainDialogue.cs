@@ -53,6 +53,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //dot 한테 chapterList 에서 해당 위치랑 애니메이션이 변함.
         SystemUI = GameObject.Find("SystemUI");
         menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
+        mainPanel.gameObject.GetComponent<MainVideo>().Setting(manager.Chapter, CurrentLanguage); //대화 시작하기 전에 미리 동영상 다운
     }
 
     public void LoadData(string[] lines)
@@ -162,7 +163,6 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         dot.ChangeState(DotPatternState.Main, "body_default1", fixedPos, "face_null");
         mainPanel.Day = manager.Chapter;
         mainPanel.LANGUAGE = CurrentLanguage;
-        //mainPanel.gameObject.GetComponent<MainVideo>().Setting(manager.Chapter, CurrentLanguage);
         mainPanel.ShowNextDialogue();
         manager.ScrollManager.StopCamera(true);
         background = manager.ObjectManager.SetMain(DialogueEntries[0].Background); // 현재 배경이 어떤 값인지 변경
@@ -192,6 +192,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         menuController.allon();
         dot.ChangeState(DotPatternState.Default, preanimkey, prePos);
         menuController.tuto();
+        if (phase == 1 && manager.Chapter == 1)
         if (phase == 1 && manager.Chapter == 1)
         {
             menuController.onlyskipoff();

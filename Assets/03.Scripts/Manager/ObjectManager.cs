@@ -375,15 +375,20 @@ public class ObjectManager : MonoBehaviour
         {
             GameObject reward = rewardTransform.gameObject;
             Debug.Log("¹à°Ô ºû³¯ ¹°Ã¼ :" + reward.ToString());
-            var outline = reward.AddComponent<Outline>();
-
-            outline.OutlineMode = Outline.Mode.OutlineAll;
-            outline.OutlineColor = Color.yellow;
-            outline.OutlineWidth = 10f;
+            StartCoroutine(Glow(reward));
         }
         else
         {
             Debug.Log("¸øÃ£À½");
         }
+    }
+    IEnumerator Glow(GameObject reward)
+    {
+        var outline = reward.AddComponent<Outline>();
+        outline.OutlineMode = Outline.Mode.OutlineAll;
+        outline.OutlineColor = Color.yellow;
+        outline.OutlineWidth = 10f;
+        yield return new WaitForSeconds(5f);
+        outline.OutlineMode = Outline.Mode.OutlineHidden;
     }
 }

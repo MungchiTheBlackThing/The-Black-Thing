@@ -49,7 +49,7 @@ public class ScriptListParser
             }
             string[] parts = ParseCSVLine(line);
 
-            if (parts.Length >= 6)
+            if (parts.Length >= 7)
             {
                 ScriptList entry = new ScriptList
                 {
@@ -58,7 +58,8 @@ public class ScriptListParser
                     ScriptKey = parts[2],
                     AnimState = parts[3],
                     DotAnim = parts[4],
-                    DotPosition = int.Parse(parts[5])
+                    DotPosition = int.Parse(parts[5]),
+                    Delay = int.Parse(parts[6])
                 };
 
                 // 메인이랑 서브 분류해서 엔트리 넣어주기 OK
