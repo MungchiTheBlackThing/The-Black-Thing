@@ -106,7 +106,6 @@ public class Main : DotState
             dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
             dot.transform.position = GetCoordinate(dot.Position);
         }
-
     }
 
     //상태를 나갈 때 1회 호출 -> Position -1로 변경

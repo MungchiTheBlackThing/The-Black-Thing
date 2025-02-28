@@ -62,15 +62,13 @@ public class ScriptListParser
                     Delay = int.Parse(parts[6])
                 };
 
-                // 메인이랑 서브 분류해서 엔트리 넣어주기 OK
+                // 메인이랑 서브 분류해서 엔트리 넣어주기
                 if (entry.GameState == GamePatternState.MainA || entry.GameState == GamePatternState.MainB)
                 {
-                    // main
                     Mtmp.Add(entry);
                 }
                 else
                 {
-                    // sub
                     Stmp[entry.GameState].Add(entry);
                 }
 
@@ -87,10 +85,18 @@ public class ScriptListParser
                     Stmp[GamePatternState.Sleeping] = new List<ScriptList>();
 
                     preID = entry.ID;
-                }            
+                }
             }
         }
+
+        // 마지막 남은 데이터 추가
+        if (Mtmp.Count > 0 || Stmp.Values.Any(list => list.Count > 0))
+        {
+            InmainStart.Add(Mtmp);
+            InsubStart.Add(Stmp);
+        }
     }
+
 
     string[] ParseCSVLine(string line)
     {

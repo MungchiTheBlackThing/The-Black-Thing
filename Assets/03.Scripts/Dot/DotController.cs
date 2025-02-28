@@ -61,10 +61,11 @@ public class DotController : MonoBehaviour
     ScriptListParser parser;
 
     [SerializeField]
-    List<List<ScriptList>> mainScriptLists;
+    public List<List<ScriptList>> mainScriptLists;
 
     [SerializeField]
-    List<Dictionary<GamePatternState,List<ScriptList>>> subScriptLists; //List chapter Dictionary<gamestate,List<ScriptList>>> 
+    public List<Dictionary<GamePatternState, List<ScriptList>>> subScriptLists; //List chapter Dictionary<gamestate,List<ScriptList>>> 
+
     [SerializeField]
     public GameObject subDialogue;
     [SerializeField]
@@ -82,7 +83,7 @@ public class DotController : MonoBehaviour
 
     public Animator Animator
     { get { return animator; } }
-    
+
     public Animator EyesAnim
     { get { return eyesAnim; } }
 
@@ -113,8 +114,7 @@ public class DotController : MonoBehaviour
     GamePatternState tmpState;
 
     void Awake()
-    {
-
+    { 
         animator = GetComponent<Animator>();
         Position = -1;
         dotExpression = "";
@@ -133,18 +133,17 @@ public class DotController : MonoBehaviour
         subScriptLists = new List<Dictionary<GamePatternState, List<ScriptList>>>();
 
         parser.Load(mainScriptLists, subScriptLists);
-
+        Debug.Log("메인 길이:" + mainScriptLists.Count);
         subDialogue = GameObject.Find("SubDialougue");
         subPanel = GameObject.Find("SubPanel");
         subPanel.GetComponent<SubPanel>().InitializePanels();
-        subDialogue.SetActive(false);
     }
 
-    
+
     void Start()
     {
         chapter = manager.Chapter;
-
+        Debug.Log("현재 챕터: " + chapter);
         animator.keepAnimatorStateOnDisable = true; //애니메이션 유지
     }
 
@@ -154,11 +153,11 @@ public class DotController : MonoBehaviour
         return mainScriptLists[chapter - 1][index];
     }
 
-    public int GetSubScriptListCount(GamePatternState State) 
+    public int GetSubScriptListCount(GamePatternState State)
     {
         Debug.Log("스테이트:" + State);
         Debug.Log("GetSubSCript");
-        if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play || manager.Pattern == GamePatternState.Sleeping )
+        if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play || manager.Pattern == GamePatternState.Sleeping)
         {
             return 0;
         }
@@ -169,8 +168,18 @@ public class DotController : MonoBehaviour
     {
         if (subScriptLists[chapter - 1][State].Count == 0)
             return null;
-        
+
         ScriptList tmp = subScriptLists[chapter - 1][State][0];
+        tmpState = State;
+        return tmp;
+    }
+
+    public ScriptList GetnxSubScriptList(GamePatternState State)
+    {
+        if (subScriptLists[chapter - 1][State].Count == 0 || subScriptLists[chapter - 1][State].Count == 1)
+            return null;
+
+        ScriptList tmp = subScriptLists[chapter - 1][State][1];
         tmpState = State;
         return tmp;
     }
@@ -225,7 +234,7 @@ public class DotController : MonoBehaviour
             //int phase, string subTitle
             ScriptList tmp = GetSubScriptList(tmpState);
             //pc.successSubDialDelegate((int)tmpState,tmp.ScriptKey);
-            subScriptLists[chapter - 1][tmpState].RemoveAt(0);
+            
             TriggerSub(false);
         }
     }

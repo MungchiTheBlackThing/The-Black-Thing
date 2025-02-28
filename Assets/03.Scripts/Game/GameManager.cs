@@ -30,15 +30,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     protected DotController dot;
     protected GameState activeState;
-    protected SITime time;
+    protected SITime sltime;
     protected ObjectManager objectManager;
     protected ScrollManager scrollManager;
     protected CameraZoom cameraZoom;
     [SerializeField]
     protected GamePatternState currentPattern;
     public int TutoNum = 0;
-
-
+    bool isready = false;
+    public float targetTime;
+    public SubDialogue subDialogue;
     ScriptList preScriptList;
 
     public ObjectManager ObjectManager
@@ -59,11 +60,11 @@ public class GameManager : MonoBehaviour
     }
     public string Time
     {
-        get { return time.ToString(); }
+        get { return sltime.ToString(); }
     }
     public int GetSITime
     {
-        get { return (int)time; }
+        get { return (int)sltime; }
     }
     public DotController Dot
     {
@@ -115,7 +116,7 @@ public class GameManager : MonoBehaviour
         objectManager = GameObject.FindWithTag("ObjectManager").gameObject.GetComponent<ObjectManager>();
         scrollManager = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<ScrollManager>();
         cameraZoom = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<CameraZoom>();
-
+        subDialogue = subDialoguePanel.GetComponent<SubDialogue>();
     }
     private void Start()
     {
@@ -151,7 +152,6 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeGameState(GamePatternState patternState)
     {
-       
         if (states == null) return;
         if (states.ContainsKey(patternState) == false)
         {
@@ -184,6 +184,7 @@ public class GameManager : MonoBehaviour
     public void StartMain()
     {
         MainDialogue mainState = (MainDialogue)activeState;
+        subDialogue.gameObject.SetActive(false);
         string fileName = "main_ch" + Chapter;
         if (mainState != null)
         {
@@ -200,19 +201,19 @@ public class GameManager : MonoBehaviour
         Int32 hh = Int32.Parse(DateTime.Now.ToString(("HH"))); //현재 시간을 가져온다
         if (hh >= (int)STime.T_DAWN && hh < (int)STime.T_MORNING) //현재시간 >= 3 && 현재시간 <7
         {
-            time = SITime.Dawn;
+            sltime = SITime.Dawn;
         } //현재시간 >= 7&& 현재시간 <4
         else if (hh >= (int)STime.T_MORNING && hh < (int)STime.T_EVENING)
         {
-            time = SITime.Morning;
+            sltime = SITime.Morning;
         }
         else if (hh >= (int)STime.T_EVENING && hh < (int)STime.T_NIGHT)
         {
-            time = SITime.Evening;
+            sltime = SITime.Evening;
         }
         else
         {
-            time = SITime.Night;
+            sltime = SITime.Night;
         }
         StartCoroutine(LoadDataAsync());
     }
@@ -223,7 +224,7 @@ public class GameManager : MonoBehaviour
         float objectLoadWeight = 0.5f;      // 오브젝트 로드가 나머지 50% 차지
         // 비동기적으로 배경 리소스를 로드
         loadingProgressBar.value = 0;
-        ResourceRequest loadOperation = Resources.LoadAsync<GameObject>("Background/" + time.ToString());
+        ResourceRequest loadOperation = Resources.LoadAsync<GameObject>("Background/" + sltime.ToString());
         while (!loadOperation.isDone)
         {
             totalProgress = loadOperation.progress * backgroundLoadWeight;
@@ -241,7 +242,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Background not found!");
         }
         // 풀을 채우는 등 나머지 작업을 수행
-        Coroutine objectLoadCoroutine = StartCoroutine(TrackObjectLoadProgress(time.ToString(), pc.GetChapter(), objectLoadWeight));
+        Coroutine objectLoadCoroutine = StartCoroutine(TrackObjectLoadProgress(sltime.ToString(), pc.GetChapter(), objectLoadWeight));
         foreach (var state in states)
         {
             state.Value.Init();
@@ -253,13 +254,14 @@ public class GameManager : MonoBehaviour
         currentPattern = patternState;
         activeState = states[patternState];
         activeState.Enter(this, dot);
+        subDialogue.gameObject.SetActive(false);
     }
     IEnumerator TrackObjectLoadProgress(string path, int chapter, float weight)
     {
         float progress = 0f;
         float previousProgress = 0f;
         // objectManager의 비동기 작업 진행 상황을 추적
-        Coroutine loadObjectCoroutine = StartCoroutine(objectManager.LoadObjectAsync(time.ToString(), pc.GetChapter()));
+        Coroutine loadObjectCoroutine = StartCoroutine(objectManager.LoadObjectAsync(sltime.ToString(), pc.GetChapter()));
         // objectManager.LoadObjectAsync 코루틴의 진행 상황을 추적 (가정: objectManager에서 진행 상황을 제공할 수 있는 메서드를 제공한다고 가정)
         while (!objectManager.IsLoadObjectComplete())
         {
@@ -285,8 +287,18 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SubDialog(DotController dot = null)
     {
+        dot.TriggerSub(false);
+        subDialogue.gameObject.SetActive(true);
+        if (Pattern == GamePatternState.Writing)
+        {
+            subDialogue.subseq = 3;
+        }
+        if (Pattern == GamePatternState.Sleeping)
+        {
+            subDialogue.subseq = 4;
+        }
+        subDialogue.gameObject.SetActive(false);
         ScriptList script = dot.GetSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크
-
         if (script == null)
         {
             //sub가 끝나면 Sleeping에 대한 동작을 수행하겠지...
@@ -298,29 +310,60 @@ public class GameManager : MonoBehaviour
             }
             yield break;
         }
-
-        //playercontroller SetSubPhase 호출
-        // Task.Delay를 사용하여 10분 대기 (600,000 밀리초 = 10분)
-        //await Task.Delay(TimeSpan.FromMinutes(10));
-        // 10분 후에 호출되는 작업
+        ScriptList nxscript = null;
         
-        dot.TriggerSub(true);
-        pc.ProgressSubDial(script.ScriptKey);
-
-        preScriptList = script;
-
-        //시간 나중에 설정 예정 - 추후 해야하는 일
-        yield return new WaitForSeconds(script.Delay * 60);
-
-        dot.EndSubScriptList(Pattern);
-        script = dot.GetSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크
-
-        if (script != null && script != preScriptList)
+        if (subDialoguePanel.GetComponent<SubDialogue>().subseq == 1)
         {
-            //시간이 지나서 다음 서브가 등장해야 함.
-            CurrentState.RunSubScript(dot, this);
+            isready = false;
+            nxscript = dot.GetnxSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크
+            Debug.Log("다음 스크립트 시간: " + nxscript.Delay);
+            float StartTime = UnityEngine.Time.time;// 현재 시작 시간 저장
+            targetTime = StartTime + nxscript.Delay;
+            Debug.Log("현재 스크립트 시간: " + script.Delay);
+            yield return new WaitForSeconds(script.Delay);
+            Debug.Log("현재 스크립트 키:" + script.ScriptKey);
+            dot.TriggerSub(true);
+            pc.ProgressSubDial(script.ScriptKey);
         }
+        else if (subDialoguePanel.GetComponent<SubDialogue>().subseq == 2)
+        {
+            Debug.Log("현재 스크립트 키:" + script.ScriptKey);
+            float waitTime = targetTime - UnityEngine.Time.time;  // 현재 시간과 목표 시간 차이 계산
+            Debug.Log("기다려야하는 시간: " + waitTime);
+            if (waitTime > 0f)
+            {
+                // 서브2의 실행 시간이 아직 남았으면 그 시간만큼 기다리기
+                yield return new WaitForSeconds(waitTime);
+            }
+
+            // 서브2 실행
+            Debug.Log("서브 2 실행");
+            dot.TriggerSub(true);
+            pc.ProgressSubDial(script.ScriptKey);
+        }
+        else
+        {
+            Debug.Log("현재 스크립트 시간: " + script.Delay);
+            yield return new WaitForSeconds(script.Delay);
+            Debug.Log("현재 스크립트 키:" + script.ScriptKey);
+            dot.TriggerSub(true);
+            pc.ProgressSubDial(script.ScriptKey);
+        }
+       
+
+        //preScriptList = script;
+        //script = dot.GetSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크
+        ////Debug.Log("다음 스크립트: " + script.ScriptKey);
+
+        //if (script != null && script != preScriptList)
+        //{
+        //    Debug.Log("다음 서브 실행");
+        //    //시간이 지나서 다음 서브가 등장해야 함.
+        //    CurrentState.RunSubScript(dot, this);
+        //}
     }
+
+
 
     public void StartTutoMain()
     {

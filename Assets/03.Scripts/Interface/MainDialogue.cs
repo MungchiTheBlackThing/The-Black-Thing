@@ -53,7 +53,6 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //dot 한테 chapterList 에서 해당 위치랑 애니메이션이 변함.
         SystemUI = GameObject.Find("SystemUI");
         menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
-        mainPanel.gameObject.GetComponent<MainVideo>().Setting(manager.Chapter, CurrentLanguage); //대화 시작하기 전에 미리 동영상 다운
     }
 
     public void LoadData(string[] lines)
@@ -172,6 +171,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //Day 7을 제외하곤 모두 배경값을 Enter에서 수정하면 되고, 데이 7일때만 변경해준다.
         if (menuController)
             menuController.alloff();
+        mainPanel.gameObject.GetComponent<MainVideo>().Setting(manager.Chapter, CurrentLanguage); //대화 시작하기 전에 미리 동영상 다운
     }
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {

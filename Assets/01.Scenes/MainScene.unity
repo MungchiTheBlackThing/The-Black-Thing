@@ -5239,6 +5239,8 @@ MonoBehaviour:
   dot: {fileID: 2046645039688417658}
   currentPattern: 0
   TutoNum: 0
+  targetTime: 0
+  subDialogue: {fileID: 0}
   pc: {fileID: 0}
   mainDialoguePanel: {fileID: 8899152122286662226}
   videoController: {fileID: 866035066}
@@ -53287,6 +53289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subseq: 1
+  dot: {fileID: 2046645039688417658}
   SubDialogueEntries: []
   scroll: {fileID: 1526469518}
   SystemUI: {fileID: 1705030965}
@@ -53294,6 +53297,7 @@ MonoBehaviour:
   manager: {fileID: 199268581}
   menuController: {fileID: 619721725}
   subTutorial: {fileID: 1467358320}
+  check1: 0
 --- !u!1 &1723573533
 GameObject:
   m_ObjectHideFlags: 0

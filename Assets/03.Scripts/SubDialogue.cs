@@ -12,7 +12,7 @@ public class SubDialogue : MonoBehaviour
     public int subseq = 1;
     Dictionary<string, int> pos = new Dictionary<string, int>();
     protected GameObject background = null;
-    protected DotController dot = null;
+    public DotController dot = null;
     protected LANGUAGE CurrentLanguage = LANGUAGE.KOREAN;
 
     [SerializeField]
@@ -27,6 +27,7 @@ public class SubDialogue : MonoBehaviour
     public GameManager manager;
     public MenuController menuController;
     public SubTutorial subTutorial;
+    public bool check1 = false;
 
 
     public void LoadSubDialogue(string[] lines)
@@ -189,13 +190,15 @@ public class SubDialogue : MonoBehaviour
         {
             subseq = 1;
         }
+        
         if (subseq == 2 && manager.Chapter == 1)
         {
             menuController.onlyskipoff();
             subTutorial.gameObject.SetActive(true);
         }
-
+        
         Debug.Log("끝났을때 서브 번호: " + subseq);
+        manager.CurrentState.RunSubScript(dot, manager);
     }
     
 
