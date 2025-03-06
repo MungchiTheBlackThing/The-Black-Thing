@@ -31,14 +31,22 @@ public class ScriptListParser
 
     public void LoadScriptList(string[] lines, List<List<ScriptList>> InmainStart, List<Dictionary<GamePatternState, List<ScriptList>>> InsubStart)
     {
-        int preID = 1;
+        int preID = -1; // 초기값을 -1로 설정하여 첫 번째 ID와 무조건 다르게 만듦
         List<ScriptList> Mtmp = new List<ScriptList>();
-        Stmp = new Dictionary<GamePatternState, List<ScriptList>>();
+        Dictionary<GamePatternState, List<ScriptList>> Stmp = new Dictionary<GamePatternState, List<ScriptList>>();
 
-        Stmp[GamePatternState.Watching] = new List<ScriptList>();
-        Stmp[GamePatternState.Thinking] = new List<ScriptList>();
-        Stmp[GamePatternState.Writing] = new List<ScriptList>();
-        Stmp[GamePatternState.Sleeping] = new List<ScriptList>();
+        // Stmp 초기화
+        void InitializeStmp()
+        {
+            Stmp = new Dictionary<GamePatternState, List<ScriptList>>
+            {
+            { GamePatternState.Watching, new List<ScriptList>() },
+            { GamePatternState.Thinking, new List<ScriptList>() },
+            { GamePatternState.Writing, new List<ScriptList>() },
+            { GamePatternState.Sleeping, new List<ScriptList>() }
+            };
+        }
+        InitializeStmp();
 
         for (int i = 1; i < lines.Length; i++)
         {
@@ -62,7 +70,17 @@ public class ScriptListParser
                     Delay = int.Parse(parts[6])
                 };
 
-                // 메인이랑 서브 분류해서 엔트리 넣어주기
+                // ID가 바뀌었을 때 기존 데이터 저장 후 초기화
+                if (entry.ID != preID && preID != -1)
+                {
+                    InmainStart.Add(new List<ScriptList>(Mtmp));  // 기존 Mtmp 저장
+                    InsubStart.Add(new Dictionary<GamePatternState, List<ScriptList>>(Stmp)); // 기존 Stmp 저장
+
+                    Mtmp.Clear();
+                    InitializeStmp(); // Stmp 초기화
+                }
+
+                // 메인과 서브 데이터 분류
                 if (entry.GameState == GamePatternState.MainA || entry.GameState == GamePatternState.MainB)
                 {
                     Mtmp.Add(entry);
@@ -72,30 +90,18 @@ public class ScriptListParser
                     Stmp[entry.GameState].Add(entry);
                 }
 
-                if (entry.ID != preID)
-                {
-                    InmainStart.Add(Mtmp);
-                    InsubStart.Add(Stmp);
-
-                    Mtmp = new List<ScriptList>();
-                    Stmp = new Dictionary<GamePatternState, List<ScriptList>>();
-                    Stmp[GamePatternState.Watching] = new List<ScriptList>();
-                    Stmp[GamePatternState.Thinking] = new List<ScriptList>();
-                    Stmp[GamePatternState.Writing] = new List<ScriptList>();
-                    Stmp[GamePatternState.Sleeping] = new List<ScriptList>();
-
-                    preID = entry.ID;
-                }
+                preID = entry.ID; // ID 업데이트
             }
         }
 
-        // 마지막 남은 데이터 추가
+        // 마지막 데이터 저장
         if (Mtmp.Count > 0 || Stmp.Values.Any(list => list.Count > 0))
         {
             InmainStart.Add(Mtmp);
             InsubStart.Add(Stmp);
         }
     }
+
 
 
     string[] ParseCSVLine(string line)

@@ -150,6 +150,8 @@ public class DotController : MonoBehaviour
     public ScriptList GetMainScriptList(int index)
     {
         Debug.Log("GetmainScript");
+        Debug.Log(index);
+        Debug.Log(mainScriptLists[chapter - 1].Count);
         return mainScriptLists[chapter - 1][index];
     }
 

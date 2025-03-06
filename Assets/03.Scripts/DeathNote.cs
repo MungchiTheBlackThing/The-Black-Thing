@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Deathnote : MonoBehaviour, IDragHandler, IEndDragHandler
+public class DeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     public Transform pagesContainer; // 페이지들을 담고 있는 부모 Transform
     public int pageCount; // 페이지의 총 갯수
