@@ -136,7 +136,7 @@ public class SubDialogue : MonoBehaviour
             return;
         }
         if (manager.Pattern == GamePatternState.Writing)
-        { 
+        {
             subseq = 3;
         }
         if (manager.Pattern == GamePatternState.Sleeping)

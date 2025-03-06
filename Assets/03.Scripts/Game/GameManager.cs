@@ -328,7 +328,7 @@ public class GameManager : MonoBehaviour
         else if (subDialoguePanel.GetComponent<SubDialogue>().subseq == 2)
         {
             Debug.Log("현재 스크립트 키:" + script.ScriptKey);
-            float waitTime = targetTime - UnityEngine.Time.time;  // 현재 시간과 목표 시간 차이 계산
+            float waitTime = targetTime - UnityEngine.Time.time; // 현재 시간과 목표 시간 차이 계산
             Debug.Log("기다려야하는 시간: " + waitTime);
             if (waitTime > 0f)
             {
@@ -349,18 +349,6 @@ public class GameManager : MonoBehaviour
             dot.TriggerSub(true);
             pc.ProgressSubDial(script.ScriptKey);
         }
-       
-
-        //preScriptList = script;
-        //script = dot.GetSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크
-        ////Debug.Log("다음 스크립트: " + script.ScriptKey);
-
-        //if (script != null && script != preScriptList)
-        //{
-        //    Debug.Log("다음 서브 실행");
-        //    //시간이 지나서 다음 서브가 등장해야 함.
-        //    CurrentState.RunSubScript(dot, this);
-        //}
     }
 
 
