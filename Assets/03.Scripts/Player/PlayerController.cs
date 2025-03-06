@@ -289,7 +289,46 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         return player.BgmVolume;
     }
-
+    public void UpdateArcheType(string tag)
+    {
+        Debug.Log("플러스 태그 : " + tag);
+        if (tag == "sun")
+        {
+            player.archeType.sun++;
+        }
+        else if (tag == "moon")
+        {
+            player.archeType.moon++;
+        }
+        else if (tag == "active")
+        {
+            player.archeType.active++;
+        }
+        else if (tag == "passive")
+        {
+            player.archeType.passive++;
+        }
+    }
+    public void DownArcheType(string tag)
+    {
+        Debug.Log("마이너스 태그 : " + tag);
+        if (tag == "sun")
+        {
+            player.archeType.sun--;
+        }
+        else if (tag == "moon")
+        {
+            player.archeType.moon--;
+        }
+        else if (tag == "active")
+        {
+            player.archeType.active--;
+        }
+        else if (tag == "passive")
+        {
+            player.archeType.passive--;
+        }
+    }
     public void WritePlayerFile()
     {
         //PlayerInfo 클래스 내에 플레이어 정보를 Json 형태로 포멧팅 된 문자열 생성

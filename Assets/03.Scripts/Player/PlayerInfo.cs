@@ -10,8 +10,8 @@ public struct ArcheType
 {
     public int sun;//해와 달 중 구분
     public int moon; 
-    public int actively; //적극과 소극으로 구분
-    public int negative;
+    public int active; //적극과 소극으로 구분
+    public int passive;
 }
 
 [System.Serializable]
@@ -20,7 +20,7 @@ public class PlayerInfo
     //player 닉네임
     public string nickname;
     //player 입장 시간 - 입장한 날짜까지 전부 들고 있는다. 
-    public  DateTime datetime;
+    public DateTime datetime;
     //현재 진행 중인 챕터
     public int chapter;
     //현재 본 MoonRadioIdx
@@ -47,15 +47,15 @@ public class PlayerInfo
 
     public PlayerInfo()
     {
-        nickname="default";
-        chapter=1;
+        nickname = "default";
+        chapter = 1;
         Init();
     }
 
-    public PlayerInfo(string nickname,int chapter, GamePatternState initPhase)
+    public PlayerInfo(string nickname, int chapter, GamePatternState initPhase)
     {
-        this.nickname= nickname;
-        this.chapter= chapter;
+        this.nickname = nickname;
+        this.chapter = chapter;
         this.currentPhase = initPhase;
         Init();
     }
@@ -87,18 +87,18 @@ public class PlayerInfo
             rewardList = new List<EReward>();
         }
     }
-    
+
     public void SetSubPhase(int phaseIdx)
     {
-        subSuccessOrNot[(chapter-1) * 4 + phaseIdx] = true;
+        subSuccessOrNot[(chapter - 1) * 4 + phaseIdx] = true;
     }
 
     public List<bool> GetSubPhase(int Chapter)
     {
         List<bool> subPhase = new List<bool>();
-        
+
         //4개씩 끊어서 전달한다.
-        for(int i=0;i<4;i++)
+        for (int i = 0; i < 4; i++)
         {
             //0 1 2 3
             //chapter 1, 4 5 6 7
@@ -108,6 +108,7 @@ public class PlayerInfo
 
         return subPhase;
     }
+    
 
     public bool IsDiaryCheck { get => isDiaryCheck; set=>isDiaryCheck = value;}
     public float BgmVolume{ get=>bgmVolume; set=>bgmVolume = value; }

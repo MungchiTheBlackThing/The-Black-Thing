@@ -114,6 +114,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         maindata.Actor = DialogueEntries[idx].Actor;
         maindata.TextType = DialogueEntries[idx].TextType;
         maindata.Text = DialogueEntries[idx].KorText;
+        maindata.DeathNote = DialogueEntries[idx].Deathnote;
 
         //이 Text안에서 <name>이 있을 경우 변경
         maindata.NextLineKey = DialogueEntries[idx].NextLineKey;

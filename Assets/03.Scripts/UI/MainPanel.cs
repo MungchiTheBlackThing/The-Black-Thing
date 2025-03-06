@@ -32,6 +32,7 @@ public class MainPanel : MonoBehaviour
     [SerializeField] GameObject BackBut;
     [SerializeField] public GameObject UITutorial;
     [SerializeField] int backindex = -1;
+    [SerializeField] string backtag = "";
 
     public int dialogueIndex = 0;  // Current dialogue index
     public int Day = 0;  // Current day
@@ -133,9 +134,39 @@ public class MainPanel : MonoBehaviour
     public void OnSelectionClicked(int index)
     {
         var currentEntry = mainDialogue.GetData(dialogueIndex);
+        
         if (currentEntry.NextLineKey != null)
         {
             string[] nextKeys = currentEntry.NextLineKey.Split('|');
+            Debug.Log(currentEntry.DeathNote);
+            //여기서 sun, moon, active, passive 체크해서 올리기
+            if (currentEntry.DeathNote != "")
+            {
+                string[] archeTags = currentEntry.DeathNote.Split('|'); // 예: "sun|moon", "moon|sun", "active|passive", "passive|active" 등
+
+                if (archeTags.Length == 2) // 항상 두 개의 값이 존재해야 함
+                {
+                    string firstTag = archeTags[0].Trim().ToLower();
+                    string secondTag = archeTags[1].Trim().ToLower();
+
+                    if (index == 0)
+                    {
+                        Debug.Log(firstTag);
+                        backtag = firstTag;
+                        pc.UpdateArcheType(firstTag);
+                    }
+                    else if (index == 1)
+                    {
+                        Debug.Log(secondTag);
+                        backtag= secondTag;
+                        pc.UpdateArcheType(secondTag);
+                    }
+                }
+            }
+            else
+            {
+                backtag = "";
+            }
 
             if (index < nextKeys.Length && int.TryParse(nextKeys[index], out int nextLineKey))
             {
@@ -173,6 +204,7 @@ public class MainPanel : MonoBehaviour
         Debug.Log("돌아갈수 있는 번호: " + backindex);
         ShowNextDialogue();
     }
+    
     public void DialEnd()
     {
         Debug.Log("메인 끝");
@@ -384,6 +416,10 @@ public class MainPanel : MonoBehaviour
         if (backindex != -1)
         {
             dialogueIndex = backindex;
+            if (backtag != "" )
+            {
+                pc.DownArcheType(backtag);
+            }
             ShowNextDialogue();
         }
     }

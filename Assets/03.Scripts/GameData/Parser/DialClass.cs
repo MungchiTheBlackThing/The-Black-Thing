@@ -10,6 +10,7 @@ namespace Assets.Script.DialClass
         public string Text;
         public string NextLineKey;
         public string AnimScene;
+        public string DeathNote;
     }
 
     public struct sub
