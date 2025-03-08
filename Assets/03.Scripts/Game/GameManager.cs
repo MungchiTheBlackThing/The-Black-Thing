@@ -41,7 +41,9 @@ public class GameManager : MonoBehaviour
     public float targetTime;
     public SubDialogue subDialogue;
     ScriptList preScriptList;
-
+    public static bool isend = false;
+    [SerializeField]
+    protected Canvas canvas;
     public ObjectManager ObjectManager
     {
         get { return objectManager; }
@@ -374,5 +376,12 @@ public class GameManager : MonoBehaviour
     public void Delay(string function, float delay)
     {
         Invoke(function, delay);
+    }
+    public void Ending()
+    {
+        isend = true;
+        string resourcePath = "Ending/end_animation";
+        GameObject endani = Instantiate(Resources.Load<GameObject>(resourcePath), canvas.transform);
+        endani.transform.SetAsLastSibling();
     }
 }

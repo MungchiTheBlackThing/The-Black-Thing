@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 4847198615643200337}
   - component: {fileID: 4847198615643200350}
   - component: {fileID: 1376152020197886651}
+  - component: {fileID: 5963821138075777211}
   m_Layer: 0
   m_Name: deathnote
   m_TagString: Untagged
@@ -183,3 +184,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chapter: 000000000000000000000000000001
+--- !u!114 &5963821138075777211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847198615643200336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404a12317cda5554b808d421a95de10d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  _deathnote: {fileID: 0}
+  canvas: {fileID: 0}
+  menu: {fileID: 0}

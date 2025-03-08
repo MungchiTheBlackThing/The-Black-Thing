@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     [SerializeField] ObjectManager objectManager;
     public string currentReward = "";
 
-
     [SerializeField]
     SubDialogue subDialogue;
     private void Awake()
@@ -104,7 +103,12 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public void NextPhase()
     {
         int phase = GetAlreadyEndedPhase();
-
+        if(phase == (int)GamePatternState.MainB && player.chapter == 14)
+        {
+            Debug.Log("Ending");
+            gamemanger.GetComponent<GameManager>().Ending();
+            return;
+        }
         phase += 1;
 
         if (phase > (int)GamePatternState.NextChapter)
@@ -403,4 +407,10 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         WritePlayerFile();
     }
+
+    public ArcheType GetSunMoon()
+    {
+        return player.archeType;
+    }
+
 }

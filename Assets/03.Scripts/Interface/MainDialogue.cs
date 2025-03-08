@@ -194,14 +194,17 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         dot.ChangeState(DotPatternState.Default, preanimkey, prePos);
         menuController.tuto();
         if (phase == 1 && manager.Chapter == 1)
-        if (phase == 1 && manager.Chapter == 1)
         {
             menuController.onlyskipoff();
             uITutorial.gameObject.SetActive(true);
         }
+        if (phase == 3 && manager.Chapter == 14)
+        {
+            manager.Ending();
+        }
     }
 
-    void listclear()
+        void listclear()
     {
         DialogueEntries.Clear();
         currentDialogueList.Clear();
