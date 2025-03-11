@@ -162,6 +162,11 @@ public class MainPanel : MonoBehaviour
                         pc.UpdateArcheType(secondTag);
                     }
                 }
+
+                else if (archeTags.Length == 4)
+                {
+                    pc.checkdeath(index);
+                }
             }
             else
             {

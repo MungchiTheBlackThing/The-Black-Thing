@@ -23,6 +23,10 @@ public class DeathNoteClick : MonoBehaviour
         canvas = GameObject.Find("Canvas");
     }
 
+    private void OnMouseDown()
+    {
+        Onclick();
+    }
     // Update is called once per frame
     public void Onclick()
     {

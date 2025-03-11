@@ -12,6 +12,7 @@ public struct ArcheType
     public int moon; 
     public int active; //적극과 소극으로 구분
     public int passive;
+    public int deathnote;
 }
 
 [System.Serializable]

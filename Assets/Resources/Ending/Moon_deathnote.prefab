@@ -146,7 +146,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8237966370902210993
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 8237966371428947409}
   - component: {fileID: 8237966371428947422}
   - component: {fileID: 8237966371428947423}
-  - component: {fileID: 8237966371428947408}
+  - component: {fileID: 8869985717766809703}
   m_Layer: 0
   m_Name: Moon_deathnote
   m_TagString: Untagged
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8237966371428947408
+--- !u!114 &8869985717766809703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8237966371428947421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad0bd189f7bba147b4088f5ce5a5bed, type: 3}
+  m_Script: {fileID: 11500000, guid: a3ef8d675a6ccf04db27479c424f36b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pagesContainer: {fileID: 8237966371428947420}
@@ -486,10 +486,10 @@ MonoBehaviour:
     \uC544\uB2C8\uC57C. \uB9C9\uB2E4\uB978 \uAE38\uC5D0\uC11C \uD5DB\uB514\uB38C
     \uCD94\uB77D\uD558\uB294 \uAC83\uB3C4 \uC544\uB2C8\uC57C.\n\uADF8\uAC74 \uB0B4
     \uC120\uD0DD\uC774\uC57C. \uB124 \uC548\uC73C\uB85C \uAE30\uAEBC\uC774 \uD22C\uC2E0\uD574
-    \uC548\uACA8\uB4E4\uACE0, \n\uCC30\uB098\uC758 \uB2E4\uC815\uD55C \uC554\uD751\uC73C\uB85C
-    \uB2E4\uC2DC \uD0DC\uC5B4\uB098\uAC8C \uD560 \uC120\uD0DD.\n\n\uB110 \uC54C\uAC8C
-    \uB418\uC5B4 \uAE30\uBEE4\uC5B4. \uC5B4\uC9C0\uB7FD\uACE0, \uC790\uC720\uB85C\uC6E0\uC5B4.\n\uB2EC\uC774
-    \uB72C \uC5B4\uB290 \uBC24\uC5D0- \n\uB098\uC640 \uB108\uB97C \uB2EE\uC544 \uC788\uC744
+    \uC548\uACA8\uB4E4\uACE0, \n<multiple2>\uC73C\uB85C \uB2E4\uC2DC \uD0DC\uC5B4\uB098\uAC8C
+    \uD560 \uC120\uD0DD.\n\n\uB110 \uC54C\uAC8C \uB418\uC5B4 \uAE30\uBEE4\uC5B4.
+    \uC5B4\uC9C0\uB7FD\uACE0, \uC790\uC720\uB85C\uC6E0\uC5B4.\n\uB2EC\uC774 \uB72C
+    \uC5B4\uB290 \uBC24\uC5D0- \n\uB098\uC640 \uB108\uB97C \uB2EE\uC544 \uC788\uC744
     \uC5B8\uC820\uAC00\uC758 \uAFC8\uC5D0\uC11C, \uAF2D \uB2E4\uC2DC \uB9CC\uB098\uC790!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
@@ -781,14 +781,12 @@ MonoBehaviour:
   m_text: "\uB09C \uC774\uC81C \uB108\uC758 \uC704\uC131\uC774 \uB418\uB294 \uAC83\uB9CC\uC740
     \uB450\uB835\uC9C0 \uC54A\uC544. \n\uB108\uB294 \uB098\uB97C \uB2E8\uC77C\uD55C
     \uC911\uB825 \uB530\uC704\uC5D0 \uBB36\uC5B4 \uB450\uB824\uACE0 \uB4E4\uC9C0
-    \uC54A\uC558\uC73C\uB2C8\uAE4C.\n\uB108\uB294 \uAE30\uAEBC\uC774 \uB108\uC758
-    \uBC14\uB2E4\uB85C \uB098\uB97C \uC774\uB04C\uC5C8\uACE0, \n\uB09C \uADF8 \uB4DC\uB113\uC740
-    \uC218\uBA74\uC5D0 \uBAB8\uC744 \uB744\uC6B4 \uCC44 \uC794\uC794\uD788 \uD30C\uB3C4\uB97C
-    \uAC70\uC2AC\uB7EC \uBCF4\uC558\uC5B4.\n\n<name>, \uC138\uACC4\uC5D0 \uB110\uB9B0
-    \uC218\uB9CE\uC740 \uC778\uAC04\uB4E4\uC758 \uBC14\uB2E4 \uC911 \n\uB124 \uBC14\uB2E4\uAC00
-    \uAC00\uC7A5 \uC88B\uC558\uB358 \uAC74 \n\uADF8\uAC8C \uC774\uB530\uAE08 \u2018\uC6B0\uB9AC\uC758
-    \uBC14\uB2E4\u2019\uAC00 \uB418\uC5C8\uAE30 \uB54C\uBB38\uC774\uC57C. \n\uC0AC\uC2E4\uC774\uB4E0
-    \uC544\uB2C8\uB4E0 \uC801\uC5B4\uB3C4 \uC6B0\uB9AC\uB294 \uADF8\uB807\uAC8C \uBD88\uB800\uC73C\uB2C8\uAE4C."
+    \uC54A\uC558\uC73C\uB2C8\uAE4C.\n<multiple0>\n<multiple1>\n\n<name>, \uC138\uACC4\uC5D0
+    \uB110\uB9B0 \uC218\uB9CE\uC740 \uC778\uAC04\uB4E4\uC758 \uBC14\uB2E4 \uC911
+    \n\uB124 \uBC14\uB2E4\uAC00 \uAC00\uC7A5 \uC88B\uC558\uB358 \uAC74 \n\uADF8\uAC8C
+    \uC774\uB530\uAE08 \u2018\uC6B0\uB9AC\uC758 \uBC14\uB2E4\u2019\uAC00 \uB418\uC5C8\uAE30
+    \uB54C\uBB38\uC774\uC57C. \n\uC0AC\uC2E4\uC774\uB4E0 \uC544\uB2C8\uB4E0 \uC801\uC5B4\uB3C4
+    \uC6B0\uB9AC\uB294 \uADF8\uB807\uAC8C \uBD88\uB800\uC73C\uB2C8\uAE4C."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
   m_sharedMaterial: {fileID: -5985080876634333599, guid: 6aedf712f452c4494b30405bb4c3828d, type: 2}
@@ -1129,8 +1127,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8237966371428947408}
-        m_TargetAssemblyTypeName: Deathnote, Assembly-CSharp
+      - m_Target: {fileID: 8869985717766809703}
+        m_TargetAssemblyTypeName: MoonDeathNote, Assembly-CSharp
         m_MethodName: Onexitclick
         m_Mode: 1
         m_Arguments:

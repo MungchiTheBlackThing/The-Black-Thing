@@ -383,5 +383,7 @@ public class GameManager : MonoBehaviour
         string resourcePath = "Ending/end_animation";
         GameObject endani = Instantiate(Resources.Load<GameObject>(resourcePath), canvas.transform);
         endani.transform.SetAsLastSibling();
+        dot.gameObject.SetActive(false);
+        GameObject deathnote = Instantiate(Resources.Load<GameObject>((SITime)GetSITime + "/deathnote"));
     }
 }

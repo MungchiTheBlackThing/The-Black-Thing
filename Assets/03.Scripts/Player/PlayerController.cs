@@ -262,6 +262,10 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         return player.CurrentChapter;
     }
 
+    public ArcheType GetArcheType()
+    {
+        return player.archeType;
+    }
     public void AddReward(EReward InRewardName)
     {
         // 이미 리스트에 해당 리워드가 없다면 추가
@@ -332,6 +336,10 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         {
             player.archeType.passive--;
         }
+    }
+    public void checkdeath(int index)
+    {
+        player.archeType.deathnote = index;
     }
     public void WritePlayerFile()
     {
