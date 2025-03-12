@@ -3881,7 +3881,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 866035066}
         m_TargetAssemblyTypeName: VideoPlayerController, Assembly-CSharp
-        m_MethodName: CloseVideo
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5239,6 +5239,9 @@ MonoBehaviour:
   dot: {fileID: 2046645039688417658}
   currentPattern: 0
   TutoNum: 0
+  targetTime: 0
+  subDialogue: {fileID: 0}
+  canvas: {fileID: 1193627963}
   pc: {fileID: 0}
   mainDialoguePanel: {fileID: 8899152122286662226}
   videoController: {fileID: 866035066}
@@ -19222,7 +19225,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -0.000015258789, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -49744,6 +49747,7 @@ MonoBehaviour:
   BackBut: {fileID: 0}
   UITutorial: {fileID: 0}
   backindex: 0
+  backtag: 
   dialogueIndex: 0
   Day: 0
   LANGUAGE: 0
@@ -53287,6 +53291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subseq: 1
+  dot: {fileID: 2046645039688417658}
   SubDialogueEntries: []
   scroll: {fileID: 1526469518}
   SystemUI: {fileID: 1705030965}
@@ -53294,6 +53299,7 @@ MonoBehaviour:
   manager: {fileID: 199268581}
   menuController: {fileID: 619721725}
   subTutorial: {fileID: 1467358320}
+  check1: 0
 --- !u!1 &1723573533
 GameObject:
   m_ObjectHideFlags: 0
@@ -70325,6 +70331,7 @@ MonoBehaviour:
   BackBut: {fileID: 1459908451}
   UITutorial: {fileID: 728480254008036771}
   backindex: -1
+  backtag: 
   dialogueIndex: 0
   Day: 0
   LANGUAGE: 0

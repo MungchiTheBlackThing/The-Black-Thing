@@ -20,8 +20,8 @@ public class LoadingController : MonoBehaviour
         { 
             currentChapter = pc.GetChapter();
             int lang = (int)pc.GetLanguage();
-            //title.text = DataManager.Instance.ChapterList.chapters[currentChapter].title[lang];
-            //dailytips.text = DataManager.Instance.ChapterList.chapters[currentChapter].loadText[lang];
+            title.text = DataManager.Instance.ChapterList.chapters[currentChapter].title[lang];
+            dailytips.text = DataManager.Instance.ChapterList.chapters[currentChapter].loadText[lang];
         }
     }
 

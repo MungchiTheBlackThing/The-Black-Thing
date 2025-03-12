@@ -120,19 +120,19 @@ public class TutorialManager : GameManager
 
         if (hh >= (int)STime.T_DAWN && hh < (int)STime.T_MORNING)
         {
-            time = SITime.Dawn;
+            sltime = SITime.Dawn;
         }
         else if (hh >= (int)STime.T_MORNING && hh < (int)STime.T_EVENING)
         {
-            time = SITime.Morning;
+            sltime = SITime.Morning;
         }
         else if (hh >= (int)STime.T_EVENING && hh < (int)STime.T_NIGHT)
         {
-            time = SITime.Evening;
+            sltime = SITime.Evening;
         }
         else
         {
-            time = SITime.Night;
+            sltime = SITime.Night;
         }
 
         StartCoroutine(LoadDataAsync());
@@ -145,7 +145,7 @@ public class TutorialManager : GameManager
 
         loadingProgressBar.value = 0;
 
-        ResourceRequest loadOperation = Resources.LoadAsync<GameObject>("Background/" + time);
+        ResourceRequest loadOperation = Resources.LoadAsync<GameObject>("Background/" + sltime);
         while (!loadOperation.isDone)
         {
             loadingProgressBar.value = loadOperation.progress * backgroundLoadWeight;
@@ -175,7 +175,7 @@ public class TutorialManager : GameManager
     {
         float progress = 0f;
 
-        Coroutine loadObjectCoroutine = StartCoroutine(objectManager.LoadObjectAsync(time.ToString(), pc.GetChapter()));
+        Coroutine loadObjectCoroutine = StartCoroutine(objectManager.LoadObjectAsync(sltime.ToString(), pc.GetChapter()));
         while (!objectManager.IsLoadObjectComplete())
         {
             progress = objectManager.GetLoadProgress();

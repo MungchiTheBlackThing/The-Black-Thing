@@ -10,6 +10,7 @@ namespace Assets.Script.DialClass
         public string Text;
         public string NextLineKey;
         public string AnimScene;
+        public string DeathNote;
     }
 
     public struct sub
@@ -72,6 +73,7 @@ namespace Assets.Script.DialClass
         public string AnimState;
         public string DotAnim;
         public int DotPosition;
+        public int Delay;
     }
 
     [System.Serializable]

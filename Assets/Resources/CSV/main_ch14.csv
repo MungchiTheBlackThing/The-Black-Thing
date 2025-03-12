@@ -1,0 +1,9 @@
+Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote
+1,79,1,main_door_open,Dot,,body_default1,face_blink,text,14-A 첫 번째 대사,eng1,2,,,
+1,,2,main_door_open,Player,,body_default1,face_blink,selection,14-A 선택지1|선택지2,eng2-1|eng2-2,3,scene_14,,
+1,,3,main_door_open,Dot,,body_default1,face_blink,text,14-A 세 번째 대사,eng3,4,,,
+1,,4,main_door_open,Player,,body_default1,face_blink,text,14-A 네 번째 대사,eng4,,,anim_default,
+3,80,5,main_door_open,Dot,,body_default1,face_blink,text,14-B 첫 번째 대사,eng5,6,,,
+3,,6,main_door_open,Player,,body_default1,face_blink,text,14-B 두 번째 대사,eng6,7,,,
+3,,7,main_door_open,Player,,body_default1,face_blink,selection,14-B 선택지1|선택지2,eng7-1|eng7-2,8,,,
+3,,8,main_door_open,Dot,,body_default1,face_blink,text,14-B 네 번째 대사,eng8,,,anim_reading,

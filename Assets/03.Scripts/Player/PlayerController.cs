@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     [SerializeField]
     private int currentChapter;
     const float passTime = 1800f; //30분을 기준으로 한다.
-    // Start is called before the first frame update
-
+    
+    
     public delegate void NextPhaseDelegate(GamePatternState state);
     public NextPhaseDelegate nextPhaseDelegate;
 
@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public SuccessSubDialDelegate successSubDialDelegate;
     [SerializeField] ObjectManager objectManager;
     public string currentReward = "";
-
 
     [SerializeField]
     SubDialogue subDialogue;
@@ -104,7 +103,12 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public void NextPhase()
     {
         int phase = GetAlreadyEndedPhase();
-
+        if(phase == (int)GamePatternState.MainB && player.chapter == 14)
+        {
+            Debug.Log("Ending");
+            gamemanger.GetComponent<GameManager>().Ending();
+            return;
+        }
         phase += 1;
 
         if (phase > (int)GamePatternState.NextChapter)
@@ -258,6 +262,10 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         return player.CurrentChapter;
     }
 
+    public ArcheType GetArcheType()
+    {
+        return player.archeType;
+    }
     public void AddReward(EReward InRewardName)
     {
         // 이미 리스트에 해당 리워드가 없다면 추가
@@ -289,7 +297,50 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         return player.BgmVolume;
     }
-
+    public void UpdateArcheType(string tag)
+    {
+        Debug.Log("플러스 태그 : " + tag);
+        if (tag == "sun")
+        {
+            player.archeType.sun++;
+        }
+        else if (tag == "moon")
+        {
+            player.archeType.moon++;
+        }
+        else if (tag == "active")
+        {
+            player.archeType.active++;
+        }
+        else if (tag == "passive")
+        {
+            player.archeType.passive++;
+        }
+    }
+    public void DownArcheType(string tag)
+    {
+        Debug.Log("마이너스 태그 : " + tag);
+        if (tag == "sun")
+        {
+            player.archeType.sun--;
+        }
+        else if (tag == "moon")
+        {
+            player.archeType.moon--;
+        }
+        else if (tag == "active")
+        {
+            player.archeType.active--;
+        }
+        else if (tag == "passive")
+        {
+            player.archeType.passive--;
+        }
+    }
+    public void checkdeath(int index)
+    {
+        player.archeType.deathnote = index;
+    }
     public void WritePlayerFile()
     {
         //PlayerInfo 클래스 내에 플레이어 정보를 Json 형태로 포멧팅 된 문자열 생성
@@ -364,4 +415,10 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         WritePlayerFile();
     }
+
+    public ArcheType GetSunMoon()
+    {
+        return player.archeType;
+    }
+
 }

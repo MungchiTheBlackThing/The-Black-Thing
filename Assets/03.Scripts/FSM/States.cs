@@ -252,7 +252,9 @@ public class Sleeping : GameState, IResetStateInterface
         }
 
         manager.ObjectManager.PlayThinking();
+
         sleeping.OpenSleeping();
+       
         this.dot = dot;
         dot.ChangeState(DotPatternState.Trigger, "anim_sleep", 10);
         dot.Dust.SetActive(true);
@@ -287,6 +289,7 @@ public class NextChapter : GameState, ILoadingInterface
 
         manager.ObjectManager.SkipSleeping(true);
     }
+
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
         manager.ObjectManager.SkipSleeping(false);

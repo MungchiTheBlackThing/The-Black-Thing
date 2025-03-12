@@ -42,17 +42,18 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         {
             dot.gameObject.SetActive(true);
         }
+        //n초 뒤에 아래가 뜬다.
         manager.ObjectManager.PlayThinking();
         //실제로는 뭉치가 먼저 뜬다.
         //dot State 변경 -> 클릭 시 아래 두개 고정 및 SetMain 설정.
         this.manager = manager;
         this.dot = dot;
-        dot.TriggerMain(true);
         phase = (int)manager.Pattern;
-        Debug.Log("페이즈:" + phase);
+        dot.TriggerMain(true);
         //dot 한테 chapterList 에서 해당 위치랑 애니메이션이 변함.
         SystemUI = GameObject.Find("SystemUI");
         menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
+
     }
 
     public void LoadData(string[] lines)
@@ -114,6 +115,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         maindata.Actor = DialogueEntries[idx].Actor;
         maindata.TextType = DialogueEntries[idx].TextType;
         maindata.Text = DialogueEntries[idx].KorText;
+        maindata.DeathNote = DialogueEntries[idx].Deathnote;
 
         //이 Text안에서 <name>이 있을 경우 변경
         maindata.NextLineKey = DialogueEntries[idx].NextLineKey;
@@ -162,7 +164,6 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         dot.ChangeState(DotPatternState.Main, "body_default1", fixedPos, "face_null");
         mainPanel.Day = manager.Chapter;
         mainPanel.LANGUAGE = CurrentLanguage;
-        //mainPanel.gameObject.GetComponent<MainVideo>().Setting(manager.Chapter, CurrentLanguage);
         mainPanel.ShowNextDialogue();
         manager.ScrollManager.StopCamera(true);
         background = manager.ObjectManager.SetMain(DialogueEntries[0].Background); // 현재 배경이 어떤 값인지 변경
@@ -172,6 +173,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //Day 7을 제외하곤 모두 배경값을 Enter에서 수정하면 되고, 데이 7일때만 변경해준다.
         if (menuController)
             menuController.alloff();
+        mainPanel.gameObject.GetComponent<MainVideo>().Setting(manager.Chapter, CurrentLanguage); //대화 시작하기 전에 미리 동영상 다운
     }
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
@@ -197,9 +199,13 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             menuController.onlyskipoff();
             uITutorial.gameObject.SetActive(true);
         }
+        if (phase == 3 && manager.Chapter == 14)
+        {
+            manager.Ending();
+        }
     }
 
-    void listclear()
+        void listclear()
     {
         DialogueEntries.Clear();
         currentDialogueList.Clear();
