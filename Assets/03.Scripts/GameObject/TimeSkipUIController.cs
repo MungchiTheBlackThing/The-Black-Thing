@@ -28,7 +28,16 @@ public class TimeSkipUIController : MonoBehaviour
     [SerializeField]
     ObjectManager objectManager;
 
-    float[] timeStamp = { 3600f, 1800f, 7200f, 1800f, 1800f };
+    // 0 watch
+    // A -> watching 흐름 따라간다.  1
+    // 1 thinking 2
+    // B 3
+    // 2 writinng 4
+    // play 5
+    // 3 spleeping 6
+
+                        // 0watching   1 thinking 2 wrting   3 play   4 sleeping
+    float[] timeStamp = { 3600f, -1f, 1800f, -1f, 7200f, -1f, 1800f, -1f };
     int timeIdx = -1;
     float time = 0;
     const int HOUR = 3600;
@@ -63,18 +72,25 @@ public class TimeSkipUIController : MonoBehaviour
 
     private void Update()
     {
-        if(timeIdx != -1)
+        if(timeIdx != -1 && time >= 0)
         {
-            int hour = (int)time / HOUR; //3600�� ����
+            int hour = (int)time / HOUR; 
             int min = ((int)time % HOUR) / MIN;
             timeText.text = (hour).ToString() + "h " + (min).ToString() + "m";
             time -= Time.deltaTime;
+
+            if(time < 0)
+            {
+                //다음 챕터로 넘어간다.
+                playerController.NextPhase();
+                time = timeStamp[timeIdx]; //리셋
+                return;
+            }
         }
     }
 
     void NextPhase(GamePatternState gameState)
     {
-        Debug.Log("NextPhase");
         timeIdx = (int)gameState;
         if(timeIdx < timeStamp.Length)
         {
@@ -92,7 +108,6 @@ public class TimeSkipUIController : MonoBehaviour
 
         text[0].text = DataManager.Instance.Settings.timeSkip.title[Idx];
 
-        //������
         text[1].text = DataManager.Instance.Settings.timeSkip.yes[Idx];
         text[2].text = DataManager.Instance.Settings.timeSkip.no[Idx];
 
@@ -118,6 +133,8 @@ public class TimeSkipUIController : MonoBehaviour
     {
         popup.SetActive(false);
         playerController.NextPhase();
+
+        Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
 
     public void TutoYesClick()

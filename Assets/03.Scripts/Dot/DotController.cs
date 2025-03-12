@@ -157,6 +157,7 @@ public class DotController : MonoBehaviour
 
     public int GetSubScriptListCount(GamePatternState State)
     {
+        
         Debug.Log("스테이트:" + State);
         Debug.Log("GetSubSCript");
         if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play || manager.Pattern == GamePatternState.Sleeping || manager.Pattern == GamePatternState.NextChapter)
@@ -186,6 +187,23 @@ public class DotController : MonoBehaviour
         return tmp;
     }
 
+    public void WaitEyesLoading()
+    {
+        StartCoroutine(ShowEyes());
+    }
+
+    private IEnumerator ShowEyes()
+    {
+        yield return new WaitForSeconds(2f);
+
+        DotEyes eyes;
+        Eyes.SetActive(true);
+
+        if (Enum.TryParse(DotExpression, true, out eyes))
+        {
+            EyesAnim.SetInteger("FaceKey", (int)eyes);
+        }
+    }
     public void EndSubScriptList(GamePatternState State)
     {
         //다음 챕터?가 없을 때에는 아무 행위를 하지않는다.
@@ -307,6 +325,7 @@ public class DotController : MonoBehaviour
 
         dotExpression = OutExpression; //Update, Main에서만 사용하기 때문에 다른 곳에서는 사용하지 않음.
         animKey = OutAnimKey;
+
         chapter = manager.Chapter;
         //OutPos 가 있다면 해당 Position으로 바껴야함.
         currentState = states[state];
