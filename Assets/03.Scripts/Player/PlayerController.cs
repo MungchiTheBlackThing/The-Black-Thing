@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     [SerializeField]
     private int currentChapter;
     const float passTime = 1800f; //30분을 기준으로 한다.
-    // Start is called before the first frame update
-
+    
+    
     public delegate void NextPhaseDelegate(GamePatternState state);
     public NextPhaseDelegate nextPhaseDelegate;
 

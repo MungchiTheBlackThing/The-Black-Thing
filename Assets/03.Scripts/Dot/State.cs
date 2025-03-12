@@ -90,22 +90,14 @@ public class Main : DotState
 
     public override void Enter(DotController dot)
     {
-        dot.Eyes.SetActive(true);
-
-        DotEyes eyes;
-
-        if (Enum.TryParse(dot.DotExpression, true, out eyes))
-        {
-            dot.EyesAnim.SetInteger("FaceKey", (int)eyes);
-        }
-
         DotAnimState anim;
         if (Enum.TryParse(dot.AnimKey, true, out anim))
         {
-            //Debug.Log(dot.AnimKey);
             dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
             dot.transform.position = GetCoordinate(dot.Position);
         }
+
+        dot.WaitEyesLoading();
     }
 
     //상태를 나갈 때 1회 호출 -> Position -1로 변경

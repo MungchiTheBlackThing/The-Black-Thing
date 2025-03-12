@@ -42,17 +42,18 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         {
             dot.gameObject.SetActive(true);
         }
+        //n초 뒤에 아래가 뜬다.
         manager.ObjectManager.PlayThinking();
         //실제로는 뭉치가 먼저 뜬다.
         //dot State 변경 -> 클릭 시 아래 두개 고정 및 SetMain 설정.
         this.manager = manager;
         this.dot = dot;
-        dot.TriggerMain(true);
         phase = (int)manager.Pattern;
-        Debug.Log("페이즈:" + phase);
+        dot.TriggerMain(true);
         //dot 한테 chapterList 에서 해당 위치랑 애니메이션이 변함.
         SystemUI = GameObject.Find("SystemUI");
         menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
+
     }
 
     public void LoadData(string[] lines)

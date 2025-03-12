@@ -98,7 +98,7 @@ public class VideoPlayerController : MonoBehaviour
     {
         eVideoIdx = Idx;
         video.SetActive(true);
-        loading[(int)eVideoIdx].SetActive(true);
+        loading[0].SetActive(true); //항상 킨다.
 
         videoPlayer.isLooping = looping;
         videoImage.texture = videoPlayer.texture;
@@ -116,10 +116,15 @@ public class VideoPlayerController : MonoBehaviour
 
     public void CloseVideo()
     {
-        if (eVideoIdx == EVideoIdx.NoVideo) return;
+        if (eVideoIdx == EVideoIdx.SkipPhase)
+        {
+            Close();
+        }
+    }
 
-        video.SetActive(false);
-        loading[(int)eVideoIdx].SetActive(false);
+    public void Close()
+    {
+        loading[0].SetActive(false);
     }
 
     // 비디오 재생
