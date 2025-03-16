@@ -105,8 +105,17 @@ namespace Assets.Script.DialClass
         public string FailEngText;
         public string ArtFilePath;
     }
-    
 
-    
+    [System.Serializable]
+    public class SkipSleep
+    {
+        public int ID;
+        public string Actor;
+        public string KorText;
+        public string EngText;
+    }
+
+
+
 }
 
