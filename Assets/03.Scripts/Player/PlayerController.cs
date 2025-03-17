@@ -113,6 +113,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
         if (phase > (int)GamePatternState.NextChapter)
         {
+            Debug.Log("¥Ÿ¿Ω √©≈Õ");
             player.currentPhase = GamePatternState.Watching;
             //√©≈Õ∞° ¡ı∞°«‘
             SetChapter();
