@@ -110,7 +110,26 @@ public class PlayerInfo
         return subPhase;
     }
     
-
+    public void Replay()
+    {
+        chapter = 1;
+        datetime = DateTime.Now;
+        bgmVolume = 0.5f;
+        sfxVolume = 0.5f;
+        isDiaryCheck = false;
+        isUpdatedDiary = false;
+        language = LANGUAGE.KOREAN;
+        isPushNotificationEnabled = true;
+        currentPhase = GamePatternState.Watching;
+        moonRadioIdx = 1;
+        subSuccessOrNot = new List<bool>();
+        for (int i = 1; i <= 14 * 4; i++)
+        {
+            subSuccessOrNot.Add(false);
+        }
+        rewardList = new List<EReward>();
+        archeType = new ArcheType();
+    }
     public bool IsDiaryCheck { get => isDiaryCheck; set=>isDiaryCheck = value;}
     public float BgmVolume{ get=>bgmVolume; set=>bgmVolume = value; }
     public float AcousticVolume { get=>sfxVolume; set=>sfxVolume=value; }

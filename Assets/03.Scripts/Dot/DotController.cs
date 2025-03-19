@@ -337,20 +337,18 @@ public class DotController : MonoBehaviour
 
     public void Invisible()
     {
+        Debug.Log("안보여야하는데..");
         SpriteRenderer dotRenderer = this.GetComponent<SpriteRenderer>();
-        Color color = dotRenderer.color;
-        color.a = 0f;
-        dotRenderer.color = color;
+        dotRenderer.sortingLayerName = "Default";
         this.GetComponent<BoxCollider2D>().enabled = false;
         this.GetComponent<BoxCollider2D>().enabled = true;
         this.GetComponent<BoxCollider2D>().enabled = false;
     }
     public void Visible()
     {
+        Debug.Log("보여야 하는데...");
         SpriteRenderer dotRenderer = this.GetComponent<SpriteRenderer>();
-        Color color = dotRenderer.color;
-        color.a = 255f;
-        dotRenderer.color = color;
+        dotRenderer.sortingLayerName = "Dot";
         this.GetComponent<BoxCollider2D>().enabled = true;
     }
 }

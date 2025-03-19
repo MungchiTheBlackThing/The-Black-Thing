@@ -5269,7 +5269,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dot: {fileID: 2046645039688417658}
+  currentPattern: 0
   TutoNum: 0
+  targetTime: 0
+  subDialogue: {fileID: 1418538262}
+  canvas: {fileID: 1193627963}
+  menu: {fileID: 619721725}
   pc: {fileID: 2022455605}
   mainDialoguePanel: {fileID: 2119342186}
   videoController: {fileID: 0}
@@ -7479,8 +7484,12 @@ MonoBehaviour:
   day_progress: {fileID: 19253985}
   alter: {fileID: 1014555738}
   detailed_popup: {fileID: 644266274}
+  alertmanager: {fileID: 0}
   dragIconPrefab: {fileID: 4936116059334874993, guid: c611c0afa3f0849e6ab24d4dfc0e7ce5, type: 3}
   dotController: {fileID: 0}
+  tutorial: 0
+  guide1: 0
+  guide2: 0
 --- !u!1 &271774317
 GameObject:
   m_ObjectHideFlags: 0
@@ -16139,6 +16148,7 @@ MonoBehaviour:
   - {fileID: 192958769}
   - {fileID: 1626152787}
   - {fileID: 825847855}
+  alertmanager: {fileID: 0}
 --- !u!224 &574584480
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16464,8 +16474,12 @@ MonoBehaviour:
   day_progress: {fileID: 2137351977}
   alter: {fileID: 926985022}
   detailed_popup: {fileID: 574584478}
+  alertmanager: {fileID: 0}
   dragIconPrefab: {fileID: 4936116059334874993, guid: c611c0afa3f0849e6ab24d4dfc0e7ce5, type: 3}
   dotController: {fileID: 0}
+  tutorial: 0
+  guide1: 0
+  guide2: 0
 --- !u!224 &581850495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17349,6 +17363,9 @@ MonoBehaviour:
   TimeUI: {fileID: 1007219007}
   Default: {fileID: 201689321}
   checkList: {fileID: 574559039}
+  Replay: {fileID: 0}
+  isOpening: 0
+  isprogress: 0
   menu:
   - {fileID: 2143568392}
   - {fileID: 719705723}
@@ -17919,6 +17936,7 @@ MonoBehaviour:
   - {fileID: 1779927626}
   - {fileID: 1096967155}
   - {fileID: 100772537}
+  alertmanager: {fileID: 0}
 --- !u!1 &644337224
 GameObject:
   m_ObjectHideFlags: 0
@@ -42621,10 +42639,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subseq: 1
+  dot: {fileID: 2046645039688417658}
   SubDialogueEntries: []
   scroll: {fileID: 1526469518}
   SystemUI: {fileID: 1705030965}
   SubPanel: {fileID: 1483283895}
+  manager: {fileID: 199268583}
+  menuController: {fileID: 619721725}
+  subTutorial: {fileID: 0}
+  check1: 0
 --- !u!1 &1425035973
 GameObject:
   m_ObjectHideFlags: 0
@@ -44596,6 +44619,9 @@ MonoBehaviour:
   TimeUI: {fileID: 902344433}
   Default: {fileID: 0}
   checkList: {fileID: 1735303009}
+  Replay: {fileID: 0}
+  isOpening: 0
+  isprogress: 0
   menu:
   - {fileID: 1335254861}
   - {fileID: 1300666997}
@@ -48538,9 +48564,12 @@ MonoBehaviour:
   Textinput: {fileID: 0}
   MainClick: {fileID: 0}
   BackBut: {fileID: 0}
+  UITutorial: {fileID: 0}
   backindex: 0
+  backtag: 
   dialogueIndex: 0
   Day: 0
+  LANGUAGE: 0
 --- !u!1 &1592872502
 GameObject:
   m_ObjectHideFlags: 0
@@ -59671,7 +59700,11 @@ MonoBehaviour:
   nickname: SongSuyoung
   currentChapter: 5
   translateManager: {fileID: 0}
+  gamemanger: {fileID: 0}
+  RewardPopup: {fileID: 0}
+  objectManager: {fileID: 0}
   currentReward: 
+  subDialogue: {fileID: 0}
 --- !u!4 &2022455606
 Transform:
   m_ObjectHideFlags: 0
@@ -61581,9 +61614,12 @@ MonoBehaviour:
   Textinput: {fileID: 0}
   MainClick: {fileID: 809888060}
   BackBut: {fileID: 0}
+  UITutorial: {fileID: 0}
   backindex: 0
+  backtag: 
   dialogueIndex: 0
   Day: 0
+  LANGUAGE: 0
 --- !u!224 &2119342188
 RectTransform:
   m_ObjectHideFlags: 0

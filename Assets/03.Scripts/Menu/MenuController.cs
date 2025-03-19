@@ -36,6 +36,8 @@ public class MenuController : MonoBehaviour
     GameObject Default;
     [SerializeField]
     GameObject checkList;
+    [SerializeField]
+    GameObject Replay;
 
     Animator MenuButAnim;
 
@@ -262,6 +264,7 @@ public class MenuController : MonoBehaviour
     public void replayON()
     {
         TimeUI.SetActive(false);
+        Replay.SetActive(true);
     }
     public void tuto()
     {

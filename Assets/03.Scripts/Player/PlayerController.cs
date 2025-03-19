@@ -6,6 +6,7 @@ using System.Text;
 using System.IO;
 using UnityEngine.Android;
 using Assets.Script.Reward;
+using UnityEngine.SceneManagement;
 
 public enum LANGUAGE 
 { 
@@ -420,6 +421,15 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public ArcheType GetSunMoon()
     {
         return player.archeType;
+    }
+
+    public void Replay()
+    {
+        player.Replay();
+        GameManager.isend = false;
+        DeathNoteClick.checkdeath = false;
+        WritePlayerFile();
+        SceneManager.LoadScene("Tutorial");
     }
 
 }

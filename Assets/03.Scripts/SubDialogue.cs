@@ -129,7 +129,6 @@ public class SubDialogue : MonoBehaviour
         if (!SystemUI)
             SystemUI = GameObject.Find("SystemUI");
         TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
-        Debug.Log(manager.Pattern);
         if (dialogueData == null)
         {
             Debug.LogError("Dialogue file not found in Resources folder.");

@@ -145,7 +145,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //대사를 로드했음 좋겠음.
         //배경화면을 로드한다.
         //카메라를 0,0,10에서 정지시킨다.움직이지 못하게한다.
-        uITutorial = mainPanel.UITutorial.GetComponent<UITutorial>();
+        if (uITutorial != null)
+            uITutorial = mainPanel.UITutorial.GetComponent<UITutorial>();
         prePos = dot.Position;
         preanimkey = dot.AnimKey;
         TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
@@ -173,7 +174,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //Day 7을 제외하곤 모두 배경값을 Enter에서 수정하면 되고, 데이 7일때만 변경해준다.
         if (menuController)
             menuController.alloff();
-        mainPanel.gameObject.GetComponent<MainVideo>().Setting(manager.Chapter, CurrentLanguage); //대화 시작하기 전에 미리 동영상 다운
+        if (mainPanel.gameObject.GetComponent<MainVideo>() != null)
+            mainPanel.gameObject.GetComponent<MainVideo>().Setting(manager.Chapter, CurrentLanguage); //대화 시작하기 전에 미리 동영상 다운
     }
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {

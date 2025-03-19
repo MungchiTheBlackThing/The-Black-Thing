@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
     public static bool isend = false;
     [SerializeField]
     protected Canvas canvas;
+    [SerializeField]
+    protected MenuController menu;
     public ObjectManager ObjectManager
     {
         get { return objectManager; }
