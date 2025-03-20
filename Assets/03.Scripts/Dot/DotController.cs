@@ -337,7 +337,7 @@ public class DotController : MonoBehaviour
 
     public void Invisible()
     {
-        Debug.Log("안보여야하는데..");
+        Debug.Log("안보여야하는데.");
         SpriteRenderer dotRenderer = this.GetComponent<SpriteRenderer>();
         dotRenderer.sortingLayerName = "Default";
         this.GetComponent<BoxCollider2D>().enabled = false;
@@ -346,7 +346,7 @@ public class DotController : MonoBehaviour
     }
     public void Visible()
     {
-        Debug.Log("보여야 하는데...");
+        Debug.Log("보여야 하는데.");
         SpriteRenderer dotRenderer = this.GetComponent<SpriteRenderer>();
         dotRenderer.sortingLayerName = "Dot";
         this.GetComponent<BoxCollider2D>().enabled = true;
