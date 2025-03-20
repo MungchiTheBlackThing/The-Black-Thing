@@ -23,7 +23,6 @@ public class TutorialManager : GameManager
     private TutorialState tutostate;
 
     public TutorialState TutoPattern => tutostate;
-
     private static TutorialManager instance;
 
     public static TutorialManager Instance

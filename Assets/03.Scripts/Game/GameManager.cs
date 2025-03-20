@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
     {
         get { return currentPattern; }
     }
+    public GameObject test;
     private Dictionary<GamePatternState, GameState> states;
     public PlayerController pc;
     [SerializeField]
