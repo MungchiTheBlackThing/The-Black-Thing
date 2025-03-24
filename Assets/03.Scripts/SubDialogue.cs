@@ -212,4 +212,29 @@ public class SubDialogue : MonoBehaviour
         SubPanel.gameObject.SetActive(true);
         SubPanel.Subcontinue();
     }
+    public void Tuto9_start(string fileName)
+    {
+        SubPanel subPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
+        if (!SystemUI)
+            SystemUI = GameObject.Find("SystemUI");
+        TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
+        if (dialogueData == null)
+        {
+            Debug.LogError("Dialogue file not found in Resources folder.");
+            return;
+        }
+        scroll.stopscroll(); //임시 방편
+        string[] lines = dialogueData.text.Split('\n');
+        LoadSubDialogue(lines);
+        subPanel.dialogueIndex = 106;
+        StartCoroutine(ShowNextDialogueAfterDelay(2.0f, subPanel));
+        //manager.ScrollManager.StopCamera(true); -> 자꾸 오류 발생함
+        if (menuController)
+            menuController.alloff();
+    }
+    private IEnumerator ShowNextDialogueAfterDelay(float delay,SubPanel subPanel)
+    {
+        yield return new WaitForSeconds(delay);
+        subPanel.ShowNextDialogue();
+    }
 }

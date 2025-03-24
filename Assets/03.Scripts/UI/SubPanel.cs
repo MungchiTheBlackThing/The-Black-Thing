@@ -95,6 +95,7 @@ public class SubPanel : MonoBehaviour
 
     void ShowSelection(string options, GameObject Sel)
     {
+        SelLocationSet(Sel);
         string[] selections = options.Split('|');
         for (int i = 0; i < selections.Length; i++)
         {
@@ -131,9 +132,8 @@ public class SubPanel : MonoBehaviour
             }
             else
             {
-                Debug.Log("Invalid NextLineKey index or parse failure. Ending dialogue.");
-                DialEnd();
-                return;
+                Debug.Log("NextLineKey is not a valid integer. Moving to the next entry by index.");
+                dialogueIndex++;
             }
         }
         else
@@ -153,7 +153,10 @@ public class SubPanel : MonoBehaviour
         PanelOff();
         sub.currentDialogueList.Clear();
         dialogueIndex = 0;
-        pc.successSubDialDelegate(pc.GetAlreadyEndedPhase(), pc.currentReward);
+        if (!string.IsNullOrEmpty(pc.currentReward)) //비어있거나 없는 경우
+        {
+            pc.successSubDialDelegate(pc.GetAlreadyEndedPhase(), pc.currentReward);
+        }
         dotcontroller.EndSubScriptList(gameManager.Pattern);
         sub.Subexit();
     }
@@ -225,7 +228,7 @@ public class SubPanel : MonoBehaviour
                             if (scriptnumber.Contains("tutorial"))
                             {
                                 subClick.SetActive(false);
-                                TutoConditon(selectedDot, scriptnumber, determine);
+                                TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                             } 
                             else
                                 dotballoon(selectedDot);
@@ -247,7 +250,7 @@ public class SubPanel : MonoBehaviour
                                 if (scriptnumber.Contains("tutorial"))
                                 {
                                     subClick.SetActive(false);
-                                    TutoConditon(selectedDot, scriptnumber, determine);
+                                    TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                                 }
                                 else
                                     dotballoon(selectedDot);
@@ -267,7 +270,7 @@ public class SubPanel : MonoBehaviour
                                 if (scriptnumber.Contains("tutorial"))
                                 {
                                     subClick.SetActive(false);
-                                    TutoConditon(selectedDot, scriptnumber, determine);
+                                    TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                                 }
                                 else
                                     dotballoon(selectedDot);
@@ -287,7 +290,7 @@ public class SubPanel : MonoBehaviour
                                 if (scriptnumber.Contains("tutorial"))
                                 {
                                     subClick.SetActive(false);
-                                    TutoConditon(selectedDot, scriptnumber, determine);
+                                    TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                                 }
                                 else
                                     dotballoon(selectedDot);
@@ -307,7 +310,7 @@ public class SubPanel : MonoBehaviour
                                 if (scriptnumber.Contains("tutorial"))
                                 {
                                     subClick.SetActive(false);
-                                    TutoConditon(selectedDot, scriptnumber, determine);
+                                    TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                                 }
                                 else
                                     dotballoon(selectedDot);
@@ -338,7 +341,7 @@ public class SubPanel : MonoBehaviour
                             PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                             PlayTextUI.text = $"{korText}";
                             if (scriptnumber.Contains("tutorial"))
-                                TutoConditon(selectedDot, scriptnumber, determine);
+                                TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                             else
                                 playerballoon(selectedDot);
                         }
@@ -357,7 +360,7 @@ public class SubPanel : MonoBehaviour
                                 PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                                 PlayTextUI.text = $"{korText}";
                                 if (scriptnumber.Contains("tutorial"))
-                                    TutoConditon(selectedDot, scriptnumber, determine);
+                                    TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                                 else
                                     playerballoon(selectedDot);
                             }
@@ -374,7 +377,7 @@ public class SubPanel : MonoBehaviour
                                 PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                                 PlayTextUI.text = $"{korText}";
                                 if (scriptnumber.Contains("tutorial"))
-                                    TutoConditon(selectedDot, scriptnumber, determine);
+                                    TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                                 else
                                     playerballoon(selectedDot);
                             }
@@ -391,7 +394,7 @@ public class SubPanel : MonoBehaviour
                                 PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                                 PlayTextUI.text = $"{korText}";
                                 if (scriptnumber.Contains("tutorial"))
-                                    TutoConditon(selectedDot, scriptnumber, determine);
+                                    TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                                 else
                                     playerballoon(selectedDot);
                             }
@@ -408,7 +411,7 @@ public class SubPanel : MonoBehaviour
                                 PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                                 PlayTextUI.text = $"{korText}";
                                 if (scriptnumber.Contains("tutorial"))
-                                    TutoConditon(selectedDot, scriptnumber, determine);
+                                    TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                                 else
                                     playerballoon(selectedDot);
                             }
@@ -435,7 +438,7 @@ public class SubPanel : MonoBehaviour
                         PlayTextUI.text = $"{korText}";
                         Resetinputfield(selectedDot);
                         if (scriptnumber.Contains("tutorial"))
-                            TutoConditon(selectedDot, scriptnumber, determine);
+                            TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                         else
                             playerballoon(selectedDot);
                     }
@@ -455,7 +458,7 @@ public class SubPanel : MonoBehaviour
                             PlayTextUI.text = $"{korText}";
                             Resetinputfield(selectedDot);
                             if (scriptnumber.Contains("tutorial"))
-                                TutoConditon(selectedDot, scriptnumber, determine);
+                                TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                             else
                                 playerballoon(selectedDot);
                         }
@@ -473,7 +476,7 @@ public class SubPanel : MonoBehaviour
                             PlayTextUI.text = $"{korText}";
                             Resetinputfield(selectedDot);
                             if (scriptnumber.Contains("tutorial"))
-                                TutoConditon(selectedDot, scriptnumber, determine);
+                                TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                             else
                                 playerballoon(selectedDot);
                         }
@@ -491,7 +494,7 @@ public class SubPanel : MonoBehaviour
                             PlayTextUI.text = $"{korText}";
                             Resetinputfield(selectedDot);
                             if (scriptnumber.Contains("tutorial"))
-                                TutoConditon(selectedDot, scriptnumber, determine);
+                                TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                             else
                                 playerballoon(selectedDot);
                         }
@@ -509,7 +512,7 @@ public class SubPanel : MonoBehaviour
                             PlayTextUI.text = $"{korText}";
                             Resetinputfield(selectedDot);
                             if (scriptnumber.Contains("tutorial"))
-                                TutoConditon(selectedDot, scriptnumber, determine);
+                                TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                             else
                                 playerballoon(selectedDot);
                         }
@@ -660,64 +663,102 @@ public class SubPanel : MonoBehaviour
 
     public void LocationSet(GameObject dotbub)
     {
-        Debug.Log("서브 말풍선 위치 설정");
-        Debug.Log(dotcontroller.transform.position);
-
-        Vector2 screenPos = Camera.main.WorldToScreenPoint(dotcontroller.transform.position);
-        Vector2 dotacnchorPos;
-        RectTransform canvasrect = canvas.GetComponent<RectTransform>();
-
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvasrect,
-            new Vector2(dotcontroller.transform.position.x * Screen.width, dotcontroller.transform.position.y * Screen.height),
-            Camera.main,
-            out dotacnchorPos
-        );
+        // 1. 말풍선 RectTransform 가져오기
         RectTransform speechBubbleUI = dotbub.GetComponent<RectTransform>();
-        Debug.Log(screenPos);
-        Debug.Log("앵커드 포지션: " + dotacnchorPos);
+
+        // 2. 캔버스의 RectTransform 가져오기
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+
+        // 3. dotcontroller의 월드 좌표 가져오기
+        Vector3 worldPos = dotcontroller.transform.position;
+
+        // 4. 월드 좌표를 **스크린 좌표로 변환**
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+
+        // 5. 스크린 좌표를 **캔버스 로컬 좌표로 변환**
+        Vector2 anchoredPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos, null, out anchoredPos);
 
         if (dotcontroller.transform.position.x < 0)
         {
             Debug.Log("1");
             // 말풍선을 dot의 오른쪽에 배치
-            speechBubbleUI.transform.position = screenPos - new Vector2(-100, -210);
+            speechBubbleUI.anchoredPosition = anchoredPos - new Vector2(-50, -40);
         }
         else
         {
             Debug.Log("2");
             // 말풍선을 dot의 왼쪽에 배치
-            speechBubbleUI.transform.position = screenPos - new Vector2(1100, -210);
+            speechBubbleUI.anchoredPosition = anchoredPos - new Vector2(50, -40);
         }
+        Debug.Log("최종 위치: " + speechBubbleUI.anchoredPosition);
+        // 6. 변환된 UI 좌표 적용
 
-        // 4. 말풍선을 활성화하여 표시
+        // 7. 말풍선 활성화
         speechBubbleUI.gameObject.SetActive(true);
+
+        // Debug 로그로 확인
+        Debug.Log($"2D 오브젝트 위치 (월드): {worldPos}");
+        Debug.Log($"2D 오브젝트 위치 (스크린): {screenPos}");
+        Debug.Log($"변환된 UI 좌표 (캔버스 기준): {anchoredPos}");
     }
+
+
+
+
 
     public void PlayerLocationSet(GameObject dotbub)
     {
         RectTransform rectTransform = dotbub.GetComponent<RectTransform>();
 
+        // dotcontroller의 x 좌표 기준으로 말풍선 위치 설정
         if (dotcontroller.transform.position.x < 0)
         {
-
-            // 왼쪽 하단에 배치
-            rectTransform.anchorMin = new Vector2(0, 0);
-            rectTransform.anchorMax = new Vector2(0, 0);
-            rectTransform.pivot = new Vector2(0, 0);
-            rectTransform.anchoredPosition = new Vector2(50, -400);
-        }
-
-        else
-        {
+            // 왼쪽 하단에 배치 (피벗을 왼쪽 하단 기준으로 설정)
             rectTransform.anchorMin = new Vector2(1, 0);
             rectTransform.anchorMax = new Vector2(1, 0);
-            rectTransform.pivot = new Vector2(1, 0);
-            rectTransform.anchoredPosition = new Vector2(-50, -400);
+            rectTransform.pivot = new Vector2(1, 0); // 왼쪽 하단 기준
+            rectTransform.anchoredPosition = new Vector2(900, -400); // 위치 조정
+        }
+        else
+        {
+            // 오른쪽 하단에 배치 (피벗을 오른쪽 하단 기준으로 설정)
+            rectTransform.anchorMin = new Vector2(0, 0);
+            rectTransform.anchorMax = new Vector2(0, 0);
+            rectTransform.pivot = new Vector2(0, 0); // 오른쪽 하단 기준
+            rectTransform.anchoredPosition = new Vector2(-900, -400); // 위치 조정
         }
 
+        // 말풍선 UI 활성화
         rectTransform.gameObject.SetActive(true);
     }
+
+    public void SelLocationSet(GameObject dotbub)
+    {
+        RectTransform rectTransform = dotbub.GetComponent<RectTransform>();
+
+        // dotcontroller의 x 좌표 기준으로 말풍선 위치 설정
+        if (dotcontroller.transform.position.x < 0)
+        {
+            // 왼쪽 하단에 배치 (피벗을 왼쪽 하단 기준으로 설정)
+            rectTransform.anchorMin = new Vector2(1, 0);
+            rectTransform.anchorMax = new Vector2(1, 0);
+            rectTransform.pivot = new Vector2(1, 0); // 왼쪽 하단 기준
+            rectTransform.anchoredPosition = new Vector2(900, 0); // 위치 조정
+        }
+        else
+        {
+            // 오른쪽 하단에 배치 (피벗을 오른쪽 하단 기준으로 설정)
+            rectTransform.anchorMin = new Vector2(0, 0);
+            rectTransform.anchorMax = new Vector2(0, 0);
+            rectTransform.pivot = new Vector2(0, 0); // 오른쪽 하단 기준
+            rectTransform.anchoredPosition = new Vector2(-900, 0); // 위치 조정
+        }
+
+        // 말풍선 UI 활성화
+        rectTransform.gameObject.SetActive(true);
+    }
+
 
 
 
@@ -750,7 +791,7 @@ public class SubPanel : MonoBehaviour
         RegisterNextButton(selectedDot.transform.GetComponent<Button>());
     }
 
-    public void TutoConditon(GameObject selectedDot, string scriptnumber, int determine)
+    public void TutoConditon(GameObject selectedDot, string scriptnumber, int determine , int index)
     {
         // SubTuto 인스턴스 가져오기
         SubTuto subTuto = gameManager.gameObject.GetComponent<SubTuto>();
@@ -779,7 +820,7 @@ public class SubPanel : MonoBehaviour
         if (method != null)
         {
             // 매개변수를 전달하여 메서드 실행
-            method.Invoke(subTuto, new object[] { selectedDot, determine });
+            method.Invoke(subTuto, new object[] { selectedDot, determine, index });
             Debug.Log($"{scriptnumber} 메서드가 실행되었습니다.");
         }
         else

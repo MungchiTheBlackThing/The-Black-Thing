@@ -201,6 +201,14 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             menuController.onlyskipoff();
             uITutorial.gameObject.SetActive(true);
         }
+        if (phase == 3 && manager.Chapter == 1)
+        {
+            menuController.onlyskipoff();
+            //Tutorial_9 대사 실행
+            GameObject subdial = manager.subDialoguePanel;
+            subdial.SetActive(true);
+            subdial.GetComponent<SubDialogue>().Tuto9_start("tutorial_sub");
+        }
         if (phase == 3 && manager.Chapter == 14)
         {
             manager.Ending();

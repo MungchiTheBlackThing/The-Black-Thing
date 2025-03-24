@@ -5620,6 +5620,7 @@ GameObject:
   - component: {fileID: 199268582}
   - component: {fileID: 199268581}
   - component: {fileID: 199268583}
+  - component: {fileID: 199268584}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -5689,6 +5690,30 @@ MonoBehaviour:
   - {fileID: 447553222}
   - {fileID: 84676052}
   isAlert: 0
+--- !u!114 &199268584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199268580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785b8414f2aee584f95a986875930a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subPanel: {fileID: 1109418669}
+  touch: {fileID: 0}
+  nickname: {fileID: 0}
+  tutorialManager: {fileID: 0}
+  cameraZoom: {fileID: 0}
+  UIBalloon: {fileID: 0}
+  moonnote: {fileID: 0}
+  SystemUI: {fileID: 1705030965}
+  playerController: {fileID: 2022455605}
+  dotController: {fileID: 2046645039688417658}
+  prefabPath: TouchGuide
+  Recents: []
 --- !u!1 &201689321
 GameObject:
   m_ObjectHideFlags: 0

@@ -224,8 +224,9 @@ public class MainPanel : MonoBehaviour
         }
         else
         {
-            mainDialogue.MainEnd();
+            Debug.Log("¹öÆ° ²ô±â");
             BackBut.SetActive(false);
+            mainDialogue.MainEnd();
         }
     }
     void PanelOff()

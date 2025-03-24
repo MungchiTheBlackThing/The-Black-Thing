@@ -65,12 +65,14 @@ public class ObjectManager : MonoBehaviour
 
     void SuccessSubDial(int phases, string subTitle)
     {
+        Debug.Log("서브 타이틀:" + subTitle);
         //Player의 subSuccessOrNot을 가져와서 해당 idx true 시킨다.
 
         int chapter = pc.GetChapter();
 
         string reward = "reward"+subTitle.Substring(subTitle.IndexOf('_'));
-    
+        Debug.Log(reward);
+
         EReward eReward;
 
         if(Enum.TryParse<EReward>(reward,true,out eReward))

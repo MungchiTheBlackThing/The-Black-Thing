@@ -4,6 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[System.Serializable]
+public class RecentItem
+{
+    public GameObject obj;
+    public int value;
+    public int index;
+}
+
 public class SubTuto : MonoBehaviour
 {
     [SerializeField] SubPanel subPanel;
@@ -11,7 +19,7 @@ public class SubTuto : MonoBehaviour
     [SerializeField] GameObject nickname;
     [SerializeField] TutorialManager tutorialManager;
     [SerializeField] CameraZoom cameraZoom;
-    [SerializeField] 
+    [SerializeField]
     public GameObject UIBalloon;
     [SerializeField]
     public Moonnote moonnote;
@@ -21,21 +29,21 @@ public class SubTuto : MonoBehaviour
     PlayerController playerController;
     [SerializeField]
     DotController dotController;
-    
-    public string prefabPath = "TouchGuide"; 
+
+    public string prefabPath = "TouchGuide";
 
     Vector3 guide1 = new Vector3(-810, -145, 0);
     Vector3 guide2 = new Vector3(-1095, -195, 0);
     Vector3 guide3 = new Vector3(-1100, -400, 0);
 
-    public List<(GameObject,int)> Recents = new List<(GameObject,int)> ();
-    // Update is called once per frame
-    public void tutorial_2(GameObject selectedDot, int determine)
+    [SerializeField]
+    public List<RecentItem> Recents = new List<RecentItem>();
+
+    public void tutorial_2(GameObject selectedDot, int determine, int index)
     {
         GameObject touchguide = Resources.Load<GameObject>(prefabPath);
         if (touchguide != null)
         {
-            // 인스턴스화 및 활성화
             GameObject instance = Instantiate(touchguide, subPanel.gameObject.transform);
             instance.transform.localPosition = guide1;
             instance.SetActive(true);
@@ -48,12 +56,11 @@ public class SubTuto : MonoBehaviour
         touch.tuto2(selectedDot, determine);
     }
 
-    public void tutorial_3(GameObject selectedDot, int determine)
+    public void tutorial_3(GameObject selectedDot, int determine, int index)
     {
         GameObject touchguide = Resources.Load<GameObject>(prefabPath);
         if (touchguide != null)
         {
-            // 인스턴스화 및 활성화
             GameObject instance = Instantiate(touchguide, subPanel.gameObject.transform);
             instance.transform.localPosition = guide2;
             instance.SetActive(true);
@@ -65,7 +72,7 @@ public class SubTuto : MonoBehaviour
         }
         touch.tuto3(selectedDot, determine);
     }
-    public void tutorial_4(GameObject selectedDot, int determine)
+    public void tutorial_4(GameObject selectedDot, int determine, int index)
     {
         GameObject door = GameObject.Find("fix_door");
         Debug.Log(door);
@@ -81,8 +88,8 @@ public class SubTuto : MonoBehaviour
         }
     }
 
-    public void tutorial_5(GameObject selectedDot, int determine)
-    { 
+    public void tutorial_5(GameObject selectedDot, int determine, int index)
+    {
         if (determine == 0)
         {
             subPanel.dotballoon(selectedDot);
@@ -91,44 +98,45 @@ public class SubTuto : MonoBehaviour
         {
             subPanel.playerballoon(selectedDot);
         }
-        //subPanel.gameObject.SetActive(false);
         nickname.SetActive(true);
     }
 
-    public void tutorial_7(GameObject selectedDot, int determine)
+    public void tutorial_7(GameObject selectedDot, int determine, int index)
     {
         cameraZoom.Zoom();
-        Recents.Add((selectedDot, determine));
+        Recents.Add(new RecentItem { obj = selectedDot, value = determine ,index = index });
         subPanel.gameObject.SetActive(false);
     }
 
-    public void tutorial_8(GameObject selectedDot, int determine)
+    public void tutorial_8(GameObject selectedDot, int determine, int index)
     {
-        Recents.Add((selectedDot, determine));
+        Recents.Add(new RecentItem { obj = selectedDot, value = determine, index = index });
         tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 0);
         moonnote = GameObject.FindWithTag("moonnote").GetComponent<Moonnote>();
         StartCoroutine(Scroallable());
     }
 
-    public void tutorial_9(GameObject selectedDot, int determine)
+    public void tutorial_9(GameObject selectedDot, int determine, int index)
     {
-        Recents.Add((selectedDot, determine));
-        dotController.tutorial = false;
-        playerController.NextPhase();
-        playerController.WritePlayerFile();
-        // 메인 1로 넘어가야한다
-        StartCoroutine(LoadSceneCoroutine("MainScene"));
-
+        Recents.Add(new RecentItem { obj = selectedDot, value = determine, index = index });
+        if (!tutorialManager)
+        {
+            Subcontinue();
+        }
+        else
+        {
+            dotController.tutorial = false;
+            playerController.NextPhase();
+            playerController.WritePlayerFile();
+            StartCoroutine(LoadSceneCoroutine("MainScene"));
+        }
     }
+
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
-        // 씬 비동기 로드 시작
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
-
-        // 로딩이 끝날 때까지 대기
         while (!asyncOperation.isDone)
         {
-            // 로딩 진행 상황(0~1 사이 값)을 표시할 수도 있음
             Debug.Log($"Loading progress: {asyncOperation.progress * 100}%");
             yield return null;
         }
@@ -146,13 +154,17 @@ public class SubTuto : MonoBehaviour
 
     public void Subcontinue()
     {
-        if (Recents.Count > 0 && Recents[Recents.Count - 1].Item2 == 0)
+        if (Recents.Count > 0)
         {
-            subPanel.dotballoon(Recents[Recents.Count - 1].Item1);
-        }
-        else
-        {
-            subPanel.playerballoon(Recents[Recents.Count - 1].Item1);
+            RecentItem lastItem = Recents[Recents.Count - 1];
+            if (lastItem.value == 0)
+            {
+                subPanel.dotballoon(lastItem.obj);
+            }
+            else
+            {
+                subPanel.playerballoon(lastItem.obj);
+            }
         }
     }
 
@@ -161,8 +173,6 @@ public class SubTuto : MonoBehaviour
         yield return new WaitForSeconds(5f);
         GameObject dot = tutorialManager.Dot.gameObject;
         dot.GetComponent<DotController>().Invisible();
-        //cameraZoom.gameObject.GetComponent<ScrollManager>().scrollable();
-        // 여기에 다이어리 쪽지 관련 플레이어 말 띄우기, 불빛 애니메이션 실행
         UIBalloon.SetActive(true);
         moonnote.anion(UIBalloon);
         SystemUI.SetActive(true);
@@ -173,7 +183,6 @@ public class SubTuto : MonoBehaviour
         GameObject touchguide = Resources.Load<GameObject>(prefabPath);
         if (touchguide != null)
         {
-            // 인스턴스화 및 활성화
             GameObject instance = Instantiate(touchguide, subPanel.gameObject.transform);
             instance.transform.localPosition = guide3;
             instance.SetActive(true);

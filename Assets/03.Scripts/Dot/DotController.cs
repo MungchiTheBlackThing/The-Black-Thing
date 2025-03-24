@@ -207,7 +207,7 @@ public class DotController : MonoBehaviour
     public void EndSubScriptList(GamePatternState State)
     {
         //다음 챕터?가 없을 때에는 아무 행위를 하지않는다.
-        if (subScriptLists[chapter - 1][State].Count == 0)
+        if (subScriptLists[chapter - 1][State].Count == 0 || State == GamePatternState.MainB || State == GamePatternState.MainA)
             return;
 
         //서브 하나가 끝났을 때 0번째 서브를 뒤에 있는 서브들로 덮어쓰기해서
