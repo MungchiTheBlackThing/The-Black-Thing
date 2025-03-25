@@ -154,6 +154,13 @@ public class GameManager : MonoBehaviour
     }
     public void GoSleep()
     {
+        if (pc.GetChapter() == 1)
+        {
+            Debug.Log("Tuto 다시 시작");
+            subDialoguePanel.SetActive(true);
+            subDialogue.Tuto_start(118);
+            return;
+        }
         dot.GoSleep();
     }
     public void NextPhase()
@@ -162,6 +169,7 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeGameState(GamePatternState patternState)
     {
+        Debug.Log("스테이트 변경");
         if (states == null) return;
         if (states.ContainsKey(patternState) == false)
         {

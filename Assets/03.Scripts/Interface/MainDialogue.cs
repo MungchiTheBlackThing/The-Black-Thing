@@ -207,7 +207,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             //Tutorial_9 대사 실행
             GameObject subdial = manager.subDialoguePanel;
             subdial.SetActive(true);
-            subdial.GetComponent<SubDialogue>().Tuto9_start("tutorial_sub");
+            subdial.GetComponent<SubDialogue>().Tuto_start(106);
         }
         if (phase == 3 && manager.Chapter == 14)
         {
@@ -215,7 +215,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         }
     }
 
-        void listclear()
+    void listclear()
     {
         DialogueEntries.Clear();
         currentDialogueList.Clear();

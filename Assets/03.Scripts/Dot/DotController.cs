@@ -207,7 +207,7 @@ public class DotController : MonoBehaviour
     public void EndSubScriptList(GamePatternState State)
     {
         //다음 챕터?가 없을 때에는 아무 행위를 하지않는다.
-        if (subScriptLists[chapter - 1][State].Count == 0 || State == GamePatternState.MainB || State == GamePatternState.MainA)
+        if (subScriptLists[chapter - 1][State].Count == 0 || State == GamePatternState.MainB || State == GamePatternState.MainA || State == GamePatternState.Play)
             return;
 
         //서브 하나가 끝났을 때 0번째 서브를 뒤에 있는 서브들로 덮어쓰기해서
@@ -274,6 +274,7 @@ public class DotController : MonoBehaviour
     }
     public void TriggerPlay(bool isActive)
     {
+        Debug.Log(currentState);
         alertOff();
         playAlert.SetActive(isActive);
         /*여기서 OnClick 함수도 연결해준다.*/
@@ -289,6 +290,7 @@ public class DotController : MonoBehaviour
 
     public void GoSleep()
     {
+        ChangeState(DotPatternState.Trigger);
         Trigger phase= (Trigger)currentState;
 
         if(phase!=null)
@@ -299,6 +301,13 @@ public class DotController : MonoBehaviour
 
     public void EndPlay()
     {
+        Debug.Log("자러 갈 시간");
+        if (pc.GetChapter() == 1)
+        {
+            this.position = 10;
+            this.transform.position = new Vector2(10.92f, -5.13f);
+            return;
+        }
         manager.NextPhase();
     }
 

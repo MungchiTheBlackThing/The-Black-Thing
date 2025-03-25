@@ -48457,6 +48457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playPlayer: {fileID: 1725523482}
   playDot: {fileID: 1094932322510850395}
+  gameManager: {fileID: 199268581}
   answer: 1
   poem: {fileID: 8632590686858950580, guid: 2946c3a3492a48e4bac993cf918d88e9, type: 3}
 --- !u!212 &1523893602
@@ -52008,6 +52009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playPlayer: {fileID: 1725523482}
   playDot: {fileID: 1094932322510850395}
+  gameManager: {fileID: 199268581}
   answer: 0
   poem: {fileID: 8632590686858950580, guid: 2946c3a3492a48e4bac993cf918d88e9, type: 3}
 --- !u!212 &1647601948

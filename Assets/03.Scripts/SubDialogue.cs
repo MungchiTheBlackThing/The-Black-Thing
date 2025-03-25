@@ -181,6 +181,7 @@ public class SubDialogue : MonoBehaviour
         {
             Debug.Log(dialogueData.name);
             TutoExit();
+            manager.NextPhase();
             return;
         }
         GamePatternState gamePattern = manager.Pattern;
@@ -209,7 +210,7 @@ public class SubDialogue : MonoBehaviour
         Debug.Log("끝났을때 서브 번호: " + subseq);
         manager.CurrentState.RunSubScript(dot, manager);
     }
-    private void TutoExit()
+    public void TutoExit()
     {
         if (menuController)
         {
@@ -231,13 +232,13 @@ public class SubDialogue : MonoBehaviour
         SubPanel.gameObject.SetActive(true);
         SubPanel.Subcontinue();
     }
-    public void Tuto9_start(string fileName)
+    public void Tuto_start(int index)
     {
         dialogueData = null;
         SubPanel subPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
         if (!SystemUI)
             SystemUI = GameObject.Find("SystemUI");
-        dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
+        dialogueData = Resources.Load<TextAsset>("CSV/" + "tutorial_sub");
         if (dialogueData == null)
         {
             Debug.LogError("Dialogue file not found in Resources folder.");
@@ -246,7 +247,7 @@ public class SubDialogue : MonoBehaviour
         scroll.stopscroll(); //임시 방편
         string[] lines = dialogueData.text.Split('\n');
         LoadSubDialogue(lines);
-        subPanel.dialogueIndex = 106;
+        subPanel.dialogueIndex = index;
         StartCoroutine(ShowNextDialogueAfterDelay(2.0f, subPanel));
         //manager.ScrollManager.StopCamera(true); -> 자꾸 오류 발생함
         if (menuController)

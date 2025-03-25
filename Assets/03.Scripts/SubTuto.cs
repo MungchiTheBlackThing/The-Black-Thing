@@ -135,11 +135,31 @@ public class SubTuto : MonoBehaviour
     public void tutorial_10(GameObject selectedDot, int determine, int index)
     {
         Recents.Add(new RecentItem { obj = selectedDot, value = determine, index = index });
-        subDialogue.Subexit();
-        playerController.NextPhase();
-        playerController.WritePlayerFile();
+        if (playerController.GetAlreadyEndedPhase() == 5)
+        {
+            Debug.Log("1tuto10");
+            Subcontinue();
+        }
+        else
+        {
+            Debug.Log("2tuto10");
+            subDialogue.TutoExit();
+            playerController.NextPhase();
+            playerController.WritePlayerFile();
+        }
     }
+    public void tutorial_11(GameObject selectedDot, int determine, int index)
+    {
+        Recents.Add(new RecentItem { obj = selectedDot, value = determine, index = index });
+        dotController.GoSleep();
+        StartCoroutine(subcon());
 
+    }
+    private IEnumerator subcon()
+    {
+        yield return new WaitForSeconds(4f);
+        Subcontinue();
+    }
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
@@ -167,10 +187,12 @@ public class SubTuto : MonoBehaviour
             RecentItem lastItem = Recents[Recents.Count - 1];
             if (lastItem.value == 0)
             {
+                subPanel.prePos = dotController.Position;
                 subPanel.dotballoon(lastItem.obj);
             }
             else
             {
+                subPanel.prePos = dotController.Position;
                 subPanel.playerballoon(lastItem.obj);
             }
         }

@@ -9,7 +9,8 @@ public class PlayAnswerController : MonoBehaviour
     [SerializeField]
     GameObject playDot;
 
-
+    [SerializeField]
+    GameManager gameManager;
     [SerializeField]
     bool answer;
 
@@ -36,7 +37,7 @@ public class PlayAnswerController : MonoBehaviour
         else
         {
             //No를 의미한다. No일 경우 뭉치 자는 애니메이션 수행
-            dot.GoSleep();
+            gameManager.GoSleep();
         }
 
         playPlayer.SetActive(false);

@@ -157,7 +157,8 @@ public class SubPanel : MonoBehaviour
         {
             pc.successSubDialDelegate(pc.GetAlreadyEndedPhase(), pc.currentReward);
         }
-        dotcontroller.EndSubScriptList(gameManager.Pattern);
+        if (pc.GetAlreadyEndedPhase() != 5)
+            dotcontroller.EndSubScriptList(gameManager.Pattern);
         sub.Subexit();
     }
     void PanelOff()

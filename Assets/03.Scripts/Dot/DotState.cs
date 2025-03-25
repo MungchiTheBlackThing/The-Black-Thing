@@ -15,6 +15,7 @@ public class Coordinate
 {
     public List<DotData> data;
 }
+[System.Serializable]
 public abstract class DotState
 {
     static protected Dictionary<float, Vector2> position; //State 클래스 1개에 모두 공유할 수 있도록 함.

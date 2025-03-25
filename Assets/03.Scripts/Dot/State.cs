@@ -130,6 +130,7 @@ public class Sub : DotState
     }
     public override void Enter(DotController dot)
     {
+        Debug.Log("서브 스타트");
         DotAnimState anim;
 
         if (Enum.TryParse(dot.AnimKey, true, out anim))
@@ -209,6 +210,7 @@ public class Trigger : DotState
 
     public override void Enter(DotController dot)
     {
+        Debug.Log("Trigger start");
         DotAnimState anim;
         if (Enum.TryParse(dot.AnimKey, true, out anim))
         {
