@@ -5702,6 +5702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785b8414f2aee584f95a986875930a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subDialogue: {fileID: 1720718690}
   subPanel: {fileID: 1109418669}
   touch: {fileID: 0}
   nickname: {fileID: 0}
@@ -54535,6 +54536,7 @@ MonoBehaviour:
   menuController: {fileID: 619721725}
   subTutorial: {fileID: 1467358320}
   check1: 0
+  dialogueData: {fileID: 0}
 --- !u!1 &1723573533
 GameObject:
   m_ObjectHideFlags: 0

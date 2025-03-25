@@ -856,4 +856,10 @@ public class SubPanel : MonoBehaviour
             ShowNextDialogue();
         }
     }
+    public void clear()
+    {
+        PanelOff();
+        sub.currentDialogueList.Clear();
+        dialogueIndex = 0;
+    }
 }

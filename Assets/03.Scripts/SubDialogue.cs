@@ -29,6 +29,9 @@ public class SubDialogue : MonoBehaviour
     public SubTutorial subTutorial;
     public bool check1 = false;
 
+    [SerializeField]
+    TextAsset dialogueData;
+
 
     public void LoadSubDialogue(string[] lines)
     {
@@ -125,10 +128,11 @@ public class SubDialogue : MonoBehaviour
 
     public void StartSub(string fileName)
     {
+        dialogueData = null;
         SubPanel subPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
         if (!SystemUI)
             SystemUI = GameObject.Find("SystemUI");
-        TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
+        dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
         if (dialogueData == null)
         {
             Debug.LogError("Dialogue file not found in Resources folder.");
@@ -173,6 +177,12 @@ public class SubDialogue : MonoBehaviour
 
     public void Subexit()
     {
+        if (dialogueData.name == "tutorial_sub")
+        {
+            Debug.Log(dialogueData.name);
+            TutoExit();
+            return;
+        }
         GamePatternState gamePattern = manager.Pattern;
         SubPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
         if (menuController)
@@ -199,7 +209,16 @@ public class SubDialogue : MonoBehaviour
         Debug.Log("끝났을때 서브 번호: " + subseq);
         manager.CurrentState.RunSubScript(dot, manager);
     }
-    
+    private void TutoExit()
+    {
+        if (menuController)
+        {
+            menuController.allon();
+        }
+        SubPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
+        scroll.scrollable();
+        SubPanel.clear();
+    }
 
     public void SubContinue()
     {
@@ -214,10 +233,11 @@ public class SubDialogue : MonoBehaviour
     }
     public void Tuto9_start(string fileName)
     {
+        dialogueData = null;
         SubPanel subPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
         if (!SystemUI)
             SystemUI = GameObject.Find("SystemUI");
-        TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
+        dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
         if (dialogueData == null)
         {
             Debug.LogError("Dialogue file not found in Resources folder.");

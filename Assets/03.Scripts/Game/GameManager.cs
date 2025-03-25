@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
     protected Canvas canvas;
     [SerializeField]
     protected MenuController menu;
+
+
+    private Coroutine subDialogCoroutine;
+    private bool isSkipping = false;
+
     public ObjectManager ObjectManager
     {
         get { return objectManager; }
@@ -286,14 +291,35 @@ public class GameManager : MonoBehaviour
     //서브가 있든 없든 호출 ㄱㄱ 없으면, Interface상에 걸려서 이전 했던 행동 하고 끝낼겨
     public void ShowSubDial()
     {
-        Debug.Log("showsubdial");
-        StartCoroutine(SubDialog(dot));
+        Debug.Log("ShowSubDial 실행됨");
+
+        if (subDialogCoroutine != null)
+        {
+            StopCoroutine(subDialogCoroutine);
+        }
+
+        isSkipping = false;
+        subDialogCoroutine = StartCoroutine(SubDialog(dot));
+    }
+
+    public void StopSubDial()
+    {
+        Debug.Log("StopSubDial 실행됨");
+
+        if (subDialogCoroutine != null)
+        {
+            StopCoroutine(subDialogCoroutine);
+            subDialogCoroutine = null;
+        }
+
+        isSkipping = true;
     }
 
     IEnumerator SubDialog(DotController dot = null)
     {
         dot.TriggerSub(false);
         subDialogue.gameObject.SetActive(true);
+
         if (Pattern == GamePatternState.Writing)
         {
             subDialogue.subseq = 3;
@@ -303,11 +329,10 @@ public class GameManager : MonoBehaviour
             subDialogue.subseq = 4;
         }
         subDialogue.gameObject.SetActive(false);
-        ScriptList script = dot.GetSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크
+
+        ScriptList script = dot.GetSubScriptList(Pattern);
         if (script == null)
         {
-            //sub가 끝나면 Sleeping에 대한 동작을 수행하겠지...
-            //현재 패턴에 대해 더이상 없으면... 
             IResetStateInterface resetState = CurrentState as IResetStateInterface;
             if (resetState != null)
             {
@@ -315,44 +340,77 @@ public class GameManager : MonoBehaviour
             }
             yield break;
         }
+
         ScriptList nxscript = null;
-        
+
         if (subDialoguePanel.GetComponent<SubDialogue>().subseq == 1)
         {
             isready = false;
-            nxscript = dot.GetnxSubScriptList(Pattern); //현재 몇번째 서브 진행중인지 체크
+            nxscript = dot.GetnxSubScriptList(Pattern);
+
             Debug.Log("다음 스크립트 시간: " + nxscript.Delay);
-            float StartTime = UnityEngine.Time.time;// 현재 시작 시간 저장
-            targetTime = StartTime + nxscript.Delay;
+            float startTime = UnityEngine.Time.time;
+            targetTime = startTime + nxscript.Delay;
+
             Debug.Log("현재 스크립트 시간: " + script.Delay);
-            yield return new WaitForSeconds(script.Delay);
-            Debug.Log("현재 스크립트 키:" + script.ScriptKey);
-            dot.TriggerSub(true);
-            pc.ProgressSubDial(script.ScriptKey);
+
+            float elapsed = 0f;
+            while (elapsed < script.Delay)
+            {
+                if (isSkipping) yield break;
+                yield return null;
+                elapsed += UnityEngine.Time.deltaTime;
+            }
+
+            if (!isSkipping)
+            {
+                Debug.Log("현재 스크립트 키: " + script.ScriptKey);
+                dot.TriggerSub(true);
+                pc.ProgressSubDial(script.ScriptKey);
+            }
         }
         else if (subDialoguePanel.GetComponent<SubDialogue>().subseq == 2)
         {
-            Debug.Log("현재 스크립트 키:" + script.ScriptKey);
-            float waitTime = targetTime - UnityEngine.Time.time; // 현재 시간과 목표 시간 차이 계산
-            Debug.Log("기다려야하는 시간: " + waitTime);
+            Debug.Log("현재 스크립트 키: " + script.ScriptKey);
+            float waitTime = targetTime - UnityEngine.Time.time;
+            Debug.Log("기다려야 하는 시간: " + waitTime);
+
             if (waitTime > 0f)
             {
-                // 서브2의 실행 시간이 아직 남았으면 그 시간만큼 기다리기
-                yield return new WaitForSeconds(waitTime);
+                float elapsed = 0f;
+                while (elapsed < waitTime)
+                {
+                    if (isSkipping) yield break;
+                    yield return null;
+                    elapsed += UnityEngine.Time.deltaTime;
+                }
             }
 
-            // 서브2 실행
-            Debug.Log("서브 2 실행");
-            dot.TriggerSub(true);
-            pc.ProgressSubDial(script.ScriptKey);
+            if (!isSkipping)
+            {
+                Debug.Log("서브 2 실행");
+                dot.TriggerSub(true);
+                pc.ProgressSubDial(script.ScriptKey);
+            }
         }
         else
         {
             Debug.Log("현재 스크립트 시간: " + script.Delay);
-            yield return new WaitForSeconds(script.Delay);
-            Debug.Log("현재 스크립트 키:" + script.ScriptKey);
-            dot.TriggerSub(true);
-            pc.ProgressSubDial(script.ScriptKey);
+
+            float elapsed = 0f;
+            while (elapsed < script.Delay)
+            {
+                if (isSkipping) yield break;
+                yield return null;
+                elapsed += UnityEngine.Time.deltaTime;
+            }
+
+            if (!isSkipping)
+            {
+                Debug.Log("현재 스크립트 키: " + script.ScriptKey);
+                dot.TriggerSub(true);
+                pc.ProgressSubDial(script.ScriptKey);
+            }
         }
     }
 

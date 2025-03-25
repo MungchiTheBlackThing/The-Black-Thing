@@ -14,6 +14,7 @@ public class RecentItem
 
 public class SubTuto : MonoBehaviour
 {
+    [SerializeField] SubDialogue subDialogue;
     [SerializeField] SubPanel subPanel;
     [SerializeField] TouchGuide touch;
     [SerializeField] GameObject nickname;
@@ -130,6 +131,13 @@ public class SubTuto : MonoBehaviour
             playerController.WritePlayerFile();
             StartCoroutine(LoadSceneCoroutine("MainScene"));
         }
+    }
+    public void tutorial_10(GameObject selectedDot, int determine, int index)
+    {
+        Recents.Add(new RecentItem { obj = selectedDot, value = determine, index = index });
+        subDialogue.Subexit();
+        playerController.NextPhase();
+        playerController.WritePlayerFile();
     }
 
     private IEnumerator LoadSceneCoroutine(string sceneName)
