@@ -304,8 +304,8 @@ public class DotController : MonoBehaviour
         Debug.Log("자러 갈 시간");
         if (pc.GetChapter() == 1)
         {
-            this.position = 10;
-            this.transform.position = new Vector2(10.92f, -5.13f);
+            //this.position = 10;
+            //this.transform.position = new Vector2(10.92f, -5.13f);
             return;
         }
         manager.NextPhase();

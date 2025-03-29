@@ -103,7 +103,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void NextPhase()
     {
-        gamemanger.GetComponent<GameManager>().StopSubDial();
+        if (gamemanger.GetComponent<GameManager>())
+            gamemanger.GetComponent<GameManager>().StopSubDial();
         int phase = GetAlreadyEndedPhase();
         if(phase == (int)GamePatternState.MainB && player.chapter == 14)
         {

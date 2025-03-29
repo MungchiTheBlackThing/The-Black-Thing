@@ -28,6 +28,7 @@ public class SubDialogue : MonoBehaviour
     public MenuController menuController;
     public SubTutorial subTutorial;
     public bool check1 = false;
+    public PlayerController playerController;
 
     [SerializeField]
     TextAsset dialogueData;
@@ -35,6 +36,7 @@ public class SubDialogue : MonoBehaviour
 
     public void LoadSubDialogue(string[] lines)
     {
+        CurrentLanguage = playerController.GetLanguage();
         listclear();
         for (int i = 1; i < lines.Length; i++)
         {

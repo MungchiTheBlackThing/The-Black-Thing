@@ -22,6 +22,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     MainPanel mainPanel;
     MenuController menuController;
     UITutorial uITutorial;
+    PlayerController PlayerController;
 
     protected int fixedPos = -1;
 
@@ -53,11 +54,13 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //dot 한테 chapterList 에서 해당 위치랑 애니메이션이 변함.
         SystemUI = GameObject.Find("SystemUI");
         menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
-
+        PlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        CurrentLanguage = PlayerController.GetLanguage();
     }
 
     public void LoadData(string[] lines)
     {
+        CurrentLanguage = PlayerController.GetLanguage();
         listclear();
         for (int i = 1; i < lines.Length; i++)
         {

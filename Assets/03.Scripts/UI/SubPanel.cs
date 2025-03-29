@@ -684,13 +684,13 @@ public class SubPanel : MonoBehaviour
         {
             Debug.Log("1");
             // 말풍선을 dot의 오른쪽에 배치
-            speechBubbleUI.anchoredPosition = anchoredPos - new Vector2(-50, -40);
+            speechBubbleUI.anchoredPosition = anchoredPos;
         }
         else
         {
             Debug.Log("2");
             // 말풍선을 dot의 왼쪽에 배치
-            speechBubbleUI.anchoredPosition = anchoredPos - new Vector2(50, -40);
+            speechBubbleUI.anchoredPosition = anchoredPos;
         }
         Debug.Log("최종 위치: " + speechBubbleUI.anchoredPosition);
         // 6. 변환된 UI 좌표 적용
