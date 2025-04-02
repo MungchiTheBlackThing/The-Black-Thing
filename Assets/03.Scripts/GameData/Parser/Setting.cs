@@ -48,6 +48,7 @@ public class Settings
     public List<string> namechanged;
     public NameSetting namesetting;
     public Pushoff pushoff;
+    public List<string> language;
 }
 
 [System.Serializable]

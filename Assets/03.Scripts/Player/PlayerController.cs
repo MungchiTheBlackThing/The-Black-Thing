@@ -183,6 +183,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void SetLanguage(LANGUAGE language)
     {
+        Debug.Log("현재 언어: "+language);
         player.language = language;
 
         translateManager.Translate(player.language);

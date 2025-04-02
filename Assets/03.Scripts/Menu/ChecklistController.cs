@@ -74,10 +74,10 @@ public class ChecklistController : MonoBehaviour
         phase[3].text = DataManager.Instance.Settings.checklist.phase4[Idx];
 
 
-        for(int i=0;i<phase.Length;i++)
-        {
-            phase[i].font = font;
-        }
+        //for(int i=0;i<phase.Length;i++)
+        //{
+        //    phase[i].font = font;
+        //}
     }
     
     private void InitPhase(GamePatternState state)

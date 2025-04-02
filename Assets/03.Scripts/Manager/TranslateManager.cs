@@ -14,6 +14,6 @@ public class TranslateManager : MonoBehaviour
     public void Translate(LANGUAGE language)
     {
         TMP_FontAsset font = fonts[(int)language];
-        //translatorDel(language, font);
+        translatorDel?.Invoke(language, font);
     }
 }

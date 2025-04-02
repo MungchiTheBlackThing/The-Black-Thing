@@ -59,9 +59,13 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     ObjectManager objectManager;
 
+    [SerializeField]
+    PlayerController PlayerController;
+
     public static event Action OnMenuOpened;
     private void Start()
     {
+        PlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         MenuButAnim = GetComponent<Animator>();
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
 
@@ -113,6 +117,9 @@ public class MenuController : MonoBehaviour
         mypage[11].text = DataManager.Instance.Settings.settings.pushoff.no[Idx];
         mypage[12].text = DataManager.Instance.Settings.settings.pushoff.yes[Idx];
 
+        //Language
+        mypage[13].text = DataManager.Instance.Settings.settings.language[Idx];
+
         //타이틀
         community[0].text = DataManager.Instance.Settings.menuMyPage.community[Idx];
 
@@ -136,30 +143,30 @@ public class MenuController : MonoBehaviour
         progress[3].text = DataManager.Instance.Settings.checklist.phase4[Idx];
 
 
-        for (int i = 0; i < menu.Length; i++)
-        {
-            menu[i].font = font;
-        }
+        //for (int i = 0; i < menu.Length; i++)
+        //{
+        //    menu[i].font = font;
+        //}
 
-        for (int i = 0; i < mypage.Length; i++)
-        {
-            mypage[i].font = font;
-        }
+        //for (int i = 0; i < mypage.Length; i++)
+        //{
+        //    mypage[i].font = font;
+        //}
 
-        for(int i=0;i<community.Length; i++)
-        {
-            community[i].font = font;
-        }
+        //for(int i=0;i<community.Length; i++)
+        //{
+        //    community[i].font = font;
+        //}
 
-        for(int i=0;i<credit.Length; i++)
-        {
-            credit[i].font = font;
-        }
+        //for(int i=0;i<credit.Length; i++)
+        //{
+        //    credit[i].font = font;
+        //}
 
-        for(int i=0;i<progress.Length; i++)
-        {
-            progress[i].font = font;
-        }
+        //for(int i=0;i<progress.Length; i++)
+        //{
+        //    progress[i].font = font;
+        //}
     }
 
     public void onMenu()
