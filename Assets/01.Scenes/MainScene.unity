@@ -26029,7 +26029,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC624\uB298\uC740 \uC870\uAE08 \uBC14\uBE60."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: eb1cd21ad35e93147b7830408e9cf084, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
   m_sharedMaterial: {fileID: 4585107220543724766, guid: eb1cd21ad35e93147b7830408e9cf084, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -26096,7 +26096,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 929438581}
   m_maskType: 0
 --- !u!23 &929438581
@@ -54541,7 +54541,7 @@ MonoBehaviour:
   menuController: {fileID: 619721725}
   subTutorial: {fileID: 1467358320}
   check1: 0
-  playerController: {fileID: 0}
+  playerController: {fileID: 2022455605}
   dialogueData: {fileID: 0}
 --- !u!1 &1723573533
 GameObject:
@@ -55982,7 +55982,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC751, \uC2DC \uC77D\uAE30 \uC88B\uC9C0!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: eb1cd21ad35e93147b7830408e9cf084, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
   m_sharedMaterial: {fileID: 4585107220543724766, guid: eb1cd21ad35e93147b7830408e9cf084, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -56049,7 +56049,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1756501180}
   m_maskType: 0
 --- !u!23 &1756501180
@@ -67336,7 +67336,7 @@ MonoBehaviour:
   m_text: "\uC77C\uAE30 \uB2E4 \uC37C\uC5B4.\n\uC790\uAE30 \uC804\uC5D0 \uAC19\uC774
     \uC2DC \uC77D\uC744\uB798?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: eb1cd21ad35e93147b7830408e9cf084, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
   m_sharedMaterial: {fileID: 4585107220543724766, guid: eb1cd21ad35e93147b7830408e9cf084, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -67403,7 +67403,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1094932322279389486}
   m_maskType: 0
 --- !u!1 &1094932322279389483
