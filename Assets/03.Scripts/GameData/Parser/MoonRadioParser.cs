@@ -11,8 +11,6 @@ using System;
 
 public class MoonRadioParser
 {
-
-    
     Dictionary<int, Dictionary<int, List<MoonRadioDial>>> MoonRadios;
     LANGUAGE curLanguage = LANGUAGE.KOREAN;
 

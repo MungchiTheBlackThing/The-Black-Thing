@@ -745,7 +745,7 @@ public class SubPanel : MonoBehaviour
             rectTransform.anchorMin = new Vector2(1, 0);
             rectTransform.anchorMax = new Vector2(1, 0);
             rectTransform.pivot = new Vector2(1, 0); // 왼쪽 하단 기준
-            rectTransform.anchoredPosition = new Vector2(900, 0); // 위치 조정
+            rectTransform.anchoredPosition = new Vector2(300, 0); // 위치 조정
         }
         else
         {
@@ -753,7 +753,7 @@ public class SubPanel : MonoBehaviour
             rectTransform.anchorMin = new Vector2(0, 0);
             rectTransform.anchorMax = new Vector2(0, 0);
             rectTransform.pivot = new Vector2(0, 0); // 오른쪽 하단 기준
-            rectTransform.anchoredPosition = new Vector2(-900, 0); // 위치 조정
+            rectTransform.anchoredPosition = new Vector2(200, 600); // 위치 조정
         }
 
         // 말풍선 UI 활성화

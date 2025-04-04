@@ -36,7 +36,7 @@ public class DiaryController : BaseObject, ISleepingInterface
         {
             int Idx = (int)language;
             text.text = DataManager.Instance.Settings.alert.diary[Idx];
-            text.font = font;
+            //text.font = font;
         }
     }
     public void Init()

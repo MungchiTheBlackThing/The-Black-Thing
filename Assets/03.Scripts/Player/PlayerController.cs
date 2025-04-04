@@ -55,19 +55,21 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     private void Awake()
     {
         //앞으로 player을 동적으로 생성해서 관리할 예정.. 아직은 미리 초기화해서 사용한다.
+        Debug.Log("시작");
         gobackPage = new Stack<int>();
         player = new PlayerInfo(nickname, 1, GamePatternState.Watching);
         readStringFromPlayerFile();
-    }
-    private void Start()
-    {
         translateManager = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
+        Debug.Log("번역시작");
         translateManager.Translate(GetLanguage());
-        
         successSubDialDelegate += SuccessSubDial;
         currentChapter = GetChapter();
         currentChapter = player.CurrentChapter;
         nickname = player.Nickname;
+    }
+    private void Start()
+    {
+        
     }
     // Update is called once per frame
     //1시간이 되었는지 체크하기 위해서 저정용도
