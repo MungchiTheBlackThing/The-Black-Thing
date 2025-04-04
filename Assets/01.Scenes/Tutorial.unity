@@ -17388,6 +17388,7 @@ MonoBehaviour:
   - {fileID: 1999719955}
   - {fileID: 762347768}
   - {fileID: 1570944796}
+  - {fileID: 1670515223}
   community:
   - {fileID: 140459668}
   - {fileID: 664053349}
@@ -17402,6 +17403,7 @@ MonoBehaviour:
   - {fileID: 968173784}
   - {fileID: 1139226965}
   objectManager: {fileID: 606963712}
+  PlayerController: {fileID: 0}
 --- !u!95 &619721726
 Animator:
   serializedVersion: 5
@@ -44691,6 +44693,7 @@ MonoBehaviour:
   - {fileID: 1188180216}
   - {fileID: 1748411245}
   objectManager: {fileID: 606963712}
+  PlayerController: {fileID: 0}
 --- !u!95 &1472756467
 Animator:
   serializedVersion: 5

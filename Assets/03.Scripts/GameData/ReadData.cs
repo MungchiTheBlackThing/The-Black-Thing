@@ -42,7 +42,7 @@ public class ReadData : MonoBehaviour
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
             DataManager.Instance.Settings = JsonUtility.FromJson<SettingInfo>(loadedTextAsset.ToString());
         }
-        
+
         resourceRequest = Resources.LoadAsync<TextAsset>("Json/PoemsData");
 
         // 로딩이 완료될 때까지 대기

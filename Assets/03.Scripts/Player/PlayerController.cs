@@ -66,7 +66,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         
         successSubDialDelegate += SuccessSubDial;
         currentChapter = GetChapter();
-
+        currentChapter = player.CurrentChapter;
+        nickname = player.Nickname;
     }
     // Update is called once per frame
     //1시간이 되었는지 체크하기 위해서 저정용도
