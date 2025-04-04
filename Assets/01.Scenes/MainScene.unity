@@ -18070,6 +18070,7 @@ MonoBehaviour:
   - {fileID: 1999719955}
   - {fileID: 762347768}
   - {fileID: 1570944796}
+  - {fileID: 1670515223}
   community:
   - {fileID: 140459668}
   - {fileID: 664053349}
@@ -18084,6 +18085,7 @@ MonoBehaviour:
   - {fileID: 968173784}
   - {fileID: 1139226965}
   objectManager: {fileID: 606963712}
+  PlayerController: {fileID: 0}
 --- !u!95 &619721726
 Animator:
   serializedVersion: 5
@@ -24088,7 +24090,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &853746108
@@ -34471,7 +34473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1163933346
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45486,7 +45488,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1449470184
@@ -46872,6 +46874,7 @@ MonoBehaviour:
   - {fileID: 1188180216}
   - {fileID: 1748411245}
   objectManager: {fileID: 606963712}
+  PlayerController: {fileID: 0}
 --- !u!95 &1472756467
 Animator:
   serializedVersion: 5
@@ -54538,6 +54541,7 @@ MonoBehaviour:
   menuController: {fileID: 619721725}
   subTutorial: {fileID: 1467358320}
   check1: 0
+  playerController: {fileID: 0}
   dialogueData: {fileID: 0}
 --- !u!1 &1723573533
 GameObject:
@@ -68679,7 +68683,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.021, y: 1}
   m_AnchoredPosition: {x: 0.005126953, y: 0}
   m_SizeDelta: {x: -0.010132, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -68993,7 +68997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1760591410990093839
 RectTransform:
   m_ObjectHideFlags: 0

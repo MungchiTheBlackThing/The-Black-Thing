@@ -60,6 +60,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
     public void LoadData(string[] lines)
     {
+        PlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         CurrentLanguage = PlayerController.GetLanguage();
         listclear();
         for (int i = 1; i < lines.Length; i++)

@@ -8,6 +8,7 @@ using UnityEngine.Android;
 using Assets.Script.Reward;
 using UnityEngine.SceneManagement;
 
+[Serializable]
 public enum LANGUAGE 
 { 
     KOREAN = 0,

@@ -46,6 +46,7 @@ public class SkipSleepPanel : MonoBehaviour
     }
     public void LoadSubDialogue(string[] lines)
     {
+        CurrentLanguage = playerController.GetLanguage();
         listclear();
         for (int i = 1; i < lines.Length; i++)
         {

@@ -111,10 +111,10 @@ public class TimeSkipUIController : MonoBehaviour
         text[1].text = DataManager.Instance.Settings.timeSkip.yes[Idx];
         text[2].text = DataManager.Instance.Settings.timeSkip.no[Idx];
 
-        for(int i=0; i<text.Length; i++)
-        {
-            text[i].font = font;
-        }
+        //for(int i=0; i<text.Length; i++)
+        //{
+        //    text[i].font = font;
+        //}
     }
     public void OnClick()
     {
