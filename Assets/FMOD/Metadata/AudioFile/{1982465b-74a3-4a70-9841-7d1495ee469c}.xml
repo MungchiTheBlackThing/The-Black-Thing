@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1982465b-74a3-4a70-9841-7d1495ee469c}">
+		<property name="assetPath">
+			<value>sfx_object_door.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.91200000000000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{43364ee9-4226-457d-872d-c9efc1122b1e}</destination>
+		</relationship>
+	</object>
+</objects>
