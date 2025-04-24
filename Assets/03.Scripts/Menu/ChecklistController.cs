@@ -155,6 +155,7 @@ public class ChecklistController : MonoBehaviour
         {
             checkList.SetActive(true);
             StartCoroutine(CloseAlter(checkList));
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.checklistOn, this.transform.position);
         }
         else
             checkList.SetActive(false);

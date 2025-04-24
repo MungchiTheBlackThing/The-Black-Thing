@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class DiaryPageController : MonoBehaviour
 {
   
@@ -29,6 +30,7 @@ public class DiaryPageController : MonoBehaviour
 
     [SerializeField]
     Animator rightDiaryAnim;
+
 
     private void OnEnable()
     {
@@ -127,7 +129,7 @@ public class DiaryPageController : MonoBehaviour
     {
         DiaryEntry entry = DataManager.Instance.DiaryData.DiaryEntry[currentPageIndex];
         int language = (int)gameManger.pc.GetLanguage();
-
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.Pagesound, this.transform.position);
         //서브 성공 여부 확인을 위한 부울 리스트
         List<bool> sub_success = gameManger.pc.GetSubPhase(gameManger.Chapter);
         page.UpdateDiaryPage(entry.title, entry.leftPage, entry.rightPage, entry.imagePath, language, sub_success);

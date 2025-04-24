@@ -31,6 +31,19 @@ public class ClickAnimController : BaseObject
             // 마우스가 UI 위에 있을 때는 이 함수가 동작하지 않도록 함
             return;
         }
+        switch ((int)Type)
+        {
+            case 0:
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.mold, this.transform.position);
+                break;
+            case 1:
+                break;
+            case 2:
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.hourglass, this.transform.position);
+                break;
+        }
+            
+        
         animator.SetTrigger("IsTrigger");
     }
 
