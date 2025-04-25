@@ -404,7 +404,7 @@ public class MainPanel : MonoBehaviour
             DialEnd();
             return;
         }
-
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.dialougueDefault, this.transform.position);
         ShowNextDialogue();
     }
 

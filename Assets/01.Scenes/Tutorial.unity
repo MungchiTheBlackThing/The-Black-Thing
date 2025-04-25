@@ -8647,57 +8647,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311725600}
   m_CullTransparentMesh: 1
---- !u!1 &316873522
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 316873523}
-  - component: {fileID: 316873524}
-  m_Layer: 0
-  m_Name: FMODEvents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &316873523
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316873522}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 542931367}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &316873524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316873522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ca9fad708ad2e843a3bb8338a62d75d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Pagesound>k__BackingField:
-    Guid:
-      Data1: -1360254280
-      Data2: 1191806312
-      Data3: -563142252
-      Data4: -1315387658
-    Path: event:/SFX/sfx_paper_flip
 --- !u!1 &321298411
 GameObject:
   m_ObjectHideFlags: 0
@@ -15109,51 +15058,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540000299}
   m_CullTransparentMesh: 1
---- !u!1 &542931365
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 542931367}
-  - component: {fileID: 542931366}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &542931366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542931365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d93f13c10ea46ba4ead1c624621d03be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &542931367
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542931365}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 316873523}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &550750751
 GameObject:
   m_ObjectHideFlags: 0
@@ -51384,6 +51288,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705887160}
   m_CullTransparentMesh: 1
+--- !u!1 &1714930636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1714930638}
+  - component: {fileID: 1714930637}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1714930637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714930636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93f13c10ea46ba4ead1c624621d03be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1714930638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714930636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1736186789}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1720405998
 GameObject:
   m_ObjectHideFlags: 0
@@ -52000,6 +51949,217 @@ MonoBehaviour:
   - {fileID: 171838662}
   - {fileID: 354263021}
   objectManager: {fileID: 606963712}
+--- !u!1 &1736186788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1736186789}
+  - component: {fileID: 1736186790}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1736186789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736186788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1714930638}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1736186790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736186788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca9fad708ad2e843a3bb8338a62d75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Pagesound>k__BackingField:
+    Guid:
+      Data1: -1360254280
+      Data2: 1191806312
+      Data3: -563142252
+      Data4: -1315387658
+    Path: event:/SFX/sfx_paper_flip
+  <DiaryButton>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MenuOn>k__BackingField:
+    Guid:
+      Data1: -1242624989
+      Data2: 1330197815
+      Data3: -106706805
+      Data4: -1583700740
+    Path: event:/SFX/sfx_menu_spider
+  <checklistOn>k__BackingField:
+    Guid:
+      Data1: 436734066
+      Data2: 1162645678
+      Data3: -1485732464
+      Data4: -1075519726
+    Path: event:/SFX/sfx_menu_checklist_click
+  <checklistSet>k__BackingField:
+    Guid:
+      Data1: -846680856
+      Data2: 1295833830
+      Data3: -1195945328
+      Data4: -1157347147
+    Path: event:/SFX/sfx_menu_checklist_check
+  <moonnote>k__BackingField:
+    Guid:
+      Data1: 786367695
+      Data2: 1176674506
+      Data3: 708934545
+      Data4: -1854965340
+    Path: event:/SFX/sfx_menu_moonnote_flip
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: -1490046697
+      Data2: 1242092979
+      Data3: -1284043108
+      Data4: 1312794143
+    Path: event:/SFX/sfx_button_click
+  <lockClick>k__BackingField:
+    Guid:
+      Data1: -1415655810
+      Data2: 1277322808
+      Data3: 7068583
+      Data4: 841574251
+    Path: event:/SFX/sfx_iook_click
+  <mold>k__BackingField:
+    Guid:
+      Data1: 1299314479
+      Data2: 1115173724
+      Data3: 1411177148
+      Data4: -2114357033
+    Path: event:/SFX/sfx_object_mold
+  <hourglass>k__BackingField:
+    Guid:
+      Data1: -1459304554
+      Data2: 1188817324
+      Data3: 1770738874
+      Data4: -186904751
+    Path: event:/SFX/sfx_object_hourglass
+  <dreamcatcher>k__BackingField:
+    Guid:
+      Data1: 2113335827
+      Data2: 1160510670
+      Data3: 1570515116
+      Data4: 1980435635
+    Path: event:/SFX/sfx_object_dreamcatcher
+  <door>k__BackingField:
+    Guid:
+      Data1: 632559676
+      Data2: 1263597934
+      Data3: -1400242799
+      Data4: 240013945
+    Path: event:/SFX/sfx_object_door
+  <note>k__BackingField:
+    Guid:
+      Data1: 105686369
+      Data2: 1185343456
+      Data3: 174775440
+      Data4: 41777250
+    Path: event:/SFX/sfx_object_note
+  <binocular>k__BackingField:
+    Guid:
+      Data1: -450085561
+      Data2: 1326204812
+      Data3: 391378326
+      Data4: 823941500
+    Path: event:/SFX/sfx_object_binocular
+  <mainEnter>k__BackingField:
+    Guid:
+      Data1: 466606281
+      Data2: 1323810852
+      Data3: 1864038833
+      Data4: 134467963
+    Path: event:/SFX/sfx_main_enter_dialog
+  <dialougueDefault>k__BackingField:
+    Guid:
+      Data1: 1401293294
+      Data2: 1109176742
+      Data3: -2103749217
+      Data4: 798625178
+    Path: event:/SFX/sfx_dialogue_default
+  <dialougeSelect>k__BackingField:
+    Guid:
+      Data1: -1162337176
+      Data2: 1177449952
+      Data3: 1855788735
+      Data4: 829749298
+    Path: event:/SFX/sfx_dialogue_select
+  <dialouguecheckbox>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <earthsend>k__BackingField:
+    Guid:
+      Data1: -1490756615
+      Data2: 1126369652
+      Data3: 152388790
+      Data4: 813949526
+    Path: event:/SFX/sfx_moonradio_earth_send
+  <moonbuttonoff>k__BackingField:
+    Guid:
+      Data1: -666015810
+      Data2: 1257920500
+      Data3: -474249342
+      Data4: -47899675
+    Path: event:/SFX/sfx_moonradio_button_off
+  <moonbuttonclick>k__BackingField:
+    Guid:
+      Data1: 2057117836
+      Data2: 1314826320
+      Data3: 581036928
+      Data4: -66118003
+    Path: event:/SFX/sfx_moonradio_button_click
+  <binosuccess>k__BackingField: []
+  <binofails>k__BackingField:
+  - Guid:
+      Data1: -1630937306
+      Data2: 1331572303
+      Data3: -1041480801
+      Data4: -1632637593
+    Path: event:/SFX/sfx_bino_wrong
+  - Guid:
+      Data1: -1630937306
+      Data2: 1331572303
+      Data3: -1041480801
+      Data4: -1632637593
+    Path: event:/SFX/sfx_bino_wrong
+  - Guid:
+      Data1: -1630937306
+      Data2: 1331572303
+      Data3: -1041480801
+      Data4: -1632637593
+    Path: event:/SFX/sfx_bino_wrong
 --- !u!1 &1736754006
 GameObject:
   m_ObjectHideFlags: 0

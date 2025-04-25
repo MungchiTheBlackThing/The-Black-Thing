@@ -41,6 +41,7 @@ public class LetterController : BaseObject, IWatchingInterface
             if (noteUI != null)
             {
                 noteUI.SetActive(true);
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.note, this.transform.position);
             }
             else
             {

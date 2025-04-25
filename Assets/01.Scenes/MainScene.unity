@@ -53292,11 +53292,11 @@ MonoBehaviour:
     Path: event:/SFX/sfx_button_click
   <lockClick>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1415655810
+      Data2: 1277322808
+      Data3: 7068583
+      Data4: 841574251
+    Path: event:/SFX/sfx_iook_click
   <mold>k__BackingField:
     Guid:
       Data1: 1299314479
@@ -53388,6 +53388,56 @@ MonoBehaviour:
       Data3: 581036928
       Data4: -66118003
     Path: event:/SFX/sfx_moonradio_button_click
+  <binosuccess>k__BackingField:
+  - Guid:
+      Data1: -1580741269
+      Data2: 1259334908
+      Data3: 893425792
+      Data4: -995058678
+    Path: event:/SFX/sfx_bino_ch2_success
+  - Guid:
+      Data1: 621608655
+      Data2: 1306159719
+      Data3: 1339708070
+      Data4: 1345706801
+    Path: event:/SFX/sfx_bino_ch5_success
+  - Guid:
+      Data1: 919113320
+      Data2: 1273771142
+      Data3: -1205139803
+      Data4: 474390085
+    Path: event:/SFX/sfx_bino_ch8_success
+  - Guid:
+      Data1: -587600551
+      Data2: 1273472219
+      Data3: 1327553930
+      Data4: 655819295
+    Path: event:/SFX/sfx_bino_ch10_success
+  - Guid:
+      Data1: 485762897
+      Data2: 1262542209
+      Data3: -477874548
+      Data4: 894144234
+    Path: event:/SFX/sfx_bino_ch13_success
+  <binofails>k__BackingField:
+  - Guid:
+      Data1: -1630937306
+      Data2: 1331572303
+      Data3: -1041480801
+      Data4: -1632637593
+    Path: event:/SFX/sfx_bino_wrong
+  - Guid:
+      Data1: -1630937306
+      Data2: 1331572303
+      Data3: -1041480801
+      Data4: -1632637593
+    Path: event:/SFX/sfx_bino_wrong
+  - Guid:
+      Data1: -1630937306
+      Data2: 1331572303
+      Data3: -1041480801
+      Data4: -1632637593
+    Path: event:/SFX/sfx_bino_wrong
 --- !u!1 &1670515221
 GameObject:
   m_ObjectHideFlags: 0

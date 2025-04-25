@@ -6,13 +6,22 @@ using UnityEngine.EventSystems;
 
 public class Cursor : MonoBehaviour
 {
+    private enum name
+    {
+        bino2,
+        bino5,
+        bino8,
+        bino10,
+        bino13
+    }
     [SerializeField]
     GameObject camera;
 
     public bool isrelease = false;
     public bool isSuccess = false;
     public GameObject target;
-
+    [SerializeField]
+    private name num;
 
     [SerializeField]
     GameObject systemUI;
@@ -79,8 +88,14 @@ public class Cursor : MonoBehaviour
                     if (hit[i].collider.tag == "Mungchi")
                     {
                         target.GetComponent<MungchiClick>().OnMouseDown();
-                        isSuccess=true;
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.binosuccess[(int)num], this.transform.position);
+                        isSuccess =true;
                         break;
+                    }
+                    else
+                    {
+                        int index = Random.Range(0, 2);
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.binofails[index], this.transform.position);
                     }
             }
         }

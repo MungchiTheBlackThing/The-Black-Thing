@@ -22,11 +22,13 @@ public class SelectionController : MonoBehaviour
         {
             option.transform.GetChild(0).gameObject.SetActive(false);
             selectedCount--;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.dialouguecheckbox, this.transform.position);
         }
         else
         {
             option.transform.GetChild(0).gameObject.SetActive(true);
             selectedCount++;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.dialougeSelect, this.transform.position);
         }
 
         actionButton.SetActive(selectedCount > 0);

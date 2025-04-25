@@ -173,6 +173,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         manager.ScrollManager.StopCamera(true);
         background = manager.ObjectManager.SetMain(DialogueEntries[0].Background); // 현재 배경이 어떤 값인지 변경
         Debug.Log("배경:"+ background);
+
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.mainEnter, dot.transform.position);
         //배경화면이 켜질 때, 뭉치의 위치도 고장한다.
         //파라미터로 배경값을 전달하면 된다.
         //Day 7을 제외하곤 모두 배경값을 Enter에서 수정하면 되고, 데이 7일때만 변경해준다.

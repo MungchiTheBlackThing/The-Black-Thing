@@ -50,6 +50,7 @@ public class SelectManager : MonoBehaviour
         {
             options[i].transform.GetChild(0).gameObject.SetActive(false);
             selectedCount = 0;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.dialouguecheckbox, this.transform.position);
         }
 
         // 새로운 선택된 체크박스를 활성화
@@ -58,6 +59,7 @@ public class SelectManager : MonoBehaviour
             options[newSelectedIndex].transform.GetChild(0).gameObject.SetActive(true);
             selectedIndex = newSelectedIndex;
             selectedCount++;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.dialougeSelect, this.transform.position);
         }
 
         actionButton.SetActive(selectedCount > 0);
