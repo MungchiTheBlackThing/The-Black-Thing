@@ -20,37 +20,42 @@ public class Idle : DotState
         IdlePos.Add(state, pos);
     }
 
-    public override void Enter(DotController dot)
+    public override void Enter(DotController dot, bool changeAnim)
     {
 
         //dot의 animKey를 가져온다.
         //animKey의 저장된 List<float> Length 값 중 Random.Range 함수를 사용해서 뽑는다.
         //IdlePos[animKey][position]을 동작한다(애니메이션 상태전환).
-        DotAnimState anim;
 
-        Debug.Log("SubDialogue " + dot.Position);
-
-        if (Enum.TryParse(dot.AnimKey, true, out anim))
+        if(changeAnim)
         {
+            DotAnimState anim;
 
-            //dot의 position이 지정되어있는가 확인한다. -1은 지정되지 않음, n은 지정
-            //지정된 경우, IdlePos[animKey][position]을 동작한다(애니메이션 상태전환).
-            if (dot.Position == -1)
-            {
-                int maxIdx = IdlePos[anim].Count;
-                
-                dot.Position = IdlePos[anim][UnityEngine.Random.Range(0, maxIdx)];
-                
-            }
-            dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
-            if (anim == DotAnimState.anim_mud)
-            {
-                //챕터를 파악해서, mold를 변경시킬 때 사용.
-                dot.Animator.SetInteger("Chapter", dot.Chapter);
-            }
+            Debug.Log("SubDialogue " + dot.Position);
 
-            dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
+            if (Enum.TryParse(dot.AnimKey, true, out anim))
+            {
+
+                //dot의 position이 지정되어있는가 확인한다. -1은 지정되지 않음, n은 지정
+                //지정된 경우, IdlePos[animKey][position]을 동작한다(애니메이션 상태전환).
+                if (dot.Position == -1)
+                {
+                    int maxIdx = IdlePos[anim].Count;
+
+                    dot.Position = IdlePos[anim][UnityEngine.Random.Range(0, maxIdx)];
+
+                }
+                dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
+                if (anim == DotAnimState.anim_mud)
+                {
+                    //챕터를 파악해서, mold를 변경시킬 때 사용.
+                    dot.Animator.SetInteger("Chapter", dot.Chapter);
+                }
+
+                dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
+            }
         }
+        
     }
 
     //상태를 나갈 때 1회 호출 -> Position -1로 변경
@@ -88,15 +93,22 @@ public class Main : DotState
         MainPos.Add(state, pos);
     }
 
-    public override void Enter(DotController dot)
+    public override void Enter(DotController dot, bool changeAnim)
     {
-        DotAnimState anim;
-        if (Enum.TryParse(dot.AnimKey, true, out anim))
+        if(changeAnim)
         {
-            dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
+            DotAnimState anim;
+            if (Enum.TryParse(dot.AnimKey, true, out anim))
+            {
+                dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
+            }
+        }
+        else
+        {
             dot.transform.position = GetCoordinate(dot.Position);
         }
-        dot.WaitEyesLoading();
+
+            dot.WaitEyesLoading();
     }
 
     //상태를 나갈 때 1회 호출 -> Position -1로 변경
@@ -127,26 +139,31 @@ public class Sub : DotState
     {
         SubPos.Add(state, pos);
     }
-    public override void Enter(DotController dot)
+    public override void Enter(DotController dot, bool changeAnim)
     {
         Debug.Log("서브 스타트");
         DotAnimState anim;
 
-        if (Enum.TryParse(dot.AnimKey, true, out anim))
+        if(changeAnim)
         {
-            //dot의 position이 지정되어있는가 확인한다. -1은 지정되지 않음, n은 지정
-            //지정된 경우, IdlePos[animKey][position]을 동작한다(애니메이션 상태전환).
-            if (dot.Position == -1)
+            if (Enum.TryParse(dot.AnimKey, true, out anim))
             {
-                int maxIdx = SubPos[anim].Count;
+                //dot의 position이 지정되어있는가 확인한다. -1은 지정되지 않음, n은 지정
+                //지정된 경우, IdlePos[animKey][position]을 동작한다(애니메이션 상태전환).
+                if (dot.Position == -1)
+                {
+                    int maxIdx = SubPos[anim].Count;
 
-                Debug.Log("맥스 인덱스: " + maxIdx);
+                    Debug.Log("맥스 인덱스: " + maxIdx);
 
-                dot.Position = SubPos[anim][UnityEngine.Random.Range(0, maxIdx)];
-                Debug.Log("이게 계속 작동되는거 같은데?:" + dot.Position);
+                    dot.Position = SubPos[anim][UnityEngine.Random.Range(0, maxIdx)];
+                    Debug.Log("이게 계속 작동되는거 같은데?:" + dot.Position);
+                }
+                dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
             }
-            dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
         }
+
+        
         dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
     }
 
@@ -177,14 +194,17 @@ public class Phase : DotState
     {
         PhasePos.Add(state, pos);
     }
-    public override void Enter(DotController dot)
+    public override void Enter(DotController dot, bool changeAnim)
     {
         DotAnimState anim;
-        if (Enum.TryParse(dot.AnimKey, true, out anim))
+        if(changeAnim)
         {
-            dot.Position = PhasePos[anim][0];
-            dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
-            dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
+            if (Enum.TryParse(dot.AnimKey, true, out anim))
+            {
+                dot.Position = PhasePos[anim][0];
+                dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
+                dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
+            }
         }
     }
 
@@ -201,21 +221,26 @@ public class Phase : DotState
 
 public class Trigger : DotState
 {
-
+    bool changeAnimation;
     public override void Init(DotAnimState state, List<float> pos)
     {
         
     }
 
-    public override void Enter(DotController dot)
+    public override void Enter(DotController dot, bool changeAnim)
     {
+        changeAnimation = changeAnim;
         Debug.Log("Trigger start");
         DotAnimState anim;
-        if (Enum.TryParse(dot.AnimKey, true, out anim))
+
+        if(changeAnimation)
         {
-            dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
-            Debug.Log(dot.transform.position);
-            dot.Animator.SetInteger("DotAnimState", (int)anim); //애니메이션 업데이트
+            if (Enum.TryParse(dot.AnimKey, true, out anim))
+            {
+                dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
+                Debug.Log(dot.transform.position);
+                dot.Animator.SetInteger("DotAnimState", (int)anim); //애니메이션 업데이트
+            }
         }
     }
 
@@ -224,7 +249,11 @@ public class Trigger : DotState
         //잠자러 가는 애니메이션 실행.
         dot.Position = 19;
         dot.transform.position = GetCoordinate(dot.Position); //위치 업데이트
-        dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)DotAnimState.phase_sleep); //애니메이션 업데이트
+
+        if(changeAnimation)
+        {
+            dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)DotAnimState.phase_sleep); //애니메이션 업데이트
+        }
     }
 
     //상태를 나갈 때 1회 호출 -> Position -1로 변경
@@ -245,12 +274,15 @@ public class DotTutorial : DotState
 
     }
 
-    public override void Enter(DotController dot)
+    public override void Enter(DotController dot, bool changeAnim)
     {
         Debug.Log("뭉치 컨트롤");
         dot.transform.position = GetCoordinate(dot.Position);
         Debug.Log(dot.Position);
-        dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)DotAnimState.anim_default);
+        if(changeAnim)
+        {
+            dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)DotAnimState.anim_default);
+        }
         Debug.Log("튜토 애니" + dot.AnimKey);//애니메이션 업데이트
 
     }

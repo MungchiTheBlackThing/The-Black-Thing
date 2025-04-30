@@ -322,13 +322,11 @@ public class DotController : MonoBehaviour
     public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "")
     {
         if (states == null) return;
-        if (OutAnimKey == "") return;
-
+        
         if (states.ContainsKey(state) == false)
         {
             return;
         }
-
 
         if (currentState != null)
         {
@@ -349,7 +347,7 @@ public class DotController : MonoBehaviour
 
         Debug.Log("Think SubDialogue " + state + " " + Position.ToString());
 
-        currentState.Enter(this); //실행
+        currentState.Enter(this, OutAnimKey != ""); //실행
     }
 
     public void Invisible()
