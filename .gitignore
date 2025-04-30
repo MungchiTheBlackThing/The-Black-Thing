@@ -28,7 +28,7 @@
 /[Aa]ssets/Firebase/
 /[Aa]ssets/Editor Default Resources/
 /[Aa]ssets/ExternalDependencyManager/
-/[Aa]ssets/Plugins/
+#/[Aa]ssets/Plugins/
 /[Aa]ssets/PlayerData.json
 # Visual Studio cache directory
 .vs/
@@ -94,6 +94,11 @@ crashlytics-build.properties
 /[Aa]ssets/**/FMODStudioCache.asset.meta
 /[Aa]ssets/Plugins/FMOD/Cache.meta
 /[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
+# FMOD Integration
+!/Assets/Plugins/FMOD/**
+
+# StreamingAssets
+!/Assets/StreamingAssets/**
 
 # Log-files
 fmod.log
