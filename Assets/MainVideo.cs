@@ -1,9 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using Assets.Script.TimeEnum;
-using System.Collections;
 
 [Serializable]
 public class VideoPath
@@ -21,7 +21,15 @@ public class MainVideo : MonoBehaviour
 
     public VideoPath videoPath;
 
-    private void Start() { }
+    private void Start()
+    {
+        if (videoPlayer != null)
+        {
+            videoPlayer.playOnAwake = false;         // 자동 재생 방지
+            videoPlayer.skipOnDrop = true;           // 프레임 누락 허용
+            videoPlayer.isLooping = false;
+        }
+    }
 
     public void Setting(int Day, LANGUAGE language)
     {
@@ -48,12 +56,11 @@ public class MainVideo : MonoBehaviour
         videoPlayer.errorReceived -= OnVideoError;
         videoPlayer.errorReceived += OnVideoError;
 
-        // URL 설정
         videoPlayer.url = "https://drive.google.com/uc?export=download&id=" + videoPath.path;
         videoPlayer.gameObject.SetActive(true);
 
-        // 영상 준비 시작
-        videoPlayer.Prepare();
+        videoPlayer.SetDirectAudioMute(0, true); // 소리 일단 끄기
+        videoPlayer.Prepare();                  // 영상 + 소리 준비
     }
 
     public void PlayVideo()
@@ -63,26 +70,23 @@ public class MainVideo : MonoBehaviour
 
         if (videoPlayer.isPrepared)
         {
-            // 다운로드가 완료되었으면 재생
+            videoPlayer.SetDirectAudioMute(0, false); // 재생 직전에 소리 켜기
             videoPlayer.Play();
         }
         else
         {
-            // 다운로드가 완료될 때까지 기다리기
             StartCoroutine(WaitForVideoToPrepare());
         }
     }
 
-    // 비디오가 준비될 때까지 기다리는 코루틴
     private IEnumerator WaitForVideoToPrepare()
     {
-        // 영상 준비가 완료될 때까지 기다리기
         while (!videoPlayer.isPrepared)
         {
-            yield return null; // 한 프레임씩 기다리기
+            yield return null;
         }
 
-        // 준비 완료 후 재생
+        videoPlayer.SetDirectAudioMute(0, false); // 준비 완료 후 소리 켜기
         videoPlayer.Play();
     }
 
@@ -114,5 +118,4 @@ public class MainVideo : MonoBehaviour
         Debug.LogError("VideoPlayer Error: " + message);
         Rawimage.SetActive(false);
     }
-
 }

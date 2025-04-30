@@ -6015,13 +6015,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220224139}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8899152122286662229}
-  m_RootOrder: 2
+  m_Father: {fileID: 800507345}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -22308,6 +22308,111 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799709191}
   m_CullTransparentMesh: 1
+--- !u!1 &800507344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800507345}
+  - component: {fileID: 800507347}
+  - component: {fileID: 800507346}
+  m_Layer: 5
+  m_Name: MainVideo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &800507345
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800507344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 220224140}
+  m_Father: {fileID: 1193627964}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!328 &800507346
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800507344}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 0}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!114 &800507347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800507344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6272ba96c2939864ca7144cae0551532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 800507346}
+  videoLinks:
+  - Time: 1
+    LANGUAGE: 1
+    path: 1PLbfQz-IPjIsLU0v1gIqiCD3aMRMKi9r
+  - Time: 1
+    LANGUAGE: 0
+    path: 1BEeI6UHkYJKVwmRk59LwlQsiS0Or2yjb
+  - Time: 2
+    LANGUAGE: 1
+    path: 1vXRk4kcToZ_7ATKhdZig-Isw6-AQp_xy
+  - Time: 2
+    LANGUAGE: 0
+    path: 1jsxzNu5flzYIv-_SPcXo4v_aMw5ASxlY
+  Rawimage: {fileID: 220224139}
+  videoPath:
+    Time: 0
+    LANGUAGE: 0
+    path: 
 --- !u!1 &803604084
 GameObject:
   m_ObjectHideFlags: 0
@@ -35784,6 +35889,7 @@ RectTransform:
   - {fileID: 728480254008036770}
   - {fileID: 1467358318}
   - {fileID: 609387109}
+  - {fileID: 800507345}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -71949,8 +72055,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8899152122286662229}
   - component: {fileID: 8899152122286662228}
-  - component: {fileID: 8899152122286662231}
-  - component: {fileID: 8899152122286662230}
   m_Layer: 5
   m_Name: MainDialougue
   m_TagString: Untagged
@@ -72007,7 +72111,6 @@ RectTransform:
   m_Children:
   - {fileID: 1841477815}
   - {fileID: 1459908452}
-  - {fileID: 220224140}
   m_Father: {fileID: 1193627964}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -72016,72 +72119,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!328 &8899152122286662230
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8899152122286662226}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 0}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 30db3f346ec409948a18c7e24418ccf4, type: 2}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 2
-  m_AspectRatio: 2
-  m_DataSource: 1
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
-  m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 0
-  m_SkipOnDrop: 1
-  m_Looping: 0
-  m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
---- !u!114 &8899152122286662231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8899152122286662226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6272ba96c2939864ca7144cae0551532, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 8899152122286662230}
-  videoLinks:
-  - Time: 1
-    LANGUAGE: 1
-    path: 1PLbfQz-IPjIsLU0v1gIqiCD3aMRMKi9r
-  - Time: 1
-    LANGUAGE: 0
-    path: 1BEeI6UHkYJKVwmRk59LwlQsiS0Or2yjb
-  - Time: 2
-    LANGUAGE: 1
-    path: 1vXRk4kcToZ_7ATKhdZig-Isw6-AQp_xy
-  - Time: 2
-    LANGUAGE: 0
-    path: 1jsxzNu5flzYIv-_SPcXo4v_aMw5ASxlY
-  Rawimage: {fileID: 220224139}
-  videoPath:
-    Time: 0
-    LANGUAGE: 0
-    path: 
 --- !u!224 &8940817455761411938
 RectTransform:
   m_ObjectHideFlags: 0

@@ -271,7 +271,8 @@ public class MainPanel : MonoBehaviour
                     }
                     if (animScene == "1")
                     {
-                        this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                        Debug.Log("영상 시작");
+                        gameManager.mainVideo.PlayVideo();
                     }
                     DotPanel.SetActive(true);
                     DotTextUI.text = $"{korText}";
@@ -282,7 +283,8 @@ public class MainPanel : MonoBehaviour
                 {
                     if (animScene == "1")
                     {
-                        this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                        Debug.Log("영상 시작");
+                        gameManager.mainVideo.PlayVideo();
                     }
                     PlayPanel.SetActive(true);
                     PlayTextUI.text = $"{korText}";
@@ -293,7 +295,8 @@ public class MainPanel : MonoBehaviour
             case "selection":
                 if (animScene == "1")
                 {
-                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                    Debug.Log("영상 시작");
+                    gameManager.mainVideo.PlayVideo();
                 }
                 SelectionPanel.SetActive(true);
                 StartCoroutine(FadeIn(SelectionPanel.GetComponent<CanvasGroup>(), 0.5f, SelectionPanel.transform.GetComponentInChildren<Button>()));
@@ -302,7 +305,8 @@ public class MainPanel : MonoBehaviour
             case "textbox":
                 if (animScene == "1")
                 {
-                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                    Debug.Log("영상 시작");
+                    gameManager.mainVideo.PlayVideo();
                 }
                 InputPanel.SetActive(true);
                 InputTextUI.text = korText;
@@ -313,7 +317,8 @@ public class MainPanel : MonoBehaviour
             case "checkbox3":
                 if (animScene == "1")
                 {
-                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                    Debug.Log("영상 시작");
+                    gameManager.mainVideo.PlayVideo();
                 }
                 Checkbox3Panel.SetActive(true);
                 ShowCheckboxOptions(Checkbox3Panel, korText);
@@ -323,7 +328,8 @@ public class MainPanel : MonoBehaviour
             case "checkbox4":
                 if (animScene == "1")
                 {
-                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                    Debug.Log("영상 시작");
+                    gameManager.mainVideo.PlayVideo();
                 }
                 Checkbox4Panel.SetActive(true);
                 ShowCheckboxOptions(Checkbox4Panel, korText);
@@ -334,7 +340,8 @@ public class MainPanel : MonoBehaviour
             case "selection3":
                 if (animScene == "1")
                 {
-                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                    Debug.Log("영상 시작");
+                    gameManager.mainVideo.PlayVideo();
                 }
                 Selection3Panel.SetActive(true);
                 ShowSelectionOptions(Selection3Panel, korText);
@@ -344,7 +351,8 @@ public class MainPanel : MonoBehaviour
             case "selection4":
                 if (animScene == "1")
                 {
-                    this.gameObject.GetComponent<MainVideo>().PlayVideo();
+                    Debug.Log("영상 시작");
+                    gameManager.mainVideo.PlayVideo();
                 }
                 Selection4Panel.SetActive(true);
                 ShowSelectionOptions(Selection4Panel, korText);

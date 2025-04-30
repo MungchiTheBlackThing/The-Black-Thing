@@ -46,7 +46,8 @@ public class GameManager : MonoBehaviour
     protected Canvas canvas;
     [SerializeField]
     protected MenuController menu;
-
+    [SerializeField]
+    public MainVideo mainVideo;
 
     private Coroutine subDialogCoroutine;
     private bool isSkipping = false;

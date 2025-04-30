@@ -45,6 +45,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         }
         //n초 뒤에 아래가 뜬다.
         manager.ObjectManager.PlayThinking();
+        Debug.Log("메인 부분");
         //실제로는 뭉치가 먼저 뜬다.
         //dot State 변경 -> 클릭 시 아래 두개 고정 및 SetMain 설정.
         this.manager = manager;
@@ -56,6 +57,11 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
         PlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         CurrentLanguage = PlayerController.GetLanguage();
+        if (manager.mainVideo)
+        {
+            Debug.Log("미리 영상 가져오기");
+            manager.mainVideo.Setting(manager.Chapter,CurrentLanguage);
+        }
     }
 
     public void LoadData(string[] lines)
@@ -180,8 +186,6 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //Day 7을 제외하곤 모두 배경값을 Enter에서 수정하면 되고, 데이 7일때만 변경해준다.
         if (menuController)
             menuController.alloff();
-        if (mainPanel.gameObject.GetComponent<MainVideo>() != null)
-            mainPanel.gameObject.GetComponent<MainVideo>().Setting(manager.Chapter, CurrentLanguage); //대화 시작하기 전에 미리 동영상 다운
     }
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
