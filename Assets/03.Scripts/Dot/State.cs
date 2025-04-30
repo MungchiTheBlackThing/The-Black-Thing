@@ -96,14 +96,13 @@ public class Main : DotState
             dot.Animator.SetInteger(Animator.StringToHash("DotAnimState"), (int)anim); //애니메이션 업데이트
             dot.transform.position = GetCoordinate(dot.Position);
         }
-
         dot.WaitEyesLoading();
     }
 
     //상태를 나갈 때 1회 호출 -> Position -1로 변경
     public override void Exit(DotController dot)
     {
-        dot.Eyes.SetActive(false);
+        //dot.Eyes.SetActive(false);
     }
 
     //임시 print용

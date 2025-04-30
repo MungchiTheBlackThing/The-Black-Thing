@@ -172,7 +172,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         LoadData(lines);
         Debug.Log(DialogueEntries[0].Background);
         fixedPos = pos[DialogueEntries[0].Background]; //현재 배경화면이 어떤 값인지 변경해주길
-        dot.ChangeState(DotPatternState.Main, "body_default1", fixedPos, "face_null");
+        //dot.ChangeState(DotPatternState.Main, "body_default1", fixedPos, "face_null");
         mainPanel.Day = manager.Chapter;
         mainPanel.LANGUAGE = CurrentLanguage;
         mainPanel.ShowNextDialogue();

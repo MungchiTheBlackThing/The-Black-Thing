@@ -189,7 +189,15 @@ public class DotController : MonoBehaviour
 
     public void WaitEyesLoading()
     {
-        StartCoroutine(ShowEyes());
+        DotEyes eyes;
+        Eyes.SetActive(true);
+
+        if (Enum.TryParse(DotExpression, true, out eyes))
+        {
+            EyesAnim.SetInteger("FaceKey", (int)eyes);
+        }
+
+        //StartCoroutine(ShowEyes());
     }
 
     private IEnumerator ShowEyes()
@@ -314,7 +322,7 @@ public class DotController : MonoBehaviour
     public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "")
     {
         if (states == null) return;
-
+        if (OutAnimKey == "") return;
 
         if (states.ContainsKey(state) == false)
         {
