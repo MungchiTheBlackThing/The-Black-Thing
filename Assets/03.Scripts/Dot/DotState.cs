@@ -44,7 +44,7 @@ public abstract class DotState
 
     //상태를 시작할 때 1회 호출 -> Position 랜덤으로 선택
     public abstract void Init(DotAnimState state, List<float> pos); //해당 상태 초기화를 위해서 필요하다.
-    public abstract void Enter(DotController dot);
+    public abstract void Enter(DotController dot, bool changeAnim);
     //상태를 나갈 때 1회 호출 -> Position -1로 변경
     public abstract void Exit(DotController dot);
 
