@@ -5715,7 +5715,6 @@ MonoBehaviour:
   playerController: {fileID: 2022455605}
   dotController: {fileID: 2046645039688417658}
   prefabPath: TouchGuide
-  Recents: []
 --- !u!1 &201689321
 GameObject:
   m_ObjectHideFlags: 0
@@ -33187,6 +33186,7 @@ MonoBehaviour:
   PlayTextUI: {fileID: 0}
   InputTextUI: {fileID: 0}
   Textinput: {fileID: 0}
+  subdialogue: {fileID: 1720718690}
   dotObjects:
   - {fileID: 8937402363559452973, guid: dd4be58e4a195ed41a69b900231b4898, type: 3}
   - {fileID: 8937402363559452973, guid: ae27804424807584daec402b93308d51, type: 3}

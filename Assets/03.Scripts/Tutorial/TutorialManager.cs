@@ -52,7 +52,7 @@ public class TutorialManager : GameManager
             Destroy(gameObject);
             return;
         }
-
+        Debug.Log("위치 확인: " + Application.persistentDataPath);
         states = new Dictionary<TutorialState, GameState>();
         dots = new Dictionary<TutorialState, DotState>();
         states[TutorialState.Sub] = new Tutorial.Sub();

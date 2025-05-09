@@ -27,18 +27,31 @@ namespace Tutorial
         public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
         {
             GameObject door = GameObject.Find("fix_door");
-           
-            if (manager.TutoNum == 0)
+            RecentData data = RecentManager.Load();
+            
+            if (data.tutonum == 0)
             {
-                dot.ChangeState(DotPatternState.Default, anim, pos);
-                dot.GetComponent<DotController>().tutorial = true;
-                door.transform.GetChild(1).GetComponent<DoorController>().close();
-                manager.ScrollManager.stopscroll();
-                manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                Utility.Instance.InvokeAfterDelay(substart, 2f);
-                subdial = manager.subDialoguePanel;
+                if (data != null && data.isContinue == 1)
+                {
+                    dot.ChangeState(DotPatternState.Default, anim, pos);
+                    dot.GetComponent<DotController>().tutorial = true;
+                    manager.ScrollManager.stopscroll();
+                    manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
+                    Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
+                    subdial = manager.subDialoguePanel;
+                }
+                else
+                {
+                    dot.ChangeState(DotPatternState.Default, anim, pos);
+                    dot.GetComponent<DotController>().tutorial = true;
+                    door.transform.GetChild(1).GetComponent<DoorController>().close();
+                    manager.ScrollManager.stopscroll();
+                    manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
+                    Utility.Instance.InvokeAfterDelay(substart, 2f);
+                    subdial = manager.subDialoguePanel;
+                }
             }
-            if (manager.TutoNum == 1)
+            if (data.tutonum == 1)
             {
                 dot.tutorial = true;
                 manager.ScrollManager.stopscroll();
@@ -67,6 +80,10 @@ namespace Tutorial
         {
             subdial.GetComponent<SubDialogue>().SubContinue();
         }
+        public void recentStart(int index)
+        {
+            subdial.GetComponent<SubDialogue>().Tuto_start(index);
+        }
     }
     public class Main: MainDialogue
     {
@@ -93,7 +110,7 @@ namespace Tutorial
                 Debug.Log("현재 배경:" + background.name);
                 background.SetActive(false);
             }
-            manager.TutoNum = 1;
+            RecentManager.TutoNumChange();
             //manager.ObjectManager.activeSystemUIDelegate(true);
             //SystemUI.SetActive(true);
             

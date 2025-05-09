@@ -4,13 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[System.Serializable]
-public class RecentItem
-{
-    public GameObject obj;
-    public int value;
-    public int index;
-}
 
 public class SubTuto : MonoBehaviour
 {
@@ -20,25 +13,17 @@ public class SubTuto : MonoBehaviour
     [SerializeField] GameObject nickname;
     [SerializeField] TutorialManager tutorialManager;
     [SerializeField] CameraZoom cameraZoom;
-    [SerializeField]
-    public GameObject UIBalloon;
-    [SerializeField]
-    public Moonnote moonnote;
-    [SerializeField]
-    GameObject SystemUI;
-    [SerializeField]
-    PlayerController playerController;
-    [SerializeField]
-    DotController dotController;
+    [SerializeField] public GameObject UIBalloon;
+    [SerializeField] public Moonnote moonnote;
+    [SerializeField] GameObject SystemUI;
+    [SerializeField] PlayerController playerController;
+    [SerializeField] DotController dotController;
 
     public string prefabPath = "TouchGuide";
 
     Vector3 guide1 = new Vector3(-810, -145, 0);
     Vector3 guide2 = new Vector3(-1095, -195, 0);
     Vector3 guide3 = new Vector3(-1100, -400, 0);
-
-    [SerializeField]
-    public List<RecentItem> Recents = new List<RecentItem>();
 
     public void tutorial_2(GameObject selectedDot, int determine, int index)
     {
@@ -73,45 +58,40 @@ public class SubTuto : MonoBehaviour
         }
         touch.tuto3(selectedDot, determine);
     }
+
     public void tutorial_4(GameObject selectedDot, int determine, int index)
     {
         GameObject door = GameObject.Find("fix_door");
-        Debug.Log(door);
         door.transform.GetChild(1).GetComponent<DoorController>().open();
         subPanel.clickon();
+
         if (determine == 0)
-        {
             subPanel.dotballoon(selectedDot);
-        }
         else
-        {
             subPanel.playerballoon(selectedDot);
-        }
     }
 
     public void tutorial_5(GameObject selectedDot, int determine, int index)
     {
+        RecentManager.Save(selectedDot, determine, index); // 저장
         if (determine == 0)
-        {
             subPanel.dotballoon(selectedDot);
-        }
         else
-        {
             subPanel.playerballoon(selectedDot);
-        }
+
         nickname.SetActive(true);
     }
 
     public void tutorial_7(GameObject selectedDot, int determine, int index)
     {
         cameraZoom.Zoom();
-        Recents.Add(new RecentItem { obj = selectedDot, value = determine ,index = index });
         subPanel.gameObject.SetActive(false);
+        RecentManager.Save(selectedDot, determine, index); // 저장
     }
 
     public void tutorial_8(GameObject selectedDot, int determine, int index)
     {
-        Recents.Add(new RecentItem { obj = selectedDot, value = determine, index = index });
+        RecentManager.Save(selectedDot, determine, index); // 저장
         tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 0);
         moonnote = GameObject.FindWithTag("moonnote").GetComponent<Moonnote>();
         StartCoroutine(Scroallable());
@@ -119,7 +99,7 @@ public class SubTuto : MonoBehaviour
 
     public void tutorial_9(GameObject selectedDot, int determine, int index)
     {
-        Recents.Add(new RecentItem { obj = selectedDot, value = determine, index = index });
+        RecentManager.Save(selectedDot, determine, index); // 저장
         if (!tutorialManager)
         {
             Subcontinue();
@@ -132,34 +112,35 @@ public class SubTuto : MonoBehaviour
             StartCoroutine(LoadSceneCoroutine("MainScene"));
         }
     }
+
     public void tutorial_10(GameObject selectedDot, int determine, int index)
     {
-        Recents.Add(new RecentItem { obj = selectedDot, value = determine, index = index });
+        RecentManager.Save(selectedDot, determine, index); // 저장
         if (playerController.GetAlreadyEndedPhase() == 5)
         {
-            Debug.Log("1tuto10");
             Subcontinue();
         }
         else
         {
-            Debug.Log("2tuto10");
             subDialogue.TutoExit();
             playerController.NextPhase();
             playerController.WritePlayerFile();
         }
     }
+
     public void tutorial_11(GameObject selectedDot, int determine, int index)
     {
-        Recents.Add(new RecentItem { obj = selectedDot, value = determine, index = index });
+        RecentManager.Save(selectedDot, determine, index); // 저장
         dotController.GoSleep();
         StartCoroutine(subcon());
-
     }
+
     private IEnumerator subcon()
     {
         yield return new WaitForSeconds(4f);
         Subcontinue();
     }
+
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
@@ -182,19 +163,26 @@ public class SubTuto : MonoBehaviour
 
     public void Subcontinue()
     {
-        if (Recents.Count > 0)
+        RecentData data = RecentManager.Load();
+        if (data != null && data.isContinue == 1)
         {
-            RecentItem lastItem = Recents[Recents.Count - 1];
-            if (lastItem.value == 0)
+            GameObject targetObj = subPanel.FindPanelObjectByName(data.objectName);
+            if (targetObj == null)
             {
-                subPanel.prePos = dotController.Position;
-                subPanel.dotballoon(lastItem.obj);
+                Debug.LogWarning($"오브젝트 {data.objectName} 를 찾을 수 없습니다.");
+                return;
             }
+
+            subPanel.prePos = dotController.Position;
+
+            if (data.value == 0)
+                subPanel.dotballoon(targetObj);
             else
-            {
-                subPanel.prePos = dotController.Position;
-                subPanel.playerballoon(lastItem.obj);
-            }
+                subPanel.playerballoon(targetObj);
+        }
+        else
+        {
+            Debug.Log("이어할 튜토리얼 데이터 없음");
         }
     }
 

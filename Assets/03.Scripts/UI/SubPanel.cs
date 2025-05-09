@@ -21,6 +21,7 @@ public class SubPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI PlayTextUI;
     [SerializeField] private TextMeshProUGUI InputTextUI;
     [SerializeField] private TMP_InputField Textinput;
+    [SerializeField] public SubDialogue subdialogue;
     // 리스트로 묶은 Dot 게임 오브젝트들
     [SerializeField] private List<GameObject> dotObjects = new List<GameObject>();
 
@@ -91,7 +92,22 @@ public class SubPanel : MonoBehaviour
             prObjects[i] = instantiatedDot;
         }
     }
+    public GameObject FindPanelObjectByName(string name)
+    {
+        List<GameObject>[] allLists = { dotObjects, prTbObjects, Sels, prObjects };
 
+        foreach (var list in allLists)
+        {
+            foreach (var obj in list)
+            {
+                if (obj.name == name)
+                    return obj;
+            }
+        }
+
+        Debug.LogWarning($"SubPanel 안에서 이름이 {name} 인 오브젝트를 찾을 수 없습니다.");
+        return null;
+    }
 
     void ShowSelection(string options, GameObject Sel)
     {

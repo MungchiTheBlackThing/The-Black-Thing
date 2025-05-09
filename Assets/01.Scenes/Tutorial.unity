@@ -5275,6 +5275,7 @@ MonoBehaviour:
   subDialogue: {fileID: 1418538262}
   canvas: {fileID: 1193627963}
   menu: {fileID: 619721725}
+  mainVideo: {fileID: 0}
   test: {fileID: 1286256050}
   pc: {fileID: 2022455605}
   mainDialoguePanel: {fileID: 2119342186}
@@ -5317,7 +5318,6 @@ MonoBehaviour:
   playerController: {fileID: 2022455605}
   dotController: {fileID: 2046645039688417658}
   prefabPath: TouchGuide
-  Recents: []
 --- !u!1 &201689321
 GameObject:
   m_ObjectHideFlags: 0
@@ -45251,6 +45251,7 @@ MonoBehaviour:
   PlayTextUI: {fileID: 0}
   InputTextUI: {fileID: 0}
   Textinput: {fileID: 0}
+  subdialogue: {fileID: 1418538262}
   dotObjects:
   - {fileID: 8937402363559452973, guid: dd4be58e4a195ed41a69b900231b4898, type: 3}
   - {fileID: 8937402363559452973, guid: ae27804424807584daec402b93308d51, type: 3}

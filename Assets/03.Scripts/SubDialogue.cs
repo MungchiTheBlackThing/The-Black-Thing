@@ -195,7 +195,7 @@ public class SubDialogue : MonoBehaviour
 
         scroll.scrollable();
         string currentSceneName = SceneManager.GetActiveScene().name;
-        if (currentSceneName != "Tutorial")
+        if (currentSceneName != "Tutorial") //튜토리얼은 적용되지 않음
             subseq += 1;
 
         if (subseq>4)
