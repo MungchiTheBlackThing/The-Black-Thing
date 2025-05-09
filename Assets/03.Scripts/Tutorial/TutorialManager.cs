@@ -19,7 +19,7 @@ public enum TutorialState
 public class TutorialManager : GameManager
 {
     private Dictionary<TutorialState, GameState> states;
-    private Dictionary<TutorialState, DotState> dots;
+    //private Dictionary<TutorialState, DotState> dots;
     private TutorialState tutostate;
 
     public TutorialState TutoPattern => tutostate;
@@ -54,7 +54,7 @@ public class TutorialManager : GameManager
         }
         Debug.Log("위치 확인: " + Application.persistentDataPath);
         states = new Dictionary<TutorialState, GameState>();
-        dots = new Dictionary<TutorialState, DotState>();
+        //dots = new Dictionary<TutorialState, DotState>();
         states[TutorialState.Sub] = new Tutorial.Sub();
         states[TutorialState.Main] = new Tutorial.Main();
 

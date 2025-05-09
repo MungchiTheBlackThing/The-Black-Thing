@@ -12,12 +12,6 @@ using static Unity.Burst.Intrinsics.X86.Avx;
 public class DotController : MonoBehaviour
 {
     [SerializeField]
-    private DotState currentState;//현재 상태
-
-    [SerializeField]
-    private Dictionary<DotPatternState, DotState> states;
-
-    [SerializeField]
     private float position;
 
     [SerializeField]
@@ -111,22 +105,17 @@ public class DotController : MonoBehaviour
         set { dotExpression = value; }
     }
 
+    Dictionary<float, Vector2> DotPositionDic = new Dictionary<float, Vector2>();
+    Dictionary<DotPatternState, Dictionary<string, List<float>>> DotPositionKeyDic = new Dictionary<DotPatternState, Dictionary<string, List<float>>>();
+
+
     GamePatternState tmpState;
 
     void Awake()
-    { 
+    {
         animator = GetComponent<Animator>();
         Position = -1;
         dotExpression = "";
-
-        states = new Dictionary<DotPatternState, DotState>();
-        states.Clear();
-        states.Add(DotPatternState.Default, new Idle());
-        states.Add(DotPatternState.Phase, new Phase());
-        states.Add(DotPatternState.Main, new Main());
-        states.Add(DotPatternState.Sub, new Sub());
-        states.Add(DotPatternState.Trigger, new Trigger());
-        states.Add(DotPatternState.Tutorial, new DotTutorial());
 
         parser = new ScriptListParser();
         mainScriptLists = new List<List<ScriptList>>();
@@ -137,6 +126,46 @@ public class DotController : MonoBehaviour
         subDialogue = GameObject.Find("SubDialougue");
         subPanel = GameObject.Find("SubPanel");
         subPanel.GetComponent<SubPanel>().InitializePanels();
+
+
+
+
+        //애니메이션과 위치 관련 초기화
+        TextAsset jsonFile = Resources.Load<TextAsset>("FSM/DotPosition");
+        Coordinate dotData = JsonUtility.FromJson<Coordinate>(jsonFile.text);
+        foreach (var Data in dotData.data)
+        {
+            Vector2 vector = new Vector2(Data.X, Data.Y);
+            DotPositionDic.Add(Data.dotPosition, vector);
+        }
+
+        string getFileName(DotPatternState state)
+        {
+            return state switch
+            {
+                DotPatternState.Default => "IdleState",
+                DotPatternState.Sub => "PhaseState",
+                DotPatternState.Phase => "PhaseState",
+                DotPatternState.Trigger => "",
+                DotPatternState.Main => "MainState",
+                DotPatternState.Tutorial => "",
+                _ => "",
+            };
+        }
+
+        for (DotPatternState state = DotPatternState.Default; state <= DotPatternState.Tutorial; state++)
+        {
+            TextAsset idlePosTextAsset = Resources.Load<TextAsset>("FSM/" + getFileName(state));
+            if (idlePosTextAsset == null) continue;
+
+            DotPositionKeyDic.Add(state, new Dictionary<string, List<float>>());
+
+            AnimationData animationData = JsonUtility.FromJson<AnimationData>(idlePosTextAsset.text);
+            foreach (var anim in animationData.animations)
+            {
+                DotPositionKeyDic[state].Add(anim.key, anim.value.positions);
+            }
+        }
     }
 
 
@@ -157,7 +186,7 @@ public class DotController : MonoBehaviour
 
     public int GetSubScriptListCount(GamePatternState State)
     {
-        
+
         Debug.Log("스테이트:" + State);
         Debug.Log("GetSubSCript");
         if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play || manager.Pattern == GamePatternState.Sleeping || manager.Pattern == GamePatternState.NextChapter)
@@ -187,7 +216,7 @@ public class DotController : MonoBehaviour
         return tmp;
     }
 
-    public void WaitEyesLoading()
+    public void PlayEyeAnimation()
     {
         DotEyes eyes;
         Eyes.SetActive(true);
@@ -196,22 +225,8 @@ public class DotController : MonoBehaviour
         {
             EyesAnim.SetInteger("FaceKey", (int)eyes);
         }
-
-        //StartCoroutine(ShowEyes());
     }
 
-    private IEnumerator ShowEyes()
-    {
-        yield return new WaitForSeconds(2f);
-
-        DotEyes eyes;
-        Eyes.SetActive(true);
-
-        if (Enum.TryParse(DotExpression, true, out eyes))
-        {
-            EyesAnim.SetInteger("FaceKey", (int)eyes);
-        }
-    }
     public void EndSubScriptList(GamePatternState State)
     {
         //다음 챕터?가 없을 때에는 아무 행위를 하지않는다.
@@ -243,7 +258,7 @@ public class DotController : MonoBehaviour
             manager.StartMain();
         }
 
-        if(playAlert.activeSelf)
+        if (playAlert.activeSelf)
         {
             playAlert.SetActive(false);
             //같이 책을 읽을래? 라는 문구 뜨고 안읽는다고하면 총총총 sleep으로
@@ -262,7 +277,7 @@ public class DotController : MonoBehaviour
             //int phase, string subTitle
             ScriptList tmp = GetSubScriptList(tmpState);
             //pc.successSubDialDelegate((int)tmpState,tmp.ScriptKey);
-            
+
             TriggerSub(false);
         }
     }
@@ -282,7 +297,6 @@ public class DotController : MonoBehaviour
     }
     public void TriggerPlay(bool isActive)
     {
-        Debug.Log(currentState);
         alertOff();
         playAlert.SetActive(isActive);
         /*여기서 OnClick 함수도 연결해준다.*/
@@ -298,13 +312,8 @@ public class DotController : MonoBehaviour
 
     public void GoSleep()
     {
-        ChangeState(DotPatternState.Trigger);
-        Trigger phase= (Trigger)currentState;
-
-        if(phase!=null)
-        {
-            phase.GoSleep(this);
-        }
+        //잠자러 가는 애니메이션 실행.
+        ChangeState(DotPatternState.Phase, "phase_sleep", 19);
     }
 
     public void EndPlay()
@@ -321,33 +330,47 @@ public class DotController : MonoBehaviour
 
     public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "")
     {
-        if (states == null) return;
-        
-        if (states.ContainsKey(state) == false)
-        {
-            return;
-        }
-
-        if (currentState != null)
-        {
-            currentState.Exit(this); //이전 값을 나가주면서, 값을 초기화 시킨다.
-        }
-
-        /*Main으로 넘어가기 전에 anim_default가 뜬다.*/
-
-        animator.SetInteger("DotState", (int)state); //현재 상태를 변경해준다.
-        position = OutPos; //이전 위치를 초기화함, 그렇게 하면 모든 상태로 입장했을 때 -1이 아니여서 랜덤으로 뽑지않는다.
-
-        dotExpression = OutExpression; //Update, Main에서만 사용하기 때문에 다른 곳에서는 사용하지 않음.
+        position = OutPos;
+        dotExpression = OutExpression;
         animKey = OutAnimKey;
 
         chapter = manager.Chapter;
-        //OutPos 가 있다면 해당 Position으로 바껴야함.
-        currentState = states[state];
 
-        Debug.Log("Think SubDialogue " + state + " " + Position.ToString());
+        if (OutAnimKey != "")
+        {
+            animator.Play(OutAnimKey);
 
-        currentState.Enter(this, OutAnimKey != ""); //실행
+            var split = OutAnimKey.Split("_");
+            if (split[0] == "anim")
+            {
+                Eyes.gameObject.SetActive(false);
+            }
+        }
+
+        //눈 작동
+        if (state == DotPatternState.Main)
+        {
+            PlayEyeAnimation();
+        }
+
+        //outPos -1일경우 랜덤위치
+        if (position == -1)
+        {
+            if (DotPositionKeyDic.TryGetValue(state, out var dic))
+            {
+                if (dic.TryGetValue(OutAnimKey, out var list))
+                {
+                    int maxIdx = list.Count;
+                    position = list[UnityEngine.Random.Range(0, maxIdx)];
+                }
+            }
+        }
+
+        //위치 조절
+        if (DotPositionDic.ContainsKey(position))
+        {
+            transform.position = DotPositionDic[position];
+        }
     }
 
     public void Invisible()
