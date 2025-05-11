@@ -45,6 +45,8 @@ public class PlayerInfo
     //현재 진행 pattern 상태
     public GamePatternState currentPhase;
     public List<EReward> rewardList; //플레이어가 가지고 있는 리워드
+    public int subseq; //서브 본 횟수
+    public List<int> watchedSubseq = new List<int>();
 
     public PlayerInfo()
     {
@@ -72,7 +74,7 @@ public class PlayerInfo
         isPushNotificationEnabled = true;
         currentPhase = GamePatternState.Watching;
         moonRadioIdx = 1;
-
+        subseq = 1;
         if (subSuccessOrNot == null)
         {
             subSuccessOrNot = new List<bool>();
@@ -87,6 +89,7 @@ public class PlayerInfo
         {
             rewardList = new List<EReward>();
         }
+        watchedSubseq.Clear();
     }
 
     public void SetSubPhase(int phaseIdx)
@@ -122,6 +125,7 @@ public class PlayerInfo
         isPushNotificationEnabled = true;
         currentPhase = GamePatternState.Watching;
         moonRadioIdx = 1;
+        subseq = 1;
         subSuccessOrNot = new List<bool>();
         for (int i = 1; i <= 14 * 4; i++)
         {
@@ -129,6 +133,7 @@ public class PlayerInfo
         }
         rewardList = new List<EReward>();
         archeType = new ArcheType();
+        watchedSubseq.Clear();
     }
     public bool IsDiaryCheck { get => isDiaryCheck; set=>isDiaryCheck = value;}
     public float BgmVolume{ get=>bgmVolume; set=>bgmVolume = value; }

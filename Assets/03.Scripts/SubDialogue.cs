@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class SubDialogue : MonoBehaviour
 {
-    public int subseq = 1;
     Dictionary<string, int> pos = new Dictionary<string, int>();
     protected GameObject background = null;
     public DotController dot = null;
@@ -51,7 +50,7 @@ public class SubDialogue : MonoBehaviour
             if (parts.Length >= 13)
             {
                 int sub = int.Parse(parts[0]);
-                if (sub == subseq) //****************테스트용으로 1을 넣어놨음**************** (서브 트리거 작동을 아직 모름)
+                if (sub == playerController.GetSubseq()) //****************테스트용으로 1을 넣어놨음**************** (서브 트리거 작동을 아직 모름)
                 {
                     SubDialogueEntry entry = new SubDialogueEntry
                     {
@@ -140,14 +139,14 @@ public class SubDialogue : MonoBehaviour
             Debug.LogError("Dialogue file not found in Resources folder.");
             return;
         }
-        if (manager.Pattern == GamePatternState.Writing)
-        {
-            subseq = 3;
-        }
-        if (manager.Pattern == GamePatternState.Sleeping)
-        {
-            subseq = 4;
-        }
+        //if (manager.Pattern == GamePatternState.Writing)
+        //{
+        //    subseq = 3;
+        //}
+        //if (manager.Pattern == GamePatternState.Sleeping)
+        //{
+        //    subseq = 4;
+        //}
         scroll.stopscroll(); //임시 방편
         string[] lines = dialogueData.text.Split('\n');
         LoadSubDialogue(lines);
@@ -186,32 +185,35 @@ public class SubDialogue : MonoBehaviour
             manager.NextPhase();
             return;
         }
+
         GamePatternState gamePattern = manager.Pattern;
         SubPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
+
         if (menuController)
-        {
             menuController.allon();
-        }
 
         scroll.scrollable();
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        if (currentSceneName != "Tutorial") //튜토리얼은 적용되지 않음
-            subseq += 1;
 
-        if (subseq>4)
+        if (SceneManager.GetActiveScene().name != "Tutorial")
         {
-            subseq = 1;
+            playerController.MarkSubWatched(playerController.GetSubseq());
+            Debug.Log("이미 본 서브로 저장" + playerController.GetSubseq());
+            playerController.plusSubseq();
+            if (playerController.GetSubseq() > 4)
+                playerController.SetSubseq(1);
         }
-        
-        if (subseq == 2 && manager.Chapter == 1)
+
+        if (playerController.GetSubseq() == 2 && manager.Chapter == 1)
         {
             menuController.onlyskipoff();
             subTutorial.gameObject.SetActive(true);
         }
         
-        Debug.Log("끝났을때 서브 번호: " + subseq);
+        Debug.Log("끝났을때 서브 번호: " + playerController.GetSubseq());
+        // 다음 서브 실행
         manager.CurrentState.RunSubScript(dot, manager);
     }
+
     public void TutoExit()
     {
         if (menuController)

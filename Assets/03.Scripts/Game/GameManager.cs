@@ -99,6 +99,14 @@ public class GameManager : MonoBehaviour
     {
         get { return pc.GetChapter(); }
     }
+
+    Dictionary<GamePatternState, List<int>> phaseToSubseqs = new Dictionary<GamePatternState, List<int>>()
+    {
+    { GamePatternState.Thinking, new List<int>{1, 2} },
+    { GamePatternState.Writing,  new List<int>{3} },
+    { GamePatternState.Sleeping, new List<int>{4} }
+    };
+
     protected GameManager()
     {
         states = new Dictionary<GamePatternState, GameState>();
@@ -163,6 +171,21 @@ public class GameManager : MonoBehaviour
             return;
         }
         dot.GoSleep();
+    }
+    public void SetPhase(GamePatternState newPhase)
+    {
+        currentPattern = newPhase;
+        Debug.Log($"[SetPhase] Phase 설정됨: {newPhase}");
+
+        if (phaseToSubseqs.TryGetValue(currentPattern, out var subs) && subs.Count > 0)
+        {
+            Debug.Log($"[SetPhase] Subseq 초기화됨: {subs[0]}");
+            pc.SetSubseq(subs[0]);
+        }
+        else
+        {
+            pc.SetSubseq(0);
+        }
     }
     public void NextPhase()
     {
@@ -302,13 +325,28 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("ShowSubDial 실행됨");
 
-        if (subDialogCoroutine != null)
+        int currentSubseq = pc.GetSubseq();
+        if (!ShouldShowSub(Pattern, currentSubseq))
         {
-            StopCoroutine(subDialogCoroutine);
+            Debug.Log("이미 본 서브거나 해당 phase에 서브 없음");
+            return;
         }
+
+        if (subDialogCoroutine != null)
+            StopCoroutine(subDialogCoroutine);
 
         isSkipping = false;
         subDialogCoroutine = StartCoroutine(SubDialog(dot));
+    }
+    bool ShouldShowSub(GamePatternState phase, int subseq)
+    {
+        if (!phaseToSubseqs.ContainsKey(phase))
+            return false;
+
+        if (!phaseToSubseqs[phase].Contains(subseq))
+            return false;
+
+        return !pc.IsSubWatched(subseq); // 저장된 subseq 리스트에 없는지 확인
     }
 
     public void StopSubDial()
@@ -331,11 +369,11 @@ public class GameManager : MonoBehaviour
 
         if (Pattern == GamePatternState.Writing)
         {
-            subDialogue.subseq = 3;
+            pc.SetSubseq(3);
         }
         if (Pattern == GamePatternState.Sleeping)
         {
-            subDialogue.subseq = 4;
+            pc.SetSubseq(4);
         }
         subDialogue.gameObject.SetActive(false);
 
@@ -351,8 +389,8 @@ public class GameManager : MonoBehaviour
         }
 
         ScriptList nxscript = null;
-
-        if (subDialoguePanel.GetComponent<SubDialogue>().subseq == 1)
+        Debug.Log($"SubDialog 진입 - Phase: {Pattern}, Subseq: {pc.GetSubseq()}");
+        if (pc.GetSubseq() == 1)
         {
             isready = false;
             nxscript = dot.GetnxSubScriptList(Pattern);
@@ -378,7 +416,7 @@ public class GameManager : MonoBehaviour
                 pc.ProgressSubDial(script.ScriptKey);
             }
         }
-        else if (subDialoguePanel.GetComponent<SubDialogue>().subseq == 2)
+        else if (pc.GetSubseq() == 2)
         {
             Debug.Log("현재 스크립트 키: " + script.ScriptKey);
             float waitTime = targetTime - UnityEngine.Time.time;
@@ -421,8 +459,20 @@ public class GameManager : MonoBehaviour
                 pc.ProgressSubDial(script.ScriptKey);
             }
         }
+        //pc.MarkSubWatched(pc.GetSubseq()); // 본 걸 기록
     }
-
+    public void PlayAllSubDialogs()
+    {
+        List<int> phaseSubs = phaseToSubseqs.ContainsKey(Pattern) ? phaseToSubseqs[Pattern] : null;
+        if (phaseSubs != null && phaseSubs.Count > 0)
+        {
+            int currentIdx = phaseSubs.IndexOf(pc.GetSubseq());
+            if (currentIdx + 1 < phaseSubs.Count)
+            {
+                pc.SetSubseq(phaseSubs[currentIdx + 1]); // 다음 서브
+            }
+        }
+    }
 
 
     public void StartTutoMain()

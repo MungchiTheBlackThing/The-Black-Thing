@@ -103,26 +103,27 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
             RewardPopup.SetActive(true);
             objectManager.RewardGlow(eReward);
         }
-        SetSubPhase(subDialogue.subseq - 2);
+        SetSubPhase(GetSubseq() - 2);
     }
     public void NextPhase()
     {
         if (gamemanger.GetComponent<GameManager>())
             gamemanger.GetComponent<GameManager>().StopSubDial();
+
         int phase = GetAlreadyEndedPhase();
-        if(phase == (int)GamePatternState.MainB && player.chapter == 14)
+        if (phase == (int)GamePatternState.MainB && player.chapter == 14)
         {
             Debug.Log("Ending");
             gamemanger.GetComponent<GameManager>().Ending();
             return;
         }
+
         phase += 1;
 
         if (phase > (int)GamePatternState.NextChapter)
         {
             Debug.Log("다음 챕터");
             player.currentPhase = GamePatternState.Watching;
-            //챕터가 증가함
             SetChapter();
         }
         else
@@ -130,8 +131,12 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
             player.currentPhase = (GamePatternState)phase;
         }
 
-        nextPhaseDelegate(player.currentPhase);
+        // 순서: 먼저 currentPhase 적용 → SetPhase로 subseq 설정 → delegate 호출
+        gamemanger.GetComponent<GameManager>().SetPhase(player.currentPhase);
+
+        nextPhaseDelegate?.Invoke(player.currentPhase);
     }
+
 
     public void SetSubPhase(int phaseIdx)
     {
@@ -184,6 +189,9 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         player.CurrentChapter += 1;
         currentChapter = player.CurrentChapter;
+        player.subseq = 0;
+        ClearWatchedSubseq(); // 봤던 서브 리스트도 초기화
+        WritePlayerFile();
     }
     public void SetLanguage(LANGUAGE language)
     {
@@ -215,6 +223,21 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public LANGUAGE GetLanguage()
     {
         return player.language;
+    }
+
+    public void SetSubseq(int idx)
+    {
+        player.subseq = idx;
+        WritePlayerFile();
+    }
+    public void plusSubseq()
+    {
+        player.subseq += 1;
+        WritePlayerFile();
+    }
+    public int GetSubseq()
+    {
+        return player.subseq;
     }
     //시간 설정 : (현재 시간 - watching이 진행된 시간)+60분
     public void PassWathingTime()
@@ -435,8 +458,26 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         player.Replay();
         GameManager.isend = false;
         DeathNoteClick.checkdeath = false;
+        RecentManager.ResetFlagOnly();
         WritePlayerFile();
         SceneManager.LoadScene("Tutorial");
+    }
+
+    public bool IsSubWatched(int id)
+    {
+        return player.watchedSubseq.Contains(id);
+    }
+
+    public void MarkSubWatched(int id)
+    {
+        if (!player.watchedSubseq.Contains(id))
+            player.watchedSubseq.Add(id);
+        WritePlayerFile();
+    }
+    public void ClearWatchedSubseq()
+    {
+        player.watchedSubseq.Clear();
+        WritePlayerFile();
     }
 
 }
