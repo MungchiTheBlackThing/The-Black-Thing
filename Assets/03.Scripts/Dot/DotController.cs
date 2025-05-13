@@ -64,6 +64,8 @@ public class DotController : MonoBehaviour
     public GameObject subDialogue;
     [SerializeField]
     public GameObject subPanel;
+    [SerializeField]
+    PlayerController playerController;
 
     public bool tutorial = false; //DoorController에 쓰임
     public GameObject Dust
@@ -116,6 +118,7 @@ public class DotController : MonoBehaviour
         animator = GetComponent<Animator>();
         Position = -1;
         dotExpression = "";
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 
         parser = new ScriptListParser();
         mainScriptLists = new List<List<ScriptList>>();
@@ -198,12 +201,37 @@ public class DotController : MonoBehaviour
     }
     public ScriptList GetSubScriptList(GamePatternState State)
     {
+        int subseq = playerController.GetSubseq();
+        /* 원래 방식은 subseq랑 연동되지 않는 문제 발생*/
         if (subScriptLists[chapter - 1][State].Count == 0)
             return null;
 
-        ScriptList tmp = subScriptLists[chapter - 1][State][0];
-        tmpState = State;
-        return tmp;
+       
+        if (subseq == 2 && subScriptLists[chapter - 1][State].Count == 2) //처음 시작할때 저장되었을 경우 subseq 1을 보고 끄고 다시 켰을때
+        {
+            Debug.Log("subseq 1을 봤다");
+            ScriptList tmp = subScriptLists[chapter - 1][State][1];
+            tmpState = State;
+            return tmp;
+        }
+        else
+        {
+            ScriptList tmp = subScriptLists[chapter - 1][State][0];
+            tmpState = State;
+            return tmp;
+        }
+        
+
+       
+        //List<ScriptList> scripts = subScriptLists[chapter - 1][State];
+
+        //if (scripts == null || scripts.Count == 0)
+        //{
+        //    Debug.Log("return null" + (subseq - 1) + "scriptcount:" + scripts.Count);
+        //    return null;
+        //}
+
+        //return scripts[subseq - 1];
     }
 
     public ScriptList GetnxSubScriptList(GamePatternState State)
