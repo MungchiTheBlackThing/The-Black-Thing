@@ -79,6 +79,11 @@ public class DiaryController : BaseObject, ISleepingInterface
 
     public void OnMouseUp()
     {
+        RecentData data = RecentManager.Load();
+        if (!data.tutoend)
+        {
+            return;
+        }
         if (diaryUI == null)
         {
             diaryUI = GameObject.Find("Diary").GetComponent<DiaryUIController>();

@@ -57,8 +57,14 @@ public class MoonRadio : MonoBehaviour
             // 마우스가 UI 위에 있을 때는 이 함수가 동작하지 않도록 함
             return;
         }
-        
-        if(alert != null)
+
+        RecentData data = RecentManager.Load();
+        if (!data.tutoend)
+        {
+            return;
+        }
+
+        if (alert != null)
         {
             OpenAlert();
             //alert 알람뜨기
