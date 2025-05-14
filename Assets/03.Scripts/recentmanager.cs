@@ -9,6 +9,7 @@ public class RecentData
     public int value;
     public int index;
     public int tutonum = 0;
+    public bool tutoend = false;
 }
 
 public static class RecentManager
@@ -41,7 +42,8 @@ public static class RecentManager
                 objectName = "",
                 value = 0,
                 index = 0,
-                tutonum = 0 // tutonum 필드 추가되었다고 가정
+                tutonum = 0, // tutonum 필드 추가되었다고 가정
+                tutoend = false
             };
 
             string json = JsonUtility.ToJson(defaultData);
@@ -62,6 +64,7 @@ public static class RecentManager
         RecentData data = JsonUtility.FromJson<RecentData>(json);
         data.isContinue = 0;
         data.tutonum = 0;
+        data.tutoend = false;
         File.WriteAllText(FilePath, JsonUtility.ToJson(data));
     }
 
@@ -89,4 +92,16 @@ public static class RecentManager
         data.tutonum = 1;
         File.WriteAllText(FilePath, JsonUtility.ToJson(data));
     }
+    public static void tutoSceneEnd()
+    {
+        if (!File.Exists(FilePath))
+            return;
+
+        string json = File.ReadAllText(FilePath);
+        RecentData data = JsonUtility.FromJson<RecentData>(json);
+        data.tutoend = true;
+        File.WriteAllText(FilePath, JsonUtility.ToJson(data));
+
+    }
+
 }

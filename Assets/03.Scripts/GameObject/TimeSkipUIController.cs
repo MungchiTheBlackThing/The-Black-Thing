@@ -82,6 +82,7 @@ public class TimeSkipUIController : MonoBehaviour
             if(time < 0)
             {
                 //다음 챕터로 넘어간다.
+                Debug.Log("2");
                 playerController.NextPhase();
                 time = timeStamp[timeIdx]; //리셋
                 return;

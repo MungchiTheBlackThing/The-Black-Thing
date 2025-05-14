@@ -7489,7 +7489,7 @@ MonoBehaviour:
   detailed_popup: {fileID: 644266274}
   alertmanager: {fileID: 0}
   dragIconPrefab: {fileID: 4936116059334874993, guid: c611c0afa3f0849e6ab24d4dfc0e7ce5, type: 3}
-  dotController: {fileID: 0}
+  dotController: {fileID: 2046645039688417658}
   tutorial: 0
   guide1: 0
   guide2: 0
@@ -42674,7 +42674,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43118b2200c38214faf12bae9e7bfd21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subseq: 1
   dot: {fileID: 2046645039688417658}
   SubDialogueEntries: []
   scroll: {fileID: 1526469518}
@@ -57115,7 +57114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -60826,7 +60825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -64897,6 +64896,7 @@ MonoBehaviour:
   dust: {fileID: 1094932321745963600}
   subDialogue: {fileID: 0}
   subPanel: {fileID: 0}
+  playerController: {fileID: 0}
   tutorial: 0
 --- !u!212 &2046645039688417659
 SpriteRenderer:

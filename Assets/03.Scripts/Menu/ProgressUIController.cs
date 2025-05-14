@@ -47,7 +47,7 @@ public class ProgressUIController : MonoBehaviour
         iconWidth = dragIconPrefab.GetComponent<RectTransform>().rect.width;
         InitScrollSize = new Vector2(dragScroller.GetComponent<RectTransform>().rect.width, dragScroller.GetComponent<RectTransform>().rect.height);
         dragScroller.GetComponent<ScrollRect>().onValueChanged.AddListener(Scroll);
-        dotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
+        //dotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
     }
 
     private void OnEnable()

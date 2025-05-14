@@ -11,6 +11,7 @@ public class IntroScene : MonoBehaviour
 
     private void Start()
     {
+        RecentData data = RecentManager.Load();
         LoadingAnimator.gameObject.SetActive(false);
         StartCoroutine(Wait_Animation(SplashAnimator, "SplashAnimation", () =>
         {
@@ -18,8 +19,14 @@ public class IntroScene : MonoBehaviour
             StopCoroutine("Wait_Animation");
             StartCoroutine(Wait_Animation(LoadingAnimator, "DefaultLoadingAnimation", () =>
             {
-                //다음 씬으로 넘기기 전 처리
-                SceneManager.LoadScene("MainScene");
+                if (data != null && data.tutoend == false)
+                {
+                    SceneManager.LoadScene("Tutorial");
+                }
+                else
+                {
+                    SceneManager.LoadScene("MainScene");
+                }
             }));
         }));
     }

@@ -198,6 +198,7 @@ public class SubPanel : MonoBehaviour
         PanelOff();
         if (dialogueIndex >= sub.currentDialogueList.Count)
         {
+            Debug.Log("ÀÎµ¦½º°¡ ³Ñ¾î°¨");
             DialEnd();
             return;
         }
@@ -655,6 +656,7 @@ public class SubPanel : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("³Ø½ºÆ® Å°°¡ Àß¸øµÊ");
                     DialEnd();
                     return;
                 }

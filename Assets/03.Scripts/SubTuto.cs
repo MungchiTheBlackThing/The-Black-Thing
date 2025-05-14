@@ -107,8 +107,10 @@ public class SubTuto : MonoBehaviour
         else
         {
             dotController.tutorial = false;
+            Debug.Log("3");
             playerController.NextPhase();
             playerController.WritePlayerFile();
+            RecentManager.tutoSceneEnd();
             StartCoroutine(LoadSceneCoroutine("MainScene"));
         }
     }

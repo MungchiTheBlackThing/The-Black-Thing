@@ -184,11 +184,12 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            pc.SetSubseq(0);
+            pc.SetSubseq(1);
         }
     }
     public void NextPhase()
     {
+        Debug.Log("1");
         pc.NextPhase();
     }
     public void ChangeGameState(GamePatternState patternState)

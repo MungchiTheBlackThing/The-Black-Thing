@@ -7683,7 +7683,7 @@ MonoBehaviour:
   detailed_popup: {fileID: 644266274}
   alertmanager: {fileID: 199268583}
   dragIconPrefab: {fileID: 4936116059334874993, guid: c611c0afa3f0849e6ab24d4dfc0e7ce5, type: 3}
-  dotController: {fileID: 0}
+  dotController: {fileID: 2046645039688417658}
   tutorial: 0
   guide1: 0
   guide2: 0
@@ -48703,7 +48703,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1526469517}
   - component: {fileID: 1526469516}
-  - component: {fileID: 1526469515}
   - component: {fileID: 1526469518}
   - component: {fileID: 1526469519}
   m_Layer: 0
@@ -48713,14 +48712,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1526469515
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526469514}
-  m_Enabled: 1
 --- !u!20 &1526469516
 Camera:
   m_ObjectHideFlags: 0
@@ -53545,6 +53536,41 @@ MonoBehaviour:
       Data3: -1041480801
       Data4: -1632637593
     Path: event:/SFX/sfx_bino_wrong
+  <bgmmain_1>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bgmmain_2>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bgmmain_3>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bgmmain_3_ver2>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bgmmain_4>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &1670515221
 GameObject:
   m_ObjectHideFlags: 0
@@ -54939,7 +54965,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43118b2200c38214faf12bae9e7bfd21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subseq: 1
   dot: {fileID: 2046645039688417658}
   SubDialogueEntries: []
   scroll: {fileID: 1526469518}
@@ -60454,7 +60479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -64617,7 +64642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -69683,6 +69708,7 @@ MonoBehaviour:
   dust: {fileID: 1094932321745963600}
   subDialogue: {fileID: 1720718688}
   subPanel: {fileID: 1109418667}
+  playerController: {fileID: 0}
   tutorial: 0
 --- !u!212 &2046645039688417659
 SpriteRenderer:

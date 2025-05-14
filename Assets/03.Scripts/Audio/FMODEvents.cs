@@ -41,6 +41,13 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference[] binosuccess { get; private set; }
     [field: SerializeField] public EventReference[] binofails { get; private set; }
 
+    [field: Header("BGM")]
+    [field: SerializeField] public EventReference bgmmain_1 { get; private set; }
+    [field: SerializeField] public EventReference bgmmain_2 { get; private set; }
+    [field: SerializeField] public EventReference bgmmain_3 { get; private set; }
+    [field: SerializeField] public EventReference bgmmain_3_ver2 { get; private set; }
+    [field: SerializeField] public EventReference bgmmain_4 { get; private set; }
+
     public static FMODEvents instance { get; private set; }
 
     private void Awake()
