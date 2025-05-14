@@ -47,6 +47,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference bgmmain_3 { get; private set; }
     [field: SerializeField] public EventReference bgmmain_3_ver2 { get; private set; }
     [field: SerializeField] public EventReference bgmmain_4 { get; private set; }
+    [field: SerializeField] public EventReference bgmmain_death{ get; private set; }
 
     public static FMODEvents instance { get; private set; }
 

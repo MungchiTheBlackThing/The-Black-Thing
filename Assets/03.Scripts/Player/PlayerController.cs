@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         currentChapter = GetChapter();
         currentChapter = player.CurrentChapter;
         nickname = player.Nickname;
+        AudioManager.instance.UpdateBGMByChapter(currentChapter);
     }
     private void Start()
     {
@@ -191,6 +192,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         currentChapter = player.CurrentChapter;
         player.subseq = 0;
         ClearWatchedSubseq(); // 봤던 서브 리스트도 초기화
+        AudioManager.instance.UpdateBGMByChapter(player.CurrentChapter);
         WritePlayerFile();
     }
     public void SetLanguage(LANGUAGE language)
