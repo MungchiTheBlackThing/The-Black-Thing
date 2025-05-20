@@ -10,16 +10,29 @@ public class NicknamePopup : MonoBehaviour
     [SerializeField] TMP_InputField nameInputField;
     [SerializeField] SubTuto subTuto;
     [SerializeField] SubPanel subPanel;
-    // Start is called before the first frame update
+    [SerializeField] GameObject confirmButtonObject; // Button의 GameObject 자체 (Button 말고!)
+
     private void OnEnable()
     {
         playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
+        ValidateInput(); // 팝업이 열릴 때도 검사
+        nameInputField.onValueChanged.AddListener(delegate { ValidateInput(); });
     }
 
-    // Update is called once per frame
+    private void OnDisable()
+    {
+        nameInputField.onValueChanged.RemoveAllListeners(); // 리스너 정리
+    }
+
+    private void ValidateInput()
+    {
+        string trimmed = nameInputField.text.Trim();
+        confirmButtonObject.SetActive(!string.IsNullOrEmpty(trimmed));
+    }
+
     public void SaveNickname()
     {
-        playerController.SetNickName(nameInputField.text);
+        playerController.SetNickName(nameInputField.text.Trim());
         playerController.WritePlayerFile();
         subPanel.gameObject.SetActive(true);
         this.transform.parent.gameObject.SetActive(false);
