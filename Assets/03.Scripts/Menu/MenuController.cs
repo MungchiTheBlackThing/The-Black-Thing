@@ -38,6 +38,8 @@ public class MenuController : MonoBehaviour
     GameObject checkList;
     [SerializeField]
     GameObject Replay;
+    [SerializeField]
+    GameObject tutoalert;
 
     Animator MenuButAnim;
 
@@ -225,6 +227,17 @@ public class MenuController : MonoBehaviour
         //DayProgressUI on,.,
         DayProgressUI.SetActive(true);
         isprogress = true;
+    }
+
+    public void tutoProgressUI()
+    {
+        if (tutoalert.activeSelf == false)
+        {
+            tutoalert.SetActive(true);
+            StartCoroutine(CloseAlter(tutoalert));
+        }
+        else
+            tutoalert.SetActive(false);
     }
 
     public void onClickHelper()

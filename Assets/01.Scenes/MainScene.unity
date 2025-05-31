@@ -18045,7 +18045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &619721724
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18094,6 +18094,7 @@ MonoBehaviour:
   Default: {fileID: 201689321}
   checkList: {fileID: 574559039}
   Replay: {fileID: 1016603270}
+  tutoalert: {fileID: 0}
   isOpening: 0
   isprogress: 0
   menu:
@@ -32837,7 +32838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1097236182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46991,6 +46992,7 @@ MonoBehaviour:
   Default: {fileID: 0}
   checkList: {fileID: 1735303009}
   Replay: {fileID: 0}
+  tutoalert: {fileID: 0}
   isOpening: 0
   isprogress: 0
   menu:

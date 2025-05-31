@@ -281,6 +281,7 @@ public class MainPanel : MonoBehaviour
                 }
                 else if (actor == "Player")
                 {
+                    MainClick.SetActive(true);
                     if (animScene == "1")
                     {
                         Debug.Log("영상 시작");
@@ -289,7 +290,7 @@ public class MainPanel : MonoBehaviour
                     PlayPanel.SetActive(true);
                     PlayTextUI.text = $"{korText}";
                     StartCoroutine(FadeIn(PlayPanel.GetComponent<CanvasGroup>(), 0.5f, PlayPanel.transform.GetChild(0).GetComponent<Button>()));
-                    RegisterNextButton(PlayPanel.transform.GetChild(0).GetComponent<Button>());
+                    RegisterNextButton(MainClick.GetComponent<Button>());
                 }
                 break;
             case "selection":

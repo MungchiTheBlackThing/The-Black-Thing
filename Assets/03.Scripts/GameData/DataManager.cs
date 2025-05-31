@@ -76,6 +76,33 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    Death deathdata;
+    public Death DeathData
+    {
+        get
+        {
+            return deathdata;
+        }
+        set
+        {
+            deathdata = value;
+        }
+    }
+
+    DotReview dotReview;
+    public DotReview DotReview
+    {
+        get
+        {
+            return dotReview;
+        }
+        set
+        {
+            dotReview = value;
+        }
+    }
+
+
     #endregion
     private void Awake()
     {

@@ -322,6 +322,7 @@ MonoBehaviour:
   prevPage: {fileID: 6876547899648555236}
   background: {fileID: 6876547900428210869}
   text: {fileID: 8632590687242122827}
+  DotText: {fileID: 8632590688687354139}
 --- !u!1 &6876547900428210871
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,10 +818,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75
-  m_fontSizeBase: 75
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -907,13 +908,14 @@ GameObject:
   - component: {fileID: 8632590688687354140}
   - component: {fileID: 8632590688687354142}
   - component: {fileID: 8632590688687354141}
+  - component: {fileID: 6734218474532018268}
   m_Layer: 5
   m_Name: DotBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8632590688687354140
 RectTransform:
   m_ObjectHideFlags: 0
@@ -973,6 +975,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6734218474532018268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8632590688687354139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3270a71a393ac047bd45238a3fc1a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerController: {fileID: 0}
+  displayText: {fileID: 8632590687326017520}
+  textCanvasGroup: {fileID: 0}
+  fadeDuration: 1
+  holdDuration: 3
 --- !u!1 &8632590688903632754
 GameObject:
   m_ObjectHideFlags: 0

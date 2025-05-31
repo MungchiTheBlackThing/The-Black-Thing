@@ -338,6 +338,7 @@ public class SubPanel : MonoBehaviour
                 }
                 else if (actor == "Player")
                 {
+                    subClick.SetActive(true);
                     if (korText.Contains("<nickname>"))
                     {
                         if (pc)
@@ -359,7 +360,10 @@ public class SubPanel : MonoBehaviour
                             PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                             PlayTextUI.text = $"{korText}";
                             if (scriptnumber.Contains("tutorial"))
+                            {
+                                subClick.SetActive(false);
                                 TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
+                            }
                             else
                                 playerballoon(selectedDot);
                         }
@@ -378,7 +382,10 @@ public class SubPanel : MonoBehaviour
                                 PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                                 PlayTextUI.text = $"{korText}";
                                 if (scriptnumber.Contains("tutorial"))
+                                {
+                                    subClick.SetActive(false);
                                     TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
+                                }
                                 else
                                     playerballoon(selectedDot);
                             }
@@ -395,7 +402,10 @@ public class SubPanel : MonoBehaviour
                                 PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                                 PlayTextUI.text = $"{korText}";
                                 if (scriptnumber.Contains("tutorial"))
+                                {
+                                    subClick.SetActive(false);
                                     TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
+                                }
                                 else
                                     playerballoon(selectedDot);
                             }
@@ -412,7 +422,10 @@ public class SubPanel : MonoBehaviour
                                 PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                                 PlayTextUI.text = $"{korText}";
                                 if (scriptnumber.Contains("tutorial"))
+                                {
+                                    subClick.SetActive(false);
                                     TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
+                                }
                                 else
                                     playerballoon(selectedDot);
                             }
@@ -429,7 +442,10 @@ public class SubPanel : MonoBehaviour
                                 PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                                 PlayTextUI.text = $"{korText}";
                                 if (scriptnumber.Contains("tutorial"))
+                                {
+                                    subClick.SetActive(false);
                                     TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
+                                }
                                 else
                                     playerballoon(selectedDot);
                             }
@@ -631,6 +647,7 @@ public class SubPanel : MonoBehaviour
             yield return null;
         }
         canvasGroup.alpha = 1;
+        yield return new WaitForSeconds(duration);
         button.interactable = true;
     }
 
@@ -805,9 +822,10 @@ public class SubPanel : MonoBehaviour
 
     public void playerballoon(GameObject selectedDot)
     {
+        subClick.SetActive(true);
         PlayerLocationSet(selectedDot); // 선택한 오브젝트를 활성화
-        StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.5f, selectedDot.transform.GetComponent<Button>()));
-        RegisterNextButton(selectedDot.transform.GetComponent<Button>());
+        StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.5f, subClick.GetComponent<Button>()));
+        RegisterNextButton(subClick.GetComponent<Button>());
     }
 
     public void TutoConditon(GameObject selectedDot, string scriptnumber, int determine , int index)

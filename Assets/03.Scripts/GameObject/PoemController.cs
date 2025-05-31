@@ -19,6 +19,9 @@ public class PoemController : MonoBehaviour
 
     [SerializeField]
     TMP_Text text;
+
+    [SerializeField]
+    GameObject DotText;
     const string path = "Background/PoemBackground/";
 
     //현재 타임이 밤인지, 낮인지는 GameManager가 가지고있음
@@ -78,6 +81,8 @@ public class PoemController : MonoBehaviour
         //다음 페이지가 없을 경우에는 버튼을 없애버림
         if (currentPage + 1 >= totalPage)
         {
+            //감상평 ON
+            DotTextOn();
             nextPage.gameObject.SetActive(false);
         }
 
@@ -104,6 +109,11 @@ public class PoemController : MonoBehaviour
         text.text = DataManager.Instance.PoemData.poems[chapter].text[currentPage].textKor;
     }
 
+    private void DotTextOn()
+    {
+        DotText.SetActive(true);
+        DotText.GetComponent<DotTextReview>().StartReview();
+    }
 
     public void Exit()
     {
