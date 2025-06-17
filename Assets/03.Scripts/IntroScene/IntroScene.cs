@@ -6,29 +6,65 @@ using UnityEngine.SceneManagement;
 
 public class IntroScene : MonoBehaviour
 {
-    [SerializeField] Animator SplashAnimator;
-    [SerializeField] Animator LoadingAnimator;
+    [SerializeField] GameObject continueButton;
+    [SerializeField] Animator splashAnimator;
+    [SerializeField] Animator loadingAnimator;
+    [SerializeField] GameObject introGroup;
+
+    RecentData data;
 
     private void Start()
     {
-        RecentData data = RecentManager.Load();
-        LoadingAnimator.gameObject.SetActive(false);
-        StartCoroutine(Wait_Animation(SplashAnimator, "SplashAnimation", () =>
+        data = RecentManager.Load();
+        
+        //1.스플래시 재생
+        //2.디폴트 로딩 재생
+        //3.인트로 신
+        //4.시작하면 에셋 로딩
+        introGroup.gameObject.SetActive(false);
+        splashAnimator.gameObject.SetActive(true);
+        loadingAnimator.gameObject.SetActive(false);
+        StartCoroutine(Wait_Animation(splashAnimator, "SplashAnimation", () =>
         {
-            LoadingAnimator.gameObject.SetActive(true);
-            StopCoroutine("Wait_Animation");
-            StartCoroutine(Wait_Animation(LoadingAnimator, "DefaultLoadingAnimation", () =>
+            splashAnimator.gameObject.SetActive(false);
+            loadingAnimator.gameObject.SetActive(true);
+
+            StartCoroutine(Wait_Animation(loadingAnimator, "DefaultLoadingAnimation", () =>
             {
-                if (data != null && data.tutoend == false)
-                {
-                    SceneManager.LoadScene("Tutorial");
-                }
-                else
-                {
-                    SceneManager.LoadScene("MainScene");
-                }
+                loadingAnimator.gameObject.SetActive(false);
+                introGroup.SetActive(true);
+                continueButton.SetActive(data != null && data.tutoend == true);
             }));
         }));
+    }
+
+    public void OnContinue()
+    {
+        Play();
+    }
+
+    public void OnStart()
+    {
+        RecentManager.ResetFlagOnly();
+        data = RecentManager.Load();
+        Play();
+    }
+
+    public void OnSetting()
+    {
+
+    }
+
+    void Play()
+    {
+        if (data != null && data.tutoend == false)
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            SceneManager.LoadScene("MainScene");
+        }
     }
 
     IEnumerator Wait_Animation(Animator animator, string animationName, Action callBack)
