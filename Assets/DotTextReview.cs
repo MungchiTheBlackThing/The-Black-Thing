@@ -1,14 +1,17 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DotTextReview : MonoBehaviour
 {
-    [SerializeField] PlayerController PlayerController;
+    [SerializeField] private PlayerController PlayerController;
     [SerializeField] private TMP_Text displayText;
+    [SerializeField] private Button inputBlockerButton; // 전체화면 버튼
     [SerializeField] private float fadeDuration = 1.0f;
-    [SerializeField] private float holdDuration = 3.0f;
     [SerializeField] private int currentChapter = 1;
+
+    private bool userClicked = false;
 
     public void StartReview()
     {
@@ -22,7 +25,6 @@ public class DotTextReview : MonoBehaviour
         Debug.Log("리뷰 번역을 시작합니다.");
 
         DotReview dotReview = DataManager.Instance.DotReview;
-
         if (dotReview == null)
         {
             Debug.LogError("DotReview 데이터가 없습니다.");
@@ -51,36 +53,66 @@ public class DotTextReview : MonoBehaviour
 
     private Chapter GetChapter(DotReview review, int chapterNumber)
     {
-        switch (chapterNumber)
+        return chapterNumber switch
         {
-            case 1: return review.Chapter1;
-            case 2: return review.Chapter2;
-            case 3: return review.Chapter3;
-            case 4: return review.Chapter4;
-            case 5: return review.Chapter5;
-            case 6: return review.Chapter6;
-            case 7: return review.Chapter7;
-            case 8: return review.Chapter8;
-            case 9: return review.Chapter9;
-            case 10: return review.Chapter10;
-            case 11: return review.Chapter11;
-            case 12: return review.Chapter12;
-            case 13: return review.Chapter13;
-            default: return null;
-        }
+            1 => review.Chapter1,
+            2 => review.Chapter2,
+            3 => review.Chapter3,
+            4 => review.Chapter4,
+            5 => review.Chapter5,
+            6 => review.Chapter6,
+            7 => review.Chapter7,
+            8 => review.Chapter8,
+            9 => review.Chapter9,
+            10 => review.Chapter10,
+            11 => review.Chapter11,
+            12 => review.Chapter12,
+            13 => review.Chapter13,
+            _ => null
+        };
     }
 
     private IEnumerator PlayLines(string[] lines)
     {
-        foreach (var line in lines)
+        inputBlockerButton.gameObject.SetActive(true);
+        inputBlockerButton.onClick.AddListener(OnUserClick);
+
+        for (int i = 0; i < lines.Length; i++)
         {
-            displayText.text = line.Trim();
+            displayText.text = lines[i].Trim();
             yield return FadeIn();
-            yield return new WaitForSeconds(holdDuration);
-            yield return FadeOut();
+
+            yield return WaitForUserInput();
+
+            if (i < lines.Length - 1)
+            {
+                yield return FadeOut();
+            }
+            else
+            {
+                // 마지막 줄이면 유지하고 버튼 비활성화
+                inputBlockerButton.onClick.RemoveListener(OnUserClick);
+                inputBlockerButton.gameObject.SetActive(false);
+                yield break;
+            }
+        }
+    }
+
+    private IEnumerator WaitForUserInput()
+    {
+        userClicked = false;
+
+        while (!userClicked)
+        {
+            yield return null;
         }
 
-        displayText.text = "";
+        userClicked = false;
+    }
+
+    private void OnUserClick()
+    {
+        userClicked = true;
     }
 
     private IEnumerator FadeIn()

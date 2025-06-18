@@ -102,6 +102,13 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    UIText uIText;
+    public UIText UIText
+    {
+        get { return uIText; }
+        set { uIText = value; }
+    }
+
 
     #endregion
     private void Awake()

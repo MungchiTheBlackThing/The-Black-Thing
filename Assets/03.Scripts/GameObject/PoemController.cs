@@ -27,6 +27,7 @@ public class PoemController : MonoBehaviour
     //현재 타임이 밤인지, 낮인지는 GameManager가 가지고있음
     GameManager gameManager;
 
+    private bool hasShownDotText = false;
     int currentPage;
     int totalPage;
     int chapter;
@@ -82,7 +83,13 @@ public class PoemController : MonoBehaviour
         if (currentPage + 1 >= totalPage)
         {
             //감상평 ON
-            DotTextOn();
+            if (!hasShownDotText)
+            {
+                // 감상평 ON (한 번만 실행)
+                DotTextOn();
+                hasShownDotText = true;
+            }
+
             nextPage.gameObject.SetActive(false);
         }
 
@@ -120,6 +127,7 @@ public class PoemController : MonoBehaviour
         //manager에서 sleep 요청
         gameManager.GoSleep();
         Destroy(gameObject.transform.parent.gameObject);
+        hasShownDotText = false;
     }
 
 }
