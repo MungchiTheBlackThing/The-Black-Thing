@@ -132,7 +132,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         maindata.AnimScene = DialogueEntries[idx].AnimScene;
         fixedPos = pos[DialogueEntries[idx].Background];
 
-        Debug.Log("테스트: " + fixedPos.ToString());
+        //Debug.Log("테스트: " + fixedPos.ToString());
         //데이터에 대한 애니메이션으로 변경한다., fixedPos 은 건드리지말길!!! 위치 값인데 항상 고정
         
         dot.ChangeState(DotPatternState.Main, DialogueEntries[idx].DotBody, fixedPos, DialogueEntries[idx].DotExpression);
