@@ -155,8 +155,9 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //대사를 로드했음 좋겠음.
         //배경화면을 로드한다.
         //카메라를 0,0,10에서 정지시킨다.움직이지 못하게한다.
-        if (uITutorial != null)
+        if (uITutorial == null)
             uITutorial = mainPanel.UITutorial.GetComponent<UITutorial>();
+        Debug.Log(uITutorial);
         prePos = dot.Position;
         preanimkey = dot.AnimKey;
         TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);

@@ -288,6 +288,7 @@ public class DotController : MonoBehaviour
 
         if (playAlert.activeSelf)
         {
+            Debug.Log("트리거 꺼짐");
             playAlert.SetActive(false);
             //같이 책을 읽을래? 라는 문구 뜨고 안읽는다고하면 총총총 sleep으로
             for (int i = 0; i < play.Length; i++)
