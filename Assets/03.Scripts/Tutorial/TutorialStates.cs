@@ -53,15 +53,28 @@ namespace Tutorial
             }
             if (data.tutonum == 1)
             {
-                dot.tutorial = true;
-                manager.ScrollManager.stopscroll();
-                manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 0.1f);
-                Debug.Log("두번째 튜토리얼 서브");
-                dot.ChangeState(DotPatternState.Default, anim, 1);
-                //InvokeHelper.Instance.InvokeAfterDelay(subcontinue, 4.0f);
-                GameObject fix_moonradio = GameObject.Find("fix_moonradio");
-                GameObject moonote = Resources.Load<GameObject>("moonnote");
-                Utility.InstantiatePrefab(moonote, fix_moonradio.transform);
+                if (data.index == 69)
+                {
+                    dot.ChangeState(DotPatternState.Default, anim, 1);
+                    dot.tutorial = true;
+                    manager.ScrollManager.stopscroll();
+                    Debug.Log("두번째 튜토리얼 서브");
+                    manager.CameraZoom.ZoomOut();
+                    //InvokeHelper.Instance.InvokeAfterDelay(subcontinue, 4.0f);
+                    GameObject fix_moonradio = GameObject.Find("fix_moonradio");
+                    GameObject moonote = Resources.Load<GameObject>("moonnote");
+                    Utility.InstantiatePrefab(moonote, fix_moonradio.transform);
+                    subdial = manager.subDialoguePanel;
+                }
+                else
+                {
+                    dot.ChangeState(DotPatternState.Default, anim, pos);
+                    dot.GetComponent<DotController>().tutorial = true;
+                    manager.ScrollManager.stopscroll();
+                    manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
+                    Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
+                    subdial = manager.subDialoguePanel;
+                }
             }
             
         }
@@ -113,7 +126,6 @@ namespace Tutorial
             RecentManager.TutoNumChange();
             //manager.ObjectManager.activeSystemUIDelegate(true);
             //SystemUI.SetActive(true);
-            
         }
 
         public void changestate(GameManager manager)

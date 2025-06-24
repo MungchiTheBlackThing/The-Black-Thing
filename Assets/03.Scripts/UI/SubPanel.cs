@@ -44,16 +44,12 @@ public class SubPanel : MonoBehaviour
     public int dialogueIndex = 0;  // Current dialogue index
     public int Day = 0;  // Current day
 
+    [SerializeField]
+    SubTuto subTuto;
     void OnEnable()
     {
         pc = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         //subClick = GameObject.Find("SubClick");
-    }
-
-    private void Start()
-    {
-        subClick = GameObject.Find("SubClick");
-        Debug.Log("서브: " + subClick);
     }
 
     public void InitializePanels()
@@ -831,7 +827,7 @@ public class SubPanel : MonoBehaviour
     public void TutoConditon(GameObject selectedDot, string scriptnumber, int determine , int index)
     {
         // SubTuto 인스턴스 가져오기
-        SubTuto subTuto = gameManager.gameObject.GetComponent<SubTuto>();
+        subTuto = gameManager.gameObject.GetComponent<SubTuto>();
 
         if (subTuto == null)
         {
@@ -881,7 +877,7 @@ public class SubPanel : MonoBehaviour
 
     public void Subcontinue()
     {
-        SubTuto subTuto = gameManager.gameObject.GetComponent<SubTuto>();
+        subTuto = gameManager.gameObject.GetComponent<SubTuto>();
 
         if(subTuto)
         {

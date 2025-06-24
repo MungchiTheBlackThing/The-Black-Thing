@@ -8468,7 +8468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &310432079
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45188,6 +45188,7 @@ MonoBehaviour:
   prePos: 0
   dialogueIndex: 0
   Day: 0
+  subTuto: {fileID: 199268585}
 --- !u!1 &1483853040
 GameObject:
   m_ObjectHideFlags: 0

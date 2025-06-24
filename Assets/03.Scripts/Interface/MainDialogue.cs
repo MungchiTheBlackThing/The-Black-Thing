@@ -5,6 +5,7 @@ using Assets.Script.DialClass;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 
 public abstract class MainDialogue : GameState, ILoadingInterface
@@ -23,6 +24,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     MenuController menuController;
     UITutorial uITutorial;
     PlayerController PlayerController;
+
 
     protected int fixedPos = -1;
 
@@ -83,7 +85,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                 int main = int.Parse(parts[0]);
                 if (main == phase)
                 {
-                    Debug.Log("엔트리 시작");
+                    //Debug.Log("엔트리 시작");
                     DialogueEntry entry = new DialogueEntry
                     {
                         Main = main,
@@ -141,6 +143,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
     public void StartMain(GameManager manager, string fileName)
     {
+        string currentSceneName = SceneManager.GetActiveScene().name;
         dot = GameObject.Find("Dot").GetComponent<DotController>();
         Debug.Log(dot);
         if (dot)
@@ -155,7 +158,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //대사를 로드했음 좋겠음.
         //배경화면을 로드한다.
         //카메라를 0,0,10에서 정지시킨다.움직이지 못하게한다.
-        if (uITutorial == null)
+        if (uITutorial == null && currentSceneName == "MainScene" && manager.Chapter == 1)
             uITutorial = mainPanel.UITutorial.GetComponent<UITutorial>();
         Debug.Log(uITutorial);
         prePos = dot.Position;

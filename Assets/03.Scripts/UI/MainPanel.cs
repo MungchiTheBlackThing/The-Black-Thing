@@ -213,17 +213,18 @@ public class MainPanel : MonoBehaviour
     public void DialEnd()
     {
         Debug.Log("메인 끝");
-        PanelOff();
         mainDialogue.currentDialogueList.Clear();
         dialogueIndex = 0;
         backindex = -1;
         Debug.Log(gameManager.GetComponent<TutorialManager>());
         if (gameManager.GetComponent<TutorialManager>() != null)
         {
-            gameManager.CameraZoom.ZoomOut();
+            PanelOff();
+            TutorialManager.Instance.ChangeGameState(TutorialState.Sub);
         }
         else
         {
+            PanelOff();
             Debug.Log("버튼 끄기");
             BackBut.SetActive(false);
             mainDialogue.MainEnd();

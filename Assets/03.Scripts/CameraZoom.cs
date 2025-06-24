@@ -41,7 +41,6 @@ public class CameraZoom : MonoBehaviour
         animator.enabled = true;
         animator.SetTrigger("ZoomOut");
         Debug.Log("Ä«¸Þ¶ó ÁÜ¾Æ¿ô");
-        subTuto.zoomout();
     }
     public void ZoomOutEnd()
     {
