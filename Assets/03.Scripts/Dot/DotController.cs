@@ -15,10 +15,10 @@ public class DotController : MonoBehaviour
     private float position;
 
     [SerializeField]
-    private string dotExpression; //CSV¿¡ ÀÇÇØ¼­ string µé¾î¿È
+    private string dotExpression; //CSVì— ì˜í•´ì„œ string ë“¤ì–´ì˜´
 
     [SerializeField]
-    private string animKey; //CSV¿¡ ÀÇÇØ¼­ stringÀ¸·Î µé¾î¿È ÆÄ½Ì ÇØÁà¾ßÇÑ´Ù.
+    private string animKey; //CSVì— ì˜í•´ì„œ stringìœ¼ë¡œ ë“¤ì–´ì˜´ íŒŒì‹± í•´ì¤˜ì•¼í•œë‹¤.
 
     [SerializeField]
     GameObject mainAlert;
@@ -67,7 +67,7 @@ public class DotController : MonoBehaviour
     [SerializeField]
     PlayerController playerController;
 
-    public bool tutorial = false; //DoorController¿¡ ¾²ÀÓ
+    public bool tutorial = false; //DoorControllerì— ì“°ì„
     public GameObject Dust
     {
         get { return dust; }
@@ -110,6 +110,11 @@ public class DotController : MonoBehaviour
     Dictionary<float, Vector2> DotPositionDic = new Dictionary<float, Vector2>();
     Dictionary<DotPatternState, Dictionary<string, List<float>>> DotPositionKeyDic = new Dictionary<DotPatternState, Dictionary<string, List<float>>>();
 
+    [SerializeField]
+    SpriteRenderer spriteRenderer;
+
+    [SerializeField]
+    BoxCollider2D boxcollider;
 
     GamePatternState tmpState;
 
@@ -125,15 +130,14 @@ public class DotController : MonoBehaviour
         subScriptLists = new List<Dictionary<GamePatternState, List<ScriptList>>>();
 
         parser.Load(mainScriptLists, subScriptLists);
-        Debug.Log("¸ŞÀÎ ±æÀÌ:" + mainScriptLists.Count);
+        Debug.Log("ë©”ì¸ ê¸¸ì´:" + mainScriptLists.Count);
         subDialogue = GameObject.Find("SubDialougue");
         subPanel = GameObject.Find("SubPanel");
         subPanel.GetComponent<SubPanel>().InitializePanels();
 
-
-
-
-        //¾Ö´Ï¸ŞÀÌ¼Ç°ú À§Ä¡ °ü·Ã ÃÊ±âÈ­
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
+        boxcollider = this.GetComponent<BoxCollider2D>();
+        //ì• ë‹ˆë©”ì´ì…˜ê³¼ ìœ„ì¹˜ ê´€ë ¨ ì´ˆê¸°í™”
         TextAsset jsonFile = Resources.Load<TextAsset>("FSM/DotPosition");
         Coordinate dotData = JsonUtility.FromJson<Coordinate>(jsonFile.text);
         foreach (var Data in dotData.data)
@@ -175,8 +179,8 @@ public class DotController : MonoBehaviour
     void Start()
     {
         chapter = manager.Chapter;
-        Debug.Log("ÇöÀç Ã©ÅÍ: " + chapter);
-        animator.keepAnimatorStateOnDisable = true; //¾Ö´Ï¸ŞÀÌ¼Ç À¯Áö
+        Debug.Log("í˜„ì¬ ì±•í„°: " + chapter);
+        animator.keepAnimatorStateOnDisable = true; //ì• ë‹ˆë©”ì´ì…˜ ìœ ì§€
     }
 
     public ScriptList GetMainScriptList(int index)
@@ -190,7 +194,7 @@ public class DotController : MonoBehaviour
     public int GetSubScriptListCount(GamePatternState State)
     {
 
-        Debug.Log("½ºÅ×ÀÌÆ®:" + State);
+        Debug.Log("ìŠ¤í…Œì´íŠ¸:" + State);
         Debug.Log("GetSubSCript");
         if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play || manager.Pattern == GamePatternState.Sleeping || manager.Pattern == GamePatternState.NextChapter)
         {
@@ -202,14 +206,14 @@ public class DotController : MonoBehaviour
     public ScriptList GetSubScriptList(GamePatternState State)
     {
         int subseq = playerController.GetSubseq();
-        /* ¿ø·¡ ¹æ½ÄÀº subseq¶û ¿¬µ¿µÇÁö ¾Ê´Â ¹®Á¦ ¹ß»ı*/
+        /* ì›ë˜ ë°©ì‹ì€ subseqë‘ ì—°ë™ë˜ì§€ ì•ŠëŠ” ë¬¸ì œ ë°œìƒ*/
         if (subScriptLists[chapter - 1][State].Count == 0)
             return null;
 
        
-        if (subseq == 2 && subScriptLists[chapter - 1][State].Count == 2) //Ã³À½ ½ÃÀÛÇÒ¶§ ÀúÀåµÇ¾úÀ» °æ¿ì subseq 1À» º¸°í ²ô°í ´Ù½Ã Ä×À»¶§
+        if (subseq == 2 && subScriptLists[chapter - 1][State].Count == 2) //ì²˜ìŒ ì‹œì‘í• ë•Œ ì €ì¥ë˜ì—ˆì„ ê²½ìš° subseq 1ì„ ë³´ê³  ë„ê³  ë‹¤ì‹œ ì¼°ì„ë•Œ
         {
-            Debug.Log("subseq 1À» ºÃ´Ù");
+            Debug.Log("subseq 1ì„ ë´¤ë‹¤");
             ScriptList tmp = subScriptLists[chapter - 1][State][1];
             tmpState = State;
             return tmp;
@@ -257,24 +261,24 @@ public class DotController : MonoBehaviour
 
     public void EndSubScriptList(GamePatternState State)
     {
-        //´ÙÀ½ Ã©ÅÍ?°¡ ¾øÀ» ¶§¿¡´Â ¾Æ¹« ÇàÀ§¸¦ ÇÏÁö¾Ê´Â´Ù.
+        //ë‹¤ìŒ ì±•í„°?ê°€ ì—†ì„ ë•Œì—ëŠ” ì•„ë¬´ í–‰ìœ„ë¥¼ í•˜ì§€ì•ŠëŠ”ë‹¤.
         if (subScriptLists[chapter - 1][State].Count == 0 || State == GamePatternState.MainB || State == GamePatternState.MainA || State == GamePatternState.Play)
             return;
 
-        //¼­ºê ÇÏ³ª°¡ ³¡³µÀ» ¶§ 0¹øÂ° ¼­ºê¸¦ µÚ¿¡ ÀÖ´Â ¼­ºêµé·Î µ¤¾î¾²±âÇØ¼­
-        //´ÙÀ½ ¼­ºê·Î ³Ñ¾î°¥ ¼ö ÀÖµµ·Ï ÇÑ´Ù.
+        //ì„œë¸Œ í•˜ë‚˜ê°€ ëë‚¬ì„ ë•Œ 0ë²ˆì§¸ ì„œë¸Œë¥¼ ë’¤ì— ìˆëŠ” ì„œë¸Œë“¤ë¡œ ë®ì–´ì“°ê¸°í•´ì„œ
+        //ë‹¤ìŒ ì„œë¸Œë¡œ ë„˜ì–´ê°ˆ ìˆ˜ ìˆë„ë¡ í•œë‹¤.
         for (int i = 1; i < subScriptLists[chapter - 1][State].Count; i++)
         {
             subScriptLists[chapter - 1][State][i - 1] = subScriptLists[chapter - 1][State][i];
-            Debug.Log("´ÙÀ½ ¼­ºê½ºÅ©¸³Æ® Å°: " + subScriptLists[chapter - 1][State][i].ScriptKey);
+            Debug.Log("ë‹¤ìŒ ì„œë¸ŒìŠ¤í¬ë¦½íŠ¸ í‚¤: " + subScriptLists[chapter - 1][State][i].ScriptKey);
         }
 
         int endIdx = subScriptLists[chapter - 1][State].Count - 1;
 
-        //¸¶Áö¸· ¹øÈ£ »èÁ¦ (Áßº¹)
+        //ë§ˆì§€ë§‰ ë²ˆí˜¸ ì‚­ì œ (ì¤‘ë³µ)
         subScriptLists[chapter - 1][State].RemoveAt(endIdx);
 
-        //´ÙÀ½ ¼­ºê¸¦ Æ®¸®°ÅÇÒ ¼ö ÀÖµµ·Ï ÇÑ´Ù.
+        //ë‹¤ìŒ ì„œë¸Œë¥¼ íŠ¸ë¦¬ê±°í•  ìˆ˜ ìˆë„ë¡ í•œë‹¤.
     }
 
     private void OnMouseDown()
@@ -282,15 +286,15 @@ public class DotController : MonoBehaviour
         if (mainAlert.activeSelf)
         {
             mainAlert.SetActive(false);
-            //main ¹è°æÈ­¸éÀ» Æ®¸®°ÅÇÑ´Ù.
+            //main ë°°ê²½í™”ë©´ì„ íŠ¸ë¦¬ê±°í•œë‹¤.
             manager.StartMain();
         }
 
         if (playAlert.activeSelf)
         {
-            Debug.Log("Æ®¸®°Å ²¨Áü");
+            Debug.Log("íŠ¸ë¦¬ê±° êº¼ì§");
             playAlert.SetActive(false);
-            //°°ÀÌ Ã¥À» ÀĞÀ»·¡? ¶ó´Â ¹®±¸ ¶ß°í ¾ÈÀĞ´Â´Ù°íÇÏ¸é ÃÑÃÑÃÑ sleepÀ¸·Î
+            //ê°™ì´ ì±…ì„ ì½ì„ë˜? ë¼ëŠ” ë¬¸êµ¬ ëœ¨ê³  ì•ˆì½ëŠ”ë‹¤ê³ í•˜ë©´ ì´ì´ì´ sleepìœ¼ë¡œ
             for (int i = 0; i < play.Length; i++)
             {
                 play[i].SetActive(true);
@@ -321,15 +325,15 @@ public class DotController : MonoBehaviour
     {
         alertOff();
         mainAlert.SetActive(isActive);
-        /*¿©±â¼­ OnClick ÇÔ¼öµµ ¿¬°áÇØÁØ´Ù.*/
-        //OutPos °¡ ÀÖ´Ù¸é ÇØ´ç PositionÀ¸·Î ¹Ù²¸¾ßÇÔ.
+        /*ì—¬ê¸°ì„œ OnClick í•¨ìˆ˜ë„ ì—°ê²°í•´ì¤€ë‹¤.*/
+        //OutPos ê°€ ìˆë‹¤ë©´ í•´ë‹¹ Positionìœ¼ë¡œ ë°”ê»´ì•¼í•¨.
     }
     public void TriggerPlay(bool isActive)
     {
         alertOff();
         playAlert.SetActive(isActive);
-        /*¿©±â¼­ OnClick ÇÔ¼öµµ ¿¬°áÇØÁØ´Ù.*/
-        //OutPos °¡ ÀÖ´Ù¸é ÇØ´ç PositionÀ¸·Î ¹Ù²¸¾ßÇÔ.
+        /*ì—¬ê¸°ì„œ OnClick í•¨ìˆ˜ë„ ì—°ê²°í•´ì¤€ë‹¤.*/
+        //OutPos ê°€ ìˆë‹¤ë©´ í•´ë‹¹ Positionìœ¼ë¡œ ë°”ê»´ì•¼í•¨.
     }
 
     public void alertOff()
@@ -341,13 +345,13 @@ public class DotController : MonoBehaviour
 
     public void GoSleep()
     {
-        //ÀáÀÚ·¯ °¡´Â ¾Ö´Ï¸ŞÀÌ¼Ç ½ÇÇà.
+        //ì ìëŸ¬ ê°€ëŠ” ì• ë‹ˆë©”ì´ì…˜ ì‹¤í–‰.
         ChangeState(DotPatternState.Phase, "phase_sleep", 19);
     }
 
     public void EndPlay()
     {
-        Debug.Log("ÀÚ·¯ °¥ ½Ã°£");
+        Debug.Log("ìëŸ¬ ê°ˆ ì‹œê°„");
         if (pc.GetChapter() == 1)
         {
             //this.position = 10;
@@ -367,7 +371,7 @@ public class DotController : MonoBehaviour
 
         if (OutAnimKey != "")
         {
-            Debug.Log("ÇÃ·¹ÀÌ µÇ¾î¾ß ÇÏ´Â ¾Ö´Ï¸ŞÀÌ¼Ç : " + OutAnimKey);
+            Debug.Log("í”Œë ˆì´ ë˜ì–´ì•¼ í•˜ëŠ” ì• ë‹ˆë©”ì´ì…˜ : " + OutAnimKey);
             animator.Play(OutAnimKey);
 
             var split = OutAnimKey.Split("_");
@@ -377,13 +381,13 @@ public class DotController : MonoBehaviour
             }
         }
 
-        //´« ÀÛµ¿
+        //ëˆˆ ì‘ë™
         if (state == DotPatternState.Main)
         {
             PlayEyeAnimation();
         }
 
-        //outPos -1ÀÏ°æ¿ì ·£´ıÀ§Ä¡
+        //outPos -1ì¼ê²½ìš° ëœë¤ìœ„ì¹˜
         if (position == -1)
         {
             if (DotPositionKeyDic.TryGetValue(state, out var dic))
@@ -396,16 +400,23 @@ public class DotController : MonoBehaviour
             }
         }
 
-        //À§Ä¡ Á¶Àı
+        //ìœ„ì¹˜ ì¡°ì ˆ
         if (DotPositionDic.ContainsKey(position))
         {
             transform.position = DotPositionDic[position];
         }
+
+        // ìŠ¤í”„ë¼ì´íŠ¸ì˜ ì‹¤ì œ í”½ì…€ ë‹¨ìœ„ í¬ê¸° ê°€ì ¸ì˜¤ê¸° (ë¡œì»¬ ë‹¨ìœ„ë¡œ ë³€í™˜ë¨)
+        Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
+
+        // ì½œë¼ì´ë” í¬ê¸° ì¡°ì •
+        boxcollider.size = spriteSize;
+        boxcollider.offset = spriteRenderer.sprite.bounds.center;
     }
 
     public void Invisible()
     {
-        Debug.Log("¾Èº¸¿©¾ßÇÏ´Âµ¥.");
+        Debug.Log("ì•ˆë³´ì—¬ì•¼í•˜ëŠ”ë°.");
         SpriteRenderer dotRenderer = this.GetComponent<SpriteRenderer>();
         dotRenderer.sortingLayerName = "Default";
         this.GetComponent<BoxCollider2D>().enabled = false;
@@ -414,7 +425,7 @@ public class DotController : MonoBehaviour
     }
     public void Visible()
     {
-        Debug.Log("º¸¿©¾ß ÇÏ´Âµ¥.");
+        Debug.Log("ë³´ì—¬ì•¼ í•˜ëŠ”ë°.");
         SpriteRenderer dotRenderer = this.GetComponent<SpriteRenderer>();
         dotRenderer.sortingLayerName = "Dot";
         this.GetComponent<BoxCollider2D>().enabled = true;

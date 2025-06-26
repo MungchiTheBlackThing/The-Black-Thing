@@ -84,8 +84,16 @@ public class SubTuto : MonoBehaviour
 
     public void tutorial_7(GameObject selectedDot, int determine, int index)
     {
-        cameraZoom.Zoom();
-        subPanel.gameObject.SetActive(false);
+        RecentData data = RecentManager.Load();
+        if (data.tutonum == 0)
+        {
+            cameraZoom.Zoom();
+            subPanel.gameObject.SetActive(false);
+        }
+        else
+        {
+            subPanel.dotballoon(selectedDot);
+        }
         RecentManager.Save(selectedDot, determine, index); // ¿˙¿Â
     }
 
@@ -177,10 +185,17 @@ public class SubTuto : MonoBehaviour
 
             subPanel.prePos = dotController.Position;
 
-            if (data.value == 0)
-                subPanel.dotballoon(targetObj);
+            if (subDialogue.currentDialogueList == null || subDialogue.currentDialogueList.Count == 0)
+            {
+                subDialogue.StartSub("tutorial_sub", data.index);
+            }
             else
-                subPanel.playerballoon(targetObj);
+            {
+                if (data.value == 0)
+                    subPanel.dotballoon(targetObj);
+                else
+                    subPanel.playerballoon(targetObj);
+            }
         }
         else
         {

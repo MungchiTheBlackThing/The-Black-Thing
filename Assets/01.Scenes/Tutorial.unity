@@ -64945,6 +64945,8 @@ MonoBehaviour:
   subPanel: {fileID: 0}
   playerController: {fileID: 0}
   tutorial: 0
+  spriteRenderer: {fileID: 0}
+  boxcollider: {fileID: 0}
 --- !u!212 &2046645039688417659
 SpriteRenderer:
   m_ObjectHideFlags: 0

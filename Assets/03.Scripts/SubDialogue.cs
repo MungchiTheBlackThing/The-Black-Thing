@@ -127,7 +127,7 @@ public class SubDialogue : MonoBehaviour
         currentDialogueList.Clear();
     }
 
-    public void StartSub(string fileName)
+    public void StartSub(string fileName, int index = 0)
     {
         dialogueData = null;
         SubPanel subPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
@@ -150,8 +150,17 @@ public class SubDialogue : MonoBehaviour
         scroll.stopscroll(); //임시 방편
         string[] lines = dialogueData.text.Split('\n');
         LoadSubDialogue(lines);
-        
-        subPanel.ShowNextDialogue();
+
+        if (index == 0)
+        {
+            subPanel.ShowNextDialogue();
+        }
+        else
+        {
+            subPanel.dialogueIndex = index;
+            subPanel.ShowNextDialogue();
+        }
+            
         //manager.ScrollManager.StopCamera(true); -> 자꾸 오류 발생함
         if (menuController)
             menuController.alloff();
