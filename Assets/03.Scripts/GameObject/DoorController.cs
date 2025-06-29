@@ -55,12 +55,12 @@ public class DoorController : MonoBehaviour
     }
     private void Start()
     {
-       
-    }
-    private void FixedUpdate()
-    {
         CheckDot();
     }
+    //private void FixedUpdate()
+    //{
+    //    CheckDot();
+    //}
     private void OnMouseDown()
     {
         if (EventSystem.current.IsPointerOverGameObject())
@@ -91,6 +91,7 @@ public class DoorController : MonoBehaviour
         animator.SetFloat(Animator.StringToHash("speed"), 1.0f);
         animator.SetBool(OpenIdx, false);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.door, this.transform.position);
+        CheckDot();
     }
     public void open()
     {
@@ -99,6 +100,7 @@ public class DoorController : MonoBehaviour
         animator.SetFloat(Animator.StringToHash("speed"), 1.0f);
         animator.SetBool(OpenIdx, true);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.door, this.transform.position);
+        CheckDot();
     }
 
     public void Touch()

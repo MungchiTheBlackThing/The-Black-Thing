@@ -1030,6 +1030,7 @@ GameObject:
   - component: {fileID: 8632590688687354142}
   - component: {fileID: 8632590688687354141}
   - component: {fileID: 6734218474532018268}
+  - component: {fileID: 2588326689574249015}
   m_Layer: 5
   m_Name: DotBubble
   m_TagString: Untagged
@@ -1114,6 +1115,19 @@ MonoBehaviour:
   inputBlockerButton: {fileID: 1578402694215981735}
   fadeDuration: 1
   currentChapter: 1
+  speechBubble: {fileID: 8632590688687354139}
+--- !u!225 &2588326689574249015
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8632590688687354139}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8632590688903632754
 GameObject:
   m_ObjectHideFlags: 0

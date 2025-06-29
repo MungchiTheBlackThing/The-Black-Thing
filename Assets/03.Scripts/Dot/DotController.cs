@@ -417,17 +417,41 @@ public class DotController : MonoBehaviour
     public void Invisible()
     {
         Debug.Log("안보여야하는데.");
-        SpriteRenderer dotRenderer = this.GetComponent<SpriteRenderer>();
-        dotRenderer.sortingLayerName = "Default";
-        this.GetComponent<BoxCollider2D>().enabled = false;
-        this.GetComponent<BoxCollider2D>().enabled = true;
-        this.GetComponent<BoxCollider2D>().enabled = false;
+
+        // 애니메이터 비활성화 (색상 덮어쓰기 방지)
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.enabled = false;
+        }
+
+        SpriteRenderer dotRenderer = GetComponent<SpriteRenderer>();
+        Color color = dotRenderer.color;
+        color.a = 0f;
+        dotRenderer.color = color;
+
+        // 콜라이더 비활성화
+        GetComponent<BoxCollider2D>().enabled = false;
     }
+
     public void Visible()
     {
         Debug.Log("보여야 하는데.");
-        SpriteRenderer dotRenderer = this.GetComponent<SpriteRenderer>();
-        dotRenderer.sortingLayerName = "Dot";
-        this.GetComponent<BoxCollider2D>().enabled = true;
+
+        SpriteRenderer dotRenderer = GetComponent<SpriteRenderer>();
+        Color color = dotRenderer.color;
+        color.a = 1f;
+        dotRenderer.color = color;
+
+        // 콜라이더 다시 활성화
+        GetComponent<BoxCollider2D>().enabled = true;
+
+        // 애니메이터 다시 켜기
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.enabled = true;
+        }
     }
+
 }

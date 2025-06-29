@@ -10,6 +10,13 @@ public class DotTextReview : MonoBehaviour
     [SerializeField] private Button inputBlockerButton; // 전체화면 버튼
     [SerializeField] private float fadeDuration = 1.0f;
     [SerializeField] private int currentChapter = 1;
+    [SerializeField] private GameObject speechBubble;
+    private CanvasGroup speechBubbleGroup;
+
+    private void Awake()
+    {
+        speechBubbleGroup = speechBubble.GetComponent<CanvasGroup>();
+    }
 
     private bool userClicked = false;
 
@@ -118,37 +125,37 @@ public class DotTextReview : MonoBehaviour
     private IEnumerator FadeIn()
     {
         float time = 0f;
-        Color color = displayText.color;
-        color.a = 0f;
-        displayText.color = color;
+
+        // 시작 설정
+        speechBubbleGroup.alpha = 0f;
+        speechBubbleGroup.blocksRaycasts = true;
+        speechBubbleGroup.interactable = true;
 
         while (time < fadeDuration)
         {
             time += Time.deltaTime;
-            color.a = Mathf.Lerp(0f, 1f, time / fadeDuration);
-            displayText.color = color;
+            speechBubbleGroup.alpha = Mathf.Lerp(0f, 1f, time / fadeDuration);
             yield return null;
         }
 
-        color.a = 1f;
-        displayText.color = color;
+        speechBubbleGroup.alpha = 1f;
     }
 
     private IEnumerator FadeOut()
     {
         float time = 0f;
-        Color color = displayText.color;
-        color.a = 1f;
+
+        speechBubbleGroup.alpha = 1f;
+        speechBubbleGroup.blocksRaycasts = false;
+        speechBubbleGroup.interactable = false;
 
         while (time < fadeDuration)
         {
             time += Time.deltaTime;
-            color.a = Mathf.Lerp(1f, 0f, time / fadeDuration);
-            displayText.color = color;
+            speechBubbleGroup.alpha = Mathf.Lerp(1f, 0f, time / fadeDuration);
             yield return null;
         }
 
-        color.a = 0f;
-        displayText.color = color;
+        speechBubbleGroup.alpha = 0f;
     }
 }
