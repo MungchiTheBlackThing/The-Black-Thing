@@ -137,12 +137,18 @@ public class TimeSkipUIController : MonoBehaviour
 
         Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
-
+    public void TutoNoClick()
+    {
+        Destroy(GameObject.FindWithTag("TouchGuide"));
+        gameManager.ScrollManager.scrollable();
+        popup.SetActive(false);
+    }
     public void TutoYesClick()
     {
         const string anim = "anim_default";
         popup.SetActive(false);
         gameManager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 1f);
+        dotController.Visible();
         dotController.ChangeState(DotPatternState.Default, anim, 3);
         StartCoroutine(subcontinue(1.2f));
     }

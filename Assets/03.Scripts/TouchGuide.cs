@@ -14,12 +14,6 @@ public class TouchGuide : MonoBehaviour
     [SerializeField]
     GameObject Touchground;
 
-
-    private void OnEnable()
-    {
-        myButton = this.transform.GetChild(3).GetComponent<Button>();
-    }
-
     public void tuto2(GameObject selectedDot, int determine)
     {
         subPanel = GameObject.Find("SubPanel").GetComponent<SubPanel>();

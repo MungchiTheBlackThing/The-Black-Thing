@@ -99,7 +99,7 @@ public class SubTuto : MonoBehaviour
 
     public void tutorial_8(GameObject selectedDot, int determine, int index)
     {
-        RecentManager.Save(selectedDot, determine, index); // 历厘
+        //RecentManager.Save(selectedDot, determine, index); // 历厘
         tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 0);
         moonnote = GameObject.FindWithTag("moonnote").GetComponent<Moonnote>();
         StartCoroutine(Scroallable());
@@ -107,7 +107,7 @@ public class SubTuto : MonoBehaviour
 
     public void tutorial_9(GameObject selectedDot, int determine, int index)
     {
-        RecentManager.Save(selectedDot, determine, index); // 历厘
+        //RecentManager.Save(selectedDot, determine, index); // 历厘
         if (!tutorialManager)
         {
             Subcontinue();
@@ -125,7 +125,7 @@ public class SubTuto : MonoBehaviour
 
     public void tutorial_10(GameObject selectedDot, int determine, int index)
     {
-        RecentManager.Save(selectedDot, determine, index); // 历厘
+        //RecentManager.Save(selectedDot, determine, index); // 历厘
         if (playerController.GetAlreadyEndedPhase() == 5)
         {
             Subcontinue();
@@ -140,7 +140,7 @@ public class SubTuto : MonoBehaviour
 
     public void tutorial_11(GameObject selectedDot, int determine, int index)
     {
-        RecentManager.Save(selectedDot, determine, index); // 历厘
+        //RecentManager.Save(selectedDot, determine, index); // 历厘
         dotController.GoSleep();
         StartCoroutine(subcon());
     }
