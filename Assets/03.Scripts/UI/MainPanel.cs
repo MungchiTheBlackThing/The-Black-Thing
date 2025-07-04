@@ -431,12 +431,21 @@ public class MainPanel : MonoBehaviour
     {
         if (backindex != -1)
         {
-            dialogueIndex = backindex;
-            if (backtag != "" )
+            // 아직 backindex에 도달하지 않았다면
+            if (dialogueIndex > backindex)
             {
-                pc.DownArcheType(backtag);
+                dialogueIndex--; // 한 칸 뒤로 가기
+                ShowNextDialogue();
             }
-            ShowNextDialogue();
+            // 딱 backindex에 도달했을 때 동작
+            else if (dialogueIndex == backindex)
+            {
+                if (!string.IsNullOrEmpty(backtag))
+                {
+                    pc.DownArcheType(backtag);
+                }
+                ShowNextDialogue();
+            }
         }
     }
 }

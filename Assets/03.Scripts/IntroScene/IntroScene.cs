@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class IntroScene : MonoBehaviour
 {
@@ -10,13 +11,16 @@ public class IntroScene : MonoBehaviour
     [SerializeField] Animator splashAnimator;
     [SerializeField] Animator loadingAnimator;
     [SerializeField] GameObject introGroup;
+    [SerializeField] GameObject SettingPopup;
+    [SerializeField] GameObject StartPopup;
 
+    const string playerInfoDataFileName = "PlayerData.json";
     RecentData data;
+    private PlayerInfo playerInfo;
 
     private void Start()
     {
         data = RecentManager.Load();
-        
         //1.스플래시 재생
         //2.디폴트 로딩 재생
         //3.인트로 신
@@ -33,7 +37,7 @@ public class IntroScene : MonoBehaviour
             {
                 loadingAnimator.gameObject.SetActive(false);
                 introGroup.SetActive(true);
-                continueButton.SetActive(data != null && data.tutoend == true);
+                continueButton.SetActive(data != null && data.isContinue == 1);
             }));
         }));
     }
@@ -45,14 +49,29 @@ public class IntroScene : MonoBehaviour
 
     public void OnStart()
     {
+        data = RecentManager.Load();
+        if (data != null && data.isContinue == 1)
+        {
+            StartPopup.SetActive(true);
+        }
+        else
+        {
+            InitStart();
+        }
+    }
+    public void InitStart()
+    {
         RecentManager.ResetFlagOnly();
+        playerInfo = new PlayerInfo("Default", 1, GamePatternState.Watching);
+        playerInfo.Replay();
+        WritePlayerFile();
         data = RecentManager.Load();
         Play();
     }
 
     public void OnSetting()
     {
-
+        SettingPopup.SetActive(true);
     }
 
     void Play()
@@ -81,5 +100,38 @@ public class IntroScene : MonoBehaviour
             yield return null;
 
         callBack?.Invoke();
+    }
+
+    public void WritePlayerFile()
+    {
+        //PlayerInfo 클래스 내에 플레이어 정보를 Json 형태로 포멧팅 된 문자열 생성
+        //만약 player nextchapter라면, 변경
+        playerInfo.currentPhase = playerInfo.currentPhase == GamePatternState.NextChapter ? GamePatternState.Watching : playerInfo.currentPhase;
+        string jsonData = JsonUtility.ToJson(playerInfo);
+        string path = pathForDocumentsFile(playerInfoDataFileName);
+        File.WriteAllText(path, jsonData);
+    }
+
+    string pathForDocumentsFile(string filename)
+    {
+        if (Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            string path = Application.dataPath.Substring(0, Application.dataPath.Length - 5);
+            path = path.Substring(0, path.LastIndexOf('/'));
+            return Path.Combine(Path.Combine(path, "Documents"), filename);
+
+        }
+        else if (Application.platform == RuntimePlatform.Android)
+        {
+            string path = Application.persistentDataPath;
+            path = path.Substring(0, path.LastIndexOf('/'));
+            return Path.Combine(path, filename);
+        }
+        else
+        {
+            string path = Application.dataPath;
+            path = path.Substring(0, path.LastIndexOf('/'));
+            return Path.Combine(Application.dataPath, filename);
+        }
     }
 }
