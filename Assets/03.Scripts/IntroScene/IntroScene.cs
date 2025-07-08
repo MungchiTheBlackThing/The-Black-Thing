@@ -16,10 +16,11 @@ public class IntroScene : MonoBehaviour
 
     const string playerInfoDataFileName = "PlayerData.json";
     RecentData data;
-    private PlayerInfo playerInfo;
+    public PlayerInfo playerInfo;
 
     private void Start()
     {
+        playerInfo = new PlayerInfo("Default", 1, GamePatternState.Watching);
         data = RecentManager.Load();
         //1.스플래시 재생
         //2.디폴트 로딩 재생
@@ -62,7 +63,6 @@ public class IntroScene : MonoBehaviour
     public void InitStart()
     {
         RecentManager.ResetFlagOnly();
-        playerInfo = new PlayerInfo("Default", 1, GamePatternState.Watching);
         playerInfo.Replay();
         WritePlayerFile();
         data = RecentManager.Load();

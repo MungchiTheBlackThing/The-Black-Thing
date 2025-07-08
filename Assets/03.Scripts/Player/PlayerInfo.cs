@@ -112,28 +112,33 @@ public class PlayerInfo
 
         return subPhase;
     }
-    
+
     public void Replay()
     {
+        LANGUAGE previousLanguage = this.language; // 언어 백업
+
         chapter = 1;
         datetime = DateTime.Now;
         bgmVolume = 0.5f;
         sfxVolume = 0.5f;
         isDiaryCheck = false;
         isUpdatedDiary = false;
-        language = LANGUAGE.KOREAN;
         isPushNotificationEnabled = true;
         currentPhase = GamePatternState.Watching;
         moonRadioIdx = 1;
         subseq = 1;
+
         subSuccessOrNot = new List<bool>();
         for (int i = 1; i <= 14 * 4; i++)
         {
             subSuccessOrNot.Add(false);
         }
+
         rewardList = new List<EReward>();
         archeType = new ArcheType();
         watchedSubseq.Clear();
+
+        language = previousLanguage; // 백업한 언어를 다시 복구
     }
     public bool IsDiaryCheck { get => isDiaryCheck; set=>isDiaryCheck = value;}
     public float BgmVolume{ get=>bgmVolume; set=>bgmVolume = value; }
