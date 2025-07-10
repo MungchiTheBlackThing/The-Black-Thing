@@ -69,7 +69,7 @@ public class MoonChatClickController : MonoBehaviour, IPointerDownHandler
         }
         radioScript.Clear();
 
-        //MoonRadio¸¦ ÀĞ±â Àü¿¡ ½ÇÁ¦ ¾ğ¾î·Î ¸®¼Â½ÃÄÑ¾ßÇÔ.
+        //MoonRadioï¿½ï¿½ ï¿½Ğ±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½.
         List<MoonRadioDial> Dial = DataManager.Instance.MoonRadioParser.GetMoonRadioDial(chapter, number, lan);
         
         int len = Dial.Count;
@@ -105,12 +105,23 @@ public class MoonChatClickController : MonoBehaviour, IPointerDownHandler
             return;
         }
         radioScript[curIdx].gameObject.SetActive(true);
+
+        StartCoroutine(ScrollToBottom()); // ì£¼í¬ ì¶”ê°€, ìƒˆ ì±„íŒ… í•˜ë‹¨ì— ê³ ì •í•˜ë„ë¡
     }
+ 
+    IEnumerator ScrollToBottom()   //// ì£¼í¬ ì¶”ê°€ í•¨ìˆ˜, ë ˆì´ì•„ì›ƒ ê°•ì œ ì—…ë°ì´íŠ¸ ë° ì½”ë£¨í‹´ ê°œì„ 
+    {
+        yield return null;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(scrollrect.content);
+        yield return null; // ì¶”ê°€ë¡œ í•œ í”„ë ˆì„ ë” ëŒ€ê¸°
+        scrollrect.verticalNormalizedPosition = 0f;
+   }
+
 
 
     public void Reset(int MoonRadioIdx)
     {
-        //½ÇÁ¦·Ğ number + 1·Î Àü´Ş.
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ number + 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
         Init(pc.GetChapter(), MoonRadioIdx, pc.GetLanguage()); 
     }
 }
