@@ -194,6 +194,7 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeGameState(GamePatternState patternState)
     {
+        Debug.Log($"[Test] ChangeGameState 실행: {patternState}");
         Debug.Log("스테이트 변경");
         if (states == null) return;
         if (states.ContainsKey(patternState) == false)

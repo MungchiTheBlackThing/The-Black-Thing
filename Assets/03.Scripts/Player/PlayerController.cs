@@ -108,6 +108,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void NextPhase()
     {
+        Debug.Log("NextPhase");
         if (gamemanger.GetComponent<GameManager>())
             gamemanger.GetComponent<GameManager>().StopSubDial();
 
@@ -130,11 +131,19 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         else
         {
             player.currentPhase = (GamePatternState)phase;
+
+            if (player.currentPhase == GamePatternState.NextChapter)
+            {
+                Debug.Log("NextChapter 상태 진입 → ChangeGameState 호출");
+                gamemanger.GetComponent<GameManager>().ChangeGameState(GamePatternState.NextChapter);
+                return; // 더 이상 아래 로직 실행하지 않음
+            }
         }
 
         // 순서: 먼저 currentPhase 적용 → SetPhase로 subseq 설정 → delegate 호출
         gamemanger.GetComponent<GameManager>().SetPhase(player.currentPhase);
 
+        Debug.Log("[Test] nextPhaseDelegate 호출 직전");
         nextPhaseDelegate?.Invoke(player.currentPhase);
     }
 

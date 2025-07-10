@@ -281,7 +281,7 @@ public class NextChapter : GameState, ILoadingInterface
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
-
+        Debug.Log("SkipSleepingON");
         //다음 챕터로 넘어가는 달나라를 띄운다.
         if (objectManager == null)
         {
