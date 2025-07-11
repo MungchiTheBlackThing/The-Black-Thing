@@ -102,7 +102,7 @@ public class DiaryController : BaseObject, ISleepingInterface
         if(CurrentPhase == GamePatternState.Watching)
         {
             //AtHome¿œ ∂ß return;
-            string WatchState = DataManager.Instance.Settings.watching.pattern[playerController.GetChapter()];
+            string WatchState = DataManager.Instance.Watchinginfo.pattern[playerController.GetChapter()];
 
             EWatching watch;
             if (Enum.TryParse(WatchState,true, out watch))

@@ -102,5 +102,17 @@ public class ReadData : MonoBehaviour
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
             DataManager.Instance.UIText = JsonUtility.FromJson<UIText>(loadedTextAsset.ToString());
         }
+
+        resourceRequest = Resources.LoadAsync<TextAsset>("Json/Watching");
+
+        // 로딩이 완료될 때까지 대기
+        yield return resourceRequest;
+
+        // 로딩이 완료되면 Asset에 접근 가능
+        if (resourceRequest.asset != null)
+        {
+            TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
+            DataManager.Instance.Watchinginfo = JsonUtility.FromJson<Watchinginfo>(loadedTextAsset.ToString());
+        }
     }
 }

@@ -127,12 +127,6 @@ public class Alert
 }
 
 [System.Serializable]
-public class WatchingPattern
-{
-    public List<string> pattern;
-}
-
-[System.Serializable]
 public class SettingInfo
 {
     public MainMenu menu;
@@ -144,5 +138,4 @@ public class SettingInfo
     public MoonRadioEarth moonRadioEarth;
     public Checklist checklist;
     public Alert alert;
-    public WatchingPattern watching;
 }

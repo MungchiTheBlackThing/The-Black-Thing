@@ -37,7 +37,7 @@ public class BinocularController : BaseObject , IWatchingInterface
         if (Idx.Count <= 0)
         {
             int i = 0, j = 0;
-            foreach (string strVal in DataManager.Instance.Settings.watching.pattern)
+            foreach (string strVal in DataManager.Instance.Watchinginfo.pattern)
             {
                 EWatching enumVal;
                 if (Enum.TryParse(strVal, true, out enumVal))

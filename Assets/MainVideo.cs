@@ -1,32 +1,18 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
-using Assets.Script.TimeEnum;
-
-[Serializable]
-public class VideoPath
-{
-    [SerializeField] public ChapterDay Time;
-    [SerializeField] public LANGUAGE LANGUAGE;
-    [SerializeField] public string path;
-}
 
 public class MainVideo : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    [SerializeField] List<VideoPath> videoLinks;
     [SerializeField] public GameObject Rawimage;
-
-    public VideoPath videoPath;
 
     private void Start()
     {
         if (videoPlayer != null)
         {
-            videoPlayer.playOnAwake = false;         // 자동 재생 방지
-            videoPlayer.skipOnDrop = true;           // 프레임 누락 허용
+            videoPlayer.playOnAwake = false;
+            videoPlayer.skipOnDrop = true;
             videoPlayer.isLooping = false;
         }
     }
@@ -39,10 +25,13 @@ public class MainVideo : MonoBehaviour
             return;
         }
 
-        videoPath = videoLinks.Find(video => video.Time == (ChapterDay)Day && video.LANGUAGE == language);
-        if (videoPath == null)
+        // 경로에 맞춰 VideoClip 로드
+        string path = $"StoryAnimation/AnimDay{Day}";
+        VideoClip clip = Resources.Load<VideoClip>(path);
+
+        if (clip == null)
         {
-            Debug.LogError("해당하는 영상이 없습니다.");
+            Debug.LogError($"Resources에서 VideoClip '{path}' 을(를) 찾을 수 없습니다.");
             return;
         }
 
@@ -56,11 +45,11 @@ public class MainVideo : MonoBehaviour
         videoPlayer.errorReceived -= OnVideoError;
         videoPlayer.errorReceived += OnVideoError;
 
-        videoPlayer.url = "https://drive.google.com/uc?export=download&id=" + videoPath.path;
+        videoPlayer.clip = clip;
         videoPlayer.gameObject.SetActive(true);
 
-        videoPlayer.SetDirectAudioMute(0, true); // 소리 일단 끄기
-        videoPlayer.Prepare();                  // 영상 + 소리 준비
+        videoPlayer.SetDirectAudioMute(0, true); // 소리 끄기
+        videoPlayer.Prepare(); // 영상 준비
     }
 
     public void PlayVideo()
@@ -70,7 +59,7 @@ public class MainVideo : MonoBehaviour
 
         if (videoPlayer.isPrepared)
         {
-            videoPlayer.SetDirectAudioMute(0, false); // 재생 직전에 소리 켜기
+            videoPlayer.SetDirectAudioMute(0, false);
             videoPlayer.Play();
         }
         else
@@ -86,7 +75,7 @@ public class MainVideo : MonoBehaviour
             yield return null;
         }
 
-        videoPlayer.SetDirectAudioMute(0, false); // 준비 완료 후 소리 켜기
+        videoPlayer.SetDirectAudioMute(0, false);
         videoPlayer.Play();
     }
 

@@ -26,9 +26,9 @@ public class Watching : GameState, IResetStateInterface
     {
         if (pattern.Count <= 0)
         {
-            if (DataManager.Instance.Settings == null) return;
+            if (DataManager.Instance.Watchinginfo == null) return;
 
-            foreach (string strVal in DataManager.Instance.Settings.watching.pattern)
+            foreach (string strVal in DataManager.Instance.Watchinginfo.pattern)
             {
                 EWatching enumVal;
                 if (Enum.TryParse(strVal, true, out enumVal))

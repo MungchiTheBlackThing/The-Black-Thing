@@ -53,9 +53,9 @@ public class DataManager : MonoBehaviour
     MoonRadioParser moonRadioParser;
     public MoonRadioParser MoonRadioParser
     {
-        get 
-        { 
-            return moonRadioParser; 
+        get
+        {
+            return moonRadioParser;
         }
         set
         {
@@ -107,6 +107,14 @@ public class DataManager : MonoBehaviour
     {
         get { return uIText; }
         set { uIText = value; }
+    }
+
+    Watchinginfo watchinginfo;
+
+    public Watchinginfo Watchinginfo
+    {
+        get { return watchinginfo; }
+        set { watchinginfo = value; }
     }
 
 

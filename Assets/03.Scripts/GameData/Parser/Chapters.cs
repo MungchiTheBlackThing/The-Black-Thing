@@ -22,5 +22,5 @@ public class ChapterInfo
 [System.Serializable]
 public class Chapters
 {
-        public ChapterInfo[] chapters;
+    public ChapterInfo[] chapters;
 }
