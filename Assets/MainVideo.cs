@@ -7,6 +7,10 @@ public class MainVideo : MonoBehaviour
     public VideoPlayer videoPlayer;
     [SerializeField] public GameObject Rawimage;
 
+    private bool waitingToPlay = false;
+
+    [SerializeField] GameObject text;
+    [SerializeField] int chapter;
     private void Start()
     {
         if (videoPlayer != null)
@@ -19,13 +23,15 @@ public class MainVideo : MonoBehaviour
 
     public void Setting(int Day, LANGUAGE language)
     {
+        chapter = Day;
         if (videoPlayer == null)
         {
             Debug.LogError("VideoPlayer가 설정되지 않았습니다.");
             return;
         }
 
-        // 경로에 맞춰 VideoClip 로드
+        Rawimage.SetActive(false);
+
         string path = $"StoryAnimation/AnimDay{Day}";
         VideoClip clip = Resources.Load<VideoClip>(path);
 
@@ -35,7 +41,15 @@ public class MainVideo : MonoBehaviour
             return;
         }
 
-        // 이벤트 중복 방지
+        videoPlayer.audioOutputMode = VideoAudioOutputMode.Direct;
+        videoPlayer.EnableAudioTrack(0, true);
+        videoPlayer.SetDirectAudioMute(0, true); 
+        videoPlayer.SetDirectAudioVolume(0, 1.0f);
+
+        videoPlayer.clip = clip;
+        videoPlayer.gameObject.SetActive(true);
+        videoPlayer.Prepare();
+
         videoPlayer.prepareCompleted -= OnPrepared;
         videoPlayer.prepareCompleted += OnPrepared;
 
@@ -44,26 +58,24 @@ public class MainVideo : MonoBehaviour
 
         videoPlayer.errorReceived -= OnVideoError;
         videoPlayer.errorReceived += OnVideoError;
-
-        videoPlayer.clip = clip;
-        videoPlayer.gameObject.SetActive(true);
-
-        videoPlayer.SetDirectAudioMute(0, true); // 소리 끄기
-        videoPlayer.Prepare(); // 영상 준비
     }
+
 
     public void PlayVideo()
     {
         Rawimage.transform.SetAsLastSibling();
         Rawimage.SetActive(true);
+        text.SetActive(true);
 
         if (videoPlayer.isPrepared)
         {
+            AudioManager.instance.StopBGM();
             videoPlayer.SetDirectAudioMute(0, false);
             videoPlayer.Play();
         }
         else
         {
+            waitingToPlay = true;
             StartCoroutine(WaitForVideoToPrepare());
         }
     }
@@ -75,8 +87,13 @@ public class MainVideo : MonoBehaviour
             yield return null;
         }
 
-        videoPlayer.SetDirectAudioMute(0, false);
-        videoPlayer.Play();
+        if (waitingToPlay)
+        {
+            waitingToPlay = false;
+            AudioManager.instance.StopBGM();
+            videoPlayer.SetDirectAudioMute(0, false);
+            videoPlayer.Play();
+        }
     }
 
     private void OnPrepared(VideoPlayer vp)
@@ -88,7 +105,8 @@ public class MainVideo : MonoBehaviour
     {
         vp.Stop();
         vp.time = 0;
-
+        text.SetActive(false);
+        AudioManager.instance.UpdateBGMByChapter(chapter);
         Rawimage.transform.SetAsFirstSibling();
         Rawimage.SetActive(false);
     }
@@ -100,6 +118,7 @@ public class MainVideo : MonoBehaviour
             videoPlayer.Stop();
             videoPlayer.time = 0;
         }
+        text.SetActive(false);
     }
 
     private void OnVideoError(VideoPlayer vp, string message)
