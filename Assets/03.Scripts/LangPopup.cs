@@ -11,6 +11,7 @@ public class LangPopup : MonoBehaviour
     public TMP_Dropdown myDropdown; // 인스펙터에서 연결
     [SerializeField] IntroScene intro;
     [SerializeField] PlayerInfo playerInfo;
+    [SerializeField] MypageUIController mypage;
 
     void Start()
     {
@@ -23,18 +24,33 @@ public class LangPopup : MonoBehaviour
         string selectedText = myDropdown.options[index].text;
         Debug.Log($"[부모] 선택된 인덱스: {index}, 텍스트: {selectedText}");
 
-        switch (myDropdown.value)
+        if (intro) //게임 처음 시작시에만 사용
         {
-            case 0:
-                playerInfo.language = LANGUAGE.KOREAN;
-                if (intro)
-                    intro.WritePlayerFile();
-                break;
-            case 1:
-                playerInfo.language = LANGUAGE.ENGLISH;
-                if (intro)
-                    intro.WritePlayerFile();
-                break;
+            switch (myDropdown.value)
+            {
+                case 0:
+                    playerInfo.language = LANGUAGE.KOREAN;
+                    if (intro)
+                        intro.WritePlayerFile();
+                    break;
+                case 1:
+                    playerInfo.language = LANGUAGE.ENGLISH;
+                    if (intro)
+                        intro.WritePlayerFile();
+                    break;
+            }
+        }
+        else
+        {
+            switch (myDropdown.value)
+            {
+                case 0:
+                    mypage.SetKorean();
+                    break;
+                case 1:
+                    mypage.SetEnglish();
+                    break;
+            }
         }
     }
 
