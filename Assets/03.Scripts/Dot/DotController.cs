@@ -178,6 +178,34 @@ public class DotController : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(InitStart());
+    }
+
+    private IEnumerator InitStart()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (manager == null)
+        {
+            manager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+            if (manager == null) Debug.LogError("GameManager를 찾을 수 없습니다!");
+        }
+
+        if (pc == null)
+        {
+            pc = GameObject.FindWithTag("Player")?.GetComponent<PlayerController>();
+            if (pc == null) Debug.LogError("PlayerController를 찾을 수 없습니다!");
+        }
+
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+            if (animator == null) Debug.LogError("Animator를 찾을 수 없습니다!");
+        }
+        DotControllerStart();
+    }
+
+    public void DotControllerStart()
+    {
         chapter = manager.Chapter;
         Debug.Log("현재 챕터: " + chapter);
         animator.keepAnimatorStateOnDisable = true; //애니메이션 유지

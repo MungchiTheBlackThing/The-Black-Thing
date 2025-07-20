@@ -89,7 +89,7 @@ public class IntroScene : MonoBehaviour
         {
             nextScene = "MainScene";
         }
-        LoadSceneManager.Instance.LoadScene(nextScene, 0);
+        LoadSceneManager.Instance.LoadScene("IntroScene", nextScene, 3);
     }
 
     IEnumerator Wait_Animation(Animator animator, string animationName, Action callBack)

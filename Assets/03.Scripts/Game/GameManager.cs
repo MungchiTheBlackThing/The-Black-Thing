@@ -11,19 +11,19 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Runtime.Serialization;
 using Unity.VisualScripting;
-//¿©±â¼­ °ÔÀÓ »óÅÂ Á¤ÀÇ 
-//ÇÏ³ªÀÇ Å« À¯ÇÑ »óÅÂ ¸Ó½Å ¸¸µé ¿¹Á¤
+//ì—¬ê¸°ì„œ ê²Œì„ ìƒíƒœ ì •ì˜ 
+//í•˜ë‚˜ì˜ í° ìœ í•œ ìƒíƒœ ë¨¸ì‹  ë§Œë“¤ ì˜ˆì •
 public enum GamePatternState
 {
-    Watching = 0, //Watching ´Ü°è
-    MainA,        // Main ´ÙÀÌ¾ó·Î±× A ´Ü°è
-    Thinking,     // Thinking ´Ü°è
-    MainB,        // Main ´ÙÀÌ¾ó·Î±× B ´Ü°è
-    Writing,      // Writing ´Ü°è
-    Play,         //Play ´Ü°è
-    Sleeping,     //Sleeping ´Ü°è
-    NextChapter,  //Sleeping ´Ü°è°¡ ³¡³ª¸é ±â´Ù¸®µç°¡, ¾Æ´Ô SkipÀ» ´­·¯¼­ WatchingÀ¸·Î ³Ñ¾î°¥ ¼ö ÀÖÀ½. 
-    End,          //ÀÌ ´Ü°è·Î ³Ñ¾î°¡¸é ¿À·ù, ´ÙÀ½´Ü°è 0À¸·Î ÀÌµ¿ÇØ¾ßÇÔ.
+    Watching = 0, //Watching ë‹¨ê³„
+    MainA,        // Main ë‹¤ì´ì–¼ë¡œê·¸ A ë‹¨ê³„
+    Thinking,     // Thinking ë‹¨ê³„
+    MainB,        // Main ë‹¤ì´ì–¼ë¡œê·¸ B ë‹¨ê³„
+    Writing,      // Writing ë‹¨ê³„
+    Play,         //Play ë‹¨ê³„
+    Sleeping,     //Sleeping ë‹¨ê³„
+    NextChapter,  //Sleeping ë‹¨ê³„ê°€ ëë‚˜ë©´ ê¸°ë‹¤ë¦¬ë“ ê°€, ì•„ë‹˜ Skipì„ ëˆŒëŸ¬ì„œ Watchingìœ¼ë¡œ ë„˜ì–´ê°ˆ ìˆ˜ ìˆìŒ. 
+    End,          //ì´ ë‹¨ê³„ë¡œ ë„˜ì–´ê°€ë©´ ì˜¤ë¥˜, ë‹¤ìŒë‹¨ê³„ 0ìœ¼ë¡œ ì´ë™í•´ì•¼í•¨.
 };
 public class GameManager : MonoBehaviour
 {
@@ -130,23 +130,33 @@ public class GameManager : MonoBehaviour
         {
             Permission.RequestUserPermission(Permission.ExternalStorageWrite);
         }
+        
+    }
+    private void Start()
+    {
+        //Player ë‹¨ê³„ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
+        if (mainDialoguePanel)
+        {
+            mainDialoguePanel.GetComponent<MainPanel>().InitializePanels();
+        }
+        StartCoroutine(InitMain());
+        loadingProgressBar.onValueChanged.AddListener(OnValueChanged);
+    }
+
+    private IEnumerator InitMain()
+    {
+        yield return new WaitForSeconds(0.5f);
+
         pc = GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerController>();
         pc.nextPhaseDelegate += ChangeGameState;
         objectManager = GameObject.FindWithTag("ObjectManager").gameObject.GetComponent<ObjectManager>();
         scrollManager = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<ScrollManager>();
         cameraZoom = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<CameraZoom>();
         subDialogue = subDialoguePanel.GetComponent<SubDialogue>();
-    }
-    private void Start()
-    {
-        //Player ´Ü°è¸¦ °¡Á®¿Â´Ù.
-        if (mainDialoguePanel)
-        {
-            mainDialoguePanel.GetComponent<MainPanel>().InitializePanels();
-        }
+
         InitGame();
-        loadingProgressBar.onValueChanged.AddListener(OnValueChanged);
     }
+
     public void OnValueChanged(float value)
     {
         if (value >= 1f)
@@ -165,7 +175,7 @@ public class GameManager : MonoBehaviour
     {
         if (pc.GetChapter() == 1)
         {
-            Debug.Log("Tuto ´Ù½Ã ½ÃÀÛ");
+            Debug.Log("Tuto ë‹¤ì‹œ ì‹œì‘");
             subDialoguePanel.SetActive(true);
             subDialogue.Tuto_start(118);
             return;
@@ -175,11 +185,11 @@ public class GameManager : MonoBehaviour
     public void SetPhase(GamePatternState newPhase)
     {
         currentPattern = newPhase;
-        Debug.Log($"[SetPhase] Phase ¼³Á¤µÊ: {newPhase}");
+        Debug.Log($"[SetPhase] Phase ì„¤ì •ë¨: {newPhase}");
 
         if (phaseToSubseqs.TryGetValue(currentPattern, out var subs) && subs.Count > 0)
         {
-            Debug.Log($"[SetPhase] Subseq ÃÊ±âÈ­µÊ: {subs[0]}");
+            Debug.Log($"[SetPhase] Subseq ì´ˆê¸°í™”ë¨: {subs[0]}");
             pc.SetSubseq(subs[0]);
         }
         else
@@ -194,17 +204,17 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeGameState(GamePatternState patternState)
     {
-        Debug.Log($"[Test] ChangeGameState ½ÇÇà: {patternState}");
-        Debug.Log("½ºÅ×ÀÌÆ® º¯°æ");
+        Debug.Log($"[Test] ChangeGameState ì‹¤í–‰: {patternState}");
+        Debug.Log("ìŠ¤í…Œì´íŠ¸ ë³€ê²½");
         if (states == null) return;
         if (states.ContainsKey(patternState) == false)
         {
-            Debug.Log("¾ø´Â ÆĞÅÏ ÀÔ´Ï´Ù.");
+            Debug.Log("ì—†ëŠ” íŒ¨í„´ ì…ë‹ˆë‹¤.");
             return;
         }
         if (activeState != null)
         {
-            activeState.Exit(this); //¹Ì¸® Á¤¸®ÇÑ´Ù.
+            activeState.Exit(this); //ë¯¸ë¦¬ ì •ë¦¬í•œë‹¤.
         }
         currentPattern = patternState;
         activeState = states[patternState];
@@ -213,10 +223,10 @@ public class GameManager : MonoBehaviour
         if(dot.GetSubScriptListCount(patternState) != 0)
         {
             Debug.Log("changeGameState:Sub");
-            //¼­ºê ½ÇÇà
+            //ì„œë¸Œ ì‹¤í–‰
             ShowSubDial();
         }
-        //C#¿¡¼­ ¸í½ÃÀû Çüº¯È¯Àº °­Á¦, as ÇÒÁö¸»Áö¸¦ °áÁ¤.. Áï, ½ÇÆĞ À¯¹«¸¦ ¾Ë°í ½Í´Ù¸é, as¸¦ »ç¿ëÇÑ´Ù.
+        //C#ì—ì„œ ëª…ì‹œì  í˜•ë³€í™˜ì€ ê°•ì œ, as í• ì§€ë§ì§€ë¥¼ ê²°ì •.. ì¦‰, ì‹¤íŒ¨ ìœ ë¬´ë¥¼ ì•Œê³  ì‹¶ë‹¤ë©´, asë¥¼ ì‚¬ìš©í•œë‹¤.
         ILoadingInterface loadingInterface = activeState as ILoadingInterface;
         if (loadingInterface != null)
         {
@@ -241,12 +251,12 @@ public class GameManager : MonoBehaviour
     }
     private void InitGame()
     {
-        //¹è°æÀ» ¾÷·ÎµåÇÑ´Ù.
-        Int32 hh = Int32.Parse(DateTime.Now.ToString(("HH"))); //ÇöÀç ½Ã°£À» °¡Á®¿Â´Ù
-        if (hh >= (int)STime.T_DAWN && hh < (int)STime.T_MORNING) //ÇöÀç½Ã°£ >= 3 && ÇöÀç½Ã°£ <7
+        //ë°°ê²½ì„ ì—…ë¡œë“œí•œë‹¤.
+        Int32 hh = Int32.Parse(DateTime.Now.ToString(("HH"))); //í˜„ì¬ ì‹œê°„ì„ ê°€ì ¸ì˜¨ë‹¤
+        if (hh >= (int)STime.T_DAWN && hh < (int)STime.T_MORNING) //í˜„ì¬ì‹œê°„ >= 3 && í˜„ì¬ì‹œê°„ <7
         {
             sltime = SITime.Dawn;
-        } //ÇöÀç½Ã°£ >= 7&& ÇöÀç½Ã°£ <4
+        } //í˜„ì¬ì‹œê°„ >= 7&& í˜„ì¬ì‹œê°„ <4
         else if (hh >= (int)STime.T_MORNING && hh < (int)STime.T_EVENING)
         {
             sltime = SITime.Morning;
@@ -264,9 +274,9 @@ public class GameManager : MonoBehaviour
     IEnumerator LoadDataAsync()
     {
         float totalProgress = 0f;
-        float backgroundLoadWeight = 0.5f;  // ¹è°æ ·Îµå°¡ ÀüÃ¼ ÀÛ¾÷ÀÇ 50% Â÷Áö
-        float objectLoadWeight = 0.5f;      // ¿ÀºêÁ§Æ® ·Îµå°¡ ³ª¸ÓÁö 50% Â÷Áö
-        // ºñµ¿±âÀûÀ¸·Î ¹è°æ ¸®¼Ò½º¸¦ ·Îµå
+        float backgroundLoadWeight = 0.5f;  // ë°°ê²½ ë¡œë“œê°€ ì „ì²´ ì‘ì—…ì˜ 50% ì°¨ì§€
+        float objectLoadWeight = 0.5f;      // ì˜¤ë¸Œì íŠ¸ ë¡œë“œê°€ ë‚˜ë¨¸ì§€ 50% ì°¨ì§€
+        // ë¹„ë™ê¸°ì ìœ¼ë¡œ ë°°ê²½ ë¦¬ì†ŒìŠ¤ë¥¼ ë¡œë“œ
         loadingProgressBar.value = 0;
         ResourceRequest loadOperation = Resources.LoadAsync<GameObject>("Background/" + sltime.ToString());
         while (!loadOperation.isDone)
@@ -275,7 +285,7 @@ public class GameManager : MonoBehaviour
             loadingProgressBar.value = totalProgress;
             yield return null;
         }
-        // ·ÎµùÀÌ ¿Ï·áµÇ¸é ¸®¼Ò½º¸¦ °¡Á®¿Í¼­ Instantiate
+        // ë¡œë”©ì´ ì™„ë£Œë˜ë©´ ë¦¬ì†ŒìŠ¤ë¥¼ ê°€ì ¸ì™€ì„œ Instantiate
         if (loadOperation.asset != null)
         {
             GameObject background = (GameObject)loadOperation.asset;
@@ -285,15 +295,15 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("Background not found!");
         }
-        // Ç®À» Ã¤¿ì´Â µî ³ª¸ÓÁö ÀÛ¾÷À» ¼öÇà
+        // í’€ì„ ì±„ìš°ëŠ” ë“± ë‚˜ë¨¸ì§€ ì‘ì—…ì„ ìˆ˜í–‰
         Coroutine objectLoadCoroutine = StartCoroutine(TrackObjectLoadProgress(sltime.ToString(), pc.GetChapter(), objectLoadWeight));
         foreach (var state in states)
         {
             state.Value.Init();
         }
-        //ÄÚ·çÆ¾ÀÌ ³¡³¯¶§±îÁö ´ë±â
+        //ì½”ë£¨í‹´ì´ ëë‚ ë•Œê¹Œì§€ ëŒ€ê¸°
         yield return objectLoadCoroutine;
-        loadingProgressBar.value = 1; //¸ğµç ÀÛ¾÷ÀÌ ³¡³µÀ½.
+        loadingProgressBar.value = 1; //ëª¨ë“  ì‘ì—…ì´ ëë‚¬ìŒ.
         GamePatternState patternState = (GamePatternState)pc.GetAlreadyEndedPhase();
         currentPattern = patternState;
         activeState = states[patternState];
@@ -304,33 +314,33 @@ public class GameManager : MonoBehaviour
     {
         float progress = 0f;
         float previousProgress = 0f;
-        // objectManagerÀÇ ºñµ¿±â ÀÛ¾÷ ÁøÇà »óÈ²À» ÃßÀû
+        // objectManagerì˜ ë¹„ë™ê¸° ì‘ì—… ì§„í–‰ ìƒí™©ì„ ì¶”ì 
         Coroutine loadObjectCoroutine = StartCoroutine(objectManager.LoadObjectAsync(sltime.ToString(), pc.GetChapter()));
-        // objectManager.LoadObjectAsync ÄÚ·çÆ¾ÀÇ ÁøÇà »óÈ²À» ÃßÀû (°¡Á¤: objectManager¿¡¼­ ÁøÇà »óÈ²À» Á¦°øÇÒ ¼ö ÀÖ´Â ¸Ş¼­µå¸¦ Á¦°øÇÑ´Ù°í °¡Á¤)
+        // objectManager.LoadObjectAsync ì½”ë£¨í‹´ì˜ ì§„í–‰ ìƒí™©ì„ ì¶”ì  (ê°€ì •: objectManagerì—ì„œ ì§„í–‰ ìƒí™©ì„ ì œê³µí•  ìˆ˜ ìˆëŠ” ë©”ì„œë“œë¥¼ ì œê³µí•œë‹¤ê³  ê°€ì •)
         while (!objectManager.IsLoadObjectComplete())
         {
-            progress = objectManager.GetLoadProgress();  // ÁøÇà »óÈ²À» °¡Á®¿È
+            progress = objectManager.GetLoadProgress();  // ì§„í–‰ ìƒí™©ì„ ê°€ì ¸ì˜´
             float totalProgress = (previousProgress + progress) * weight + loadingProgressBar.value;
             loadingProgressBar.value = totalProgress;
             yield return null;
         }
-        // ÄÚ·çÆ¾ÀÌ ¿Ï·áµÇ¾úÀ» ¶§ 100%·Î ¼³Á¤
+        // ì½”ë£¨í‹´ì´ ì™„ë£Œë˜ì—ˆì„ ë•Œ 100%ë¡œ ì„¤ì •
         loadingProgressBar.value += weight;
     }
     public void SceneTutorial()
     {
         SceneManager.LoadScene("Tutorial");
     }
-    //ÁØÇö¾Æ ¼­ºê ³¡³ª°í ³ª¼­ showSubDial À» ¹Ù·Î È£ÃâÇÏ¸é, ¾Ë¾Æ¼­ nºĞ ´ë±â ÈÄ ¶Ç µîÀåÇÒ°Å¾ß 
-    //¼­ºê°¡ ÀÖµç ¾øµç È£Ãâ ¤¡¤¡ ¾øÀ¸¸é, Interface»ó¿¡ °É·Á¼­ ÀÌÀü Çß´ø Çàµ¿ ÇÏ°í ³¡³¾°Ü
+    //ì¤€í˜„ì•„ ì„œë¸Œ ëë‚˜ê³  ë‚˜ì„œ showSubDial ì„ ë°”ë¡œ í˜¸ì¶œí•˜ë©´, ì•Œì•„ì„œ në¶„ ëŒ€ê¸° í›„ ë˜ ë“±ì¥í• ê±°ì•¼ 
+    //ì„œë¸Œê°€ ìˆë“  ì—†ë“  í˜¸ì¶œ ã„±ã„± ì—†ìœ¼ë©´, Interfaceìƒì— ê±¸ë ¤ì„œ ì´ì „ í–ˆë˜ í–‰ë™ í•˜ê³  ëë‚¼ê²¨
     public void ShowSubDial()
     {
-        Debug.Log("ShowSubDial ½ÇÇàµÊ");
+        Debug.Log("ShowSubDial ì‹¤í–‰ë¨");
 
         int currentSubseq = pc.GetSubseq();
         if (!ShouldShowSub(Pattern, currentSubseq))
         {
-            Debug.Log("ÀÌ¹Ì º» ¼­ºê°Å³ª ÇØ´ç phase¿¡ ¼­ºê ¾øÀ½");
+            Debug.Log("ì´ë¯¸ ë³¸ ì„œë¸Œê±°ë‚˜ í•´ë‹¹ phaseì— ì„œë¸Œ ì—†ìŒ");
             return;
         }
 
@@ -348,12 +358,12 @@ public class GameManager : MonoBehaviour
         if (!phaseToSubseqs[phase].Contains(subseq))
             return false;
 
-        return !pc.IsSubWatched(subseq); // ÀúÀåµÈ subseq ¸®½ºÆ®¿¡ ¾ø´ÂÁö È®ÀÎ
+        return !pc.IsSubWatched(subseq); // ì €ì¥ëœ subseq ë¦¬ìŠ¤íŠ¸ì— ì—†ëŠ”ì§€ í™•ì¸
     }
 
     public void StopSubDial()
     {
-        Debug.Log("StopSubDial ½ÇÇàµÊ");
+        Debug.Log("StopSubDial ì‹¤í–‰ë¨");
 
         if (subDialogCoroutine != null)
         {
@@ -391,17 +401,17 @@ public class GameManager : MonoBehaviour
         }
 
         ScriptList nxscript = null;
-        Debug.Log($"SubDialog ÁøÀÔ - Phase: {Pattern}, Subseq: {pc.GetSubseq()}");
+        Debug.Log($"SubDialog ì§„ì… - Phase: {Pattern}, Subseq: {pc.GetSubseq()}");
         if (pc.GetSubseq() == 1)
         {
             isready = false;
             nxscript = dot.GetnxSubScriptList(Pattern);
 
-            Debug.Log("´ÙÀ½ ½ºÅ©¸³Æ® ½Ã°£: " + nxscript.Delay);
+            Debug.Log("ë‹¤ìŒ ìŠ¤í¬ë¦½íŠ¸ ì‹œê°„: " + nxscript.Delay);
             float startTime = UnityEngine.Time.time;
             targetTime = startTime + nxscript.Delay;
 
-            Debug.Log("ÇöÀç ½ºÅ©¸³Æ® ½Ã°£: " + script.Delay);
+            Debug.Log("í˜„ì¬ ìŠ¤í¬ë¦½íŠ¸ ì‹œê°„: " + script.Delay);
 
             float elapsed = 0f;
             while (elapsed < script.Delay)
@@ -413,16 +423,16 @@ public class GameManager : MonoBehaviour
 
             if (!isSkipping)
             {
-                Debug.Log("ÇöÀç ½ºÅ©¸³Æ® Å°: " + script.ScriptKey);
+                Debug.Log("í˜„ì¬ ìŠ¤í¬ë¦½íŠ¸ í‚¤: " + script.ScriptKey);
                 dot.TriggerSub(true);
                 pc.ProgressSubDial(script.ScriptKey);
             }
         }
         else if (pc.GetSubseq() == 2)
         {
-            Debug.Log("ÇöÀç ½ºÅ©¸³Æ® Å°: " + script.ScriptKey);
+            Debug.Log("í˜„ì¬ ìŠ¤í¬ë¦½íŠ¸ í‚¤: " + script.ScriptKey);
             float waitTime = targetTime - UnityEngine.Time.time;
-            Debug.Log("±â´Ù·Á¾ß ÇÏ´Â ½Ã°£: " + waitTime);
+            Debug.Log("ê¸°ë‹¤ë ¤ì•¼ í•˜ëŠ” ì‹œê°„: " + waitTime);
 
             if (waitTime > 0f)
             {
@@ -437,14 +447,14 @@ public class GameManager : MonoBehaviour
 
             if (!isSkipping)
             {
-                Debug.Log("¼­ºê 2 ½ÇÇà");
+                Debug.Log("ì„œë¸Œ 2 ì‹¤í–‰");
                 dot.TriggerSub(true);
                 pc.ProgressSubDial(script.ScriptKey);
             }
         }
         else
         {
-            Debug.Log("ÇöÀç ½ºÅ©¸³Æ® ½Ã°£: " + script.Delay);
+            Debug.Log("í˜„ì¬ ìŠ¤í¬ë¦½íŠ¸ ì‹œê°„: " + script.Delay);
 
             float elapsed = 0f;
             while (elapsed < script.Delay)
@@ -456,12 +466,12 @@ public class GameManager : MonoBehaviour
 
             if (!isSkipping)
             {
-                Debug.Log("ÇöÀç ½ºÅ©¸³Æ® Å°: " + script.ScriptKey);
+                Debug.Log("í˜„ì¬ ìŠ¤í¬ë¦½íŠ¸ í‚¤: " + script.ScriptKey);
                 dot.TriggerSub(true);
                 pc.ProgressSubDial(script.ScriptKey);
             }
         }
-        //pc.MarkSubWatched(pc.GetSubseq()); // º» °É ±â·Ï
+        //pc.MarkSubWatched(pc.GetSubseq()); // ë³¸ ê±¸ ê¸°ë¡
     }
     public void PlayAllSubDialogs()
     {
@@ -471,7 +481,7 @@ public class GameManager : MonoBehaviour
             int currentIdx = phaseSubs.IndexOf(pc.GetSubseq());
             if (currentIdx + 1 < phaseSubs.Count)
             {
-                pc.SetSubseq(phaseSubs[currentIdx + 1]); // ´ÙÀ½ ¼­ºê
+                pc.SetSubseq(phaseSubs[currentIdx + 1]); // ë‹¤ìŒ ì„œë¸Œ
             }
         }
     }

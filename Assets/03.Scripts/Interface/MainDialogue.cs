@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 public abstract class MainDialogue : GameState, ILoadingInterface
 {
-    //´ë»ç
+    //ëŒ€ì‚¬
     Dictionary<string, int> pos = new Dictionary<string, int>();
     protected GameObject background = null;
     protected DotController dot = null;
@@ -45,23 +45,23 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         {
             dot.gameObject.SetActive(true);
         }
-        //nÃÊ µÚ¿¡ ¾Æ·¡°¡ ¶á´Ù.
+        //nì´ˆ ë’¤ì— ì•„ë˜ê°€ ëœ¬ë‹¤.
         manager.ObjectManager.PlayThinking();
-        Debug.Log("¸ŞÀÎ ºÎºĞ");
-        //½ÇÁ¦·Î´Â ¹¶Ä¡°¡ ¸ÕÀú ¶á´Ù.
-        //dot State º¯°æ -> Å¬¸¯ ½Ã ¾Æ·¡ µÎ°³ °íÁ¤ ¹× SetMain ¼³Á¤.
+        Debug.Log("ë©”ì¸ ë¶€ë¶„");
+        //ì‹¤ì œë¡œëŠ” ë­‰ì¹˜ê°€ ë¨¼ì € ëœ¬ë‹¤.
+        //dot State ë³€ê²½ -> í´ë¦­ ì‹œ ì•„ë˜ ë‘ê°œ ê³ ì • ë° SetMain ì„¤ì •.
         this.manager = manager;
         this.dot = dot;
         phase = (int)manager.Pattern;
         dot.TriggerMain(true);
-        //dot ÇÑÅ× chapterList ¿¡¼­ ÇØ´ç À§Ä¡¶û ¾Ö´Ï¸ŞÀÌ¼ÇÀÌ º¯ÇÔ.
+        //dot í•œí…Œ chapterList ì—ì„œ í•´ë‹¹ ìœ„ì¹˜ë‘ ì• ë‹ˆë©”ì´ì…˜ì´ ë³€í•¨.
         SystemUI = GameObject.Find("SystemUI");
         menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
         PlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         CurrentLanguage = PlayerController.GetLanguage();
         if (manager.mainVideo)
         {
-            Debug.Log("¹Ì¸® ¿µ»ó °¡Á®¿À±â");
+            Debug.Log("ë¯¸ë¦¬ ì˜ìƒ ê°€ì ¸ì˜¤ê¸°");
             manager.mainVideo.Setting(manager.Chapter,CurrentLanguage);
         }
     }
@@ -85,7 +85,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                 int main = int.Parse(parts[0]);
                 if (main == phase)
                 {
-                    //Debug.Log("¿£Æ®¸® ½ÃÀÛ");
+                    //Debug.Log("ì—”íŠ¸ë¦¬ ì‹œì‘");
                     DialogueEntry entry = new DialogueEntry
                     {
                         Main = main,
@@ -117,7 +117,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             }
         }
     }
-    //ÁØÇö¾Æ ¿©±â¿¡ ÇÔ¼ö ¸¸µé¾î³õÀ»°Ô ÆÄ¶ó¹ÌÅÍ¶û ¸®ÅÏ°ª µî ³Ê°¡ ÇÊ¿äÇÑ´ë·Î ¹Ù²ã
+    //ì¤€í˜„ì•„ ì—¬ê¸°ì— í•¨ìˆ˜ ë§Œë“¤ì–´ë†“ì„ê²Œ íŒŒë¼ë¯¸í„°ë‘ ë¦¬í„´ê°’ ë“± ë„ˆê°€ í•„ìš”í•œëŒ€ë¡œ ë°”ê¿”
  
     public main GetData(int idx)
     {
@@ -129,13 +129,13 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         maindata.Text = DialogueEntries[idx].KorText;
         maindata.DeathNote = DialogueEntries[idx].Deathnote;
 
-        //ÀÌ Text¾È¿¡¼­ <name>ÀÌ ÀÖÀ» °æ¿ì º¯°æ
+        //ì´ Textì•ˆì—ì„œ <name>ì´ ìˆì„ ê²½ìš° ë³€ê²½
         maindata.NextLineKey = DialogueEntries[idx].NextLineKey;
         maindata.AnimScene = DialogueEntries[idx].AnimScene;
         fixedPos = pos[DialogueEntries[idx].Background];
 
-        //Debug.Log("Å×½ºÆ®: " + fixedPos.ToString());
-        //µ¥ÀÌÅÍ¿¡ ´ëÇÑ ¾Ö´Ï¸ŞÀÌ¼ÇÀ¸·Î º¯°æÇÑ´Ù., fixedPos Àº °Çµå¸®Áö¸»±æ!!! À§Ä¡ °ªÀÎµ¥ Ç×»ó °íÁ¤
+        //Debug.Log("í…ŒìŠ¤íŠ¸: " + fixedPos.ToString());
+        //ë°ì´í„°ì— ëŒ€í•œ ì• ë‹ˆë©”ì´ì…˜ìœ¼ë¡œ ë³€ê²½í•œë‹¤., fixedPos ì€ ê±´ë“œë¦¬ì§€ë§ê¸¸!!! ìœ„ì¹˜ ê°’ì¸ë° í•­ìƒ ê³ ì •
         
         dot.ChangeState(DotPatternState.Main, DialogueEntries[idx].DotBody, fixedPos, DialogueEntries[idx].DotExpression);
         return maindata; //data[idx].Kor
@@ -151,13 +151,13 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             dot.gameObject.SetActive(true);
         }
         mainPanel = GameObject.Find("MainDialougue").GetComponent<MainPanel>();
-        //µ¨¸®°ÔÀÌÆ®¸¦ »ç¿ëÇØ¼­ ¿ÉÀú¹ö ÆĞÅÏ ±¸Çö
-        //¸ŞÀÎÀ» ½ÃÀÛÇÒ¶§ SystemUI¸¦ ²ô±â À§ÇØ¼­´Â ¾Æ·¡ ÁÖ¼®À» Ç®¾îÁÖ¸é µÈ´Ù.
+        //ë¸ë¦¬ê²Œì´íŠ¸ë¥¼ ì‚¬ìš©í•´ì„œ ì˜µì €ë²„ íŒ¨í„´ êµ¬í˜„
+        //ë©”ì¸ì„ ì‹œì‘í• ë•Œ SystemUIë¥¼ ë„ê¸° ìœ„í•´ì„œëŠ” ì•„ë˜ ì£¼ì„ì„ í’€ì–´ì£¼ë©´ ëœë‹¤.
         //manager.ObjectManager.activeSystemUIDelegate(false);
 
-        //´ë»ç¸¦ ·ÎµåÇßÀ½ ÁÁ°ÚÀ½.
-        //¹è°æÈ­¸éÀ» ·ÎµåÇÑ´Ù.
-        //Ä«¸Ş¶ó¸¦ 0,0,10¿¡¼­ Á¤Áö½ÃÅ²´Ù.¿òÁ÷ÀÌÁö ¸øÇÏ°ÔÇÑ´Ù.
+        //ëŒ€ì‚¬ë¥¼ ë¡œë“œí–ˆìŒ ì¢‹ê² ìŒ.
+        //ë°°ê²½í™”ë©´ì„ ë¡œë“œí•œë‹¤.
+        //ì¹´ë©”ë¼ë¥¼ 0,0,10ì—ì„œ ì •ì§€ì‹œí‚¨ë‹¤.ì›€ì§ì´ì§€ ëª»í•˜ê²Œí•œë‹¤.
         if (uITutorial == null && currentSceneName == "MainScene" && manager.Chapter == 1)
             uITutorial = mainPanel.UITutorial.GetComponent<UITutorial>();
         Debug.Log(uITutorial);
@@ -175,35 +175,35 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         string[] lines = dialogueData.text.Split('\n');
         LoadData(lines);
         Debug.Log(DialogueEntries[0].Background);
-        fixedPos = pos[DialogueEntries[0].Background]; //ÇöÀç ¹è°æÈ­¸éÀÌ ¾î¶² °ªÀÎÁö º¯°æÇØÁÖ±æ
+        fixedPos = pos[DialogueEntries[0].Background]; //í˜„ì¬ ë°°ê²½í™”ë©´ì´ ì–´ë–¤ ê°’ì¸ì§€ ë³€ê²½í•´ì£¼ê¸¸
         //dot.ChangeState(DotPatternState.Main, "body_default1", fixedPos, "face_null");
         mainPanel.Day = manager.Chapter;
         mainPanel.LANGUAGE = CurrentLanguage;
         mainPanel.ShowNextDialogue();
         manager.ScrollManager.StopCamera(true);
-        background = manager.ObjectManager.SetMain(DialogueEntries[0].Background); // ÇöÀç ¹è°æÀÌ ¾î¶² °ªÀÎÁö º¯°æ
-        Debug.Log("¹è°æ:"+ background);
+        background = manager.ObjectManager.SetMain(DialogueEntries[0].Background); // í˜„ì¬ ë°°ê²½ì´ ì–´ë–¤ ê°’ì¸ì§€ ë³€ê²½
+        Debug.Log("ë°°ê²½:"+ background);
 
         AudioManager.instance.PlayOneShot(FMODEvents.instance.mainEnter, dot.transform.position);
-        //¹è°æÈ­¸éÀÌ ÄÑÁú ¶§, ¹¶Ä¡ÀÇ À§Ä¡µµ °íÀåÇÑ´Ù.
-        //ÆÄ¶ó¹ÌÅÍ·Î ¹è°æ°ªÀ» Àü´ŞÇÏ¸é µÈ´Ù.
-        //Day 7À» Á¦¿ÜÇÏ°ï ¸ğµÎ ¹è°æ°ªÀ» Enter¿¡¼­ ¼öÁ¤ÇÏ¸é µÇ°í, µ¥ÀÌ 7ÀÏ¶§¸¸ º¯°æÇØÁØ´Ù.
+        //ë°°ê²½í™”ë©´ì´ ì¼œì§ˆ ë•Œ, ë­‰ì¹˜ì˜ ìœ„ì¹˜ë„ ê³ ì¥í•œë‹¤.
+        //íŒŒë¼ë¯¸í„°ë¡œ ë°°ê²½ê°’ì„ ì „ë‹¬í•˜ë©´ ëœë‹¤.
+        //Day 7ì„ ì œì™¸í•˜ê³¤ ëª¨ë‘ ë°°ê²½ê°’ì„ Enterì—ì„œ ìˆ˜ì •í•˜ë©´ ë˜ê³ , ë°ì´ 7ì¼ë•Œë§Œ ë³€ê²½í•´ì¤€ë‹¤.
         if (menuController)
             menuController.alloff();
     }
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
-        Debug.Log("Å×½ºÆ®1");
+        Debug.Log("í…ŒìŠ¤íŠ¸1");
     }
 
     public void MainEnd()
     {
-        Debug.Log("¸ŞÀÎ Exit1");
+        Debug.Log("ë©”ì¸ Exit1");
         dot.TriggerMain(false);
         manager.ScrollManager.StopCamera(false);
         if (background)
         {
-            Debug.Log("ÇöÀç ¹è°æ:" + background.name);
+            Debug.Log("í˜„ì¬ ë°°ê²½:" + background.name);
             background.SetActive(false);
         }
         manager.ObjectManager.activeSystemUIDelegate(true);
@@ -218,7 +218,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         if (phase == 3 && manager.Chapter == 1)
         {
             menuController.onlyskipoff();
-            //Tutorial_9 ´ë»ç ½ÇÇà
+            //Tutorial_9 ëŒ€ì‚¬ ì‹¤í–‰
             GameObject subdial = manager.subDialoguePanel;
             subdial.SetActive(true);
             subdial.GetComponent<SubDialogue>().Tuto_start(106);

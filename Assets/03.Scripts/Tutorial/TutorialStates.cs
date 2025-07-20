@@ -18,37 +18,26 @@ namespace Tutorial
 
         }
 
-        //¸â¹ö º¯¼ö ´ë»ç 
+        //ë©¤ë²„ ë³€ìˆ˜ ëŒ€ì‚¬ 
         public override void Init()
         {
 
         }
 
-        public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
-        {
-            GameObject door = GameObject.Find("fix_door");
+        public void InitEnter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
+        {//ìœ„ì¹˜ ì´ˆê¸°í™” ë¨¼ì € í•˜ë„ë¡ ìˆ˜ì •
             RecentData data = RecentManager.Load();
-            
             if (data.tutonum == 0)
             {
                 if (data != null && data.isContinue == 1)
                 {
                     dot.ChangeState(DotPatternState.Default, anim, pos);
                     dot.GetComponent<DotController>().tutorial = true;
-                    manager.ScrollManager.stopscroll();
-                    manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                    Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
-                    subdial = manager.subDialoguePanel;
                 }
                 else
                 {
                     dot.ChangeState(DotPatternState.Default, anim, pos);
                     dot.GetComponent<DotController>().tutorial = true;
-                    door.transform.GetChild(1).GetComponent<DoorController>().close();
-                    manager.ScrollManager.stopscroll();
-                    manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                    Utility.Instance.InvokeAfterDelay(substart, 2f);
-                    subdial = manager.subDialoguePanel;
                 }
             }
             if (data.tutonum == 1)
@@ -57,35 +46,71 @@ namespace Tutorial
                 {
                     dot.ChangeState(DotPatternState.Default, anim, 1);
                     dot.tutorial = true;
-                    manager.ScrollManager.stopscroll();
-                    Debug.Log("µÎ¹øÂ° Æ©Åä¸®¾ó ¼­ºê");
-                    manager.CameraZoom.ZoomOut();
-                    //InvokeHelper.Instance.InvokeAfterDelay(subcontinue, 4.0f);
-                    GameObject fix_moonradio = GameObject.Find("fix_moonradio");
-                    GameObject moonote = Resources.Load<GameObject>("moonnote");
-                    Utility.InstantiatePrefab(moonote, fix_moonradio.transform);
-                    subdial = manager.subDialoguePanel;
                 }
                 else
                 {
                     dot.ChangeState(DotPatternState.Default, anim, pos);
                     dot.GetComponent<DotController>().tutorial = true;
-                    manager.ScrollManager.stopscroll();
-                    manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                    Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
-                    subdial = manager.subDialoguePanel;
                 }
             }
-            
+        }
+
+        public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
+        {
+            GameObject door = GameObject.Find("fix_door");
+            RecentData data = RecentManager.Load();
+
+            Utility.Instance.WaitForFirstTouch(() =>
+            {
+                if (data.tutonum == 0)
+                {
+                    if (data != null && data.isContinue == 1)
+                    {
+                        manager.ScrollManager.stopscroll();
+                        manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
+                        Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
+                        subdial = manager.subDialoguePanel;
+                    }
+                    else
+                    {
+                        door.transform.GetChild(1).GetComponent<DoorController>().close();
+                        manager.ScrollManager.stopscroll();
+                        manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
+                        Utility.Instance.InvokeAfterDelay(substart, 2f);
+                        subdial = manager.subDialoguePanel;
+                    }
+                }
+                if (data.tutonum == 1)
+                {
+                    if (data.index == 69)
+                    {
+                        manager.ScrollManager.stopscroll();
+                        Debug.Log("ë‘ë²ˆì§¸ íŠœí† ë¦¬ì–¼ ì„œë¸Œ");
+                        manager.CameraZoom.ZoomOut();
+                        //InvokeHelper.Instance.InvokeAfterDelay(subcontinue, 4.0f);
+                        GameObject fix_moonradio = GameObject.Find("fix_moonradio");
+                        GameObject moonote = Resources.Load<GameObject>("moonnote");
+                        Utility.InstantiatePrefab(moonote, fix_moonradio.transform);
+                        subdial = manager.subDialoguePanel;
+                    }
+                    else
+                    {
+                        manager.ScrollManager.stopscroll();
+                        manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
+                        Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
+                        subdial = manager.subDialoguePanel;
+                    }
+                }
+            });
         }
 
         public override void Exit(GameManager manager, TutorialManager tutomanger = null)
         {
-            //¸ŞÀÎ¾À ·Îµå?
+            //ë©”ì¸ì”¬ ë¡œë“œ?
         }
         public void substart()
         {
-            Debug.Log("Æ©Åä¸®¾ó ´ëÈ­ ½ÃÀÛ");
+            Debug.Log("íŠœí† ë¦¬ì–¼ ëŒ€í™” ì‹œì‘");
             subdial.SetActive(true);
             subdial.GetComponent<SubDialogue>().StartSub("tutorial_sub");
         }
@@ -114,13 +139,13 @@ namespace Tutorial
 
         public override void Exit(GameManager manager, TutorialManager tutomanger)
         {
-            Debug.Log("¸ŞÀÎ Exit2");
+            Debug.Log("ë©”ì¸ Exit2");
             dot.TriggerMain(false);
             Debug.Log(tutomanger);
             manager.ScrollManager.StopCamera(false);
             if (background)
             {
-                Debug.Log("ÇöÀç ¹è°æ:" + background.name);
+                Debug.Log("í˜„ì¬ ë°°ê²½:" + background.name);
                 background.SetActive(false);
             }
             RecentManager.TutoNumChange();
