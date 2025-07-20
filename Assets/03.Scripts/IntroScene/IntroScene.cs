@@ -21,6 +21,7 @@ public class IntroScene : MonoBehaviour
 
     private void Start()
     {
+
         playerInfo = new PlayerInfo("Default", 1, GamePatternState.Watching);
         data = RecentManager.Load();
         //1.스플래시 재생
@@ -78,7 +79,7 @@ public class IntroScene : MonoBehaviour
     void Play()
     {
         string nextScene;
-        int chapter = gameManager.Chapter;
+        //int chapter = playerInfo.chapter;
 
         if (data != null && data.tutoend == false)
         {
@@ -88,7 +89,7 @@ public class IntroScene : MonoBehaviour
         {
             nextScene = "MainScene";
         }
-        LoadingController.LoadScene(nextScene, chapter);
+        LoadSceneManager.Instance.LoadScene(nextScene, 0);
     }
 
     IEnumerator Wait_Animation(Animator animator, string animationName, Action callBack)
