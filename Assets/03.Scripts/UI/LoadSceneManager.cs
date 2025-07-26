@@ -26,12 +26,14 @@ public class LoadSceneManager : MonoBehaviour
 
     [Header("로딩 패널 로컬라이제이션 테이블")]
     [SerializeField]
-    private string stringTableName = "UITexts";
+    private string _stringTableName = "UITexts";
 
     private string _currentSceneName;
     private string _targetSceneName;
     private int _targetChapter;
+
     private float _visualProgress = 0f;
+    private float _realProgress = 0f;
 
     void Awake()
     {
@@ -45,6 +47,7 @@ public class LoadSceneManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+   
 
     /// <summary>
     /// 챕터 번호가 0이면 디폴트 로딩 패널을 사용하고, 그 외의 경우 챕터 로딩 패널을 사용하여 씬 로드
@@ -74,36 +77,45 @@ public class LoadSceneManager : MonoBehaviour
 
         if (_targetChapter > 0) //챕터로딩 패널
         {
-            chapterLoadingScreenPanel.SetActive(true);
-            defaultLoadingScreenPanel.SetActive(false);
-
-            StringTable stringTable = LocalizationSettings.StringDatabase.GetTable(stringTableName);
-            if (stringTable != null)
-            {
-                LocalizationSettings.SelectedLocaleChanged += locale =>
-                {
-                    string titleKey = $"ch{_targetChapter} title";
-                    if (chTitleText != null)
-                        chTitleText.text = stringTable.GetEntry(titleKey)?.GetLocalizedString() ?? $"default title text";
-
-                    string loadingKey = $"ch{_targetChapter} loading";
-                    if (chLoadingText != null)
-                        chLoadingText.text = stringTable.GetEntry(loadingKey)?.GetLocalizedString() ?? "default loading text";
-                };
-            }
-            else
-            {
-                Debug.LogError($"StringTable not found");
-            }
+            OpenChapterPanel();
         }
         else //디폴트로딩 패널
         {
-            chapterLoadingScreenPanel.SetActive(false);
-            defaultLoadingScreenPanel.SetActive(true);
+            OpenDefaultPanel();
         }
 
         fadeInOut.StartFadeIn();
+        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
+    }
 
+    private void OpenChapterPanel()
+    {
+        chapterLoadingScreenPanel.SetActive(true);
+        defaultLoadingScreenPanel.SetActive(false);
+
+        StringTable stringTable = LocalizationSettings.StringDatabase.GetTable(_stringTableName);
+        Debug.Log($"변경되어야 함 챕터: {_targetChapter}");
+        if (stringTable != null)
+        {
+                string titleKey = $"ch{_targetChapter} title";
+                if (chTitleText != null)
+                    chTitleText.text = stringTable.GetEntry(titleKey)?.GetLocalizedString() ?? $"default title text";
+
+                string loadingKey = $"ch{_targetChapter} loading";
+                if (chLoadingText != null)
+                    chLoadingText.text = stringTable.GetEntry(loadingKey)?.GetLocalizedString() ?? "default loading text";
+            
+        }
+        else
+        {
+            Debug.LogError($"StringTable not found");
+        }
+    }
+
+    private void OpenDefaultPanel()
+    {
+        chapterLoadingScreenPanel.SetActive(false);
+        defaultLoadingScreenPanel.SetActive(true);
     }
 
     private IEnumerator LoadSceneCoroutine()
@@ -124,27 +136,34 @@ public class LoadSceneManager : MonoBehaviour
 
     private IEnumerator LoadingOperation()
     {
-        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(_targetSceneName, LoadSceneMode.Additive);
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(_targetSceneName, LoadSceneMode.Single);
         loadOperation.allowSceneActivation = false;
 
         _visualProgress = 0f;
+        _realProgress = 0f;
 
-        yield return StartCoroutine(UpdateLoadingProgress(loadOperation));
-        yield return StartCoroutine(UpdateFakeProgress(_visualProgress));
-        yield return StartCoroutine(SwitchScenes(loadOperation));
-        yield return StartCoroutine(PlayFadeInOut());
+        yield return StartCoroutine(UpdateLoadingProgress(loadOperation)); //loadOperation.allowSceneActivation = false 상태에서는 progress가 0.9까지만 진행되므로
+        yield return StartCoroutine(UpdateProgress(_visualProgress)); //나머지는 UpdateProgress에서 페이크로 자연스럽게 채워준다
 
+        loadOperation.allowSceneActivation = true;
+
+        yield return new WaitUntil(() => loadOperation.isDone);
+        yield return new WaitForSeconds(5.0f);
+
+        fadeInOut.StartFadeOut();
+        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.3f);
+        fadeInOut.StartFadeIn();
+
+        CompleteLoading();
     }
 
     private IEnumerator UpdateLoadingProgress(AsyncOperation loadOperation)
-    {
-        float realProgress = 0f;
-
+    { 
         while (_visualProgress < 0.9f)
         {
-            realProgress = Mathf.Clamp01(loadOperation.progress / 0.9f);
+            _realProgress = Mathf.Clamp01(loadOperation.progress / 0.9f);
             _visualProgress += Time.deltaTime * 0.3f;
-            if (_visualProgress > realProgress) _visualProgress = realProgress;
+            if (_visualProgress > _realProgress) _visualProgress = _realProgress;
 
             if (loadingSlider != null) loadingSlider.value = _visualProgress;
             if (loadingNumText != null) loadingNumText.text = $"{(_visualProgress * 100):F0}%";
@@ -153,19 +172,18 @@ public class LoadSceneManager : MonoBehaviour
         }
     }
 
-    private IEnumerator UpdateFakeProgress(float startProgress)
+    private IEnumerator UpdateProgress(float startProgress)
     {
-        float fakeDuration = 2.0f;
+        float duration = 0.5f;
         float elapsed = 0f;
 
-        while (elapsed < fakeDuration)
+        while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / fakeDuration);
-            float fakeProgress = Mathf.Lerp(startProgress, 1f, t);
+            _visualProgress = Mathf.Lerp(startProgress, 1f, elapsed / duration);
 
-            if (loadingSlider != null) loadingSlider.value = fakeProgress;
-            if (loadingNumText != null) loadingNumText.text = $"{(fakeProgress * 100):F0}%";
+            if (loadingSlider != null) loadingSlider.value = _visualProgress;
+            if (loadingNumText != null) loadingNumText.text = $"{(_visualProgress * 100):F0}%";
 
             yield return null;
         }
@@ -175,27 +193,7 @@ public class LoadSceneManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
     }
-
-    private IEnumerator SwitchScenes(AsyncOperation loadOperation)
-    {
-        loadOperation.allowSceneActivation = true;
-        yield return new WaitUntil(() => loadOperation.isDone);
-
-        AsyncOperation unloadOperation = SceneManager.UnloadSceneAsync(_currentSceneName);
-        yield return unloadOperation;
-
-        yield return new WaitForSeconds(5.0f);
-    }
-
-    private IEnumerator PlayFadeInOut()
-    {
-        fadeInOut.StartFadeOut();
-        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
-
-        fadeInOut.StartFadeIn();
-        CompleteLoading();
-    }
-
+    
     private void CompleteLoading()
     {
         defaultLoadingScreenPanel.SetActive(false);
@@ -204,8 +202,6 @@ public class LoadSceneManager : MonoBehaviour
 
         _targetSceneName = null;
         _targetChapter = 0;
-
-
     }
 
     /// <summary>
@@ -231,8 +227,12 @@ public class LoadSceneManager : MonoBehaviour
 
     private IEnumerator LoadChapter()
     {
+        yield return CheckLocalizationSettings();
+
         StartCoroutine(OpenChapterUI());
+
         yield return new WaitForSeconds(2.0f);
+
         Utility.Instance.WaitForFirstTouch(() =>
         {
             StartCoroutine(CloseChapterUI());
@@ -245,27 +245,7 @@ public class LoadSceneManager : MonoBehaviour
         fadeInOut.StartFadeOut();
         yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
 
-        chapterLoadingScreenPanel.SetActive(true);
-        defaultLoadingScreenPanel.SetActive(false);
-
-        StringTable stringTable = LocalizationSettings.StringDatabase.GetTable(stringTableName);
-        if (stringTable != null)
-        {
-            LocalizationSettings.SelectedLocaleChanged += locale =>
-            {
-                string titleKey = $"ch{_targetChapter} title";
-                if (chTitleText != null)
-                    chTitleText.text = stringTable.GetEntry(titleKey)?.GetLocalizedString() ?? $"default title text";
-
-                string loadingKey = $"ch{_targetChapter} loading";
-                if (chLoadingText != null)
-                    chLoadingText.text = stringTable.GetEntry(loadingKey)?.GetLocalizedString() ?? "default loading text";
-            };
-        }
-        else
-        {
-            Debug.LogError($"StringTable not found");
-        }
+        OpenChapterPanel();
 
         fadeInOut.StartFadeIn();
         yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
@@ -277,7 +257,7 @@ public class LoadSceneManager : MonoBehaviour
         yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
 
         chapterLoadingScreenPanel.SetActive(false);
-        defaultLoadingScreenPanel.SetActive(true);
+        defaultLoadingScreenPanel.SetActive(false);
         fadeInOutImg.SetActive(false);
         _targetChapter = 0;
 

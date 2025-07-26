@@ -37,7 +37,7 @@ public class SubTuto : MonoBehaviour
         }
         else
         {
-            Debug.LogError("ÇÁ¸®ÆÕÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù!");
+            Debug.LogError("í”„ë¦¬íŒ¹ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
         }
         touch.tuto2(selectedDot, determine);
     }
@@ -54,7 +54,7 @@ public class SubTuto : MonoBehaviour
         }
         else
         {
-            Debug.LogError("ÇÁ¸®ÆÕÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù!");
+            Debug.LogError("í”„ë¦¬íŒ¹ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
         }
         touch.tuto3(selectedDot, determine);
     }
@@ -73,7 +73,7 @@ public class SubTuto : MonoBehaviour
 
     public void tutorial_5(GameObject selectedDot, int determine, int index)
     {
-        RecentManager.Save(selectedDot, determine, index); // ÀúÀå
+        RecentManager.Save(selectedDot, determine, index); // ì €ì¥
         if (determine == 0)
             subPanel.dotballoon(selectedDot);
         else
@@ -94,12 +94,12 @@ public class SubTuto : MonoBehaviour
         {
             subPanel.dotballoon(selectedDot);
         }
-        RecentManager.Save(selectedDot, determine, index); // ÀúÀå
+        RecentManager.Save(selectedDot, determine, index); // ì €ì¥
     }
 
     public void tutorial_8(GameObject selectedDot, int determine, int index)
     {
-        //RecentManager.Save(selectedDot, determine, index); // ÀúÀå
+        //RecentManager.Save(selectedDot, determine, index); // ì €ì¥
         tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 0);
         moonnote = GameObject.FindWithTag("moonnote").GetComponent<Moonnote>();
         StartCoroutine(Scroallable());
@@ -107,7 +107,7 @@ public class SubTuto : MonoBehaviour
 
     public void tutorial_9(GameObject selectedDot, int determine, int index)
     {
-        //RecentManager.Save(selectedDot, determine, index); // ÀúÀå
+        //RecentManager.Save(selectedDot, determine, index); // ì €ì¥
         if (!tutorialManager)
         {
             Subcontinue();
@@ -119,13 +119,13 @@ public class SubTuto : MonoBehaviour
             playerController.NextPhase();
             playerController.WritePlayerFile();
             RecentManager.tutoSceneEnd();
-            StartCoroutine(LoadSceneCoroutine("MainScene"));
+            LoadSceneManager.Instance.LoadScene("Tutorial", "MainScene", 1);
         }
     }
 
     public void tutorial_10(GameObject selectedDot, int determine, int index)
     {
-        //RecentManager.Save(selectedDot, determine, index); // ÀúÀå
+        //RecentManager.Save(selectedDot, determine, index); // ì €ì¥
         if (playerController.GetAlreadyEndedPhase() == 5)
         {
             Subcontinue();
@@ -140,7 +140,7 @@ public class SubTuto : MonoBehaviour
 
     public void tutorial_11(GameObject selectedDot, int determine, int index)
     {
-        //RecentManager.Save(selectedDot, determine, index); // ÀúÀå
+        //RecentManager.Save(selectedDot, determine, index); // ì €ì¥
         dotController.GoSleep();
         StartCoroutine(subcon());
     }
@@ -179,7 +179,7 @@ public class SubTuto : MonoBehaviour
             GameObject targetObj = subPanel.FindPanelObjectByName(data.objectName);
             if (targetObj == null)
             {
-                Debug.LogWarning($"¿ÀºêÁ§Æ® {data.objectName} ¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+                Debug.LogWarning($"ì˜¤ë¸Œì íŠ¸ {data.objectName} ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
                 return;
             }
 
@@ -199,7 +199,7 @@ public class SubTuto : MonoBehaviour
         }
         else
         {
-            Debug.Log("ÀÌ¾îÇÒ Æ©Åä¸®¾ó µ¥ÀÌÅÍ ¾øÀ½");
+            Debug.Log("ì´ì–´í•  íŠœí† ë¦¬ì–¼ ë°ì´í„° ì—†ìŒ");
         }
     }
 
@@ -225,7 +225,7 @@ public class SubTuto : MonoBehaviour
         }
         else
         {
-            Debug.LogError("ÇÁ¸®ÆÕÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù!");
+            Debug.LogError("í”„ë¦¬íŒ¹ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
         }
         touch.skipGuide();
     }

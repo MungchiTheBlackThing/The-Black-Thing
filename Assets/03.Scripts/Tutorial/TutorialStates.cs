@@ -60,8 +60,8 @@ namespace Tutorial
             GameObject door = GameObject.Find("fix_door");
             RecentData data = RecentManager.Load();
 
-            Utility.Instance.WaitForFirstTouch(() =>
-            {
+            //Utility.Instance.WaitForFirstTouch(() =>
+            //{
                 if (data.tutonum == 0)
                 {
                     if (data != null && data.isContinue == 1)
@@ -101,7 +101,7 @@ namespace Tutorial
                         subdial = manager.subDialoguePanel;
                     }
                 }
-            });
+            //});
         }
 
         public override void Exit(GameManager manager, TutorialManager tutomanger = null)

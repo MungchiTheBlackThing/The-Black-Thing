@@ -199,9 +199,6 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         player.CurrentChapter += 1;
         currentChapter = player.CurrentChapter;
-        //잘 되는건지 모르겠다
-        //huijin
-        //메인 씬에서 챕터 변경될 때마다 챕터 화면 보이게 
         Debug.Log("CurrentChapter: " + currentChapter);
         LoadSceneManager.Instance.LoadChapterImage(currentChapter); 
         player.subseq = 0;
