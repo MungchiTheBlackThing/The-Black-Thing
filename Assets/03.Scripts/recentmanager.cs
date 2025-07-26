@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class RecentData
 {
-    public int isContinue = 0; // 0: Ã³À½ºÎÅÍ, 1: ÀÌ¾î¼­
+    public int isContinue = 0; // 0: ì²˜ìŒë¶€í„°, 1: ì´ì–´ì„œ
     public string objectName;
     public int value;
     public int index;
@@ -19,13 +19,13 @@ public static class RecentManager
 
     public static void Save(GameObject obj, int value, int index)
     {
-        RecentData data = Load() ?? new RecentData(); // ±âÁ¸ µ¥ÀÌÅÍ À¯Áö
+        RecentData data = Load() ?? new RecentData(); // ê¸°ì¡´ ë°ì´í„° ìœ ì§€
 
         data.isContinue = 1;
         data.objectName = obj.name;
         data.value = value;
         data.index = index;
-        // ±âÁ¸ÀÇ data.tutonum °ªÀ» À¯ÁöÇÔ
+        // ê¸°ì¡´ì˜ data.tutonum ê°’ì„ ìœ ì§€í•¨
 
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(FilePath, json);
@@ -35,14 +35,14 @@ public static class RecentManager
     {
         if (!File.Exists(FilePath))
         {
-            // ÆÄÀÏÀÌ ¾øÀ¸¸é ±âº»°ªÀ¸·Î »ı¼º
+            // íŒŒì¼ì´ ì—†ìœ¼ë©´ ê¸°ë³¸ê°’ìœ¼ë¡œ ìƒì„±
             RecentData defaultData = new RecentData
             {
                 isContinue = 0,
                 objectName = "",
                 value = 0,
                 index = 0,
-                tutonum = 0, // tutonum ÇÊµå Ãß°¡µÇ¾ú´Ù°í °¡Á¤
+                tutonum = 0, // tutonum í•„ë“œ ì¶”ê°€ë˜ì—ˆë‹¤ê³  ê°€ì •
                 tutoend = false
             };
 

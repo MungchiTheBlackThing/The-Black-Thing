@@ -15,8 +15,8 @@ public class SplashController : MonoBehaviour
 
     IEnumerator GoDialogue()
     {
-        yield return new WaitForSeconds(3f); //´ÙÀ½¿¡´Â µ¥ÀÌÅÍº£ÀÌ½º È£Ãâ 
-        //¾ÀÀÌµ¿
-        SceneManager.LoadScene("01.Scenes/MainScene");
+        yield return new WaitForSeconds(3f); //ë‹¤ìŒì—ëŠ” ë°ì´í„°ë² ì´ìŠ¤ í˜¸ì¶œ 
+        //ì”¬ì´ë™
+        SceneManager.LoadScene("01.Scenes/MainScene"); 
     }
 }

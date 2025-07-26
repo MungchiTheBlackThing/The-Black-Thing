@@ -50,7 +50,7 @@ public class SubDialogue : MonoBehaviour
             if (parts.Length >= 13)
             {
                 int sub = int.Parse(parts[0]);
-                if (sub == playerController.GetSubseq()) //****************Å×½ºÆ®¿ëÀ¸·Î 1À» ³Ö¾î³ùÀ½**************** (¼­ºê Æ®¸®°Å ÀÛµ¿À» ¾ÆÁ÷ ¸ğ¸§)
+                if (sub == playerController.GetSubseq()) //****************í…ŒìŠ¤íŠ¸ìš©ìœ¼ë¡œ 1ì„ ë„£ì–´ë†¨ìŒ**************** (ì„œë¸Œ íŠ¸ë¦¬ê±° ì‘ë™ì„ ì•„ì§ ëª¨ë¦„)
                 {
                     SubDialogueEntry entry = new SubDialogueEntry
                     {
@@ -83,7 +83,7 @@ public class SubDialogue : MonoBehaviour
                 Debug.LogError($"Line {i} does not have enough parts: {line}");
             }
         }
-        Debug.Log("ÇöÀç ÀÎµ¦½º ¼ıÀÚ: " + currentDialogueList.Count);
+        Debug.Log("í˜„ì¬ ì¸ë±ìŠ¤ ìˆ«ì: " + currentDialogueList.Count);
     }
 
     string[] ParseCSVLine(string line)
@@ -147,7 +147,7 @@ public class SubDialogue : MonoBehaviour
         //{
         //    subseq = 4;
         //}
-        scroll.stopscroll(); //ÀÓ½Ã ¹æÆí
+        scroll.stopscroll(); //ì„ì‹œ ë°©í¸
         string[] lines = dialogueData.text.Split('\n');
         LoadSubDialogue(lines);
 
@@ -161,7 +161,7 @@ public class SubDialogue : MonoBehaviour
             subPanel.ShowNextDialogue();
         }
             
-        //manager.ScrollManager.StopCamera(true); -> ÀÚ²Ù ¿À·ù ¹ß»ıÇÔ
+        //manager.ScrollManager.StopCamera(true); -> ìê¾¸ ì˜¤ë¥˜ ë°œìƒí•¨
         if (menuController)
             menuController.alloff();
         
@@ -177,9 +177,9 @@ public class SubDialogue : MonoBehaviour
         subdata.Text = SubDialogueEntries[idx].KorText;
         subdata.Color = SubDialogueEntries[idx].Color;
         subdata.DotAnim = SubDialogueEntries[idx].DotAnim;
-        //¿©±â¼­ dot °ªÀ» º¯°æÇÒ ¿¹Á¤
-        Debug.Log("SubDialogueEntries[idx].DotAnim ¿©±â º¯°æº¯°æ");
-        //ÀÌ Text¾È¿¡¼­ <name>ÀÌ ÀÖÀ» °æ¿ì º¯°æ
+        //ì—¬ê¸°ì„œ dot ê°’ì„ ë³€ê²½í•  ì˜ˆì •
+        Debug.Log("SubDialogueEntries[idx].DotAnim ì—¬ê¸° ë³€ê²½ë³€ê²½");
+        //ì´ Textì•ˆì—ì„œ <name>ì´ ìˆì„ ê²½ìš° ë³€ê²½
         subdata.NextLineKey = SubDialogueEntries[idx].NextLineKey;
 
         return subdata;
@@ -206,7 +206,7 @@ public class SubDialogue : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "Tutorial")
         {
             playerController.MarkSubWatched(playerController.GetSubseq());
-            Debug.Log("ÀÌ¹Ì º» ¼­ºê·Î ÀúÀå" + playerController.GetSubseq());
+            Debug.Log("ì´ë¯¸ ë³¸ ì„œë¸Œë¡œ ì €ì¥" + playerController.GetSubseq());
             playerController.plusSubseq();
             if (playerController.GetSubseq() > 4)
                 playerController.SetSubseq(1);
@@ -218,8 +218,8 @@ public class SubDialogue : MonoBehaviour
             subTutorial.gameObject.SetActive(true);
         }
         
-        Debug.Log("³¡³µÀ»¶§ ¼­ºê ¹øÈ£: " + playerController.GetSubseq());
-        // ´ÙÀ½ ¼­ºê ½ÇÇà
+        Debug.Log("ëë‚¬ì„ë•Œ ì„œë¸Œ ë²ˆí˜¸: " + playerController.GetSubseq());
+        // ë‹¤ìŒ ì„œë¸Œ ì‹¤í–‰
         manager.CurrentState.RunSubScript(dot, manager);
     }
 
@@ -240,8 +240,8 @@ public class SubDialogue : MonoBehaviour
         {
             menuController.alloff();
         }
-        Debug.Log("ÀÌ¾î¼­ ÇÏ±â");
-        scroll.stopscroll(); //ÀÓ½Ã ¹æÆí
+        Debug.Log("ì´ì–´ì„œ í•˜ê¸°");
+        scroll.stopscroll(); //ì„ì‹œ ë°©í¸
         SubPanel.gameObject.SetActive(true);
         SubPanel.Subcontinue();
     }
@@ -257,12 +257,12 @@ public class SubDialogue : MonoBehaviour
             Debug.LogError("Dialogue file not found in Resources folder.");
             return;
         }
-        scroll.stopscroll(); //ÀÓ½Ã ¹æÆí
+        scroll.stopscroll(); //ì„ì‹œ ë°©í¸
         string[] lines = dialogueData.text.Split('\n');
         LoadSubDialogue(lines);
         subPanel.dialogueIndex = index;
         StartCoroutine(ShowNextDialogueAfterDelay(2.0f, subPanel));
-        //manager.ScrollManager.StopCamera(true); -> ÀÚ²Ù ¿À·ù ¹ß»ıÇÔ
+        //manager.ScrollManager.StopCamera(true); -> ìê¾¸ ì˜¤ë¥˜ ë°œìƒí•¨
         if (menuController)
             menuController.alloff();
     }

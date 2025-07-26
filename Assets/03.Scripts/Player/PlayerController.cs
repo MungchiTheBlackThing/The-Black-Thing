@@ -9,8 +9,8 @@ using Assets.Script.Reward;
 using UnityEngine.SceneManagement;
 
 [Serializable]
-public enum LANGUAGE 
-{ 
+public enum LANGUAGE
+{
     KOREAN = 0,
     ENGLISH
 }
@@ -18,28 +18,28 @@ public enum LANGUAGE
 public class PlayerController : MonoBehaviour, IPlayerInterface
 {
     const string playerInfoDataFileName = "PlayerData.json";
-    //���� �÷��̾�
+    //실제 플레이어
     private PlayerInfo player;
-    //player ���� ��� �ð�
+    //player 접속 경과 시간
     float elapsedTime;
-    //�ӽ� ������ ���� serialize..
+    //임시 저장을 위한 serialize..
     [SerializeField]
     string nickname;
     [SerializeField]
     private int currentChapter;
-    const float passTime = 1800f; //30���� �������� �Ѵ�.
-    
-    
+    const float passTime = 1800f; //30분을 기준으로 한다.
+
+
     public delegate void NextPhaseDelegate(GamePatternState state);
     public NextPhaseDelegate nextPhaseDelegate;
 
-    /*������ ������ ������ �� idx�� �� ���� ����ϸ� �ȴ�.*/
+    /*준현아 페이지 저장할 때 idx는 이 변수 사용하면 된다.*/
     [SerializeField]
-    [Tooltip("�ڷΰ��� ������ ���� ����")]
+    [Tooltip("뒤로가기 구현을 위한 스택")]
     Stack<int> gobackPage;
 
     [SerializeField]
-    [Tooltip("���� �Ŵ���")]
+    [Tooltip("번역 매니저")]
     TranslateManager translateManager;
     [SerializeField]
     GameObject gamemanger;
@@ -54,13 +54,13 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     SubDialogue subDialogue;
     private void Awake()
     {
-        //������ player�� �������� �����ؼ� ������ ����.. ������ �̸� �ʱ�ȭ�ؼ� ����Ѵ�.
-        Debug.Log("����");
+        //앞으로 player을 동적으로 생성해서 관리할 예정.. 아직은 미리 초기화해서 사용한다.
+        Debug.Log("시작");
         gobackPage = new Stack<int>();
         player = new PlayerInfo(nickname, 1, GamePatternState.Watching);
         readStringFromPlayerFile();
         translateManager = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
-        Debug.Log("��������");
+        Debug.Log("번역시작");
         translateManager.Translate(GetLanguage());
         successSubDialDelegate += SuccessSubDial;
         currentChapter = GetChapter();
@@ -73,13 +73,13 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     }
     // Update is called once per frame
-    //1�ð��� �Ǿ����� üũ�ϱ� ���ؼ� �����뵵
+    //1시간이 되었는지 체크하기 위해서 저정용도
     void Update()
     {
         elapsedTime += Time.deltaTime;
 
     }
-   
+
 
     public void ProgressSubDial(string title)
     {
@@ -93,12 +93,12 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
         EReward eReward;
 
-        if (gamemanger.GetComponent<Alertmanager>() != null)    
+        if (gamemanger.GetComponent<Alertmanager>() != null)
             gamemanger.GetComponent<Alertmanager>().Alerton();
-        //�迭 ������ �ִ´�.
+        //배열 변수에 넣는다.
         if (Enum.TryParse<EReward>(reward, true, out eReward))
         {
-            //�÷��̾� ��Ʈ�ѷ��� � ������ �޾Ҵ��� ����Ʈ �߰�.
+            //플레이어 컨트롤러에 어떤 보상을 받았는지 리스트 추가.
             AddReward(eReward);
             Debug.Log(eReward);
             RewardPopup.SetActive(true);
@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
         if (phase > (int)GamePatternState.NextChapter)
         {
-            Debug.Log("���� é��");
+            Debug.Log("다음 챕터");
             player.currentPhase = GamePatternState.Watching;
             SetChapter();
         }
@@ -134,16 +134,16 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
             if (player.currentPhase == GamePatternState.NextChapter)
             {
-                Debug.Log("NextChapter ���� ���� �� ChangeGameState ȣ��");
+                Debug.Log("NextChapter 상태 진입 → ChangeGameState 호출");
                 gamemanger.GetComponent<GameManager>().ChangeGameState(GamePatternState.NextChapter);
-                return; // �� �̻� �Ʒ� ���� �������� ����
+                return; // 더 이상 아래 로직 실행하지 않음
             }
         }
 
-        // ����: ���� currentPhase ���� �� SetPhase�� subseq ���� �� delegate ȣ��
+        // 순서: 먼저 currentPhase 적용 → SetPhase로 subseq 설정 → delegate 호출
         gamemanger.GetComponent<GameManager>().SetPhase(player.currentPhase);
 
-        Debug.Log("[Test] nextPhaseDelegate ȣ�� ����");
+        Debug.Log("[Test] nextPhaseDelegate 호출 직전");
         nextPhaseDelegate?.Invoke(player.currentPhase);
     }
 
@@ -151,14 +151,14 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public void SetSubPhase(int phaseIdx)
     {
         if (phaseIdx < 0 || phaseIdx >= 4) return;
-        Debug.Log("������ �ε���" + phaseIdx);
-        Debug.Log("�̰� üũ: " + GetChapter() * 4 + phaseIdx);
+        Debug.Log("페이즈 인덱스" + phaseIdx);
+        Debug.Log("이거 체크: " + GetChapter() * 4 + phaseIdx);
         if (gamemanger.GetComponent<Alertmanager>() != null)
         {
             gamemanger.GetComponent<Alertmanager>().isAlert = true;
             gamemanger.GetComponent<Alertmanager>().RewardAlerts[phaseIdx].SetActive(true);
         }
-            
+
         player.SetSubPhase(phaseIdx);
     }
 
@@ -199,14 +199,19 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         player.CurrentChapter += 1;
         currentChapter = player.CurrentChapter;
+        //잘 되는건지 모르겠다
+        //huijin
+        //메인 씬에서 챕터 변경될 때마다 챕터 화면 보이게 
+        Debug.Log("CurrentChapter: " + currentChapter);
+        LoadSceneManager.Instance.LoadChapterImage(currentChapter); 
         player.subseq = 0;
-        ClearWatchedSubseq(); // �ô� ���� ����Ʈ�� �ʱ�ȭ
+        ClearWatchedSubseq(); // 봤던 서브 리스트도 초기화
         AudioManager.instance.UpdateBGMByChapter(player.CurrentChapter);
         WritePlayerFile();
     }
     public void SetLanguage(LANGUAGE language)
     {
-        Debug.Log("���� ���: "+language);
+        Debug.Log("현재 언어: " + language);
         player.language = language;
 
         translateManager.Translate(player.language);
@@ -250,16 +255,16 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         return player.subseq;
     }
-    //�ð� ���� : (���� �ð� - watching�� ����� �ð�)+60��
+    //시간 설정 : (현재 시간 - watching이 진행된 시간)+60분
     public void PassWathingTime()
     {
-        //���� ����ð��� 60���� ���Ѵ�.
-        //Time.deltaTime => 1�� 
-        //1�� => 60��
-        //60�� => 60*60 => 3600��
-        //30�� => 60*30 => 1800��
-        //120�� => 60*120 => 7200��
-        elapsedTime += (passTime * 2); //1�ð� Update
+        //현재 진행시간에 60분을 더한다.
+        //Time.deltaTime => 1초 
+        //1분 => 60초
+        //60분 => 60*60 => 3600초
+        //30분 => 60*30 => 1800초
+        //120분 => 60*120 => 7200초
+        elapsedTime += (passTime * 2); //1시간 Update
     }
     public void PassWriting()
     {
@@ -267,7 +272,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void PassThinkingTime()
     {
-        elapsedTime += (passTime * 4); //2�ð� 1800*4 => 7200
+        elapsedTime += (passTime * 4); //2시간 1800*4 => 7200
     }
     public void EntryGame(DateTime dateTime)
     {
@@ -311,7 +316,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void AddReward(EReward InRewardName)
     {
-        // �̹� ����Ʈ�� �ش� �����尡 ���ٸ� �߰�
+        // 이미 리스트에 해당 리워드가 없다면 추가
         if (!player.rewardList.Contains(InRewardName))
         {
             player.rewardList.Add(InRewardName);
@@ -320,7 +325,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     public List<EReward> GetRewards()
     {
-        Debug.Log("������ ���: " + player.rewardList);
+        Debug.Log("리워드 목록: " + player.rewardList);
         return player.rewardList;
     }
 
@@ -342,7 +347,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void UpdateArcheType(string tag)
     {
-        Debug.Log("�÷��� �±� : " + tag);
+        Debug.Log("플러스 태그 : " + tag);
         if (tag == "sun")
         {
             player.archeType.sun++;
@@ -362,7 +367,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void DownArcheType(string tag)
     {
-        Debug.Log("���̳ʽ� �±� : " + tag);
+        Debug.Log("마이너스 태그 : " + tag);
         if (tag == "sun")
         {
             player.archeType.sun--;
@@ -386,8 +391,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void WritePlayerFile()
     {
-        //PlayerInfo Ŭ���� ���� �÷��̾� ������ Json ���·� ������ �� ���ڿ� ����
-        //���� player nextchapter���, ����
+        //PlayerInfo 클래스 내에 플레이어 정보를 Json 형태로 포멧팅 된 문자열 생성
+        //만약 player nextchapter라면, 변경
         player.currentPhase = player.currentPhase == GamePatternState.NextChapter ? GamePatternState.Watching : player.currentPhase;
         string jsonData = JsonUtility.ToJson(player);
         string path = pathForDocumentsFile(playerInfoDataFileName);
@@ -444,7 +449,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         if (pauseStatus)
         {
-            // ���ø����̼��� ��׶���� ��ȯ�� �� ������ �ڵ�
+            // 애플리케이션이 백그라운드로 전환될 때 실행할 코드
             WritePlayerFile();
         }
     }

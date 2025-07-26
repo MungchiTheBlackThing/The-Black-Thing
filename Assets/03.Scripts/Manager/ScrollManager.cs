@@ -8,16 +8,16 @@ using static UnityEngine.GraphicsBuffer;
 
 public class ScrollManager : MonoBehaviour
 {
-    // »ó¼ö : ÀÌµ¿ °ü·Ã
-    private const float DirectionForceReduceRate = 0.935f; // °¨¼ÓºñÀ²
-    private const float DirectionForceMin = 0.001f; // ¼³Á¤Ä¡ ÀÌÇÏÀÏ °æ¿ì ¿òÁ÷ÀÓÀ» ¸ØÃã
+    // ìƒìˆ˜ : ì´ë™ ê´€ë ¨
+    private const float DirectionForceReduceRate = 0.935f; // ê°ì†ë¹„ìœ¨
+    private const float DirectionForceMin = 0.001f; // ì„¤ì •ì¹˜ ì´í•˜ì¼ ê²½ìš° ì›€ì§ìž„ì„ ë©ˆì¶¤
 
-    // º¯¼ö : ÀÌµ¿ °ü·Ã
-    private bool userMoveInput; // ÇöÀç Á¶ÀÛÀ» ÇÏ°íÀÖ´ÂÁö È®ÀÎÀ» À§ÇÑ º¯¼ö
-    private Vector3 startPosition;  // ÀÔ·Â ½ÃÀÛ À§Ä¡¸¦ ±â¾ï
-    private Vector3 directionForce; // Á¶ÀÛÀ» ¸ØÃèÀ»¶§ ¼­¼­È÷ °¨¼ÓÇÏ¸é¼­ ÀÌµ¿ ½ÃÅ°±â À§ÇÑ º¯¼ö
+    // ë³€ìˆ˜ : ì´ë™ ê´€ë ¨
+    private bool userMoveInput; // í˜„ìž¬ ì¡°ìž‘ì„ í•˜ê³ ìžˆëŠ”ì§€ í™•ì¸ì„ ìœ„í•œ ë³€ìˆ˜
+    private Vector3 startPosition;  // ìž…ë ¥ ì‹œìž‘ ìœ„ì¹˜ë¥¼ ê¸°ì–µ
+    private Vector3 directionForce; // ì¡°ìž‘ì„ ë©ˆì·„ì„ë•Œ ì„œì„œížˆ ê°ì†í•˜ë©´ì„œ ì´ë™ ì‹œí‚¤ê¸° ìœ„í•œ ë³€ìˆ˜
 
-    // ÄÄÆ÷³ÍÆ®
+    // ì»´í¬ë„ŒíŠ¸
     private Camera camera;
 
     [SerializeField]
@@ -74,35 +74,35 @@ public class ScrollManager : MonoBehaviour
     {
         if(isScreenStatic == false)
         {
-            // Ä«¸Þ¶ó Æ÷Áö¼Ç ÀÌµ¿
+            // ì¹´ë©”ë¼ í¬ì§€ì…˜ ì´ë™
             ControlCameraPosition();
 
-            // Á¶ÀÛÀ» ¸ØÃèÀ»¶§ °¨¼Ó
+            // ì¡°ìž‘ì„ ë©ˆì·„ì„ë•Œ ê°ì†
             ReduceDirectionForce();
 
-            // Ä«¸Þ¶ó À§Ä¡ ¾÷µ¥ÀÌÆ®
+            // ì¹´ë©”ë¼ ìœ„ì¹˜ ì—…ë°ì´íŠ¸
             UpdateCameraPosition();
         }
     }
 
     private void ControlCameraPosition()
     {
-        //World ÁÂÇ¥ °ªÀ» °¡Á®¿Â´Ù.
+        //World ì¢Œí‘œ ê°’ì„ ê°€ì ¸ì˜¨ë‹¤.
         var mouseWorldPosition = camera.ScreenToWorldPoint(Input.mousePosition);
 
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            // ¸¶¿ì½º°¡ UI À§¿¡ ÀÖÀ» ¶§´Â ÀÌ ÇÔ¼ö°¡ µ¿ÀÛÇÏÁö ¾Êµµ·Ï ÇÔ
+            // ë§ˆìš°ìŠ¤ê°€ UI ìœ„ì— ìžˆì„ ë•ŒëŠ” ì´ í•¨ìˆ˜ê°€ ë™ìž‘í•˜ì§€ ì•Šë„ë¡ í•¨
             return;
         }
 
-        if (Input.GetMouseButtonDown(0)) //ÀÔ·ÂÀÌ Ã³À½ µé¾î¿ÔÀ» ¶§
+        if (Input.GetMouseButtonDown(0)) //ìž…ë ¥ì´ ì²˜ìŒ ë“¤ì–´ì™”ì„ ë•Œ
         {
-            CameraPositionMoveStart(mouseWorldPosition); //´©¸¥ ½ÃÀÛ°ª Àü´Þ
+            CameraPositionMoveStart(mouseWorldPosition); //ëˆ„ë¥¸ ì‹œìž‘ê°’ ì „ë‹¬
         }
-        else if (Input.GetMouseButton(0)) //ÀÔ·ÂÀÌ ÁøÇà ÁßÀÏ ¶§
+        else if (Input.GetMouseButton(0)) //ìž…ë ¥ì´ ì§„í–‰ ì¤‘ì¼ ë•Œ
         {
-            CameraPositionMoveProgress(mouseWorldPosition); //ÀÌµ¿ ¹æÇâÀ» ±¸ÇÏ±â À§ÇØ¼­ ÇöÀç ÁÂÇ¥°ª
+            CameraPositionMoveProgress(mouseWorldPosition); //ì´ë™ ë°©í–¥ì„ êµ¬í•˜ê¸° ìœ„í•´ì„œ í˜„ìž¬ ì¢Œí‘œê°’
         }
         else
         {
@@ -123,7 +123,7 @@ public class ScrollManager : MonoBehaviour
             return;
         }
 
-        //ÀÌÀü À§Ä¡¿¡¼­ ÇöÀç À§Ä¡¸¦ »©¼­ ¹æÇâÀ» ±¸ÇÑ´Ù.
+        //ì´ì „ ìœ„ì¹˜ì—ì„œ í˜„ìž¬ ìœ„ì¹˜ë¥¼ ë¹¼ì„œ ë°©í–¥ì„ êµ¬í•œë‹¤.
         directionForce = startPosition - targetPosition;
     }
     private void CameraPositionMoveEnd()
@@ -132,16 +132,16 @@ public class ScrollManager : MonoBehaviour
     }
     private void ReduceDirectionForce()
     {
-        // Á¶ÀÛ ÁßÀÏ¶§´Â ¾Æ¹«°Íµµ ¾ÈÇÔ -> °¨¼ÓÇÏÁö ¾Ê¾Æµµ µÈ´Ù., ½ºÅ©·Ñ ´À³¦À» ÁÖ±âÀ§ÇØ¼­ °¨¼ÓÀ» »ç¿ë
+        // ì¡°ìž‘ ì¤‘ì¼ë•ŒëŠ” ì•„ë¬´ê²ƒë„ ì•ˆí•¨ -> ê°ì†í•˜ì§€ ì•Šì•„ë„ ëœë‹¤., ìŠ¤í¬ë¡¤ ëŠë‚Œì„ ì£¼ê¸°ìœ„í•´ì„œ ê°ì†ì„ ì‚¬ìš©
         if (userMoveInput)
         {
             return;
         }
 
-        // °¨¼Ó ¼öÄ¡ Àû¿ë, ÇöÀç ¹æÇâ¼º¿¡¼­ ¼Óµµ¸¦ Á¶±Ý¾¿ ¾àÇÏ°Ô ÁÖ¸é¼­ °¨¼ÓÇØÁØ´Ù.
+        // ê°ì† ìˆ˜ì¹˜ ì ìš©, í˜„ìž¬ ë°©í–¥ì„±ì—ì„œ ì†ë„ë¥¼ ì¡°ê¸ˆì”© ì•½í•˜ê²Œ ì£¼ë©´ì„œ ê°ì†í•´ì¤€ë‹¤.
         directionForce *= DirectionForceReduceRate;
 
-        // ÀÛÀº ¼öÄ¡°¡ µÇ¸é °­Á¦·Î ¸ØÃã
+        // ìž‘ì€ ìˆ˜ì¹˜ê°€ ë˜ë©´ ê°•ì œë¡œ ë©ˆì¶¤
         if (directionForce.magnitude < DirectionForceMin)
         {
             directionForce = Vector3.zero;
@@ -149,14 +149,14 @@ public class ScrollManager : MonoBehaviour
     }
     private void UpdateCameraPosition()
     {
-        // ÀÌµ¿ ¼öÄ¡°¡ ¾øÀ¸¸é ¾Æ¹«°Íµµ ¾ÈÇÔ
+        // ì´ë™ ìˆ˜ì¹˜ê°€ ì—†ìœ¼ë©´ ì•„ë¬´ê²ƒë„ ì•ˆí•¨
         if (directionForce == Vector3.zero)
         {
             return;
         }
 
-        var currentPosition = transform.position; //ÇöÀç À§Ä¡
-        var targetPosition = currentPosition + directionForce; //ÈûÀ» ´õÇØÁÖ¸é ¸ñÇ¥ À§Ä¡°¡ ³ª¿Â´Ù.
+        var currentPosition = transform.position; //í˜„ìž¬ ìœ„ì¹˜
+        var targetPosition = currentPosition + directionForce; //íž˜ì„ ë”í•´ì£¼ë©´ ëª©í‘œ ìœ„ì¹˜ê°€ ë‚˜ì˜¨ë‹¤.
 
         targetPosition.x = Mathf.Clamp(targetPosition.x, camLimitValue.x, camLimitValue.y);
         targetPosition.y = 0;
@@ -166,7 +166,7 @@ public class ScrollManager : MonoBehaviour
     }
     public void stopscroll()
     {
-        //this.transform.position = originalPos; //ÀÓ½Ã¹æÆíÀÌ¶ó ¾ø¾Ö¾ßµÊ
+        //this.transform.position = originalPos; //ìž„ì‹œë°©íŽ¸ì´ë¼ ì—†ì• ì•¼ë¨
         isScreenStatic = true;
     }
     public void scrollable()
