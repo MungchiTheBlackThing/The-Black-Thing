@@ -19,7 +19,7 @@ public class TouchGuide : MonoBehaviour
         subPanel = GameObject.Find("SubPanel").GetComponent<SubPanel>();
         if (myButton != null)
         {
-            // ¹öÆ°ÀÇ onClick ÀÌº¥Æ®¿¡ ÇÔ¼ö Ãß°¡
+            // ë²„íŠ¼ì˜ onClick ì´ë²¤íŠ¸ì— í•¨ìˆ˜ ì¶”ê°€
             myButton.onClick.AddListener(() => tuto2Click(selectedDot, determine));
         }
         else
@@ -32,7 +32,7 @@ public class TouchGuide : MonoBehaviour
         subPanel = GameObject.Find("SubPanel").GetComponent<SubPanel>();
         if (myButton != null)
         {
-            // ¹öÆ°ÀÇ onClick ÀÌº¥Æ®¿¡ ÇÔ¼ö Ãß°¡
+            // ë²„íŠ¼ì˜ onClick ì´ë²¤íŠ¸ì— í•¨ìˆ˜ ì¶”ê°€
             myButton.onClick.AddListener(() => tuto3Click(selectedDot, determine));
         }
         else
@@ -77,7 +77,7 @@ public class TouchGuide : MonoBehaviour
     {
         if (myButton != null)
         {
-            // ¹öÆ°ÀÇ onClick ÀÌº¥Æ®¿¡ ÇÔ¼ö Ãß°¡
+            // ë²„íŠ¼ì˜ onClick ì´ë²¤íŠ¸ì— í•¨ìˆ˜ ì¶”ê°€
             myButton.onClick.AddListener(() => skipClick());
             Touchground.SetActive(true);
         }
