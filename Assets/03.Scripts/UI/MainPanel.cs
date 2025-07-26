@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 public class MainPanel : MonoBehaviour
 {
-    //°ÔÀÓ¸Å´ÏÀú
+    //ê²Œì„ë§¤ë‹ˆì €
     [SerializeField]
     GameManager gameManager;
     [SerializeField] 
@@ -41,7 +41,7 @@ public class MainPanel : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        //°ÔÀÓ¸Å´ÏÀú °ÔÀÓÆĞÅÏ
+        //ê²Œì„ë§¤ë‹ˆì € ê²Œì„íŒ¨í„´
         mainDialogue = (MainDialogue)gameManager.CurrentState;
         pc = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         MainClick = GameObject.Find("MainClick");
@@ -139,12 +139,12 @@ public class MainPanel : MonoBehaviour
         {
             string[] nextKeys = currentEntry.NextLineKey.Split('|');
             Debug.Log(currentEntry.DeathNote);
-            //¿©±â¼­ sun, moon, active, passive Ã¼Å©ÇØ¼­ ¿Ã¸®±â
+            //ì—¬ê¸°ì„œ sun, moon, active, passive ì²´í¬í•´ì„œ ì˜¬ë¦¬ê¸°
             if (currentEntry.DeathNote != "")
             {
-                string[] archeTags = currentEntry.DeathNote.Split('|'); // ¿¹: "sun|moon", "moon|sun", "active|passive", "passive|active" µî
+                string[] archeTags = currentEntry.DeathNote.Split('|'); // ì˜ˆ: "sun|moon", "moon|sun", "active|passive", "passive|active" ë“±
 
-                if (archeTags.Length == 2) // Ç×»ó µÎ °³ÀÇ °ªÀÌ Á¸ÀçÇØ¾ß ÇÔ
+                if (archeTags.Length == 2) // í•­ìƒ ë‘ ê°œì˜ ê°’ì´ ì¡´ì¬í•´ì•¼ í•¨
                 {
                     string firstTag = archeTags[0].Trim().ToLower();
                     string secondTag = archeTags[1].Trim().ToLower();
@@ -206,13 +206,13 @@ public class MainPanel : MonoBehaviour
         SelectionPanel.SetActive(false);
         Selection3Panel.SetActive(false);
         Selection4Panel.SetActive(false);
-        Debug.Log("µ¹¾Æ°¥¼ö ÀÖ´Â ¹øÈ£: " + backindex);
+        Debug.Log("ëŒì•„ê°ˆìˆ˜ ìˆëŠ” ë²ˆí˜¸: " + backindex);
         ShowNextDialogue();
     }
     
     public void DialEnd()
     {
-        Debug.Log("¸ŞÀÎ ³¡");
+        Debug.Log("ë©”ì¸ ë");
         mainDialogue.currentDialogueList.Clear();
         dialogueIndex = 0;
         backindex = -1;
@@ -225,7 +225,7 @@ public class MainPanel : MonoBehaviour
         else
         {
             PanelOff();
-            Debug.Log("¹öÆ° ²ô±â");
+            Debug.Log("ë²„íŠ¼ ë„ê¸°");
             BackBut.SetActive(false);
             mainDialogue.MainEnd();
         }
@@ -272,7 +272,7 @@ public class MainPanel : MonoBehaviour
                     }
                     if (animScene == "1")
                     {
-                        Debug.Log("¿µ»ó ½ÃÀÛ");
+                        Debug.Log("ì˜ìƒ ì‹œì‘");
                         gameManager.mainVideo.PlayVideo();
                     }
                     DotPanel.SetActive(true);
@@ -285,7 +285,7 @@ public class MainPanel : MonoBehaviour
                     MainClick.SetActive(true);
                     if (animScene == "1")
                     {
-                        Debug.Log("¿µ»ó ½ÃÀÛ");
+                        Debug.Log("ì˜ìƒ ì‹œì‘");
                         gameManager.mainVideo.PlayVideo();
                     }
                     PlayPanel.SetActive(true);
@@ -297,7 +297,7 @@ public class MainPanel : MonoBehaviour
             case "selection":
                 if (animScene == "1")
                 {
-                    Debug.Log("¿µ»ó ½ÃÀÛ");
+                    Debug.Log("ì˜ìƒ ì‹œì‘");
                     gameManager.mainVideo.PlayVideo();
                 }
                 SelectionPanel.SetActive(true);
@@ -307,7 +307,7 @@ public class MainPanel : MonoBehaviour
             case "textbox":
                 if (animScene == "1")
                 {
-                    Debug.Log("¿µ»ó ½ÃÀÛ");
+                    Debug.Log("ì˜ìƒ ì‹œì‘");
                     gameManager.mainVideo.PlayVideo();
                 }
                 InputPanel.SetActive(true);
@@ -319,7 +319,7 @@ public class MainPanel : MonoBehaviour
             case "checkbox3":
                 if (animScene == "1")
                 {
-                    Debug.Log("¿µ»ó ½ÃÀÛ");
+                    Debug.Log("ì˜ìƒ ì‹œì‘");
                     gameManager.mainVideo.PlayVideo();
                 }
                 Checkbox3Panel.SetActive(true);
@@ -330,7 +330,7 @@ public class MainPanel : MonoBehaviour
             case "checkbox4":
                 if (animScene == "1")
                 {
-                    Debug.Log("¿µ»ó ½ÃÀÛ");
+                    Debug.Log("ì˜ìƒ ì‹œì‘");
                     gameManager.mainVideo.PlayVideo();
                 }
                 Checkbox4Panel.SetActive(true);
@@ -342,7 +342,7 @@ public class MainPanel : MonoBehaviour
             case "selection3":
                 if (animScene == "1")
                 {
-                    Debug.Log("¿µ»ó ½ÃÀÛ");
+                    Debug.Log("ì˜ìƒ ì‹œì‘");
                     gameManager.mainVideo.PlayVideo();
                 }
                 Selection3Panel.SetActive(true);
@@ -353,7 +353,7 @@ public class MainPanel : MonoBehaviour
             case "selection4":
                 if (animScene == "1")
                 {
-                    Debug.Log("¿µ»ó ½ÃÀÛ");
+                    Debug.Log("ì˜ìƒ ì‹œì‘");
                     gameManager.mainVideo.PlayVideo();
                 }
                 Selection4Panel.SetActive(true);
@@ -431,13 +431,13 @@ public class MainPanel : MonoBehaviour
     {
         if (backindex != -1)
         {
-            // ¾ÆÁ÷ backindex¿¡ µµ´ŞÇÏÁö ¾Ê¾Ò´Ù¸é
+            // ì•„ì§ backindexì— ë„ë‹¬í•˜ì§€ ì•Šì•˜ë‹¤ë©´
             if (dialogueIndex > backindex)
             {
-                dialogueIndex--; // ÇÑ Ä­ µÚ·Î °¡±â
+                dialogueIndex--; // í•œ ì¹¸ ë’¤ë¡œ ê°€ê¸°
                 ShowNextDialogue();
             }
-            // µü backindex¿¡ µµ´ŞÇßÀ» ¶§ µ¿ÀÛ
+            // ë”± backindexì— ë„ë‹¬í–ˆì„ ë•Œ ë™ì‘
             else if (dialogueIndex == backindex)
             {
                 if (!string.IsNullOrEmpty(backtag))

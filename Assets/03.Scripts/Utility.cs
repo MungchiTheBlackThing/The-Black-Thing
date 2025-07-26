@@ -6,6 +6,9 @@ public class Utility : MonoBehaviour
 {
     public static Utility Instance;
 
+    private Action onFirstTouch;
+    private bool waitingForTouch = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -19,7 +22,7 @@ public class Utility : MonoBehaviour
         }
     }
 
-    // ActionÀ» ÀÏÁ¤ ½Ã°£ ÈÄ¿¡ ½ÇÇàÇÏ´Â ¸Þ¼­µå
+    // Actionì„ ì¼ì • ì‹œê°„ í›„ì— ì‹¤í–‰í•˜ëŠ” ë©”ì„œë“œ
     public void InvokeAfterDelay(Action method, float delay)
     {
         StartCoroutine(InvokeCoroutine(method, delay));
@@ -35,10 +38,31 @@ public class Utility : MonoBehaviour
     {
         if (prefab == null)
         {
-            Debug.LogError("PrefabÀÌ nullÀÔ´Ï´Ù.");
+            Debug.LogError("Prefabì´ nullìž…ë‹ˆë‹¤.");
             return null;
         }
 
         return Instantiate(prefab, parent);
+    }
+
+    // í„°ì¹˜ í•œ ë²ˆ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„œë“œ
+    public void WaitForFirstTouch(Action callback)
+    {
+        if (waitingForTouch) return;
+
+        onFirstTouch = callback;
+        waitingForTouch = true;
+    }
+
+    private void Update()
+    {
+        if (!waitingForTouch) return;
+
+        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
+        {
+            waitingForTouch = false;
+            onFirstTouch?.Invoke();
+            onFirstTouch = null;
+        }
     }
 }

@@ -13,7 +13,7 @@ public enum TutorialState
 {
     Sub,
     Main,
-    End, // ÀÌ ´Ü°è·Î ³Ñ¾î°¡¸é ¿À·ù, ´ÙÀ½ ´Ü°è 0À¸·Î ÀÌµ¿ÇØ¾ß ÇÔ.
+    End, // ì´ ë‹¨ê³„ë¡œ ë„˜ì–´ê°€ë©´ ì˜¤ë¥˜, ë‹¤ìŒ ë‹¨ê³„ 0ìœ¼ë¡œ ì´ë™í•´ì•¼ í•¨.
 };
 
 public class TutorialManager : GameManager
@@ -34,7 +34,7 @@ public class TutorialManager : GameManager
                 instance = FindObjectOfType<TutorialManager>();
                 if (instance == null)
                 {
-                    Debug.LogError("TutorialManager ÀÎ½ºÅÏ½º¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+                    Debug.LogError("TutorialManager ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
                 }
             }
             return instance;
@@ -52,7 +52,7 @@ public class TutorialManager : GameManager
             Destroy(gameObject);
             return;
         }
-        Debug.Log("À§Ä¡ È®ÀÎ: " + Application.persistentDataPath);
+        Debug.Log("ìœ„ì¹˜ í™•ì¸: " + Application.persistentDataPath);
         states = new Dictionary<TutorialState, GameState>();
         //dots = new Dictionary<TutorialState, DotState>();
         states[TutorialState.Sub] = new Tutorial.Sub();
@@ -67,25 +67,35 @@ public class TutorialManager : GameManager
             Permission.RequestUserPermission(Permission.ExternalStorageWrite);
         }
 
-        pc = GameObject.FindWithTag("Player")?.GetComponent<PlayerController>();
-        if (pc == null) Debug.LogError("PlayerController¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù!");
-
-        objectManager = GameObject.FindWithTag("ObjectManager")?.GetComponent<ObjectManager>();
-        if (objectManager == null) Debug.LogError("ObjectManager¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù!");
-
-        scrollManager = Camera.main?.GetComponent<ScrollManager>();
-        if (scrollManager == null) Debug.LogError("ScrollManager¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù!");
-
-        cameraZoom = Camera.main?.GetComponent<CameraZoom>();
-        if (cameraZoom == null) Debug.LogError("CameraZoom¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù!");
-
-        dot = GameObject.FindWithTag("DotController").GetComponent<DotController>();
-        if (dot == null) Debug.LogError("DotController¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù!");
+        
     }
 
     private void Start()
     {
         mainDialoguePanel?.GetComponent<MainPanel>()?.InitializePanels();
+        //ë¡œë”©í™”ë©´ ì¶”ê°€ í›„ ì¹´ë©”ë¼ë¥¼ ì°¾ì§€ ëª»í•˜ëŠ” ì˜¤ë¥˜ê°€ ë°œìƒí•´ì„œ êµ¬ì¡°ë¥¼ ì¡°ê¸ˆ ìˆ˜ì •í–ˆìŠµë‹ˆë‹¤
+        StartCoroutine(InitTutorial());
+    }
+
+    private IEnumerator InitTutorial()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        pc = GameObject.FindWithTag("Player")?.GetComponent<PlayerController>();
+        if (pc == null) Debug.LogError("PlayerControllerë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
+
+        objectManager = GameObject.FindWithTag("ObjectManager")?.GetComponent<ObjectManager>();
+        if (objectManager == null) Debug.LogError("ObjectManagerë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
+
+        scrollManager = Camera.main?.GetComponent<ScrollManager>();
+        if (scrollManager == null) Debug.LogError("ScrollManagerë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
+
+        cameraZoom = Camera.main?.GetComponent<CameraZoom>();
+        if (cameraZoom == null) Debug.LogError("CameraZoomë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
+
+        dot = GameObject.FindWithTag("DotController").GetComponent<DotController>();
+        if (dot == null) Debug.LogError("DotControllerë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
+
         InitGame();
     }
 
@@ -93,29 +103,30 @@ public class TutorialManager : GameManager
     {
         if (states == null)
         {
-            Debug.LogError("states°¡ ÃÊ±âÈ­µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("statesê°€ ì´ˆê¸°í™”ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
             return;
         }
 
         if (!states.ContainsKey(patternState))
         {
-            Debug.LogError($"'{patternState}'´Â À¯È¿ÇÏÁö ¾ÊÀº »óÅÂÀÔ´Ï´Ù.");
+            Debug.LogError($"'{patternState}'ëŠ” ìœ íš¨í•˜ì§€ ì•Šì€ ìƒíƒœì…ë‹ˆë‹¤.");
             return;
         }
 
         if (activeState != null)
         {
-            activeState.Exit(this, this); // 'this'´Â ¿Ã¹Ù¸¥ TutorialManager¸¦ Àü´ŞÇØ¾ß ÇÔ.
+            activeState.Exit(this, this); // 'this'ëŠ” ì˜¬ë°”ë¥¸ TutorialManagerë¥¼ ì „ë‹¬í•´ì•¼ í•¨.
         }
 
         tutostate = patternState;
         activeState = states[patternState];
         activeState.Enter(this, dot, this);
+        
     }
 
     private void InitGame()
     {
-        int hh = DateTime.Now.Hour; // ÇöÀç ½Ã°£ °¡Á®¿À±â
+        int hh = DateTime.Now.Hour; // í˜„ì¬ ì‹œê°„ ê°€ì ¸ì˜¤ê¸°
 
         if (hh >= (int)STime.T_DAWN && hh < (int)STime.T_MORNING)
         {
@@ -139,8 +150,8 @@ public class TutorialManager : GameManager
 
     private IEnumerator LoadDataAsync()
     {
-        float backgroundLoadWeight = 0.5f; // ¹è°æ ·Îµå ºñÁß
-        float objectLoadWeight = 0.5f;     // ¿ÀºêÁ§Æ® ·Îµå ºñÁß
+        float backgroundLoadWeight = 0.5f; // ë°°ê²½ ë¡œë“œ ë¹„ì¤‘
+        float objectLoadWeight = 0.5f;     // ì˜¤ë¸Œì íŠ¸ ë¡œë“œ ë¹„ì¤‘
 
         loadingProgressBar.value = 0;
 
@@ -157,7 +168,7 @@ public class TutorialManager : GameManager
         }
         else
         {
-            Debug.LogError("¹è°æ ·Îµå ½ÇÆĞ!");
+            Debug.LogError("ë°°ê²½ ë¡œë“œ ì‹¤íŒ¨!");
         }
 
         yield return StartCoroutine(TrackObjectLoadProgress(objectLoadWeight));
@@ -165,8 +176,9 @@ public class TutorialManager : GameManager
         loadingProgressBar.value = 1;
 
         TutorialState patternState = (TutorialState)pc.GetAlreadyEndedPhase();
-        tutostate = patternState;
-        activeState = states[patternState];
+        Tutorial.Sub sub = (Tutorial.Sub)states[patternState];
+        sub.InitEnter(this, dot, this);
+        activeState = sub;
         activeState.Enter(this, dot, this);
     }
 

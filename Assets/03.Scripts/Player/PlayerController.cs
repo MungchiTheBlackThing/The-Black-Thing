@@ -9,8 +9,8 @@ using Assets.Script.Reward;
 using UnityEngine.SceneManagement;
 
 [Serializable]
-public enum LANGUAGE 
-{ 
+public enum LANGUAGE
+{
     KOREAN = 0,
     ENGLISH
 }
@@ -18,28 +18,28 @@ public enum LANGUAGE
 public class PlayerController : MonoBehaviour, IPlayerInterface
 {
     const string playerInfoDataFileName = "PlayerData.json";
-    //½ÇÁ¦ ÇÃ·¹ÀÌ¾î
+    //ì‹¤ì œ í”Œë ˆì´ì–´
     private PlayerInfo player;
-    //player Á¢¼Ó °æ°ú ½Ã°£
+    //player ì ‘ì† ê²½ê³¼ ì‹œê°„
     float elapsedTime;
-    //ÀÓ½Ã ÀúÀåÀ» À§ÇÑ serialize..
+    //ì„ì‹œ ì €ì¥ì„ ìœ„í•œ serialize..
     [SerializeField]
     string nickname;
     [SerializeField]
     private int currentChapter;
-    const float passTime = 1800f; //30ºĞÀ» ±âÁØÀ¸·Î ÇÑ´Ù.
-    
-    
+    const float passTime = 1800f; //30ë¶„ì„ ê¸°ì¤€ìœ¼ë¡œ í•œë‹¤.
+
+
     public delegate void NextPhaseDelegate(GamePatternState state);
     public NextPhaseDelegate nextPhaseDelegate;
 
-    /*ÁØÇö¾Æ ÆäÀÌÁö ÀúÀåÇÒ ¶§ idx´Â ÀÌ º¯¼ö »ç¿ëÇÏ¸é µÈ´Ù.*/
+    /*ì¤€í˜„ì•„ í˜ì´ì§€ ì €ì¥í•  ë•Œ idxëŠ” ì´ ë³€ìˆ˜ ì‚¬ìš©í•˜ë©´ ëœë‹¤.*/
     [SerializeField]
-    [Tooltip("µÚ·Î°¡±â ±¸ÇöÀ» À§ÇÑ ½ºÅÃ")]
+    [Tooltip("ë’¤ë¡œê°€ê¸° êµ¬í˜„ì„ ìœ„í•œ ìŠ¤íƒ")]
     Stack<int> gobackPage;
 
     [SerializeField]
-    [Tooltip("¹ø¿ª ¸Å´ÏÀú")]
+    [Tooltip("ë²ˆì—­ ë§¤ë‹ˆì €")]
     TranslateManager translateManager;
     [SerializeField]
     GameObject gamemanger;
@@ -54,13 +54,13 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     SubDialogue subDialogue;
     private void Awake()
     {
-        //¾ÕÀ¸·Î playerÀ» µ¿ÀûÀ¸·Î »ı¼ºÇØ¼­ °ü¸®ÇÒ ¿¹Á¤.. ¾ÆÁ÷Àº ¹Ì¸® ÃÊ±âÈ­ÇØ¼­ »ç¿ëÇÑ´Ù.
-        Debug.Log("½ÃÀÛ");
+        //ì•ìœ¼ë¡œ playerì„ ë™ì ìœ¼ë¡œ ìƒì„±í•´ì„œ ê´€ë¦¬í•  ì˜ˆì •.. ì•„ì§ì€ ë¯¸ë¦¬ ì´ˆê¸°í™”í•´ì„œ ì‚¬ìš©í•œë‹¤.
+        Debug.Log("ì‹œì‘");
         gobackPage = new Stack<int>();
         player = new PlayerInfo(nickname, 1, GamePatternState.Watching);
         readStringFromPlayerFile();
         translateManager = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
-        Debug.Log("¹ø¿ª½ÃÀÛ");
+        Debug.Log("ë²ˆì—­ì‹œì‘");
         translateManager.Translate(GetLanguage());
         successSubDialDelegate += SuccessSubDial;
         currentChapter = GetChapter();
@@ -70,16 +70,16 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     private void Start()
     {
-        
+
     }
     // Update is called once per frame
-    //1½Ã°£ÀÌ µÇ¾ú´ÂÁö Ã¼Å©ÇÏ±â À§ÇØ¼­ ÀúÁ¤¿ëµµ
+    //1ì‹œê°„ì´ ë˜ì—ˆëŠ”ì§€ ì²´í¬í•˜ê¸° ìœ„í•´ì„œ ì €ì •ìš©ë„
     void Update()
     {
         elapsedTime += Time.deltaTime;
 
     }
-   
+
 
     public void ProgressSubDial(string title)
     {
@@ -93,12 +93,12 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
         EReward eReward;
 
-        if (gamemanger.GetComponent<Alertmanager>() != null)    
+        if (gamemanger.GetComponent<Alertmanager>() != null)
             gamemanger.GetComponent<Alertmanager>().Alerton();
-        //¹è¿­ º¯¼ö¿¡ ³Ö´Â´Ù.
+        //ë°°ì—´ ë³€ìˆ˜ì— ë„£ëŠ”ë‹¤.
         if (Enum.TryParse<EReward>(reward, true, out eReward))
         {
-            //ÇÃ·¹ÀÌ¾î ÄÁÆ®·Ñ·¯¿¡ ¾î¶² º¸»óÀ» ¹Ş¾Ò´ÂÁö ¸®½ºÆ® Ãß°¡.
+            //í”Œë ˆì´ì–´ ì»¨íŠ¸ë¡¤ëŸ¬ì— ì–´ë–¤ ë³´ìƒì„ ë°›ì•˜ëŠ”ì§€ ë¦¬ìŠ¤íŠ¸ ì¶”ê°€.
             AddReward(eReward);
             Debug.Log(eReward);
             RewardPopup.SetActive(true);
@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
         if (phase > (int)GamePatternState.NextChapter)
         {
-            Debug.Log("´ÙÀ½ Ã©ÅÍ");
+            Debug.Log("ë‹¤ìŒ ì±•í„°");
             player.currentPhase = GamePatternState.Watching;
             SetChapter();
         }
@@ -134,16 +134,16 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
             if (player.currentPhase == GamePatternState.NextChapter)
             {
-                Debug.Log("NextChapter »óÅÂ ÁøÀÔ ¡æ ChangeGameState È£Ãâ");
+                Debug.Log("NextChapter ìƒíƒœ ì§„ì… â†’ ChangeGameState í˜¸ì¶œ");
                 gamemanger.GetComponent<GameManager>().ChangeGameState(GamePatternState.NextChapter);
-                return; // ´õ ÀÌ»ó ¾Æ·¡ ·ÎÁ÷ ½ÇÇàÇÏÁö ¾ÊÀ½
+                return; // ë” ì´ìƒ ì•„ë˜ ë¡œì§ ì‹¤í–‰í•˜ì§€ ì•ŠìŒ
             }
         }
 
-        // ¼ø¼­: ¸ÕÀú currentPhase Àû¿ë ¡æ SetPhase·Î subseq ¼³Á¤ ¡æ delegate È£Ãâ
+        // ìˆœì„œ: ë¨¼ì € currentPhase ì ìš© â†’ SetPhaseë¡œ subseq ì„¤ì • â†’ delegate í˜¸ì¶œ
         gamemanger.GetComponent<GameManager>().SetPhase(player.currentPhase);
 
-        Debug.Log("[Test] nextPhaseDelegate È£Ãâ Á÷Àü");
+        Debug.Log("[Test] nextPhaseDelegate í˜¸ì¶œ ì§ì „");
         nextPhaseDelegate?.Invoke(player.currentPhase);
     }
 
@@ -151,14 +151,14 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public void SetSubPhase(int phaseIdx)
     {
         if (phaseIdx < 0 || phaseIdx >= 4) return;
-        Debug.Log("ÆäÀÌÁî ÀÎµ¦½º" + phaseIdx);
-        Debug.Log("ÀÌ°Å Ã¼Å©: " + GetChapter() * 4 + phaseIdx);
+        Debug.Log("í˜ì´ì¦ˆ ì¸ë±ìŠ¤" + phaseIdx);
+        Debug.Log("ì´ê±° ì²´í¬: " + GetChapter() * 4 + phaseIdx);
         if (gamemanger.GetComponent<Alertmanager>() != null)
         {
             gamemanger.GetComponent<Alertmanager>().isAlert = true;
             gamemanger.GetComponent<Alertmanager>().RewardAlerts[phaseIdx].SetActive(true);
         }
-            
+
         player.SetSubPhase(phaseIdx);
     }
 
@@ -199,14 +199,16 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         player.CurrentChapter += 1;
         currentChapter = player.CurrentChapter;
+        Debug.Log("CurrentChapter: " + currentChapter);
+        LoadSceneManager.Instance.LoadChapterImage(currentChapter); 
         player.subseq = 0;
-        ClearWatchedSubseq(); // ºÃ´ø ¼­ºê ¸®½ºÆ®µµ ÃÊ±âÈ­
+        ClearWatchedSubseq(); // ë´¤ë˜ ì„œë¸Œ ë¦¬ìŠ¤íŠ¸ë„ ì´ˆê¸°í™”
         AudioManager.instance.UpdateBGMByChapter(player.CurrentChapter);
         WritePlayerFile();
     }
     public void SetLanguage(LANGUAGE language)
     {
-        Debug.Log("ÇöÀç ¾ğ¾î: "+language);
+        Debug.Log("í˜„ì¬ ì–¸ì–´: " + language);
         player.language = language;
 
         translateManager.Translate(player.language);
@@ -250,16 +252,16 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         return player.subseq;
     }
-    //½Ã°£ ¼³Á¤ : (ÇöÀç ½Ã°£ - watchingÀÌ ÁøÇàµÈ ½Ã°£)+60ºĞ
+    //ì‹œê°„ ì„¤ì • : (í˜„ì¬ ì‹œê°„ - watchingì´ ì§„í–‰ëœ ì‹œê°„)+60ë¶„
     public void PassWathingTime()
     {
-        //ÇöÀç ÁøÇà½Ã°£¿¡ 60ºĞÀ» ´õÇÑ´Ù.
-        //Time.deltaTime => 1ÃÊ 
-        //1ºĞ => 60ÃÊ
-        //60ºĞ => 60*60 => 3600ÃÊ
-        //30ºĞ => 60*30 => 1800ÃÊ
-        //120ºĞ => 60*120 => 7200ÃÊ
-        elapsedTime += (passTime * 2); //1½Ã°£ Update
+        //í˜„ì¬ ì§„í–‰ì‹œê°„ì— 60ë¶„ì„ ë”í•œë‹¤.
+        //Time.deltaTime => 1ì´ˆ 
+        //1ë¶„ => 60ì´ˆ
+        //60ë¶„ => 60*60 => 3600ì´ˆ
+        //30ë¶„ => 60*30 => 1800ì´ˆ
+        //120ë¶„ => 60*120 => 7200ì´ˆ
+        elapsedTime += (passTime * 2); //1ì‹œê°„ Update
     }
     public void PassWriting()
     {
@@ -267,7 +269,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void PassThinkingTime()
     {
-        elapsedTime += (passTime * 4); //2½Ã°£ 1800*4 => 7200
+        elapsedTime += (passTime * 4); //2ì‹œê°„ 1800*4 => 7200
     }
     public void EntryGame(DateTime dateTime)
     {
@@ -311,7 +313,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void AddReward(EReward InRewardName)
     {
-        // ÀÌ¹Ì ¸®½ºÆ®¿¡ ÇØ´ç ¸®¿öµå°¡ ¾ø´Ù¸é Ãß°¡
+        // ì´ë¯¸ ë¦¬ìŠ¤íŠ¸ì— í•´ë‹¹ ë¦¬ì›Œë“œê°€ ì—†ë‹¤ë©´ ì¶”ê°€
         if (!player.rewardList.Contains(InRewardName))
         {
             player.rewardList.Add(InRewardName);
@@ -320,7 +322,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     public List<EReward> GetRewards()
     {
-        Debug.Log("¸®¿öµå ¸ñ·Ï: " + player.rewardList);
+        Debug.Log("ë¦¬ì›Œë“œ ëª©ë¡: " + player.rewardList);
         return player.rewardList;
     }
 
@@ -342,7 +344,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void UpdateArcheType(string tag)
     {
-        Debug.Log("ÇÃ·¯½º ÅÂ±× : " + tag);
+        Debug.Log("í”ŒëŸ¬ìŠ¤ íƒœê·¸ : " + tag);
         if (tag == "sun")
         {
             player.archeType.sun++;
@@ -362,7 +364,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void DownArcheType(string tag)
     {
-        Debug.Log("¸¶ÀÌ³Ê½º ÅÂ±× : " + tag);
+        Debug.Log("ë§ˆì´ë„ˆìŠ¤ íƒœê·¸ : " + tag);
         if (tag == "sun")
         {
             player.archeType.sun--;
@@ -386,8 +388,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void WritePlayerFile()
     {
-        //PlayerInfo Å¬·¡½º ³»¿¡ ÇÃ·¹ÀÌ¾î Á¤º¸¸¦ Json ÇüÅÂ·Î Æ÷¸äÆÃ µÈ ¹®ÀÚ¿­ »ı¼º
-        //¸¸¾à player nextchapter¶ó¸é, º¯°æ
+        //PlayerInfo í´ë˜ìŠ¤ ë‚´ì— í”Œë ˆì´ì–´ ì •ë³´ë¥¼ Json í˜•íƒœë¡œ í¬ë©§íŒ… ëœ ë¬¸ìì—´ ìƒì„±
+        //ë§Œì•½ player nextchapterë¼ë©´, ë³€ê²½
         player.currentPhase = player.currentPhase == GamePatternState.NextChapter ? GamePatternState.Watching : player.currentPhase;
         string jsonData = JsonUtility.ToJson(player);
         string path = pathForDocumentsFile(playerInfoDataFileName);
@@ -444,7 +446,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         if (pauseStatus)
         {
-            // ¾ÖÇÃ¸®ÄÉÀÌ¼ÇÀÌ ¹é±×¶ó¿îµå·Î ÀüÈ¯µÉ ¶§ ½ÇÇàÇÒ ÄÚµå
+            // ì• í”Œë¦¬ì¼€ì´ì…˜ì´ ë°±ê·¸ë¼ìš´ë“œë¡œ ì „í™˜ë  ë•Œ ì‹¤í–‰í•  ì½”ë“œ
             WritePlayerFile();
         }
     }

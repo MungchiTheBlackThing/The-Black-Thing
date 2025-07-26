@@ -26,7 +26,7 @@ public class MainVideo : MonoBehaviour
         chapter = Day;
         if (videoPlayer == null)
         {
-            Debug.LogError("VideoPlayer°¡ ¼³Á¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("VideoPlayerê°€ ì„¤ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
             return;
         }
 
@@ -37,7 +37,7 @@ public class MainVideo : MonoBehaviour
 
         if (clip == null)
         {
-            Debug.LogError($"Resources¿¡¼­ VideoClip '{path}' À»(¸¦) Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogError($"Resourcesì—ì„œ VideoClip '{path}' ì„(ë¥¼) ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
             return;
         }
 
@@ -98,7 +98,7 @@ public class MainVideo : MonoBehaviour
 
     private void OnPrepared(VideoPlayer vp)
     {
-        Debug.Log("¿µ»ó ÁØºñ ¿Ï·áµÊ.");
+        Debug.Log("ì˜ìƒ ì¤€ë¹„ ì™„ë£Œë¨.");
     }
 
     private void OnVideoEnd(VideoPlayer vp)

@@ -17,26 +17,26 @@ public class ReadData : MonoBehaviour
 
     private IEnumerator LoadResourceCoroutine()
     {
-        // ¸®¼Ò½º¸¦ ºñµ¿±âÀûÀ¸·Î ·Îµå
+        // ë¦¬ì†ŒìŠ¤ë¥¼ ë¹„ë™ê¸°ì ìœ¼ë¡œ ë¡œë“œ
         ResourceRequest resourceRequest = Resources.LoadAsync<TextAsset>("Json/Chapters");
 
-        // ·ÎµùÀÌ ¿Ï·áµÉ ¶§±îÁö ´ë±â
+        // ë¡œë”©ì´ ì™„ë£Œë  ë•Œê¹Œì§€ ëŒ€ê¸°
         yield return resourceRequest;
 
-        // ·ÎµùÀÌ ¿Ï·áµÇ¸é Asset¿¡ Á¢±Ù °¡´É
+        // ë¡œë”©ì´ ì™„ë£Œë˜ë©´ Assetì— ì ‘ê·¼ ê°€ëŠ¥
         if (resourceRequest.asset != null)
         {
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
             DataManager.Instance.ChapterList = JsonUtility.FromJson<Chapters>(loadedTextAsset.ToString());
         }
 
-        // ¸®¼Ò½º¸¦ ºñµ¿±âÀûÀ¸·Î ·Îµå
+        // ë¦¬ì†ŒìŠ¤ë¥¼ ë¹„ë™ê¸°ì ìœ¼ë¡œ ë¡œë“œ
         resourceRequest = Resources.LoadAsync<TextAsset>("Json/Setting");
 
-        // ·ÎµùÀÌ ¿Ï·áµÉ ¶§±îÁö ´ë±â
+        // ë¡œë”©ì´ ì™„ë£Œë  ë•Œê¹Œì§€ ëŒ€ê¸°
         yield return resourceRequest;
 
-        // ·ÎµùÀÌ ¿Ï·áµÇ¸é Asset¿¡ Á¢±Ù °¡´É
+        // ë¡œë”©ì´ ì™„ë£Œë˜ë©´ Assetì— ì ‘ê·¼ ê°€ëŠ¥
         if (resourceRequest.asset != null)
         {
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
@@ -45,10 +45,10 @@ public class ReadData : MonoBehaviour
 
         resourceRequest = Resources.LoadAsync<TextAsset>("Json/PoemsData");
 
-        // ·ÎµùÀÌ ¿Ï·áµÉ ¶§±îÁö ´ë±â
+        // ë¡œë”©ì´ ì™„ë£Œë  ë•Œê¹Œì§€ ëŒ€ê¸°
         yield return resourceRequest;
 
-        // ·ÎµùÀÌ ¿Ï·áµÇ¸é Asset¿¡ Á¢±Ù °¡´É
+        // ë¡œë”©ì´ ì™„ë£Œë˜ë©´ Assetì— ì ‘ê·¼ ê°€ëŠ¥
         if (resourceRequest.asset != null)
         {
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
@@ -57,10 +57,10 @@ public class ReadData : MonoBehaviour
 
         resourceRequest = Resources.LoadAsync<TextAsset>("Json/DiaryData");
 
-        // ·ÎµùÀÌ ¿Ï·áµÉ ¶§±îÁö ´ë±â
+        // ë¡œë”©ì´ ì™„ë£Œë  ë•Œê¹Œì§€ ëŒ€ê¸°
         yield return resourceRequest;
 
-        // ·ÎµùÀÌ ¿Ï·áµÇ¸é Asset¿¡ Á¢±Ù °¡´É
+        // ë¡œë”©ì´ ì™„ë£Œë˜ë©´ Assetì— ì ‘ê·¼ ê°€ëŠ¥
         if (resourceRequest.asset != null)
         {
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
@@ -69,10 +69,10 @@ public class ReadData : MonoBehaviour
 
         resourceRequest = Resources.LoadAsync<TextAsset>("Json/Death");
 
-        // ·ÎµùÀÌ ¿Ï·áµÉ ¶§±îÁö ´ë±â
+        // ë¡œë”©ì´ ì™„ë£Œë  ë•Œê¹Œì§€ ëŒ€ê¸°
         yield return resourceRequest;
 
-        // ·ÎµùÀÌ ¿Ï·áµÇ¸é Asset¿¡ Á¢±Ù °¡´É
+        // ë¡œë”©ì´ ì™„ë£Œë˜ë©´ Assetì— ì ‘ê·¼ ê°€ëŠ¥
         if (resourceRequest.asset != null)
         {
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
@@ -81,10 +81,10 @@ public class ReadData : MonoBehaviour
 
         resourceRequest = Resources.LoadAsync<TextAsset>("Json/DotReview");
 
-        // ·ÎµùÀÌ ¿Ï·áµÉ ¶§±îÁö ´ë±â
+        // ë¡œë”©ì´ ì™„ë£Œë  ë•Œê¹Œì§€ ëŒ€ê¸°
         yield return resourceRequest;
 
-        // ·ÎµùÀÌ ¿Ï·áµÇ¸é Asset¿¡ Á¢±Ù °¡´É
+        // ë¡œë”©ì´ ì™„ë£Œë˜ë©´ Assetì— ì ‘ê·¼ ê°€ëŠ¥
         if (resourceRequest.asset != null)
         {
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
@@ -93,10 +93,10 @@ public class ReadData : MonoBehaviour
 
         resourceRequest = Resources.LoadAsync<TextAsset>("Json/UIText");
 
-        // ·ÎµùÀÌ ¿Ï·áµÉ ¶§±îÁö ´ë±â
+        // ë¡œë”©ì´ ì™„ë£Œë  ë•Œê¹Œì§€ ëŒ€ê¸°
         yield return resourceRequest;
 
-        // ·ÎµùÀÌ ¿Ï·áµÇ¸é Asset¿¡ Á¢±Ù °¡´É
+        // ë¡œë”©ì´ ì™„ë£Œë˜ë©´ Assetì— ì ‘ê·¼ ê°€ëŠ¥
         if (resourceRequest.asset != null)
         {
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;
@@ -105,10 +105,10 @@ public class ReadData : MonoBehaviour
 
         resourceRequest = Resources.LoadAsync<TextAsset>("Json/Watching");
 
-        // ·ÎµùÀÌ ¿Ï·áµÉ ¶§±îÁö ´ë±â
+        // ë¡œë”©ì´ ì™„ë£Œë  ë•Œê¹Œì§€ ëŒ€ê¸°
         yield return resourceRequest;
 
-        // ·ÎµùÀÌ ¿Ï·áµÇ¸é Asset¿¡ Á¢±Ù °¡´É
+        // ë¡œë”©ì´ ì™„ë£Œë˜ë©´ Assetì— ì ‘ê·¼ ê°€ëŠ¥
         if (resourceRequest.asset != null)
         {
             TextAsset loadedTextAsset = resourceRequest.asset as TextAsset;

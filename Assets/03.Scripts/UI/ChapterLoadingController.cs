@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class LoadingController : MonoBehaviour
+public class ChapterLoadingController : MonoBehaviour
 {
     [SerializeField]
     TMP_Text title;

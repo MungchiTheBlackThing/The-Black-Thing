@@ -7,9 +7,9 @@ using Assets.Script.DialClass;
 using UnityEngine.EventSystems;
 using System.Reflection;
 using System;
-/* "¸»Ç³¼± À§Ä¡¸¦ ¾î¶»°Ô ÇØ¾ßÇÏ³ª ¹¶Ä¡ À§Ä¡¸¦ °¡Á®¿Í¼­ if pos.x < 0 ÀÌ¸é ¹¶Ä¡ ±âÁØ ¿À¸¥ÂÊ »ó´Ü????? 
-pos.x > 0 ÀÌ¸é ¹¶Ä¡ ±âÁØ ¿ŞÂÊ »ó´Ü
-!! DotÀº ½ºÇÁ¶óÀÌÆ®¶ó Äµ¹ö½º°¡ ¾Æ´Ï°í Panel UI´Â Äµ¹ö½º ±âÁØÀÌ¶ó À§Ä¡¸¦ ÅëÀÏ½ÃÄÑÁà¾ß ÇÔ !!*/
+/* "ë§í’ì„  ìœ„ì¹˜ë¥¼ ì–´ë–»ê²Œ í•´ì•¼í•˜ë‚˜ ë­‰ì¹˜ ìœ„ì¹˜ë¥¼ ê°€ì ¸ì™€ì„œ if pos.x < 0 ì´ë©´ ë­‰ì¹˜ ê¸°ì¤€ ì˜¤ë¥¸ìª½ ìƒë‹¨????? 
+pos.x > 0 ì´ë©´ ë­‰ì¹˜ ê¸°ì¤€ ì™¼ìª½ ìƒë‹¨
+!! Dotì€ ìŠ¤í”„ë¼ì´íŠ¸ë¼ ìº”ë²„ìŠ¤ê°€ ì•„ë‹ˆê³  Panel UIëŠ” ìº”ë²„ìŠ¤ ê¸°ì¤€ì´ë¼ ìœ„ì¹˜ë¥¼ í†µì¼ì‹œì¼œì¤˜ì•¼ í•¨ !!*/
 
 public class SubPanel : MonoBehaviour
 {
@@ -22,12 +22,12 @@ public class SubPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI InputTextUI;
     [SerializeField] private TMP_InputField Textinput;
     [SerializeField] public SubDialogue subdialogue;
-    // ¸®½ºÆ®·Î ¹­Àº Dot °ÔÀÓ ¿ÀºêÁ§Æ®µé
+    // ë¦¬ìŠ¤íŠ¸ë¡œ ë¬¶ì€ Dot ê²Œì„ ì˜¤ë¸Œì íŠ¸ë“¤
     [SerializeField] private List<GameObject> dotObjects = new List<GameObject>();
 
     [SerializeField] private List<GameObject> prObjects = new List<GameObject>();
 
-    // ¸®½ºÆ®·Î ¹­Àº PR_TB °ÔÀÓ ¿ÀºêÁ§Æ®µé
+    // ë¦¬ìŠ¤íŠ¸ë¡œ ë¬¶ì€ PR_TB ê²Œì„ ì˜¤ë¸Œì íŠ¸ë“¤
     [SerializeField] private List<GameObject> prTbObjects = new List<GameObject>();
 
     [SerializeField] private List<GameObject> Sels = new List<GameObject>();
@@ -54,7 +54,7 @@ public class SubPanel : MonoBehaviour
 
     public void InitializePanels()
     {
-        Debug.Log("¼­ºê ÆĞ³Î ÃÊ±âÈ­");
+        Debug.Log("ì„œë¸Œ íŒ¨ë„ ì´ˆê¸°í™”");
         Transform parentTransform = this.transform;
         for (int i = 0; i < dotObjects.Count; i++)
         {
@@ -101,7 +101,7 @@ public class SubPanel : MonoBehaviour
             }
         }
 
-        Debug.LogWarning($"SubPanel ¾È¿¡¼­ ÀÌ¸§ÀÌ {name} ÀÎ ¿ÀºêÁ§Æ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+        Debug.LogWarning($"SubPanel ì•ˆì—ì„œ ì´ë¦„ì´ {name} ì¸ ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
         return null;
     }
 
@@ -161,11 +161,11 @@ public class SubPanel : MonoBehaviour
 
     public void DialEnd()
     {
-        Debug.Log("¼­ºê ´ëÈ­ ³¡");
+        Debug.Log("ì„œë¸Œ ëŒ€í™” ë");
         PanelOff();
         sub.currentDialogueList.Clear();
         dialogueIndex = 0;
-        if (!string.IsNullOrEmpty(pc.currentReward)) //ºñ¾îÀÖ°Å³ª ¾ø´Â °æ¿ì
+        if (!string.IsNullOrEmpty(pc.currentReward)) //ë¹„ì–´ìˆê±°ë‚˜ ì—†ëŠ” ê²½ìš°
         {
             pc.successSubDialDelegate(pc.GetAlreadyEndedPhase(), pc.currentReward);
         }
@@ -194,7 +194,7 @@ public class SubPanel : MonoBehaviour
         PanelOff();
         if (dialogueIndex >= sub.currentDialogueList.Count)
         {
-            Debug.Log("ÀÎµ¦½º°¡ ³Ñ¾î°¨");
+            Debug.Log("ì¸ë±ìŠ¤ê°€ ë„˜ì–´ê°");
             DialEnd();
             return;
         }
@@ -204,7 +204,7 @@ public class SubPanel : MonoBehaviour
         string actor = nextDial.Actor;
         string korText = nextDial.Text;
         int color = nextDial.Color;
-        int determine; //dotÀÎÁö playerÀÎÁö ±¸ºĞ dot:0 , pl:1
+        int determine; //dotì¸ì§€ playerì¸ì§€ êµ¬ë¶„ dot:0 , pl:1
         var currentEntry = sub.GetData(dialogueIndex);
         dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim, prePos);
 
@@ -223,16 +223,16 @@ public class SubPanel : MonoBehaviour
                             korText = korText.Replace("<nickname>", pc.GetNickName());
                         }
                     }
-                    Debug.Log("LÀÎÁö RÀÎÁö: " + dotcontroller.transform.position.x);
-                    // if ÄÃ·¯°¡ °ËÀº »öÀÌ¸é dotObjectsÀÇ B¸¦ °¡Á®¿À°í ¾Æ´Ï¸é °¢ ½Ã°£¿¡ ¸Â´Â ¸»Ç³¼±À»
-                    // AND if Dotcontroller.transform À¸·Î xÁÂÇ¥°¡ À½¼ö¸é L ¸¦ ¾Æ´Ï¸é RÀ» ÇÃ·¹ÀÌ¾î´Â ±× ¹İ´ë·Î
-                    //°¢ Á¶°Ç¿¡ ¸Â´Â ¸»Ç³¼± ÄÑÁö°Ô²û
+                    Debug.Log("Lì¸ì§€ Rì¸ì§€: " + dotcontroller.transform.position.x);
+                    // if ì»¬ëŸ¬ê°€ ê²€ì€ ìƒ‰ì´ë©´ dotObjectsì˜ Bë¥¼ ê°€ì ¸ì˜¤ê³  ì•„ë‹ˆë©´ ê° ì‹œê°„ì— ë§ëŠ” ë§í’ì„ ì„
+                    // AND if Dotcontroller.transform ìœ¼ë¡œ xì¢Œí‘œê°€ ìŒìˆ˜ë©´ L ë¥¼ ì•„ë‹ˆë©´ Rì„ í”Œë ˆì´ì–´ëŠ” ê·¸ ë°˜ëŒ€ë¡œ
+                    //ê° ì¡°ê±´ì— ë§ëŠ” ë§í’ì„  ì¼œì§€ê²Œë”
                     if (color == 0) // Black
                     {
-                        // "Black"ÀÌ Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¸ °¡Á®¿È
+                        // "Black"ì´ í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë§Œ ê°€ì ¸ì˜´
                         List<GameObject> blackDots = dotObjects.FindAll(dot => dot.name.Contains("Black"));
 
-                        // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                        // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                         GameObject selectedDot = blackDots.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_L" : "_R"));
 
                         if (selectedDot != null)
@@ -254,7 +254,7 @@ public class SubPanel : MonoBehaviour
                         {
                             List<GameObject> Temp = dotObjects.FindAll(dot => dot.name.Contains("Dawn"));
 
-                            // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                            // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                             GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_L" : "_R"));
 
                             if (selectedDot != null)
@@ -274,7 +274,7 @@ public class SubPanel : MonoBehaviour
                         {
                             List<GameObject> Temp = dotObjects.FindAll(dot => dot.name.Contains("Mor"));
 
-                            // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                            // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                             GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_L" : "_R"));
 
                             if (selectedDot != null)
@@ -294,7 +294,7 @@ public class SubPanel : MonoBehaviour
                         {
                             List<GameObject> Temp = dotObjects.FindAll(dot => dot.name.Contains("Eve"));
 
-                            // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                            // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                             GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_L" : "_R"));
 
                             if (selectedDot != null)
@@ -314,7 +314,7 @@ public class SubPanel : MonoBehaviour
                         {
                             List<GameObject> Temp = dotObjects.FindAll(dot => dot.name.Contains("Nig"));
 
-                            // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                            // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                             GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_L" : "_R"));
 
                             if (selectedDot != null)
@@ -345,10 +345,10 @@ public class SubPanel : MonoBehaviour
                     determine = 1;
                     if (color == 0) //Black
                     {
-                        // "Black"ÀÌ Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¸ °¡Á®¿È
+                        // "Black"ì´ í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë§Œ ê°€ì ¸ì˜´
                         List<GameObject> blackDots = prObjects.FindAll(dot => dot.name.Contains("Black"));
 
-                        // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                        // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                         GameObject selectedDot = blackDots.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                         if (selectedDot != null)
@@ -370,7 +370,7 @@ public class SubPanel : MonoBehaviour
                         {
                             List<GameObject> Temp = prObjects.FindAll(dot => dot.name.Contains("Dawn"));
 
-                            // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                            // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                             GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                             if (selectedDot != null)
@@ -390,7 +390,7 @@ public class SubPanel : MonoBehaviour
                         {
                             List<GameObject> Temp = prObjects.FindAll(dot => dot.name.Contains("Mor"));
 
-                            // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                            // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                             GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                             if (selectedDot != null)
@@ -410,7 +410,7 @@ public class SubPanel : MonoBehaviour
                         {
                             List<GameObject> Temp = prObjects.FindAll(dot => dot.name.Contains("Eve"));
 
-                            // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                            // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                             GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                             if (selectedDot != null)
@@ -430,7 +430,7 @@ public class SubPanel : MonoBehaviour
                         {
                             List<GameObject> Temp = prObjects.FindAll(dot => dot.name.Contains("Nig"));
 
-                            // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                            // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                             GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                             if (selectedDot != null)
@@ -452,14 +452,14 @@ public class SubPanel : MonoBehaviour
 
             //=============================================================================================================================================================
 
-            case "textbox": //¾ê´Â ÇÃ·¹ÀÌ¾î ±âÁØ
+            case "textbox": //ì–˜ëŠ” í”Œë ˆì´ì–´ ê¸°ì¤€
                 determine = 1;
                 if (color == 0) //Black
                 {
-                    // "Black"ÀÌ Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¸ °¡Á®¿È
+                    // "Black"ì´ í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë§Œ ê°€ì ¸ì˜´
                     List<GameObject> blackDots = prTbObjects.FindAll(dot => dot.name.Contains("Black"));
 
-                    // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                    // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                     GameObject selectedDot = blackDots.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                     if (selectedDot != null)
@@ -479,7 +479,7 @@ public class SubPanel : MonoBehaviour
                     {
                         List<GameObject> Temp = prTbObjects.FindAll(dot => dot.name.Contains("Dawn"));
 
-                        // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                        // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                         GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                         if (selectedDot != null)
@@ -497,7 +497,7 @@ public class SubPanel : MonoBehaviour
                     {
                         List<GameObject> Temp = prTbObjects.FindAll(dot => dot.name.Contains("Mor"));
 
-                        // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                        // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                         GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                         if (selectedDot != null)
@@ -515,7 +515,7 @@ public class SubPanel : MonoBehaviour
                     {
                         List<GameObject> Temp = prTbObjects.FindAll(dot => dot.name.Contains("Eve"));
 
-                        // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                        // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                         GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                         if (selectedDot != null)
@@ -533,7 +533,7 @@ public class SubPanel : MonoBehaviour
                     {
                         List<GameObject> Temp = prTbObjects.FindAll(dot => dot.name.Contains("Nig"));
 
-                        // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                        // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                         GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                         if (selectedDot != null)
@@ -552,13 +552,13 @@ public class SubPanel : MonoBehaviour
 
             //=============================================================================================================================================================
 
-            case "selection": //¾êµµ ÇÃ·¹ÀÌ¾î ±âÁØ
+            case "selection": //ì–˜ë„ í”Œë ˆì´ì–´ ê¸°ì¤€
                 if (color == 0) //Black
                 {
-                    // "Black"ÀÌ Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¸ °¡Á®¿È
+                    // "Black"ì´ í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë§Œ ê°€ì ¸ì˜´
                     List<GameObject> blackDots = Sels.FindAll(dot => dot.name.Contains("Black"));
 
-                    // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                    // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                     GameObject selectedDot = blackDots.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                     if (selectedDot != null)
@@ -574,7 +574,7 @@ public class SubPanel : MonoBehaviour
                     {
                         List<GameObject> Temp = Sels.FindAll(dot => dot.name.Contains("Dawn"));
 
-                        // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                        // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                         GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                         if (selectedDot != null)
@@ -588,7 +588,7 @@ public class SubPanel : MonoBehaviour
                     {
                         List<GameObject> Temp = Sels.FindAll(dot => dot.name.Contains("Mor"));
 
-                        // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                        // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                         GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                         if (selectedDot != null)
@@ -602,7 +602,7 @@ public class SubPanel : MonoBehaviour
                     {
                         List<GameObject> Temp = Sels.FindAll(dot => dot.name.Contains("Eve"));
 
-                        // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                        // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                         GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                         if (selectedDot != null)
@@ -616,7 +616,7 @@ public class SubPanel : MonoBehaviour
                     {
                         List<GameObject> Temp = Sels.FindAll(dot => dot.name.Contains("Nig"));
 
-                        // DotÀÇ x ÁÂÇ¥°¡ À½¼öÀÌ¸é "L" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦, ¾ç¼öÀÌ¸é "R" Æ÷ÇÔµÈ ¿ÀºêÁ§Æ®¸¦ ¼±ÅÃ
+                        // Dotì˜ x ì¢Œí‘œê°€ ìŒìˆ˜ì´ë©´ "L" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼, ì–‘ìˆ˜ì´ë©´ "R" í¬í•¨ëœ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ íƒ
                         GameObject selectedDot = Temp.Find(dot => dot.name.Contains(dotcontroller.transform.position.x < 0 ? "_R" : "_L"));
 
                         if (selectedDot != null)
@@ -669,7 +669,7 @@ public class SubPanel : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("³Ø½ºÆ® Å°°¡ Àß¸øµÊ");
+                    Debug.Log("ë„¥ìŠ¤íŠ¸ í‚¤ê°€ ì˜ëª»ë¨");
                     DialEnd();
                     return;
                 }
@@ -682,7 +682,7 @@ public class SubPanel : MonoBehaviour
         }
         else
         {
-            // ¼­ºê ´ÙÀÌ¾ó·Î±×°¡ ¿ÂÀüÈ÷ ³¡³µÀ» °æ¿ì
+            // ì„œë¸Œ ë‹¤ì´ì–¼ë¡œê·¸ê°€ ì˜¨ì „íˆ ëë‚¬ì„ ê²½ìš°
             Debug.Log("Current entry is null. Ending dialogue.");
             DialEnd();
            
@@ -695,44 +695,44 @@ public class SubPanel : MonoBehaviour
 
     public void LocationSet(GameObject dotbub)
     {
-        // 1. ¸»Ç³¼± RectTransform °¡Á®¿À±â
+        // 1. ë§í’ì„  RectTransform ê°€ì ¸ì˜¤ê¸°
         RectTransform speechBubbleUI = dotbub.GetComponent<RectTransform>();
 
-        // 2. Äµ¹ö½ºÀÇ RectTransform °¡Á®¿À±â
+        // 2. ìº”ë²„ìŠ¤ì˜ RectTransform ê°€ì ¸ì˜¤ê¸°
         RectTransform canvasRect = canvas.GetComponent<RectTransform>();
 
-        // 3. dotcontrollerÀÇ ¿ùµå ÁÂÇ¥ °¡Á®¿À±â
+        // 3. dotcontrollerì˜ ì›”ë“œ ì¢Œí‘œ ê°€ì ¸ì˜¤ê¸°
         Vector3 worldPos = dotcontroller.transform.position;
 
-        // 4. ¿ùµå ÁÂÇ¥¸¦ **½ºÅ©¸° ÁÂÇ¥·Î º¯È¯**
+        // 4. ì›”ë“œ ì¢Œí‘œë¥¼ **ìŠ¤í¬ë¦° ì¢Œí‘œë¡œ ë³€í™˜**
         Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
 
-        // 5. ½ºÅ©¸° ÁÂÇ¥¸¦ **Äµ¹ö½º ·ÎÄÃ ÁÂÇ¥·Î º¯È¯**
+        // 5. ìŠ¤í¬ë¦° ì¢Œí‘œë¥¼ **ìº”ë²„ìŠ¤ ë¡œì»¬ ì¢Œí‘œë¡œ ë³€í™˜**
         Vector2 anchoredPos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos, null, out anchoredPos);
 
         if (dotcontroller.transform.position.x < 0)
         {
             Debug.Log("1");
-            // ¸»Ç³¼±À» dotÀÇ ¿À¸¥ÂÊ¿¡ ¹èÄ¡
+            // ë§í’ì„ ì„ dotì˜ ì˜¤ë¥¸ìª½ì— ë°°ì¹˜
             speechBubbleUI.anchoredPosition = anchoredPos;
         }
         else
         {
             Debug.Log("2");
-            // ¸»Ç³¼±À» dotÀÇ ¿ŞÂÊ¿¡ ¹èÄ¡
+            // ë§í’ì„ ì„ dotì˜ ì™¼ìª½ì— ë°°ì¹˜
             speechBubbleUI.anchoredPosition = anchoredPos;
         }
-        Debug.Log("ÃÖÁ¾ À§Ä¡: " + speechBubbleUI.anchoredPosition);
-        // 6. º¯È¯µÈ UI ÁÂÇ¥ Àû¿ë
+        Debug.Log("ìµœì¢… ìœ„ì¹˜: " + speechBubbleUI.anchoredPosition);
+        // 6. ë³€í™˜ëœ UI ì¢Œí‘œ ì ìš©
 
-        // 7. ¸»Ç³¼± È°¼ºÈ­
+        // 7. ë§í’ì„  í™œì„±í™”
         speechBubbleUI.gameObject.SetActive(true);
 
-        // Debug ·Î±×·Î È®ÀÎ
-        Debug.Log($"2D ¿ÀºêÁ§Æ® À§Ä¡ (¿ùµå): {worldPos}");
-        Debug.Log($"2D ¿ÀºêÁ§Æ® À§Ä¡ (½ºÅ©¸°): {screenPos}");
-        Debug.Log($"º¯È¯µÈ UI ÁÂÇ¥ (Äµ¹ö½º ±âÁØ): {anchoredPos}");
+        // Debug ë¡œê·¸ë¡œ í™•ì¸
+        Debug.Log($"2D ì˜¤ë¸Œì íŠ¸ ìœ„ì¹˜ (ì›”ë“œ): {worldPos}");
+        Debug.Log($"2D ì˜¤ë¸Œì íŠ¸ ìœ„ì¹˜ (ìŠ¤í¬ë¦°): {screenPos}");
+        Debug.Log($"ë³€í™˜ëœ UI ì¢Œí‘œ (ìº”ë²„ìŠ¤ ê¸°ì¤€): {anchoredPos}");
     }
 
 
@@ -743,25 +743,25 @@ public class SubPanel : MonoBehaviour
     {
         RectTransform rectTransform = dotbub.GetComponent<RectTransform>();
 
-        // dotcontrollerÀÇ x ÁÂÇ¥ ±âÁØÀ¸·Î ¸»Ç³¼± À§Ä¡ ¼³Á¤
+        // dotcontrollerì˜ x ì¢Œí‘œ ê¸°ì¤€ìœ¼ë¡œ ë§í’ì„  ìœ„ì¹˜ ì„¤ì •
         if (dotcontroller.transform.position.x < 0)
         {
-            // ¿ŞÂÊ ÇÏ´Ü¿¡ ¹èÄ¡ (ÇÇ¹şÀ» ¿ŞÂÊ ÇÏ´Ü ±âÁØÀ¸·Î ¼³Á¤)
+            // ì™¼ìª½ í•˜ë‹¨ì— ë°°ì¹˜ (í”¼ë²—ì„ ì™¼ìª½ í•˜ë‹¨ ê¸°ì¤€ìœ¼ë¡œ ì„¤ì •)
             rectTransform.anchorMin = new Vector2(1, 0);
             rectTransform.anchorMax = new Vector2(1, 0);
-            rectTransform.pivot = new Vector2(1, 0); // ¿ŞÂÊ ÇÏ´Ü ±âÁØ
-            rectTransform.anchoredPosition = new Vector2(900, -400); // À§Ä¡ Á¶Á¤
+            rectTransform.pivot = new Vector2(1, 0); // ì™¼ìª½ í•˜ë‹¨ ê¸°ì¤€
+            rectTransform.anchoredPosition = new Vector2(900, -400); // ìœ„ì¹˜ ì¡°ì •
         }
         else
         {
-            // ¿À¸¥ÂÊ ÇÏ´Ü¿¡ ¹èÄ¡ (ÇÇ¹şÀ» ¿À¸¥ÂÊ ÇÏ´Ü ±âÁØÀ¸·Î ¼³Á¤)
+            // ì˜¤ë¥¸ìª½ í•˜ë‹¨ì— ë°°ì¹˜ (í”¼ë²—ì„ ì˜¤ë¥¸ìª½ í•˜ë‹¨ ê¸°ì¤€ìœ¼ë¡œ ì„¤ì •)
             rectTransform.anchorMin = new Vector2(0, 0);
             rectTransform.anchorMax = new Vector2(0, 0);
-            rectTransform.pivot = new Vector2(0, 0); // ¿À¸¥ÂÊ ÇÏ´Ü ±âÁØ
-            rectTransform.anchoredPosition = new Vector2(-900, -400); // À§Ä¡ Á¶Á¤
+            rectTransform.pivot = new Vector2(0, 0); // ì˜¤ë¥¸ìª½ í•˜ë‹¨ ê¸°ì¤€
+            rectTransform.anchoredPosition = new Vector2(-900, -400); // ìœ„ì¹˜ ì¡°ì •
         }
 
-        // ¸»Ç³¼± UI È°¼ºÈ­
+        // ë§í’ì„  UI í™œì„±í™”
         rectTransform.gameObject.SetActive(true);
     }
 
@@ -769,25 +769,25 @@ public class SubPanel : MonoBehaviour
     {
         RectTransform rectTransform = dotbub.GetComponent<RectTransform>();
 
-        // dotcontrollerÀÇ x ÁÂÇ¥ ±âÁØÀ¸·Î ¸»Ç³¼± À§Ä¡ ¼³Á¤
+        // dotcontrollerì˜ x ì¢Œí‘œ ê¸°ì¤€ìœ¼ë¡œ ë§í’ì„  ìœ„ì¹˜ ì„¤ì •
         if (dotcontroller.transform.position.x < 0)
         {
-            // ¿ŞÂÊ ÇÏ´Ü¿¡ ¹èÄ¡ (ÇÇ¹şÀ» ¿ŞÂÊ ÇÏ´Ü ±âÁØÀ¸·Î ¼³Á¤)
+            // ì™¼ìª½ í•˜ë‹¨ì— ë°°ì¹˜ (í”¼ë²—ì„ ì™¼ìª½ í•˜ë‹¨ ê¸°ì¤€ìœ¼ë¡œ ì„¤ì •)
             rectTransform.anchorMin = new Vector2(1, 0);
             rectTransform.anchorMax = new Vector2(1, 0);
-            rectTransform.pivot = new Vector2(1, 0); // ¿ŞÂÊ ÇÏ´Ü ±âÁØ
-            rectTransform.anchoredPosition = new Vector2(300, 0); // À§Ä¡ Á¶Á¤
+            rectTransform.pivot = new Vector2(1, 0); // ì™¼ìª½ í•˜ë‹¨ ê¸°ì¤€
+            rectTransform.anchoredPosition = new Vector2(300, 0); // ìœ„ì¹˜ ì¡°ì •
         }
         else
         {
-            // ¿À¸¥ÂÊ ÇÏ´Ü¿¡ ¹èÄ¡ (ÇÇ¹şÀ» ¿À¸¥ÂÊ ÇÏ´Ü ±âÁØÀ¸·Î ¼³Á¤)
+            // ì˜¤ë¥¸ìª½ í•˜ë‹¨ì— ë°°ì¹˜ (í”¼ë²—ì„ ì˜¤ë¥¸ìª½ í•˜ë‹¨ ê¸°ì¤€ìœ¼ë¡œ ì„¤ì •)
             rectTransform.anchorMin = new Vector2(0, 0);
             rectTransform.anchorMax = new Vector2(0, 0);
-            rectTransform.pivot = new Vector2(0, 0); // ¿À¸¥ÂÊ ÇÏ´Ü ±âÁØ
-            rectTransform.anchoredPosition = new Vector2(200, 600); // À§Ä¡ Á¶Á¤
+            rectTransform.pivot = new Vector2(0, 0); // ì˜¤ë¥¸ìª½ í•˜ë‹¨ ê¸°ì¤€
+            rectTransform.anchoredPosition = new Vector2(200, 600); // ìœ„ì¹˜ ì¡°ì •
         }
 
-        // ¸»Ç³¼± UI È°¼ºÈ­
+        // ë§í’ì„  UI í™œì„±í™”
         rectTransform.gameObject.SetActive(true);
     }
 
@@ -811,7 +811,7 @@ public class SubPanel : MonoBehaviour
     public void dotballoon(GameObject selectedDot)
     {
         subClick.SetActive(true);
-        LocationSet(selectedDot); // ¼±ÅÃÇÑ ¿ÀºêÁ§Æ®¸¦ È°¼ºÈ­
+        LocationSet(selectedDot); // ì„ íƒí•œ ì˜¤ë¸Œì íŠ¸ë¥¼ í™œì„±í™”
         StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.5f, subClick.GetComponent<Button>()));
         RegisterNextButton(subClick.GetComponent<Button>());
     }
@@ -819,19 +819,19 @@ public class SubPanel : MonoBehaviour
     public void playerballoon(GameObject selectedDot)
     {
         subClick.SetActive(true);
-        PlayerLocationSet(selectedDot); // ¼±ÅÃÇÑ ¿ÀºêÁ§Æ®¸¦ È°¼ºÈ­
+        PlayerLocationSet(selectedDot); // ì„ íƒí•œ ì˜¤ë¸Œì íŠ¸ë¥¼ í™œì„±í™”
         StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.5f, subClick.GetComponent<Button>()));
         RegisterNextButton(subClick.GetComponent<Button>());
     }
 
     public void TutoConditon(GameObject selectedDot, string scriptnumber, int determine , int index)
     {
-        // SubTuto ÀÎ½ºÅÏ½º °¡Á®¿À±â
+        // SubTuto ì¸ìŠ¤í„´ìŠ¤ ê°€ì ¸ì˜¤ê¸°
         subTuto = gameManager.gameObject.GetComponent<SubTuto>();
 
         if (subTuto == null)
         {
-            Debug.Log("SubTuto ÄÄÆ÷³ÍÆ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.Log("SubTuto ì»´í¬ë„ŒíŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
             subClick.SetActive(true);
             if (determine == 0)
             {
@@ -843,22 +843,22 @@ public class SubPanel : MonoBehaviour
             }
         }
 
-        // SubTuto Å¸ÀÔ °¡Á®¿À±â
+        // SubTuto íƒ€ì… ê°€ì ¸ì˜¤ê¸°
         Type type = subTuto.GetType();
 
-        // ¸Ş¼­µå Á¤º¸ °¡Á®¿À±â
+        // ë©”ì„œë“œ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
         MethodInfo method = type.GetMethod(scriptnumber, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
 
-        // ¸Ş¼­µå Á¸Àç ¿©ºÎ È®ÀÎ ÈÄ È£Ãâ
+        // ë©”ì„œë“œ ì¡´ì¬ ì—¬ë¶€ í™•ì¸ í›„ í˜¸ì¶œ
         if (method != null)
         {
-            // ¸Å°³º¯¼ö¸¦ Àü´ŞÇÏ¿© ¸Ş¼­µå ½ÇÇà
+            // ë§¤ê°œë³€ìˆ˜ë¥¼ ì „ë‹¬í•˜ì—¬ ë©”ì„œë“œ ì‹¤í–‰
             method.Invoke(subTuto, new object[] { selectedDot, determine, index });
-            Debug.Log($"{scriptnumber} ¸Ş¼­µå°¡ ½ÇÇàµÇ¾ú½À´Ï´Ù.");
+            Debug.Log($"{scriptnumber} ë©”ì„œë“œê°€ ì‹¤í–‰ë˜ì—ˆìŠµë‹ˆë‹¤.");
         }
         else
         {
-            Debug.Log($"'{scriptnumber}' ¸Ş¼­µå¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.Log($"'{scriptnumber}' ë©”ì„œë“œë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
             subClick.SetActive(true);
             if (determine == 0)
             {

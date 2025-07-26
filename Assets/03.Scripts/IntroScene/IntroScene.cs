@@ -17,15 +17,17 @@ public class IntroScene : MonoBehaviour
     const string playerInfoDataFileName = "PlayerData.json";
     RecentData data;
     public PlayerInfo playerInfo;
+    GameManager gameManager;
 
     private void Start()
     {
+
         playerInfo = new PlayerInfo("Default", 1, GamePatternState.Watching);
         data = RecentManager.Load();
-        //1.½ºÇÃ·¡½Ã Àç»ı
-        //2.µğÆúÆ® ·Îµù Àç»ı
-        //3.ÀÎÆ®·Î ½Å
-        //4.½ÃÀÛÇÏ¸é ¿¡¼Â ·Îµù
+        //1.ìŠ¤í”Œë˜ì‹œ ì¬ìƒ
+        //2.ë””í´íŠ¸ ë¡œë”© ì¬ìƒ
+        //3.ì¸íŠ¸ë¡œ ì‹ 
+        //4.ì‹œì‘í•˜ë©´ ì—ì…‹ ë¡œë”©
         introGroup.gameObject.SetActive(false);
         splashAnimator.gameObject.SetActive(true);
         loadingAnimator.gameObject.SetActive(false);
@@ -76,14 +78,18 @@ public class IntroScene : MonoBehaviour
 
     void Play()
     {
+        string nextScene;
+        //int chapter = playerInfo.chapter;
+
         if (data != null && data.tutoend == false)
         {
-            SceneManager.LoadScene("Tutorial");
+            nextScene = "Tutorial";
         }
         else
         {
-            SceneManager.LoadScene("MainScene");
+            nextScene = "MainScene";
         }
+        LoadSceneManager.Instance.LoadScene("IntroScene", nextScene, 0);
     }
 
     IEnumerator Wait_Animation(Animator animator, string animationName, Action callBack)
@@ -95,7 +101,7 @@ public class IntroScene : MonoBehaviour
         while (!animator.GetCurrentAnimatorStateInfo(0).IsName(animationName))
             yield return null;
 
-        // ¾Ö´Ï¸ŞÀÌ¼ÇÀÌ ³¡³¯ ¶§±îÁö ´ë±â
+        // ì• ë‹ˆë©”ì´ì…˜ì´ ëë‚  ë•Œê¹Œì§€ ëŒ€ê¸°
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
             yield return null;
 
@@ -104,8 +110,8 @@ public class IntroScene : MonoBehaviour
 
     public void WritePlayerFile()
     {
-        //PlayerInfo Å¬·¡½º ³»¿¡ ÇÃ·¹ÀÌ¾î Á¤º¸¸¦ Json ÇüÅÂ·Î Æ÷¸äÆÃ µÈ ¹®ÀÚ¿­ »ı¼º
-        //¸¸¾à player nextchapter¶ó¸é, º¯°æ
+        //PlayerInfo í´ë˜ìŠ¤ ë‚´ì— í”Œë ˆì´ì–´ ì •ë³´ë¥¼ Json í˜•íƒœë¡œ í¬ë©§íŒ… ëœ ë¬¸ìì—´ ìƒì„±
+        //ë§Œì•½ player nextchapterë¼ë©´, ë³€ê²½
         playerInfo.currentPhase = playerInfo.currentPhase == GamePatternState.NextChapter ? GamePatternState.Watching : playerInfo.currentPhase;
         string jsonData = JsonUtility.ToJson(playerInfo);
         string path = pathForDocumentsFile(playerInfoDataFileName);
