@@ -397,14 +397,14 @@ public class GameManager : MonoBehaviour
             isready = false;
             nxscript = dot.GetnxSubScriptList(Pattern);
 
-            Debug.Log("다음 스크립트 시간: " + nxscript.Delay);
+            Debug.Log("다음 스크립트 시간: " + nxscript.Delay*60);
             float startTime = UnityEngine.Time.time;
-            targetTime = startTime + nxscript.Delay;
+            targetTime = startTime + nxscript.Delay*60;
 
-            Debug.Log("현재 스크립트 시간: " + script.Delay);
+            Debug.Log("현재 스크립트 시간: " + script.Delay*60);
 
             float elapsed = 0f;
-            while (elapsed < script.Delay)
+            while (elapsed < script.Delay*60)
             {
                 if (isSkipping) yield break;
                 yield return null;
@@ -444,10 +444,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("현재 스크립트 시간: " + script.Delay);
+            Debug.Log("현재 스크립트 시간: " + script.Delay*60);
 
             float elapsed = 0f;
-            while (elapsed < script.Delay)
+            while (elapsed < script.Delay*60)
             {
                 if (isSkipping) yield break;
                 yield return null;
