@@ -11,6 +11,8 @@ public class MainVideo : MonoBehaviour
 
     [SerializeField] GameObject text;
     [SerializeField] int chapter;
+    [SerializeField] GameObject background;
+
     private void Start()
     {
         if (videoPlayer != null)
@@ -43,7 +45,7 @@ public class MainVideo : MonoBehaviour
 
         videoPlayer.audioOutputMode = VideoAudioOutputMode.Direct;
         videoPlayer.EnableAudioTrack(0, true);
-        videoPlayer.SetDirectAudioMute(0, true); 
+        videoPlayer.SetDirectAudioMute(0, true);
         videoPlayer.SetDirectAudioVolume(0, 1.0f);
 
         videoPlayer.clip = clip;
@@ -60,9 +62,24 @@ public class MainVideo : MonoBehaviour
         videoPlayer.errorReceived += OnVideoError;
     }
 
-
     public void PlayVideo()
     {
+        Debug.Log("영상 시작");
+        StartCoroutine(FadeInAndPlay());
+    }
+
+    private IEnumerator FadeInAndPlay()
+    {
+        CanvasGroup bgCg = background.GetComponent<CanvasGroup>();
+        if (bgCg == null)
+        {
+            bgCg = background.AddComponent<CanvasGroup>();
+        }
+
+        bgCg.alpha = 0f;
+        background.SetActive(true);
+        yield return StartCoroutine(FadeCanvasGroup(bgCg, 0f, 1f, 1f)); // 페이드 인
+
         Rawimage.transform.SetAsLastSibling();
         Rawimage.SetActive(true);
         text.SetActive(true);
@@ -103,12 +120,27 @@ public class MainVideo : MonoBehaviour
 
     private void OnVideoEnd(VideoPlayer vp)
     {
+        StartCoroutine(FadeOutAndEnd(vp));
+    }
+
+    private IEnumerator FadeOutAndEnd(VideoPlayer vp)
+    {
         vp.Stop();
         vp.time = 0;
         text.SetActive(false);
-        AudioManager.instance.UpdateBGMByChapter(chapter);
         Rawimage.transform.SetAsFirstSibling();
         Rawimage.SetActive(false);
+
+        CanvasGroup bgCg = background.GetComponent<CanvasGroup>();
+        if (bgCg == null)
+        {
+            bgCg = background.AddComponent<CanvasGroup>();
+        }
+
+        yield return StartCoroutine(FadeCanvasGroup(bgCg, 1f, 0f, 1f)); // 페이드 아웃
+        background.SetActive(false);
+
+        AudioManager.instance.UpdateBGMByChapter(chapter);
     }
 
     private void OnDisable()
@@ -125,5 +157,17 @@ public class MainVideo : MonoBehaviour
     {
         Debug.LogError("VideoPlayer Error: " + message);
         Rawimage.SetActive(false);
+    }
+
+    private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float duration)
+    {
+        float time = 0f;
+        while (time < duration)
+        {
+            cg.alpha = Mathf.Lerp(start, end, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        cg.alpha = end;
     }
 }
