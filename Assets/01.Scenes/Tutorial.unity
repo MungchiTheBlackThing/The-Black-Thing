@@ -23467,9 +23467,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  path:
-  - 1h9ThOUORapLcvDycnK7uPGuql5cfA_oq
-  - 1fJoIePkzMH01rUqjrhQVbOvmpZpXT3CW
   videoPlayer: {fileID: 8940817455932878472}
   videoImage: {fileID: 8940817457500996546}
   loading:
@@ -31401,7 +31398,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1102232603}
-  - component: {fileID: 1102232602}
   m_Layer: 0
   m_Name: Invoke
   m_TagString: Untagged
@@ -31409,18 +31405,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1102232602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1102232601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b12c529e4655d0449970b1fd8577e50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1102232603
 Transform:
   m_ObjectHideFlags: 0
