@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
             RewardPopup.SetActive(true);
             objectManager.RewardGlow(eReward);
         }
-        SetSubPhase(GetSubseq() - 2);
+        SetSubPhase(GetSubseq() - 1);
     }
     public void NextPhase()
     {
