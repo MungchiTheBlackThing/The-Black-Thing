@@ -23,15 +23,17 @@ public class ChapterProgressManager : MonoBehaviour
     List<GameObject> subPhaseUIObject;
     [SerializeField]
     Alertmanager alertmanager;
+    
     public void PassData(ChapterInfo chapterInfo, PlayerController player)
     {
-        this.title.text=chapterInfo.title[(int)player.GetLanguage()];
-        this.sentence.text=chapterInfo.longText[(int)player.GetLanguage()];
-        this.player=player;
+        this.title.text = chapterInfo.title[(int)player.GetLanguage()];
+        this.sentence.text = chapterInfo.longText[(int)player.GetLanguage()];
+        this.player = player;
 
-        //켜질 때 현재 chapter값보다 작으면
         List<bool> successPhase = this.player.GetSubPhase(chapterInfo.id);
-        //켜질 때 현재 chapter값보다 작으면
+
+        //phase Ing/Ed UI 처리 
+        //켜질 때 현재 chapter값보다 작으면(이전 챕터) 모든 UI 켜짐
         if (chapterInfo.id < this.player.GetChapter())
         {
             for (int i = 0; i < phaseEdUI.Count; i++)
@@ -46,21 +48,29 @@ public class ChapterProgressManager : MonoBehaviour
         else
         {
             //Player Phase 단계에 따라서 진행.
-            for (int i = 0; i <= this.player.GetAlreadyEndedPhase(); i++)
+            int uiPhaseIndex = this.player.GetAlreadyEndedPhase() / 2;
+            Debug.Log($"uiPhaseIndex: {uiPhaseIndex}, Player Phase: {this.player.GetAlreadyEndedPhase()}");
+
+            if (uiPhaseIndex < 0 || uiPhaseIndex >= phaseIngUI.Count)
             {
-                if (phaseIngUI.Count <= i) continue;
-                phaseIngUI[i].SetActive(true);
+                Debug.LogError($"잘못된 uiPhaseIndex");
+                uiPhaseIndex = -1;
             }
-            for (int i = 0; i < this.player.GetAlreadyEndedPhase(); i++)
+
+            for (int i = 0; i < phaseIngUI.Count; i++)
             {
-                if (phaseEdUI.Count <= i) continue;
-                phaseEdUI[i].SetActive(true);
+                phaseIngUI[i].SetActive(i <= uiPhaseIndex);
+            }
+            for (int i = 0; i < phaseEdUI.Count; i++)
+            {
+                phaseEdUI[i].SetActive(i < uiPhaseIndex);
             }
         }
 
+        //subPhaseUIObject 처리
         for (int i = 0; i < successPhase.Count; i++)
         {
-            Debug.Log($"서브페이즈 {i}:  + {successPhase[i]}");
+            Debug.Log($"서브페이즈 {i}: {successPhase[i]}");
             if (successPhase[i])
             {
                 subPhaseUIObject[i].SetActive(false);
@@ -71,10 +81,10 @@ public class ChapterProgressManager : MonoBehaviour
             }
         }
 
-
+        //subPhaseUI(이미지) 처리
         List<bool> SubSuccess = player.GetSubPhase(player.GetChapter());
 
-        for(int i=0;i< SubSuccess.Count;i++)
+        for (int i = 0; i < SubSuccess.Count; i++)
         {
             if (SubSuccess[i] == true)
             {
@@ -87,6 +97,7 @@ public class ChapterProgressManager : MonoBehaviour
         }
         Invoke(nameof(alertoff), 2f);
     }
+
     private void alertoff()
     {
         if (alertmanager != null)
