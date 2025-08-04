@@ -60,7 +60,7 @@ public class ChapterProgressManager : MonoBehaviour
 
         for (int i = 0; i < successPhase.Count; i++)
         {
-            Debug.Log(successPhase[i]);
+            Debug.Log($"서브페이즈 {i}:  + {successPhase[i]}");
             if (successPhase[i])
             {
                 subPhaseUIObject[i].SetActive(false);
@@ -78,11 +78,11 @@ public class ChapterProgressManager : MonoBehaviour
         {
             if (SubSuccess[i] == true)
             {
-                subPhaseUI[i].sprite=Resources.Load<Sprite>(chapterInfo.subFilePath[i]);
+                subPhaseUI[i].sprite = Resources.Load<Sprite>(chapterInfo.subFilePath[i]);
             }
             else
             {
-                subPhaseUI[i].sprite=Resources.Load<Sprite>(chapterInfo.subLockFilePath[i]);
+                subPhaseUI[i].sprite = Resources.Load<Sprite>(chapterInfo.subLockFilePath[i]);
             }
         }
         Invoke(nameof(alertoff), 2f);

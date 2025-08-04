@@ -11,7 +11,7 @@ public abstract class GameState
     
     public bool RunSubScript(DotController dot, GameManager manager)
     {
-        Debug.Log("Ã¼Å©¿ë" + dot.GetSubScriptListCount(manager.Pattern));
+        Debug.Log("ì²´í¬ìš©" + dot.GetSubScriptListCount(manager.Pattern));
         
         if (dot.GetSubScriptListCount(manager.Pattern) == 0)
         {
@@ -28,7 +28,7 @@ public abstract class GameState
         dot.ChangeState(dotPatternState, animString, Position);
         manager.ShowSubDial();
 
-        Debug.Log("ÇöÀç ¼­ºê´ÙÀÌ¾ó·Î±× ÁøÇàÁß " + animString + " " + Position);
+        Debug.Log("í˜„ì¬ ì„œë¸Œë‹¤ì´ì–¼ë¡œê·¸ ì§„í–‰ì¤‘ " + animString + " " + Position);
         return true;
     }
 
