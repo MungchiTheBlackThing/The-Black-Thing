@@ -173,6 +173,7 @@ public class Writing : GameState, ILoadingInterface, IResetStateInterface
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
+        Debug.Log("뭉치 일기 써야함");
         if(RunSubScript(dot, manager) == false)
         {
             Write(manager, dot);
