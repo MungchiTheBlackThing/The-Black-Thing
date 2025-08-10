@@ -74,24 +74,11 @@ public class ChapterProgressManager : MonoBehaviour
             if (successPhase[i])
             {
                 subPhaseUIObject[i].SetActive(false);
-            }
-            else
-            {
-                subPhaseUIObject[i].SetActive(true);
-            }
-        }
-
-        //subPhaseUI(이미지) 처리
-        List<bool> SubSuccess = player.GetSubPhase(player.GetChapter());
-
-        for (int i = 0; i < SubSuccess.Count; i++)
-        {
-            if (SubSuccess[i] == true)
-            {
                 subPhaseUI[i].sprite = Resources.Load<Sprite>(chapterInfo.subFilePath[i]);
             }
             else
             {
+                subPhaseUIObject[i].SetActive(true);
                 subPhaseUI[i].sprite = Resources.Load<Sprite>(chapterInfo.subLockFilePath[i]);
             }
         }

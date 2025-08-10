@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
+using UnityEngine.UI;
 
 public class IntroScene : MonoBehaviour
 {
     [SerializeField] GameObject continueButton;
+    [SerializeField] Button btnContinue;
+    [SerializeField] Button btnStart;
     [SerializeField] Animator splashAnimator;
     [SerializeField] Animator loadingAnimator;
     [SerializeField] GameObject introGroup;
@@ -28,9 +31,12 @@ public class IntroScene : MonoBehaviour
         //2.디폴트 로딩 재생
         //3.인트로 신
         //4.시작하면 에셋 로딩
+        btnContinue.enabled = true;
+        btnStart.enabled = true;
         introGroup.gameObject.SetActive(false);
         splashAnimator.gameObject.SetActive(true);
         loadingAnimator.gameObject.SetActive(false);
+        
         StartCoroutine(Wait_Animation(splashAnimator, "SplashAnimation", () =>
         {
             splashAnimator.gameObject.SetActive(false);
@@ -47,11 +53,13 @@ public class IntroScene : MonoBehaviour
 
     public void OnContinue()
     {
+        btnContinue.enabled = false; 
         Play();
     }
 
     public void OnStart()
     {
+        btnStart.enabled = false;
         data = RecentManager.Load();
         if (data != null && data.isContinue == 1)
         {

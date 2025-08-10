@@ -24,7 +24,7 @@ public class GooglePath
 
 public class ObjectManager : MonoBehaviour
 {
-    //¸ğµç »óÅÂ°¡ ¿ÀºêÁ§Æ®µéÀ» °øÀ¯ÇÑ´Ù.
+    //ëª¨ë“  ìƒíƒœê°€ ì˜¤ë¸Œì íŠ¸ë“¤ì„ ê³µìœ í•œë‹¤.
     private ObjectPool pool;
 
     List<GameObject>  watches;
@@ -49,7 +49,7 @@ public class ObjectManager : MonoBehaviour
     [SerializeField]
     List<GooglePath> googlePath;
 
-    //Dictionary<ÇöÀç ½Ã°£, FileID> FileID; Á¦°ø
+    //Dictionary<í˜„ì¬ ì‹œê°„, FileID> FileID; ì œê³µ
     public ObjectManager()
     {
         pool = new ObjectPool();
@@ -65,8 +65,8 @@ public class ObjectManager : MonoBehaviour
 
     void SuccessSubDial(int phases, string subTitle)
     {
-        Debug.Log("¼­ºê Å¸ÀÌÆ²:" + subTitle);
-        //PlayerÀÇ subSuccessOrNotÀ» °¡Á®¿Í¼­ ÇØ´ç idx true ½ÃÅ²´Ù.
+        Debug.Log("ì„œë¸Œ íƒ€ì´í‹€:" + subTitle);
+        //Playerì˜ subSuccessOrNotì„ ê°€ì ¸ì™€ì„œ í•´ë‹¹ idx true ì‹œí‚¨ë‹¤.
 
         int chapter = pc.GetChapter();
 
@@ -77,7 +77,7 @@ public class ObjectManager : MonoBehaviour
 
         if(Enum.TryParse<EReward>(reward,true,out eReward))
         {
-            Debug.Log("µ¥ÀÌÅÍ¸Å´ÏÀú Ã©ÅÍ¸®½ºÆ® ¸®¿öµå ±æÀÌ" + DataManager.Instance.ChapterList.chapters[chapter].reward.Length);
+            Debug.Log("ë°ì´í„°ë§¤ë‹ˆì € ì±•í„°ë¦¬ìŠ¤íŠ¸ ë¦¬ì›Œë“œ ê¸¸ì´" + DataManager.Instance.ChapterList.chapters[chapter].reward.Length);
             for (int i = 0; i < DataManager.Instance.ChapterList.chapters[chapter].reward.Length; i++)
             {
                 string tmp = DataManager.Instance.ChapterList.chapters[chapter].reward[i];
@@ -86,19 +86,19 @@ public class ObjectManager : MonoBehaviour
                 {
                     string path = "Reward/" + currentTime + "/"+reward;
 
-                     //È£Ãâ Resource¿¡¼­ ÇØ´ç TimeºÎºĞ¿¡ ÀÖ´Â reward ¾÷·Îµå
+                     //í˜¸ì¶œ Resourceì—ì„œ í•´ë‹¹ Timeë¶€ë¶„ì— ìˆëŠ” reward ì—…ë¡œë“œ
                      GameObject rewardObj = Resources.Load<GameObject>(path);
                      GameObject realObj = Instantiate(rewardObj, this.transform);
                      pool.InsertMemory(realObj);
                 }
             }
         }
-        //½ÇÆĞÇÏ¸é º¸»ó¾øÀ½
+        //ì‹¤íŒ¨í•˜ë©´ ë³´ìƒì—†ìŒ
     }
 
     public GameObject SetMain(string background)
     {
-        Debug.Log("setmain ¹è°æ: " + background);
+        Debug.Log("setmain ë°°ê²½: " + background);
         if(mains.ContainsKey(background))
         {
             foreach (var w in mains)
@@ -114,13 +114,13 @@ public class ObjectManager : MonoBehaviour
         return null;
     }
 
-    // ·Îµå ¿Ï·á ¿©ºÎ¸¦ ¹İÈ¯
+    // ë¡œë“œ ì™„ë£Œ ì—¬ë¶€ë¥¼ ë°˜í™˜
     public bool IsLoadObjectComplete()
     {
         return isObjectLoadComplete;
     }
 
-    // ÇöÀç ·Îµå ÁøÇà »óÈ²À» ¹İÈ¯
+    // í˜„ì¬ ë¡œë“œ ì§„í–‰ ìƒí™©ì„ ë°˜í™˜
     public float GetLoadProgress()
     {
         return loadProgress;
@@ -139,7 +139,7 @@ public class ObjectManager : MonoBehaviour
                 GameObject realObj = Instantiate(pf,this.transform);
 
                 string name = realObj.name.Substring(0, realObj.name.IndexOf("(")); 
-                realObj.name = name; //(clone)À» Ã£¾Æ³¿.
+                realObj.name = name; //(clone)ì„ ì°¾ì•„ëƒ„.
                 mains.Add(name,realObj);
                 realObj.SetActive(false);
             }
@@ -148,7 +148,7 @@ public class ObjectManager : MonoBehaviour
         }
     }
 
-    // ºñµ¿±â ·Îµå¸¦ À§ÇÑ ÄÚ·çÆ¾
+    // ë¹„ë™ê¸° ë¡œë“œë¥¼ ìœ„í•œ ì½”ë£¨í‹´
     public IEnumerator LoadObjectAsync(string path, int chapter)
     {
         string tmpPath = "";
@@ -167,13 +167,13 @@ public class ObjectManager : MonoBehaviour
 
         yield return StartCoroutine(pool.LoadFromMemoryAsync(MainPath, callback));
 
-        isObjectLoadComplete = false;  // ·Îµå°¡ ½ÃÀÛµÇ¹Ç·Î false·Î ¼³Á¤
-        loadProgress = 0f;  // ÁøÇà »óÈ² ÃÊ±âÈ­
+        isObjectLoadComplete = false;  // ë¡œë“œê°€ ì‹œì‘ë˜ë¯€ë¡œ falseë¡œ ì„¤ì •
+        loadProgress = 0f;  // ì§„í–‰ ìƒí™© ì´ˆê¸°í™”
 
-        // µ¿±âÀûÀ¸·Î °æ·Î¿¡¼­ ¸ğµç ¸®¼Ò½º¸¦ ¸ÕÀú °¡Á®¿É´Ï´Ù. 
-        // ÀÌ°ÍÀº °æ·Î¿¡ ¾î¶² ¿ÀºêÁ§Æ®°¡ ÀÖ´ÂÁö È®ÀÎÇÏ´Â ´Ü°èÀÏ »Ó, ¾ÆÁ÷ ¿ÀºêÁ§Æ®¸¦ ·ÎµåÇÏÁö ¾ÊÀ½.
+        // ë™ê¸°ì ìœ¼ë¡œ ê²½ë¡œì—ì„œ ëª¨ë“  ë¦¬ì†ŒìŠ¤ë¥¼ ë¨¼ì € ê°€ì ¸ì˜µë‹ˆë‹¤. 
+        // ì´ê²ƒì€ ê²½ë¡œì— ì–´ë–¤ ì˜¤ë¸Œì íŠ¸ê°€ ìˆëŠ”ì§€ í™•ì¸í•˜ëŠ” ë‹¨ê³„ì¼ ë¿, ì•„ì§ ì˜¤ë¸Œì íŠ¸ë¥¼ ë¡œë“œí•˜ì§€ ì•ŠìŒ.
 
-        //¸ŞÀÎ ·Îµå¸¦ ¿©±â¼­ ·ÎµåÇÏÀÚ
+        //ë©”ì¸ ë¡œë“œë¥¼ ì—¬ê¸°ì„œ ë¡œë“œí•˜ì
 
         System.Object[] allObjects = Resources.LoadAll(path, typeof(GameObject));
         int totalObjects = allObjects.Length;
@@ -182,12 +182,12 @@ public class ObjectManager : MonoBehaviour
 
         foreach (GameObject obj in allObjects)
         {
-            // °¢ ¿ÀºêÁ§Æ®¸¦ ºñµ¿±âÀûÀ¸·Î ·Îµå
+            // ê° ì˜¤ë¸Œì íŠ¸ë¥¼ ë¹„ë™ê¸°ì ìœ¼ë¡œ ë¡œë“œ
             ResourceRequest resourceRequest = Resources.LoadAsync<GameObject>(path + "/" + obj.name);
             
             while (!resourceRequest.isDone)
             {
-                loadProgress = (i + resourceRequest.progress) / totalObjects;  // ÁøÇà·ü ¾÷µ¥ÀÌÆ®
+                loadProgress = (i + resourceRequest.progress) / totalObjects;  // ì§„í–‰ë¥  ì—…ë°ì´íŠ¸
                 yield return null;
             }
 
@@ -195,14 +195,14 @@ public class ObjectManager : MonoBehaviour
             {
                 GameObject obj2 = resourceRequest.asset as GameObject;
 
-                // Instantiate¸¦ ÅëÇØ ¿ÀºêÁ§Æ® »ı¼º ÈÄ »ğÀÔ
+                // Instantiateë¥¼ í†µí•´ ì˜¤ë¸Œì íŠ¸ ìƒì„± í›„ ì‚½ì…
                 GameObject newObj = Instantiate(obj2, this.transform);
 
-                // "(Clone)" Á¦°Å
+                // "(Clone)" ì œê±°
                 string name = newObj.name.Substring(0, newObj.name.IndexOf("("));
                 newObj.name = name;
 
-                // InsertMemory ³» »ğÀÔ
+                // InsertMemory ë‚´ ì‚½ì…
                 pool.InsertMemory(newObj);
 
                 if (newObj.GetComponent<BaseObject>().IsCurrentChapter(chapter))
@@ -224,12 +224,12 @@ public class ObjectManager : MonoBehaviour
         {
             tmpPath = "Reward/" + currentTime + "/" + Reward[rewardIdx].ToString();
 
-            //È£Ãâ Resource¿¡¼­ ÇØ´ç TimeºÎºĞ¿¡ ÀÖ´Â reward ¾÷·Îµå
+            //í˜¸ì¶œ Resourceì—ì„œ í•´ë‹¹ Timeë¶€ë¶„ì— ìˆëŠ” reward ì—…ë¡œë“œ
             ResourceRequest resourceRequest = Resources.LoadAsync<GameObject>(tmpPath);
 
             while (!resourceRequest.isDone)
             {
-                loadProgress = (i + resourceRequest.progress) / totalObjects;  // ÁøÇà·ü ¾÷µ¥ÀÌÆ®
+                loadProgress = (i + resourceRequest.progress) / totalObjects;  // ì§„í–‰ë¥  ì—…ë°ì´íŠ¸
                 yield return null;
             }
 
@@ -237,7 +237,7 @@ public class ObjectManager : MonoBehaviour
             {
                 GameObject obj2 = resourceRequest.asset as GameObject;
 
-                // Instantiate¸¦ ÅëÇØ ¿ÀºêÁ§Æ® »ı¼º ÈÄ »ğÀÔ
+                // Instantiateë¥¼ í†µí•´ ì˜¤ë¸Œì íŠ¸ ìƒì„± í›„ ì‚½ì…
                 GameObject newObj = Instantiate(obj2, this.transform);
                 pool.InsertMemory(newObj);
  
@@ -254,20 +254,20 @@ public class ObjectManager : MonoBehaviour
         GameObject[] obj = Resources.LoadAll<GameObject>(path);
         foreach (GameObject obj2 in obj)
         {
-            //Instantiate¸¦ ÅëÇØ¼­ InsertMemory³» »ğÀÔ
+            //Instantiateë¥¼ í†µí•´ì„œ InsertMemoryë‚´ ì‚½ì…
             GameObject newObj = Instantiate(obj2, this.transform);
             string name = newObj.name.Substring(0, newObj.name.IndexOf("("));
-            newObj.name = name; //(clone)À» Ã£¾Æ³¿.
-            //newObjÀÇ cloneÀ» Á¦°Å 
+            newObj.name = name; //(clone)ì„ ì°¾ì•„ëƒ„.
+            //newObjì˜ cloneì„ ì œê±° 
             pool.InsertMemory(newObj);
         }
     }
 
-    //ÇÑ Ã©ÅÍ¸¦ ³Ñ°åÀ» ¶§ È£ÃâµÇ´Â ÇÔ¼ö, Áï Phase WatchingÀÏ ¶§ È£ÃâÇÑ´Ù. 
+    //í•œ ì±•í„°ë¥¼ ë„˜ê²¼ì„ ë•Œ í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜, ì¦‰ Phase Watchingì¼ ë•Œ í˜¸ì¶œí•œë‹¤. 
     public void SettingChapter(int chapter)
     {
 
-        //¸ğµç Obj¸¦ °¡Á®¿Í¼­ °Ë»çÇØ¾ßÇÑ´Ù.
+        //ëª¨ë“  Objë¥¼ ê°€ì ¸ì™€ì„œ ê²€ì‚¬í•´ì•¼í•œë‹¤.
         List<GameObject> values = pool.GetValues();
 
         foreach (GameObject value in values)
@@ -289,7 +289,7 @@ public class ObjectManager : MonoBehaviour
         List<GameObject> values;
         if (watches.Count == 0)
         {
-            //¸ğµç Obj¸¦ °¡Á®¿Í¼­ °Ë»çÇØ¾ßÇÑ´Ù.
+            //ëª¨ë“  Objë¥¼ ê°€ì ¸ì™€ì„œ ê²€ì‚¬í•´ì•¼í•œë‹¤.
             values = pool.GetValues();
         }
         else
@@ -360,13 +360,13 @@ public class ObjectManager : MonoBehaviour
     }
     public void Translate(LANGUAGE language)
     {
-        Debug.Log("°ÔÀÓ ¿ÀºêÁ§Æ® ¹ø¿ªÇÕ´Ï´Ù.\n");
+        Debug.Log("ê²Œì„ ì˜¤ë¸Œì íŠ¸ ë²ˆì—­í•©ë‹ˆë‹¤.\n");
     }
 
     public void SkipSleeping(bool isActive)
     {
-        pc.SetMoonRadioIdx(1); //ÇÑ phase°¡ Áö³ª¸é 1·Î ¸®¼Â
-        skipSleep.SetActive(isActive);//ÀÌ°Å ´ë½Å video controller »ç¿ë ¿¹Á¤
+        pc.SetMoonRadioIdx(1); //í•œ phaseê°€ ì§€ë‚˜ë©´ 1ë¡œ ë¦¬ì…‹
+        skipSleep.SetActive(isActive);//ì´ê±° ëŒ€ì‹  video controller ì‚¬ìš© ì˜ˆì •
     }
 
     public void RewardGlow(EReward eReward)
@@ -376,12 +376,12 @@ public class ObjectManager : MonoBehaviour
         if (rewardTransform != null)
         {
             GameObject reward = rewardTransform.gameObject;
-            Debug.Log("¹à°Ô ºû³¯ ¹°Ã¼ :" + reward.ToString());
+            Debug.Log("ë°ê²Œ ë¹›ë‚  ë¬¼ì²´ :" + reward.ToString());
             StartCoroutine(Glow(reward));
         }
         else
         {
-            Debug.Log("¸øÃ£À½");
+            Debug.Log("ëª»ì°¾ìŒ");
         }
     }
     IEnumerator Glow(GameObject reward)
