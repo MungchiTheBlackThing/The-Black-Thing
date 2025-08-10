@@ -241,6 +241,21 @@ public class MainPanel : MonoBehaviour
             MainClick.SetActive(false);
     }
 
+    private IEnumerator ShowPanelWithDelay(GameObject panel, CanvasGroup cg, float fadeSeconds, UnityEngine.UI.Button focusButton, System.Action beforeActivate, bool waitForVideo)
+    {
+        if (waitForVideo)
+        {
+            Debug.Log("영상 시작");
+            gameManager.mainVideo.PlayVideo();
+            yield return new WaitForSeconds(1f); // 영상 페이드인 시간만큼 대기
+        }
+
+        beforeActivate?.Invoke();
+        panel.SetActive(true);
+        yield return StartCoroutine(FadeIn(cg, fadeSeconds, focusButton));
+        RegisterNextButton(focusButton);
+    }
+
     public void ShowNextDialogue()
     {
         PanelOff();
@@ -256,6 +271,7 @@ public class MainPanel : MonoBehaviour
         string actor = mainDial.Actor;
         string korText = mainDial.Text;
         string animScene = mainDial.AnimScene;
+        bool waitVideo = animScene == "1";
 
         switch (textType)
         {
@@ -263,105 +279,103 @@ public class MainPanel : MonoBehaviour
                 if (actor == "Dot")
                 {
                     MainClick.SetActive(true);
-                    if (korText.Contains("<nickname>"))
-                    {
-                        if(pc)
-                        {
-                            korText = korText.Replace("<nickname>", pc.GetNickName());
-                        }
-                    }
-                    if (animScene == "1")
-                    {
-                        Debug.Log("영상 시작");
-                        gameManager.mainVideo.PlayVideo();
-                    }
-                    DotPanel.SetActive(true);
-                    DotTextUI.text = $"{korText}";
-                    StartCoroutine(FadeIn(DotPanel.GetComponent<CanvasGroup>(), 0.5f, MainClick.GetComponent<Button>()));
-                    RegisterNextButton(MainClick.GetComponent<Button>());
+                    if (korText.Contains("<nickname>") && pc)
+                        korText = korText.Replace("<nickname>", pc.GetNickName());
+
+                    StartCoroutine(ShowPanelWithDelay(
+                        DotPanel,
+                        DotPanel.GetComponent<CanvasGroup>(),
+                        0.5f,
+                        MainClick.GetComponent<UnityEngine.UI.Button>(),
+                        () => { DotTextUI.text = korText; },
+                        waitVideo
+                    ));
                 }
                 else if (actor == "Player")
                 {
                     MainClick.SetActive(true);
-                    if (animScene == "1")
-                    {
-                        Debug.Log("영상 시작");
-                        gameManager.mainVideo.PlayVideo();
-                    }
-                    PlayPanel.SetActive(true);
-                    PlayTextUI.text = $"{korText}";
-                    StartCoroutine(FadeIn(PlayPanel.GetComponent<CanvasGroup>(), 0.5f, PlayPanel.transform.GetChild(0).GetComponent<Button>()));
-                    RegisterNextButton(MainClick.GetComponent<Button>());
+                    StartCoroutine(ShowPanelWithDelay(
+                        PlayPanel,
+                        PlayPanel.GetComponent<CanvasGroup>(),
+                        0.5f,
+                        PlayPanel.transform.GetChild(0).GetComponent<UnityEngine.UI.Button>(),
+                        () => { PlayTextUI.text = korText; },
+                        waitVideo
+                    ));
                 }
                 break;
+
             case "selection":
-                if (animScene == "1")
-                {
-                    Debug.Log("영상 시작");
-                    gameManager.mainVideo.PlayVideo();
-                }
-                SelectionPanel.SetActive(true);
-                StartCoroutine(FadeIn(SelectionPanel.GetComponent<CanvasGroup>(), 0.5f, SelectionPanel.transform.GetComponentInChildren<Button>()));
-                ShowSelection(korText);
+                StartCoroutine(ShowPanelWithDelay(
+                    SelectionPanel,
+                    SelectionPanel.GetComponent<CanvasGroup>(),
+                    0.5f,
+                    SelectionPanel.GetComponentInChildren<UnityEngine.UI.Button>(),
+                    () => { ShowSelection(korText); },
+                    waitVideo
+                ));
                 break;
+
             case "textbox":
-                if (animScene == "1")
-                {
-                    Debug.Log("영상 시작");
-                    gameManager.mainVideo.PlayVideo();
-                }
-                InputPanel.SetActive(true);
-                InputTextUI.text = korText;
-                Resetinputfield(InputPanel);
-                StartCoroutine(FadeIn(InputPanel.GetComponent<CanvasGroup>(), 0.5f, InputPanel.transform.GetChild(1).GetComponent<Button>()));
-                RegisterNextButton(InputPanel.transform.GetChild(1).GetComponent<Button>());
+                StartCoroutine(ShowPanelWithDelay(
+                    InputPanel,
+                    InputPanel.GetComponent<CanvasGroup>(),
+                    0.5f,
+                    InputPanel.transform.GetChild(1).GetComponent<UnityEngine.UI.Button>(),
+                    () => {
+                        InputTextUI.text = korText;
+                        Resetinputfield(InputPanel);
+                    },
+                    waitVideo
+                ));
                 break;
+
             case "checkbox3":
-                if (animScene == "1")
-                {
-                    Debug.Log("영상 시작");
-                    gameManager.mainVideo.PlayVideo();
-                }
-                Checkbox3Panel.SetActive(true);
-                ShowCheckboxOptions(Checkbox3Panel, korText);
-                StartCoroutine(FadeIn(Checkbox3Panel.GetComponent<CanvasGroup>(), 0.5f, Checkbox3Panel.transform.GetChild(1).GetComponent<Button>()));
-                RegisterNextButton(Checkbox3Panel.transform.GetChild(1).GetComponent<Button>());
+                StartCoroutine(ShowPanelWithDelay(
+                    Checkbox3Panel,
+                    Checkbox3Panel.GetComponent<CanvasGroup>(),
+                    0.5f,
+                    Checkbox3Panel.transform.GetChild(1).GetComponent<UnityEngine.UI.Button>(),
+                    () => { ShowCheckboxOptions(Checkbox3Panel, korText); },
+                    waitVideo
+                ));
                 break;
+
             case "checkbox4":
-                if (animScene == "1")
-                {
-                    Debug.Log("영상 시작");
-                    gameManager.mainVideo.PlayVideo();
-                }
-                Checkbox4Panel.SetActive(true);
-                ShowCheckboxOptions(Checkbox4Panel, korText);
-                StartCoroutine(FadeIn(Checkbox4Panel.GetComponent<CanvasGroup>(), 0.5f, Checkbox4Panel.transform.GetChild(1).GetComponent<Button>()));
-                RegisterNextButton(Checkbox4Panel.transform.GetChild(1).GetComponent<Button>());
+                StartCoroutine(ShowPanelWithDelay(
+                    Checkbox4Panel,
+                    Checkbox4Panel.GetComponent<CanvasGroup>(),
+                    0.5f,
+                    Checkbox4Panel.transform.GetChild(1).GetComponent<UnityEngine.UI.Button>(),
+                    () => { ShowCheckboxOptions(Checkbox4Panel, korText); },
+                    waitVideo
+                ));
                 break;
 
             case "selection3":
-                if (animScene == "1")
-                {
-                    Debug.Log("영상 시작");
-                    gameManager.mainVideo.PlayVideo();
-                }
-                Selection3Panel.SetActive(true);
-                ShowSelectionOptions(Selection3Panel, korText);
-                StartCoroutine(FadeIn(Selection3Panel.GetComponent<CanvasGroup>(), 0.5f, Selection3Panel.transform.GetChild(1).GetComponent<Button>()));
+                StartCoroutine(ShowPanelWithDelay(
+                    Selection3Panel,
+                    Selection3Panel.GetComponent<CanvasGroup>(),
+                    0.5f,
+                    Selection3Panel.transform.GetChild(1).GetComponent<UnityEngine.UI.Button>(),
+                    () => { ShowSelectionOptions(Selection3Panel, korText); },
+                    waitVideo
+                ));
                 break;
 
             case "selection4":
-                if (animScene == "1")
-                {
-                    Debug.Log("영상 시작");
-                    gameManager.mainVideo.PlayVideo();
-                }
-                Selection4Panel.SetActive(true);
-                ShowSelectionOptions(Selection4Panel, korText);
-                StartCoroutine(FadeIn(Selection4Panel.GetComponent<CanvasGroup>(), 0.5f, Selection4Panel.transform.GetChild(1).GetComponent<Button>()));
+                StartCoroutine(ShowPanelWithDelay(
+                    Selection4Panel,
+                    Selection4Panel.GetComponent<CanvasGroup>(),
+                    0.5f,
+                    Selection4Panel.transform.GetChild(1).GetComponent<UnityEngine.UI.Button>(),
+                    () => { ShowSelectionOptions(Selection4Panel, korText); },
+                    waitVideo
+                ));
                 break;
         }
     }
+
     IEnumerator FadeIn(CanvasGroup canvasGroup, float duration, Button button)
     {
         float counter = 0f;
