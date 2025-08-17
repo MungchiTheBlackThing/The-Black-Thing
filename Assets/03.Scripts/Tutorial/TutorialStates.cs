@@ -60,8 +60,7 @@ namespace Tutorial
             GameObject door = GameObject.Find("fix_door");
             RecentData data = RecentManager.Load();
 
-            //Utility.Instance.WaitForFirstTouch(() =>
-            //{
+           
                 if (data.tutonum == 0)
                 {
                     if (data != null && data.isContinue == 1)
@@ -74,11 +73,13 @@ namespace Tutorial
                     else
                     {
                         door.transform.GetChild(1).GetComponent<DoorController>().close();
-                        manager.ScrollManager.stopscroll();
-                        manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                        Utility.Instance.InvokeAfterDelay(substart, 2f);
-                        subdial = manager.subDialoguePanel;
-                    }
+                        Utility.Instance.WaitForFirstTouch(() => //튜토리얼 시작 전(카메라 이동 전) 클릭 한 번 해야 넘어가도록 걸어줌
+                        {
+                            manager.ScrollManager.stopscroll();
+                            manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
+                            Utility.Instance.InvokeAfterDelay(substart, 2f);
+                            subdial = manager.subDialoguePanel;
+                        });
                 }
                 if (data.tutonum == 1)
                 {
@@ -101,7 +102,7 @@ namespace Tutorial
                         subdial = manager.subDialoguePanel;
                     }
                 }
-            //});
+            }
         }
 
         public override void Exit(GameManager manager, TutorialManager tutomanger = null)

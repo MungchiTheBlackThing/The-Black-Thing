@@ -45,9 +45,10 @@ public class Utility : MonoBehaviour
         return Instantiate(prefab, parent);
     }
 
-    // 터치 한 번 기다리는 메서드
+    // 터치 한 번 기다림
     public void WaitForFirstTouch(Action callback)
-    {
+    {   
+        Debug.Log("[Utility] WaitForFirstTouch");
         if (waitingForTouch) return;
 
         onFirstTouch = callback;
