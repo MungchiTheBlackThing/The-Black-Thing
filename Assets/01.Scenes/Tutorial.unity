@@ -11254,10 +11254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   page: {fileID: 0}
-  minClickTime: 1
   gameManger: {fileID: 0}
-  leftDiaryAnim: {fileID: 0}
-  rightDiaryAnim: {fileID: 0}
+  turnCooldown: 0.2
 --- !u!1 &414805989
 GameObject:
   m_ObjectHideFlags: 0
@@ -41912,10 +41910,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   page: {fileID: 0}
-  minClickTime: 1
   gameManger: {fileID: 0}
-  leftDiaryAnim: {fileID: 0}
-  rightDiaryAnim: {fileID: 0}
+  turnCooldown: 0.2
 --- !u!1 &1403879077
 GameObject:
   m_ObjectHideFlags: 0

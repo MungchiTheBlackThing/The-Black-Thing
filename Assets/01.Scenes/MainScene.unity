@@ -11526,10 +11526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   page: {fileID: 0}
-  minClickTime: 1
   gameManger: {fileID: 0}
-  leftDiaryAnim: {fileID: 0}
-  rightDiaryAnim: {fileID: 0}
+  turnCooldown: 0.2
 --- !u!1 &415891494
 GameObject:
   m_ObjectHideFlags: 0
@@ -45415,10 +45413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   page: {fileID: 1708757356}
-  minClickTime: 1
   gameManger: {fileID: 199268581}
-  leftDiaryAnim: {fileID: 1219890300}
-  rightDiaryAnim: {fileID: 1933143225}
+  turnCooldown: 0.2
 --- !u!1 &1396609092
 GameObject:
   m_ObjectHideFlags: 0
@@ -49268,7 +49264,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1481464888}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1390598894}
+        m_TargetAssemblyTypeName: DiaryPageController, Assembly-CSharp
+        m_MethodName: PrevPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1481469372
 GameObject:
   m_ObjectHideFlags: 0
@@ -53214,7 +53222,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1592298035}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1390598894}
+        m_TargetAssemblyTypeName: DiaryPageController, Assembly-CSharp
+        m_MethodName: NextPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1592872502
 GameObject:
   m_ObjectHideFlags: 0

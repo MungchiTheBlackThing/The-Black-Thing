@@ -10,24 +10,46 @@ public class NicknamePopup : MonoBehaviour
     [SerializeField] TMP_InputField nameInputField;
     [SerializeField] SubTuto subTuto;
     [SerializeField] SubPanel subPanel;
-    [SerializeField] GameObject confirmButtonObject; // Button의 GameObject 자체 (Button 말고!)
+    [SerializeField] GameObject confirmButtonObject;
+
+    private CanvasGroup confirmButtonCanvasGroup;
 
     private void OnEnable()
     {
         playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
-        ValidateInput(); // 팝업이 열릴 때도 검사
+
+        // 버튼 오브젝트에 CanvasGroup이 없으면 추가
+        confirmButtonCanvasGroup = confirmButtonObject.GetComponent<CanvasGroup>();
+        if (confirmButtonCanvasGroup == null)
+            confirmButtonCanvasGroup = confirmButtonObject.AddComponent<CanvasGroup>();
+
+        ValidateInput();
         nameInputField.onValueChanged.AddListener(delegate { ValidateInput(); });
     }
 
     private void OnDisable()
     {
-        nameInputField.onValueChanged.RemoveAllListeners(); // 리스너 정리
+        nameInputField.onValueChanged.RemoveAllListeners();
     }
 
     private void ValidateInput()
     {
         string trimmed = nameInputField.text.Trim();
-        confirmButtonObject.SetActive(!string.IsNullOrEmpty(trimmed));
+
+        if (string.IsNullOrEmpty(trimmed))
+        {
+            // 닉네임이 없으면 투명도 50% + 상호작용 비활성화
+            confirmButtonCanvasGroup.alpha = 0.5f;
+            confirmButtonCanvasGroup.interactable = false;
+            confirmButtonCanvasGroup.blocksRaycasts = false;
+        }
+        else
+        {
+            // 닉네임 있으면 불투명 + 상호작용 가능
+            confirmButtonCanvasGroup.alpha = 1f;
+            confirmButtonCanvasGroup.interactable = true;
+            confirmButtonCanvasGroup.blocksRaycasts = true;
+        }
     }
 
     public void SaveNickname()
