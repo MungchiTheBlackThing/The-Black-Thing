@@ -12,7 +12,8 @@ namespace Tutorial
         private GameObject subdial;
         const int pos = 3;
         const string anim = "anim_default";
-        
+        private bool _initEnterCalled = false;
+
         public Sub()
         {
 
@@ -53,38 +54,47 @@ namespace Tutorial
                     dot.GetComponent<DotController>().tutorial = true;
                 }
             }
+
+            _initEnterCalled = true;
         }
 
         public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
         {
+
             GameObject door = GameObject.Find("fix_door");
             RecentData data = RecentManager.Load();
 
-           
-                if (data.tutonum == 0)
+            Debug.Log("데이터 튜토리얼 번호: " + data.tutonum + "인덱스" + data.index);
+
+            if (!_initEnterCalled)
+            {
+                InitEnter(manager, dot, tutomanger);
+            }
+            if (data.tutonum == 0)
+            {
+                if (data != null && data.isContinue == 1)
                 {
-                    if (data != null && data.isContinue == 1)
+                    manager.ScrollManager.stopscroll();
+                    manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
+                    Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
+                    subdial = manager.subDialoguePanel;
+                }
+                else
+                {
+                    door.transform.GetChild(1).GetComponent<DoorController>().close();
+                    Utility.Instance.WaitForFirstTouch(() => //튜토리얼 시작 전(카메라 이동 전) 클릭 한 번 해야 넘어가도록 걸어줌
                     {
                         manager.ScrollManager.stopscroll();
                         manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                        Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
+                        Utility.Instance.InvokeAfterDelay(substart, 2f);
                         subdial = manager.subDialoguePanel;
-                    }
-                    else
-                    {
-                        door.transform.GetChild(1).GetComponent<DoorController>().close();
-                        Utility.Instance.WaitForFirstTouch(() => //튜토리얼 시작 전(카메라 이동 전) 클릭 한 번 해야 넘어가도록 걸어줌
-                        {
-                            manager.ScrollManager.stopscroll();
-                            manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                            Utility.Instance.InvokeAfterDelay(substart, 2f);
-                            subdial = manager.subDialoguePanel;
-                        });
+                    });
                 }
-                if (data.tutonum == 1)
+            }
+            else if (data.tutonum == 1)
+            {
+                if (data.index == 69)
                 {
-                    if (data.index == 69)
-                    {
                         manager.ScrollManager.stopscroll();
                         Debug.Log("두번째 튜토리얼 서브");
                         manager.CameraZoom.ZoomOut();
@@ -93,16 +103,16 @@ namespace Tutorial
                         GameObject moonote = Resources.Load<GameObject>("moonnote");
                         Utility.InstantiatePrefab(moonote, fix_moonradio.transform);
                         subdial = manager.subDialoguePanel;
-                    }
-                    else
-                    {
+                }
+                else
+                {
                         manager.ScrollManager.stopscroll();
                         manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
                         Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
                         subdial = manager.subDialoguePanel;
-                    }
                 }
             }
+            _initEnterCalled = false;
         }
 
         public override void Exit(GameManager manager, TutorialManager tutomanger = null)

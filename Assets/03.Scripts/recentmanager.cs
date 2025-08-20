@@ -64,6 +64,7 @@ public static class RecentManager
         RecentData data = JsonUtility.FromJson<RecentData>(json);
         data.isContinue = 0;
         data.tutonum = 0;
+        data.index = 0;
         data.tutoend = false;
         File.WriteAllText(FilePath, JsonUtility.ToJson(data));
     }
