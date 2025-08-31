@@ -54109,7 +54109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1620128249
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54249,8 +54249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da6e3712cd45c24283589c144716b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  SubDial: {fileID: 0}
+  player: {fileID: 2022455605}
+  mainDial: {fileID: 8899152122286662228}
+  subDial: {fileID: 1720718690}
 --- !u!1 &1623049730
 GameObject:
   m_ObjectHideFlags: 0
