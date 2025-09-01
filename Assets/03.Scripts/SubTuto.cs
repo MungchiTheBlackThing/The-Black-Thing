@@ -102,7 +102,7 @@ public class SubTuto : MonoBehaviour
         //RecentManager.Save(selectedDot, determine, index); // 저장
         RecentData data = RecentManager.Load();
         data.value = 1;
-        RecentManager.Save(selectedDot, 1, index); // 저장
+        RecentManager.Save(selectedDot, 1, 69); // 저장
         tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 1.5f);
         moonnote = GameObject.FindWithTag("moonnote").GetComponent<Moonnote>();
         StartCoroutine(Scroallable());

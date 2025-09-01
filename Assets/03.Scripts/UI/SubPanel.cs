@@ -658,7 +658,11 @@ public class SubPanel : MonoBehaviour
         var currentEntry = sub.GetData(dialogueIndex);
         if (currentEntry.NextLineKey != null)
         {
-            dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim, prePos);
+            if (currentEntry.DotAnim!="")
+            {
+                dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim, prePos);
+            }
+           
             if (int.TryParse(currentEntry.NextLineKey, out int nextLineKey))
             {
                 int nextIndex = sub.currentDialogueList.FindIndex(entry => (entry as SubDialogueEntry)?.LineKey == nextLineKey);
