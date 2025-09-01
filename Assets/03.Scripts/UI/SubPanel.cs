@@ -881,6 +881,7 @@ public class SubPanel : MonoBehaviour
 
         if(subTuto)
         {
+            Debug.Log("서브 튜토");
             subTuto.Subcontinue();
             prePos = dotcontroller.Position;
         }

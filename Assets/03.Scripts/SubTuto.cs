@@ -100,6 +100,9 @@ public class SubTuto : MonoBehaviour
     public void tutorial_8(GameObject selectedDot, int determine, int index)
     {
         //RecentManager.Save(selectedDot, determine, index); // 저장
+        RecentData data = RecentManager.Load();
+        data.value = 1;
+        RecentManager.Save(selectedDot, 1, index); // 저장
         tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 0);
         moonnote = GameObject.FindWithTag("moonnote").GetComponent<Moonnote>();
         StartCoroutine(Scroallable());
@@ -187,10 +190,12 @@ public class SubTuto : MonoBehaviour
 
             if (subDialogue.currentDialogueList == null || subDialogue.currentDialogueList.Count == 0)
             {
+                Debug.Log("서브이어 1");
                 subDialogue.StartSub("tutorial_sub", data.index);
             }
             else
             {
+                Debug.Log("서브이어 2");
                 if (data.value == 0)
                     subPanel.dotballoon(targetObj);
                 else
