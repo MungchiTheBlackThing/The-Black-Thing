@@ -103,7 +103,7 @@ public class SubTuto : MonoBehaviour
         RecentData data = RecentManager.Load();
         data.value = 1;
         RecentManager.Save(selectedDot, 1, index); // 저장
-        tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 0);
+        tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 1.5f);
         moonnote = GameObject.FindWithTag("moonnote").GetComponent<Moonnote>();
         StartCoroutine(Scroallable());
     }
@@ -210,7 +210,7 @@ public class SubTuto : MonoBehaviour
 
     public IEnumerator Scroallable()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         GameObject dot = tutorialManager.Dot.gameObject;
         dot.GetComponent<DotController>().Invisible();
         UIBalloon.SetActive(true);

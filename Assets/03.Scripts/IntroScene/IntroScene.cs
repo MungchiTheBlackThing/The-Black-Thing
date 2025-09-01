@@ -92,6 +92,8 @@ public class IntroScene : MonoBehaviour
         if (data != null && data.tutoend == false)
         {
             nextScene = "Tutorial";
+            playerInfo.currentPhase = 0;
+            WritePlayerFile();
         }
         else
         {
