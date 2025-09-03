@@ -391,6 +391,7 @@ public class DotController : MonoBehaviour
 
     public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "")
     {
+        Debug.Log($"애니메이션 함수 호출: {new System.Diagnostics.StackTrace().GetFrame(1).GetMethod().Name}");
         position = OutPos;
         dotExpression = OutExpression;
         animKey = OutAnimKey;

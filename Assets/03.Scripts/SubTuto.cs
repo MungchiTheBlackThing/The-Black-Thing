@@ -211,8 +211,7 @@ public class SubTuto : MonoBehaviour
     public IEnumerator Scroallable()
     {
         yield return new WaitForSeconds(4f);
-        GameObject dot = tutorialManager.Dot.gameObject;
-        dot.GetComponent<DotController>().Invisible();
+        //dot.GetComponent<DotController>().Invisible();
         UIBalloon.SetActive(true);
         moonnote.anion(UIBalloon);
         SystemUI.SetActive(true);
