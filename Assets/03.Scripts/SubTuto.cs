@@ -100,7 +100,10 @@ public class SubTuto : MonoBehaviour
     public void tutorial_8(GameObject selectedDot, int determine, int index)
     {
         //RecentManager.Save(selectedDot, determine, index); // 저장
-        tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 0);
+        RecentData data = RecentManager.Load();
+        data.value = 1;
+        RecentManager.Save(selectedDot, 1, 69); // 저장
+        tutorialManager.Dot.ChangeState(DotPatternState.Phase, "anim_watching", 1.5f);
         moonnote = GameObject.FindWithTag("moonnote").GetComponent<Moonnote>();
         StartCoroutine(Scroallable());
     }
@@ -187,10 +190,12 @@ public class SubTuto : MonoBehaviour
 
             if (subDialogue.currentDialogueList == null || subDialogue.currentDialogueList.Count == 0)
             {
+                Debug.Log("서브이어 1");
                 subDialogue.StartSub("tutorial_sub", data.index);
             }
             else
             {
+                Debug.Log("서브이어 2");
                 if (data.value == 0)
                     subPanel.dotballoon(targetObj);
                 else
@@ -205,9 +210,8 @@ public class SubTuto : MonoBehaviour
 
     public IEnumerator Scroallable()
     {
-        yield return new WaitForSeconds(5f);
-        GameObject dot = tutorialManager.Dot.gameObject;
-        dot.GetComponent<DotController>().Invisible();
+        yield return new WaitForSeconds(4f);
+        //dot.GetComponent<DotController>().Invisible();
         UIBalloon.SetActive(true);
         moonnote.anion(UIBalloon);
         SystemUI.SetActive(true);

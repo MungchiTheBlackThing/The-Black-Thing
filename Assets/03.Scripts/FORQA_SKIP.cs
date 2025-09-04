@@ -1,25 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FORQA_SKIP : MonoBehaviour
 {
-    [SerializeField]
-    PlayerController player;
+    [SerializeField] PlayerController player;
+    [SerializeField] MainPanel mainDial;
+    [SerializeField] SubDialogue subDial;
 
-    [SerializeField]
-    MainDialogue MainDial;
+    CanvasGroup cg;
 
-    [SerializeField]
-    SubDialogue SubDial;
-    // Start is called before the first frame update
+    void Awake()
+    {
+        cg = GetComponent<CanvasGroup>();
+        if (!cg) cg = gameObject.AddComponent<CanvasGroup>();
+    }
 
-    // Update is called once per frame
     void Update()
     {
-        if (player.GetChapter() >= 2 && (MainDial.currentDialogueList.Count > 0 || SubDial.currentDialogueList.Count > 0))
-        {
-            this.gameObject.SetActive(true);
-        } 
+        bool show = player.GetChapter() >= 2 &&
+                    ((mainDial != null && mainDial.isActiveAndEnabled ) ||
+                     (subDial != null && subDial.currentDialogueList.Count > 0));
+
+        cg.alpha = show ? 1f : 0f;
+        cg.interactable = show;
+        cg.blocksRaycasts = show;
     }
 }
