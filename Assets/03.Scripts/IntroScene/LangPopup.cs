@@ -134,7 +134,7 @@ public class LangPopup : MonoBehaviour
             // }
         }
     }
-    
+
     //index에 맞는 locale 코드 찾아 언어 변경하고 저장
     void ApplyLocaleByIndex(int index, bool save)
     {
@@ -146,7 +146,7 @@ public class LangPopup : MonoBehaviour
 
         string code = localeCodes[index];
         var locale = FindLocaleByCode(code);
-        if (locale == null) 
+        if (locale == null)
         {
             Debug.LogError($"잘못된 locale 코드: {code}");
             return;
@@ -204,7 +204,7 @@ public class LangPopup : MonoBehaviour
             suppressDropdownEvent = false;
 
             // 저장도 이전 값 그대로 유지(Apply에서만 저장하기 때문)
-            Debug.Log($"[LangPopup] 취소: {preOpenLocaleCode}로 롤백");
+            Debug.Log($"{preOpenLocaleCode}로 롤백");
         }
 
         // 팝업 닫기
@@ -235,7 +235,7 @@ public class LangPopup : MonoBehaviour
 
     //현재 locale이 localeCodes의 몇번째인지
     int IndexOfLocale(Locale locale)
-    { 
+    {
         if (locale == null) return -1;
         string curCode = locale.Identifier.Code;
         for (int i = 0; i < localeCodes.Length; i++)
