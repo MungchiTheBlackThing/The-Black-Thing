@@ -26,7 +26,7 @@ public class LoadSceneManager : MonoBehaviour
 
     [Header("로딩 패널 로컬라이제이션 테이블")]
     [SerializeField]
-    private string _stringTableName = "UITexts";
+    private string _stringTableName = "Chapter";
 
     private string _currentSceneName;
     private string _targetSceneName;
@@ -94,14 +94,14 @@ public class LoadSceneManager : MonoBehaviour
         defaultLoadingScreenPanel.SetActive(false);
 
         StringTable stringTable = LocalizationSettings.StringDatabase.GetTable(_stringTableName);
-        Debug.Log($"변경되어야 함 챕터: {_targetChapter}");
+        Debug.Log($"[LoadSceneManager]변경되어야 하는 챕터: {_targetChapter}");
         if (stringTable != null)
         {
-                string titleKey = $"ch{_targetChapter} title";
+                string titleKey = $"loading_title_ch{_targetChapter}";
                 if (chTitleText != null)
                     chTitleText.text = stringTable.GetEntry(titleKey)?.GetLocalizedString() ?? $"default title text";
 
-                string loadingKey = $"ch{_targetChapter} loading";
+                string loadingKey = $"loading_contents_ch{_targetChapter}";
                 if (chLoadingText != null)
                     chLoadingText.text = stringTable.GetEntry(loadingKey)?.GetLocalizedString() ?? "default loading text";
             
