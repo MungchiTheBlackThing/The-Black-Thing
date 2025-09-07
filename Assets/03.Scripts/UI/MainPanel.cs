@@ -99,17 +99,26 @@ public class MainPanel : MonoBehaviour
     }
     void ShowSelection(string options)
     {
-        string[] selections = options.Split('|');
-        for (int i = 0; i < selections.Length; i++)
+        var selections = options.Split('|');
+        var buttons = SelectionPanel.GetComponentsInChildren<Button>(true); // 자식 전체에서 Button만 수집
+
+        for (int i = 0; i < buttons.Length; i++)
         {
-            Button button = SelectionPanel.transform.GetChild(i).GetComponent<Button>();
-            TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
-            buttonText.text = selections[i];
+            var btn = buttons[i];
+            bool has = i < selections.Length;
+
+            btn.gameObject.SetActive(has);
+            btn.onClick.RemoveAllListeners();
+            if (!has) continue;
+
+            var text = btn.GetComponentInChildren<TMPro.TextMeshProUGUI>(true);
+            if (text) text.text = selections[i];
+
             int index = i;
-            button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(() => OnSelectionClicked(index));
+            btn.onClick.AddListener(() => OnSelectionClicked(index));
         }
     }
+
 
     void ShowCheckboxOptions(GameObject checkboxPanel, string options)
     {
@@ -133,11 +142,14 @@ public class MainPanel : MonoBehaviour
 
     public void OnSelectionClicked(int index)
     {
+        Debug.Log($"선택 클릭됨: {index}");
         var currentEntry = mainDialogue.GetData(dialogueIndex);
-        
+        Debug.Log("currentEntry.NextLineKey: " + currentEntry.NextLineKey);
         if (currentEntry.NextLineKey != null)
         {
+            Debug.Log("다음 키 상황: " + currentEntry.NextLineKey);
             string[] nextKeys = currentEntry.NextLineKey.Split('|');
+            Debug.Log(nextKeys[0] + "," + nextKeys[1]);
             Debug.Log(currentEntry.DeathNote);
             //여기서 sun, moon, active, passive 체크해서 올리기
             if (currentEntry.DeathNote != "")
@@ -176,7 +188,7 @@ public class MainPanel : MonoBehaviour
             if (index < nextKeys.Length && int.TryParse(nextKeys[index], out int nextLineKey))
             {
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
-
+                Debug.Log("다음 인덱스: " + nextIndex);
                 if (nextIndex != -1)
                 {
                     backindex = dialogueIndex;
@@ -253,7 +265,9 @@ public class MainPanel : MonoBehaviour
         beforeActivate?.Invoke();
         panel.SetActive(true);
         yield return StartCoroutine(FadeIn(cg, fadeSeconds, focusButton));
-        RegisterNextButton(focusButton);
+        if (focusButton != null && panel != SelectionPanel)
+            RegisterNextButton(focusButton);
+
     }
 
     public void ShowNextDialogue()
