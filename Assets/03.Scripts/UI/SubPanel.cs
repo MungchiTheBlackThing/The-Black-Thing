@@ -20,6 +20,7 @@ public class SubPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI InputTextUI;
     [SerializeField] private TMP_InputField Textinput;
 
+    // 말풍선/선택지 프리팹 컨테이너
     [SerializeField] private List<GameObject> dotObjects = new();
     [SerializeField] private List<GameObject> prObjects = new();
     [SerializeField] private List<GameObject> prTbObjects = new();
@@ -40,7 +41,7 @@ public class SubPanel : MonoBehaviour
         pc = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
 
-    // --------------------------- 초기화 ---------------------------
+    // ============================= 초기화 =============================
 
     public void InitializePanels()
     {
@@ -51,7 +52,7 @@ public class SubPanel : MonoBehaviour
         prTbObjects = InstantiateList(prTbObjects, parent);
         Sels = InstantiateList(Sels, parent);
 
-        // 공통: 모두 CanvasGroup 보장 (페이드/차단 제어용)
+        // 모든 루트에 CanvasGroup 보장 (페이드/차단 제어용)
         EnsureCanvasGroup(dotObjects);
         EnsureCanvasGroup(prObjects);
         EnsureCanvasGroup(prTbObjects);
@@ -69,6 +70,7 @@ public class SubPanel : MonoBehaviour
         foreach (var go in src)
         {
             var inst = GameObject.Instantiate(go, parent);
+            inst.SetActive(false);
             list.Add(inst);
         }
         return list;
@@ -85,7 +87,34 @@ public class SubPanel : MonoBehaviour
         foreach (var go in list) go.SetActive(on);
     }
 
-    // --------------------------- 선택지 & 페이드 유틸 ---------------------------
+    // ============================= 외부에서 필요로 하는 메서드 (복원) =============================
+
+    public void clickon()
+    {
+        if (subClick) subClick.SetActive(true);
+    }
+
+    public GameObject FindPanelObjectByName(string name)
+    {
+        List<GameObject>[] allLists = { dotObjects, prTbObjects, Sels, prObjects };
+        foreach (var list in allLists)
+            foreach (var obj in list)
+                if (obj && obj.name == name)
+                    return obj;
+
+        Debug.LogWarning($"SubPanel: 이름이 '{name}' 인 오브젝트를 찾을 수 없습니다.");
+        return null;
+    }
+
+    public void clear()
+    {
+        PanelOff();
+        if (sub != null && sub.currentDialogueList != null)
+            sub.currentDialogueList.Clear();
+        dialogueIndex = 0;
+    }
+
+    // ============================= 선택지 & 페이드 유틸 =============================
 
     // 선택지: 버튼 바인딩 (자식 인덱스 가정 X, 실제 Button만)
     void ShowSelection(string options, GameObject selRoot)
@@ -157,7 +186,7 @@ public class SubPanel : MonoBehaviour
         onDone?.Invoke();
     }
 
-    // (기존 단일 버튼용) 필요 시 유지. button이 null이면 건너뜀.
+    // (단일 버튼용) 필요 시 유지. button이 null이면 건너뜀.
     IEnumerator FadeIn(CanvasGroup canvasGroup, float duration, Button buttonOrNull)
     {
         float counter = 0f;
@@ -177,7 +206,7 @@ public class SubPanel : MonoBehaviour
         }
     }
 
-    // --------------------------- 선택 콜백 ---------------------------
+    // ============================= 선택 콜백 =============================
 
     public void OnSelectionClicked(int index)
     {
@@ -219,7 +248,7 @@ public class SubPanel : MonoBehaviour
         ShowNextDialogue();
     }
 
-    // --------------------------- 공통 흐름 ---------------------------
+    // ============================= 공통 흐름 =============================
 
     public void DialEnd()
     {
@@ -340,7 +369,7 @@ public class SubPanel : MonoBehaviour
                     if (selectedDot)
                     {
                         selectedDot.SetActive(true);
-                        // ⬇️ 버튼을 FadeIn에 넘기지 않음 (CanvasGroup만 제어해서 페이드 중 클릭 차단)
+                        // 버튼을 FadeIn에 넘기지 않음 (CanvasGroup만 제어해서 페이드 중 클릭 차단)
                         var cg = selectedDot.GetComponent<CanvasGroup>();
                         cg.alpha = 0f;
                         StartCoroutine(FadeCanvasGroup(cg, 0.5f, fadeIn: true));
@@ -375,7 +404,7 @@ public class SubPanel : MonoBehaviour
         }
     }
 
-    // --------------------------- 위치/표시 ---------------------------
+    // ============================= 위치/표시 =============================
 
     public void LocationSet(GameObject dotbub)
     {
@@ -430,7 +459,7 @@ public class SubPanel : MonoBehaviour
         rect.gameObject.SetActive(true);
     }
 
-    // --------------------------- 진행/튜토 ---------------------------
+    // ============================= 진행/튜토 =============================
 
     public void dotballoon(GameObject selectedDot)
     {
