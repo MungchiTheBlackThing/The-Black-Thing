@@ -22,6 +22,30 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ko-KR
+  - m_GUID: 70a36aadb71424f4fb3cae2abe65ec44
+    m_Address: Chapter_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+  - m_GUID: 204ab3940e9ef8b43afd2137afcc96b0
+    m_Address: Tuto_Main_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+  - m_GUID: 8db252152f685a744a69a3b4faca3d62
+    m_Address: Tuto_Sub_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+  - m_GUID: 9ad38997d3737ef448b281e5e3206921
+    m_Address: Main_Ch1_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: ccf0751a4aca0824caf678229173be50, type: 2}
   m_SchemaSet:

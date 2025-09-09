@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
 
 
 public abstract class MainDialogue : GameState, ILoadingInterface
@@ -39,6 +40,9 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         pos.Add("main_door_open", 16);
         pos.Add("main_web", 17);
     }
+    //dot 활성화, 생각 이펙트, 배경 변경, 메뉴 비활성화, 대사 시작, 카메라 고정
+    //대사 끝나면 도트 원래대로, 카메라 풀기, 메뉴 활성화, 배경 원래대로, 시스템UI 활성화
+    //대사 시작할 때, SystemUI 비활성화
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         if (dot)
@@ -58,11 +62,11 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         SystemUI = GameObject.Find("SystemUI");
         menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
         PlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        CurrentLanguage = PlayerController.GetLanguage();
+        CurrentLanguage = PlayerController.GetLanguage(); 
         if (manager.mainVideo)
         {
             Debug.Log("미리 영상 가져오기");
-            manager.mainVideo.Setting(manager.Chapter,CurrentLanguage);
+            manager.mainVideo.Setting(manager.Chapter, CurrentLanguage);
         }
     }
 
@@ -105,11 +109,22 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                         Deathnote = parts[14]
                     };
 
-                    string displayedText = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
-                    entry.KorText = displayedText;
+                    //string displayedText = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
+                    //entry.KorText = displayedText;
                     DialogueEntries.Add(entry);
                     currentDialogueList.Add(entry);
+
+
                 }
+            }
+            //희진 추가
+            if (parts.Length >= 16)
+            { 
+                DialogueEntries[DialogueEntries.Count - 1].LocTable = parts[15].Trim();
+            }
+            if (parts.Length >= 17)
+            { 
+                DialogueEntries[DialogueEntries.Count - 1].LocKey = parts[16].Trim();
             }
             else
             {
@@ -126,7 +141,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         maindata.LineKey = DialogueEntries[idx].LineKey;
         maindata.Actor = DialogueEntries[idx].Actor;
         maindata.TextType = DialogueEntries[idx].TextType;
-        maindata.Text = DialogueEntries[idx].KorText;
+        //maindata.Text = DialogueEntries[idx].KorText;
+        maindata.Text = GetDisplayText(DialogueEntries[idx]);
         maindata.DeathNote = DialogueEntries[idx].Deathnote;
 
         //이 Text안에서 <name>이 있을 경우 변경
@@ -139,6 +155,29 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         
         dot.ChangeState(DotPatternState.Main, DialogueEntries[idx].DotBody, fixedPos, DialogueEntries[idx].DotExpression);
         return maindata; //data[idx].Kor
+    }
+
+    public string GetDisplayText(DialogueEntry entry)
+    {   
+        //LocKey가 있으면 가져오고, 없으면 기존 텍스트 사용
+        if (!string.IsNullOrEmpty(entry.LocKey))
+        {
+            if (string.IsNullOrEmpty(entry.LocTable))
+            {
+                // 강한 정책: 에러 + 폴백
+                Debug.LogError($"[Loc] LocKey='{entry.LocKey}' 있는데 LocTable이 비어 있음 (LineKey={entry.LineKey}).");
+            }
+            else
+            {
+                string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString(entry.LocTable, entry.LocKey);
+                if (!string.IsNullOrEmpty(localizedText))
+                {
+                    return ApplyLineBreaks(localizedText);
+                }
+            }
+            
+        }
+        return CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
     }
 
     public void StartMain(GameManager manager, string fileName)
@@ -182,7 +221,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         mainPanel.ShowNextDialogue();
         manager.ScrollManager.StopCamera(true);
         background = manager.ObjectManager.SetMain(DialogueEntries[0].Background); // 현재 배경이 어떤 값인지 변경
-        Debug.Log("배경:"+ background);
+        Debug.Log("배경:" + background);
 
         AudioManager.instance.PlayOneShot(FMODEvents.instance.mainEnter, dot.transform.position);
         //배경화면이 켜질 때, 뭉치의 위치도 고장한다.

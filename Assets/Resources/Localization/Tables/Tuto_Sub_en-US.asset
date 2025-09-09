@@ -1,0 +1,626 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tuto_Sub_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: a783b29931685df49aef01667fb5e497, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 104729702400
+    m_Localized: "My body aches a bit from\\nexploring Earth\u2019s bright beauty."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104847142912
+    m_Localized: But it was worth it, since\nI discovered this place!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104847142913
+    m_Localized: "A small, cozy corner.\\nIt\u2019s a lot like me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104847142914
+    m_Localized: Dark. Cramped. Grimy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104847142915
+    m_Localized: Like a hug from a sticky shadow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104847142916
+    m_Localized: "Is this it? Is this where I\u2019ll meet\\nmy very own amazing
+      \u2018human\u2019?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104847142917
+    m_Localized: Ahh!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104847142918
+    m_Localized: Ahhhh!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104847142919
+    m_Localized: Ahhhhhhh!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104847142920
+    m_Localized: My darkness. My darkness is gone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337216
+    m_Localized: It seems my journey on Earth now ends under the feet of this humongous
+      monster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337217
+    m_Localized: Is life really this fleeting?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337218
+    m_Localized: One day shining radiantly\nlike a dream marble,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337219
+    m_Localized: And dropped into a vicious,\nmuddy pit the next?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337220
+    m_Localized: For what did I dream, staring\nat Earth all this time?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337221
+    m_Localized: "(What\u2019s that? I\u2019m scared, but I won\u2019t show it.)|(\u2019Humongous
+      monster\u2019?! I\u2019m human, a nice one, even\u2026\u2026.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337222
+    m_Localized: Monster, dream marble, pit? What?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337223
+    m_Localized: "(Is it an alien? A monster?\\nWhatever it is, it\u2019s talking\u2026!)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337224
+    m_Localized: "(Is it frightened? But why?\\nI\u2019m the one who should be scared!)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337225
+    m_Localized: "(Okay, let\u2019s take a deep breath\u2026\\nInhale, exhale.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337226
+    m_Localized: "Hey, I won\u2019t hurt you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337227
+    m_Localized: "I won\u2019t push you into a muddy pit,\\nyou Unidentified Black
+      Blob."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337228
+    m_Localized: "I also have no intention of stepping\\non you, if that\u2019s what
+      you mean."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337229
+    m_Localized: "Like I said, I won\u2019t hurt you.\\nYou can calm down."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337230
+    m_Localized: "Won\u2019t hurt me? Won\u2019t hurt me?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337231
+    m_Localized: "\u2026My darkness. Your attack began the\\nmoment you ripped away
+      my darkness."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337232
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337233
+    m_Localized: Uh, s, sorry.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337234
+    m_Localized: "I guess the sudden brightness must have\\nshocked you. Here, I\u2019ll
+      bring it back."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337235
+    m_Localized: "(Let\u2019s wait until that\\nmystery blob calms down.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337236
+    m_Localized: .......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337237
+    m_Localized: .......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337238
+    m_Localized: .......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337239
+    m_Localized: .......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337240
+    m_Localized: You ripped away my darkness and disturbed\nmy peace, but you also
+      gave it back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337241
+    m_Localized: You are kind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337242
+    m_Localized: "I really didn\u2019t mean to rip away\\nanything of yours."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337243
+    m_Localized: I just opened the bookshelf cabinet door\nlike any other day.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337244
+    m_Localized: "\u2026 My cabinet door\u2026 In my house."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337245
+    m_Localized: Oh my, so this place belongs to you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337246
+    m_Localized: Please excuse me. But there is\nsomething I really need to say!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337247
+    m_Localized: This corner of the wooden structure is\na beautiful, safe, and ugly
+      place, truly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337248
+    m_Localized: Thanks to it, I could rest wholeheartedly\nfor the first time since
+      arriving on Earth.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337249
+    m_Localized: "The bookshelf corner, you mean? You like it there,\\nhuh. I don\u2019t
+      remember dusting it\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337250
+    m_Localized: Anyway, thanks for the\ncompliment. (If it is one?)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337251
+    m_Localized: "You are the first creature I\u2019ve met on Earth."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337252
+    m_Localized: You have become a precious symbol\nthat will live on in my memory.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337253
+    m_Localized: What are you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337254
+    m_Localized: "I am\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337255
+    m_Localized: I am <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337256
+    m_Localized: What characteristics does\nthe <nickname> species possess?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337257
+    m_Localized: "Oh, that\u2019s actually my name."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337258
+    m_Localized: Ah! Name. Name. Name, the sign of being.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337259
+    m_Localized: "When one\u2019s name is called,\\nthe soul sways restlessly."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337260
+    m_Localized: "I am \u2018Dot.\u2019 The beings I met on\\nthe Moon gave me this
+      name."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337261
+    m_Localized: "\u2026Huh? The Moon?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337262
+    m_Localized: Who lives on the Moon?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337263
+    m_Localized: Many beings!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337264
+    m_Localized: The dark side of the Moon has a Dream\nFactory that creates human
+      dreams!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337265
+    m_Localized: Above and below the factory, the workers\nwho create and oversee
+      dreams
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337266
+    m_Localized: And the cleaners who dispose of the Filth\nfrom dreams unfit for
+      delivery,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337267
+    m_Localized: They all live full-fledged lives on the Moon!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337268
+    m_Localized: (Confusing.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337269
+    m_Localized: (A black blob appears out of nowhere\nand starts talking)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337270
+    m_Localized: "(And now it\u2019s asking me to believe\\nthere are beings on the
+      Moon?!)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337271
+    m_Localized: Oh, my. That cloud has floated to over\nthere already! There is
+      no time to waste.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337272
+    m_Localized: "Would it be possible for you to\\ntake me to a \u2018human\u2019?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337273
+    m_Localized: "I\u2019m sure Red, Sir Cello, and Edison are\\nlooking down from
+      the Moon, elated."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337274
+    m_Localized: "Oof. If you don\u2019t know what a human is\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337275
+    m_Localized: "I\u2019m ready to leave now."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337276
+    m_Localized: With somewhere to return to, departure\nis no longer a farewell
+      but an adventure!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337277
+    m_Localized: An adventure, that sounds cool.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337278
+    m_Localized: "Adventure. Adventure\u2026!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337279
+    m_Localized: I am ready to leave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337280
+    m_Localized: I am ready to leave!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337281
+    m_Localized: Dot, are you really ready to leave?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337282
+    m_Localized: "Yes! I am ready to leave!\\nI\u2019ll be fine. Fine."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337283
+    m_Localized: "<nickname>, I\u2019ll be brave and go.\\nI\u2019ll be back, safe
+      and alive, hopefully\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337284
+    m_Localized: "Dot, you\u2019ve made it back safely\\nin one single round piece!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337285
+    m_Localized: Yes... an extraordinary,\nenthralling exprience!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337286
+    m_Localized: It would have been more pleasant\nif my body was colored like that
+      of a dream.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337287
+    m_Localized: But I am but foul, lumpy\nand so very black.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337288
+    m_Localized: How lonesome it was to be a black spot\namongst every other being
+      in the world.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337289
+    m_Localized: But it was alright. I was able to quietly\nhumans people going their
+      way!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337290
+    m_Localized: (Curious. I thought Dot liked the dark?)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337291
+    m_Localized: (So why do they dislike their body so?)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337292
+    m_Localized: "But Dot, don\u2019t you like\\ndark places and shadows?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337293
+    m_Localized: "You\u2019re scared of the light, right?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337294
+    m_Localized: "\u2026 You paid attention and remembered!\\nYes. That\u2019s exactly
+      it!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337295
+    m_Localized: "Um, but you don\u2019t seem to like your body\\ndespite it being
+      a similar shade. Why is that?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337296
+    m_Localized: "Hm\u2026 hm. Hmm."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337297
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337298
+    m_Localized: "I like the dark because it\\nresembles me. It\u2019s comforting."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337299
+    m_Localized: "It\u2019s a safe space for me when\\nthe light tries to erase me
+      whole."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337300
+    m_Localized: The dark is a snug and loving peace.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337301
+    m_Localized: "The black is\u2026 different. An infinitely\\nexpanding void that
+      robs one of sight."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337302
+    m_Localized: It hides all, and ironically reveals\nall in the cruelest of ways.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337303
+    m_Localized: "Beings with vicious, sharp teeth lurk within.\\nThose I cannot
+      even name\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337304
+    m_Localized: I get it. The right amount\nof dark is a place to relax,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337305
+    m_Localized: one where imagination can stretch its legs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337306
+    m_Localized: but a small room with zero light, or a park\nin the dead of night
+      was always scary.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337307
+    m_Localized: You caught right on to the nuanced\ndifference between the two.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337308
+    m_Localized: My blackness... is like that.\nA fearful, filthy sort of thing...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337309
+    m_Localized: No, no. I don't want\nto talk about it anymore.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337310
+    m_Localized: Would it be alright for me to regale\nyou with tales from my walk
+      instead?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337311
+    m_Localized: If that makes you comfortable.\nWould you like to start?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337312
+    m_Localized: "<nickname>, the truth is\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337313
+    m_Localized: Huh?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337314
+    m_Localized: "I heard you humans have a splendid\\ncustom called \u2018writing
+      a diary.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337315
+    m_Localized: Did the beings on the Moon tell you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337316
+    m_Localized: Yes, they said humans write\nabout their day before it ends.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337317
+    m_Localized: It lets you see what is unseen,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337318
+    m_Localized: "and makes what is special even more so.\\nA magical ritual, don\u2019t
+      you think?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337319
+    m_Localized: "(The beings on the Moon\u2026 They really\\nseem to value humans
+      in a special way.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337320
+    m_Localized: I have a leftover notebook and a pen.\nWould you like to use it
+      to write a diary?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337321
+    m_Localized: <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337322
+    m_Localized: Some kind of water seems to blur my vision.\nIs this what thankfulness
+      feels like?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337323
+    m_Localized: "(It seems I\u2019ve made quite an emotional friend.)|(Huh, they\u2019re
+      cute and nice\u2026!)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337324
+    m_Localized: "Anyway\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337325
+    m_Localized: "It was true. I wrapped today in my diary\\n\u2014now I see what
+      was unseen,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337326
+    m_Localized: And what was special\nsparkles even more so.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337327
+    m_Localized: "Um\u2026 If it\u2019s alright with you, I\u2019d like\\nto keep
+      my writings to myself."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337328
+    m_Localized: "Can you promise me\\nyou won\u2019t ever read it?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337329
+    m_Localized: Sure, I promise. Your secrets are safe.|Only if you hide it well
+      enough!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337330
+    m_Localized: Thank you! Our secret will remain\nsafe under the bed forever!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337331
+    m_Localized: "Of course! I\u2019m going to hide it\\nso well under the bed."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337332
+    m_Localized: <nickname>, I plan to\nfall asleep soon.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337333
+    m_Localized: I discovered somewhere very snuggly\nunder the bed just before,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337334
+    m_Localized: May I please use it\nas my place of sleep?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337335
+    m_Localized: "Under the bed\u2026? Where?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337336
+    m_Localized: Here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337337
+    m_Localized: "Uh, ugh. It\u2019s a spiderweb."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337338
+    m_Localized: (Gaaah!)|(Eeeew.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337339
+    m_Localized: Spiderweb? Spiderweb.\nSpiderweb.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337340
+    m_Localized: "Is it \u2018spider\u2019 plus \u2018web\u2019?\\nWhat is a spider?
+      Spider. Spider!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337341
+    m_Localized: "After some sleep,\\nI plan to study \u2018spiders.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337342
+    m_Localized: "Perhaps then I\u2019ll learn the secret\\nto this plush sleeping
+      spot."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337343
+    m_Localized: "<nickname>, when I wake up, let\u2019s walk and\\ndaydream and
+      think even more together!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337344
+    m_Localized: "My heart feels so giddy and full,\\nit feels like it\u2019s going
+      to float away\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851337345
+    m_Localized: "Up, up, and away\u2026"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
