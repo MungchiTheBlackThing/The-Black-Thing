@@ -42,6 +42,8 @@ namespace Assets.Script.DialClass
         public string AnimScene;
         public string AfterScript;
         public string Deathnote;
+        public string LocTable;
+        public string LocKey;
     }
 
     [System.Serializable]

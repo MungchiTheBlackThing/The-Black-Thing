@@ -15,228 +15,40 @@ MonoBehaviour:
   m_TableCollectionName: UITexts
   m_TableCollectionNameGuidString: 3ac90fb91b7a7284fa87bc4ab224abe1
   m_Entries:
-  - m_Id: 12278424432640
-    m_Key: ch1 title
+  - m_Id: 18389257197584384
+    m_Key: intro_BtnContinue
     m_Metadata:
       m_Items: []
-  - m_Id: 12278424432641
-    m_Key: ch2 title
+  - m_Id: 18389257340190720
+    m_Key: intro_BtnRestart
     m_Metadata:
       m_Items: []
-  - m_Id: 12278424432642
-    m_Key: ch3 title
+  - m_Id: 18389257340190721
+    m_Key: intro_PopupRestart_text
     m_Metadata:
       m_Items: []
-  - m_Id: 12278424432643
-    m_Key: ch4 title
+  - m_Id: 18389257340190722
+    m_Key: intro_PopupRestart_yes
     m_Metadata:
       m_Items: []
-  - m_Id: 12278424432644
-    m_Key: ch5 title
+  - m_Id: 18389257340190723
+    m_Key: intro_PopupRestart_no
     m_Metadata:
       m_Items: []
-  - m_Id: 12278424432645
-    m_Key: ch6 title
+  - m_Id: 18389257340190724
+    m_Key: intro_BtnLanguage
     m_Metadata:
       m_Items: []
-  - m_Id: 12278424432646
-    m_Key: ch7 title
+  - m_Id: 18389257340190725
+    m_Key: intro_PopupLanguage_text
     m_Metadata:
       m_Items: []
-  - m_Id: 12278424432647
-    m_Key: ch8 title
+  - m_Id: 18389257340190726
+    m_Key: intro_PopupLanguage_cancel
     m_Metadata:
       m_Items: []
-  - m_Id: 12278424432648
-    m_Key: ch9 title
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278424432649
-    m_Key: ch10 title
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278424432650
-    m_Key: ch11 title
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278424432651
-    m_Key: ch12 title
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278424432652
-    m_Key: ch13 title
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278424432653
-    m_Key: ch14 title
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626944
-    m_Key: ch1 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626945
-    m_Key: ch2 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626946
-    m_Key: ch3 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626947
-    m_Key: ch4 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626948
-    m_Key: ch5 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626949
-    m_Key: ch6 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626950
-    m_Key: ch7 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626951
-    m_Key: ch8 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626952
-    m_Key: ch9 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626953
-    m_Key: ch10 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626954
-    m_Key: ch11 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626955
-    m_Key: ch12 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626956
-    m_Key: ch13 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626957
-    m_Key: ch14 loading
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626958
-    m_Key: ch1 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626959
-    m_Key: ch2 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626960
-    m_Key: ch3 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626961
-    m_Key: ch4 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626962
-    m_Key: ch5 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626963
-    m_Key: ch6 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626964
-    m_Key: ch7 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626965
-    m_Key: ch8 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626966
-    m_Key: ch9 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626967
-    m_Key: ch10 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626968
-    m_Key: ch11 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626969
-    m_Key: ch12 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626970
-    m_Key: ch13 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626971
-    m_Key: ch14 subtitle
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626972
-    m_Key: ch1 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626973
-    m_Key: ch2 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626974
-    m_Key: ch3 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626975
-    m_Key: ch4 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626976
-    m_Key: ch5 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626977
-    m_Key: ch6 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626978
-    m_Key: ch7 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626979
-    m_Key: ch8 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626980
-    m_Key: ch9 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626981
-    m_Key: ch10 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626982
-    m_Key: ch11 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626983
-    m_Key: ch12 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626984
-    m_Key: ch13 longtext
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12278428626985
-    m_Key: ch14 longtext
+  - m_Id: 18389257340190727
+    m_Key: intro_PopupLanguage_done
     m_Metadata:
       m_Items: []
   m_Metadata:

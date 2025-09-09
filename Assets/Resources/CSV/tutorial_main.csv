@@ -1,97 +1,97 @@
-Main,ScriptNumber,LineKey,Background,Actor,AnimState,DotBody,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote
-1,tutorial_6,1,main_door_open,Dot,main,body_default1,face_blink,text,"인간은 동그란 머리 하나와 판판한 몸, \n기다란 선 같은 팔다리를 가지고 있는데,","Humans have a round head, flat\nbody, long stick-like arms and legs,",2,,,
-1,,2,main_door_open,Dot,main,,,text,그 팔다리 네 개 끝에는 정교하게 꼬물거리는\n손발가락들이 무려 다섯 개나 달려 있어.,"and at the end of each limb are no more than\nfive fingers and toes, flexing intricately.",3,,,
-1,,3,main_door_open,Dot,main,,,text,또 기이다란 머리털이 그들의\n고등한 뇌를 지키기 위해 자라나지.,And they grow loooong hair to\nprotect their advanced brain.,4,,,
-1,,4,main_door_open,Dot,main,,,text,그리고 정말로 정말로 놀라운 부분은!,And here’s the really truly incredible part!,5,,,
-1,,5,main_door_open,Dot,main,,,text,인간은 ‘색’이 아주 많다는 거야.\n그들이 꾸는 꿈처럼 말이야!,Humans are colorful.\nJust like the dreams they have!,6,,,
-1,,6,main_door_open,Dot,main,,,text,"머리칼에도, 눈동자에도, 피부에도,\n각자만의 흔적 같은 색을 품고 있지.","Hair, eyes, skin, all contain\ncolor like individual traces.",7,,,
-1,,7,main_door_open,Dot,main,,,text,"흐드러지는 풀잎의 색, 선선한 하늘의 색,\n그리고 네 가죽의 색도 아름답지만.","The color of a young leaf, a clear sky,\nand your own skin is certainly beautiful.",8,,,
-1,,8,main_door_open,Dot,main,,,text,인간의 색은 그와는 비교할\n수 없이 아름답다고 들었어.,But I heard the colors of humans\nare inimitably beautiful.,9,,,
-1,,9,main_door_open,Dot,main,,,text,"또 천이나 장식으로 피부를 덮어, 가지고\n태어나지 않은 색들도 마음껏 덧칠하고는 한대!",And I hear they add layers of unborn\ncolors with cloth and accessories!,10,,,
-1,,10,main_door_open,Dot,main,body_draw,face_draw,text,레드의 말을 취합해서\n유추해 본 결과…,From what Red has told me…,11,,,
-1,,11,main_door_open,Dot,main,body_draw2,face_blink,text,인간들은… 이렇게 생겼어!,Humans… look like this!,12,,,
-1,,12,main_door_open,Dot,main,,,text,이걸 보여 주면 알 거라고 했어. 이렇게\n멋진 외형을 가진 건 인간밖에 없다고 했거든.,He said showing this would work. That only\nhumans have such a wonderful exterior.,13,,,
-1,,13,main_door_open,Dot,main,,,text,너도 인간을 실제로 본 적이 있니?,Have you ever seen a real human too?,14,,,
-1,,14,main_door_open,Player,main,,,text,(어라?),(Huh?),15,,,
-1,,15,main_door_open,Player,main,,,text,(이게 대체 뭐지?),(What is this?),16,,,
-1,,16,main_door_open,Player,main,,,text,그… 쑥스럽네. 내가 인간인걸?,Well… you make me blush.\nSince I’m human?,17,,,
-1,,17,main_door_open,Dot,main,body_move,,text,네가 인간이라고?,You’re human?,18,,,
-1,,18,main_door_open,Dot,main,body_default1,,text,… 말도 안 돼.,… There’s no way.,19,,,
-1,,19,main_door_open,Player,main,body_default1,,selection,정말이야.|믿거나 말거나!,It’s true.|Take it or leave it!,20|20,,,
-1,,20,main_door_open,Dot,main,body_hmm,face_eyeroll3,text,인간의 특성. 동그란\n머리… 팔 두 개….,Humans. Round head… two arms…,21,,,
-1,,21,main_door_open,Dot,main,,face_eyeroll2,text,다리 두 개… 판판한 몸통….,Two legs… flat body…,22,,,
-1,,22,main_door_open,Dot,main,,face_blink,text,색깔이 많… 다. 어라?,Color…ful. Oh?,23,,,
-1,,23,main_door_open,Dot,main,,,text,"너, 네모반듯하게 짜인\n문자로 된 글을 읽니?",Do you read words made\nof squiggly letters?,24,,,
-1,,24,main_door_open,Player,main,,,text,"그럼, 당연하지.","Well, of course.",25,,,
-1,,25,main_door_open,Dot,main,body_move,,text,너도 아름다운 노래를 하니?,And do you sing beautiful tunes?,26,,,
-1,,26,main_door_open,Player,main,body_default1,,text,아름다운지는 모르겠지만\n노래를 하지.,I don’t know about\nbeautiful but I can sing.,27,,,
-1,,27,main_door_open,Dot,main,,,text,너도 고민에 잠겼을 때 가만히 ‘음’\n같은 소리를 내기도 하니?,And do you <i>hmmm</i> when you’re lost in thought?,28,,,
-1,,28,main_door_open,Player,main,,,text,음… 어라? 그런 것 같아!,Hmm… oh? I guess I do!,29,,,
-1,,29,main_door_open,Dot,main,body_move,,text,말도 안 돼.,Unbelievable.,30,,,
-1,,30,main_door_open,Dot,main,body_bounce,,text,말도 안 돼!,Unbelievable!,31,,,
-1,,31,main_door_open,Dot,main,body_bounce,,text,인 간을 만났어! 만났어? 만난 거야!,I met a human! I did it? I did it!,32,,,
-1,,32,main_door_open,Dot,main,body_bounce,face_staryeyes,text,"<nickname>, 달에 있는\n모두가 너를 사랑해!","<nickname>, everyone on\nthe moon loves you!",33,,,
-1,,33,main_door_open,Dot,main,body_bounce,,text,인간! 인 간! 인간이야!,Human! Hu-man! HUMAN!,34,,,
-1,,34,main_door_open,Dot,main,body_ch1_heartup,,text,"인간 <nickname>, 몸이 콩콩 뛰고\n심장이 빙글 돌아갈 것처럼 반가워.","Human <nickname>, my body pounds and my\nheart swivels, it’s just that nice to meet you.",35,,,
-1,,35,main_door_open,Dot,main,,,text,너의 이 머리카락에서 보여지는\n색은 지구에서 뭐라고 불려?,How does one on Earth call\nthe color I see on your hair?,36,,,
-1,,36,main_door_open,Player,main,,,textbox,내 머리의 색은……,That would be……,37,,,
-1,,37,main_door_open,Dot,main,,,text,그렇구나! 결코 잊지 않을게!,I see! I won’t ever forget!,38,,,
-1,,38,main_door_open,Dot,main,body_ch1_heartdown,,text,"아, 아, 아! <nickname>, 나는 달 뒤편에서 태어난 덩어리 괴물!","Oh, oh, oh! <nickname>, I’m a blobby creature\nborn on the dark side of the Moon!",39,,,
-1,,39,main_door_open,Dot,main,body_default1,face_eyeroll3,text,"비록 꿈 공장의 폐기물\n웅덩이 속에서 눈을 떴지만,","I opened my eyes in a puddle of\nFilth from the dream factory,",40,,,
-1,,40,main_door_open,Dot,main,,face_blink,text,body_default1,"but the first things that these eyes saw were\ndream marbles, iridescent and glowing.",41,,,
-1,,41,main_door_open,Dot,main,,face_blink,text,지금은 불쾌하고 끈적한\n몸을 가지고 있지만…,And though I have a unpleasant\nsticky body for the moment…,42,,,
-1,,42,main_door_open,Dot,main,body_move,,text,언젠가는 인간의 아름다운\n꿈이 될 것이라는 확신이 있어!,I know that one day I will become\na beautiful dream of a human!,43,,,
-1,,43,main_door_open,Dot,main,,face_omg,text,실은 없어…. 아무것도 확실한 게 없어서\n환희 속에서도 절망에 휘어감기는 나지만,"I don’t, actually… Nothing is certain and even\nin bliss I find myself wrapped in despair",44,,,
-1,,44,main_door_open,Dot,main,,face_blink,text,하지만 소망만은 확고해.,but my hopes are unshaken.,45,,,
-1,,45,main_door_open,Dot,main,,face_eyeroll3,text,그러니까… 그러니까….,So… So…,46,,,
-1,,46,main_door_open,Dot,main,,face_blink,text,너에게 부탁을 하나 해도 될까?,Could I ask a favor of you?,47,,,
-1,,47,main_door_open,Player,main,,,selection,"뭔… 데…?|응, 뭔데?","Which… would be…?|Yes, what is it?",48|48,,,
-1,,48,main_door_open,Dot,main,,,text,"음, 음, 흠, 흠!","Hmm, hmm, hem, hem!",49,,,
-1,,49,main_door_open,Dot,main,body_move,face_blink,text,"나, 나, 인간을 위한 최고의 꿈이 되고\n싶어. 인간에 대한 모든 걸 알려줘!","I, I, I want to become the best dream for\nhumans. Tell me everything about them!",50,,,
-1,,50,main_door_open,Dot,main,,face_staryeyes,text,어디서나 먼지 내려앉은 구석에 틀어박혀\n너의 뒷모습을 관찰하고 싶어.,I want take place in any old dusty\ncorner and observe you from behind.,51,,,
-1,,51,main_door_open,Dot,main,,,text,언제나 너의 곁에 함께하면서 생동하는\n모든 순간을 기록하게 해 줘.,Let me record each and every vibrant\nmoment by your side always.,52,,,
-1,,52,main_door_open,Dot,main,,,text,인간인 너를 행복하게 해 주고 싶어!,"I want to make you, human, happy!",53,,,
-1,,53,main_door_open,Player,main,,,text,잠깐만.,Hold on.,54,,,
-1,,54,main_door_open,Dot,main,body_bounce,,text,"이제부터는 끈적한 그림자처럼\n내가 함께할게! 항상, 항상!",From henceforth I’ll be with you like\na sticky shadow! Forever and always!,55,,,
-1,,55,main_door_open,Player,main,body_default,,text,잠깐만…!,Hold on…!,56,,,
-1,,56,main_door_open,Dot,main,,face_blink,text,"응, 응?","Yes, yes?",57,,,
-1,,57,main_door_open,Player,main,,,selection,(24시간 붙어 있는 건 부담스럽다.)|(감동이지만 난 인간의 전부가 아닌 걸?),"(24-hour surveillance is too much.)|(That’s nice, but I’m just one human, right?)",58|62,,,
-1,,58,main_door_open,Player,main,,,text,항상 붙어 다니는 건 조금 무리야.,Being around each other\nall the time would be difficult.,59,,,
-1,,59,main_door_open,Player,main,,,text,인간에게는 각자의 오붓한 공간을\n존중해 주는 문화가 있거든.,"Humans respect each\nother’s privacy, you see.",60,,,
-1,,60,main_door_open,Player,main,,,text,그래서 매일매일 나를 관찰하는\n건 무리일 수 있지만.,So it would be too much to\nobserve me every single day.,61,,,
-1,,61,main_door_open,Player,main,,,text,세상에는 나 말고도\n여러 군상이 있는 걸?,There is so much more\nout there than just me.,63,,,
-1,,62,main_door_open,Player,main,,,text,뭉치가 인간의 전부를 알고 싶은 거라면…\n나만으로는 부족하지 않을까.,If you want to learn everything about\nhumans… I think you’ll need more than me.,63,,,
-1,,63,main_door_open,Player,main,,,text,‘인간’ 자체가 궁금한 거지?,"You want to know about\nhumans as a whole, right?",64,,,
-1,,64,main_door_open,Player,main,,,text,그렇다면 보다 많은 사람을\n관찰하는 것도 하나의 방법일 거야.,Then observing more humans\nwould be one way of doing that.,65,,,
-1,,65,main_door_open,Player,main,,,text,바깥을 탐험한다거나….,Such as exploring the world outside…,66,,,
-1,,66,main_door_open,Dot,main,body_move,,text,…!,…!,67,,,
-1,,67,main_door_open,Dot,main,,,text,…,…,68,,,
-1,,68,main_door_open,Dot,main,,,text,무슨 뜻인지 알겠어.,I understand what you mean.,69,,,
-1,,69,main_door_open,Dot,main,body_default1,face_eyeroll3,text,하지만… 내 적성은\n방랑자가 아닌 것 같아.,But… I don’t think I’m meant to roam.,70,,,
-1,,70,main_door_open,Dot,main,,face_blink,text,달에서 지낼 때에도 나는 레드의 손바닥 안과\n첼로 경의 뱃살 위에 머무는 것을 가장 좋아했어.,"On the moon, my favorite spots were the\npalm of Red’s hand and Sir Cello’s plump belly.",71,,,
-1,,71,main_door_open,Dot,main,,,text,바깥은 위험해 보여. 창문 밖엔 나를 품어\n줄 비좁은 어둠이 없는 것 같았어.,The world outside looks dangerous. No\nsecluded darkness to welcome me.,72,,,
-1,,72,main_door_open,Dot,main,,,text,하지만 나에게는… 그게 필요해.,But I… I can’t live without it.,73,,,
-1,,73,main_door_open,Player,main,,,text,안식처가 필요한 거구나.,"Oh, I see. You need shelter.",74,,,
-1,,74,main_door_open,Dot,main,,,text,"응, 응. <nickname>의 방해꾼이\n되고 싶지는 않지만…","Yes, that’s it. As long as I’m not\nbothering you, <nickname>.",75,,,
-1,,75,main_door_open,Player,main,,,text,흠.,Hmm.,76,,,
-1,,76,main_door_open,Player,main,,,selection,(안쓰럽고 귀엽다.)|(그렇다면…),"(I’m growing fond of Dot.|(Oh, well…)",77|78,,,
-1,,77,main_door_open,Dot,main,,,text,"그리고, 그리고…","And, and.",78,,,
-1,,78,main_door_open,Dot,main,,,text,내가 처음 만난 인간과\n영영 작별해야 한다니.,To say goodbye to the\nfirst human I’ve ever met.,79,,,
-1,,79,main_door_open,Player,main,,,text,뭉치야…,Dot…,80,,,
-1,,80,main_door_open,Player,main,,,text,뭉치도 내가 처음\n만난 외계 괴물이야.,You’re the first alien creature\nI’ve ever met too.,81,,,
-1,,81,main_door_open,Player,main,,,selection,(이종족이 내 방에… 조금은 걱정돼.)|(이종족과의 우정이라니… 흥미로워!),(An alien in my room… I’m a little worried.)|(Friends with an alien… could be interesting!),82|84,,,
-1,,82,main_door_open,Player,main,,,text,(하지만 이빨이 많이 달린 근육\n괴물로 변할 것 같아 보이진 않지.),(But so far no signs of turning into a\nmuscular monster with too much teeth.),83,,,
-1,,83,main_door_open,Player,main,,,text,"(일단 지낼 곳을 내어 주고,\n함께 시간을 보내 보자.)","(I’ll give Dot a place to stay,\nand spend some time together.)",85,,,
-1,,84,main_door_open,Player,main,,,text,(지낼 곳을 내어 주고 함께 시간을\n보내면 분명 재미있을 것 같아.),(Giving Dot a place to stay and spending\ntime together should be fun.),85,,,
-1,,85,main_door_open,Player,main,,,text,"좋아, 뭉치.","Alright, Dot.",86,,,
-1,,86,main_door_open,Player,main,,,text,"나도 네가 갈 곳도 없이\n위험천만한 도시를 헤매다,","I wouldn’t want you to roam the\ndangerous city with no place to go,",87,,,
-1,,87,main_door_open,Player,main,body_default1,,text,움직일 힘도 없이 구두 밑창에 밟히며\n고통받게 되는 건 보고 싶지 않아.,and get trampled by people’s shoes without\nbeing able to lift a finger… (if you have one.),88,,,
-1,,88,main_door_open,Player,main,,,text,"밖에서 인간들을 관찰하되, 외출을 마치면\n내 장롱으로 돌아오는 걸로 하면 어때?","How about you observe humans out there,\nand return to the closet once you’re done?",89,,,
-1,,89,main_door_open,Dot,main,body_move,,text,<nickname>은 어떻게 그런\n방법을 생각해 낸 거야?,Just how did you come up\nwith a plan like that?,90,,,
-1,,90,main_door_open,Player,main,body_default1,,text,"인간들은 자주 외출하고, 늘 집으로\n돌아오거든. 우리는 그걸 산책이라 불러.","Humans go out, and come home\nall the time. We call it taking a walk.",91,,,
-1,,91,main_door_open,Dot,main,body_move,,text,"산책, 산책, 산책.\n그리고 근사한 나의 공간.","Walk, walk, walk.\nAnd my very own corner.",92,,,
-1,,92,main_door_open,Dot,main,body_default1,face_squeeze,text,이보다 좋을 수는 없어!,Life couldn’t be better!,93,,,
-1,,93,main_door_open,Player,main,body_default1,face_blink,selection,(좋아하는 걸 보니 뿌듯해.)|(잘 넘긴 것 같다.),(It’s nice to see Dot so happy.)|(I think that worked.),94|94,,,
-1,,94,main_door_open,Player,main,,,text,"뭉치의 인간 공부에도 도움이 되고,\n나에게도 작은 말동무가 생길 테니…","It will help your human studies,\nand I’ll have a little companion…",95,,,
-1,,95,main_door_open,Player,main,,,text,서로에게 좋은 일일 거야.,This will work for both of us.,96,,,
-1,,96,main_door_open,Dot,main,body_move,face_blink,text,"응, 응. 분명 그럴 거야!","Yes, yes. I’m certain of it.",,,,
+﻿Main,ScriptNumber,LineKey,Background,Actor,AnimState,DotBody,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+1,tutorial_6,1,main_door_open,Dot,main,body_default1,face_blink,text,"인간은 동그란 머리 하나와 판판한 몸, \n기다란 선 같은 팔다리를 가지고 있는데,","Humans have a round head, flat\nbody, long stick-like arms and legs,",2,,,,Tuto_Main,TM_L0001
+1,,2,main_door_open,Dot,main,,,text,그 팔다리 네 개 끝에는 정교하게 꼬물거리는\n손발가락들이 무려 다섯 개나 달려 있어.,"and at the end of each limb are no more than\nfive fingers and toes, flexing intricately.",3,,,,Tuto_Main,TM_L0002
+1,,3,main_door_open,Dot,main,,,text,또 기이다란 머리털이 그들의\n고등한 뇌를 지키기 위해 자라나지.,And they grow loooong hair to\nprotect their advanced brain.,4,,,,Tuto_Main,TM_L0003
+1,,4,main_door_open,Dot,main,,,text,그리고 정말로 정말로 놀라운 부분은!,And here’s the really truly incredible part!,5,,,,Tuto_Main,TM_L0004
+1,,5,main_door_open,Dot,main,,,text,인간은 ‘색’이 아주 많다는 거야.\n그들이 꾸는 꿈처럼 말이야!,Humans are colorful.\nJust like the dreams they have!,6,,,,Tuto_Main,TM_L0005
+1,,6,main_door_open,Dot,main,,,text,"머리칼에도, 눈동자에도, 피부에도,\n각자만의 흔적 같은 색을 품고 있지.","Hair, eyes, skin, all contain\ncolor like individual traces.",7,,,,Tuto_Main,TM_L0006
+1,,7,main_door_open,Dot,main,,,text,"흐드러지는 풀잎의 색, 선선한 하늘의 색,\n그리고 네 가죽의 색도 아름답지만.","The color of a young leaf, a clear sky,\nand your own skin is certainly beautiful.",8,,,,Tuto_Main,TM_L0007
+1,,8,main_door_open,Dot,main,,,text,인간의 색은 그와는 비교할\n수 없이 아름답다고 들었어.,But I heard the colors of humans\nare inimitably beautiful.,9,,,,Tuto_Main,TM_L0008
+1,,9,main_door_open,Dot,main,,,text,"또 천이나 장식으로 피부를 덮어, 가지고\n태어나지 않은 색들도 마음껏 덧칠하고는 한대!",And I hear they add layers of unborn\ncolors with cloth and accessories!,10,,,,Tuto_Main,TM_L0009
+1,,10,main_door_open,Dot,main,body_draw,face_draw,text,레드의 말을 취합해서\n유추해 본 결과…,From what Red has told me…,11,,,,Tuto_Main,TM_L0010
+1,,11,main_door_open,Dot,main,body_draw2,face_blink,text,인간들은… 이렇게 생겼어!,Humans… look like this!,12,,,,Tuto_Main,TM_L0011
+1,,12,main_door_open,Dot,main,,,text,이걸 보여 주면 알 거라고 했어. 이렇게\n멋진 외형을 가진 건 인간밖에 없다고 했거든.,He said showing this would work. That only\nhumans have such a wonderful exterior.,13,,,,Tuto_Main,TM_L0012
+1,,13,main_door_open,Dot,main,,,text,너도 인간을 실제로 본 적이 있니?,Have you ever seen a real human too?,14,,,,Tuto_Main,TM_L0013
+1,,14,main_door_open,Player,main,,,text,(어라?),(Huh?),15,,,,Tuto_Main,TM_L0014
+1,,15,main_door_open,Player,main,,,text,(이게 대체 뭐지?),(What is this?),16,,,,Tuto_Main,TM_L0015
+1,,16,main_door_open,Player,main,,,text,그… 쑥스럽네. 내가 인간인걸?,Well… you make me blush.\nSince I’m human?,17,,,,Tuto_Main,TM_L0016
+1,,17,main_door_open,Dot,main,body_move,,text,네가 인간이라고?,You’re human?,18,,,,Tuto_Main,TM_L0017
+1,,18,main_door_open,Dot,main,body_default1,,text,… 말도 안 돼.,… There’s no way.,19,,,,Tuto_Main,TM_L0018
+1,,19,main_door_open,Player,main,body_default1,,selection,정말이야.|믿거나 말거나!,It’s true.|Take it or leave it!,20|20,,,,Tuto_Main,TM_L0019
+1,,20,main_door_open,Dot,main,body_hmm,face_eyeroll3,text,인간의 특성. 동그란\n머리… 팔 두 개….,Humans. Round head… two arms…,21,,,,Tuto_Main,TM_L0020
+1,,21,main_door_open,Dot,main,,face_eyeroll2,text,다리 두 개… 판판한 몸통….,Two legs… flat body…,22,,,,Tuto_Main,TM_L0021
+1,,22,main_door_open,Dot,main,,face_blink,text,색깔이 많… 다. 어라?,Color…ful. Oh?,23,,,,Tuto_Main,TM_L0022
+1,,23,main_door_open,Dot,main,,,text,"너, 네모반듯하게 짜인\n문자로 된 글을 읽니?",Do you read words made\nof squiggly letters?,24,,,,Tuto_Main,TM_L0023
+1,,24,main_door_open,Player,main,,,text,"그럼, 당연하지.","Well, of course.",25,,,,Tuto_Main,TM_L0024
+1,,25,main_door_open,Dot,main,body_move,,text,너도 아름다운 노래를 하니?,And do you sing beautiful tunes?,26,,,,Tuto_Main,TM_L0025
+1,,26,main_door_open,Player,main,body_default1,,text,아름다운지는 모르겠지만\n노래를 하지.,I don’t know about\nbeautiful but I can sing.,27,,,,Tuto_Main,TM_L0026
+1,,27,main_door_open,Dot,main,,,text,너도 고민에 잠겼을 때 가만히 ‘음’\n같은 소리를 내기도 하니?,And do you <i>hmmm</i> when you’re lost in thought?,28,,,,Tuto_Main,TM_L0027
+1,,28,main_door_open,Player,main,,,text,음… 어라? 그런 것 같아!,Hmm… oh? I guess I do!,29,,,,Tuto_Main,TM_L0028
+1,,29,main_door_open,Dot,main,body_move,,text,말도 안 돼.,Unbelievable.,30,,,,Tuto_Main,TM_L0029
+1,,30,main_door_open,Dot,main,body_bounce,,text,말도 안 돼!,Unbelievable!,31,,,,Tuto_Main,TM_L0030
+1,,31,main_door_open,Dot,main,body_bounce,,text,인 간을 만났어! 만났어? 만난 거야!,I met a human! I did it? I did it!,32,,,,Tuto_Main,TM_L0031
+1,,32,main_door_open,Dot,main,body_bounce,face_staryeyes,text,"<nickname>, 달에 있는\n모두가 너를 사랑해!","<nickname>, everyone on\nthe moon loves you!",33,,,,Tuto_Main,TM_L0032
+1,,33,main_door_open,Dot,main,body_bounce,,text,인간! 인 간! 인간이야!,Human! Hu-man! HUMAN!,34,,,,Tuto_Main,TM_L0033
+1,,34,main_door_open,Dot,main,body_ch1_heartup,,text,"인간 <nickname>, 몸이 콩콩 뛰고\n심장이 빙글 돌아갈 것처럼 반가워.","Human <nickname>, my body pounds and my\nheart swivels, it’s just that nice to meet you.",35,,,,Tuto_Main,TM_L0034
+1,,35,main_door_open,Dot,main,,,text,너의 이 머리카락에서 보여지는\n색은 지구에서 뭐라고 불려?,How does one on Earth call\nthe color I see on your hair?,36,,,,Tuto_Main,TM_L0035
+1,,36,main_door_open,Player,main,,,textbox,내 머리의 색은……,That would be……,37,,,,Tuto_Main,TM_L0036
+1,,37,main_door_open,Dot,main,,,text,그렇구나! 결코 잊지 않을게!,I see! I won’t ever forget!,38,,,,Tuto_Main,TM_L0037
+1,,38,main_door_open,Dot,main,body_ch1_heartdown,,text,"아, 아, 아! <nickname>, 나는 달 뒤편에서 태어난 덩어리 괴물!","Oh, oh, oh! <nickname>, I’m a blobby creature\nborn on the dark side of the Moon!",39,,,,Tuto_Main,TM_L0038
+1,,39,main_door_open,Dot,main,body_default1,face_eyeroll3,text,"비록 꿈 공장의 폐기물\n웅덩이 속에서 눈을 떴지만,","I opened my eyes in a puddle of\nFilth from the dream factory,",40,,,,Tuto_Main,TM_L0039
+1,,40,main_door_open,Dot,main,,face_blink,text,body_default1,"but the first things that these eyes saw were\ndream marbles, iridescent and glowing.",41,,,,Tuto_Main,TM_L0040
+1,,41,main_door_open,Dot,main,,face_blink,text,지금은 불쾌하고 끈적한\n몸을 가지고 있지만…,And though I have a unpleasant\nsticky body for the moment…,42,,,,Tuto_Main,TM_L0041
+1,,42,main_door_open,Dot,main,body_move,,text,언젠가는 인간의 아름다운\n꿈이 될 것이라는 확신이 있어!,I know that one day I will become\na beautiful dream of a human!,43,,,,Tuto_Main,TM_L0042
+1,,43,main_door_open,Dot,main,,face_omg,text,실은 없어…. 아무것도 확실한 게 없어서\n환희 속에서도 절망에 휘어감기는 나지만,"I don’t, actually… Nothing is certain and even\nin bliss I find myself wrapped in despair",44,,,,Tuto_Main,TM_L0043
+1,,44,main_door_open,Dot,main,,face_blink,text,하지만 소망만은 확고해.,but my hopes are unshaken.,45,,,,Tuto_Main,TM_L0044
+1,,45,main_door_open,Dot,main,,face_eyeroll3,text,그러니까… 그러니까….,So… So…,46,,,,Tuto_Main,TM_L0045
+1,,46,main_door_open,Dot,main,,face_blink,text,너에게 부탁을 하나 해도 될까?,Could I ask a favor of you?,47,,,,Tuto_Main,TM_L0046
+1,,47,main_door_open,Player,main,,,selection,"뭔… 데…?|응, 뭔데?","Which… would be…?|Yes, what is it?",48|48,,,,Tuto_Main,TM_L0047
+1,,48,main_door_open,Dot,main,,,text,"음, 음, 흠, 흠!","Hmm, hmm, hem, hem!",49,,,,Tuto_Main,TM_L0048
+1,,49,main_door_open,Dot,main,body_move,face_blink,text,"나, 나, 인간을 위한 최고의 꿈이 되고\n싶어. 인간에 대한 모든 걸 알려줘!","I, I, I want to become the best dream for\nhumans. Tell me everything about them!",50,,,,Tuto_Main,TM_L0049
+1,,50,main_door_open,Dot,main,,face_staryeyes,text,어디서나 먼지 내려앉은 구석에 틀어박혀\n너의 뒷모습을 관찰하고 싶어.,I want take place in any old dusty\ncorner and observe you from behind.,51,,,,Tuto_Main,TM_L0050
+1,,51,main_door_open,Dot,main,,,text,언제나 너의 곁에 함께하면서 생동하는\n모든 순간을 기록하게 해 줘.,Let me record each and every vibrant\nmoment by your side always.,52,,,,Tuto_Main,TM_L0051
+1,,52,main_door_open,Dot,main,,,text,인간인 너를 행복하게 해 주고 싶어!,"I want to make you, human, happy!",53,,,,Tuto_Main,TM_L0052
+1,,53,main_door_open,Player,main,,,text,잠깐만.,Hold on.,54,,,,Tuto_Main,TM_L0053
+1,,54,main_door_open,Dot,main,body_bounce,,text,"이제부터는 끈적한 그림자처럼\n내가 함께할게! 항상, 항상!",From henceforth I’ll be with you like\na sticky shadow! Forever and always!,55,,,,Tuto_Main,TM_L0054
+1,,55,main_door_open,Player,main,body_default,,text,잠깐만…!,Hold on…!,56,,,,Tuto_Main,TM_L0055
+1,,56,main_door_open,Dot,main,,face_blink,text,"응, 응?","Yes, yes?",57,,,,Tuto_Main,TM_L0056
+1,,57,main_door_open,Player,main,,,selection,(24시간 붙어 있는 건 부담스럽다.)|(감동이지만 난 인간의 전부가 아닌 걸?),"(24-hour surveillance is too much.)|(That’s nice, but I’m just one human, right?)",58|62,,,,Tuto_Main,TM_L0057
+1,,58,main_door_open,Player,main,,,text,항상 붙어 다니는 건 조금 무리야.,Being around each other\nall the time would be difficult.,59,,,,Tuto_Main,TM_L0058
+1,,59,main_door_open,Player,main,,,text,인간에게는 각자의 오붓한 공간을\n존중해 주는 문화가 있거든.,"Humans respect each\nother’s privacy, you see.",60,,,,Tuto_Main,TM_L0059
+1,,60,main_door_open,Player,main,,,text,그래서 매일매일 나를 관찰하는\n건 무리일 수 있지만.,So it would be too much to\nobserve me every single day.,61,,,,Tuto_Main,TM_L0060
+1,,61,main_door_open,Player,main,,,text,세상에는 나 말고도\n여러 군상이 있는 걸?,There is so much more\nout there than just me.,63,,,,Tuto_Main,TM_L0061
+1,,62,main_door_open,Player,main,,,text,뭉치가 인간의 전부를 알고 싶은 거라면…\n나만으로는 부족하지 않을까.,If you want to learn everything about\nhumans… I think you’ll need more than me.,63,,,,Tuto_Main,TM_L0062
+1,,63,main_door_open,Player,main,,,text,‘인간’ 자체가 궁금한 거지?,"You want to know about\nhumans as a whole, right?",64,,,,Tuto_Main,TM_L0063
+1,,64,main_door_open,Player,main,,,text,그렇다면 보다 많은 사람을\n관찰하는 것도 하나의 방법일 거야.,Then observing more humans\nwould be one way of doing that.,65,,,,Tuto_Main,TM_L0064
+1,,65,main_door_open,Player,main,,,text,바깥을 탐험한다거나….,Such as exploring the world outside…,66,,,,Tuto_Main,TM_L0065
+1,,66,main_door_open,Dot,main,body_move,,text,…!,…!,67,,,,Tuto_Main,TM_L0066
+1,,67,main_door_open,Dot,main,,,text,…,…,68,,,,Tuto_Main,TM_L0067
+1,,68,main_door_open,Dot,main,,,text,무슨 뜻인지 알겠어.,I understand what you mean.,69,,,,Tuto_Main,TM_L0068
+1,,69,main_door_open,Dot,main,body_default1,face_eyeroll3,text,하지만… 내 적성은\n방랑자가 아닌 것 같아.,But… I don’t think I’m meant to roam.,70,,,,Tuto_Main,TM_L0069
+1,,70,main_door_open,Dot,main,,face_blink,text,달에서 지낼 때에도 나는 레드의 손바닥 안과\n첼로 경의 뱃살 위에 머무는 것을 가장 좋아했어.,"On the moon, my favorite spots were the\npalm of Red’s hand and Sir Cello’s plump belly.",71,,,,Tuto_Main,TM_L0070
+1,,71,main_door_open,Dot,main,,,text,바깥은 위험해 보여. 창문 밖엔 나를 품어\n줄 비좁은 어둠이 없는 것 같았어.,The world outside looks dangerous. No\nsecluded darkness to welcome me.,72,,,,Tuto_Main,TM_L0071
+1,,72,main_door_open,Dot,main,,,text,하지만 나에게는… 그게 필요해.,But I… I can’t live without it.,73,,,,Tuto_Main,TM_L0072
+1,,73,main_door_open,Player,main,,,text,안식처가 필요한 거구나.,"Oh, I see. You need shelter.",74,,,,Tuto_Main,TM_L0073
+1,,74,main_door_open,Dot,main,,,text,"응, 응. <nickname>의 방해꾼이\n되고 싶지는 않지만…","Yes, that’s it. As long as I’m not\nbothering you, <nickname>.",75,,,,Tuto_Main,TM_L0074
+1,,75,main_door_open,Player,main,,,text,흠.,Hmm.,76,,,,Tuto_Main,TM_L0075
+1,,76,main_door_open,Player,main,,,selection,(안쓰럽고 귀엽다.)|(그렇다면…),"(I’m growing fond of Dot.|(Oh, well…)",77|78,,,,Tuto_Main,TM_L0076
+1,,77,main_door_open,Dot,main,,,text,"그리고, 그리고…","And, and.",78,,,,Tuto_Main,TM_L0077
+1,,78,main_door_open,Dot,main,,,text,내가 처음 만난 인간과\n영영 작별해야 한다니.,To say goodbye to the\nfirst human I’ve ever met.,79,,,,Tuto_Main,TM_L0078
+1,,79,main_door_open,Player,main,,,text,뭉치야…,Dot…,80,,,,Tuto_Main,TM_L0079
+1,,80,main_door_open,Player,main,,,text,뭉치도 내가 처음\n만난 외계 괴물이야.,You’re the first alien creature\nI’ve ever met too.,81,,,,Tuto_Main,TM_L0080
+1,,81,main_door_open,Player,main,,,selection,(이종족이 내 방에… 조금은 걱정돼.)|(이종족과의 우정이라니… 흥미로워!),(An alien in my room… I’m a little worried.)|(Friends with an alien… could be interesting!),82|84,,,,Tuto_Main,TM_L0081
+1,,82,main_door_open,Player,main,,,text,(하지만 이빨이 많이 달린 근육\n괴물로 변할 것 같아 보이진 않지.),(But so far no signs of turning into a\nmuscular monster with too much teeth.),83,,,,Tuto_Main,TM_L0082
+1,,83,main_door_open,Player,main,,,text,"(일단 지낼 곳을 내어 주고,\n함께 시간을 보내 보자.)","(I’ll give Dot a place to stay,\nand spend some time together.)",85,,,,Tuto_Main,TM_L0083
+1,,84,main_door_open,Player,main,,,text,(지낼 곳을 내어 주고 함께 시간을\n보내면 분명 재미있을 것 같아.),(Giving Dot a place to stay and spending\ntime together should be fun.),85,,,,Tuto_Main,TM_L0084
+1,,85,main_door_open,Player,main,,,text,"좋아, 뭉치.","Alright, Dot.",86,,,,Tuto_Main,TM_L0085
+1,,86,main_door_open,Player,main,,,text,"나도 네가 갈 곳도 없이\n위험천만한 도시를 헤매다,","I wouldn’t want you to roam the\ndangerous city with no place to go,",87,,,,Tuto_Main,TM_L0086
+1,,87,main_door_open,Player,main,body_default1,,text,움직일 힘도 없이 구두 밑창에 밟히며\n고통받게 되는 건 보고 싶지 않아.,and get trampled by people’s shoes without\nbeing able to lift a finger… (if you have one.),88,,,,Tuto_Main,TM_L0087
+1,,88,main_door_open,Player,main,,,text,"밖에서 인간들을 관찰하되, 외출을 마치면\n내 장롱으로 돌아오는 걸로 하면 어때?","How about you observe humans out there,\nand return to the closet once you’re done?",89,,,,Tuto_Main,TM_L0088
+1,,89,main_door_open,Dot,main,body_move,,text,<nickname>은 어떻게 그런\n방법을 생각해 낸 거야?,Just how did you come up\nwith a plan like that?,90,,,,Tuto_Main,TM_L0089
+1,,90,main_door_open,Player,main,body_default1,,text,"인간들은 자주 외출하고, 늘 집으로\n돌아오거든. 우리는 그걸 산책이라 불러.","Humans go out, and come home\nall the time. We call it taking a walk.",91,,,,Tuto_Main,TM_L0090
+1,,91,main_door_open,Dot,main,body_move,,text,"산책, 산책, 산책.\n그리고 근사한 나의 공간.","Walk, walk, walk.\nAnd my very own corner.",92,,,,Tuto_Main,TM_L0091
+1,,92,main_door_open,Dot,main,body_default1,face_squeeze,text,이보다 좋을 수는 없어!,Life couldn’t be better!,93,,,,Tuto_Main,TM_L0092
+1,,93,main_door_open,Player,main,body_default1,face_blink,selection,(좋아하는 걸 보니 뿌듯해.)|(잘 넘긴 것 같다.),(It’s nice to see Dot so happy.)|(I think that worked.),94|94,,,,Tuto_Main,TM_L0093
+1,,94,main_door_open,Player,main,,,text,"뭉치의 인간 공부에도 도움이 되고,\n나에게도 작은 말동무가 생길 테니…","It will help your human studies,\nand I’ll have a little companion…",95,,,,Tuto_Main,TM_L0094
+1,,95,main_door_open,Player,main,,,text,서로에게 좋은 일일 거야.,This will work for both of us.,96,,,,Tuto_Main,TM_L0095
+1,,96,main_door_open,Dot,main,body_move,face_blink,text,"응, 응. 분명 그럴 거야!","Yes, yes. I’m certain of it.",,,,,Tuto_Main,TM_L0096
