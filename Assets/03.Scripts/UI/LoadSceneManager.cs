@@ -25,7 +25,6 @@ public class LoadSceneManager : MonoBehaviour
     public FadeInOutManager fadeInOut;
 
     [Header("로딩 패널 로컬라이제이션 테이블")]
-    [SerializeField]
     private string _stringTableName = "Chapter";
 
     private string _currentSceneName;
@@ -97,14 +96,13 @@ public class LoadSceneManager : MonoBehaviour
         Debug.Log($"[LoadSceneManager]변경되어야 하는 챕터: {_targetChapter}");
         if (stringTable != null)
         {
-                string titleKey = $"loading_title_ch{_targetChapter}";
-                if (chTitleText != null)
-                    chTitleText.text = stringTable.GetEntry(titleKey)?.GetLocalizedString() ?? $"default title text";
+            string titleKey = $"loading_title_ch{_targetChapter}";
+            if (chTitleText != null)
+                chTitleText.text = stringTable.GetEntry(titleKey)?.GetLocalizedString() ?? $"default title text";
 
-                string loadingKey = $"loading_contents_ch{_targetChapter}";
-                if (chLoadingText != null)
-                    chLoadingText.text = stringTable.GetEntry(loadingKey)?.GetLocalizedString() ?? "default loading text";
-            
+            string loadingKey = $"loading_contents_ch{_targetChapter}";
+            if (chLoadingText != null)
+                chLoadingText.text = stringTable.GetEntry(loadingKey)?.GetLocalizedString() ?? "default loading text";
         }
         else
         {

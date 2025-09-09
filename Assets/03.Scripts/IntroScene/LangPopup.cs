@@ -181,7 +181,7 @@ public class LangPopup : MonoBehaviour
         int idx = myDropdown.value;
         ApplyLocaleByIndex(idx, save: true);
 
-        // 다음에 팝업 열 때의 “이전값”이 현재값이 되도록 스냅샷 갱신
+        // 다음에 팝업 열 때의 이전값이 현재값이 되도록 스냅샷 갱신
         var cur = LocalizationSettings.SelectedLocale;
         preOpenLocaleCode = cur.Identifier.Code;
         preOpenDropdownIndex = IndexOfLocale(cur);
