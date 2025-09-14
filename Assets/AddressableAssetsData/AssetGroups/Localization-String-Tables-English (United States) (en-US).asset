@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 854362a9d8efe594c89411bd3eec8e8a
   m_SerializeEntries:
   - m_GUID: a8a49dc7ae2630a46a09c75f065ebf2e
-    m_Address: UITexts_en-US
+    m_Address: IntroUITexts_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
@@ -42,12 +42,6 @@ MonoBehaviour:
     - Preload
   - m_GUID: 72c36ec6dc0583b46b51936143e315c5
     m_Address: Main_Ch1_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-  - m_GUID: 824b0eec8768f374180c704132ee4eeb
-    m_Address: test_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US

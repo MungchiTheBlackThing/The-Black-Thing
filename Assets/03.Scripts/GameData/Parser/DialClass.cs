@@ -63,6 +63,8 @@ namespace Assets.Script.DialClass
         public string Deathnote;
         public string AfterScript;
         public string Exeption;
+        public string LocTable;
+        public string LocKey;
     }
 
     [System.Serializable]

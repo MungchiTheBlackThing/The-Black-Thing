@@ -117,7 +117,6 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
                 }
             }
-            //희진 추가
             if (parts.Length >= 16)
             { 
                 DialogueEntries[DialogueEntries.Count - 1].LocTable = parts[15].Trim();
@@ -164,8 +163,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         {
             if (string.IsNullOrEmpty(entry.LocTable))
             {
-                // 강한 정책: 에러 + 폴백
-                Debug.LogError($"[Loc] LocKey='{entry.LocKey}' 있는데 LocTable이 비어 있음 (LineKey={entry.LineKey}).");
+                Debug.LogError($"LocTable이 비어 있음 (LineKey={entry.LineKey})");
             }
             else
             {
