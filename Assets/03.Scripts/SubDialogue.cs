@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
 
 public class SubDialogue : MonoBehaviour
 {
@@ -70,13 +71,21 @@ public class SubDialogue : MonoBehaviour
                         Exeption = parts[13]
                     };
 
-                    string displayedText = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
-                    entry.KorText = displayedText;
+                    //string displayedText = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
+                    //entry.KorText = displayedText;
                     SubDialogueEntries.Add(entry);
                     currentDialogueList.Add(entry);
 
                     //Debug.Log($"Added SubDialogueEntry: {displayedText}");
                 }
+            }
+            if (parts.Length >= 14)
+            { 
+                SubDialogueEntries[SubDialogueEntries.Count - 1].LocTable = parts[14].Trim();
+            }
+            if (parts.Length >= 15)
+            { 
+                SubDialogueEntries[SubDialogueEntries.Count - 1].LocKey = parts[15].Trim();
             }
             else
             {
@@ -174,7 +183,8 @@ public class SubDialogue : MonoBehaviour
         subdata.LineKey = SubDialogueEntries[idx].LineKey;
         subdata.Actor = SubDialogueEntries[idx].Actor;
         subdata.TextType = SubDialogueEntries[idx].TextType;
-        subdata.Text = SubDialogueEntries[idx].KorText;
+        //subdata.Text = SubDialogueEntries[idx].KorText;
+        subdata.Text = GetDisplayText(SubDialogueEntries[idx]);
         subdata.Color = SubDialogueEntries[idx].Color;
         subdata.DotAnim = SubDialogueEntries[idx].DotAnim;
         //여기서 dot 값을 변경할 예정
@@ -183,6 +193,36 @@ public class SubDialogue : MonoBehaviour
         subdata.NextLineKey = SubDialogueEntries[idx].NextLineKey;
 
         return subdata;
+    }
+
+    public string GetDisplayText(SubDialogueEntry entry)
+    {
+        string text = string.Empty;
+        if (!string.IsNullOrEmpty(entry.LocTable) && !string.IsNullOrEmpty(entry.LocKey))
+        {
+            if (string.IsNullOrEmpty(entry.LocTable))
+            {
+                Debug.LogError($"LocTable이 비어 있음 (LineKey={entry.LineKey})");
+            }
+            else
+            {
+                string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString(entry.LocTable, entry.LocKey);
+                if (!string.IsNullOrEmpty(localizedText))
+                {
+                    return ApplyLineBreaks(localizedText);
+                }
+            }
+
+            text = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
+
+            // <nickname>을 닉네임으로 교체
+            if (text.Contains("<nickname>"))
+            {
+                string playerName = playerController.GetNickName();
+                text = text.Replace("<name>", playerName);
+            }
+        }
+        return text;
     }
 
     public void Subexit()
@@ -217,7 +257,7 @@ public class SubDialogue : MonoBehaviour
             menuController.onlyskipoff();
             subTutorial.gameObject.SetActive(true);
         }
-        
+
         Debug.Log("끝났을때 서브 번호: " + playerController.GetSubseq());
         // 다음 서브 실행
         manager.CurrentState.RunSubScript(dot, manager);

@@ -41,7 +41,7 @@ public class DoorController : MonoBehaviour
             {
                 if (collider != targetCollider && collider.gameObject == dot)
                 {
-                    dot.GetComponent<DotController>().Invisible();
+                    StartCoroutine(DotvisibleCheck(true));
                 }
             }
         }
@@ -49,7 +49,7 @@ public class DoorController : MonoBehaviour
         {
             if (dot.GetComponent<BoxCollider2D>().enabled == false)
             {
-                dot.GetComponent<DotController>().Visible();
+                StartCoroutine(DotvisibleCheck(false));
             }
         }
     }
@@ -82,7 +82,7 @@ public class DoorController : MonoBehaviour
                 open();
             }
         }
-        
+
     }
     public void close()
     {
@@ -130,6 +130,19 @@ public class DoorController : MonoBehaviour
         if (doorCollider != null)
         {
             doorCollider.enabled = true; // 문에 대한 터치/클릭 활성화
+        }
+    }
+
+    public IEnumerator DotvisibleCheck(bool setoff)
+    {
+        yield return new WaitForSeconds(0.2f);
+        if (setoff)
+        {
+            dot.GetComponent<DotController>().Invisible();
+        }
+        else
+        {
+            dot.GetComponent<DotController>().Visible();
         }
     }
 }

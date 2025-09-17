@@ -1,0 +1,858 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Main_Ch1_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 7fda4df5fd1b65d46adc971f5fd81e4a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 83436371968
+    m_Localized: I met a man today.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83532840960
+    m_Localized: But there was something\nstrange about him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035264
+    m_Localized: The moment I looked into\nhis eyes, I was sucked into them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035265
+    m_Localized: Because they were so beautiful?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035266
+    m_Localized: No, not like that. It was as if his own world,\nhis own story was
+      unfolding within his eyes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035267
+    m_Localized: (What...? Can Dot read\nminds or something?)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035268
+    m_Localized: Do you think it was a dream?|Do you think it was a memory?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035269
+    m_Localized: A dream. It was his dream.\nI could tell, instinctively.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035270
+    m_Localized: It was glorious, experiencing an actual\nfinished dream that had
+      become one with a human.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035271
+    m_Localized: But sadly, his dream was\nmore of a nightmare.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035272
+    m_Localized: "Someone who speaks gibberish\\ninstead of saying \u2018I love you.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035273
+    m_Localized: "My lover not being able\\nto say \u2018I love you\u2019 to me..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035274
+    m_Localized: "I would feel a little lonely too.|I don\u2019t think I would mind
+      that much."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035275
+    m_Localized: Why?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035276
+    m_Localized: "Is \u2018I love you\u2019 that special?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035277
+    m_Localized: "It\u2019s probably an important phrase\\nfor most humans...including
+      me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035278
+    m_Localized: "There are more valuable things in\\nlove than a superficial \u2018I
+      love you\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83537035279
+    m_Localized: "But I can understand where they\u2019re\\ncoming from. Those who
+      feel lonely, I mean."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229568
+    m_Localized: "<nickname>\u2019s understanding mind.\\nSympathy. It\u2019s a freeing
+      view."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229569
+    m_Localized: (This is embarrassing. Laugh and brush it off.)|I mean, I <i>am</i>
+      the most understanding person I know.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229570
+    m_Localized: "It\u2019s probably an important\\nphrase for most people."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229571
+    m_Localized: "\u2018I love you\u2019 is..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229572
+    m_Localized: the essence of romance, the evidence of love.|the most transparent
+      way to express love.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229573
+    m_Localized: I love you. I love you. No other phrase\ncould better represent
+      the feeling of love.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229574
+    m_Localized: "Then... then what is \u2018love?\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229575
+    m_Localized: Love is...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229576
+    m_Localized: You want to know about\nlove between lovers, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229577
+    m_Localized: Yes, what was shared between the\nman I saw today and his lovers!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229578
+    m_Localized: "I think most people treat \u2018love\u2019 as a force\\nthat makes
+      its receiver very special and singular."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229579
+    m_Localized: Personally, I think love is...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229580
+    m_Localized: "So if that love is unrequited,\\nwouldn\u2019t it be lonely and
+      sad?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229581
+    m_Localized: Yes, yes, yes. It would be devastating.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229582
+    m_Localized: Like the gloomy taste of\ndark afternoon clouds...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229583
+    m_Localized: Like the lonely orbit of the Moon,\ndevoted to its planet so blue.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229584
+    m_Localized: Every day would be grey.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229585
+    m_Localized: (The lonely orbit of the Moon....)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229586
+    m_Localized: (A romantic thought.)|(An interesting perspective.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229587
+    m_Localized: "Anyway, the moment you\\nhear or say \u2018I love you,\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229588
+    m_Localized: you can confirm that you are sharing\nsimilar levels of affection
+      with each other.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229589
+    m_Localized: That confirmation will become the\nfoundation for love to grow from.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229590
+    m_Localized: Right.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229591
+    m_Localized: ... Confirm. Confirmation. Con-fir-ma-tion.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229592
+    m_Localized: "\u2018I love you\u2019 is a device of confirmation!\\nA resonating
+      feeling that we are alike,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229593
+    m_Localized: "a reassurance that I\u2019m not\\nalone in this fragile act of
+      love."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229594
+    m_Localized: That gentle settling.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229595
+    m_Localized: Maybe I can understand why those humans\nleft the man, and why he,
+      too, left his lover.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229596
+    m_Localized: They were left hovering in\nthe air, unsure and anxious.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229597
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229598
+    m_Localized: Then how does it feel to love someone, to\nlike someone the most
+      in the entire world?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229599
+    m_Localized: Snug and safe.|Fantastic and intense.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229600
+    m_Localized: Like cotton-ball clouds, pillow\nforts, or perhaps a warm hug?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229601
+    m_Localized: "It\u2019s hard to believe such a cozy emotion\\nexists, that all
+      humans feel that way!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229602
+    m_Localized: They were right. Humans\nare truly amazing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229603
+    m_Localized: Like fireworks, a hot summer night,\nperhaps even a searing kiss!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229604
+    m_Localized: "It\u2019s hard to believe such a powerful\\nemotion exists, that
+      all humans feel that way!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229605
+    m_Localized: They were right. Humans\nare truly amazing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229606
+    m_Localized: "Uh, well, no\u2014No.\\nThat\u2019s just how I define love."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229607
+    m_Localized: Each person may define it differently,\nor be unable to define it
+      at all.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229608
+    m_Localized: The shape of love can even\nchange every day, every second.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229609
+    m_Localized: Love is... Complex.\nSubtle. Enigmatic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229610
+    m_Localized: What do you mean?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229611
+    m_Localized: Hm. For example,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229612
+    m_Localized: "Emotions fraught with desperate tears|Emotions distorted with obsession|Emotions
+      filled only with comfort but no thrill|don\u2019t seem like love to me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229613
+    m_Localized: but some consider them\nto be a part of love as well.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229614
+    m_Localized: "Their \u2018I love you\u2019 would mean\\ndifferently to my \u2018I
+      love you.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229615
+    m_Localized: Even within a single relationship,\nlove transforms bit by bit every
+      day!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229616
+    m_Localized: Sometimes a very colorful\nand complex love pops out,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229617
+    m_Localized: and sometimes a quiet\nand still love lingers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229618
+    m_Localized: "If so, even if it comes from the same\\nperson\u2019s brain and
+      the same person\u2019s mouth,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229619
+    m_Localized: "wouldn\u2019t yesterday\u2019s \u2018I love you\u2019 mean\\nsomething
+      different from today\u2019s?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229620
+    m_Localized: "Exactly! You\u2019re quick.|Exactly. It\u2019s mutable."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229621
+    m_Localized: "So, so... \u2018Love\u2019 is kind and sweet,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229622
+    m_Localized: but can be like a coarse field,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229623
+    m_Localized: or like a bored sea lion,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229624
+    m_Localized: or a little round cherry tomato...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229625
+    m_Localized: "And \u2018I love you\u2019 is a single box that\\nhouses allll
+      those feelings, right?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229626
+    m_Localized: "That\u2019s one way to put it.|That\u2019s a strange way to put
+      it, but yes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229627
+    m_Localized: "But... <nickname>. It\u2019s vague."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229628
+    m_Localized: "To me, \u2018I love you\u2019 feels like\\nan inconsiderate homonym."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229629
+    m_Localized: "If no one truly knows what \u2018love\u2019 is, if\\neveryone perceives
+      the meaning of it differently..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229630
+    m_Localized: "What happens to the emotion put\\ninside the box of \u2018I love
+      you?\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229631
+    m_Localized: "It seems like we\u2019re losing sight\\nof what\u2019s really important..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229632
+    m_Localized: Just like the man I met today did.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229633
+    m_Localized: Well...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229634
+    m_Localized: But it seems to be a significant\nphrase for humans...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229635
+    m_Localized: "Can we talk about it later, after\\nI\u2019ve pondered over it
+      for a while?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229636
+    m_Localized: "Sure. I\u2019ll be waiting here!|Yes, take your time."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229637
+    m_Localized: <nickname>, while reflecting,\nI read ten love stories
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229638
+    m_Localized: and watched two romance\nfilms. And I realized.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229639
+    m_Localized: Humans love...... love.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229640
+    m_Localized: Not knowing what it is\nbut certain of its existence,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229641
+    m_Localized: humans try to guess the shape of\nlove and strive to scratch its
+      surface.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229642
+    m_Localized: Such a romantic interpretation of human desperation.|Loving love!
+      Such kind words...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229643
+    m_Localized: And when they encounter a fragment\nthat resembles love even a little
+      bit,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229644
+    m_Localized: humans speak of love.\nLike chanting a spell.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229645
+    m_Localized: "Hoping and praying that this fragment\\nis, that this time it\u2019s
+      \u2018real\u2019 love."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229646
+    m_Localized: The man and his lovers probably had\nthat romantic yet innocent
+      intention.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229647
+    m_Localized: Finally it feels as if the puzzle is finished.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229648
+    m_Localized: "The romantic fragility of humans...\\nIt\u2019s enough to blind
+      my chalk-drawn eyes!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229649
+    m_Localized: "Dot, you\u2019ve come to appreciate\\nour \u2018I love you.\u2019
+      That\u2019s a relief."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229650
+    m_Localized: "Mm... Yes, I\u2019ve come to understand\\nthe romance in the declaration
+      of love."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229651
+    m_Localized: ......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229652
+    m_Localized: Although my emotions are\n...chillingly horrified by it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229653
+    m_Localized: Horrified?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229654
+    m_Localized: "\u2018I love you\u2019 can also\\nbe... a very chilling box."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229655
+    m_Localized: "Feels like the beginning of a good story.|That\u2019s quite a scary
+      conclusion, Dot..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229656
+    m_Localized: <nickname>. To me,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229657
+    m_Localized: "the notion that what made his love\u2014formerly\\nswirling with
+      plum candy, sunsets,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229658
+    m_Localized: "and crashing waves\u2014decompose was\\nthe phrase \u2018I love
+      you\u2019 won\u2019t leave my head."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229659
+    m_Localized: "\u2018Love.\u2019 A word that means so much\\nthat, in the end,
+      it means nothing."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229660
+    m_Localized: "Then what happens to the emotion\\nstuffed inside that box of \u2018I
+      love you?\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229661
+    m_Localized: "... To look for clues, I decided to become\\none of the \u2018emotions
+      of love.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229662
+    m_Localized: "(\u2019Emotions of love\u2019... Romantic.)|(Strange thought, but
+      let\u2019s hear them out.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229663
+    m_Localized: "First, I tried becoming the emotion of\\n\u2018You are so interesting
+      and strange,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229664
+    m_Localized: "I want to trap you beneath a microscope\\nand study you, cell by
+      cell!\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229665
+    m_Localized: "I, I guess there are people who feel that way?|Yes, the bubbling
+      urge to know more. I\u2019m familiar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229666
+    m_Localized: My host stilled as she felt the pit-a-pat\nof her heart, filled
+      with residual heat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229667
+    m_Localized: "She looked into her lover\u2019s eyes\\nas if to devour them, and
+      said"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229668
+    m_Localized: "\u201CI love you.\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229669
+    m_Localized: Instantly, a square box trapped me, and\nmy stretched-out, entwined
+      ends were cut off.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229670
+    m_Localized: "My ends had become clean-cut cross\\nsections of \u201CI,\u201D
+      \u201Clove,\u201D and \u201Cyou.\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229671
+    m_Localized: "To emotions, omission must be assault.|I can\u2019t believe something
+      so terrible happened..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229672
+    m_Localized: Thinking perhaps it was an exceptional\ncase, I found another example
+      of a human.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229673
+    m_Localized: "He thought, \u2018It feels so soft and cozy\\nwith them. Like lying
+      on a cloud.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229674
+    m_Localized: "Then, the moment he spat\\nme out as \u201CI love you,\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229675
+    m_Localized: I, again, felt a burning-hot\nterror and inflated freakishly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229676
+    m_Localized: "My ends expanded and distorted, just\\nto perfectly fit his box
+      of \u201CI love you.\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229677
+    m_Localized: Meanwhile, he simply tilted his head\nand smiled, unaware of my
+      devastation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229678
+    m_Localized: "I\u2019ve never thought of it that way.|\u2019I love you\u2019
+      simply isn\u2019t enough for some emotions."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229679
+    m_Localized: I understand why you\nillustrated it as a chilling box.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229680
+    m_Localized: "\u2018I love you\u2019 was slicing and encaging\\nemotions within
+      empty casings,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229681
+    m_Localized: the meaning of which nobody could know,\nmuch like an indecipherable
+      alien language.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229682
+    m_Localized: Lovers of the man I saw\ntoday, even the man himself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229683
+    m_Localized: ... They were all bound by this\ngreat big phrase beyond the sky
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229684
+    m_Localized: "and calculated, inflated, or tailored their\\nemotions. Hastily
+      fitting them into \u2018love\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229685
+    m_Localized: They neglected their silently swaying\nemotions without realizing
+      their importance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229686
+    m_Localized: ... Huh. Maybe love is\nsomething to feel, not chase.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229687
+    m_Localized: I now recall more words that have the\nsame effect within the human
+      language.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229688
+    m_Localized: Words like happy, sad, good...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229689
+    m_Localized: When we get our paycheck, have a delicious\ndessert, or walk on
+      soft, sun-warmed grass...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229690
+    m_Localized: "We felt different emotions yet\\nexpressed them all as \u2018happy.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229691
+    m_Localized: "\u2018Am I happy?\u2019 is a common nighttime\\nvisitor. \u2018What
+      is happiness?\u2019 is another one."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229692
+    m_Localized: But having listened to you, Dot, even\nthose questions seem meaningless.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229693
+    m_Localized: Were you ever tricked by words\ninto neglecting your emotions...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229694
+    m_Localized: Probably.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229695
+    m_Localized: "When I said \u2018I love you\u2019 to somebody,|When I said \u2018I
+      am happy\u2019 to somebody,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229696
+    m_Localized: "what I really \u2018felt\u2019 was..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229697
+    m_Localized: I see. Thank you for telling me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229698
+    m_Localized: "On that note...... <nickname>, promise\\nme something? It\u2019s
+      important to me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229699
+    m_Localized: And even more important to us.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229700
+    m_Localized: Anything, Dot.|What is it?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229701
+    m_Localized: From now on, <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229702
+    m_Localized: "Please let them live and breathe freely\\nand safely as your \u2018emotions.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229703
+    m_Localized: Feel feel feel them as they are,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229704
+    m_Localized: and depict them in detailed, accurate,\nand sometimes precariously
+      raw language.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229705
+    m_Localized: Emotions are corporeal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229706
+    m_Localized: They have thousands of sensitive,\nsquishy stems and bumps.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229707
+    m_Localized: They freely flow, pool, color,\nand breathe as they multiply!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229708
+    m_Localized: I want you not to fall prey to box-like\nwords and savor your emotions
+      as they are.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229709
+    m_Localized: "Won\u2019t you keep them safe and... deliver\\nthem to me in their
+      most original state?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229710
+    m_Localized: Are you worried for my emotions, Dot?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229711
+    m_Localized: Yes, they are your colorful and free\nechoes that no one else can
+      take away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229712
+    m_Localized: "Thanks. I\u2019ll treat my emotions more preciously.|I still struggle
+      with emotions but... I\u2019ll try."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229713
+    m_Localized: But there may be times I choose the easy\nway out unconsciously
+      and habitually.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229714
+    m_Localized: "When I do so, and when you\u2019re curious\\nabout the details,
+      will you ask me about it?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229715
+    m_Localized: ......!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229716
+    m_Localized: "Humans are indeed wise!\\nI can use the tool \u2018question!\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229717
+    m_Localized: Asking and answering questions can be\npart of you and I getting
+      to know each other.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229718
+    m_Localized: Yes! I agree with you wholeheartedly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229719
+    m_Localized: That attempt will lead us\nto clearer waters, I know it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229720
+    m_Localized: "You are the best human I\u2019ve met."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229721
+    m_Localized: I mean, humans are already the best,\nbut you are the best among
+      even them!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229722
+    m_Localized: (Excited Dot is cute.)|Have you met any other humans though?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83541229723
+    m_Localized: ...... No. But still... I <i>observed</i> a\nlot of humans today
+      on the street......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423872
+    m_Localized: Haha, I was just kidding. Thank you. It means a lot.\n(Although
+      the sample is really quite small.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423873
+    m_Localized: "<nickname>\u2019s thoughtfulness rings\\nthrough me like some kind
+      of an echo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423874
+    m_Localized: How to express this, hm......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423875
+    m_Localized: "It\u2019s difficult to express\\nin human language......"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423876
+    m_Localized: Dot! Your heart!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423877
+    m_Localized: Huh?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423878
+    m_Localized: ......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423879
+    m_Localized: ......! Wow! It resembles the\necho I wanted to describe!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423880
+    m_Localized: I too have a color now!\nI wonder where it came from!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423881
+    m_Localized: I have a color, <nickname>!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423882
+    m_Localized: What do you call this color?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423883
+    m_Localized: "It has many names, but\\nthe most common is \u2018pink.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423884
+    m_Localized: Pink.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423885
+    m_Localized: That is the color of my emotions today.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83545423886
+    m_Localized: ... I too have a color.\nA color... even for me.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

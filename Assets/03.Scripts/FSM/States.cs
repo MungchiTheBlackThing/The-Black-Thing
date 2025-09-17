@@ -19,7 +19,7 @@ public class Watching : GameState, IResetStateInterface
 
     const GamePatternState state = GamePatternState.Watching;
 
-    //¹¶Ä¡ÀÇ ¿ÜÃâ ¿©ºÎ¸¦ ¾Ë¾Æ¾ßÇÑ´Ù.
+    //ë­‰ì¹˜ì˜ ì™¸ì¶œ ì—¬ë¶€ë¥¼ ì•Œì•„ì•¼í•œë‹¤.
     List<EWatching> pattern = new List<EWatching>();
     IWatchingInterface watching = null;
     public override void Init()
@@ -58,7 +58,7 @@ public class Watching : GameState, IResetStateInterface
             }
             watching.OpenWatching(manager.Chapter);
         }
-        //StayÀÏ ¶§ ¹¶Ä¡ µîÀå
+        //Stayì¼ ë•Œ ë­‰ì¹˜ ë“±ì¥
     }
 
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
@@ -71,15 +71,15 @@ public class Watching : GameState, IResetStateInterface
 
     public void ResetState(GameManager manager, DotController dot = null)
     {
-        //watchingÀº ¾î¶²ÀÛ¾÷ÇÏ´ÂÁö Àß¸ğ¸£°Ú³×..?
+        //watchingì€ ì–´ë–¤ì‘ì—…í•˜ëŠ”ì§€ ì˜ëª¨ë¥´ê² ë„¤..?
     }
 }
 
-//MainA/MainB ÀÎÅÍÆäÀÌ½º »ç¿ëÇØ¼­ ÇÔ¼ö ÇÏ³ª ¿¬°áÇÒ ¼ö ÀÖµµ·Ï ÇÏ¸é ÁÁ°Ú½¿.
+//MainA/MainB ì¸í„°í˜ì´ìŠ¤ ì‚¬ìš©í•´ì„œ í•¨ìˆ˜ í•˜ë‚˜ ì—°ê²°í•  ìˆ˜ ìˆë„ë¡ í•˜ë©´ ì¢‹ê² ìŠ´.
 public class MainA : MainDialogue
 {
 
-    //¸â¹ö º¯¼ö ´ë»ç 
+    //ë©¤ë²„ ë³€ìˆ˜ ëŒ€ì‚¬ 
     public override void Init()
     {
       
@@ -110,9 +110,9 @@ public class Thinking : GameState, ILoadingInterface
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
-        //Default°ª ·£´ıÀ¸·Î »ç¿ë¿¹Á¤
+        //Defaultê°’ ëœë¤ìœ¼ë¡œ ì‚¬ìš©ì˜ˆì •
         
-        //ÄÚ·çÆ¾À¸·Î NºĞ µÚ¿¡ ½ÇÇà ÇÒ ¼ö ÀÖµµ·Ï º¯°æÇÏ±â
+        //ì½”ë£¨í‹´ìœ¼ë¡œ Në¶„ ë’¤ì— ì‹¤í–‰ í•  ìˆ˜ ìˆë„ë¡ ë³€ê²½í•˜ê¸°
         if (RunSubScript(dot, manager) == false)
         {
             Think(manager, dot);
@@ -127,7 +127,7 @@ public class Thinking : GameState, ILoadingInterface
     }
     public void Think(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
-        //Default°ª ·£´ıÀ¸·Î »ç¿ë¿¹Á¤
+        //Defaultê°’ ëœë¤ìœ¼ë¡œ ì‚¬ìš©ì˜ˆì •
 
         DotAnimState anim = (DotAnimState)UnityEngine.Random.Range(0, (int)DotAnimState.anim_eyesblink);
 
@@ -144,7 +144,7 @@ public class Thinking : GameState, ILoadingInterface
 
 public class MainB : MainDialogue
 {
-    //µ¥ÀÌÅÍ¸¦ °¡Áö°í ÀÖ´Â´Ù.
+    //ë°ì´í„°ë¥¼ ê°€ì§€ê³  ìˆëŠ”ë‹¤.
 
     public override void Init()
     {
@@ -173,7 +173,7 @@ public class Writing : GameState, ILoadingInterface, IResetStateInterface
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
-        Debug.Log("¹¶Ä¡ ÀÏ±â ½á¾ßÇÔ");
+        Debug.Log("ë­‰ì¹˜ ì¼ê¸° ì¨ì•¼í•¨");
         if(RunSubScript(dot, manager) == false)
         {
             Write(manager, dot);
@@ -185,7 +185,7 @@ public class Writing : GameState, ILoadingInterface, IResetStateInterface
         manager.ObjectManager.PlayThinking();
         manager.ObjectManager.ShowDiary(false);
         dot.ChangeState(DotPatternState.Phase, "anim_diary");
-        //´ÙÀÌ¾î¸® ¾÷µ¥ÀÌÆ®
+        //ë‹¤ì´ì–´ë¦¬ ì—…ë°ì´íŠ¸
     }
    
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
@@ -213,8 +213,8 @@ public class Play : GameState, ILoadingInterface
         this.dot = dot;
         manager.ObjectManager.PlayThinking();
         manager.ScrollManager.StopCameraByPlayPhase(true);
-        //Ä«¸Ş¶ó °íÁ¤
-        Debug.Log("Æ®¸®°Å ÄÑÁü");
+        //ì¹´ë©”ë¼ ê³ ì •
+        Debug.Log("íŠ¸ë¦¬ê±° ì¼œì§");
         dot.TriggerPlay(true);
         dot.ChangeState(DotPatternState.Trigger, anim, pos);
     }
@@ -283,7 +283,7 @@ public class NextChapter : GameState, ILoadingInterface
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         Debug.Log("SkipSleepingON");
-        //´ÙÀ½ Ã©ÅÍ·Î ³Ñ¾î°¡´Â ´Ş³ª¶ó¸¦ ¶ç¿î´Ù.
+        //ë‹¤ìŒ ì±•í„°ë¡œ ë„˜ì–´ê°€ëŠ” ë‹¬ë‚˜ë¼ë¥¼ ë„ìš´ë‹¤.
         if (objectManager == null)
         {
             objectManager = manager.ObjectManager;
