@@ -195,8 +195,8 @@ public class SubDialogue : MonoBehaviour
         Debug.Log("SubDialogueEntries[idx].DotAnim 여기 변경변경");
         //이 Text안에서 <name>이 있을 경우 변경
         subdata.NextLineKey = SubDialogueEntries[idx].NextLineKey;
-        subdata.LocTable = SubDialogueEntries[idx].LocTable;
-        subdata.LocKey = SubDialogueEntries[idx].LocKey;
+        //subdata.LocTable = SubDialogueEntries[idx].LocTable;
+        //subdata.LocKey = SubDialogueEntries[idx].LocKey;
 
         return subdata;
     }
