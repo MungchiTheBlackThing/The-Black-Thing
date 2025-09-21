@@ -145,7 +145,7 @@ public class MainPanel : MonoBehaviour
         Debug.Log($"선택 클릭됨: {index}");
         var currentEntry = mainDialogue.GetData(dialogueIndex);
         Debug.Log("currentEntry.NextLineKey: " + currentEntry.NextLineKey);
-        if (currentEntry.NextLineKey != null)
+        if (!string.IsNullOrEmpty(currentEntry.NextLineKey))
         {
             Debug.Log("다음 키 상황: " + currentEntry.NextLineKey);
             string[] nextKeys = currentEntry.NextLineKey.Split('|');
@@ -421,6 +421,7 @@ public class MainPanel : MonoBehaviour
 
                 if (nextIndex != -1)
                 {
+                    Debug.Log("다음키: " + nextIndex);
                     dialogueIndex = nextIndex;
                 }
                 else

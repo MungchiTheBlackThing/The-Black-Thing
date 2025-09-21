@@ -84,7 +84,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             }
             string[] parts = ParseCSVLine(line);
 
-            if (parts.Length >= 15)
+            if (parts.Length >= 17)
             {
                 int main = int.Parse(parts[0]);
                 if (main == phase)
@@ -106,7 +106,9 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                         NextLineKey = parts[11],
                         AnimScene = parts[12],
                         AfterScript = parts[13],
-                        Deathnote = parts[14]
+                        Deathnote = parts[14],
+                        LocTable = parts[15],
+                        LocKey = parts[16]
                     };
 
                     //string displayedText = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
@@ -117,14 +119,14 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
                 }
             }
-            if (parts.Length >= 16)
-            { 
-                DialogueEntries[DialogueEntries.Count - 1].LocTable = parts[15].Trim();
-            }
-            if (parts.Length >= 17)
-            { 
-                DialogueEntries[DialogueEntries.Count - 1].LocKey = parts[16].Trim();
-            }
+            //if (parts.Length >= 16)
+            //{ 
+            //    DialogueEntries[DialogueEntries.Count - 1].LocTable = parts[15].Trim();
+            //}
+            //if (parts.Length >= 17)
+            //{ 
+            //    DialogueEntries[DialogueEntries.Count - 1].LocKey = parts[16].Trim();
+            //}
             else
             {
                 Debug.LogError($"Line {i} does not have enough parts: {line}");
@@ -149,9 +151,13 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         maindata.AnimScene = DialogueEntries[idx].AnimScene;
         fixedPos = pos[DialogueEntries[idx].Background];
 
+        if (string.IsNullOrEmpty(DialogueEntries[idx].DotBody))
+        {
+            DialogueEntries[idx].DotBody = "body_default1";
+        }
         //Debug.Log("테스트: " + fixedPos.ToString());
         //데이터에 대한 애니메이션으로 변경한다., fixedPos 은 건드리지말길!!! 위치 값인데 항상 고정
-        
+
         dot.ChangeState(DotPatternState.Main, DialogueEntries[idx].DotBody, fixedPos, DialogueEntries[idx].DotExpression);
         return maindata; //data[idx].Kor
     }
