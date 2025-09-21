@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: IntroUITexts_en-US
+  m_Name: IntroUIText_en-US
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: en-US
   m_SharedData: {fileID: 11400000, guid: 3ac90fb91b7a7284fa87bc4ab224abe1, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 5827831968918929420
   m_TableData:
   - m_Id: 18389257197584384
     m_Localized: CONTINUE
@@ -34,7 +35,8 @@ MonoBehaviour:
     m_Localized: "Humans have a system of communication they call\\n\u201Clanguage.\u201D
       Choose the one you and Dot will share."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827831968918929420
   - m_Id: 18389257340190726
     m_Localized: Cancel
     m_Metadata:
@@ -47,7 +49,8 @@ MonoBehaviour:
     m_Localized: "\u201CYou are forever responsible for what you have tamed.\u201D\\nEven
       so, erase all memories and begin anew?"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827831968918929420
   - m_Id: 18389257340190722
     m_Localized: Yes, reset
     m_Metadata:
@@ -58,4 +61,8 @@ MonoBehaviour:
       m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5827831968918929420
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0100729fee5441000500729fee544100

@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: TutorialUIText_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 0a93236d17cf7584e951aa70576a623b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2924754370560
+    m_Localized: Names describe you, and define you.\nWhat do you want Dot to call
+      you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588288
+    m_Localized: 'Recommendation: first name'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588289
+    m_Localized: CHOOSE YOUR NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588290
+    m_Localized: Never seen that before... Guess it's from the\nMoon. Hey, the letter
+      is glowing. Check it out?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588291
+    m_Localized: A Letter From the Moon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588292
+    m_Localized: Today you met Dot for the first time\nCall on Dot earlier than planned?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588293
+    m_Localized: I can wait.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588294
+    m_Localized: Alright, then.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588295
+    m_Localized: Dot's time slips through your fingers...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588296
+    m_Localized: Feel like reminiscing,\nor recalling a past conversation?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588297
+    m_Localized: Press this button to access past transcripts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588298
+    m_Localized: But you cannot go back on a choice.\nOnly as far as after you make
+      one.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588299
+    m_Localized: This way! This way!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588300
+    m_Localized: Over here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588301
+    m_Localized: MAIN MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588302
+    m_Localized: GUIDE BOOK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588303
+    m_Localized: PROGRESS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588304
+    m_Localized: MY PAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588305
+    m_Localized: This here is today's square.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588306
+    m_Localized: Click. Click. Click.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588307
+    m_Localized: Dot's human-watching is over.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588308
+    m_Localized: Therefore, the watchful fly is ensnared.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588309
+    m_Localized: Dot's contemplation has begun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588310
+    m_Localized: The web touches the thoughtful fly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588311
+    m_Localized: Apart from the main storyline,\nfour special chats are hidden in
+      each day.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588312
+    m_Localized: And this is where one stores\nthose special transcripts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588313
+    m_Localized: Miss it once, and gone forever! Visit more\nto keep track of Dot's
+      web of thoughts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588314
+    m_Localized: Now let's go meet Dot. Right now!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588315
+    m_Localized: That's a neat polaroid. After our chat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588316
+    m_Localized: This way! Come back!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588317
+    m_Localized: Polaroids
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588318
+    m_Localized: When you find and complete a chat with Dot,\nthe cover art is splashed
+      with color! Joy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588319
+    m_Localized: Your chat will also be\nmentioned in Dot's diary.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588320
+    m_Localized: ',If you did not chat, Dot will fill\nthe entry with your absence
+      instead.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588321
+    m_Localized: Special trinkets may be added\nto the room once or twice a day!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588322
+    m_Localized: Chat with Dot and fill the room\nwith traces of fond memories.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588323
+    m_Localized: "Oh\u2014and if you skip waiting for Dot,\\nyou may miss out on
+      these little chats."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588324
+    m_Localized: The choice is up to you.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
