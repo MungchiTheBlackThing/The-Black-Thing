@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: dbe7970027709da4f9db404867667f0c
   m_SerializeEntries:
   - m_GUID: 4e842b81e532b3e478730d3be4455713
-    m_Address: IntroUITexts_ko-KR
+    m_Address: IntroUIText_ko-KR
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ko-KR
@@ -46,6 +46,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ko-KR
     - Preload
+  - m_GUID: 26df44aa8458c794c93a103c73a60c05
+    m_Address: TutorialUIText_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: ccf0751a4aca0824caf678229173be50, type: 2}
   m_SchemaSet:

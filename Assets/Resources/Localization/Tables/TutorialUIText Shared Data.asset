@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: TutorialUIText Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: TutorialUIText
+  m_TableCollectionNameGuidString: 0a93236d17cf7584e951aa70576a623b
+  m_Entries:
+  - m_Id: 2924754370560
+    m_Key: name_prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588288
+    m_Key: name_recommendation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588289
+    m_Key: name_confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588290
+    m_Key: moon_device_comment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588291
+    m_Key: moon_letter_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588292
+    m_Key: dot_first_meeting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588293
+    m_Key: dot_waiting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588294
+    m_Key: dot_okay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588295
+    m_Key: dot_time_passing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588296
+    m_Key: revisit_prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588297
+    m_Key: revisit_button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588298
+    m_Key: revisit_warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588299
+    m_Key: nav_thisway
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588300
+    m_Key: nav_herehere
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588301
+    m_Key: menu_main
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588302
+    m_Key: menu_letters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588303
+    m_Key: menu_progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588304
+    m_Key: menu_settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588305
+    m_Key: today_square
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588306
+    m_Key: click_click_click
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588307
+    m_Key: dot_observation_end
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588308
+    m_Key: fly_snared
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588309
+    m_Key: dot_thinking_start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588310
+    m_Key: fly_webbed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588311
+    m_Key: story_special_note
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588312
+    m_Key: story_storage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588313
+    m_Key: missed_chats_warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588314
+    m_Key: go_meet_dot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588315
+    m_Key: room_polaroid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588316
+    m_Key: nav_return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588317
+    m_Key: menu_polaroids
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588318
+    m_Key: chat_colored
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588319
+    m_Key: chat_diary_trace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588320
+    m_Key: chat_absent_log
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588321
+    m_Key: room_item_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588322
+    m_Key: room_memory_fill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588323
+    m_Key: skip_chat_warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924888588324
+    m_Key: skip_choice_reminder
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5827831968918929421
+  references:
+    version: 2
+    RefIds:
+    - rid: 5827831968918929421
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1757853866882

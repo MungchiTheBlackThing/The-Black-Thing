@@ -31,8 +31,8 @@ public class IntroScene : MonoBehaviour
         //2.디폴트 로딩 재생
         //3.인트로 신
         //4.시작하면 에셋 로딩
-        btnContinue.enabled = true;
-        btnStart.enabled = true;
+        btnContinue.interactable = true;
+        btnStart.interactable = true;
         introGroup.gameObject.SetActive(false);
         splashAnimator.gameObject.SetActive(true);
         loadingAnimator.gameObject.SetActive(false);
@@ -53,17 +53,19 @@ public class IntroScene : MonoBehaviour
 
     public void OnContinue()
     {
-        btnContinue.enabled = false; 
+        btnContinue.interactable = false; 
         Play();
     }
 
     public void OnStart()
     {
-        btnStart.enabled = false;
+        Debug.Log("OnStart");
+        btnStart.interactable = false;
         data = RecentManager.Load();
         if (data != null && data.isContinue == 1)
         {
             StartPopup.SetActive(true);
+            btnStart.interactable = true;
         }
         else
         {

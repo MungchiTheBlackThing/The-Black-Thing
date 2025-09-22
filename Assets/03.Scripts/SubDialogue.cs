@@ -68,7 +68,9 @@ public class SubDialogue : MonoBehaviour
                         NextLineKey = parts[10],
                         Deathnote = parts[11],
                         AfterScript = parts[12],
-                        Exeption = parts[13]
+                        Exeption = parts[13],
+                        LocTable = (parts.Length > 14) ? parts[14]: "",
+                        LocKey = (parts.Length > 15) ? parts[15] : ""
                     };
 
                     //string displayedText = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
@@ -78,14 +80,6 @@ public class SubDialogue : MonoBehaviour
 
                     //Debug.Log($"Added SubDialogueEntry: {displayedText}");
                 }
-            }
-            if (parts.Length >= 14)
-            { 
-                SubDialogueEntries[SubDialogueEntries.Count - 1].LocTable = parts[14].Trim();
-            }
-            if (parts.Length >= 15)
-            { 
-                SubDialogueEntries[SubDialogueEntries.Count - 1].LocKey = parts[15].Trim();
             }
             else
             {
@@ -183,14 +177,26 @@ public class SubDialogue : MonoBehaviour
         subdata.LineKey = SubDialogueEntries[idx].LineKey;
         subdata.Actor = SubDialogueEntries[idx].Actor;
         subdata.TextType = SubDialogueEntries[idx].TextType;
-        //subdata.Text = SubDialogueEntries[idx].KorText;
-        subdata.Text = GetDisplayText(SubDialogueEntries[idx]);
+        
+        if (string.IsNullOrEmpty(SubDialogueEntries[idx].LocTable))
+        {
+            Debug.Log("LocTable 비어있음 :" + SubDialogueEntries[idx].KorText);
+            subdata.Text = SubDialogueEntries[idx].KorText;
+        }
+        else
+        {
+            //Debug.Log("LocTable 있음 :" + GetDisplayText(SubDialogueEntries[idx]));
+            subdata.Text = GetDisplayText(SubDialogueEntries[idx]);
+        }
+
         subdata.Color = SubDialogueEntries[idx].Color;
         subdata.DotAnim = SubDialogueEntries[idx].DotAnim;
         //여기서 dot 값을 변경할 예정
         Debug.Log("SubDialogueEntries[idx].DotAnim 여기 변경변경");
         //이 Text안에서 <name>이 있을 경우 변경
         subdata.NextLineKey = SubDialogueEntries[idx].NextLineKey;
+        //subdata.LocTable = SubDialogueEntries[idx].LocTable;
+        //subdata.LocKey = SubDialogueEntries[idx].LocKey;
 
         return subdata;
     }
@@ -198,7 +204,7 @@ public class SubDialogue : MonoBehaviour
     public string GetDisplayText(SubDialogueEntry entry)
     {
         string text = string.Empty;
-        if (!string.IsNullOrEmpty(entry.LocTable) && !string.IsNullOrEmpty(entry.LocKey))
+        if (!string.IsNullOrEmpty(entry.LocKey))
         {
             if (string.IsNullOrEmpty(entry.LocTable))
             {
