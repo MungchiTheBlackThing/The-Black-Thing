@@ -415,9 +415,19 @@ public class SubPanel : MonoBehaviour
         Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos, null, out var anchoredPos);
 
+        string currentAnim = dotcontroller.AnimKey;
+        Vector2 offset = AnimBubbleDB.GetOffset(currentAnim);
+
+        // 오프셋 적용
+        anchoredPos += offset;
+
         speech.anchoredPosition = anchoredPos;
         dotbub.SetActive(true);
+
+        Debug.Log($"Bubble pos: base={anchoredPos - offset}, offset={offset}, final={anchoredPos}, anim={currentAnim}");
     }
+
+
 
     public void PlayerLocationSet(GameObject dotbub)
     {

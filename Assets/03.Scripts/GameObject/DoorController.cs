@@ -41,7 +41,7 @@ public class DoorController : MonoBehaviour
             {
                 if (collider != targetCollider && collider.gameObject == dot)
                 {
-                    StartCoroutine(DotvisibleCheck(true));
+                    StartCoroutine(dot.GetComponent<DotController>().DotvisibleCheck(true));
                 }
             }
         }
@@ -49,7 +49,7 @@ public class DoorController : MonoBehaviour
         {
             if (dot.GetComponent<BoxCollider2D>().enabled == false)
             {
-                StartCoroutine(DotvisibleCheck(false));
+                StartCoroutine(dot.GetComponent<DotController>().DotvisibleCheck(false));
             }
         }
     }
@@ -133,16 +133,4 @@ public class DoorController : MonoBehaviour
         }
     }
 
-    public IEnumerator DotvisibleCheck(bool setoff)
-    {
-        yield return new WaitForSeconds(0.2f);
-        if (setoff)
-        {
-            dot.GetComponent<DotController>().Invisible();
-        }
-        else
-        {
-            dot.GetComponent<DotController>().Visible();
-        }
-    }
 }

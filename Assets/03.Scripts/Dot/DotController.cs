@@ -485,4 +485,16 @@ public class DotController : MonoBehaviour
         }
     }
 
+    public IEnumerator DotvisibleCheck(bool setoff)
+    {
+        yield return new WaitForSeconds(0.2f);
+        if (setoff)
+        {
+            Invisible();
+        }
+        else
+        {
+            Visible();
+        }
+    }
 }
