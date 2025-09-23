@@ -24,7 +24,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     MainPanel mainPanel;
     MenuController menuController;
     UITutorial uITutorial;
-    PlayerController PlayerController;
+    PlayerController playerController;
 
 
     protected int fixedPos = -1;
@@ -61,8 +61,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //dot 한테 chapterList 에서 해당 위치랑 애니메이션이 변함.
         SystemUI = GameObject.Find("SystemUI");
         menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
-        PlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        CurrentLanguage = PlayerController.GetLanguage(); 
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        CurrentLanguage = playerController.GetLanguage(); 
         if (manager.mainVideo)
         {
             Debug.Log("미리 영상 가져오기");
@@ -72,8 +72,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
     public void LoadData(string[] lines)
     {
-        PlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        CurrentLanguage = PlayerController.GetLanguage();
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        CurrentLanguage = playerController.GetLanguage();
         listclear();
         for (int i = 1; i < lines.Length; i++)
         {
@@ -84,7 +84,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             }
             string[] parts = ParseCSVLine(line);
 
-            if (parts.Length >= 17)
+            if (parts.Length >= 15)
             {
                 int main = int.Parse(parts[0]);
                 if (main == phase)
@@ -107,8 +107,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                         AnimScene = parts[12],
                         AfterScript = parts[13],
                         Deathnote = parts[14],
-                        LocTable = parts[15],
-                        LocKey = parts[16]
+                        LocTable = (parts.Length > 15) ? parts[15] : "",
+                        LocKey = (parts.Length > 16) ? parts[16] : ""
                     };
 
                     //string displayedText = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
@@ -119,14 +119,6 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
                 }
             }
-            //if (parts.Length >= 16)
-            //{ 
-            //    DialogueEntries[DialogueEntries.Count - 1].LocTable = parts[15].Trim();
-            //}
-            //if (parts.Length >= 17)
-            //{ 
-            //    DialogueEntries[DialogueEntries.Count - 1].LocKey = parts[16].Trim();
-            //}
             else
             {
                 Debug.LogError($"Line {i} does not have enough parts: {line}");
@@ -142,10 +134,21 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         maindata.LineKey = DialogueEntries[idx].LineKey;
         maindata.Actor = DialogueEntries[idx].Actor;
         maindata.TextType = DialogueEntries[idx].TextType;
-        //maindata.Text = DialogueEntries[idx].KorText;
-        maindata.Text = GetDisplayText(DialogueEntries[idx]);
-        maindata.DeathNote = DialogueEntries[idx].Deathnote;
 
+        //maindata.Text = DialogueEntries[idx].KorText;
+        //maindata.Text = GetDisplayText(DialogueEntries[idx]);
+
+        if (string.IsNullOrEmpty(DialogueEntries[idx].LocTable))
+        {
+            Debug.Log("LocTable 비어있음 :" + DialogueEntries[idx].KorText);
+            maindata.Text = DialogueEntries[idx].KorText;
+        }
+        else
+        {
+            //Debug.Log("LocTable 있음 :" + GetDisplayText(SubDialogueEntries[idx]));
+            maindata.Text = GetDisplayText(DialogueEntries[idx]);
+        }
+        maindata.DeathNote = DialogueEntries[idx].Deathnote;
         //이 Text안에서 <name>이 있을 경우 변경
         maindata.NextLineKey = DialogueEntries[idx].NextLineKey;
         maindata.AnimScene = DialogueEntries[idx].AnimScene;
@@ -163,8 +166,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     }
 
     public string GetDisplayText(DialogueEntry entry)
-    {   
-        //LocKey가 있으면 가져오고, 없으면 기존 텍스트 사용
+    {
+        string text = string.Empty;
         if (!string.IsNullOrEmpty(entry.LocKey))
         {
             if (string.IsNullOrEmpty(entry.LocTable))
@@ -179,9 +182,16 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                     return ApplyLineBreaks(localizedText);
                 }
             }
-            
+            text = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
+
+            // <nickname>을 닉네임으로 교체
+            if (text.Contains("<nickname>"))
+            {
+                string playerName = playerController.GetNickName();
+                text = text.Replace("<name>", playerName);
+            }
         }
-        return CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
+        return text;
     }
 
     public void StartMain(GameManager manager, string fileName)

@@ -38,13 +38,13 @@ public class MoonnoteUI : MonoBehaviour
             }
             else
             {
-                Debug.Log("¸ŞÀÎÀÌ°Å³ª ÇÑ¹ø Ã¼Å©ÇßÀ» °æ¿ì");
+                Debug.Log("ë©”ì¸ì´ê±°ë‚˜ í•œë²ˆ ì²´í¬í–ˆì„ ê²½ìš°");
                 ischeck = true;
             }
         }
         catch (System.Exception ex)
         {
-            Debug.Log("ÇÑ¹ø ºÃ°Å³ª ¸ŞÀÎÀÏ °æ¿ì");
+            Debug.Log("í•œë²ˆ ë´¤ê±°ë‚˜ ë©”ì¸ì¼ ê²½ìš°");
             ischeck = true;
         }
 
