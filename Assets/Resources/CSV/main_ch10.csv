@@ -1,129 +1,129 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote
-1,55,1,main_door_open,Dot,Main,body_default1,face_noblink,text,"안녕, <nickname>.","Hello, <nickname>.",2,,,
-1,55,2,main_door_open,Dot,Main,body_default1,face_blink,text,저걸 좀 닫아줄 수 있겠어?,Could you close that?,3,,,
-1,55,3,main_door_open,Player,Main,body_default1,face_noblink,text,뭐를 닫아줄까?,Close what?,4,,,
-1,55,4,main_door_open,Dot,Main,body_default1,face_noblink,text,"안녕, <nickname>.","Hello, <nickname>.",5,,,
-1,55,5,main_door_open,Dot,Main,body_default1,face_blink,text,저걸 좀 닫아줄 수 있겠어?,Could you close that?,6,,,
-1,55,6,main_door_open,Player,Main,body_default1,face_noblink,selection,(창문을 닫는다.)|(책장을 닫는다.),(Close the windows.)|(Close the doors on the bookshelf.),7|12,,,
-1,55,7,main_door_open,Dot,Main,body_default1,face_noblink,text,"안녕, <nickname>.","Hello, <nickname>.",8,,,
-1,55,8,main_door_open,Dot,Main,body_default1,face_blink,text,저걸 좀 닫아줄 수 있겠어?,Could you close that?,9,,,
-1,55,9,,Player,Main,,,selection,(책장을 닫는다.),(Close the doors on the bookshelf.),10,,,
-1,55,10,,Dot,Main,,,text,"안녕, <nickname>.","Hello, <nickname>.",11,,,
-1,55,11,,Dot,Main,,,text,저걸 좀 닫아줄 수 있겠어?,Could you close that?,15,,,
-1,55,12,main_door_open,Player,Main,body_default1,face_noblink,selection,(창문을 닫는다.),(Close the windows.),13,,,
-1,55,13,main_door_open,Dot,Main,body_default1,face_noblink,text,"안녕, <nickname>.","Hello, <nickname>.",14,,,
-1,55,14,main_door_open,Dot,Main,body_default1,face_blink,text,저걸 좀 닫아줄 수 있겠어?,Could you close that?,15,,,
-1,55,15,main_door_open,Player,Main,body_default1,face_noblink,text,"뭉치야, 더는 닫을 게 없는데... \n더 구체적으로 말해줄 수 있을까?","Dot, there’s nothing else to close…\nCould you be more specific?",16,,,
-1,55,16,main_door_open,Dot,Main,body_default1,face_noblink,text,"그래, <nickname>.","Sure, <nickname>.",17,,,
-1,55,17,main_door_open,Player,Main,body_default1,face_blink,text,"사실은 끝도 없이 이어지는, 내 빌어먹을\n생각의 문을 닫아 주길 바랐어.","I was actually hoping you could close the door\nto my never-ending, suffocating thoughts.",18,,,
-1,55,18,main_door_open,Dot,Main,body_default1,face_noblink,text,오늘은 어떤 사람을 봤어.,I saw someone today.,19,,,
-1,55,19,main_door_open,Dot,Main,body_default1,face_noblink,text,대체 그건 뭐였을까? 응?,"What was that? Really, what?",20,,,
-1,55,20,main_door_open,Dot,Main,body_default1,face_blink,text,조금 진정하는 게 좋을 것 같은데...,Maybe you should relax a little first…,21,,,
-1,55,21,main_door_open,Dot,Main,body_default1,face_noblink,text,대체 왜 그랬던 걸까? 조금 들어줄 수 있겠어?,"Why would he do that? Please, listen to this.",22,,,
-1,55,22,main_door_open,Dot,Main,body_default1,face_noblink,text,어쩐지 나를 닮은.,..That somehow resemble me.,23,,,
-1,55,23,main_door_open,Dot,Main,body_default1,face_noblink,text,검디 검은 폐기물 덩어리.\n역시 파쇄해 버려야 마땅한.,"A black, black blob of waste. Something\nthat deserves to be destroyed.",24,,,
-1,55,24,main_door_open,Player,Main,body_default1,face_blink,text,뭉치야. 정신 좀 차려 봐!,"Dot, get it together!",25,,,
-1,55,25,main_door_open,Dot,Main,body_default1,face_noblink,text,……,……,26,,,
-1,55,26,main_door_open,Player,Main,body_default1,face_noblink,text,"뭉치야, 정신이 좀 들어?","Dot, can you hear me?",27,,,
-1,55,27,main_door_open,Dot,Main,body_default1,face_blink,text,......,……,28,,,
-1,55,28,main_door_open,Dot,Main,body_default1,face_noblink,text,"안녕, <nickname>.","Hello, <nickname>.",29,,,
-1,55,29,main_door_open,Dot,Main,body_default1,face_noblink,text,네 안구에 내가 이상하게 비쳤어?,Did I show up strangely on your retina?,30,,,
-1,55,30,main_door_open,Player,Main,body_default1,face_blink,selection,"어어, 조금은 그랬지만… 난 널 이해할 수 있어.|조금도 그렇지 않아. 천천히 말해줄 수 있겠어?","Well, a little… but I understand.|Not at all. Tell me what happened slowly, please?",31|31,,,sun|moon
-1,55,31,main_door_open,Dot,Main,body_default1,face_noblink,text,고마워.,Thank you.,32,,,
-1,55,32,main_door_open,Dot,Main,body_default1,face_noblink,text,나로선 처음 보는 장면이었거든.,It was the first time I witnessed that.,33,,,
-1,55,33,main_door_open,Dot,Main,body_default1,face_blink,text,‘자기 혐오’가 그런 행동으로 나타날 수 있는지 몰랐어.,"I didn’t believe ‘self-hate’ could\nmanifest in that way, as actions.",34,,,
-1,55,34,main_door_open,Dot,Main,body_default1,face_noblink,text,공장에서 제일 터부시되는 게 뭔지 알아?,Do you know what the most\ntaboo subject is at the Factory?,35,,,
-1,55,35,main_door_open,Dot,Main,body_default1,face_noblink,text,그게 바로 ‘자기 혐오’라는 감정.,It’s ‘self-hate.’,36,,,
-1,55,36,main_door_open,Dot,Main,body_default1,face_blink,text,달의 이들은 자살을 특히 두려워해.,The beings on the Moon are\nespecially afraid of suicide.,37,,,
-1,55,37,main_door_open,Player,Main,body_default1,face_noblink,selection,어째서?|(묵묵히 들어준다.),How so?|(Listen carefully.),38|38,,,active|passive
-1,55,38,main_door_open,Dot,Main,body_default1,face_noblink,text,자기 혐오를 ‘행동'으로 옮기다 보면\n극단적으로 자살까지 할 수 있으니까.,"Because when self-hate manifests as ‘action,’\nin extreme cases it could lead to suicide.",39,,,
-1,55,39,main_door_open,Dot,Main,body_default1,face_blink,text,그들이 사랑하는 인간이 그런 감정을 느끼는\n걸 전혀 이해하지도 해석하지도 못해.,They can’t even begin to understand how the\nhumans they love could feel such an emotion.,40,,,
-1,55,40,main_door_open,Dot,Main,body_default1,face_noblink,text,지극히 두려워해. 감히 마주보지도 못해.,They are terrified. Unable to dare face it.,41,,,
-1,55,41,main_door_open,Player,Main,body_default1,face_noblink,text,그래서… 달의 이들이 그걸 막으려고 하는 거구나.,I see… That’s why the Moon\nBeings are trying to prevent it.,42,,,
-1,55,42,main_door_open,Player,Main,body_default1,face_blink,selection,그들을 위해서.|인간을 위해서.,For themselves.|For the humans.,43|43,,,
-1,55,43,main_door_open,Player,Main,body_default1,face_noblink,text,아니… 그들과 인간의 공생하는 관계를 위해서.,"No, for the symbiotic relationship\nbetween humans and themselves.",44,,,
-1,55,44,main_door_open,Dot,Main,body_default1,face_noblink,text,그가 지금 얼마나 끔찍한 일을 한 건지 알겠어?,Do you see now? How horrible\nof a deed he committed?,45,,,
-1,55,45,main_door_open,Dot,Main,body_default1,face_blink,text,"그건, 그건, 인간 영혼의 보호막을 조각 내는 발톱.","That, that is, the claw that smashes\nhuman souls’ protective barrier.",46,,,
-1,55,46,main_door_open,Dot,Main,body_default1,face_noblink,text,네 말대로 달의 이들은 절대로 인간이\n자신을 해치게 두지 않는 게 원칙이야.,"Like you said, the Moon Beings never let\nhumans hurt themselves on principle.",47,,,
-1,55,47,main_door_open,Dot,Main,body_default1,face_noblink,text,"절대, 결코, 그 어떤 일이 닥친대도. 그런데?","Never, ever, no matter what. But?",48,,,
-1,55,48,main_door_open,Dot,Main,body_default1,face_blink,text,"난 이해가 안 되는 거야, 제 의지로 그런다고?",I don’t understand. He did it by choice?,49,,,
-1,55,49,main_door_open,Dot,Main,body_default1,face_noblink,text,그 발톱으로 내면의 엉킨 덩어리를\n스스로 긁어내는 인간이 있다니.,"A human that scratches off their\nown tangled, interior blobs.",50,,,
-1,55,50,main_door_open,Player,Main,body_default1,face_noblink,text,……,……,51,,,
-1,55,51,main_door_open,Player,Main,body_default1,face_blink,selection,(지금은 가만히 들어주기를 선택했다.)|(아무런 말도 떠오르지 않기에 할 수 없었다.),(Listen carefully.)|(No words come to mind.),52|52,,,sun|moon
-1,55,52,main_door_open,Dot,Main,body_default1,face_noblink,text,어째서? 어째서?\n알고 싶지 않아. 알고 싶지 않아.,Why? Why? I don’t want to\nknow. I don’t want to know.,53,,,
-1,55,53,main_door_open,Dot,Main,body_default1,face_noblink,text,……,……,54,,,
-1,55,54,main_door_open,Dot,Main,body_default1,face_blink,text,"그런데, <nickname>. 지금 내가\n제일 무서운 게 뭔지 알아?","But <nickname>, can you tell\nwhat I’m most afraid of right now?",55,,,
-1,55,55,main_door_open,Dot,Main,body_default1,face_noblink,text,<nickname>은 뭐라고 생각해?,"What do you think it is, <nickname>?",56,,,
-1,55,56,main_door_open,Player,Main,body_default1,face_noblink,text,…,…,57,,,
-1,55,57,main_door_open,Dot,Main,body_default1,face_blink,text,맞히지 말아줘. 눈치챘더라도.,Please don’t guess correctly.\nEven if you do know the answer.,58,,,
-1,55,58,main_door_open,Dot,Main,body_default1,face_noblink,text,…,…,59,,,
-1,55,59,main_door_open,Dot,Main,body_default1,face_noblink,text,…,…,60,,,
-1,55,60,main_door_open,Dot,Main,body_default1,face_blink,text,난 토끼 굴에 빠졌어.,I’ve fallen down a rabbit hole.,61,,,
-1,55,61,main_door_open,Dot,Main,body_default1,face_noblink,text,"정신을 차린 순간, 그 안에 있었어.","When I came to my senses,\nI was already inside it.",62,,,
-1,55,62,main_door_open,Dot,Main,body_default1,face_noblink,text,"굴에서 나가는 법을 모르겠지만, 애초에,\n나가야 하는지조차 잘 모르겠어…","I don’t know how to leave, but I also can’t\nfind a reason to leave in the first place…",63,,,
-1,55,63,main_door_open,Dot,Main,body_default1,face_blink,text,어느 것도 제대로 보이지 않아.,Nothing seems clear.,64,,,
-1,55,64,main_door_open,Dot,Main,body_default1,face_noblink,text,미안. 오늘은 혼자서 더 생각해 보고 싶어.,I’m sorry. I need more time to\nmyself today to think this over.,65,,anim_mud,
-3,56,65,main_web,Dot,Main,body_default1,face_noblink,text,그 사람은 자기 자신을 싫어해서\n그런 행동을 한 걸까?,Did he do those things\nbecause he hated himself?,66,,,
-3,56,66,main_web,Dot,Main,body_default1,face_blink,text,그 사람은 왜 그렇게 자신과 삶을 싫어했을까?,Why did he hate himself and his life so much?,67,,,
-3,56,67,main_web,Player,Main,body_default1,face_noblink,text,……,……,68,,,
-3,56,68,main_web,Dot,Main,body_default1,face_noblink,text,무엇이 그 사람을 그리 만들었을까?,What made him the way he is?,69,,,
-3,56,69,main_web,Dot,Main,body_default1,face_blink,text,"너도 알다시피, 나한테는 그게 검정이야.","As you know, that is what black does to me.",70,,,
-3,56,70,main_web,Dot,Main,body_default1,face_noblink,text,아무리 직시해도 어떠한 색채나 가능성이\n보이지 않아서. 검정은 그저 검정.,"Regardless of how many times I confront it,\nI see no color or potential. Black is just black.",71,,,
-3,56,71,main_web,Dot,Main,body_default1,face_noblink,text,"그 무가치함과 무의미함이 나를 허무하게,\n슬프게, 때로는 공포스럽게 해.","That void of worth and meaning feels\nfutile, sad, and sometimes terrifying.",72,,,
-3,56,72,main_web,Dot,Main,body_default1,face_blink,text,<nickname>. 혹시 너도 유사한 감정을 느껴?\n혹은 느낀 적이 있어? 상상해본 적은 있어?,"<nickname>, do you feel the same at times?\nOr have you ever imagined how it would feel?",73,,,
-3,56,73,main_web,Player,Main,body_default1,face_noblink,textbox,너도 너를 아프게 하는 너만의 검정이 있어?,Do you have your own black that hurts you?,74,,,
-3,56,74,main_web,Dot,Main,body_default2,face_noblink,text,그건 지구에만 있는 거야?,Is that only on Earth?,75,,,
-3,56,75,main_web,Player,Main,body_default1,face_noblink,selection,"그래, 이런 건 오직 지구에만 있기를.|아니, 어디에서나 느낄 수 있을 것 같아.","Yes, at least I hope it only exists on Earth.|No, you can feel it anywhere in this universe.",76|78,,,
-3,56,76,main_web,Dot,Main,body_default1,face_blink,text,달에 가면 그런 건 없을 텐데.,That wouldn’t exist on the Moon.,77,,,sun|moon
-3,56,77,main_web,Dot,Main,body_default1,face_noblink,text,그 사람도 달에는 그를 아프게\n만드는 게 없었으면 좋겠다.,I hope there will be nothing\non the Moon that can hurt him.,80,,,
-3,56,78,main_web,Dot,Main,body_default1,face_noblink,text,우주는 아주 아주 넓대. 잠깐\n숨어 쉬어갈 곳은 많을 거야.,The universe is infinitely large. There should\nbe many spots to hide and take a moment.,79,,,
-3,56,79,main_web,Dot,Main,body_default1,face_blink,text,그 사람도 우주만큼은 다정한\n공간으로 여겼으면 좋겠다.,"I hope the universe feels kind to him, at the least.",80,,,
-3,56,80,main_web,Player,Main,body_default1,face_noblink,text,……,…….,81,,,
-3,56,81,main_web,Dot,Main,body_default1,face_noblink,text,그런데 <name>.,But <name>.,82,,,
-3,56,82,main_web,Dot,Main,body_default1,face_blink,text,달의 이들이 그 사람을 보면 어떻게 생각할까?,What would the Moon Beings think of him?,83,,,
-3,56,83,main_web,Dot,Main,body_default1,face_noblink,text,달에서는 자기를 해치는 행동을 아주 무서워하는데.,They are very afraid of self-harming acts.,84,,,
-3,56,84,main_web,Dot,Main,body_default1,face_noblink,text,"자기를 미워하고, 아프게 하는 행동을 계속하다\n보면 자기를 점차 포기하게 된다고 생각하거든.","They think that once one hates and hurts\noneself, they eventually give up on themself.",85,,,
-3,56,85,main_web,Player,Main,body_default1,face_blink,text,(뭉치의 감정이 격해지는 게 느껴진다.),(I feel Dot’s emotions becoming profound.),86,,,
-3,56,86,main_web,Player,Main,body_default1,face_noblink,text,(조금만 더 지켜볼까.),(Let’s observe for a while longer.),87,,,
-3,56,87,main_web,Dot,Main,body_default1,face_noblink,text,달의 이들이 그를 보면 다들 경계하겠지.,The Moon Beings would be cautious of him.,88,,,
-3,56,88,main_web,Dot,Main,body_default1,face_blink,text,그러니 달은 그를 환영해 주지 못할 거야.,"In short, the Moon would not welcome him.",89,,,
-3,56,89,main_web,Dot,Main,body_default1,face_noblink,text,"환영뿐만이 아니지. 아주, 아주, 배척할 거야.","Worse than that, it would certainly exclude him.",90,,,
-3,56,90,main_web,Player,Main,body_default1,face_noblink,text,(더 이상은 지켜만 볼 수 없어.),(I can’t just take a back seat anymore.),91,,,
-3,56,91,main_web,Player,Main,body_default1,face_blink,text,달이 정말 그렇게 차가운 곳이야?\n내가 봤던 뭉치는 그러지 않았는데.,Is the Moon really that hostile of a place?\nThe Dot I’ve come to know isn’t like that.,92,,,
-3,56,92,main_web,Player,Main,body_default1,face_noblink,text,달의 이들도 마찬가지야. 오히려 따스하게\n겹쳐 쌓인 선율 같은 이들이었어.,"Neither are the Moon Beings. In fact, they\nseem like warmly layered melodies to me.",93,,,
-3,56,93,main_web,Dot,Main,body_default1,face_noblink,text,…!,…!,94,,,
-3,56,94,main_web,Player,Main,body_default1,face_blink,text,"뭉치야, 너는 내일도 모레도\n같은 말을 하고 싶은 거야?","Dot, are you sure you would say the\nsame tomorrow and the day after?",95,,,
-3,56,95,main_web,Player,Main,body_default1,face_noblink,text,"정말로 그를 배척해 버리고\n싶은 거야? 무정하고, 가차없이?",Do you really want to exclude\nhim? Cruelly and heartlessly?,96,,,
-3,56,96,main_web,Dot,Main,body_default1,face_noblink,text,"그, 그렇지 않아.","N, no.",97,,,
-3,56,97,main_web,Dot,Main,body_default1,face_blink,text,…….,……,98,,,
-3,56,98,main_web,Dot,Main,body_default1,face_noblink,text,믿어 줘. 사실 난 그러고 싶었던 게 아니었어.,Please believe me. That’s not what I wanted.,99,,,
-3,56,99,main_web,Player,Main,body_default1,face_noblink,text,그럴 것 같다는 생각은 했어. 혹시 이유는?,I thought so. Can I ask why?,100,,,
-3,56,100,main_web,Dot,Main,body_default1,face_blink,text,너에게… 명확하게 설명할 수 없는 내가 참담해.,I can’t explain it clearly to you… which feels tragic.,101,,,
-3,56,101,main_web,Dot,Main,body_default1,face_noblink,text,…….,……,102,,,
-3,56,102,main_web,Dot,Main,body_default1,face_noblink,text,나는 그에게서 두 가지 빛을 보았지.,I saw two kinds of light in him.,103,,,
-3,56,103,main_web,Dot,Main,body_default1,face_blink,text,파괴적인 고통과 삶에 대한 의지를 동시에 보았어.,I saw destructive pain and the\nwill to live at the same time.,104,,,
-3,56,104,main_web,Dot,Main,body_default1,face_noblink,text,하지만 의문이 남잖아.,But it leaves me with an important question.,105,,,
-3,56,105,main_web,Dot,Main,body_default1,face_noblink,text,그의 의도와 행동이 상반되는 이유가 말이야.,The reason for his conflicting\nintentions and actions.,106,,,
-3,56,106,main_web,Player,Main,body_default1,face_blink,text,음…,Hm…,107,,,
-3,56,107,main_web,Player,Main,body_default1,face_noblink,text,(하지만 뭉치는 늘 상반되는 상황을 투명히\n지켜봐 왔다. 모순 위에 살아가는 뭉치.),(But Dot has always observed conflicting situations\nas they were. Dot coexists with contradictions.),108,,,
-3,56,108,main_web,Player,Main,body_default1,face_noblink,text,(이번이라고 뭐가 다른 걸까?),(What’s so different about this time?),109,,,
-3,56,109,main_web,Dot,Main,body_default1,face_blink,text,살고 싶은데도 스스로를 해칠 수가 있는 거야?,How can you want to live and still hurt yourself?,110,,,
-3,56,110,main_web,Dot,Main,body_default1,face_noblink,text,죽고 싶지 않아도 자기를\n죽도록 미워할 수 있는 거야?,Can you hate yourself to death\nand still not want to die?,111,,,
-3,56,111,main_web,Dot,Main,body_default1,face_noblink,text,"어째서? 어째서? 알고 싶지 않아. 하지만\n알고 있다면 부디 알려 줘, <nickname>.","How? How? I don’t want to know. But if\nyou do know, please tell me, <nickname>.",112,,,
-3,56,112,main_web,Player,Main,body_default1,face_blink,selection,그건 가능해. 수많은 모순들 중 하나일 뿐이야.|(그저 함께 침묵한다.),It’s possible. It’s one of a million contradictions.|(Remain silent with Dot.),113|116,,,
-3,56,113,main_web,Player,Main,body_default1,face_noblink,text,정말 죽고 싶었다면 다른 방법을 썼을 거야.,"If he really wanted to die, he\nwould’ve used another method.",114,,,active|passive
-3,56,114,main_web,Player,Main,body_default1,face_noblink,text,이대로 죽고 싶지는 않기 때문에\n자기를 죽도록 미워한 거야.,He hated himself so because\nhe didn’t want to die.,115,,,
-3,56,115,main_web,Player,Main,body_default1,face_blink,text,어쩌면 반대일지도. 죽도록 밉지만\n이대로 죽고 싶지는 않았던 나약한 마음.,Or perhaps it’s the opposite. He hated himself so\nbut he didn’t want to die — such a fragile resolve.,121,,,
-3,56,116,main_web,Player,Main,body_default1,face_noblink,text,…….,……,117,,,
-3,56,117,main_web,Player,Main,body_default1,face_noblink,text,무엇도 확실한 건 없어. 내가\n감히 말을 얹고 싶지도 않아.,Nothing is for sure. I won’t dare\nadd my thoughts to this situation.,118,,,
-3,56,118,main_web,Player,Main,body_default1,face_blink,text,하지만 인간으로서 하나 정도는\n말해 줄 수 있을 것 같아.,But I think I can say something\nas one of his species.,119,,,
-3,56,119,main_web,Dot,Main,body_default1,face_noblink,text,어떤 거야?,What?,120,,,
-3,56,120,main_web,Player,Main,body_default1,face_noblink,text,‘그럴 수도 있어.’ 그뿐이야.,It can happen.’ That’s all.,121,,,
-3,56,121,main_web,Dot,Main,body_default1,face_blink,text,…….,……,122,,,
-3,56,122,main_web,Dot,Main,body_default1,face_noblink,text,그래. 그런 것 같아.,Yes. It seems so.,123,,,
-3,56,123,main_web,Dot,Main,body_default1,face_noblink,text,잠깐의 시간이 필요해. 나에게는.,A snippet of time. I need that.,124,,,
-3,56,124,main_web,Dot,Main,body_default1,face_blink,text,…… 어쩐지 모든 게 나빠지고 있는 느낌이야.,…… Somehow it seems\neverything is getting worse.,125,,,
-3,56,125,main_web,Player,Main,body_default1,face_noblink,text,왜 그래?,How so?,126,,,
-3,56,126,main_web,Dot,Main,body_default1,face_noblink,text,괜히 몸이 가벼워지고 있어. 증발할 것 같은 기분이야.,My body seems to be getting\nlighter. As if it is evaporating.,127,,,
-3,56,127,main_web,Dot,Main,body_default1,face_blink,text,그래도 신경쓰지 마.,No matter.,128,,,
-3,56,128,main_web,Dot,Main,body_default1,face_noblink,text,여기서 너를 더 불길하게 할 필요는 없겠지.,No need to foreshadow any further.,,,,
+﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+1,55,1,main_door_open,Dot,Main,body_default1,face_noblink,text,"안녕, <nickname>.","Hello, <nickname>.",2,,,,Main_Ch10,M10_L0001
+1,55,2,main_door_open,Dot,Main,body_default1,face_blink,text,저걸 좀 닫아줄 수 있겠어?,Could you close that?,3,,,,Main_Ch10,M10_L0002
+1,55,3,main_door_open,Player,Main,body_default1,face_noblink,text,뭐를 닫아줄까?,Close what?,4,,,,Main_Ch10,M10_L0003
+1,55,4,main_door_open,Dot,Main,body_default1,face_noblink,text,"안녕, <nickname>.","Hello, <nickname>.",5,,,,Main_Ch10,M10_L0004
+1,55,5,main_door_open,Dot,Main,body_default1,face_blink,text,저걸 좀 닫아줄 수 있겠어?,Could you close that?,6,,,,Main_Ch10,M10_L0005
+1,55,6,main_door_open,Player,Main,body_default1,face_noblink,selection,(창문을 닫는다.)|(책장을 닫는다.),(Close the windows.)|(Close the doors on the bookshelf.),7|12,,,,Main_Ch10,M10_L0006
+1,55,7,main_door_open,Dot,Main,body_default1,face_noblink,text,"안녕, <nickname>.","Hello, <nickname>.",8,,,,Main_Ch10,M10_L0007
+1,55,8,main_door_open,Dot,Main,body_default1,face_blink,text,저걸 좀 닫아줄 수 있겠어?,Could you close that?,9,,,,Main_Ch10,M10_L0008
+1,55,9,,Player,Main,,,selection,(책장을 닫는다.),(Close the doors on the bookshelf.),10,,,,Main_Ch10,M10_L0009
+1,55,10,,Dot,Main,,,text,"안녕, <nickname>.","Hello, <nickname>.",11,,,,Main_Ch10,M10_L0010
+1,55,11,,Dot,Main,,,text,저걸 좀 닫아줄 수 있겠어?,Could you close that?,15,,,,Main_Ch10,M10_L0011
+1,55,12,main_door_open,Player,Main,body_default1,face_noblink,selection,(창문을 닫는다.),(Close the windows.),13,,,,Main_Ch10,M10_L0012
+1,55,13,main_door_open,Dot,Main,body_default1,face_noblink,text,"안녕, <nickname>.","Hello, <nickname>.",14,,,,Main_Ch10,M10_L0013
+1,55,14,main_door_open,Dot,Main,body_default1,face_blink,text,저걸 좀 닫아줄 수 있겠어?,Could you close that?,15,,,,Main_Ch10,M10_L0014
+1,55,15,main_door_open,Player,Main,body_default1,face_noblink,text,"뭉치야, 더는 닫을 게 없는데... \n더 구체적으로 말해줄 수 있을까?","Dot, there’s nothing else to close…\nCould you be more specific?",16,,,,Main_Ch10,M10_L0015
+1,55,16,main_door_open,Dot,Main,body_default1,face_noblink,text,"그래, <nickname>.","Sure, <nickname>.",17,,,,Main_Ch10,M10_L0016
+1,55,17,main_door_open,Player,Main,body_default1,face_blink,text,"사실은 끝도 없이 이어지는, 내 빌어먹을\n생각의 문을 닫아 주길 바랐어.","I was actually hoping you could close the door\nto my never-ending, suffocating thoughts.",18,,,,Main_Ch10,M10_L0017
+1,55,18,main_door_open,Dot,Main,body_default1,face_noblink,text,오늘은 어떤 사람을 봤어.,I saw someone today.,19,,,,Main_Ch10,M10_L0018
+1,55,19,main_door_open,Dot,Main,body_default1,face_noblink,text,대체 그건 뭐였을까? 응?,"What was that? Really, what?",20,,,,Main_Ch10,M10_L0019
+1,55,20,main_door_open,Dot,Main,body_default1,face_blink,text,조금 진정하는 게 좋을 것 같은데...,Maybe you should relax a little first…,21,,,,Main_Ch10,M10_L0020
+1,55,21,main_door_open,Dot,Main,body_default1,face_noblink,text,대체 왜 그랬던 걸까? 조금 들어줄 수 있겠어?,"Why would he do that? Please, listen to this.",22,,,,Main_Ch10,M10_L0021
+1,55,22,main_door_open,Dot,Main,body_default1,face_noblink,text,어쩐지 나를 닮은.,..That somehow resemble me.,23,,,,Main_Ch10,M10_L0022
+1,55,23,main_door_open,Dot,Main,body_default1,face_noblink,text,검디 검은 폐기물 덩어리.\n역시 파쇄해 버려야 마땅한.,"A black, black blob of waste. Something\nthat deserves to be destroyed.",24,,,,Main_Ch10,M10_L0023
+1,55,24,main_door_open,Player,Main,body_default1,face_blink,text,뭉치야. 정신 좀 차려 봐!,"Dot, get it together!",25,,,,Main_Ch10,M10_L0024
+1,55,25,main_door_open,Dot,Main,body_default1,face_noblink,text,……,……,26,,,,Main_Ch10,M10_L0025
+1,55,26,main_door_open,Player,Main,body_default1,face_noblink,text,"뭉치야, 정신이 좀 들어?","Dot, can you hear me?",27,,,,Main_Ch10,M10_L0026
+1,55,27,main_door_open,Dot,Main,body_default1,face_blink,text,......,……,28,,,,Main_Ch10,M10_L0027
+1,55,28,main_door_open,Dot,Main,body_default1,face_noblink,text,"안녕, <nickname>.","Hello, <nickname>.",29,,,,Main_Ch10,M10_L0028
+1,55,29,main_door_open,Dot,Main,body_default1,face_noblink,text,네 안구에 내가 이상하게 비쳤어?,Did I show up strangely on your retina?,30,,,,Main_Ch10,M10_L0029
+1,55,30,main_door_open,Player,Main,body_default1,face_blink,selection,"어어, 조금은 그랬지만… 난 널 이해할 수 있어.|조금도 그렇지 않아. 천천히 말해줄 수 있겠어?","Well, a little… but I understand.|Not at all. Tell me what happened slowly, please?",31|31,,,sun|moon,Main_Ch10,M10_L0030
+1,55,31,main_door_open,Dot,Main,body_default1,face_noblink,text,고마워.,Thank you.,32,,,,Main_Ch10,M10_L0031
+1,55,32,main_door_open,Dot,Main,body_default1,face_noblink,text,나로선 처음 보는 장면이었거든.,It was the first time I witnessed that.,33,,,,Main_Ch10,M10_L0032
+1,55,33,main_door_open,Dot,Main,body_default1,face_blink,text,‘자기 혐오’가 그런 행동으로 나타날 수 있는지 몰랐어.,"I didn’t believe ‘self-hate’ could\nmanifest in that way, as actions.",34,,,,Main_Ch10,M10_L0033
+1,55,34,main_door_open,Dot,Main,body_default1,face_noblink,text,공장에서 제일 터부시되는 게 뭔지 알아?,Do you know what the most\ntaboo subject is at the Factory?,35,,,,Main_Ch10,M10_L0034
+1,55,35,main_door_open,Dot,Main,body_default1,face_noblink,text,그게 바로 ‘자기 혐오’라는 감정.,It’s ‘self-hate.’,36,,,,Main_Ch10,M10_L0035
+1,55,36,main_door_open,Dot,Main,body_default1,face_blink,text,달의 이들은 자살을 특히 두려워해.,The beings on the Moon are\nespecially afraid of suicide.,37,,,,Main_Ch10,M10_L0036
+1,55,37,main_door_open,Player,Main,body_default1,face_noblink,selection,어째서?|(묵묵히 들어준다.),How so?|(Listen carefully.),38|38,,,active|passive,Main_Ch10,M10_L0037
+1,55,38,main_door_open,Dot,Main,body_default1,face_noblink,text,자기 혐오를 ‘행동'으로 옮기다 보면\n극단적으로 자살까지 할 수 있으니까.,"Because when self-hate manifests as ‘action,’\nin extreme cases it could lead to suicide.",39,,,,Main_Ch10,M10_L0038
+1,55,39,main_door_open,Dot,Main,body_default1,face_blink,text,그들이 사랑하는 인간이 그런 감정을 느끼는\n걸 전혀 이해하지도 해석하지도 못해.,They can’t even begin to understand how the\nhumans they love could feel such an emotion.,40,,,,Main_Ch10,M10_L0039
+1,55,40,main_door_open,Dot,Main,body_default1,face_noblink,text,지극히 두려워해. 감히 마주보지도 못해.,They are terrified. Unable to dare face it.,41,,,,Main_Ch10,M10_L0040
+1,55,41,main_door_open,Player,Main,body_default1,face_noblink,text,그래서… 달의 이들이 그걸 막으려고 하는 거구나.,I see… That’s why the Moon\nBeings are trying to prevent it.,42,,,,Main_Ch10,M10_L0041
+1,55,42,main_door_open,Player,Main,body_default1,face_blink,selection,그들을 위해서.|인간을 위해서.,For themselves.|For the humans.,43|43,,,,Main_Ch10,M10_L0042
+1,55,43,main_door_open,Player,Main,body_default1,face_noblink,text,아니… 그들과 인간의 공생하는 관계를 위해서.,"No, for the symbiotic relationship\nbetween humans and themselves.",44,,,,Main_Ch10,M10_L0043
+1,55,44,main_door_open,Dot,Main,body_default1,face_noblink,text,그가 지금 얼마나 끔찍한 일을 한 건지 알겠어?,Do you see now? How horrible\nof a deed he committed?,45,,,,Main_Ch10,M10_L0044
+1,55,45,main_door_open,Dot,Main,body_default1,face_blink,text,"그건, 그건, 인간 영혼의 보호막을 조각 내는 발톱.","That, that is, the claw that smashes\nhuman souls’ protective barrier.",46,,,,Main_Ch10,M10_L0045
+1,55,46,main_door_open,Dot,Main,body_default1,face_noblink,text,네 말대로 달의 이들은 절대로 인간이\n자신을 해치게 두지 않는 게 원칙이야.,"Like you said, the Moon Beings never let\nhumans hurt themselves on principle.",47,,,,Main_Ch10,M10_L0046
+1,55,47,main_door_open,Dot,Main,body_default1,face_noblink,text,"절대, 결코, 그 어떤 일이 닥친대도. 그런데?","Never, ever, no matter what. But?",48,,,,Main_Ch10,M10_L0047
+1,55,48,main_door_open,Dot,Main,body_default1,face_blink,text,"난 이해가 안 되는 거야, 제 의지로 그런다고?",I don’t understand. He did it by choice?,49,,,,Main_Ch10,M10_L0048
+1,55,49,main_door_open,Dot,Main,body_default1,face_noblink,text,그 발톱으로 내면의 엉킨 덩어리를\n스스로 긁어내는 인간이 있다니.,"A human that scratches off their\nown tangled, interior blobs.",50,,,,Main_Ch10,M10_L0049
+1,55,50,main_door_open,Player,Main,body_default1,face_noblink,text,……,……,51,,,,Main_Ch10,M10_L0050
+1,55,51,main_door_open,Player,Main,body_default1,face_blink,selection,(지금은 가만히 들어주기를 선택했다.)|(아무런 말도 떠오르지 않기에 할 수 없었다.),(Listen carefully.)|(No words come to mind.),52|52,,,sun|moon,Main_Ch10,M10_L0051
+1,55,52,main_door_open,Dot,Main,body_default1,face_noblink,text,어째서? 어째서?\n알고 싶지 않아. 알고 싶지 않아.,Why? Why? I don’t want to\nknow. I don’t want to know.,53,,,,Main_Ch10,M10_L0052
+1,55,53,main_door_open,Dot,Main,body_default1,face_noblink,text,……,……,54,,,,Main_Ch10,M10_L0053
+1,55,54,main_door_open,Dot,Main,body_default1,face_blink,text,"그런데, <nickname>. 지금 내가\n제일 무서운 게 뭔지 알아?","But <nickname>, can you tell\nwhat I’m most afraid of right now?",55,,,,Main_Ch10,M10_L0054
+1,55,55,main_door_open,Dot,Main,body_default1,face_noblink,text,<nickname>은 뭐라고 생각해?,"What do you think it is, <nickname>?",56,,,,Main_Ch10,M10_L0055
+1,55,56,main_door_open,Player,Main,body_default1,face_noblink,text,…,…,57,,,,Main_Ch10,M10_L0056
+1,55,57,main_door_open,Dot,Main,body_default1,face_blink,text,맞히지 말아줘. 눈치챘더라도.,Please don’t guess correctly.\nEven if you do know the answer.,58,,,,Main_Ch10,M10_L0057
+1,55,58,main_door_open,Dot,Main,body_default1,face_noblink,text,…,…,59,,,,Main_Ch10,M10_L0058
+1,55,59,main_door_open,Dot,Main,body_default1,face_noblink,text,…,…,60,,,,Main_Ch10,M10_L0059
+1,55,60,main_door_open,Dot,Main,body_default1,face_blink,text,난 토끼 굴에 빠졌어.,I’ve fallen down a rabbit hole.,61,,,,Main_Ch10,M10_L0060
+1,55,61,main_door_open,Dot,Main,body_default1,face_noblink,text,"정신을 차린 순간, 그 안에 있었어.","When I came to my senses,\nI was already inside it.",62,,,,Main_Ch10,M10_L0061
+1,55,62,main_door_open,Dot,Main,body_default1,face_noblink,text,"굴에서 나가는 법을 모르겠지만, 애초에,\n나가야 하는지조차 잘 모르겠어…","I don’t know how to leave, but I also can’t\nfind a reason to leave in the first place…",63,,,,Main_Ch10,M10_L0062
+1,55,63,main_door_open,Dot,Main,body_default1,face_blink,text,어느 것도 제대로 보이지 않아.,Nothing seems clear.,64,,,,Main_Ch10,M10_L0063
+1,55,64,main_door_open,Dot,Main,body_default1,face_noblink,text,미안. 오늘은 혼자서 더 생각해 보고 싶어.,I’m sorry. I need more time to\nmyself today to think this over.,65,,anim_mud,,Main_Ch10,M10_L0064
+3,56,65,main_web,Dot,Main,body_default1,face_noblink,text,그 사람은 자기 자신을 싫어해서\n그런 행동을 한 걸까?,Did he do those things\nbecause he hated himself?,66,,,,Main_Ch10,M10_L0065
+3,56,66,main_web,Dot,Main,body_default1,face_blink,text,그 사람은 왜 그렇게 자신과 삶을 싫어했을까?,Why did he hate himself and his life so much?,67,,,,Main_Ch10,M10_L0066
+3,56,67,main_web,Player,Main,body_default1,face_noblink,text,……,……,68,,,,Main_Ch10,M10_L0067
+3,56,68,main_web,Dot,Main,body_default1,face_noblink,text,무엇이 그 사람을 그리 만들었을까?,What made him the way he is?,69,,,,Main_Ch10,M10_L0068
+3,56,69,main_web,Dot,Main,body_default1,face_blink,text,"너도 알다시피, 나한테는 그게 검정이야.","As you know, that is what black does to me.",70,,,,Main_Ch10,M10_L0069
+3,56,70,main_web,Dot,Main,body_default1,face_noblink,text,아무리 직시해도 어떠한 색채나 가능성이\n보이지 않아서. 검정은 그저 검정.,"Regardless of how many times I confront it,\nI see no color or potential. Black is just black.",71,,,,Main_Ch10,M10_L0070
+3,56,71,main_web,Dot,Main,body_default1,face_noblink,text,"그 무가치함과 무의미함이 나를 허무하게,\n슬프게, 때로는 공포스럽게 해.","That void of worth and meaning feels\nfutile, sad, and sometimes terrifying.",72,,,,Main_Ch10,M10_L0071
+3,56,72,main_web,Dot,Main,body_default1,face_blink,text,<nickname>. 혹시 너도 유사한 감정을 느껴?\n혹은 느낀 적이 있어? 상상해본 적은 있어?,"<nickname>, do you feel the same at times?\nOr have you ever imagined how it would feel?",73,,,,Main_Ch10,M10_L0072
+3,56,73,main_web,Player,Main,body_default1,face_noblink,textbox,너도 너를 아프게 하는 너만의 검정이 있어?,Do you have your own black that hurts you?,74,,,,Main_Ch10,M10_L0073
+3,56,74,main_web,Dot,Main,body_default2,face_noblink,text,그건 지구에만 있는 거야?,Is that only on Earth?,75,,,,Main_Ch10,M10_L0074
+3,56,75,main_web,Player,Main,body_default1,face_noblink,selection,"그래, 이런 건 오직 지구에만 있기를.|아니, 어디에서나 느낄 수 있을 것 같아.","Yes, at least I hope it only exists on Earth.|No, you can feel it anywhere in this universe.",76|78,,,,Main_Ch10,M10_L0075
+3,56,76,main_web,Dot,Main,body_default1,face_blink,text,달에 가면 그런 건 없을 텐데.,That wouldn’t exist on the Moon.,77,,,sun|moon,Main_Ch10,M10_L0076
+3,56,77,main_web,Dot,Main,body_default1,face_noblink,text,그 사람도 달에는 그를 아프게\n만드는 게 없었으면 좋겠다.,I hope there will be nothing\non the Moon that can hurt him.,80,,,,Main_Ch10,M10_L0077
+3,56,78,main_web,Dot,Main,body_default1,face_noblink,text,우주는 아주 아주 넓대. 잠깐\n숨어 쉬어갈 곳은 많을 거야.,The universe is infinitely large. There should\nbe many spots to hide and take a moment.,79,,,,Main_Ch10,M10_L0078
+3,56,79,main_web,Dot,Main,body_default1,face_blink,text,그 사람도 우주만큼은 다정한\n공간으로 여겼으면 좋겠다.,"I hope the universe feels kind to him, at the least.",80,,,,Main_Ch10,M10_L0079
+3,56,80,main_web,Player,Main,body_default1,face_noblink,text,……,…….,81,,,,Main_Ch10,M10_L0080
+3,56,81,main_web,Dot,Main,body_default1,face_noblink,text,그런데 <name>.,But <name>.,82,,,,Main_Ch10,M10_L0081
+3,56,82,main_web,Dot,Main,body_default1,face_blink,text,달의 이들이 그 사람을 보면 어떻게 생각할까?,What would the Moon Beings think of him?,83,,,,Main_Ch10,M10_L0082
+3,56,83,main_web,Dot,Main,body_default1,face_noblink,text,달에서는 자기를 해치는 행동을 아주 무서워하는데.,They are very afraid of self-harming acts.,84,,,,Main_Ch10,M10_L0083
+3,56,84,main_web,Dot,Main,body_default1,face_noblink,text,"자기를 미워하고, 아프게 하는 행동을 계속하다\n보면 자기를 점차 포기하게 된다고 생각하거든.","They think that once one hates and hurts\noneself, they eventually give up on themself.",85,,,,Main_Ch10,M10_L0084
+3,56,85,main_web,Player,Main,body_default1,face_blink,text,(뭉치의 감정이 격해지는 게 느껴진다.),(I feel Dot’s emotions becoming profound.),86,,,,Main_Ch10,M10_L0085
+3,56,86,main_web,Player,Main,body_default1,face_noblink,text,(조금만 더 지켜볼까.),(Let’s observe for a while longer.),87,,,,Main_Ch10,M10_L0086
+3,56,87,main_web,Dot,Main,body_default1,face_noblink,text,달의 이들이 그를 보면 다들 경계하겠지.,The Moon Beings would be cautious of him.,88,,,,Main_Ch10,M10_L0087
+3,56,88,main_web,Dot,Main,body_default1,face_blink,text,그러니 달은 그를 환영해 주지 못할 거야.,"In short, the Moon would not welcome him.",89,,,,Main_Ch10,M10_L0088
+3,56,89,main_web,Dot,Main,body_default1,face_noblink,text,"환영뿐만이 아니지. 아주, 아주, 배척할 거야.","Worse than that, it would certainly exclude him.",90,,,,Main_Ch10,M10_L0089
+3,56,90,main_web,Player,Main,body_default1,face_noblink,text,(더 이상은 지켜만 볼 수 없어.),(I can’t just take a back seat anymore.),91,,,,Main_Ch10,M10_L0090
+3,56,91,main_web,Player,Main,body_default1,face_blink,text,달이 정말 그렇게 차가운 곳이야?\n내가 봤던 뭉치는 그러지 않았는데.,Is the Moon really that hostile of a place?\nThe Dot I’ve come to know isn’t like that.,92,,,,Main_Ch10,M10_L0091
+3,56,92,main_web,Player,Main,body_default1,face_noblink,text,달의 이들도 마찬가지야. 오히려 따스하게\n겹쳐 쌓인 선율 같은 이들이었어.,"Neither are the Moon Beings. In fact, they\nseem like warmly layered melodies to me.",93,,,,Main_Ch10,M10_L0092
+3,56,93,main_web,Dot,Main,body_default1,face_noblink,text,…!,…!,94,,,,Main_Ch10,M10_L0093
+3,56,94,main_web,Player,Main,body_default1,face_blink,text,"뭉치야, 너는 내일도 모레도\n같은 말을 하고 싶은 거야?","Dot, are you sure you would say the\nsame tomorrow and the day after?",95,,,,Main_Ch10,M10_L0094
+3,56,95,main_web,Player,Main,body_default1,face_noblink,text,"정말로 그를 배척해 버리고\n싶은 거야? 무정하고, 가차없이?",Do you really want to exclude\nhim? Cruelly and heartlessly?,96,,,,Main_Ch10,M10_L0095
+3,56,96,main_web,Dot,Main,body_default1,face_noblink,text,"그, 그렇지 않아.","N, no.",97,,,,Main_Ch10,M10_L0096
+3,56,97,main_web,Dot,Main,body_default1,face_blink,text,…….,……,98,,,,Main_Ch10,M10_L0097
+3,56,98,main_web,Dot,Main,body_default1,face_noblink,text,믿어 줘. 사실 난 그러고 싶었던 게 아니었어.,Please believe me. That’s not what I wanted.,99,,,,Main_Ch10,M10_L0098
+3,56,99,main_web,Player,Main,body_default1,face_noblink,text,그럴 것 같다는 생각은 했어. 혹시 이유는?,I thought so. Can I ask why?,100,,,,Main_Ch10,M10_L0099
+3,56,100,main_web,Dot,Main,body_default1,face_blink,text,너에게… 명확하게 설명할 수 없는 내가 참담해.,I can’t explain it clearly to you… which feels tragic.,101,,,,Main_Ch10,M10_L0100
+3,56,101,main_web,Dot,Main,body_default1,face_noblink,text,…….,……,102,,,,Main_Ch10,M10_L0101
+3,56,102,main_web,Dot,Main,body_default1,face_noblink,text,나는 그에게서 두 가지 빛을 보았지.,I saw two kinds of light in him.,103,,,,Main_Ch10,M10_L0102
+3,56,103,main_web,Dot,Main,body_default1,face_blink,text,파괴적인 고통과 삶에 대한 의지를 동시에 보았어.,I saw destructive pain and the\nwill to live at the same time.,104,,,,Main_Ch10,M10_L0103
+3,56,104,main_web,Dot,Main,body_default1,face_noblink,text,하지만 의문이 남잖아.,But it leaves me with an important question.,105,,,,Main_Ch10,M10_L0104
+3,56,105,main_web,Dot,Main,body_default1,face_noblink,text,그의 의도와 행동이 상반되는 이유가 말이야.,The reason for his conflicting\nintentions and actions.,106,,,,Main_Ch10,M10_L0105
+3,56,106,main_web,Player,Main,body_default1,face_blink,text,음…,Hm…,107,,,,Main_Ch10,M10_L0106
+3,56,107,main_web,Player,Main,body_default1,face_noblink,text,(하지만 뭉치는 늘 상반되는 상황을 투명히\n지켜봐 왔다. 모순 위에 살아가는 뭉치.),(But Dot has always observed conflicting situations\nas they were. Dot coexists with contradictions.),108,,,,Main_Ch10,M10_L0107
+3,56,108,main_web,Player,Main,body_default1,face_noblink,text,(이번이라고 뭐가 다른 걸까?),(What’s so different about this time?),109,,,,Main_Ch10,M10_L0108
+3,56,109,main_web,Dot,Main,body_default1,face_blink,text,살고 싶은데도 스스로를 해칠 수가 있는 거야?,How can you want to live and still hurt yourself?,110,,,,Main_Ch10,M10_L0109
+3,56,110,main_web,Dot,Main,body_default1,face_noblink,text,죽고 싶지 않아도 자기를\n죽도록 미워할 수 있는 거야?,Can you hate yourself to death\nand still not want to die?,111,,,,Main_Ch10,M10_L0110
+3,56,111,main_web,Dot,Main,body_default1,face_noblink,text,"어째서? 어째서? 알고 싶지 않아. 하지만\n알고 있다면 부디 알려 줘, <nickname>.","How? How? I don’t want to know. But if\nyou do know, please tell me, <nickname>.",112,,,,Main_Ch10,M10_L0111
+3,56,112,main_web,Player,Main,body_default1,face_blink,selection,그건 가능해. 수많은 모순들 중 하나일 뿐이야.|(그저 함께 침묵한다.),It’s possible. It’s one of a million contradictions.|(Remain silent with Dot.),113|116,,,,Main_Ch10,M10_L0112
+3,56,113,main_web,Player,Main,body_default1,face_noblink,text,정말 죽고 싶었다면 다른 방법을 썼을 거야.,"If he really wanted to die, he\nwould’ve used another method.",114,,,active|passive,Main_Ch10,M10_L0113
+3,56,114,main_web,Player,Main,body_default1,face_noblink,text,이대로 죽고 싶지는 않기 때문에\n자기를 죽도록 미워한 거야.,He hated himself so because\nhe didn’t want to die.,115,,,,Main_Ch10,M10_L0114
+3,56,115,main_web,Player,Main,body_default1,face_blink,text,어쩌면 반대일지도. 죽도록 밉지만\n이대로 죽고 싶지는 않았던 나약한 마음.,Or perhaps it’s the opposite. He hated himself so\nbut he didn’t want to die — such a fragile resolve.,121,,,,Main_Ch10,M10_L0115
+3,56,116,main_web,Player,Main,body_default1,face_noblink,text,…….,……,117,,,,Main_Ch10,M10_L0116
+3,56,117,main_web,Player,Main,body_default1,face_noblink,text,무엇도 확실한 건 없어. 내가\n감히 말을 얹고 싶지도 않아.,Nothing is for sure. I won’t dare\nadd my thoughts to this situation.,118,,,,Main_Ch10,M10_L0117
+3,56,118,main_web,Player,Main,body_default1,face_blink,text,하지만 인간으로서 하나 정도는\n말해 줄 수 있을 것 같아.,But I think I can say something\nas one of his species.,119,,,,Main_Ch10,M10_L0118
+3,56,119,main_web,Dot,Main,body_default1,face_noblink,text,어떤 거야?,What?,120,,,,Main_Ch10,M10_L0119
+3,56,120,main_web,Player,Main,body_default1,face_noblink,text,‘그럴 수도 있어.’ 그뿐이야.,It can happen.’ That’s all.,121,,,,Main_Ch10,M10_L0120
+3,56,121,main_web,Dot,Main,body_default1,face_blink,text,…….,……,122,,,,Main_Ch10,M10_L0121
+3,56,122,main_web,Dot,Main,body_default1,face_noblink,text,그래. 그런 것 같아.,Yes. It seems so.,123,,,,Main_Ch10,M10_L0122
+3,56,123,main_web,Dot,Main,body_default1,face_noblink,text,잠깐의 시간이 필요해. 나에게는.,A snippet of time. I need that.,124,,,,Main_Ch10,M10_L0123
+3,56,124,main_web,Dot,Main,body_default1,face_blink,text,…… 어쩐지 모든 게 나빠지고 있는 느낌이야.,…… Somehow it seems\neverything is getting worse.,125,,,,Main_Ch10,M10_L0124
+3,56,125,main_web,Player,Main,body_default1,face_noblink,text,왜 그래?,How so?,126,,,,Main_Ch10,M10_L0125
+3,56,126,main_web,Dot,Main,body_default1,face_noblink,text,괜히 몸이 가벼워지고 있어. 증발할 것 같은 기분이야.,My body seems to be getting\nlighter. As if it is evaporating.,127,,,,Main_Ch10,M10_L0126
+3,56,127,main_web,Dot,Main,body_default1,face_blink,text,그래도 신경쓰지 마.,No matter.,128,,,,Main_Ch10,M10_L0127
+3,56,128,main_web,Dot,Main,body_default1,face_noblink,text,여기서 너를 더 불길하게 할 필요는 없겠지.,No need to foreshadow any further.,,,,,Main_Ch10,M10_L0128

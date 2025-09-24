@@ -1,159 +1,159 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote
-1,7,1,main_door_open,Dot,Main,body_default1,face_eyeroll,text,책장의 가운데 칸 정도에서 내가\n떨어진다면 어떤 일이 일어날까?,"What would happen if I were to drop from,\nlet’s say, the middle story of the bookshelf?",2,,,
-1,7,2,main_door_open,Player,Main,body_default1,face_noblink,selection,비치 볼처럼 도잉 튀어오를 것 같아.|조약돌처럼 자잘히 흩어질 것 같아.,"You would go ‘boing’, like a beach ball.|You would scatter, like a bunch of pebbles.",3|4,,,
-1,7,3,main_door_open,Dot,Main,body_default1,face_noblink,text,"내 표면은 점성이 있지만, 그리 단단하지는 않아.",My surface has viscosity but\nis not firm enough for that.,5,,,
-1,7,4,main_door_open,Dot,Main,body_default1,face_blink,text,흩어진 다음 구의 형태로 다시\n뭉치게 될까? 난 그런 성질이니까.,Will I gather back into a\nsphere? I was born as one.,5,,,
-1,7,5,main_door_open,Dot,Main,body_default1,face_noblink,text,"재미있는 묘사네, <nickname>. 네 머릿속\n나는 어떤 이미지인지 느껴져서 즐거워.","An amusing hypothesis, <name>. It’s\nrefreshing to see me through your eyes.",6,,,
-1,7,6,main_door_open,Dot,Main,body_default1,face_close_turn,text,"음, 음, 음. 이쯤에서 나의 추측을 말해볼게.","Hm. hm, hm. I’ll tell you\nwhat I think will happen.",7,,,
-1,7,7,main_door_open,Dot,Main,body_default1,face_close,text,"내가 떨어진다면, 나는 공허의 바다를 잠수하게 될 거야.","If I drop, I will plunge into\nan ocean of emptiness.",8,,,
-1,7,8,main_door_open,Dot,Main,body_default1,face_close,text,아주 비참할 거야. 내 육신이 바닷물에\n모두 녹아 조각조각 흩어지는 기분일 거야.,It will be dismal. As if my body has melted\nin the saltwater and dispersed.,9,,,
-1,7,9,main_door_open,Player,Main,body_default1,face_open,text,그냥 떨어지기만 하는 게 아닌 것\n같은데… 오늘 무슨 일이 있었던 거야?,Um… Sure you’re talking about a simple\ndrop? Did something happen today?,10,,,
-1,7,10,main_door_open,Dot,Main,body_default1,face_blink,text,물론이지. 묘사를 넘어 더욱 중요한 걸 알려줄게.,Of course. What you’ll hear now is much\nmore essential than any hypothesis.,11,1,,
-1,7,11,main_door_open,Dot,Main,body_default1,face_noblink,text,인간들은 이런 이야기를 비극이라고 부른다지?,Humans seem to call such a story a tragedy.,12,,,
-1,7,12,main_door_open,Player,Main,body_default1,face_eyeroll3,text,확실히… 비극에 가까워.,It’s definitely… close to a tragedy.,13,,,
-1,7,13,main_door_open,Dot,Main,body_default1,face_blink,text,그의 비참한 심정이 횃불처럼 타오르고 있었어.\n누군가는 매료될지도 모른다는 생각이 들 정도로.,His dismal feelings were flaming like a torch.\nI could see some people being rapt by them.,14,,,
-1,7,14,main_door_open,Dot,Main,body_default1,face_noblink,text,그리고 난 깨달아 버린 거야.,Then a thought crept into my mind.,15,,,
-1,7,15,main_door_open,Dot,Main,body_default1,face_noblink,text,‘나라면 그에게 뭔가를 해줄 수\n있지 않을까?’하고 말이야.,‘Perhaps I could do something for this man.’,16,,,
-1,7,16,main_door_open,Player,Main,body_default1,face_blink,text,뭉치가? 어떤 걸 해 줄 수 있다는 건데?,You? What could you do for him?,17,,,
-1,7,17,main_door_open,Dot,Main,body_default1,face_noblink,text,"세상의 모든 동그라미를 삼킨 그가, 미처\n삼키지 못한 동그라미가 하나 있잖아.",There is one circle he has yet to swallow.,18,,,
-1,7,18,main_door_open,Player,Main,body_default1,face_noblink,textbox,그건 바로…,And that is…,19,,,
-1,7,19,main_door_open,Dot,Main,body_bounce,face_blink,text,바로 나.,It is I.,20,,,
-1,7,20,main_door_open,Dot,Main,body_default1,face_noblink,text,이 꿈은 고유한 균열에 꼭 맞는\n동그라미를 찾기 위한 여정이었잖아?,This dream was essentially a journey to find\na circle that would fit an intrinsic fissure.,21,,,
-1,7,21,main_door_open,Dot,Main,body_default1,face_noblink,text,몸이 유연하고 끈적한 나라면 그 무엇보다도\n완벽하게 채워줄 수 있었을 것만 같았거든.,"I thought, with my flexible and viscous body,\nI could fill it better than anything else.",22,,,
-1,7,22,main_door_open,Dot,Main,body_bounce,face_blink,text,"게다가 난 조약돌처럼 흩어진 다음에도,\n비치 볼처럼 다시 뭉쳐 버린다고?","What’s more, I gather back into a beach ball\nshape after scattering like a bunch of pebbles!",23,,,
-1,7,23,main_door_open,Player,Main,body_default1,face_noblink,selection,"우와, 정말 뭉치라면 가능한 일일지도?|그럼 갈라 놓으면 두 개의 뭉치가 될 수도 있는 걸까?","Wow, if it’s you, perhaps it’s possible.|If we split you into two, would there be two Dots?",24|25,,,sun|moon
-1,7,24,main_door_open,Dot,Main,body_default1,face_noblink,text,그렇지? <nickname>. 네 생각에도\n그럴듯하게 들어맞을 것 같지?,"Right? You agree that I’ll somehow\nfit into the hole, <name>, right?",28,,,
-1,7,25,main_door_open,Dot,Main,body_default1,face_eyeroll2,text,어? 응? 으음? 흐음?,Huh? Hm? Mm?,26,,,
-1,7,26,main_door_open,Dot,Main,body_default1,face_noblink,text,"그 렇 지 는 않 을 걸? 난 언제까지나 <nickname>,\n네가 알고 있는 유일무이 뭉치일 거야.","Maybe… Most possibly… Not. I’ll always be\nthe one and only Dot you know, <name>.",27,,,
-1,7,27,main_door_open,Dot,Main,body_default1,face_noblink,text,아마도… 음… 제발.,Mm… I hope.,28,,,
-1,7,28,main_door_open,Dot,Main,body_default1,face_blink,text,난 결심했어. 그의 간절한 소망을 이뤄\n주기 위해 지금부터라도 단련할 거야.,"It’s decided. From now on, I’ll start\ntraining to fulfill his ardent wish.",29,,,
-1,7,29,main_door_open,Dot,Main,body_default1,face_noblink,text,따라서 허공에 붙은 채로 버티는 연습을 해 보겠어.,"First up, I’ll practice staying stuck\nsomewhere for a long time.",30,,,
-1,7,30,main_door_open,Dot,Main,body_default1,face_noblink,text,<nickname>의 방에 마침 딱 알맞은 공간이 하나 있지?,"Don’t you have the perfect space\nfor that in your room, <name>?",31,,,
-1,7,31,main_door_open,Player,Main,body_default1,face_blink,selection4,침대 밑|책장 속|천장 표면|창문 밖,Under the bed|In the bookshelf|On the ceiling|Outside the window,32|35|32|32,,,
-1,7,32,main_door_open,Dot,Main,body_default1,face_noblink,text,아!,Under the bed or On the\nceiling or Outside the window,33,,,
-1,7,33,main_door_open,Dot,Main,body_default1,face_noblink,text,그것도 좋지만 더욱 적당한 공간을 하나 찾았으니까.,It sounds good but I’m looking for\nsomewhere more adequate.,36,,,
-1,7,34,main_door_open,Player,Main,body_default1,face_blink,text,책장 속?,In the bookshelf?,35,,,
-1,7,35,main_door_open,Dot,Main,body_default1,face_noblink,text,"응, 응! 바로 그거야! 나의 모퉁이.","Yes, yes! That’s it! My corner.",36,,,
-1,7,36,main_door_open,Dot,Main,body_default1,face_noblink,text,내가 몸을 동그랗게 말아서 책장에 붙어 볼게. 난 완전한\n구가 될 거야… 뭉치는 건 가장 자신 있는 분야니까.,I’ll roll and stick myself to the bookshelf. I’ll\nbecome a perfect sphere… It’s what I do best.,37,,,
-1,7,37,main_door_open,Player,Main,body_ch2_tremble,face_null,text,(뭉치가 빈 책장 벽에 몸을 던졌다.),(Dot throws themself\nat the empty bookshelf.),38,,,
-1,7,38,main_door_open,Player,Main,body_ch2_drop,face_null,text,(앗… 떨어졌다.),(Oh… Dot drops.),39,,,
-1,7,39,main_door_open,Dot,Main,body_default1,face_eyeroll,text,…,…,40,,,
-1,7,40,main_door_open,Dot,Main,body_default1,face_blink,text,"이럴 리가 없는데. 이럴 리가 없는데.\n<nickname>, 날 다시 한 번만 붙여줄래?","It can’t be. It can’t be. <name>,\nwill you stick me there once more?",41,,,
-1,7,41,main_door_open,Player,Main,body_ch2_tremble,face_null,text,(뭉치를 책장 벽에 붙여 주었다.),(Stick Dot to the bookshelf wall.),42,,,
-1,7,42,main_door_open,Player,Main,body_ch2_drop,face_null,text,(앗… 떨어졌다.),(Oh… Dot drops.),43,,,
-1,7,43,main_door_open,Dot,Main,body_default1,face_eyeroll3,text,…,…,44,,,
-1,7,44,main_door_open,Player,Main,body_default1,face_blink,selection,"뭉치야, 너무 실망하지 마.|다시 한 번 붙여 줄까?","Dot, don’t be too discouraged.|Do you want me to stick you one more time?",45|45,,,sun|moon
-1,7,45,main_door_open,Dot,Main,body_default1,face_noblink,text,…,…,46,,,
-1,7,46,main_door_open,Dot,Main,body_default1,face_noblink,text,"나라면 완전무결한 구가 되어줄 수 있을 것\n같았는데, 이게 다 잘못된 생각이었나?",I thought I could become a flawless sphere\nfor the man. Was all that a fantasy?,47,,,
-1,7,47,main_door_open,Dot,Main,body_default1,face_close_turn,text,수만 갈래의 가시밭길이 있었겠지. 하지만 나라면\n구름 길을 깔아 줄 수 있는 존재라고 느꼈는데.,"He must have faced thousands of thorny roads.I thought I could be the one to lay one with clouds.He was facing countless thorny paths ahead.\nI thought I could be the one to ease his pain.",48,,,
-1,7,48,main_door_open,Dot,Main,body_default1,face_close,text,"물론 내가 아닌 다른 무언가일 수도 있겠지,\n세상은 넓고 내가 관측하지 못한 것들은 많으니까.","Of course, someone else could do it. The\nworld is big and there is much I haven’t observed.",49,,,
-1,7,49,main_door_open,Dot,Main,body_default1,face_open,text,하지만 지금 나를 만났잖아! 지금 기회가 왔어.\n내가 하지 못하면 어느 누가 할 수 있을까?,"But he met me! I have a chance.\nIf not me, then who?",50,,,
-1,7,50,main_door_open,Dot,Main,body_default1,face_noblink,text,가여운 그가 기어이 돋아날 곳은 어디일까?,Where will the poor man\nfinally take root and grow?,51,,,
-1,7,51,main_door_open,Player,Main,body_default1,face_noblink,text,뭉치의 몸통으로도 완벽하게\n채우는 건 힘든 일이었을지도 몰라.,"Even with your body, it may have been\ndifficult to fill his hole entirely.",52,,,
-1,7,52,main_door_open,Player,Main,body_default1,face_blink,text,그가 일을 대충 했을까? 그리도 간절한 결핍이었는데.,"Would he have done a sloppy job?\nNo way, it was such a desperate deficiency.",53,,,
-1,7,53,main_door_open,Player,Main,body_default1,face_noblink,text,만들 수 있는 동그라미는 다 만들었겠지.,He would have made all the circles he could.,54,,,
-1,7,54,main_door_open,Player,Main,body_default1,face_noblink,textbox,"유연하고 끈적한 소재로도 만들어 봤을 거야, 가령…",Even ones with stretchy and\nsticky material. For example…,55,,,
-1,7,55,main_door_open,Dot,Main,body_default1,face_blink,text,그렇지 않아. 지구상에 나 같은\n동그라미는 어디에도 없었어.,"No, he couldn’t have. A circle like me\ndoesn’t exist anywhere else on Earth.",56,,,
-1,7,56,main_door_open,Dot,Main,body_default1,face_noblink,text,달에서 온 나는 그 어떤 물질과도 달라. 나만큼 그\n인간을 완벽하게 채워줄 가능성이 있는 건 없었어.,I’m different from any earthly substance.\nNo thing could have better filled that man.,57,,,
-1,7,57,main_door_open,Dot,Main,body_default1,face_noblink,text,그런 만큼 나의 실패는 그 인간에게\n더욱 가혹한 의미를 띄는 거야.,"As such, my failure is even more harsh to him.",58,,,
-1,7,58,main_door_open,Dot,Main,body_default1,face_blink,text,내가 한심해. 지옥 같이\n한심해. 견딜 수가 없다고.,I’m pathetic. Infernally\npathetic. I can’t deal with it.,59,,,
-1,7,59,main_door_open,Player,Main,body_default1,face_noblink,text,뭉치야… 하지만.,Dot… But.,60,,,
-1,7,60,main_door_open,Player,Main,body_default1,face_noblink,text,(맹점을 한번 짚어 주는 게 좋겠어.),(Feels like the hole in the logic\nshould be pointed out.),61,,,
-1,7,61,main_door_open,Player,Main,body_default1,face_blink,selection,"‘미지의 물질’에 과하게 의미를 부여하는 건 아닐까.|그는 도움을 청한 적 없어, 뭉치의 존재를 모르잖아.",Perhaps you’ve overthought the ‘unknown substance’ part. |He never asked for your help. He doesn’t know you exist.,62|64,,,
-1,7,62,main_door_open,Player,Main,body_default1,face_noblink,text,달에서 온 너는 그저 미지의 물질이었어. 허공에서\n버티는 성질은 없다고 밝혀졌지만 그뿐이야.,"You’re made up of unknown substance, that’s it.\nYou couldn’t stick somewhere, but so what?",63,,,
-1,7,63,main_door_open,Player,Main,body_default1,face_noblink,text,뭉치가 너무 많은 의미를 부여하려다\n보니 너조차 힘들어진 게 아닌가 싶네.,I think you thought about it so\nmuch that you pressured yourself.,66,,,
-1,7,64,main_door_open,Player,Main,body_default1,face_blink,text,뭉치가 아니더라도 세상엔 다른 동그라미들이\n많을 거야. 그가 아직 발견하지 못한 모든 것들이.,"Even without you, there are many other circles\nin the world. Circles he haven’t discovered yet.",65,,,
-1,7,65,main_door_open,Player,Main,body_default1,face_noblink,text,그러니 죄책감을 갖는 게 조금은 이를지도 모르겠어.,So it may be a little early to feel guilty.,66,,,
-1,7,66,main_door_open,Dot,Main,body_default1,face_noblink,text,… … …,……,67,,,
-1,7,67,main_door_open,Dot,Main,body_default1,face_blink,text,비약으로 느껴졌어?,Were there too many leaps in my logic?,68,,,
-1,7,68,main_door_open,Player,Main,body_default1,face_noblink,text,"그래, 조금은 비약이었지.",A little.,69,,,
-1,7,69,main_door_open,Dot,Main,body_default1,face_noblink,text,… … …,……,70,,,
-1,7,70,main_door_open,Player,Main,body_default1,face_blink,text,하지만 너의 다정한 심성까지도\n외면하지 않았으면 좋겠어.,"Nonetheless, I hope you continue\nto pay attention to your kind heart.",71,,,
-1,7,71,main_door_open,Dot,Main,body_default1,face_noblink,text,"그래, 고마워… <nickname>.","Thank you, <name>…",72,,,
-1,7,72,main_door_open,Dot,Main,body_default1,face_noblink,text,부끄러워서 녹아 버릴 것 같아. 괴물인 내가\n인간에게 부적절하게 참견하려고 한 걸까?,"I could just melt from the embarrassment.\nWas I, a monster, too nosy in human business?",73,,,
-1,7,73,main_door_open,Player,Main,body_default1,face_blink,selection,"글쎄, 인간끼리도 비슷한 마음을 품을 수 있는 걸.|아니, 인간과 괴물을 넘어 개체와 개체 간 이야기니까.","Not really, other people may feel the same.|No, this is between two beings, not a person and a monster.Well, it's not just a story limited to monsters.",74|74,,,sun|moon
-1,7,74,main_door_open,Dot,Main,body_default1,face_noblink,text,나만의 이야기가 아니라는 거야? 그럼 인간들은\n누군가의 빈 자리를 발견하면 어떻게 행동해?,Other people feel the same? Then how do humans\nact when they see the emptiness in somebody?,75,,,
-1,7,75,main_door_open,Player,Main,body_default1,face_noblink,text,누군가의 비어 있는 마음을 보고 가련함을\n느끼는 건 우리에게도 꽤나 흔한 일일지 몰라.,To see someone’s empty heart and feel pity\nmay be pretty common for us too.,76,,,
-1,7,76,main_door_open,Player,Main,body_default1,face_blink,text,"하나뿐인 특별한 방에 초대되었다는 도취감에 사로잡힌\n채, 평소의 나답지는 않은 일을 벌이기도 하지.","Amid the euphoria of having been invited to\na unique room, sometimes we act unlike ourselves.",77,,,
-1,7,77,main_door_open,Dot,Main,body_default1,face_noblink,text,.......,……,78,,,
-1,7,78,main_door_open,Player,Main,body_default1,face_noblink,text,꼭 지금의 뭉치처럼 말이야.,Like you did just then.,79,,,
-1,7,79,main_door_open,Dot,Main,body_default1,face_blink,text,.......,……,80,,,
-1,7,80,main_door_open,Dot,Main,body_default1,face_noblink,text,결핍이란 건 모든 인간이 가지고 있는 거야? 분필로\n그린 눈으로는 볼 수 없는 마음의 빈 자리가.,"Deficiency… Is it in every human? A hole in\ntheir heart, invisible to my chalk-drawn eyes?",81,,,
-1,7,81,main_door_open,Player,Main,body_default1,face_noblink,selection,모두는 빈 자리를 가진 채로 태어나.|모두는 살아가면서 마음에 빈 자리를 마련해.,Everyone is born with a hole.|Everyone ends up with a hole.,82|82,,,
-1,7,82,main_door_open,Dot,Main,body_default1,face_blink,text,너는 어느 쪽이야?,Which one are you?,83,,,
-1,7,83,main_door_open,Dot,Main,body_default1,face_noblink,text,너에게도 채워지지 않는 갈증이 있어?,Do you have an unquenchable\nthirst for something too?,84,,,
-1,7,84,main_door_open,Player,Main,body_default1,face_noblink,textbox,나에게도 결핍이 있다면…,If I have a deficiency…,85,,,
-1,7,85,main_door_open,Dot,Main,body_default1,face_close_turn,text,들려 줘서 고마워.,Thank you for telling me.,86,,,
-1,7,86,main_door_open,Dot,Main,body_default1,face_noblink,text,그런 너에게 추태를 보인 것 같아서\n더 창피해지려고 하지만….,Although it’s becoming increasingly embarrassing\nthat I’ve shown that ugly side of me…,87,,,
-1,7,87,main_door_open,Player,Main,body_default1,face_noblink,text,"너무 신경 쓰지 마, 뭉치.","Don’t worry about it too much, Dot.",88,,,
-1,7,88,main_door_open,Dot,Main,body_default1,face_blink,text,"응, 응. 지금은 좀 괜찮아.","Okay, okay. I’m a little better now.",89,,,
-1,7,89,main_door_open,Dot,Main,body_default1,face_eyeroll3,text,다만 내 마음이 어떤지 당장은 잘 모르겠어. 모든\n걸 마디마디 곱씹어 보는 시간이 필요한 것 같아.,"But I’m still not sure how I feel right now. I\nneed time to dwell on everything, word by word.",90,,,
-1,7,90,main_web,Dot,Main,body_default1,face_close_turn,text,이제 조금 쉬어야겠다.,It’s time to rest now.,91,,,
-1,7,91,main_web,Dot,Main,body_default1,face_open,text,"지혜를 나눠 줘서 고마워, <nickname>.","Thank you for imparting\nyour wisdom, <name>.",,,anim_bed,
-3,8,92,main_web,Dot,Main,body_default1,face_noblink,text,비워진 그대로는 살아갈 수 없는 거야?,Is living as one’s empty self impossible?,93,,,
-3,8,93,main_web,Player,Main,body_default1,face_noblink,text,그 인간이? 아니면 모든 인간이?,For that person? Or all people?,94,,,
-3,8,94,main_web,Dot,Main,body_default1,face_blink,text,그 인간부터 시작해 보고 싶어. 그러다 보면\n달에서 지구까지도 닿을 수 있을 거야.,Let’s start with that person. Then\nwe could reach Earth from the Moon.,95,,,
-3,8,95,main_web,Player,Main,body_default1,face_noblink,text,(작게 시작해 점점 큰 개념을 포괄할\n수 있다는 일종의 관용어인 것 같아.),(It must be some kind of idiom for starting small\nand gradually encompassing bigger concepts.),96,,,
-3,8,96,main_web,Dot,Main,body_hmm_turn,face_noblink,text,있는 그대로는 안 됐던 건가? 나는 구멍이 뚫린\n그의 모습이 아주 근사하다고 생각했거든.,Couldn’t he have stayed as he was?\nI thought his holey self was splendid.,97,,,
-3,8,97,main_web,Dot,Main,body_hmm,face_blink,text,동화 속의 인물이었다면 난 ‘반지 소년’이라는\n이름을 붙여 주었을 거야.,"If he were a storybook character,\nI would’ve named him ‘Ring Boy.’",98,,,
-3,8,98,main_web,Player,Main,body_hmm,face_noblink,text,이름도 근사한 이름인 걸.,Great name.,99,,,
-3,8,99,main_web,Dot,Main,body_default1,face_noblink,text,반지 소년은 왜 구멍이 뚫리지 않은 상태가\n되고 싶어한 거야? 그 반대일 수도 있잖아.,Why did Ring Boy want to be hole-less?\nSome people might want the opposite.,100,,,
-3,8,100,main_web,Player,Main,body_default1,face_blink,text,추측 정도는 가능하지만… 타인인 내가 명쾌하게\n답해주기는 어려운 이야기인 것 같아.,I can guess… but it’s hard for me as\na stranger to give you a clear answer.,101,,,
-3,8,101,main_web,Player,Main,body_default1,face_noblink,text,이렇게 해 볼까. 반대로 하는 거야. 뭉치는\n뭉치의 검은 몸을 싫어하는 이유가 뭐야?,"How about this. Ask yourself a similar question.\nWhy do you dislike your black body so, Dot?",102,,,
-3,8,102,main_web,Dot,Main,body_default1,face_noblink,text,그건…,Because…,103,,,
-3,8,103,main_web,Dot,Main,body_default1,face_blink,text,…,…,104,,,
-3,8,104,main_web,Player,Main,body_default1,face_noblink,text,천천히 대답해 줘도 좋아.,Take your time.,105,,,
-3,8,105,main_web,Dot,Main,body_default1,face_close_turn,text,내가 달나라에서 본 꿈들과 나는 다르니까.\n나 혼자만 색채가 없는 시커먼 덩어리였으니까.,"Because I’m different from the dreams I’ve seen\non the Moon. I was the only black, colorless blob.",106,,,
-3,8,106,main_web,Player,Main,body_default1,face_close,text,반지 소년도 세모난 가족들 사이에서\n혼자만 동그라미로 태어난 사람이었지.,Ring Boy was also the only circular\nperson in a triangular family.,107,,,
-3,8,107,main_web,Player,Main,body_default1,face_blink,text,사회 안에서 홀로 이질감을\n갖는다는 건 어려운 일이겠어.,It can be hard to feel foreign within a society.,108,,,
-3,8,108,main_web,Dot,Main,body_default1,face_noblink,text,…,…,109,,,
-3,8,109,main_web,Dot,Main,body_default1,face_eyeroll3,text,그리고 나는 색채로 빛나는 몸을 가지는 상상을 해.\n꿈이 되어 지금과는 다른 아름다운 형체를 갖는 꿈을.,And I imagine having a body shining with\ncolor. Becoming a beautifully shaped dream.,110,,,
-3,8,110,main_web,Player,Main,body_default1,face_blink,text,반지 소년도 구멍이 뚫리지 않은 완전한 내가 되고\n싶었던 게 아닐까. 세모나진 못하더라도 파손되지는 않은.,"Maybe Ring Boy desired his hole-less self as well.\nIf not triangular, he wanted to be flawless.",111,,,
-3,8,111,main_web,Player,Main,body_default1,face_noblink,text,이상적인 나를 그리고 있다면\n지금의 나는 비교될 수밖에 없겠어.,"If you yearn for an ideal version of yourself,\nyour current self dulls in comparison.",112,,,
-3,8,112,main_web,Dot,Main,body_default1,face_noblink,text,…,…,113,,,
-3,8,113,main_web,Dot,Main,body_default1,face_close_turn,text,"그래, 그것뿐만은 아니지만. ‘검정’에 대해서만큼은\n아직 너에게 말할 수 없어. 깊고 우글거리는 장벽이 있어.","Okay, although there’s more to it. I can’t discuss\n‘black’ with you yet. There’s an infested barrier.",114,,,
-3,8,114,main_web,Dot,Main,body_default1,face_close,text,.......,……,115,,,
-3,8,115,main_web,Dot,Main,body_default1,face_blink,text,……,……,116,,,
-3,8,116,main_web,Player,Main,body_default1,face_noblink,text,(뭉치의 ’검정’에 대한 것…),(Dot’s ‘black’…),117,,,
-3,8,117,main_web,Player,Main,body_default1,face_noblink,text,알았어. 지금은 더 물어보지 않을게.\n음… 반지 소년에 대한 건 이해했어?,"All right. I won’t press you. Mm… Do you\nunderstand Ring Boy now, though?",118,,,
-3,8,118,main_web,Dot,Main,body_default1,face_eyeroll2,text,"응, 하지만 고귀한 인간이 어떻게 나 같은 괴물과\n같은 생각을 하지? ","Yes, but how does a noble human share same\nideas with a monster like me? It’s hard to accept.",119,,,
-3,8,119,main_web,Player,Main,body_default1,face_noblink,text,쉽게 받아들이기 어려워.,Dot…,120,,,
-3,8,120,main_web,Player,Main,body_default1,face_noblink,text,그게 정말인 걸. 대부분의 인간이 제각각의\n구멍을 조금씩은 가지고 있으니까 말이야.,"It’s the truth. All people have a hole of\ntheir own, in different shapes and forms.",121,,,
-3,8,121,main_web,Dot,Main,body_default1,face_blink,text,… 인간은 색채뿐만이 아니라 고유한\n얼룩도 가지고 있는 종족이구나.,… The human species not only\nhas colors but distinct stains.,122,,,
-3,8,122,main_web,Player,Main,body_default1,face_noblink,selection,"응, 인간이 마냥 근사하기만 한 건 아니거든.|우리를 이렇게나 멋지게 표현해 주다니 고맙네.","Yes, so you see humans are not always great.",123|127,,,passive|active
-3,8,123,main_web,Dot,Main,body_default1,face_noblink,text,…,…,124,,,
-3,8,124,main_web,Dot,Main,body_default1,face_blink,text,혹시 계속 너희가 근사하다고 하면 안 돼?,Can’t I keep saying that you all are amazing?,125,,,
-3,8,125,main_web,Player,Main,body_default1,face_noblink,selection,"조금, 아주 조금은 자제해 줄래? 실은 부담스러워.|뭉치가 그렇게 느낀다면야… 괜찮아.",Maybe tone it down just a leeetle bit.|If you feel that way… Sure.,126|126,,,passive|active
-3,8,126,main_web,Dot,Main,body_default1,face_noblink,text,"응, 응응. 그럴게.","Okay, I will.",127,,,
-3,8,127,main_web,Player,Main,body_default1,face_blink,text,그럼 다시 원래 이야기로 돌아와\n볼까? 어디까지 얘기했지?,Should we get back on\ntrack? Where were we?,128,,,
-3,8,128,main_web,Dot,Main,body_default1,face_noblink,text,‘결핍’의 기이한 부분에 대해.\n결국 처음으로 돌아오게 되겠네.,The strange effects of ‘deficiency.’\nSo we’re back where we started.,129,,,
-3,8,129,main_web,Player,Main,body_default1,face_noblink,text,반지 소년은 비워진 그대로는 살아갈 수 없는가?,Whether Ring Boy could\nhave lived with his hole?,130,,,
-3,8,130,main_web,Dot,Main,body_default1,face_blink,text,"응, 그가 고유하게 태어난 모습과, 그가 고유하게 살아온\n궤적을 외면하면서까지 그걸 메우려는 이유가 뭐야?","Yes. Why did he fill it when it made him dismiss\nhis original identity, his original path of life?",131,,,
-3,8,131,main_web,Dot,Main,body_default1,face_noblink,text,어쩌면 그건 고유의 반지 모양을 훼손하려는\n파괴적인 행동이었을지도 몰라.,Perhaps it was destructive behavior intended\nto damage the original ring shape.,132,,,
-3,8,132,main_web,Dot,Main,body_default1,face_noblink,text,반지 소년의 구멍은 이미 그의 일부니까.,Ring Boy’s hole was already a part of him.,133,,,
-3,8,133,main_web,Player,Main,body_default1,face_blink,text,그럼 뭉치는 결핍은 없앨 방법이 없다고 보는 거야?,You think there isn’t a way\nto get rid of a deficiency?,134,,,
-3,8,134,main_web,Dot,Main,body_default1,face_noblink,text,없애는 것이 목표라면 과거를 통으로 들어내야 하겠지.\n그러려면 탈이 날 거야. 그러니 없앨 순 없어.,"If that’s the goal, you would have to eliminate\none’s past, which would be a catastrophe. So no.",135,,,
-3,8,135,main_web,Dot,Main,body_default1,face_noblink,text,"패인 흉터 같은 거야. 그 자리에 있다가 새 살이 돋거나\n흐려질 수는 있겠지만, 아예 사라지지는 않아.","It’s like a deep scar. New tissue may cover the\nscar or it may fade, but it never disappears.",136,,,
-3,8,136,main_web,Dot,Main,body_default1,face_blink,text,결핍은 ‘궤적이 남아 있는 모양’으로\n받아들이는 편이 이롭지 않을까.,Wouldn’t it be better to accept a\ndeficiency as a ‘mark of one’s path?’,137,,,
-3,8,137,main_web,Player,Main,body_default1,face_noblink,text,외면한 역사도 사실이니까....,Even dismissed history once was…,138,,,
-3,8,138,main_web,Player,Main,body_default1,face_noblink,text,그렇구나. 하지만 삶은 계속 펼쳐지는 걸. \n흉터를 극복하고 싶어지면 어떻게 해야 할까.,I see. But life goes on. What should I do\nwhen I want to overcome my scars?,139,,,
-3,8,139,main_web,Dot,Main,body_default1,face_blink,text,그건……,I think…,140,,,
-3,8,140,main_web,Dot,Main,body_default1,face_noblink,text,이미 지혜로운 너의 마음을 들어봐야 하겠네.,"We’ll have to listen to you,\nthe one with the wisdom.",141,,,
-3,8,141,main_web,Dot,Main,body_default1,face_noblink,text,<nickname>. 너는 너의 갈증을\n어떻게 견뎌 나가고 있어?,<name>. How do you\nhandle your own thirst?,142,,,
-3,8,142,main_web,Player,Main,body_default1,face_blink,selection4,실은 아직도 고통스러워.|보완할 방법을 궁리하고 있어.|나의 일부로서 안고 살아가.|오래되어 자연스레 생각하지 않게 되었어.,"Truthfully, it’s still painful.|I’m brainstorming ideas to relieve it.|I live with it as a part of myself.|It’s been so long, I stopped thinking about it.",143|143|143|143,,,
-3,8,143,main_web,Dot,Main,body_default1,face_noblink,text,어쩐지 너에게 기특하다는 말을 해주고 싶네. 실제로\n나 같은 게 인간에게 그런 감정을 느낄 수는 없겠지만.,I feel proud of you. Although a creature like\nme couldn’t possibly feel that way for a human.,144,,,
-3,8,144,main_web,Dot,Main,body_default1,face_noblink,text,견뎌야만 견뎌지는 것들.,Enduring what can only be endured.,145,,,
-3,8,145,main_web,Dot,Main,body_default1,face_blink,text,안고 지내야만 안을 수 있는 것들.,Embracing what can only be embraced.,146,,,
-3,8,146,main_web,Dot,Main,body_default1,face_noblink,text,그렇게 받아들인 채로 어느 순간에는 너의 단일한\n정체성을 사랑스러워해 줄 수 있길 바랄게.,"Accepting all that, I hope one day you’ll\nbe able to adore your singular identity.",147,,,
-3,8,147,main_web,Player,Main,body_default1,face_noblink,text,뭉치는 처음부터 이 이야기를 하고 싶었던 거구나.,"This is what you wanted to say\nfrom the beginning, isn’t it?",148,,,
-3,8,148,main_web,Dot,Main,body_default1,face_eyeroll3,text,그랬던 걸지도 몰라.,Maybe.,149,,,
-3,8,149,main_web,Dot,Main,body_default1,face_noblink,text,……,……,150,,,
-3,8,150,main_web,Dot,Main,body_default1,face_noblink,text,그리고 반지 소년도.,Ring Boy as well.,151,,,
-3,8,151,main_web,Player,Main,body_default1,face_blink,text,분명 그렇게 될 거야.,"That’ll happen, I’m sure.",152,,,
-3,8,152,main_web,Player,Main,body_default1,face_noblink,text,"그럼, 이제 뭉치도 뭉치의 ‘검은 몸’은\n모양으로 받아들이기도 한 거야?","So, have you accepted your\n‘black body’ as a shape now?",153,,,
-3,8,153,main_web,Player,Main,body_default1,face_noblink,textbox,네가 동화 속의 괴물이라면 난 이런 이름을 붙일래…,"If you were a monster in a\nfairytale, I would name you…",154,,,
-3,8,154,main_web,Dot,Main,body_default1,face_close_turn,text,<nickname>.,<name>.,155,,,
-3,8,155,main_web,Dot,Main,body_default1,face_open,text,……,……,156,,,
-3,8,156,main_web,Dot,Main,body_default2_turn,face_omg,text,내 이름은 ‘뭉치’고… 결핍과 결함은 다른 이야기야.,My name is ‘Dot’ and… deficiencies\nand scars are different.,157,,,
-3,8,157,main_web,Dot,Main,body_default1,face_blink,text,……,……,158,,,
-3,8,158,main_web,Dot,Main,body_default1,face_noblink,text,친절을 나눠 줘서 고마워.\n품을 들여 곱씹어 보도록 할게.,Thank you for handing out your kindness.\nI’ll keep it in my heart and think it over.,,,,
+﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+1,7,1,main_door_open,Dot,Main,body_default1,face_eyeroll,text,책장의 가운데 칸 정도에서 내가\n떨어진다면 어떤 일이 일어날까?,"What would happen if I were to drop from,\nlet’s say, the middle story of the bookshelf?",2,,,,Main_Ch2,M2_L0001
+1,7,2,main_door_open,Player,Main,body_default1,face_noblink,selection,비치 볼처럼 도잉 튀어오를 것 같아.|조약돌처럼 자잘히 흩어질 것 같아.,"You would go ‘boing’, like a beach ball.|You would scatter, like a bunch of pebbles.",3|4,,,,Main_Ch2,M2_L0002
+1,7,3,main_door_open,Dot,Main,body_default1,face_noblink,text,"내 표면은 점성이 있지만, 그리 단단하지는 않아.",My surface has viscosity but\nis not firm enough for that.,5,,,,Main_Ch2,M2_L0003
+1,7,4,main_door_open,Dot,Main,body_default1,face_blink,text,흩어진 다음 구의 형태로 다시\n뭉치게 될까? 난 그런 성질이니까.,Will I gather back into a\nsphere? I was born as one.,5,,,,Main_Ch2,M2_L0004
+1,7,5,main_door_open,Dot,Main,body_default1,face_noblink,text,"재미있는 묘사네, <nickname>. 네 머릿속\n나는 어떤 이미지인지 느껴져서 즐거워.","An amusing hypothesis, <name>. It’s\nrefreshing to see me through your eyes.",6,,,,Main_Ch2,M2_L0005
+1,7,6,main_door_open,Dot,Main,body_default1,face_close_turn,text,"음, 음, 음. 이쯤에서 나의 추측을 말해볼게.","Hm. hm, hm. I’ll tell you\nwhat I think will happen.",7,,,,Main_Ch2,M2_L0006
+1,7,7,main_door_open,Dot,Main,body_default1,face_close,text,"내가 떨어진다면, 나는 공허의 바다를 잠수하게 될 거야.","If I drop, I will plunge into\nan ocean of emptiness.",8,,,,Main_Ch2,M2_L0007
+1,7,8,main_door_open,Dot,Main,body_default1,face_close,text,아주 비참할 거야. 내 육신이 바닷물에\n모두 녹아 조각조각 흩어지는 기분일 거야.,It will be dismal. As if my body has melted\nin the saltwater and dispersed.,9,,,,Main_Ch2,M2_L0008
+1,7,9,main_door_open,Player,Main,body_default1,face_open,text,그냥 떨어지기만 하는 게 아닌 것\n같은데… 오늘 무슨 일이 있었던 거야?,Um… Sure you’re talking about a simple\ndrop? Did something happen today?,10,,,,Main_Ch2,M2_L0009
+1,7,10,main_door_open,Dot,Main,body_default1,face_blink,text,물론이지. 묘사를 넘어 더욱 중요한 걸 알려줄게.,Of course. What you’ll hear now is much\nmore essential than any hypothesis.,11,1,,,Main_Ch2,M2_L0010
+1,7,11,main_door_open,Dot,Main,body_default1,face_noblink,text,인간들은 이런 이야기를 비극이라고 부른다지?,Humans seem to call such a story a tragedy.,12,,,,Main_Ch2,M2_L0011
+1,7,12,main_door_open,Player,Main,body_default1,face_eyeroll3,text,확실히… 비극에 가까워.,It’s definitely… close to a tragedy.,13,,,,Main_Ch2,M2_L0012
+1,7,13,main_door_open,Dot,Main,body_default1,face_blink,text,그의 비참한 심정이 횃불처럼 타오르고 있었어.\n누군가는 매료될지도 모른다는 생각이 들 정도로.,His dismal feelings were flaming like a torch.\nI could see some people being rapt by them.,14,,,,Main_Ch2,M2_L0013
+1,7,14,main_door_open,Dot,Main,body_default1,face_noblink,text,그리고 난 깨달아 버린 거야.,Then a thought crept into my mind.,15,,,,Main_Ch2,M2_L0014
+1,7,15,main_door_open,Dot,Main,body_default1,face_noblink,text,‘나라면 그에게 뭔가를 해줄 수\n있지 않을까?’하고 말이야.,‘Perhaps I could do something for this man.’,16,,,,Main_Ch2,M2_L0015
+1,7,16,main_door_open,Player,Main,body_default1,face_blink,text,뭉치가? 어떤 걸 해 줄 수 있다는 건데?,You? What could you do for him?,17,,,,Main_Ch2,M2_L0016
+1,7,17,main_door_open,Dot,Main,body_default1,face_noblink,text,"세상의 모든 동그라미를 삼킨 그가, 미처\n삼키지 못한 동그라미가 하나 있잖아.",There is one circle he has yet to swallow.,18,,,,Main_Ch2,M2_L0017
+1,7,18,main_door_open,Player,Main,body_default1,face_noblink,textbox,그건 바로…,And that is…,19,,,,Main_Ch2,M2_L0018
+1,7,19,main_door_open,Dot,Main,body_bounce,face_blink,text,바로 나.,It is I.,20,,,,Main_Ch2,M2_L0019
+1,7,20,main_door_open,Dot,Main,body_default1,face_noblink,text,이 꿈은 고유한 균열에 꼭 맞는\n동그라미를 찾기 위한 여정이었잖아?,This dream was essentially a journey to find\na circle that would fit an intrinsic fissure.,21,,,,Main_Ch2,M2_L0020
+1,7,21,main_door_open,Dot,Main,body_default1,face_noblink,text,몸이 유연하고 끈적한 나라면 그 무엇보다도\n완벽하게 채워줄 수 있었을 것만 같았거든.,"I thought, with my flexible and viscous body,\nI could fill it better than anything else.",22,,,,Main_Ch2,M2_L0021
+1,7,22,main_door_open,Dot,Main,body_bounce,face_blink,text,"게다가 난 조약돌처럼 흩어진 다음에도,\n비치 볼처럼 다시 뭉쳐 버린다고?","What’s more, I gather back into a beach ball\nshape after scattering like a bunch of pebbles!",23,,,,Main_Ch2,M2_L0022
+1,7,23,main_door_open,Player,Main,body_default1,face_noblink,selection,"우와, 정말 뭉치라면 가능한 일일지도?|그럼 갈라 놓으면 두 개의 뭉치가 될 수도 있는 걸까?","Wow, if it’s you, perhaps it’s possible.|If we split you into two, would there be two Dots?",24|25,,,sun|moon,Main_Ch2,M2_L0023
+1,7,24,main_door_open,Dot,Main,body_default1,face_noblink,text,그렇지? <nickname>. 네 생각에도\n그럴듯하게 들어맞을 것 같지?,"Right? You agree that I’ll somehow\nfit into the hole, <name>, right?",28,,,,Main_Ch2,M2_L0024
+1,7,25,main_door_open,Dot,Main,body_default1,face_eyeroll2,text,어? 응? 으음? 흐음?,Huh? Hm? Mm?,26,,,,Main_Ch2,M2_L0025
+1,7,26,main_door_open,Dot,Main,body_default1,face_noblink,text,"그 렇 지 는 않 을 걸? 난 언제까지나 <nickname>,\n네가 알고 있는 유일무이 뭉치일 거야.","Maybe… Most possibly… Not. I’ll always be\nthe one and only Dot you know, <name>.",27,,,,Main_Ch2,M2_L0026
+1,7,27,main_door_open,Dot,Main,body_default1,face_noblink,text,아마도… 음… 제발.,Mm… I hope.,28,,,,Main_Ch2,M2_L0027
+1,7,28,main_door_open,Dot,Main,body_default1,face_blink,text,난 결심했어. 그의 간절한 소망을 이뤄\n주기 위해 지금부터라도 단련할 거야.,"It’s decided. From now on, I’ll start\ntraining to fulfill his ardent wish.",29,,,,Main_Ch2,M2_L0028
+1,7,29,main_door_open,Dot,Main,body_default1,face_noblink,text,따라서 허공에 붙은 채로 버티는 연습을 해 보겠어.,"First up, I’ll practice staying stuck\nsomewhere for a long time.",30,,,,Main_Ch2,M2_L0029
+1,7,30,main_door_open,Dot,Main,body_default1,face_noblink,text,<nickname>의 방에 마침 딱 알맞은 공간이 하나 있지?,"Don’t you have the perfect space\nfor that in your room, <name>?",31,,,,Main_Ch2,M2_L0030
+1,7,31,main_door_open,Player,Main,body_default1,face_blink,selection4,침대 밑|책장 속|천장 표면|창문 밖,Under the bed|In the bookshelf|On the ceiling|Outside the window,32|35|32|32,,,,Main_Ch2,M2_L0031
+1,7,32,main_door_open,Dot,Main,body_default1,face_noblink,text,아!,Under the bed or On the\nceiling or Outside the window,33,,,,Main_Ch2,M2_L0032
+1,7,33,main_door_open,Dot,Main,body_default1,face_noblink,text,그것도 좋지만 더욱 적당한 공간을 하나 찾았으니까.,It sounds good but I’m looking for\nsomewhere more adequate.,36,,,,Main_Ch2,M2_L0033
+1,7,34,main_door_open,Player,Main,body_default1,face_blink,text,책장 속?,In the bookshelf?,35,,,,Main_Ch2,M2_L0034
+1,7,35,main_door_open,Dot,Main,body_default1,face_noblink,text,"응, 응! 바로 그거야! 나의 모퉁이.","Yes, yes! That’s it! My corner.",36,,,,Main_Ch2,M2_L0035
+1,7,36,main_door_open,Dot,Main,body_default1,face_noblink,text,내가 몸을 동그랗게 말아서 책장에 붙어 볼게. 난 완전한\n구가 될 거야… 뭉치는 건 가장 자신 있는 분야니까.,I’ll roll and stick myself to the bookshelf. I’ll\nbecome a perfect sphere… It’s what I do best.,37,,,,Main_Ch2,M2_L0036
+1,7,37,main_door_open,Player,Main,body_ch2_tremble,face_null,text,(뭉치가 빈 책장 벽에 몸을 던졌다.),(Dot throws themself\nat the empty bookshelf.),38,,,,Main_Ch2,M2_L0037
+1,7,38,main_door_open,Player,Main,body_ch2_drop,face_null,text,(앗… 떨어졌다.),(Oh… Dot drops.),39,,,,Main_Ch2,M2_L0038
+1,7,39,main_door_open,Dot,Main,body_default1,face_eyeroll,text,…,…,40,,,,Main_Ch2,M2_L0039
+1,7,40,main_door_open,Dot,Main,body_default1,face_blink,text,"이럴 리가 없는데. 이럴 리가 없는데.\n<nickname>, 날 다시 한 번만 붙여줄래?","It can’t be. It can’t be. <name>,\nwill you stick me there once more?",41,,,,Main_Ch2,M2_L0040
+1,7,41,main_door_open,Player,Main,body_ch2_tremble,face_null,text,(뭉치를 책장 벽에 붙여 주었다.),(Stick Dot to the bookshelf wall.),42,,,,Main_Ch2,M2_L0041
+1,7,42,main_door_open,Player,Main,body_ch2_drop,face_null,text,(앗… 떨어졌다.),(Oh… Dot drops.),43,,,,Main_Ch2,M2_L0042
+1,7,43,main_door_open,Dot,Main,body_default1,face_eyeroll3,text,…,…,44,,,,Main_Ch2,M2_L0043
+1,7,44,main_door_open,Player,Main,body_default1,face_blink,selection,"뭉치야, 너무 실망하지 마.|다시 한 번 붙여 줄까?","Dot, don’t be too discouraged.|Do you want me to stick you one more time?",45|45,,,sun|moon,Main_Ch2,M2_L0044
+1,7,45,main_door_open,Dot,Main,body_default1,face_noblink,text,…,…,46,,,,Main_Ch2,M2_L0045
+1,7,46,main_door_open,Dot,Main,body_default1,face_noblink,text,"나라면 완전무결한 구가 되어줄 수 있을 것\n같았는데, 이게 다 잘못된 생각이었나?",I thought I could become a flawless sphere\nfor the man. Was all that a fantasy?,47,,,,Main_Ch2,M2_L0046
+1,7,47,main_door_open,Dot,Main,body_default1,face_close_turn,text,수만 갈래의 가시밭길이 있었겠지. 하지만 나라면\n구름 길을 깔아 줄 수 있는 존재라고 느꼈는데.,He must have faced thousands of thorny roads.I thought I could be the one to lay one with clouds.He was facing countless thorny paths ahead.\nI thought I could be the one to ease his pain.,48,,,,Main_Ch2,M2_L0047
+1,7,48,main_door_open,Dot,Main,body_default1,face_close,text,"물론 내가 아닌 다른 무언가일 수도 있겠지,\n세상은 넓고 내가 관측하지 못한 것들은 많으니까.","Of course, someone else could do it. The\nworld is big and there is much I haven’t observed.",49,,,,Main_Ch2,M2_L0048
+1,7,49,main_door_open,Dot,Main,body_default1,face_open,text,하지만 지금 나를 만났잖아! 지금 기회가 왔어.\n내가 하지 못하면 어느 누가 할 수 있을까?,"But he met me! I have a chance.\nIf not me, then who?",50,,,,Main_Ch2,M2_L0049
+1,7,50,main_door_open,Dot,Main,body_default1,face_noblink,text,가여운 그가 기어이 돋아날 곳은 어디일까?,Where will the poor man\nfinally take root and grow?,51,,,,Main_Ch2,M2_L0050
+1,7,51,main_door_open,Player,Main,body_default1,face_noblink,text,뭉치의 몸통으로도 완벽하게\n채우는 건 힘든 일이었을지도 몰라.,"Even with your body, it may have been\ndifficult to fill his hole entirely.",52,,,,Main_Ch2,M2_L0051
+1,7,52,main_door_open,Player,Main,body_default1,face_blink,text,그가 일을 대충 했을까? 그리도 간절한 결핍이었는데.,"Would he have done a sloppy job?\nNo way, it was such a desperate deficiency.",53,,,,Main_Ch2,M2_L0052
+1,7,53,main_door_open,Player,Main,body_default1,face_noblink,text,만들 수 있는 동그라미는 다 만들었겠지.,He would have made all the circles he could.,54,,,,Main_Ch2,M2_L0053
+1,7,54,main_door_open,Player,Main,body_default1,face_noblink,textbox,"유연하고 끈적한 소재로도 만들어 봤을 거야, 가령…",Even ones with stretchy and\nsticky material. For example…,55,,,,Main_Ch2,M2_L0054
+1,7,55,main_door_open,Dot,Main,body_default1,face_blink,text,그렇지 않아. 지구상에 나 같은\n동그라미는 어디에도 없었어.,"No, he couldn’t have. A circle like me\ndoesn’t exist anywhere else on Earth.",56,,,,Main_Ch2,M2_L0055
+1,7,56,main_door_open,Dot,Main,body_default1,face_noblink,text,달에서 온 나는 그 어떤 물질과도 달라. 나만큼 그\n인간을 완벽하게 채워줄 가능성이 있는 건 없었어.,I’m different from any earthly substance.\nNo thing could have better filled that man.,57,,,,Main_Ch2,M2_L0056
+1,7,57,main_door_open,Dot,Main,body_default1,face_noblink,text,그런 만큼 나의 실패는 그 인간에게\n더욱 가혹한 의미를 띄는 거야.,"As such, my failure is even more harsh to him.",58,,,,Main_Ch2,M2_L0057
+1,7,58,main_door_open,Dot,Main,body_default1,face_blink,text,내가 한심해. 지옥 같이\n한심해. 견딜 수가 없다고.,I’m pathetic. Infernally\npathetic. I can’t deal with it.,59,,,,Main_Ch2,M2_L0058
+1,7,59,main_door_open,Player,Main,body_default1,face_noblink,text,뭉치야… 하지만.,Dot… But.,60,,,,Main_Ch2,M2_L0059
+1,7,60,main_door_open,Player,Main,body_default1,face_noblink,text,(맹점을 한번 짚어 주는 게 좋겠어.),(Feels like the hole in the logic\nshould be pointed out.),61,,,,Main_Ch2,M2_L0060
+1,7,61,main_door_open,Player,Main,body_default1,face_blink,selection,"‘미지의 물질’에 과하게 의미를 부여하는 건 아닐까.|그는 도움을 청한 적 없어, 뭉치의 존재를 모르잖아.",Perhaps you’ve overthought the ‘unknown substance’ part. |He never asked for your help. He doesn’t know you exist.,62|64,,,,Main_Ch2,M2_L0061
+1,7,62,main_door_open,Player,Main,body_default1,face_noblink,text,달에서 온 너는 그저 미지의 물질이었어. 허공에서\n버티는 성질은 없다고 밝혀졌지만 그뿐이야.,"You’re made up of unknown substance, that’s it.\nYou couldn’t stick somewhere, but so what?",63,,,,Main_Ch2,M2_L0062
+1,7,63,main_door_open,Player,Main,body_default1,face_noblink,text,뭉치가 너무 많은 의미를 부여하려다\n보니 너조차 힘들어진 게 아닌가 싶네.,I think you thought about it so\nmuch that you pressured yourself.,66,,,,Main_Ch2,M2_L0063
+1,7,64,main_door_open,Player,Main,body_default1,face_blink,text,뭉치가 아니더라도 세상엔 다른 동그라미들이\n많을 거야. 그가 아직 발견하지 못한 모든 것들이.,"Even without you, there are many other circles\nin the world. Circles he haven’t discovered yet.",65,,,,Main_Ch2,M2_L0064
+1,7,65,main_door_open,Player,Main,body_default1,face_noblink,text,그러니 죄책감을 갖는 게 조금은 이를지도 모르겠어.,So it may be a little early to feel guilty.,66,,,,Main_Ch2,M2_L0065
+1,7,66,main_door_open,Dot,Main,body_default1,face_noblink,text,… … …,……,67,,,,Main_Ch2,M2_L0066
+1,7,67,main_door_open,Dot,Main,body_default1,face_blink,text,비약으로 느껴졌어?,Were there too many leaps in my logic?,68,,,,Main_Ch2,M2_L0067
+1,7,68,main_door_open,Player,Main,body_default1,face_noblink,text,"그래, 조금은 비약이었지.",A little.,69,,,,Main_Ch2,M2_L0068
+1,7,69,main_door_open,Dot,Main,body_default1,face_noblink,text,… … …,……,70,,,,Main_Ch2,M2_L0069
+1,7,70,main_door_open,Player,Main,body_default1,face_blink,text,하지만 너의 다정한 심성까지도\n외면하지 않았으면 좋겠어.,"Nonetheless, I hope you continue\nto pay attention to your kind heart.",71,,,,Main_Ch2,M2_L0070
+1,7,71,main_door_open,Dot,Main,body_default1,face_noblink,text,"그래, 고마워… <nickname>.","Thank you, <name>…",72,,,,Main_Ch2,M2_L0071
+1,7,72,main_door_open,Dot,Main,body_default1,face_noblink,text,부끄러워서 녹아 버릴 것 같아. 괴물인 내가\n인간에게 부적절하게 참견하려고 한 걸까?,"I could just melt from the embarrassment.\nWas I, a monster, too nosy in human business?",73,,,,Main_Ch2,M2_L0072
+1,7,73,main_door_open,Player,Main,body_default1,face_blink,selection,"글쎄, 인간끼리도 비슷한 마음을 품을 수 있는 걸.|아니, 인간과 괴물을 넘어 개체와 개체 간 이야기니까.","Not really, other people may feel the same.|No, this is between two beings, not a person and a monster.Well, it's not just a story limited to monsters.",74|74,,,sun|moon,Main_Ch2,M2_L0073
+1,7,74,main_door_open,Dot,Main,body_default1,face_noblink,text,나만의 이야기가 아니라는 거야? 그럼 인간들은\n누군가의 빈 자리를 발견하면 어떻게 행동해?,Other people feel the same? Then how do humans\nact when they see the emptiness in somebody?,75,,,,Main_Ch2,M2_L0074
+1,7,75,main_door_open,Player,Main,body_default1,face_noblink,text,누군가의 비어 있는 마음을 보고 가련함을\n느끼는 건 우리에게도 꽤나 흔한 일일지 몰라.,To see someone’s empty heart and feel pity\nmay be pretty common for us too.,76,,,,Main_Ch2,M2_L0075
+1,7,76,main_door_open,Player,Main,body_default1,face_blink,text,"하나뿐인 특별한 방에 초대되었다는 도취감에 사로잡힌\n채, 평소의 나답지는 않은 일을 벌이기도 하지.","Amid the euphoria of having been invited to\na unique room, sometimes we act unlike ourselves.",77,,,,Main_Ch2,M2_L0076
+1,7,77,main_door_open,Dot,Main,body_default1,face_noblink,text,.......,……,78,,,,Main_Ch2,M2_L0077
+1,7,78,main_door_open,Player,Main,body_default1,face_noblink,text,꼭 지금의 뭉치처럼 말이야.,Like you did just then.,79,,,,Main_Ch2,M2_L0078
+1,7,79,main_door_open,Dot,Main,body_default1,face_blink,text,.......,……,80,,,,Main_Ch2,M2_L0079
+1,7,80,main_door_open,Dot,Main,body_default1,face_noblink,text,결핍이란 건 모든 인간이 가지고 있는 거야? 분필로\n그린 눈으로는 볼 수 없는 마음의 빈 자리가.,"Deficiency… Is it in every human? A hole in\ntheir heart, invisible to my chalk-drawn eyes?",81,,,,Main_Ch2,M2_L0080
+1,7,81,main_door_open,Player,Main,body_default1,face_noblink,selection,모두는 빈 자리를 가진 채로 태어나.|모두는 살아가면서 마음에 빈 자리를 마련해.,Everyone is born with a hole.|Everyone ends up with a hole.,82|82,,,,Main_Ch2,M2_L0081
+1,7,82,main_door_open,Dot,Main,body_default1,face_blink,text,너는 어느 쪽이야?,Which one are you?,83,,,,Main_Ch2,M2_L0082
+1,7,83,main_door_open,Dot,Main,body_default1,face_noblink,text,너에게도 채워지지 않는 갈증이 있어?,Do you have an unquenchable\nthirst for something too?,84,,,,Main_Ch2,M2_L0083
+1,7,84,main_door_open,Player,Main,body_default1,face_noblink,textbox,나에게도 결핍이 있다면…,If I have a deficiency…,85,,,,Main_Ch2,M2_L0084
+1,7,85,main_door_open,Dot,Main,body_default1,face_close_turn,text,들려 줘서 고마워.,Thank you for telling me.,86,,,,Main_Ch2,M2_L0085
+1,7,86,main_door_open,Dot,Main,body_default1,face_noblink,text,그런 너에게 추태를 보인 것 같아서\n더 창피해지려고 하지만….,Although it’s becoming increasingly embarrassing\nthat I’ve shown that ugly side of me…,87,,,,Main_Ch2,M2_L0086
+1,7,87,main_door_open,Player,Main,body_default1,face_noblink,text,"너무 신경 쓰지 마, 뭉치.","Don’t worry about it too much, Dot.",88,,,,Main_Ch2,M2_L0087
+1,7,88,main_door_open,Dot,Main,body_default1,face_blink,text,"응, 응. 지금은 좀 괜찮아.","Okay, okay. I’m a little better now.",89,,,,Main_Ch2,M2_L0088
+1,7,89,main_door_open,Dot,Main,body_default1,face_eyeroll3,text,다만 내 마음이 어떤지 당장은 잘 모르겠어. 모든\n걸 마디마디 곱씹어 보는 시간이 필요한 것 같아.,"But I’m still not sure how I feel right now. I\nneed time to dwell on everything, word by word.",90,,,,Main_Ch2,M2_L0089
+1,7,90,main_web,Dot,Main,body_default1,face_close_turn,text,이제 조금 쉬어야겠다.,It’s time to rest now.,91,,,,Main_Ch2,M2_L0090
+1,7,91,main_web,Dot,Main,body_default1,face_open,text,"지혜를 나눠 줘서 고마워, <nickname>.","Thank you for imparting\nyour wisdom, <name>.",,,anim_bed,,Main_Ch2,M2_L0091
+3,8,92,main_web,Dot,Main,body_default1,face_noblink,text,비워진 그대로는 살아갈 수 없는 거야?,Is living as one’s empty self impossible?,93,,,,Main_Ch2,M2_L0092
+3,8,93,main_web,Player,Main,body_default1,face_noblink,text,그 인간이? 아니면 모든 인간이?,For that person? Or all people?,94,,,,Main_Ch2,M2_L0093
+3,8,94,main_web,Dot,Main,body_default1,face_blink,text,그 인간부터 시작해 보고 싶어. 그러다 보면\n달에서 지구까지도 닿을 수 있을 거야.,Let’s start with that person. Then\nwe could reach Earth from the Moon.,95,,,,Main_Ch2,M2_L0094
+3,8,95,main_web,Player,Main,body_default1,face_noblink,text,(작게 시작해 점점 큰 개념을 포괄할\n수 있다는 일종의 관용어인 것 같아.),(It must be some kind of idiom for starting small\nand gradually encompassing bigger concepts.),96,,,,Main_Ch2,M2_L0095
+3,8,96,main_web,Dot,Main,body_hmm_turn,face_noblink,text,있는 그대로는 안 됐던 건가? 나는 구멍이 뚫린\n그의 모습이 아주 근사하다고 생각했거든.,Couldn’t he have stayed as he was?\nI thought his holey self was splendid.,97,,,,Main_Ch2,M2_L0096
+3,8,97,main_web,Dot,Main,body_hmm,face_blink,text,동화 속의 인물이었다면 난 ‘반지 소년’이라는\n이름을 붙여 주었을 거야.,"If he were a storybook character,\nI would’ve named him ‘Ring Boy.’",98,,,,Main_Ch2,M2_L0097
+3,8,98,main_web,Player,Main,body_hmm,face_noblink,text,이름도 근사한 이름인 걸.,Great name.,99,,,,Main_Ch2,M2_L0098
+3,8,99,main_web,Dot,Main,body_default1,face_noblink,text,반지 소년은 왜 구멍이 뚫리지 않은 상태가\n되고 싶어한 거야? 그 반대일 수도 있잖아.,Why did Ring Boy want to be hole-less?\nSome people might want the opposite.,100,,,,Main_Ch2,M2_L0099
+3,8,100,main_web,Player,Main,body_default1,face_blink,text,추측 정도는 가능하지만… 타인인 내가 명쾌하게\n답해주기는 어려운 이야기인 것 같아.,I can guess… but it’s hard for me as\na stranger to give you a clear answer.,101,,,,Main_Ch2,M2_L0100
+3,8,101,main_web,Player,Main,body_default1,face_noblink,text,이렇게 해 볼까. 반대로 하는 거야. 뭉치는\n뭉치의 검은 몸을 싫어하는 이유가 뭐야?,"How about this. Ask yourself a similar question.\nWhy do you dislike your black body so, Dot?",102,,,,Main_Ch2,M2_L0101
+3,8,102,main_web,Dot,Main,body_default1,face_noblink,text,그건…,Because…,103,,,,Main_Ch2,M2_L0102
+3,8,103,main_web,Dot,Main,body_default1,face_blink,text,…,…,104,,,,Main_Ch2,M2_L0103
+3,8,104,main_web,Player,Main,body_default1,face_noblink,text,천천히 대답해 줘도 좋아.,Take your time.,105,,,,Main_Ch2,M2_L0104
+3,8,105,main_web,Dot,Main,body_default1,face_close_turn,text,내가 달나라에서 본 꿈들과 나는 다르니까.\n나 혼자만 색채가 없는 시커먼 덩어리였으니까.,"Because I’m different from the dreams I’ve seen\non the Moon. I was the only black, colorless blob.",106,,,,Main_Ch2,M2_L0105
+3,8,106,main_web,Player,Main,body_default1,face_close,text,반지 소년도 세모난 가족들 사이에서\n혼자만 동그라미로 태어난 사람이었지.,Ring Boy was also the only circular\nperson in a triangular family.,107,,,,Main_Ch2,M2_L0106
+3,8,107,main_web,Player,Main,body_default1,face_blink,text,사회 안에서 홀로 이질감을\n갖는다는 건 어려운 일이겠어.,It can be hard to feel foreign within a society.,108,,,,Main_Ch2,M2_L0107
+3,8,108,main_web,Dot,Main,body_default1,face_noblink,text,…,…,109,,,,Main_Ch2,M2_L0108
+3,8,109,main_web,Dot,Main,body_default1,face_eyeroll3,text,그리고 나는 색채로 빛나는 몸을 가지는 상상을 해.\n꿈이 되어 지금과는 다른 아름다운 형체를 갖는 꿈을.,And I imagine having a body shining with\ncolor. Becoming a beautifully shaped dream.,110,,,,Main_Ch2,M2_L0109
+3,8,110,main_web,Player,Main,body_default1,face_blink,text,반지 소년도 구멍이 뚫리지 않은 완전한 내가 되고\n싶었던 게 아닐까. 세모나진 못하더라도 파손되지는 않은.,"Maybe Ring Boy desired his hole-less self as well.\nIf not triangular, he wanted to be flawless.",111,,,,Main_Ch2,M2_L0110
+3,8,111,main_web,Player,Main,body_default1,face_noblink,text,이상적인 나를 그리고 있다면\n지금의 나는 비교될 수밖에 없겠어.,"If you yearn for an ideal version of yourself,\nyour current self dulls in comparison.",112,,,,Main_Ch2,M2_L0111
+3,8,112,main_web,Dot,Main,body_default1,face_noblink,text,…,…,113,,,,Main_Ch2,M2_L0112
+3,8,113,main_web,Dot,Main,body_default1,face_close_turn,text,"그래, 그것뿐만은 아니지만. ‘검정’에 대해서만큼은\n아직 너에게 말할 수 없어. 깊고 우글거리는 장벽이 있어.","Okay, although there’s more to it. I can’t discuss\n‘black’ with you yet. There’s an infested barrier.",114,,,,Main_Ch2,M2_L0113
+3,8,114,main_web,Dot,Main,body_default1,face_close,text,.......,……,115,,,,Main_Ch2,M2_L0114
+3,8,115,main_web,Dot,Main,body_default1,face_blink,text,……,……,116,,,,Main_Ch2,M2_L0115
+3,8,116,main_web,Player,Main,body_default1,face_noblink,text,(뭉치의 ’검정’에 대한 것…),(Dot’s ‘black’…),117,,,,Main_Ch2,M2_L0116
+3,8,117,main_web,Player,Main,body_default1,face_noblink,text,알았어. 지금은 더 물어보지 않을게.\n음… 반지 소년에 대한 건 이해했어?,"All right. I won’t press you. Mm… Do you\nunderstand Ring Boy now, though?",118,,,,Main_Ch2,M2_L0117
+3,8,118,main_web,Dot,Main,body_default1,face_eyeroll2,text,"응, 하지만 고귀한 인간이 어떻게 나 같은 괴물과\n같은 생각을 하지? ","Yes, but how does a noble human share same\nideas with a monster like me? It’s hard to accept.",119,,,,Main_Ch2,M2_L0118
+3,8,119,main_web,Player,Main,body_default1,face_noblink,text,쉽게 받아들이기 어려워.,Dot…,120,,,,Main_Ch2,M2_L0119
+3,8,120,main_web,Player,Main,body_default1,face_noblink,text,그게 정말인 걸. 대부분의 인간이 제각각의\n구멍을 조금씩은 가지고 있으니까 말이야.,"It’s the truth. All people have a hole of\ntheir own, in different shapes and forms.",121,,,,Main_Ch2,M2_L0120
+3,8,121,main_web,Dot,Main,body_default1,face_blink,text,… 인간은 색채뿐만이 아니라 고유한\n얼룩도 가지고 있는 종족이구나.,… The human species not only\nhas colors but distinct stains.,122,,,,Main_Ch2,M2_L0121
+3,8,122,main_web,Player,Main,body_default1,face_noblink,selection,"응, 인간이 마냥 근사하기만 한 건 아니거든.|우리를 이렇게나 멋지게 표현해 주다니 고맙네.","Yes, so you see humans are not always great.",123|127,,,passive|active,Main_Ch2,M2_L0122
+3,8,123,main_web,Dot,Main,body_default1,face_noblink,text,…,…,124,,,,Main_Ch2,M2_L0123
+3,8,124,main_web,Dot,Main,body_default1,face_blink,text,혹시 계속 너희가 근사하다고 하면 안 돼?,Can’t I keep saying that you all are amazing?,125,,,,Main_Ch2,M2_L0124
+3,8,125,main_web,Player,Main,body_default1,face_noblink,selection,"조금, 아주 조금은 자제해 줄래? 실은 부담스러워.|뭉치가 그렇게 느낀다면야… 괜찮아.",Maybe tone it down just a leeetle bit.|If you feel that way… Sure.,126|126,,,passive|active,Main_Ch2,M2_L0125
+3,8,126,main_web,Dot,Main,body_default1,face_noblink,text,"응, 응응. 그럴게.","Okay, I will.",127,,,,Main_Ch2,M2_L0126
+3,8,127,main_web,Player,Main,body_default1,face_blink,text,그럼 다시 원래 이야기로 돌아와\n볼까? 어디까지 얘기했지?,Should we get back on\ntrack? Where were we?,128,,,,Main_Ch2,M2_L0127
+3,8,128,main_web,Dot,Main,body_default1,face_noblink,text,‘결핍’의 기이한 부분에 대해.\n결국 처음으로 돌아오게 되겠네.,The strange effects of ‘deficiency.’\nSo we’re back where we started.,129,,,,Main_Ch2,M2_L0128
+3,8,129,main_web,Player,Main,body_default1,face_noblink,text,반지 소년은 비워진 그대로는 살아갈 수 없는가?,Whether Ring Boy could\nhave lived with his hole?,130,,,,Main_Ch2,M2_L0129
+3,8,130,main_web,Dot,Main,body_default1,face_blink,text,"응, 그가 고유하게 태어난 모습과, 그가 고유하게 살아온\n궤적을 외면하면서까지 그걸 메우려는 이유가 뭐야?","Yes. Why did he fill it when it made him dismiss\nhis original identity, his original path of life?",131,,,,Main_Ch2,M2_L0130
+3,8,131,main_web,Dot,Main,body_default1,face_noblink,text,어쩌면 그건 고유의 반지 모양을 훼손하려는\n파괴적인 행동이었을지도 몰라.,Perhaps it was destructive behavior intended\nto damage the original ring shape.,132,,,,Main_Ch2,M2_L0131
+3,8,132,main_web,Dot,Main,body_default1,face_noblink,text,반지 소년의 구멍은 이미 그의 일부니까.,Ring Boy’s hole was already a part of him.,133,,,,Main_Ch2,M2_L0132
+3,8,133,main_web,Player,Main,body_default1,face_blink,text,그럼 뭉치는 결핍은 없앨 방법이 없다고 보는 거야?,You think there isn’t a way\nto get rid of a deficiency?,134,,,,Main_Ch2,M2_L0133
+3,8,134,main_web,Dot,Main,body_default1,face_noblink,text,없애는 것이 목표라면 과거를 통으로 들어내야 하겠지.\n그러려면 탈이 날 거야. 그러니 없앨 순 없어.,"If that’s the goal, you would have to eliminate\none’s past, which would be a catastrophe. So no.",135,,,,Main_Ch2,M2_L0134
+3,8,135,main_web,Dot,Main,body_default1,face_noblink,text,"패인 흉터 같은 거야. 그 자리에 있다가 새 살이 돋거나\n흐려질 수는 있겠지만, 아예 사라지지는 않아.","It’s like a deep scar. New tissue may cover the\nscar or it may fade, but it never disappears.",136,,,,Main_Ch2,M2_L0135
+3,8,136,main_web,Dot,Main,body_default1,face_blink,text,결핍은 ‘궤적이 남아 있는 모양’으로\n받아들이는 편이 이롭지 않을까.,Wouldn’t it be better to accept a\ndeficiency as a ‘mark of one’s path?’,137,,,,Main_Ch2,M2_L0136
+3,8,137,main_web,Player,Main,body_default1,face_noblink,text,외면한 역사도 사실이니까....,Even dismissed history once was…,138,,,,Main_Ch2,M2_L0137
+3,8,138,main_web,Player,Main,body_default1,face_noblink,text,그렇구나. 하지만 삶은 계속 펼쳐지는 걸. \n흉터를 극복하고 싶어지면 어떻게 해야 할까.,I see. But life goes on. What should I do\nwhen I want to overcome my scars?,139,,,,Main_Ch2,M2_L0138
+3,8,139,main_web,Dot,Main,body_default1,face_blink,text,그건……,I think…,140,,,,Main_Ch2,M2_L0139
+3,8,140,main_web,Dot,Main,body_default1,face_noblink,text,이미 지혜로운 너의 마음을 들어봐야 하겠네.,"We’ll have to listen to you,\nthe one with the wisdom.",141,,,,Main_Ch2,M2_L0140
+3,8,141,main_web,Dot,Main,body_default1,face_noblink,text,<nickname>. 너는 너의 갈증을\n어떻게 견뎌 나가고 있어?,<name>. How do you\nhandle your own thirst?,142,,,,Main_Ch2,M2_L0141
+3,8,142,main_web,Player,Main,body_default1,face_blink,selection4,실은 아직도 고통스러워.|보완할 방법을 궁리하고 있어.|나의 일부로서 안고 살아가.|오래되어 자연스레 생각하지 않게 되었어.,"Truthfully, it’s still painful.|I’m brainstorming ideas to relieve it.|I live with it as a part of myself.|It’s been so long, I stopped thinking about it.",143|143|143|143,,,,Main_Ch2,M2_L0142
+3,8,143,main_web,Dot,Main,body_default1,face_noblink,text,어쩐지 너에게 기특하다는 말을 해주고 싶네. 실제로\n나 같은 게 인간에게 그런 감정을 느낄 수는 없겠지만.,I feel proud of you. Although a creature like\nme couldn’t possibly feel that way for a human.,144,,,,Main_Ch2,M2_L0143
+3,8,144,main_web,Dot,Main,body_default1,face_noblink,text,견뎌야만 견뎌지는 것들.,Enduring what can only be endured.,145,,,,Main_Ch2,M2_L0144
+3,8,145,main_web,Dot,Main,body_default1,face_blink,text,안고 지내야만 안을 수 있는 것들.,Embracing what can only be embraced.,146,,,,Main_Ch2,M2_L0145
+3,8,146,main_web,Dot,Main,body_default1,face_noblink,text,그렇게 받아들인 채로 어느 순간에는 너의 단일한\n정체성을 사랑스러워해 줄 수 있길 바랄게.,"Accepting all that, I hope one day you’ll\nbe able to adore your singular identity.",147,,,,Main_Ch2,M2_L0146
+3,8,147,main_web,Player,Main,body_default1,face_noblink,text,뭉치는 처음부터 이 이야기를 하고 싶었던 거구나.,"This is what you wanted to say\nfrom the beginning, isn’t it?",148,,,,Main_Ch2,M2_L0147
+3,8,148,main_web,Dot,Main,body_default1,face_eyeroll3,text,그랬던 걸지도 몰라.,Maybe.,149,,,,Main_Ch2,M2_L0148
+3,8,149,main_web,Dot,Main,body_default1,face_noblink,text,……,……,150,,,,Main_Ch2,M2_L0149
+3,8,150,main_web,Dot,Main,body_default1,face_noblink,text,그리고 반지 소년도.,Ring Boy as well.,151,,,,Main_Ch2,M2_L0150
+3,8,151,main_web,Player,Main,body_default1,face_blink,text,분명 그렇게 될 거야.,"That’ll happen, I’m sure.",152,,,,Main_Ch2,M2_L0151
+3,8,152,main_web,Player,Main,body_default1,face_noblink,text,"그럼, 이제 뭉치도 뭉치의 ‘검은 몸’은\n모양으로 받아들이기도 한 거야?","So, have you accepted your\n‘black body’ as a shape now?",153,,,,Main_Ch2,M2_L0152
+3,8,153,main_web,Player,Main,body_default1,face_noblink,textbox,네가 동화 속의 괴물이라면 난 이런 이름을 붙일래…,"If you were a monster in a\nfairytale, I would name you…",154,,,,Main_Ch2,M2_L0153
+3,8,154,main_web,Dot,Main,body_default1,face_close_turn,text,<nickname>.,<name>.,155,,,,Main_Ch2,M2_L0154
+3,8,155,main_web,Dot,Main,body_default1,face_open,text,……,……,156,,,,Main_Ch2,M2_L0155
+3,8,156,main_web,Dot,Main,body_default2_turn,face_omg,text,내 이름은 ‘뭉치’고… 결핍과 결함은 다른 이야기야.,My name is ‘Dot’ and… deficiencies\nand scars are different.,157,,,,Main_Ch2,M2_L0156
+3,8,157,main_web,Dot,Main,body_default1,face_blink,text,……,……,158,,,,Main_Ch2,M2_L0157
+3,8,158,main_web,Dot,Main,body_default1,face_noblink,text,친절을 나눠 줘서 고마워.\n품을 들여 곱씹어 보도록 할게.,Thank you for handing out your kindness.\nI’ll keep it in my heart and think it over.,,,,,Main_Ch2,M2_L0158

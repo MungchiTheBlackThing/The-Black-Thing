@@ -45117,7 +45117,6 @@ MonoBehaviour:
   PlayTextUI: {fileID: 0}
   InputTextUI: {fileID: 0}
   Textinput: {fileID: 0}
-  subdialogue: {fileID: 1418538262}
   dotObjects:
   - {fileID: 8937402363559452973, guid: dd4be58e4a195ed41a69b900231b4898, type: 3}
   - {fileID: 8937402363559452973, guid: ae27804424807584daec402b93308d51, type: 3}
@@ -45165,10 +45164,10 @@ MonoBehaviour:
   mainCamera: {fileID: 1526469516}
   canvas: {fileID: 1193627963}
   subClick: {fileID: 310432078}
+  subTuto: {fileID: 199268585}
   prePos: 0
   dialogueIndex: 0
   Day: 0
-  subTuto: {fileID: 199268585}
 --- !u!1 &1483853040
 GameObject:
   m_ObjectHideFlags: 0
@@ -65786,7 +65785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &6941117452417703150
 CanvasRenderer:
   m_ObjectHideFlags: 0

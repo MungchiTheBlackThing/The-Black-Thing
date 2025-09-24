@@ -1,0 +1,552 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Main_Ch5_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: b6cd31206f57a3743b03991251fa7646, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 173928480768
+    m_Localized: "Let\u2019s say there\u2019s a party held especially for you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755456
+    m_Localized: <name>, what would you\ndo at this amazing party?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755457
+    m_Localized: I would sing my favorite song.|I would be in the corner, clapping
+      sincerely.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755458
+    m_Localized: And?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755459
+    m_Localized: And what?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755460
+    m_Localized: Mm, I did hear a song with a peculiar beat and\nsee people clap
+      at the party I observed today.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755461
+    m_Localized: And everyone invited seemed happy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755462
+    m_Localized: "But\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755463
+    m_Localized: Dot, you had a fun human experience!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755464
+    m_Localized: "Your walk must have been very enjoyable.|But you don\u2019t seem
+      satisfied."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755465
+    m_Localized: Your walk must have been very enjoyable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755466
+    m_Localized: What are you saying? You actually\nthink I would feel joy from that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755467
+    m_Localized: "Wh, what\u2019s wrong, Dot?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755468
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755469
+    m_Localized: "I\u2019m sorry, I didn\u2019t clarify the situation. But\\nwhat
+      I witnessed was so cold-blooded."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755470
+    m_Localized: "But you don\u2019t seem satisfied."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755471
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755472
+    m_Localized: "You\u2019re right. It\u2019s hard to keep\\nany secrets from you,
+      <name>."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755473
+    m_Localized: This party was impossible to appreciate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755474
+    m_Localized: Before you arrived, I was\nthinking about your species.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755475
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755476
+    m_Localized: About the party, yes, but really\nabout the death that came after.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755477
+    m_Localized: Death is a moment of misfortune\nclaiming a life, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755478
+    m_Localized: "It\u2019s hard to believe that someone\u2019s invaluable\\nlife
+      ends according to mere lottery results."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755479
+    m_Localized: Are you disappointed in us?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755480
+    m_Localized: No. Yet you go on living, holding parties.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755481
+    m_Localized: Romantic. How fleeting and beautiful!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755482
+    m_Localized: Huh? Wait, Dot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755483
+    m_Localized: "(Dot seems to be confused\u2026)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755484
+    m_Localized: Not all deaths are coincidental.|Death is not as romantic as you
+      think.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755485
+    m_Localized: Huh?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755486
+    m_Localized: Then what is human death according to you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755487
+    m_Localized: Everyone dies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755488
+    m_Localized: "Due to irreversible accidents,\\nterminal illnesses, or simply
+      old age\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755489
+    m_Localized: The ways vary but we are all destined\nto turn to dust six feet
+      under.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755490
+    m_Localized: What?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755491
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755492
+    m_Localized: "No. And\u2026 \u2018destined?\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755493
+    m_Localized: You thought of it as a literal lottery?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755494
+    m_Localized: "Other alternatives simply couldn\u2019t be!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755495
+    m_Localized: "I couldn\u2019t even imagine that you were going\\nthrough something
+      so horrifying, <name>!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755496
+    m_Localized: Not knowing when you will die,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755497
+    m_Localized: how are you not crawling on the floor every\nsecond, frightened
+      out of your mind?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755498
+    m_Localized: Every step you take must feel as if\nyou are about to fall into
+      a sinkhole.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755499
+    m_Localized: "Hm, it\u2019s not easy to explain simply but\u2026\\nwe are not
+      scared every single moment."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755500
+    m_Localized: Are humans so incredible that they\ncan ignore the fear of their
+      extinction?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755501
+    m_Localized: If so, I could maybe understand it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755502
+    m_Localized: No, Dot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755503
+    m_Localized: "It\u2019s that we aren\u2019t normally aware\\nof death in our
+      everyday lives."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755504
+    m_Localized: "But when my mind wanders late at night,\\nor when news of a fatal
+      crash arrives\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755505
+    m_Localized: "Death becomes real. That is\u2026 beyond fear."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755506
+    m_Localized: R, Really?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755507
+    m_Localized: "Then, then\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755508
+    m_Localized: (Wait for Dot to fully accept this fact.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755509
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755510
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755511
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755512
+    m_Localized: <name>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755513
+    m_Localized: Yes?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755514
+    m_Localized: "I want to hear you confirm this in your own\\nwords\u2026 Will
+      you die someday as well?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755515
+    m_Localized: "\u2026!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755516
+    m_Localized: Yes, I will too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755517
+    m_Localized: Give it another thought. That does\nnot have to be the case, does
+      it?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755518
+    m_Localized: "Can\u2019t you obtain a special immunity\\nof some sorts from the
+      underworld?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755519
+    m_Localized: "Destiny isn\u2019t going to grant me\\nthat kind of special treatment."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755520
+    m_Localized: "What\u2019s making you ignore the truth?|How special of a human
+      do you think I am?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755521
+    m_Localized: "I\u2019m just another human being\\nthat happens to be your friend."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755522
+    m_Localized: Ah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755523
+    m_Localized: "Ah\u2026 I\u2019m sorry."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755524
+    m_Localized: "But it\u2019s difficult to accept."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755525
+    m_Localized: Even you, my lovable human,\nare walking towards death.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755526
+    m_Localized: How do you bear it when the\nhorror of death grips you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755527
+    m_Localized: "When I think of the pain of\\nexistential terror you have suffered\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755528
+    m_Localized: "I ache for you. Truly\u2026 I ache."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755529
+    m_Localized: "(It\u2019s comforting to be existentially consoled by an alien
+      dust monster.)|(I mean, is Dot pitying me right now?)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755530
+    m_Localized: "<name>. One thought hasn\u2019t changed, though."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755531
+    m_Localized: Humans are creatures of romance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755532
+    m_Localized: "Born to die, you face your fleeting existences and\\nlive on. Even
+      when you think you haven\u2019t chosen to."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755533
+    m_Localized: That is truly beautiful.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755534
+    m_Localized: "I already cherished humans. But I\u2019ll cherish you\\neven more
+      so from today, for that very reason."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755535
+    m_Localized: "Dot\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174020755536
+    m_Localized: "I talked too much today, didn\u2019t I?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949760
+    m_Localized: I will let your beautiful self go now, to rest.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949761
+    m_Localized: Hello, <name>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949762
+    m_Localized: I encountered another\ninteresting sentence just now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949763
+    m_Localized: "\u2018In their unconscious, all humans are\\nconvinced of their
+      own immortality.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949764
+    m_Localized: Apparently, humans are incapable of\nimagining themselves as completely
+      dead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949765
+    m_Localized: <name>, can you try imagining\nyourself as dead?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949766
+    m_Localized: "Then explain what it\u2019s like to me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949767
+    m_Localized: My death would look like this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949768
+    m_Localized: "I think it\u2019s possible to imagine\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949769
+    m_Localized: Possible to imagine? Maybe, to a certain point.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949770
+    m_Localized: "But as long as there\u2019s someone looking at\\nthat scene, you
+      cannot be completely dead."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949771
+    m_Localized: "In your imagination, there must be another\\n\u2018you\u2019 looking
+      at your own death."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949772
+    m_Localized: "Ah. I get it.|\u2026What do you mean?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949773
+    m_Localized: "There\u2019s someone observing the scene of your\\ndeath, right?
+      That someone would also be you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949774
+    m_Localized: "Because a \u2018you\u2019 that can see and think exists,\\nthis
+      view doesn\u2019t see you as completely dead."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949775
+    m_Localized: "Isn\u2019t it interesting?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949776
+    m_Localized: (Romantic depictions about us humans still make me blush.)|(Interesting.
+      I feel appreciated just for accepting death.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949777
+    m_Localized: And also.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949778
+    m_Localized: Since you taught me about death, I now\nfeel differently for the
+      star of the party.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949779
+    m_Localized: Differently how? Tell me more.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949780
+    m_Localized: "I don\u2019t dare try to express it, even\\nwith all the words
+      I\u2019ve learnt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949781
+    m_Localized: "Even if I swallowed every dictionary on Earth,\\nI feel I won\u2019t
+      be able to express it clearly."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949782
+    m_Localized: "I didn\u2019t expect that from you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949783
+    m_Localized: "It\u2019s the first time I feel as if a solid\\nwall of sadness
+      is blocking my way."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949784
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949785
+    m_Localized: Listen. Think of any certain end you remember.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949786
+    m_Localized: Let your body rest and take my hand, go on.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949787
+    m_Localized: Maybe just figuratively, I mean.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949788
+    m_Localized: "(Take Dot\u2019s hand figuratively.)|(Actually take Dot\u2019s
+      long hands.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949789
+    m_Localized: Some things are so heavy that it cannot be\ndiluted, so dark that
+      it cannot be painted over.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949790
+    m_Localized: "Loss, futility, emptiness\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949791
+    m_Localized: Things that dare not be put into words.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949792
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949793
+    m_Localized: Things that no one can bear to touch upon,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949794
+    m_Localized: and thus must be left as they are.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949795
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949796
+    m_Localized: "Let\u2019s stay still. Let\u2019s just stay still."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949797
+    m_Localized: I want to leave them as they are. The\ndead human, the loss, the
+      futility.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949798
+    m_Localized: The toast halted mid-air, the\ncelebration stopped mid-song.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949799
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174024949800
+    m_Localized: Leave them as they are,\nclose our eyes, and look on.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
