@@ -68,6 +68,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 16af57b8324a7594caca7865174afc17, type: 3}
   - {fileID: 21300000, guid: c3009019e6f526c41b9702fc3b83eec7, type: 3}
   - {fileID: 21300000, guid: 16b57819ef2c84f4c9d208d25ef3fe57, type: 3}
+  - {fileID: 21300000, guid: 934b67495911b8b4897a1b1914676904, type: 3}
   - {fileID: 21300000, guid: 544e97e94ebb9534ea3638a08bb83fd9, type: 3}
   - {fileID: 21300000, guid: ebb82e8ae27bf86468ba26cf98eede60, type: 3}
   - {fileID: 21300000, guid: 742aa4bac0115d04db297716bd08a47b, type: 3}
@@ -80,7 +81,9 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ba23948de0ccf9c44b275dd242fb778a, type: 3}
   - {fileID: 21300000, guid: ea0f5a8d52756984693e82ab2ef80948, type: 3}
   - {fileID: 21300000, guid: d5b056adfef28f348bb2bc1d68c806e3, type: 3}
+  - {fileID: 21300000, guid: 002072dd6af60a345ac9865471dc64bc, type: 3}
   - {fileID: 21300000, guid: 094c1d5e74c3ef84d80f1272330ddd04, type: 3}
+  - {fileID: 21300000, guid: 03f11d6e8c58e4b46bbc5db0394c763f, type: 3}
   - {fileID: 21300000, guid: 71dbab1f44331e442bec7cd2b22d9506, type: 3}
   - {fileID: 21300000, guid: fff827bfedb9d9740a6f2d0f969e6e45, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -114,6 +117,7 @@ SpriteAtlas:
   - "\uC791\uC740 \uC88C\uCE21 \uD654\uC0B4\uD45C"
   - howto3
   - alert_moonradio
+  - Vector 361
   - howto4
   - box2
   - howto5
@@ -126,7 +130,9 @@ SpriteAtlas:
   - icon_trigger_main
   - box1
   - menu_spider
+  - Vector 266
   - checklist_box
+  - Vector 264
   - lightbox
   - loading_background
   m_RenderDataMap: {}
