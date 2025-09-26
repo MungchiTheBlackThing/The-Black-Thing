@@ -1,0 +1,560 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Main_Ch10_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 66b486e8271b56f48910e52e4675d23f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 36278661120
+    m_Localized: Hello, <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518720
+    m_Localized: Could you close that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518721
+    m_Localized: Close what?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518722
+    m_Localized: Hello, <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518723
+    m_Localized: Could you close that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518724
+    m_Localized: (Close the windows.)|(Close the doors on the bookshelf.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518725
+    m_Localized: Hello, <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518726
+    m_Localized: Could you close that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518727
+    m_Localized: (Close the doors on the bookshelf.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518728
+    m_Localized: Hello, <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518729
+    m_Localized: Could you close that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518730
+    m_Localized: (Close the windows.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518731
+    m_Localized: Hello, <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518732
+    m_Localized: Could you close that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518733
+    m_Localized: "Dot, there\u2019s nothing else to close\u2026\\nCould you be more
+      specific?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518734
+    m_Localized: Sure, <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518735
+    m_Localized: I was actually hoping you could close the door\nto my never-ending,
+      suffocating thoughts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518736
+    m_Localized: I saw someone today.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518737
+    m_Localized: What was that? Really, what?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518738
+    m_Localized: "Maybe you should relax a little first\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518739
+    m_Localized: Why would he do that? Please, listen to this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518740
+    m_Localized: ..That somehow resemble me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518741
+    m_Localized: A black, black blob of waste. Something\nthat deserves to be destroyed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518742
+    m_Localized: Dot, get it together!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518743
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518744
+    m_Localized: Dot, can you hear me?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518745
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518746
+    m_Localized: Hello, <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518747
+    m_Localized: Did I show up strangely on your retina?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518748
+    m_Localized: "Well, a little\u2026 but I understand.|Not at all. Tell me what
+      happened slowly, please?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518749
+    m_Localized: Thank you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518750
+    m_Localized: It was the first time I witnessed that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518751
+    m_Localized: "I didn\u2019t believe \u2018self-hate\u2019 could\\nmanifest in
+      that way, as actions."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518752
+    m_Localized: Do you know what the most\ntaboo subject is at the Factory?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518753
+    m_Localized: "It\u2019s \u2018self-hate.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518754
+    m_Localized: The beings on the Moon are\nespecially afraid of suicide.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518755
+    m_Localized: How so?|(Listen carefully.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518756
+    m_Localized: "Because when self-hate manifests as \u2018action,\u2019\\nin extreme
+      cases it could lead to suicide."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518757
+    m_Localized: "They can\u2019t even begin to understand how the\\nhumans they
+      love could feel such an emotion."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518758
+    m_Localized: They are terrified. Unable to dare face it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518759
+    m_Localized: "I see\u2026 That\u2019s why the Moon\\nBeings are trying to prevent
+      it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518760
+    m_Localized: For themselves.|For the humans.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518761
+    m_Localized: No, for the symbiotic relationship\nbetween humans and themselves.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518762
+    m_Localized: Do you see now? How horrible\nof a deed he committed?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518763
+    m_Localized: "That, that is, the claw that smashes\\nhuman souls\u2019 protective
+      barrier."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518764
+    m_Localized: Like you said, the Moon Beings never let\nhumans hurt themselves
+      on principle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36383518765
+    m_Localized: Never, ever, no matter what. But?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713024
+    m_Localized: "I don\u2019t understand. He did it by choice?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713025
+    m_Localized: A human that scratches off their\nown tangled, interior blobs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713026
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713027
+    m_Localized: (Listen carefully.)|(No words come to mind.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713028
+    m_Localized: "Why? Why? I don\u2019t want to\\nknow. I don\u2019t want to know."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713029
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713030
+    m_Localized: "But <nickname>, can you tell\\nwhat I\u2019m most afraid of right
+      now?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713031
+    m_Localized: What do you think it is, <nickname>?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713032
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713033
+    m_Localized: "Please don\u2019t guess correctly.\\nEven if you do know the answer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713034
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713035
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713036
+    m_Localized: "I\u2019ve fallen down a rabbit hole."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713037
+    m_Localized: When I came to my senses,\nI was already inside it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713038
+    m_Localized: "I don\u2019t know how to leave, but I also can\u2019t\\nfind a
+      reason to leave in the first place\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713039
+    m_Localized: Nothing seems clear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713040
+    m_Localized: "I\u2019m sorry. I need more time to\\nmyself today to think this
+      over."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713041
+    m_Localized: Did he do those things\nbecause he hated himself?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713042
+    m_Localized: Why did he hate himself and his life so much?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713043
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713044
+    m_Localized: What made him the way he is?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713045
+    m_Localized: As you know, that is what black does to me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713046
+    m_Localized: Regardless of how many times I confront it,\nI see no color or potential.
+      Black is just black.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713047
+    m_Localized: That void of worth and meaning feels\nfutile, sad, and sometimes
+      terrifying.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713048
+    m_Localized: <nickname>, do you feel the same at times?\nOr have you ever imagined
+      how it would feel?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713049
+    m_Localized: Do you have your own black that hurts you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713050
+    m_Localized: Is that only on Earth?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713051
+    m_Localized: Yes, at least I hope it only exists on Earth.|No, you can feel it
+      anywhere in this universe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713052
+    m_Localized: "That wouldn\u2019t exist on the Moon."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713053
+    m_Localized: I hope there will be nothing\non the Moon that can hurt him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713054
+    m_Localized: The universe is infinitely large. There should\nbe many spots to
+      hide and take a moment.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713055
+    m_Localized: I hope the universe feels kind to him, at the least.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713056
+    m_Localized: "\u2026\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713057
+    m_Localized: But <name>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713058
+    m_Localized: What would the Moon Beings think of him?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713059
+    m_Localized: They are very afraid of self-harming acts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713060
+    m_Localized: They think that once one hates and hurts\noneself, they eventually
+      give up on themself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713061
+    m_Localized: "(I feel Dot\u2019s emotions becoming profound.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713062
+    m_Localized: "(Let\u2019s observe for a while longer.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713063
+    m_Localized: The Moon Beings would be cautious of him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713064
+    m_Localized: In short, the Moon would not welcome him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713065
+    m_Localized: Worse than that, it would certainly exclude him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713066
+    m_Localized: "(I can\u2019t just take a back seat anymore.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713067
+    m_Localized: "Is the Moon really that hostile of a place?\\nThe Dot I\u2019ve
+      come to know isn\u2019t like that."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713068
+    m_Localized: Neither are the Moon Beings. In fact, they\nseem like warmly layered
+      melodies to me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713069
+    m_Localized: "\u2026!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713070
+    m_Localized: Dot, are you sure you would say the\nsame tomorrow and the day after?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713071
+    m_Localized: Do you really want to exclude\nhim? Cruelly and heartlessly?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713072
+    m_Localized: N, no.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713073
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713074
+    m_Localized: "Please believe me. That\u2019s not what I wanted."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713075
+    m_Localized: I thought so. Can I ask why?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713076
+    m_Localized: "I can\u2019t explain it clearly to you\u2026 which feels tragic."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713077
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713078
+    m_Localized: I saw two kinds of light in him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713079
+    m_Localized: I saw destructive pain and the\nwill to live at the same time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713080
+    m_Localized: But it leaves me with an important question.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713081
+    m_Localized: The reason for his conflicting\nintentions and actions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713082
+    m_Localized: "Hm\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713083
+    m_Localized: (But Dot has always observed conflicting situations\nas they were.
+      Dot coexists with contradictions.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713084
+    m_Localized: "(What\u2019s so different about this time?)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713085
+    m_Localized: How can you want to live and still hurt yourself?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713086
+    m_Localized: Can you hate yourself to death\nand still not want to die?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713087
+    m_Localized: "How? How? I don\u2019t want to know. But if\\nyou do know, please
+      tell me, <nickname>."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713088
+    m_Localized: "It\u2019s possible. It\u2019s one of a million contradictions.|(Remain
+      silent with Dot.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713089
+    m_Localized: "If he really wanted to die, he\\nwould\u2019ve used another method."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713090
+    m_Localized: "He hated himself so because\\nhe didn\u2019t want to die."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713091
+    m_Localized: "Or perhaps it\u2019s the opposite. He hated himself so\\nbut he
+      didn\u2019t want to die \u2014 such a fragile resolve."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713092
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713093
+    m_Localized: "Nothing is for sure. I won\u2019t dare\\nadd my thoughts to this
+      situation."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713094
+    m_Localized: But I think I can say something\nas one of his species.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713095
+    m_Localized: What?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713096
+    m_Localized: "It can happen.\u2019 That\u2019s all."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713097
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713098
+    m_Localized: Yes. It seems so.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713099
+    m_Localized: A snippet of time. I need that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713100
+    m_Localized: "\u2026\u2026 Somehow it seems\\neverything is getting worse."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713101
+    m_Localized: How so?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713102
+    m_Localized: My body seems to be getting\nlighter. As if it is evaporating.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713103
+    m_Localized: No matter.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36387713104
+    m_Localized: No need to foreshadow any further.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

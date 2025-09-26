@@ -1,0 +1,1013 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Sub_Ch2_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 63e73959689a03242a481e7fcfb23ef5, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 659661287424
+    m_Localized: <nickname>,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453248
+    m_Localized: "I\u2019ll tell you a secret."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453249
+    m_Localized: I can read your thoughts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453250
+    m_Localized: You cannot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453251
+    m_Localized: "I can so. I\u2019ll prove it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453252
+    m_Localized: Imagine.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453253
+    m_Localized: "You\u2019re walking in the woods."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453254
+    m_Localized: "Suddenly, the path you\u2019re\\non diverges into two."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453255
+    m_Localized: One is a brick-lined road,\nbright with sunshine.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453256
+    m_Localized: Fragrant flowers neatly grow on the side
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453257
+    m_Localized: and the red, orange, and yellow\nof the blooms catch your eye.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453258
+    m_Localized: The other has trees of all sizes\nstretching out from everywhere.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453259
+    m_Localized: The thick greenery sways\nwildly with the wind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453260
+    m_Localized: and a calm darkness\nhas descended onto it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453261
+    m_Localized: Which path would you choose?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453262
+    m_Localized: The road with flowers.|The tree-filled road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453263
+    m_Localized: It seems beautiful and safe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453264
+    m_Localized: Hm, Interesting!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453265
+    m_Localized: Okay.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453266
+    m_Localized: Then, as you are walking\nyour chosen path,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453267
+    m_Localized: you see a pouch of water and\na dog on the side of the road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453268
+    m_Localized: 'A note beside it says:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453269
+    m_Localized: "\u201CYou may wish to take two\\n but can only take one.\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453270
+    m_Localized: It seems you can choose only one.\nWhich would you take with you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453271
+    m_Localized: The pouch of water, of course. | The dog.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453272
+    m_Localized: I may have a long way to go.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453273
+    m_Localized: Fascinating!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453274
+    m_Localized: "Now, let\u2019s take a look at the results."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453275
+    m_Localized: The first choice reveals\nyour deepest fear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453276
+    m_Localized: You chose the road with flowers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453277
+    m_Localized: "It\u2019s bright and safe. Birds are chirping\\nand butterflies
+      rest on your shoulder."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453278
+    m_Localized: But how about the\npath lined with trees?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453279
+    m_Localized: At first the cool shade\nmay have pleased you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453280
+    m_Localized: But the looming shadows might\nswallow you before you know it!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453281
+    m_Localized: "You have a fear of the\\ndarkness, don\u2019t you?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453282
+    m_Localized: A fear of the unknown, of what might\nleap out at you from who knows
+      where!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453283
+    m_Localized: Think back to your very first\nnightmare when you were little.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453284
+    m_Localized: You were on a mountain\nroad past midnight,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453285
+    m_Localized: and a vicious beast tore you\nto shreds with its teeth!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453286
+    m_Localized: Then, the second choice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453287
+    m_Localized: It was about who you are when\nfaced with an unsure future.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453288
+    m_Localized: If you chose the pouch of water,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453289
+    m_Localized: it means you value where you\nare going over who you are with.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453290
+    m_Localized: "Interesting\u2026 you must\\nalways be thinking ahead."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453291
+    m_Localized: I knew it, <nickname>!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453292
+    m_Localized: You were always prepared for\nany question, any problem I had.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453293
+    m_Localized: I knew I could always count on you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453294
+    m_Localized: "But let\u2019s just say\u2014assume,\\nreally, completely theoretically."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453295
+    m_Localized: You saw a pouch of water and\nme on the side of the road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453296
+    m_Localized: Hehe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453297
+    m_Localized: Which would you choose?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453298
+    m_Localized: The pouch of water.|You.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453299
+    m_Localized: Well.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453300
+    m_Localized: "Goodbye. For now.\\nI\u2019ll be crying over there."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453301
+    m_Localized: Just in case you care.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453302
+    m_Localized: "I\u2019m glad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453303
+    m_Localized: "It\u2019s nice to know that I mean more\\nto you than a pouch of
+      water!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453304
+    m_Localized: "I\u2019ll make a great friend out of her."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453305
+    m_Localized: Fascinating!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453306
+    m_Localized: "Now, let\u2019s take a look at the results."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453307
+    m_Localized: The first choice reveals\nyour deepest fear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453308
+    m_Localized: You chose the road with flowers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453309
+    m_Localized: "It\u2019s bright and safe. Birds are chirping\\nand butterflies
+      rest on your shoulder."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453310
+    m_Localized: But how about the\npath lined with trees?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453311
+    m_Localized: At first the cool shade\nmay have pleased you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453312
+    m_Localized: But the looming shadows might\nswallow you before you know it!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453313
+    m_Localized: "You have a fear of the\\ndarkness, don\u2019t you?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453314
+    m_Localized: A fear of the unknown, of what might\nleap out at you from who knows
+      where!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453315
+    m_Localized: Think back to your very first\nnightmare when you were little.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453316
+    m_Localized: You were on a mountain\nroad past midnight,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453317
+    m_Localized: and a vicious beast tore you\nto shreds with its teeth!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453318
+    m_Localized: Then, the second choice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453319
+    m_Localized: It was about who you are when\nfaced with an unsure future.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453320
+    m_Localized: If you chose the dog,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453321
+    m_Localized: it means you value who you are\nwith over where you are going.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453322
+    m_Localized: "Who you are with\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453323
+    m_Localized: Do I count?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453324
+    m_Localized: "Of course.|Well\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453325
+    m_Localized: "I\u2019m glad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453326
+    m_Localized: "It\u2019s nice to know that I mean more\\nto you than a pouch of
+      water!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453327
+    m_Localized: "Goodbye. For now.\\nI\u2019ll be crying over there."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453328
+    m_Localized: Just in case you care.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453329
+    m_Localized: It seems full of potential\nfor a distinct adventure.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453330
+    m_Localized: Hm, Interesting!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453331
+    m_Localized: Okay.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453332
+    m_Localized: Then, as you are walking\nyour chosen path,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453333
+    m_Localized: you see a pouch of water and\na dog on the side of the road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453334
+    m_Localized: 'A note beside it says:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453335
+    m_Localized: "\u201CYou may wish to take two,\\nbut can only take one.\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453336
+    m_Localized: It seems you can choose only one.\nWhich would you take with you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453337
+    m_Localized: The pouch of water, of course. | The dog.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453338
+    m_Localized: I may have a long way to go.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453339
+    m_Localized: Fascinating!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453340
+    m_Localized: "Now, let\u2019s take a look at the results."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453341
+    m_Localized: The first choice reveals\nyour deepest fear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453342
+    m_Localized: You chose the tree-filled path.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453343
+    m_Localized: "It\u2019s quiet and cool. Trees with kind\\nshadows, and a fresh
+      stream of water."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453344
+    m_Localized: But what about the path\nlined with flowers?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453345
+    m_Localized: "You\u2019ll have to walk under\\nthe scorching sun."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453346
+    m_Localized: At first it will be warm, but as time goes\nby, the thirst will
+      be overwhelming!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453347
+    m_Localized: "You have a fear of the heat, don\u2019t you?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453348
+    m_Localized: Think back to your very first\nnightmare when you were little.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453349
+    m_Localized: The sun beat down on you,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453350
+    m_Localized: and you were dead on your\nfeet, desperate for water!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659686453351
+    m_Localized: Then, the second choice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647552
+    m_Localized: It was about who you are when\nfaced with an unsure future.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647553
+    m_Localized: If you chose the pouch of water,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647554
+    m_Localized: it means you value where you\nare going over who you are with.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647555
+    m_Localized: "Interesting\u2026 you must\\nalways be thinking ahead."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647556
+    m_Localized: I knew it, <nickname>!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647557
+    m_Localized: You were always prepared for\nany question, any problem I had.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647558
+    m_Localized: I knew I could always count on you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647559
+    m_Localized: "But let\u2019s just say\u2014assume,\\nreally, completely theoretically."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647560
+    m_Localized: You saw a pouch of water and\nme on the side of the road.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647561
+    m_Localized: Hehe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647562
+    m_Localized: Which would you choose?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647563
+    m_Localized: The pouch of water.|You.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647564
+    m_Localized: Well.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647565
+    m_Localized: "Goodbye. For now.\\nI\u2019ll be crying over there."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647566
+    m_Localized: Just in case you care.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647567
+    m_Localized: "I\u2019m glad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647568
+    m_Localized: "It\u2019s nice to know that I mean more\\nto you than a pouch of
+      water!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647569
+    m_Localized: "I\u2019ll make a great friend out of her."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647570
+    m_Localized: Fascinating!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647571
+    m_Localized: "Now, let\u2019s take a look at the results."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647572
+    m_Localized: The first choice reveals\nyour deepest fear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647573
+    m_Localized: You chose the tree-filled path.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647574
+    m_Localized: "It\u2019s quiet and cool. Trees with kind\\nshadows, and a fresh
+      stream of water."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647575
+    m_Localized: But what about the path\nlined with flowers?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647576
+    m_Localized: "You\u2019ll have to walk under\\nthe scorching sun."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647577
+    m_Localized: At first it will be warm, but as time goes\nby, the thirst will
+      be overwhelming!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647578
+    m_Localized: "You have a fear of the heat, don\u2019t you?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647579
+    m_Localized: Think back to your very first\nnightmare when you were little.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647580
+    m_Localized: The sun beat down on you,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647581
+    m_Localized: and you were dead on your\nfeet, desperate for water!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647582
+    m_Localized: Then, the second choice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647583
+    m_Localized: It was about who you are when\nfaced with an unsure future.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647584
+    m_Localized: If you chose the dog,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647585
+    m_Localized: it means you value who you are\nwith over where you are going.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647586
+    m_Localized: "Who you are with\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647587
+    m_Localized: Do I count?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647588
+    m_Localized: "Of course.|Well\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647589
+    m_Localized: "I\u2019m glad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647590
+    m_Localized: "It\u2019s nice to know that I mean more\\nto you than a pouch of
+      water!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647591
+    m_Localized: "Goodbye. For now.\\nI\u2019ll be crying over there."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647592
+    m_Localized: Just in case you care.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647593
+    m_Localized: "Alright\u2026 now this one goes here\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647594
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647595
+    m_Localized: Look, I want to show you something.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647596
+    m_Localized: What is it?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647597
+    m_Localized: Ta-da.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647598
+    m_Localized: "It\u2019s my collection."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647599
+    m_Localized: "I heard some humans \u2018collect\u2019 things."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647600
+    m_Localized: Not for practical reasons, but simply\nbecause it makes them happy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647601
+    m_Localized: "I\u2019ve started collecting to get\\na taste of that happiness."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647602
+    m_Localized: "Right now I\u2019m collecting small\\nand round objects. Just like
+      me!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647603
+    m_Localized: "So far I\u2019ve found three."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647604
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647605
+    m_Localized: What do you think?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647606
+    m_Localized: "Collecting is a refined hobby\u2026 very nice.|Whoa! That\u2019s
+      amazing. Tell me more."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647607
+    m_Localized: "Look. Here\u2019s a blueberry,\\na coin, and a marble."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647608
+    m_Localized: "The coin\u2019s flatter than the others\\nbut it didn\u2019t want
+      to feel left out."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647609
+    m_Localized: "And something I\u2019d really like\\nto add to my collection,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647610
+    m_Localized: is your eyeball.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647611
+    m_Localized: Dissuade Dot|Freak out
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647612
+    m_Localized: "(Yikes!) But Dot, without my eyes I\\nwouldn\u2019t be able to
+      see the world."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647613
+    m_Localized: What?? Dot, why on earth would\nyou want something ike that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647614
+    m_Localized: "I guess that\u2019s a no? I\u2019m sorry."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647615
+    m_Localized: "I just\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647616
+    m_Localized: I thought you would have seen the\nwide world with your two eyes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647617
+    m_Localized: If I could collect something that\nhad taken in how humans live,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647618
+    m_Localized: it would be like having a crystal\nball to see the world with!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647619
+    m_Localized: And if it were your gaze, that would make\nit even more special.
+      Hence your eyeball!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647620
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647621
+    m_Localized: I guess my eyeball will\nhave to do, someday.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647622
+    m_Localized: "(Well, isn\u2019t that terrifying\u2026.)\\nWhy don\u2019t you
+      think it over?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647623
+    m_Localized: "(Please\u2026!)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647624
+    m_Localized: <nickname>, what does\nit mean to be complete?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647625
+    m_Localized: To be whole.|To be flawless.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647626
+    m_Localized: And does being whole and flawless mean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647627
+    m_Localized: that one fills, swallows, paints, and grows,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647628
+    m_Localized: until there are no more imperfections?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647629
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647630
+    m_Localized: Do you want to be complete?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647631
+    m_Localized: "I wouldn\u2019t say no to it.|Not really. I\u2019m fine with who
+      I am."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647632
+    m_Localized: "Interesting\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647633
+    m_Localized: Share with me what faint clouds in your life
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647634
+    m_Localized: led you to that answer.\nI want to know more about you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647635
+    m_Localized: "Of course! If you\u2019re interested."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647636
+    m_Localized: But <nickname>. Can completion\nalso be called growth?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647637
+    m_Localized: Perhaps growth is just\nexperiencing another form.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647638
+    m_Localized: "From a self I don\u2019t like into a self I like."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647639
+    m_Localized: From an inexperienced and immature\nme to a relaxed and sensual
+      me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647640
+    m_Localized: If, during the change that I believe is\nprogress, I long for my
+      past innocence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647641
+    m_Localized: "won\u2019t it be too late to go back?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647642
+    m_Localized: Hmm. <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647643
+    m_Localized: Do you ever want to\nprotect your innocence?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647644
+    m_Localized: "Hmm\u2026 in what way?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647645
+    m_Localized: I mean have you ever\nmissed your original self.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647646
+    m_Localized: "Picture it again. The \u2018you\u2019\\nthat was closest to \u2018you\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647647
+    m_Localized: "Who I was when I was untainted\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647648
+    m_Localized: I think I know you better now,\nand my heart is squirming.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647649
+    m_Localized: Oh! <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647650
+    m_Localized: If, perhaps, I might speak on\nwho I see when I look at you,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647651
+    m_Localized: could it be you still have that pure\ngaze from when you were a
+      child?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647652
+    m_Localized: After all, you found me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647653
+    m_Localized: "\u2026\u2026 Hehe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647656
+    m_Localized: "Now I\u2019m going to be still and watch\\nthose spores drift midair,
+      for a long time."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647657
+    m_Localized: "I won\u2019t expect anything. I\u2019ll simply observe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647658
+    m_Localized: You must be fond of being bored.|Any reason?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647659
+    m_Localized: Yes. Boredom is like dry dough, before\nyou add water and make it
+      sticky.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647660
+    m_Localized: Good to roll around in.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647661
+    m_Localized: "Interesting. And where is it\\nthat you\u2019re rolling around
+      in?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647662
+    m_Localized: A field of misery.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647663
+    m_Localized: "Oh? \u2026. Why?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647664
+    m_Localized: If those spores settle somewhere nice, soon\nenough the whole family
+      will be spotted.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647665
+    m_Localized: "And they\u2019ll be removed.\\nIn the blink of an eye."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647666
+    m_Localized: Either burnt alive or melted down.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647667
+    m_Localized: "If they settle somewhere less savory,\\nthey could avoid the humans\u2019
+      eyes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647668
+    m_Localized: But they'll starve to death.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647669
+    m_Localized: "Slow and helpless.\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647670
+    m_Localized: The life sucked out of them,\nleft to dry and crumble.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647671
+    m_Localized: "I won\u2019t risk getting my hopes up. Because\\nwhen that hope
+      returns broken..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647672
+    m_Localized: "It\u2019ll hurt. A lot."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647673
+    m_Localized: "(What good is mold?)|(I\u2019m starting to feel sorry for them.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647674
+    m_Localized: "It\u2019s only mold. Horrid to the\\neye and harmful to humans."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647675
+    m_Localized: But so am I. Do you see me\nthe way you see them?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647676
+    m_Localized: "\u2026\u2026. <nickname>."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647677
+    m_Localized: "No, never. You\u2019re so much more than mold!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647678
+    m_Localized: "You\u2019re my friend.|You\u2019re lovable."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647679
+    m_Localized: Plus, no effect on lung capacity whatsoever.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647680
+    m_Localized: ' I see. I need some time to think. Excuse me.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647681
+    m_Localized: I bet some of those spores will fall onto the\nbread. Like children
+      jumping on the bed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647682
+    m_Localized: They could live their fluffy happy\ndays together with their family.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647683
+    m_Localized: You really think so?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647684
+    m_Localized: "\u2026\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647685
+    m_Localized: I see.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647686
+    m_Localized: Thank you, <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647687
+    m_Localized: "Now I\u2019m going to be still and hope\\nfor them to fall onto
+      the bread."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659690647688
+    m_Localized: For a very long time.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
