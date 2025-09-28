@@ -201,7 +201,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         currentChapter = player.CurrentChapter;
         Debug.Log("CurrentChapter: " + currentChapter);
         LoadSceneManager.Instance.LoadChapterImage(currentChapter); 
-        player.subseq = 0;
+        player.subseq = 1;
         ClearWatchedSubseq(); // 봤던 서브 리스트도 초기화
         AudioManager.instance.UpdateBGMByChapter(player.CurrentChapter);
         WritePlayerFile();
