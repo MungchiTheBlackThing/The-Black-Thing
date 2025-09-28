@@ -1,0 +1,767 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Sub_Ch9_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 33b968b45baf07f429488f691a88dae4, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 642888265728
+    m_Localized: A fruit fly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237248
+    m_Localized: Hello, fruit fly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237249
+    m_Localized: "You\u2019re different today. Swaying silently. I\u2019m\\nglad
+      for the opportunity to scrutinize you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237250
+    m_Localized: I struggled to catch up with\nyou, swift and vibrant in the air.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237251
+    m_Localized: "Hmm? What\u2019s that?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237252
+    m_Localized: "Oh? I guess I misheard. Well\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237253
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237254
+    m_Localized: "<nickname>! I didn\u2019t notice you there."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237255
+    m_Localized: Do fruit flies normally not talk, <nickname>?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237256
+    m_Localized: "Well, not with humans. We speak different\\nlanguages, or maybe
+      their voices are too\u2026 huh."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237257
+    m_Localized: "Huh\u2026\u2026?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237258
+    m_Localized: "(It\u2019s dead.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237259
+    m_Localized: "(Tell Dot the truth, that it\u2019s a body.)|(Break it to Dot gently,
+      lest Dot\u2019ll be hurt.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237260
+    m_Localized: "Well\u2026 I think it\u2019s dead."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237261
+    m_Localized: "They may be nonverbal\u2026 but I think this one\u2019s\\ngone
+      to live with some nice people on a farm upstate."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237262
+    m_Localized: A farm?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237263
+    m_Localized: "It\u2019s a happy place where dogs, cats, and fruit\\nflies go
+      to once their time is over on Earth."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237264
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237265
+    m_Localized: "I know that. It\u2019s a metaphor for death."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237266
+    m_Localized: Why would you metaphorize death to me?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237267
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237268
+    m_Localized: Do you think the fruit fly is dead?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237269
+    m_Localized: "\u2026 Naaah."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237270
+    m_Localized: "<nickname>, you\u2019re teasing me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237271
+    m_Localized: He can hear you, you know?\nHe might get offended.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237272
+    m_Localized: He may be small but has a firm\nplace in the corner of this universe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237273
+    m_Localized: and sways with such spirit,\nleaving a vivid trace in its path.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237274
+    m_Localized: How can you joke about something like that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237275
+    m_Localized: <nickname>. Say something.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237276
+    m_Localized: "(Keep your silence..)|But I\u2019m really not joking, Dot\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237277
+    m_Localized: "The fruit fly is swaying\u2026 because the spider\\nweb tied to
+      him is swaying in the wind."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237278
+    m_Localized: "You mean he\u2019s truly dead?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237279
+    m_Localized: "You don\u2019t mean to say, <nickname>, that death\\nis coiled
+      around me like a black snake,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237280
+    m_Localized: and like with the girl that fell at the party,\nthe mold, and this
+      bug of all beings,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237281
+    m_Localized: "it\u2019s closing in on all quarters and\\nclutching me tight like
+      a prophecy,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237282
+    m_Localized: "right? You don\u2019t mean that."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237283
+    m_Localized: Right? <nickname>?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237284
+    m_Localized: (Dot has gone through\na lot of shock just now.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237285
+    m_Localized: "(So\u2026\u2026)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237286
+    m_Localized: "(You pat Dot silently. You\\ncan\u2019t think of anything to say.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237287
+    m_Localized: <nickname>, why must you worry\nme with your warm touch?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237288
+    m_Localized: "You\u2019re comforting me. Why\\nare you comforting me?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237289
+    m_Localized: Why?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237290
+    m_Localized: "You\u2019re lying."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237291
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237292
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237293
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237294
+    m_Localized: Oh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237295
+    m_Localized: "But you\u2019re not."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237296
+    m_Localized: "You wouldn\u2019t lie, would you?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237297
+    m_Localized: "You\u2019ve always been brutally honest with me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237298
+    m_Localized: "It\u2019s just that all feeble life dies in vain."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237299
+    m_Localized: Like a dream that loses its warmth for\ngood and scatters once morning
+      comes?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237300
+    m_Localized: Beautiful but futile. And thus ugly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237301
+    m_Localized: So.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237302
+    m_Localized: So he is dead.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237303
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237304
+    m_Localized: "I\u2019m sorry, Dot. I know it isn\u2019t easy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237305
+    m_Localized: No one is ready to say goodbye.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237306
+    m_Localized: "It\u2019s alright, <nickname>. My human friend."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642909237307
+    m_Localized: Just because all humans,\nall mold, and all insects die
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431552
+    m_Localized: "doesn\u2019t mean I\u2019ll die too, right?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431553
+    m_Localized: "So it\u2019s alright. But I\u2019d like to be alone."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431554
+    m_Localized: "I\u2019ll be better after thinking things\\nthrough. Please don\u2019t
+      mind me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431555
+    m_Localized: "\u201CWe had nothing to lose but everything to gain.\\nThose were
+      the days we dared to dream.\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431556
+    m_Localized: "The people on TV screamed this out\\nloud\u2026 with their arms
+      wide open."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431557
+    m_Localized: Nothing to lose. Everything to gain.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431558
+    m_Localized: <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431559
+    m_Localized: What do you dare dream of?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431560
+    m_Localized: To have nothing and lose nothing,\nsprinting through life barefoot?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431561
+    m_Localized: Or to tread lightly and keep what\nyou love in your arms safe and
+      sound?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431562
+    m_Localized: Sprinting.|Treading.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431563
+    m_Localized: Even though you could careen\noff a cliff, or smash into a wall?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431564
+    m_Localized: (Sounds scary.)|(Even so.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431565
+    m_Localized: "Not quite what I imagined\u2026.\\nI guess I could slow down."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431566
+    m_Localized: I can see you sprinting (/arms wide open).
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431567
+    m_Localized: Even so. Freedom is irreplaceable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431568
+    m_Localized: I can see you sprinting (/arms wide open).
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431569
+    m_Localized: And if they slip from your grip?\nAnd shatter into a thousand pieces?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431570
+    m_Localized: "(Don\u2019t sweat the small things.)|(I\u2019m starting to get
+      scared.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431571
+    m_Localized: "2 That won\u2019t happen. I never\\nlet go of what I hold dear."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431572
+    m_Localized: I can see you treading firmly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431573
+    m_Localized: "2 Then I\u2019ll only carry what\\nI can. I\u2019m bad at letting
+      go."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431574
+    m_Localized: I can see you treading softly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431575
+    m_Localized: "You\u2019re smiling."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431576
+    m_Localized: The meteor collided on an ordinary day.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431577
+    m_Localized: And this is just another story of one dinosaur.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431578
+    m_Localized: He was out hunting, while\nhis partner was taking a nap.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431579
+    m_Localized: His grandfather, born so long ago,\nwas about to draw his last breath.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431580
+    m_Localized: And his daughter was thrumming with life,\nready to break out of
+      her egg into the world.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431581
+    m_Localized: But the thing is, none of them saw it coming.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431582
+    m_Localized: Longings for the future and regrets of the\npast spawned into thousands
+      of colors,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431583
+    m_Localized: "a thunderous roar. And not long\\nafter the dinosaur\u2019s vision
+      turned red,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431584
+    m_Localized: all went the dark with a spark of pain.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431585
+    m_Localized: "\u2026\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431586
+    m_Localized: "\u2026\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431587
+    m_Localized: It sounds terrible.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431588
+    m_Localized: "(Dot\u2026 What caused them to think on\\nthe death of dinosaurs.
+      I feel bad.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431589
+    m_Localized: The dinosaur looked at its crumbling\nbody and at first could not
+      believe it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431590
+    m_Localized: "But he couldn\u2019t roar, and he couldn\u2019t weep,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431591
+    m_Localized: Death had already swallowed\nhim and everything he knew.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431592
+    m_Localized: He must have felt empty.|He must have seethed with rage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431593
+    m_Localized: "Death, extinction\u2026 a chance at life,\\nan entire species was
+      eradicated."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431594
+    m_Localized: Yes, the unfairness of it all must\nhave made him shout out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431595
+    m_Localized: "\u201DHere one moment and gone the next!\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431596
+    m_Localized: "\u201CTo have my beautiful life chained\\nto an unavoidable tragedy,\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431597
+    m_Localized: "\u201Cand dragged away before\\nI can do anything about it!\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431598
+    m_Localized: "But\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431599
+    m_Localized: Oh, is the story not over?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431600
+    m_Localized: "Of course, it never is. His story continues\\nlong after his death,
+      doesn\u2019t it?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431601
+    m_Localized: He remains. He. Remains.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431602
+    m_Localized: After eons and eons past,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431603
+    m_Localized: "he now remains as a T-Rex\u2019s skull\\nin some museum, doesn\u2019t
+      he?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431604
+    m_Localized: "\u201CIt is better than disappearing for good.\\nTo remain as a
+      fossil, in any shape,\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431605
+    m_Localized: "\u201Cmakes me somewhat happy,\u201D\\nI\u2019m sure he would say."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431606
+    m_Localized: "To remain on Earth and be\\nsomeone\u2019s magical discovery,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431607
+    m_Localized: "or someone\u2019s lifelong work to track down,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431608
+    m_Localized: "or someone\u2019s important memory\\nfrom a day at the museum."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431609
+    m_Localized: To depart and yet remain.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431610
+    m_Localized: To be safe from total extinction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431611
+    m_Localized: "\u2026\u2026 For, ever."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431612
+    m_Localized: <nickname>, this inspiring story\nled me to a discovery.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431613
+    m_Localized: Yes? What of?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431614
+    m_Localized: Yes, I have found a way.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431615
+    m_Localized: I should too. I should remain\nas a solid dream-fossil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431616
+    m_Localized: and be your friend for a long\nlong long long time, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431617
+    m_Localized: "Right? I won\u2019t have to disappear?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431618
+    m_Localized: What if, what if? If I were a hideous\nblack ugly Dot-the-fossil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431619
+    m_Localized: and yet you inexplicably loved me\nthe way I am, it would be alright.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431620
+    m_Localized: Right? What if I start researching ways\ntoday? I think I could
+      make it work.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431621
+    m_Localized: We already have a great precedent. Right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431622
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431623
+    m_Localized: "Yeah, Dot. I\u2019ll be rooting for you.|Well, I\u2019ve never
+      heard of dream fossils."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431624
+    m_Localized: (It may be possible. Dot is a creature far\nbeyond what humans can
+      understand.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431625
+    m_Localized: "(Just maybe\u2026)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431626
+    m_Localized: (Is it possible? Even if Dot is a Moon creature\nfar beyond what
+      humans can understand.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431627
+    m_Localized: "(But just maybe\u2026)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431628
+    m_Localized: "Dot-the-fossil\u2026. I\u2019ll be rooting for you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431629
+    m_Localized: Yes, thank you! <nickname>!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431630
+    m_Localized: "Wow\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431631
+    m_Localized: "<nickname>, there\u2019s going to\\nbe a meteor shower soon."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431632
+    m_Localized: Hundreds of stars falling from the sky.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431633
+    m_Localized: I wonder where they all came from?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431634
+    m_Localized: Did they travel all the way from a galaxy \nhundreds of millions
+      of light-years away?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431635
+    m_Localized: Or are they newborn stars born\nfrom a nearby planet?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431637
+    m_Localized: "Actually, Dot, shooting\\nstars aren\u2019t really stars."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431638
+    m_Localized: "They're pieces of rock or dust from space\\nthat burn through Earth\u2019s
+      atmosphere."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431639
+    m_Localized: "Shooting stars?\\nI hear they\u2019re not actually stars."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431640
+    m_Localized: "They\u2019re bits from space that enter Earth,\\nthen burn up and
+      disappear with a wink!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431641
+    m_Localized: "Oh, so they aren\u2019t stars."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431642
+    m_Localized: Did they long to be starlight until the\nvery end,\nonly to die
+      as rock and dust?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431643
+    m_Localized: "Oh, oh\u2026. They must have. Gazing upon\\n their blazing bodies,
+      wretchedly happy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431644
+    m_Localized: And terrified. To have come\ninto this world on their dying breath.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431645
+    m_Localized: "Help, please help! I\u2019m burning up,\\nit hurts, it hurts, it
+      hurts! It hurts!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431646
+    m_Localized: Burnt to a cinder in pure agony,\nbefore fully embracing their fear
+      of death.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431647
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431648
+    m_Localized: I feel like I know them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431649
+    m_Localized: I wonder why.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431650
+    m_Localized: Maybe because we share some traits.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431651
+    m_Localized: So I want to gaze at them.\nWarmly. To ease their pain.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431652
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431653
+    m_Localized: You know,\nI heard humans wish on shooting stars.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431654
+    m_Localized: I have a wish too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431655
+    m_Localized: It glows from miles away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431656
+    m_Localized: "And I\u2019m scared I\u2019ll never reach it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431657
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431658
+    m_Localized: Will a shooting star make\nmy wish come true?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431659
+    m_Localized: "I\u2019ve wished on one before."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431660
+    m_Localized: "I can\u2019t say for certain that it will,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431661
+    m_Localized: "I couldn\u2019t say for certain that it will,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431662
+    m_Localized: "But that vague uncertainty\\ncan at times be named \u2018hope\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431663
+    m_Localized: And that makes all the difference.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431664
+    m_Localized: Do you want to try it with me?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431665
+    m_Localized: Okay.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431666
+    m_Localized: Hold your hands together, and close your eyes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431667
+    m_Localized: This is how humans make a wish.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 642913431668
+    m_Localized: "\u2026\u2026."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

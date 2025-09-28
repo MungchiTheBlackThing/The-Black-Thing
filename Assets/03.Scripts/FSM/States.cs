@@ -180,7 +180,7 @@ public class Writing : GameState, ILoadingInterface, IResetStateInterface
         }
     }
 
-    public void Write(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
+    public void Write(GameManager manager, DotController dot = null, TutorialManager tutomanger = null) // 희진 님 여기예요 근데 왜 안 될까요 ㅠㅠ...
     {
         manager.ObjectManager.PlayThinking();
         manager.ObjectManager.ShowDiary(false);

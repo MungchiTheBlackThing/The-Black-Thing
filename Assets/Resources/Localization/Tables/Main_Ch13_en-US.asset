@@ -1,0 +1,429 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Main_Ch13_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: d607c5273cc042941957eb34f9a6a8be, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 25574797312
+    m_Localized: "Hello, <nickname>\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072000
+    m_Localized: Hello, Dot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072001
+    m_Localized: "You seem to have a lot on\\nyour mind. What\u2019s going on?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072002
+    m_Localized: A lot goes on every single day.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072003
+    m_Localized: "Today\u2026 Ah, I didn\u2019t meet\\nany humans today."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072004
+    m_Localized: A great big tree I often\npassed by told me a story.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072005
+    m_Localized: "The human\u2019s life ends there. Their\\nfates run parallel from
+      here on."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072006
+    m_Localized: "Still, it\u2019s dazzlingly beautiful\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072007
+    m_Localized: <nickname>, you know\nmy trip will soon end.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072008
+    m_Localized: When I leave, will you be left\nall by yourself like the tree was?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072009
+    m_Localized: Not for as long as the\ntree endured, but yes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072010
+    m_Localized: "I hope you don\u2019t stay sad for long."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072011
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072012
+    m_Localized: Dot, will you really be gone\nafter appearing once as a dream?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072013
+    m_Localized: "Can\u2019t you come to me every night?\\nEven if it\u2019s just
+      for a little while."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072014
+    m_Localized: I wish I could.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072015
+    m_Localized: "But the dream-me won\u2019t\\nbe the me that you know."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072016
+    m_Localized: Instead, I may exist within a dream as a subtle\nshadow, passing
+      image, or blurry face .
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072017
+    m_Localized: Then, then you could maybe inhabit\nthe radio, you like that, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072018
+    m_Localized: "Hm, since a dream isn\u2019t a spirit,\\nI\u2019m not sure that\u2019s
+      possible."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072019
+    m_Localized: "If it is, I\u2019ll try! Don\u2019t be scared when\\nthe radio
+      starts talking to you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072020
+    m_Localized: "\u2026\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072021
+    m_Localized: "I\u2019m joking, <nickname>.\\nPlease don\u2019t be sad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072022
+    m_Localized: (Tries to smile.)|(Fails to smile.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25667072023
+    m_Localized: Dot. Are you no longer scared?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266304
+    m_Localized: "Of becoming a dream,\\nand what comes after\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266305
+    m_Localized: "\u2026 I\u2019m still pained and scared."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266306
+    m_Localized: "I\u2019ll return to a state of nothingness,\\nto before \u2018I\u2019
+      was \u2018Dot.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266307
+    m_Localized: Will I be meaningfully different as a\ndisappeared dream than a
+      blob of filth?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266308
+    m_Localized: "Perhaps I\u2019ll be more lonely."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266309
+    m_Localized: "I\u2019ll no longer be discovered by anyone."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266310
+    m_Localized: "That\u2019s not true.|Perhaps."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266311
+    m_Localized: "I\u2019ll be here, on Earth, remembering you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266312
+    m_Localized: How can one ascertain the\nloneliness of being gone?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266313
+    m_Localized: "But this is for sure; I\u2019ll be here,\\non Earth, remembering
+      you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266314
+    m_Localized: "An open novel, the empty bookshelf corner,\\nshadows laying upon
+      the windowsill\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266315
+    m_Localized: All those things and more\nwill remind me of you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266316
+    m_Localized: Like the tree thought of the human?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266317
+    m_Localized: Yes. Like the tree that loved the human.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266318
+    m_Localized: "And when I see people like the ones in the\\nstories you told me,
+      I\u2019ll once again think of you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266319
+    m_Localized: That would make me so happy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266320
+    m_Localized: "The humans I observed and told you\\nabout\u2026 What would they
+      look like now?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266321
+    m_Localized: We met people struggling\nin each of their lives.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266322
+    m_Localized: "Someone who couldn\u2019t speak of love,\\nsomeone who tried to
+      smooth out his deficiency."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266323
+    m_Localized: Someone with many faces, someone\nwho died at their shiniest moment.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266324
+    m_Localized: Someone who covered everything with a\nsmile, someone who swallowed
+      all sadness.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266325
+    m_Localized: Someone who searched for pain, and\nsomeone who lived in a fantasy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266326
+    m_Localized: <nickname>, which of them mad\n the biggest impression on you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266327
+    m_Localized: "The one who made the\\nbiggest impression was\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266328
+    m_Localized: "I\u2019m curious as to why."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266329
+    m_Localized: Ah, I think I understand now.\nYour inner emotions, I mean.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266330
+    m_Localized: I think the human you spoke of\nmust resemble you in some way.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266331
+    m_Localized: "You came to be sympathetic, consoling\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266332
+    m_Localized: as well as warm and\nencouraging towards them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266333
+    m_Localized: Kind <nickname>, I hope your feelings\nare safely delivered to that
+      human.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266334
+    m_Localized: Kind Dot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266335
+    m_Localized: I knew losing you would\nmake my heart ache.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266336
+    m_Localized: I, I too feel forlorn, very much so.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266337
+    m_Localized: Dying and disappearing\nis definitely fragile and futile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266338
+    m_Localized: It slips through your fingers before\nyou can decide to clench your
+      fist.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266339
+    m_Localized: "The bright moments and painful days, every\\nlife, forest, and
+      ocean, seasons and rainbows\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266340
+    m_Localized: "But, passing through the Dark,\\nI realized. It\u2019s not all
+      for nothing."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266341
+    m_Localized: Even if everything is chaos and\nfutility, it can be beautiful as
+      it is.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266342
+    m_Localized: Yes, I believe so. I can believe so.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266343
+    m_Localized: The time we spent together\nwill have made a great change.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266344
+    m_Localized: "Then <nickname>, once this conversation is over,\\nlet\u2019s close
+      our eyes and reminisce our first encounter."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266345
+    m_Localized: Me, as the strange and insignificant monster\nI was; You, as the
+      clumsy human you were;
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266346
+    m_Localized: and Us, as we are now, having\ntravelled through and arrived.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266347
+    m_Localized: That thought will be\nthe most important key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266348
+    m_Localized: Remember? The day I tried to leave you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266349
+    m_Localized: "Of course! It\u2019s impossible to forget.|Huh, I think I remember
+      it?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266350
+    m_Localized: "If you hadn\u2019t shared your kind intentions,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266351
+    m_Localized: "or I hadn\u2019t been ready to absorb your words back then,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266352
+    m_Localized: "and so we gave up on coexisting in this room, what do you think
+      would\u2019ve happened?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266353
+    m_Localized: "Hm\u2026 Well."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266354
+    m_Localized: "I think I\u2019d be sad, even now.|Perhaps we\u2019d have gone
+      our separate ways without much turmoil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266355
+    m_Localized: "It would\u2019ve been the same with me. I\u2019d be sad all day
+      and stick and drip everywhere."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266356
+    m_Localized: Indeed, I did well not to leave!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266357
+    m_Localized: "I\u2019m glad I could be beside you until the \u2018end.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266358
+    m_Localized: "Yes, we may be sad for awhile, but sadness doesn\u2019t last forever.
+      So you\u2019re right."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266359
+    m_Localized: "Perhaps I would\u2019ve made a new friend, a fearsome monster living
+      in the sewers."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266360
+    m_Localized: "But it would\u2019ve been difficult to feel more affection towards
+      him than towards you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266361
+    m_Localized: "I\u2019m glad I could be beside you until the \u2018end.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266362
+    m_Localized: Me too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266363
+    m_Localized: "Mm, I want to be careful bringing up this subject but\u2026 there
+      was \u2018the incident\u2019 as well."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266364
+    m_Localized: What incident?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266365
+    m_Localized: "When I, to your\u2014albeit dusty\u2014only mold friend\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266366
+    m_Localized: "\u2026That\u2019s enough for me to understand."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266367
+    m_Localized: "Yes. Although I didn\u2019t mean to, I still feel sorry about that."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266368
+    m_Localized: "I understand. The more we try to reach each other\u2019s profound
+      levels,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266369
+    m_Localized: it becomes inevitable that we hurt each other or make mistakes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266370
+    m_Localized: "I didn\u2019t know then, but we were in the process of \u2018imprinting\u2019
+      on each other!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266371
+    m_Localized: Imprinting?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25671266372
+    m_Localized: Yes.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,142 +1,142 @@
-Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,TextKor,TextEng,NextLineKey,DeathNote,AfterScript,Exeption
-1,3,1,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 이게 뭐야?","<nickname>, what's this?",2,,,
-1,3,2,1,Dot,Sub,anim_eyesblink,text,빵 위에 피어난 거뭇거뭇한 거.,This black smudge on\nthe piece of bread.,3,,,
-1,3,3,1,Player,Default,anim_eyescorner,selection,"으악, 곰팡이다!|저런, 곰팡이네.","Gah, mold!|Huh. Mold.",4|4,sun|moon,,
-1,3,4,1,Player,Default,anim_eyescorner,text,먹다 만 빵이 있었다는 걸\n까먹었어.... 버려야겠다.,I forgot I had some left-over\nbread. I'd better throw it away.,5,,,
-1,3,5,1,Dot,Sub,anim_eyesblink,text,곰팡이'가 뭐야? 네가\n이걸 싫어하는 게 느껴져.,What's “mold”? I get the sense\nit's something you don't like.,6,,,
-1,3,6,1,Player,Sub,anim_eyesblink,text,"곰팡이는 습하거나 어두운 곳, 상하거나\n썩은 음식 등에서 피어나는 생물이야.","It's what grows in damp or\ndark places, or on spoiled, rotten food.",7,,,
-1,3,7,1,Player,Sub,anim_eyesblink,text,"으, 미안해.",Sorry about that.,8,,,
-1,3,8,1,Player,Sub,anim_eyesblink,text,지구에 온 첫날부터\n이런 걸 보게 하다니.,I hope it doesn't give you the wrong idea\nabout Earth on your first day here.,9,,,
-1,3,9,1,Player,Sub,anim_eyesblink,text,얼른 치워야겠다. 그럼\n책상이 훨씬 깨끗해질 거야!,I'll get rid of it. That'll make\nthe desk much cleaner!,10,,,
-1,3,10,1,Dot,Default,anim_eyesdown,text,습하거나 어두운 곳....,Damp or dark places...,11,,,
-1,3,11,1,Dot,Default,anim_eyescorner,text,상하거나 썩은 음식?,"Spoiled, rotten food?",12,,,
-1,3,12,1,Dot,Default,anim_eyesclosed,text,아. 아....,Oh. Oh....,13,,,
-1,3,13,1,Dot,Default,anim_eyesclosed,text,.......,......,14,,,
-1,3,14,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 잠시만.","<nickname>, wait.",15,,,
-1,3,15,1,Dot,Sub,anim_eyesblink,text,잠시만. 치우지 말아 줘.,Wait. Don't get rid of it.,16,,,
-1,3,16,1,Dot,Sub,anim_eyesblink,text,"나, 얘와 시간을 보내 보고 싶어.",I'd like to spend time with it.,17,,,
-1,3,17,1,Dot,Sub,anim_eyesblink,text,.......,.......,18,,,
-1,3,18,1,Dot,Sub,anim_eyesblink,text,그래도 될까?,May I?,19,,,
-1,3,19,1,Player,Sub,anim_eyesblink,text,응? 왜? 더럽고 징그럽지 않아?,But why? Isn't it dirty and gross?,20,,,
-1,3,20,1,Dot,Sub,anim_eyesblink,text,"부탁이야, <nickname>.","Please, <nickname>.",21,,,
-1,3,21,1,Player,Sub,anim_eyesblink,text,(며칠 동안은 괜찮겠지....),(If it's just for a few days...),22,,,
-1,3,22,1,Player,Sub,anim_eyesblink,text,그래. 그렇게 하자.,Alright then.,23,,,
-1,3,23,1,Dot,Default,anim_mold2,text,...... 안녕?,...... Hello?,24,,,
-1,3,24,1,Dot,Default,anim_mold2,text,...... 달에서 아주 끔찍한 오물을 봤어.,...... I saw terrible filth on the Moon.,25,,,
-1,3,25,1,Dot,Default,anim_mold2,text,지구에도 그런 게 있니.\n너도 그곳에서 태어났어?,Is there filth on Earth as well?\nWere you born from it too?,26,,,
-1,3,26,1,Dot,Default,anim_mold2,text,... 넌 썩은 꿈의 시체에서도.\n피어날 수 있어?,Can you grow on the\ncorpses of rotten dreams?,27,,,
-1,3,27,1,Dot,Default,anim_mold2,text,넌 불결하고 냄새 나는\n것들을 두려워하지 않아?,"Are you not afraid of dirty,\nfoul-smelling things?",28,,,
-1,3,28,1,Dot,Default,anim_mold2,text,나도 두려워하지 않아?,Are you not afraid of me?,29,,,
-1,3,29,1,Dot,Default,anim_mold2,text,왜?,Why?,30,,,
-1,3,30,1,Dot,Default,anim_mold2,text,... 도대체 왜?,How?,31,,,
-1,3,31,1,Dot,Default,anim_mold2,text,이상해.,How very strange.,32,,,
-1,3,32,1,Dot,Default,anim_mold2,text,하지만 고마워.,But thank you.,33,,,
-1,3,33,1,Dot,Default,anim_mold2,text,좋다.,It's nice.,34,,,
-1,3,34,1,Dot,Default,anim_mold2,text,우리는 닮아 있어.,"We're alike, you and me.",35,,,
-1,3,35,1,Dot,Default,anim_mold2,text,인간들이 친구라고 부르는\n걸 우리도 할 수 있겠어.,Perhaps we can be what\nhumans call friends.,,,anim_mold2,
-2,4,36,1,Dot,Default,anim_move,text,<nickname>!,<nickname>!,37,,,
-2,4,37,1,Dot,Sub,anim_eyesblink,text,한껏 몰입하다 보면 <nickname>의\n발소리도 인식하지 못하는구나.,I was so absorbed I didn't\neven hear your footsteps.,38,,,
-2,4,38,1,Dot,Sub,anim_eyesblink,text,몽상하던 나를 눈 뜨게\n하는 것인데도 말이야.,Even though it usually wakes\nme from my daydreams.,39,,,
-2,4,39,1,Dot,Sub,anim_eyesblink,text,미안해.,I'm sorry.,40,,,
-2,4,40,1,Dot,Sub,anim_eyesblink,text,나를 찾았어? 혹시\n나를 몇 번이나 불렀어?,Were you looking for me?\nDid you call out my name?,41,,,
-2,4,41,1,Player,Sub,anim_eyesblink,selection,"아냐, 나도 방금 왔으니 괜찮아.|무슨 일이 있는 걸까 걱정했어.","That's alright, I just got here.|I was worried something had happened.",42|42,passive|active,,
-2,4,42,1,Dot,Sub,anim_eyesclosed_turn,text,<nickname>의 마음은 뭉글뭉글하게\n뭉쳐진 구름처럼 상냥해.,"You're sweet. Like a soft, fluffy cloud.",43,,,
-2,4,43,1,Player,Default,anim_eyesclosed,text,"어디에 그렇게 몰입하고\n있었던 거야, 뭉치야?","What were you so absorbed in, Dot?",44,,,
-2,4,44,1,Dot,Sub,anim_eyesblink,text,"나, 책이란 걸 읽고 있었어!",A book!,45,,,
-2,4,45,1,Dot,Sub,anim_eyesblink,text,독서'라고 불리는 행위에 빠지게 됐어.,An act called 'reading'\nhas enchanted me.,46,,,
-2,4,46,1,Dot,Sub,anim_eyesblink,text,"책은 아주 오래되고 투명한 마법 같아,\n날 붙잡고 그 안으로 속절없이 끌어당기지.","Books are magical, they capture\nmy soul and draw me in.",47,,,
-2,4,47,1,Dot,Sub,anim_eyesblink,text,그 체계는 다른 매체와는 조금 달라.,Their inner workings are\nsomething special.,48,,,
-2,4,48,1,Dot,Sub,anim_eyesblink,text,"정말이야, 내가 정말이지 필요로\n하는 표현 방식을 구사해, 어떤 책은!","Really, some books truly do\nspeak the very language I crave!",49,,,
-2,4,49,1,Dot,Sub,anim_eyesblink,text,"행간의 여백까지 의미가 있는 시나,","From poems that are loudest\nwhen words are left unsaid,",50,,,
-2,4,50,1,Dot,Sub,anim_eyesblink,text,켜켜히 쌓이며 이야기를 만들어 내는\n소설은 내가 특히 좋아하는 종류야.,to novels that care for each and every\nintricate layer of the narrative.,51,,,
-2,4,51,1,Dot,Sub,anim_eyesblink,text,그건 말이지.,It's subtle but sweet.,52,,,
-2,4,52,1,Dot,Sub,anim_eyescorner_turn,text,“내가 하는 말을 있는\n그대로 느낄 수 있어?”,"Like I'm being asked,",53,,,
-2,4,53,1,Dot,Sub,anim_eyesblink,text,그런 질문을 던지는\n것처럼 은근하고 다정해.,<i>“Do you feel me word by word?”</i>,54,,,
-2,4,54,1,Dot,Default,anim_move,text,가끔은 책과 내가 주고받는\n놀이처럼 느껴질 수도 있지!,Sometimes like a friendly exchange\nthat takes place in complete silence!,55,,,
-2,4,55,1,Dot,Sub,anim_eyesblink,text,그 모든 것들이 날 빠지게 만든 거야.,And that's what\nhas enchanted me.,56,,,
-2,4,56,1,Player,Sub,anim_eyesblink,text,(외계 괴물이 책과 사랑에 빠지다니.),(An alien creature\nin love with books.),57,,,
-2,4,57,1,Player,Sub,anim_eyesblink,selection,(낭만적이야. 책에 공감할 수 있으려나?)|(신기해! 글은 어떻게 읽고 이해하는 거지?),(How romantic. Can Dot emphathize with a story?)|(How fascinating! How does Dot read and comprehend?),58|58,sun|moon,,
-2,4,58,1,Dot,Default,anim_eyesdown,text,하지만 있지...,But then again...,59,,,
-2,4,59,1,Dot,Default,anim_eyesdown,text,TV나 라디오나 내가 직접 본\n세상은 꼭 그렇지만은 않아.,"The television, the radio, or the\nworld outside isn't always so.",60,,,
-2,4,60,1,Dot,Sub,anim_eyesblink,text,<nickname>도 꼭 그렇지만은 않아.,"And neither are you, <nickname>.",61,,,
-2,4,61,1,Dot,Sub,anim_eyesblink,text,"외출하거나, 대화하지 않는\n시간에 책을 읽었어. 많이.","When you were out, I had my head\nburied in books. Lots of them.",62,,,
-2,4,62,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 나에게 말을 할 때는 있잖아.","<nickname>, when you talk to me,",63,,,
-2,4,63,1,Dot,Sub,anim_eyesblink,text,납득할 수 있는 설명을 내게 충분히 줘.,"walk me through the pages of your mind,",64,,,
-2,4,64,1,Dot,Sub,anim_eyesblink,text,이 책들이 그러한 것처럼.,just like these books do.,65,,,
-2,4,65,1,Dot,Sub,anim_eyesblink,text,그렇지 않다면 그 시선으로\n볼 수 있는 틀을 줘.,Or share with me a way to understand you.,66,,,
-2,4,66,1,Dot,Sub,anim_eyesblink,text,"표상, 우리 사이의 바다를 넘어,",I want to cross the water between us,67,,,
-2,4,67,1,Dot,Sub,anim_eyesblink,text,내가 같은 편에서 침잠할 수 있게.,and sink alongside you.,68,,,
-2,4,68,1,Dot,Sub,anim_eyesblink,text,"네 안의 파도, 그의 하얗게 부서지며\n호흡하는 너만의 숨을 오롯이 느낄 수 있게.","To follow your inner tides,\nthe patterns of their rise and fall.",69,,,
-2,4,69,1,Dot,Sub,anim_eyesblink,text,....,......,70,,,
-2,4,70,1,Dot,Default,anim_eyesdown,text,그렇지 않으면 알 수 없으니까.,Or else we'll never know.,71,,,
-2,4,71,1,Dot,Default,anim_eyesdown,text,"서로에게 영원한 이방인으로 남은 채\n잊히다가, 메말라 죽어 버릴 거야.","Forever strangers,\ndrowning in our solitude.",72,,,
-2,4,72,1,Dot,Sub,anim_eyesblink,text,아무리 난해할지라도 나는 전부\n듣고 있으니까. 들여보내 줘.,"Whatever you tell me, I'll always\nbe listening. So let me in.",73,,,
-2,4,73,1,Dot,Default,anim_eyesclosed,text,날 그 너머에 내버려 두지 마.,Don't leave me out there.,,,anim_reading,
-3,5,74,1,Dot,Default,anim_eyesclosed,text,"꿈, 꿈. 동화, 동화.","Blue, blue.\nSound, sound.",75,,,
-3,5,75,1,Dot,Default,anim_eyesclosed,text,파란... 파란. 파란 파란!,Present... present.,76,,,
-3,5,76,1,Player,Sub,anim_eyesblink,selection,"뭐 해, 뭉치야?|재미있는 혼잣말이네?","What are you doing, Dot?|(Wait and see what Dot is up to.)",77|77,active|passive,,
-3,5,77,1,Dot,Default,anim_move,text,"인간의 언어를 흥미로워하고 있었어!\n그런데 이 특정 언어들은 이상해, <nickname>.","I'm musing over the human language.\nCertain words are peculiar, <nickname>.",78,,,
-3,5,78,1,Dot,Sub,anim_eyesblink,text,"똑같은 모양, 똑같은 소리 안에\n똑같지 않은 뜻과 마음이 담겨 있어.",They look and sound the same\nbut their insides aren't so.,79,,,
-3,5,79,1,Player,Sub,anim_eyesblink,text,"맞아, 우리 언어에서는 똑같이 생긴\n단어가 다른 의미로 사용될 수 있지.",Sometimes words that look\nthe same have different meanings.,80,,,
-3,5,80,1,Dot,Sub,anim_eyescorner_turn,text,"밤의 꿈, 그리고 미래의 꿈.","Blue, the color of the sea.\nAnd blue, a sense of dull melancholy.",81,,,
-3,5,81,1,Dot,Sub,anim_eyesblink,text,"동화, 아이들의 신비롭고\n다정한 책장 속 놀이터.","Sound, what echoes in your room.",82,,,
-3,5,82,1,Dot,Sub,anim_eyesblink,text,"동화, 곁에 있는 무언가를\n닮아가며 비슷해지는 현상.","Sound, a state of firm tranquility.\nClosed eyes and a settled pulse.",83,,,
-3,5,83,1,Dot,Sub,anim_eyesblink,text,"푸르른 것들에 붙이는 수식, 파란.\n푸르른 바다에 너울대는 물결, 파란.","Present, the time. And present, a gift.",84,,,
-3,5,84,1,Dot,Default,anim_bounce,text,"꿈-꿈, 동화-동화, 파란-파란!","Blue-blue, sound-sound,\npresent-present!",85,,,
-3,5,85,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 있잖아.","<nickname>, guess what.",86,,,
-3,5,86,1,Dot,Sub,anim_eyesblink,text,"이 단어들은 말이야,","Saying these words,",87,,,
-3,5,87,1,Dot,Sub,anim_eyesblink,text,똑 닮은 구슬을 혀끝에서 굴려 보았을 때\n전혀 다른 맛이 나는 것과 같아.,are like rolling identical marbles on your\ntongue and tasting different flavors.,88,,,
-3,5,88,1,Player,Sub,anim_eyesblink,selection,"우와, 멋진 표현인데?|그걸 우린 다의어라고 해.","Wow, that's a great way to put it.|That's what we call a polysemy.",89|93,sun|moon,,
-3,5,89,1,Player,Sub,anim_eyesblink,text,"맞아, '의미와 뜻'이 하나의 맛이고, 단어는\n그것을 가둬 둔 구슬이라 생각해 보자.","Let's say each meaning is a flavor,\nand a word the marble that encases it.",90,,,
-3,5,90,1,Player,Sub,anim_eyesblink,text,"세상에는, 그리고 마음 안에는\n수많은 비정형의 '맛'들이 존재해.","There are numerous intangible\n'flavors' in the world, and within us.",91,,,
-3,5,91,1,Player,Sub,anim_eyesside_turn,text,"그걸 전달하고자 단어라는 구슬을 만들었는\n데, 때로는 그 개수가 부족할 때도 있었지.","To deliver them we made marbles, or words,\nbut sometimes there weren't enough.",92,,,
-3,5,92,1,Player,Sub,anim_eyesblink,text,그래서 하나의 구슬 안에 몇 가지\n맛들을 더 넣어야 했던 거야!,So we had to add a few more\nflavors to a single marble!,99,,,
-3,5,93,1,Player,Sub,anim_eyesblink,text,인간의 언어 체계에서는 빈번한 현상이야.,It's quite common\nin the human language.,94,,,
-3,5,94,1,Player,Sub,anim_eyesblink,text,"하나의 단어가 하나의 틀이라면, 그 '틀' 안\n엔 여러 의미가 공존하며 살아 있을 수 있지.","If a single word is a single box, different\nmeanings can coexist in that 'box'.",95,,,
-3,5,95,1,Player,Sub,anim_eyesblink,text,"“실례지만 당신과 같은 틀을 좀 사용하겠습\n니다”, 한 의미가 다른 의미에게 말을 걸어.","“Pardon, I would like to use the same box,”\none meaning might say to another.",96,,,
-3,5,96,1,Player,Sub,anim_eyesblink,text,“할당된 단어는 마음에 좀 드시나요?”,“Do you find your assigned\nword to your liking?”,97,,,
-3,5,97,1,Player,Sub,anim_eyesblink,text,그들은 이런 식으로 정중하게 이야기를\n나누며 지낼 수도 있지 않을까.,—such conversations might\ntake place in a respectful manner.,98,,,
-3,5,98,1,Dot,Sub,anim_eyescorner_turn,text,인간들이 단어를 주고받을 때... 서로 어떤\n의미를 의도한 것인지 헷갈리지는 않을까?,Won't humans get confused\nwhen they use these words?,99,,,
-3,5,99,1,Player,Sub,anim_eyesblink,text,당연히 헷갈리지. 하지만 그게 인간\n언어의 매력이라고 볼 수 있다고 생각해.,Of course. But that's the\ncharm of human language.,100,,,
-3,5,100,1,Dot,Sub,anim_eyesblink,text,소통 오류의 가능성.,It's open to confusion.,101,,,
-3,5,101,1,Dot,Default,anim_move,text,... 오.,... Oh.,102,,,
-3,5,102,1,Dot,Default,anim_bounce,text,오!,Oh!,103,,,
-3,5,103,1,Dot,Sub,anim_eyesblink,text,해 보고 싶은 게 생겼어.,I want to try something. Can you make\nme a sentence with these sets of words?,104,,,
-3,5,104,1,Dot,Sub,anim_eyesblink,text,"꿈, 꿈, 동화, 동화, 파란, 파란.\n이 단어들로 하나의 문장을 만들어 줄래?","Blue, blue, sound, sound,\nand present, present.",105,,,
-3,5,105,1,Dot,Sub,anim_eyesblink,text,"소통 오류의 가능성을 극대화하며,","A sentence that welcomes\nconfusion with open arms,",106,,,
-3,5,106,1,Dot,Sub,anim_eyesblink,text,인간 언어의 매력을 최대로\n증폭한 문장을 말이야!,and makes the human\nlanguage as charming as can be!,107,,,
-3,5,107,1,Player,Sub,anim_eyesblink,textbox,"우선, 꿈과 꿈을 사용해 보자면...(textbox)","First, blue and blue.",108,,,
-3,5,108,1,Player,Sub,anim_eyesblink,textbox,"다음은 동화와 동화였던가?(textbox)","Next, sound and sound.",109,,,
-3,5,109,1,Player,Sub,anim_eyesblink,textbox,"마지막으로, 파란과 파란.(textbox)","And finally, present and present.",110,,,
-3,5,110,1,Dot,Default,anim_bounce,text,두 배로 재미있어졌어!,Now its twice as much fun!,111,,,
-3,5,111,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 언어라는 건 날 들뜨게 하는 동시에...\n아주, 아주, 아주 어렵고 혼란하게 해.","<nickname>, language excites me...\nbut confuses me very, very, very much.",112,,,
-3,5,112,1,Dot,Sub,anim_eyesblink,text,"이제 다시 돌아갈게, 나의 머릿속으로.\n더 많은 구슬들을 발음해 보고 싶어.",I'll return to my corner now. I'd like\nto try out more of these marbles.,,,anim_walking,
-4,6,113,1,Dot,Default,anim_move,text,침대 아래 무언가 있는 것 같아!,What is that under the bed?,114,,,
-4,6,114,1,Player,Sub,anim_eyesblink,text,응?,Sorry?,115,,,
-4,6,115,1,Dot,Sub,anim_eyesblink,text,"일기를 쓰다가, 낮에 봤던 흥미로운\n놀이를 너와 해 보고 싶어졌어.","I was just writing in my diary, and now\nI'd like to try an interesting game with you.",116,,,
-4,6,116,1,Dot,Sub,anim_eyesblink,text,단 '여섯 단어'로 하나의 이야기를 만들기.,Making up a complete\nstory with just six words.,117,,,
-4,6,117,1,Player,Sub,anim_eyesblink,selection,일기 쓰기에 집중하지 않아도 돼?|때마침 나도 수다 상대가 필요했어.,Don't you need to focus on your diary?|I was just in the mood for a chat.,118|118,passive|active,,
-4,6,118,1,Dot,Sub,anim_eyesside_turn,text,작문하던 나의 지성에게 숨 쉴\n공간을 주는 것도 좋을 듯했지!,I thought my mind could use\na break from all that writing.,119,,,
-4,6,119,1,Dot,Sub,anim_eyesblink,text,"그래서 말이야, 어떤 저명한\n작가는 이렇게 썼다고 해.",They say that a celebrated\nnovelist wrote this one:,120,,,
-4,6,120,1,Dot,Sub,anim_eyesblink,text,"“팝니다: 아기 신발. 신은 적 없음.""","""For sale: baby shoes. Never worn.""",121,,,
-4,6,121,1,Dot,Default,anim_eyesclosed,text,"아기의 마지막 숨소리가 들리고, \n어머니의 텅 빈 슬픔이 내려앉아.","I can almost hear the baby's final\nbreath, see the mother's numb grief,",122,,,
-4,6,122,1,Dot,Default,anim_eyesclosed,text,"끔찍하지. 방에 메아리치는 비탄과\n죽음의 손아귀, 그리고 정적...",feel the suffocating silence\necho in the empty nursery...,123,,,
-4,6,123,1,Dot,Default,anim_eyesclosed,text,이 모든 걸 고작 여섯\n단어 안에 내포하다니.,All this in only six words.,124,,,
-4,6,124,1,Dot,Sub,anim_eyesblink,text,단어 간 여백의 무게가 내 마음을\n꼭 쥔 채 묵직하게 짓누르고 있어.,The weight of what's left unsaid. How it\nseizes the heart and refuses to let go.,125,,,
-4,6,125,1,Dot,Default,anim_move,text,"아름다운 천재성이야, 이건!",Pure genius!,126,,,
-4,6,126,1,Dot,Sub,anim_eyesblink,text,그래서... 나도 여섯 단어\n소설을 만들어봤어!,So... I made up a six-word story too!,127,,,
-4,6,127,1,Dot,Sub,anim_eyesblink,text,그리고 하루종일 내 이야기를 이어나갈\n수 있는 87가지의 갈래를 생각해봤어.,Then I spent the rest of the day imagining\n87 ways my story could unfold.,128,,,
-4,6,128,1,Dot,Sub,anim_eyesblink,text,이건 16번째 아이디어야:,Here's my 16th idea:,129,,,
-4,6,129,1,Dot,Sub,anim_eyesblink,text,“침대 아래 무언가 있는 것 같아.”\n라고 네가 중얼거렸어. 깜깜한 밤이었지.,"""What is that under the bed? It looks scary.""\nsaid <nickname>. It was a dark, dark night.",130,,,
-4,6,130,1,Dot,Sub,anim_eyesblink,text,“무서워하지 마. 난 널 해치지 않아.”\n조그마한 목소리가 속삭였지.,"""Don't be scared. I won't hurt you.""\nwhispered an echoing voice.",131,,,
-4,6,131,1,Dot,Sub,anim_eyesblink,text,“왜냐하면... 나인 걸! 놀랐지!”\n하고 내가 침대 밑에서 튀어나와!,"""It's only... me! Boo!"" said I, popping\nout from under the bed! Hehe.",132,,,
-4,6,132,1,Dot,Default,anim_move,text,마음에 들어? 널 생각하면서 썼어.,Do you like it? I wrote it especially for you.,133,,,
-4,6,133,1,Player,Sub,anim_eyesblink,text,물론 마음에 들지.,Of course I do.,134,,,
-4,6,134,1,Dot,Default,anim_move,text,"<nickname>, <nickname>, 궁금해졌어.","<nickname>, <nickname>.\nI'm curious.",135,,,
-4,6,135,1,Dot,Sub,anim_eyesblink,text,너라면 내 이야기를 어떻게 이어나갈 거야?,How would you continue my six-word story?,136,,,
-4,6,136,1,Dot,Sub,anim_eyesblink,text,침대 아래 '무엇이' 있는 걸까?,"That is, what <i>is<\i> that under the bed?",137,,,
-4,6,137,1,Player,Sub,anim_eyesblink,textbox,“침대 아래 무언가 있는 것 같아”,“There is something under the bed.”,138,,,
-4,6,138,1,Dot,Default,anim_move,text,오! 오와! 정말 놀라워!\n정말 멋진 아이디어야!,Oh! Oh! There you have it!\It's a great idea!,139,,,
-4,6,139,1,Dot,Sub,anim_eyesblink,text,"좋아. 나의 지성에게 충분한\n휴식을 선사했으니까,","Alright. Now that I've given my\nmind its well-deserved rest,",140,,,
-4,6,140,1,Dot,Sub,anim_eyesblink,text,난 이만 다시 일기를 쓰러 가 볼게.,I will now go back to my diary.,141,,,
-4,6,141,1,Dot,Sub,anim_eyesblink,text,나의 첫 번째 일기 말이야!,And my first ever entry!,,,anim_diary,
+﻿Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,TextKor,TextEng,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
+1,3,1,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 이게 뭐야?","<nickname>, what's this?",2,,,,Sub_Ch1,S1_L0001
+1,3,2,1,Dot,Sub,anim_eyesblink,text,빵 위에 피어난 거뭇거뭇한 거.,This black smudge on\nthe piece of bread.,3,,,,Sub_Ch1,S1_L0002
+1,3,3,1,Player,Default,anim_eyescorner,selection,"으악, 곰팡이다!|저런, 곰팡이네.","Gah, mold!|Huh. Mold.",4|4,sun|moon,,,Sub_Ch1,S1_L0003
+1,3,4,1,Player,Default,anim_eyescorner,text,먹다 만 빵이 있었다는 걸\n까먹었어.... 버려야겠다.,I forgot I had some left-over\nbread. I'd better throw it away.,5,,,,Sub_Ch1,S1_L0004
+1,3,5,1,Dot,Sub,anim_eyesblink,text,곰팡이'가 뭐야? 네가\n이걸 싫어하는 게 느껴져.,What's “mold”? I get the sense\nit's something you don't like.,6,,,,Sub_Ch1,S1_L0005
+1,3,6,1,Player,Sub,anim_eyesblink,text,"곰팡이는 습하거나 어두운 곳, 상하거나\n썩은 음식 등에서 피어나는 생물이야.","It's what grows in damp or\ndark places, or on spoiled, rotten food.",7,,,,Sub_Ch1,S1_L0006
+1,3,7,1,Player,Sub,anim_eyesblink,text,"으, 미안해.",Sorry about that.,8,,,,Sub_Ch1,S1_L0007
+1,3,8,1,Player,Sub,anim_eyesblink,text,지구에 온 첫날부터\n이런 걸 보게 하다니.,I hope it doesn't give you the wrong idea\nabout Earth on your first day here.,9,,,,Sub_Ch1,S1_L0008
+1,3,9,1,Player,Sub,anim_eyesblink,text,얼른 치워야겠다. 그럼\n책상이 훨씬 깨끗해질 거야!,I'll get rid of it. That'll make\nthe desk much cleaner!,10,,,,Sub_Ch1,S1_L0009
+1,3,10,1,Dot,Default,anim_eyesdown,text,습하거나 어두운 곳....,Damp or dark places...,11,,,,Sub_Ch1,S1_L0010
+1,3,11,1,Dot,Default,anim_eyescorner,text,상하거나 썩은 음식?,"Spoiled, rotten food?",12,,,,Sub_Ch1,S1_L0011
+1,3,12,1,Dot,Default,anim_eyesclosed,text,아. 아....,Oh. Oh....,13,,,,Sub_Ch1,S1_L0012
+1,3,13,1,Dot,Default,anim_eyesclosed,text,.......,......,14,,,,Sub_Ch1,S1_L0013
+1,3,14,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 잠시만.","<nickname>, wait.",15,,,,Sub_Ch1,S1_L0014
+1,3,15,1,Dot,Sub,anim_eyesblink,text,잠시만. 치우지 말아 줘.,Wait. Don't get rid of it.,16,,,,Sub_Ch1,S1_L0015
+1,3,16,1,Dot,Sub,anim_eyesblink,text,"나, 얘와 시간을 보내 보고 싶어.",I'd like to spend time with it.,17,,,,Sub_Ch1,S1_L0016
+1,3,17,1,Dot,Sub,anim_eyesblink,text,.......,.......,18,,,,Sub_Ch1,S1_L0017
+1,3,18,1,Dot,Sub,anim_eyesblink,text,그래도 될까?,May I?,19,,,,Sub_Ch1,S1_L0018
+1,3,19,1,Player,Sub,anim_eyesblink,text,응? 왜? 더럽고 징그럽지 않아?,But why? Isn't it dirty and gross?,20,,,,Sub_Ch1,S1_L0019
+1,3,20,1,Dot,Sub,anim_eyesblink,text,"부탁이야, <nickname>.","Please, <nickname>.",21,,,,Sub_Ch1,S1_L0020
+1,3,21,1,Player,Sub,anim_eyesblink,text,(며칠 동안은 괜찮겠지....),(If it's just for a few days...),22,,,,Sub_Ch1,S1_L0021
+1,3,22,1,Player,Sub,anim_eyesblink,text,그래. 그렇게 하자.,Alright then.,23,,,,Sub_Ch1,S1_L0022
+1,3,23,1,Dot,Default,anim_mold2,text,...... 안녕?,...... Hello?,24,,,,Sub_Ch1,S1_L0023
+1,3,24,1,Dot,Default,anim_mold2,text,...... 달에서 아주 끔찍한 오물을 봤어.,...... I saw terrible filth on the Moon.,25,,,,Sub_Ch1,S1_L0024
+1,3,25,1,Dot,Default,anim_mold2,text,지구에도 그런 게 있니.\n너도 그곳에서 태어났어?,Is there filth on Earth as well?\nWere you born from it too?,26,,,,Sub_Ch1,S1_L0025
+1,3,26,1,Dot,Default,anim_mold2,text,... 넌 썩은 꿈의 시체에서도.\n피어날 수 있어?,Can you grow on the\ncorpses of rotten dreams?,27,,,,Sub_Ch1,S1_L0026
+1,3,27,1,Dot,Default,anim_mold2,text,넌 불결하고 냄새 나는\n것들을 두려워하지 않아?,"Are you not afraid of dirty,\nfoul-smelling things?",28,,,,Sub_Ch1,S1_L0027
+1,3,28,1,Dot,Default,anim_mold2,text,나도 두려워하지 않아?,Are you not afraid of me?,29,,,,Sub_Ch1,S1_L0028
+1,3,29,1,Dot,Default,anim_mold2,text,왜?,Why?,30,,,,Sub_Ch1,S1_L0029
+1,3,30,1,Dot,Default,anim_mold2,text,... 도대체 왜?,How?,31,,,,Sub_Ch1,S1_L0030
+1,3,31,1,Dot,Default,anim_mold2,text,이상해.,How very strange.,32,,,,Sub_Ch1,S1_L0031
+1,3,32,1,Dot,Default,anim_mold2,text,하지만 고마워.,But thank you.,33,,,,Sub_Ch1,S1_L0032
+1,3,33,1,Dot,Default,anim_mold2,text,좋다.,It's nice.,34,,,,Sub_Ch1,S1_L0033
+1,3,34,1,Dot,Default,anim_mold2,text,우리는 닮아 있어.,"We're alike, you and me.",35,,,,Sub_Ch1,S1_L0034
+1,3,35,1,Dot,Default,anim_mold2,text,인간들이 친구라고 부르는\n걸 우리도 할 수 있겠어.,Perhaps we can be what\nhumans call friends.,,,anim_mold2,,Sub_Ch1,S1_L0035
+2,4,36,1,Dot,Default,anim_move,text,<nickname>!,<nickname>!,37,,,,Sub_Ch1,S1_L0036
+2,4,37,1,Dot,Sub,anim_eyesblink,text,한껏 몰입하다 보면 <nickname>의\n발소리도 인식하지 못하는구나.,I was so absorbed I didn't\neven hear your footsteps.,38,,,,Sub_Ch1,S1_L0037
+2,4,38,1,Dot,Sub,anim_eyesblink,text,몽상하던 나를 눈 뜨게\n하는 것인데도 말이야.,Even though it usually wakes\nme from my daydreams.,39,,,,Sub_Ch1,S1_L0038
+2,4,39,1,Dot,Sub,anim_eyesblink,text,미안해.,I'm sorry.,40,,,,Sub_Ch1,S1_L0039
+2,4,40,1,Dot,Sub,anim_eyesblink,text,나를 찾았어? 혹시\n나를 몇 번이나 불렀어?,Were you looking for me?\nDid you call out my name?,41,,,,Sub_Ch1,S1_L0040
+2,4,41,1,Player,Sub,anim_eyesblink,selection,"아냐, 나도 방금 왔으니 괜찮아.|무슨 일이 있는 걸까 걱정했어.","That's alright, I just got here.|I was worried something had happened.",42|42,passive|active,,,Sub_Ch1,S1_L0041
+2,4,42,1,Dot,Sub,anim_eyesclosed_turn,text,<nickname>의 마음은 뭉글뭉글하게\n뭉쳐진 구름처럼 상냥해.,"You're sweet. Like a soft, fluffy cloud.",43,,,,Sub_Ch1,S1_L0042
+2,4,43,1,Player,Default,anim_eyesclosed,text,"어디에 그렇게 몰입하고\n있었던 거야, 뭉치야?","What were you so absorbed in, Dot?",44,,,,Sub_Ch1,S1_L0043
+2,4,44,1,Dot,Sub,anim_eyesblink,text,"나, 책이란 걸 읽고 있었어!",A book!,45,,,,Sub_Ch1,S1_L0044
+2,4,45,1,Dot,Sub,anim_eyesblink,text,독서'라고 불리는 행위에 빠지게 됐어.,An act called 'reading'\nhas enchanted me.,46,,,,Sub_Ch1,S1_L0045
+2,4,46,1,Dot,Sub,anim_eyesblink,text,"책은 아주 오래되고 투명한 마법 같아,\n날 붙잡고 그 안으로 속절없이 끌어당기지.","Books are magical, they capture\nmy soul and draw me in.",47,,,,Sub_Ch1,S1_L0046
+2,4,47,1,Dot,Sub,anim_eyesblink,text,그 체계는 다른 매체와는 조금 달라.,Their inner workings are\nsomething special.,48,,,,Sub_Ch1,S1_L0047
+2,4,48,1,Dot,Sub,anim_eyesblink,text,"정말이야, 내가 정말이지 필요로\n하는 표현 방식을 구사해, 어떤 책은!","Really, some books truly do\nspeak the very language I crave!",49,,,,Sub_Ch1,S1_L0048
+2,4,49,1,Dot,Sub,anim_eyesblink,text,"행간의 여백까지 의미가 있는 시나,","From poems that are loudest\nwhen words are left unsaid,",50,,,,Sub_Ch1,S1_L0049
+2,4,50,1,Dot,Sub,anim_eyesblink,text,켜켜히 쌓이며 이야기를 만들어 내는\n소설은 내가 특히 좋아하는 종류야.,to novels that care for each and every\nintricate layer of the narrative.,51,,,,Sub_Ch1,S1_L0050
+2,4,51,1,Dot,Sub,anim_eyesblink,text,그건 말이지.,It's subtle but sweet.,52,,,,Sub_Ch1,S1_L0051
+2,4,52,1,Dot,Sub,anim_eyescorner_turn,text,“내가 하는 말을 있는\n그대로 느낄 수 있어?”,"Like I'm being asked,",53,,,,Sub_Ch1,S1_L0052
+2,4,53,1,Dot,Sub,anim_eyesblink,text,그런 질문을 던지는\n것처럼 은근하고 다정해.,<i>“Do you feel me word by word?”</i>,54,,,,Sub_Ch1,S1_L0053
+2,4,54,1,Dot,Default,anim_move,text,가끔은 책과 내가 주고받는\n놀이처럼 느껴질 수도 있지!,Sometimes like a friendly exchange\nthat takes place in complete silence!,55,,,,Sub_Ch1,S1_L0054
+2,4,55,1,Dot,Sub,anim_eyesblink,text,그 모든 것들이 날 빠지게 만든 거야.,And that's what\nhas enchanted me.,56,,,,Sub_Ch1,S1_L0055
+2,4,56,1,Player,Sub,anim_eyesblink,text,(외계 괴물이 책과 사랑에 빠지다니.),(An alien creature\nin love with books.),57,,,,Sub_Ch1,S1_L0056
+2,4,57,1,Player,Sub,anim_eyesblink,selection,(낭만적이야. 책에 공감할 수 있으려나?)|(신기해! 글은 어떻게 읽고 이해하는 거지?),(How romantic. Can Dot emphathize with a story?)|(How fascinating! How does Dot read and comprehend?),58|58,sun|moon,,,Sub_Ch1,S1_L0057
+2,4,58,1,Dot,Default,anim_eyesdown,text,하지만 있지...,But then again...,59,,,,Sub_Ch1,S1_L0058
+2,4,59,1,Dot,Default,anim_eyesdown,text,TV나 라디오나 내가 직접 본\n세상은 꼭 그렇지만은 않아.,"The television, the radio, or the\nworld outside isn't always so.",60,,,,Sub_Ch1,S1_L0059
+2,4,60,1,Dot,Sub,anim_eyesblink,text,<nickname>도 꼭 그렇지만은 않아.,"And neither are you, <nickname>.",61,,,,Sub_Ch1,S1_L0060
+2,4,61,1,Dot,Sub,anim_eyesblink,text,"외출하거나, 대화하지 않는\n시간에 책을 읽었어. 많이.","When you were out, I had my head\nburied in books. Lots of them.",62,,,,Sub_Ch1,S1_L0061
+2,4,62,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 나에게 말을 할 때는 있잖아.","<nickname>, when you talk to me,",63,,,,Sub_Ch1,S1_L0062
+2,4,63,1,Dot,Sub,anim_eyesblink,text,납득할 수 있는 설명을 내게 충분히 줘.,"walk me through the pages of your mind,",64,,,,Sub_Ch1,S1_L0063
+2,4,64,1,Dot,Sub,anim_eyesblink,text,이 책들이 그러한 것처럼.,just like these books do.,65,,,,Sub_Ch1,S1_L0064
+2,4,65,1,Dot,Sub,anim_eyesblink,text,그렇지 않다면 그 시선으로\n볼 수 있는 틀을 줘.,Or share with me a way to understand you.,66,,,,Sub_Ch1,S1_L0065
+2,4,66,1,Dot,Sub,anim_eyesblink,text,"표상, 우리 사이의 바다를 넘어,",I want to cross the water between us,67,,,,Sub_Ch1,S1_L0066
+2,4,67,1,Dot,Sub,anim_eyesblink,text,내가 같은 편에서 침잠할 수 있게.,and sink alongside you.,68,,,,Sub_Ch1,S1_L0067
+2,4,68,1,Dot,Sub,anim_eyesblink,text,"네 안의 파도, 그의 하얗게 부서지며\n호흡하는 너만의 숨을 오롯이 느낄 수 있게.","To follow your inner tides,\nthe patterns of their rise and fall.",69,,,,Sub_Ch1,S1_L0068
+2,4,69,1,Dot,Sub,anim_eyesblink,text,....,......,70,,,,Sub_Ch1,S1_L0069
+2,4,70,1,Dot,Default,anim_eyesdown,text,그렇지 않으면 알 수 없으니까.,Or else we'll never know.,71,,,,Sub_Ch1,S1_L0070
+2,4,71,1,Dot,Default,anim_eyesdown,text,"서로에게 영원한 이방인으로 남은 채\n잊히다가, 메말라 죽어 버릴 거야.","Forever strangers,\ndrowning in our solitude.",72,,,,Sub_Ch1,S1_L0071
+2,4,72,1,Dot,Sub,anim_eyesblink,text,아무리 난해할지라도 나는 전부\n듣고 있으니까. 들여보내 줘.,"Whatever you tell me, I'll always\nbe listening. So let me in.",73,,,,Sub_Ch1,S1_L0072
+2,4,73,1,Dot,Default,anim_eyesclosed,text,날 그 너머에 내버려 두지 마.,Don't leave me out there.,,,anim_reading,,Sub_Ch1,S1_L0073
+3,5,74,1,Dot,Default,anim_eyesclosed,text,"꿈, 꿈. 동화, 동화.","Blue, blue.\nSound, sound.",75,,,,Sub_Ch1,S1_L0074
+3,5,75,1,Dot,Default,anim_eyesclosed,text,파란... 파란. 파란 파란!,Present... present.,76,,,,Sub_Ch1,S1_L0075
+3,5,76,1,Player,Sub,anim_eyesblink,selection,"뭐 해, 뭉치야?|재미있는 혼잣말이네?","What are you doing, Dot?|(Wait and see what Dot is up to.)",77|77,active|passive,,,Sub_Ch1,S1_L0076
+3,5,77,1,Dot,Default,anim_move,text,"인간의 언어를 흥미로워하고 있었어!\n그런데 이 특정 언어들은 이상해, <nickname>.","I'm musing over the human language.\nCertain words are peculiar, <nickname>.",78,,,,Sub_Ch1,S1_L0077
+3,5,78,1,Dot,Sub,anim_eyesblink,text,"똑같은 모양, 똑같은 소리 안에\n똑같지 않은 뜻과 마음이 담겨 있어.",They look and sound the same\nbut their insides aren't so.,79,,,,Sub_Ch1,S1_L0078
+3,5,79,1,Player,Sub,anim_eyesblink,text,"맞아, 우리 언어에서는 똑같이 생긴\n단어가 다른 의미로 사용될 수 있지.",Sometimes words that look\nthe same have different meanings.,80,,,,Sub_Ch1,S1_L0079
+3,5,80,1,Dot,Sub,anim_eyescorner_turn,text,"밤의 꿈, 그리고 미래의 꿈.","Blue, the color of the sea.\nAnd blue, a sense of dull melancholy.",81,,,,Sub_Ch1,S1_L0080
+3,5,81,1,Dot,Sub,anim_eyesblink,text,"동화, 아이들의 신비롭고\n다정한 책장 속 놀이터.","Sound, what echoes in your room.",82,,,,Sub_Ch1,S1_L0081
+3,5,82,1,Dot,Sub,anim_eyesblink,text,"동화, 곁에 있는 무언가를\n닮아가며 비슷해지는 현상.","Sound, a state of firm tranquility.\nClosed eyes and a settled pulse.",83,,,,Sub_Ch1,S1_L0082
+3,5,83,1,Dot,Sub,anim_eyesblink,text,"푸르른 것들에 붙이는 수식, 파란.\n푸르른 바다에 너울대는 물결, 파란.","Present, the time. And present, a gift.",84,,,,Sub_Ch1,S1_L0083
+3,5,84,1,Dot,Default,anim_bounce,text,"꿈-꿈, 동화-동화, 파란-파란!","Blue-blue, sound-sound,\npresent-present!",85,,,,Sub_Ch1,S1_L0084
+3,5,85,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 있잖아.","<nickname>, guess what.",86,,,,Sub_Ch1,S1_L0085
+3,5,86,1,Dot,Sub,anim_eyesblink,text,"이 단어들은 말이야,","Saying these words,",87,,,,Sub_Ch1,S1_L0086
+3,5,87,1,Dot,Sub,anim_eyesblink,text,똑 닮은 구슬을 혀끝에서 굴려 보았을 때\n전혀 다른 맛이 나는 것과 같아.,are like rolling identical marbles on your\ntongue and tasting different flavors.,88,,,,Sub_Ch1,S1_L0087
+3,5,88,1,Player,Sub,anim_eyesblink,selection,"우와, 멋진 표현인데?|그걸 우린 다의어라고 해.","Wow, that's a great way to put it.|That's what we call a polysemy.",89|93,sun|moon,,,Sub_Ch1,S1_L0088
+3,5,89,1,Player,Sub,anim_eyesblink,text,"맞아, '의미와 뜻'이 하나의 맛이고, 단어는\n그것을 가둬 둔 구슬이라 생각해 보자.","Let's say each meaning is a flavor,\nand a word the marble that encases it.",90,,,,Sub_Ch1,S1_L0089
+3,5,90,1,Player,Sub,anim_eyesblink,text,"세상에는, 그리고 마음 안에는\n수많은 비정형의 '맛'들이 존재해.","There are numerous intangible\n'flavors' in the world, and within us.",91,,,,Sub_Ch1,S1_L0090
+3,5,91,1,Player,Sub,anim_eyesside_turn,text,"그걸 전달하고자 단어라는 구슬을 만들었는\n데, 때로는 그 개수가 부족할 때도 있었지.","To deliver them we made marbles, or words,\nbut sometimes there weren't enough.",92,,,,Sub_Ch1,S1_L0091
+3,5,92,1,Player,Sub,anim_eyesblink,text,그래서 하나의 구슬 안에 몇 가지\n맛들을 더 넣어야 했던 거야!,So we had to add a few more\nflavors to a single marble!,99,,,,Sub_Ch1,S1_L0092
+3,5,93,1,Player,Sub,anim_eyesblink,text,인간의 언어 체계에서는 빈번한 현상이야.,It's quite common\nin the human language.,94,,,,Sub_Ch1,S1_L0093
+3,5,94,1,Player,Sub,anim_eyesblink,text,"하나의 단어가 하나의 틀이라면, 그 '틀' 안\n엔 여러 의미가 공존하며 살아 있을 수 있지.","If a single word is a single box, different\nmeanings can coexist in that 'box'.",95,,,,Sub_Ch1,S1_L0094
+3,5,95,1,Player,Sub,anim_eyesblink,text,"“실례지만 당신과 같은 틀을 좀 사용하겠습\n니다”, 한 의미가 다른 의미에게 말을 걸어.","“Pardon, I would like to use the same box,”\none meaning might say to another.",96,,,,Sub_Ch1,S1_L0095
+3,5,96,1,Player,Sub,anim_eyesblink,text,“할당된 단어는 마음에 좀 드시나요?”,“Do you find your assigned\nword to your liking?”,97,,,,Sub_Ch1,S1_L0096
+3,5,97,1,Player,Sub,anim_eyesblink,text,그들은 이런 식으로 정중하게 이야기를\n나누며 지낼 수도 있지 않을까.,—such conversations might\ntake place in a respectful manner.,98,,,,Sub_Ch1,S1_L0097
+3,5,98,1,Dot,Sub,anim_eyescorner_turn,text,인간들이 단어를 주고받을 때... 서로 어떤\n의미를 의도한 것인지 헷갈리지는 않을까?,Won't humans get confused\nwhen they use these words?,99,,,,Sub_Ch1,S1_L0098
+3,5,99,1,Player,Sub,anim_eyesblink,text,당연히 헷갈리지. 하지만 그게 인간\n언어의 매력이라고 볼 수 있다고 생각해.,Of course. But that's the\ncharm of human language.,100,,,,Sub_Ch1,S1_L0099
+3,5,100,1,Dot,Sub,anim_eyesblink,text,소통 오류의 가능성.,It's open to confusion.,101,,,,Sub_Ch1,S1_L0100
+3,5,101,1,Dot,Default,anim_move,text,... 오.,... Oh.,102,,,,Sub_Ch1,S1_L0101
+3,5,102,1,Dot,Default,anim_bounce,text,오!,Oh!,103,,,,Sub_Ch1,S1_L0102
+3,5,103,1,Dot,Sub,anim_eyesblink,text,해 보고 싶은 게 생겼어.,I want to try something. Can you make\nme a sentence with these sets of words?,104,,,,Sub_Ch1,S1_L0103
+3,5,104,1,Dot,Sub,anim_eyesblink,text,"꿈, 꿈, 동화, 동화, 파란, 파란.\n이 단어들로 하나의 문장을 만들어 줄래?","Blue, blue, sound, sound,\nand present, present.",105,,,,Sub_Ch1,S1_L0104
+3,5,105,1,Dot,Sub,anim_eyesblink,text,"소통 오류의 가능성을 극대화하며,","A sentence that welcomes\nconfusion with open arms,",106,,,,Sub_Ch1,S1_L0105
+3,5,106,1,Dot,Sub,anim_eyesblink,text,인간 언어의 매력을 최대로\n증폭한 문장을 말이야!,and makes the human\nlanguage as charming as can be!,107,,,,Sub_Ch1,S1_L0106
+3,5,107,1,Player,Sub,anim_eyesblink,textbox,"우선, 꿈과 꿈을 사용해 보자면...(textbox)","First, blue and blue.",108,,,,Sub_Ch1,S1_L0107
+3,5,108,1,Player,Sub,anim_eyesblink,textbox,다음은 동화와 동화였던가?(textbox),"Next, sound and sound.",109,,,,Sub_Ch1,S1_L0108
+3,5,109,1,Player,Sub,anim_eyesblink,textbox,"마지막으로, 파란과 파란.(textbox)","And finally, present and present.",110,,,,Sub_Ch1,S1_L0109
+3,5,110,1,Dot,Default,anim_bounce,text,두 배로 재미있어졌어!,Now its twice as much fun!,111,,,,Sub_Ch1,S1_L0110
+3,5,111,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 언어라는 건 날 들뜨게 하는 동시에...\n아주, 아주, 아주 어렵고 혼란하게 해.","<nickname>, language excites me...\nbut confuses me very, very, very much.",112,,,,Sub_Ch1,S1_L0111
+3,5,112,1,Dot,Sub,anim_eyesblink,text,"이제 다시 돌아갈게, 나의 머릿속으로.\n더 많은 구슬들을 발음해 보고 싶어.",I'll return to my corner now. I'd like\nto try out more of these marbles.,,,anim_walking,,Sub_Ch1,S1_L0112
+4,6,113,1,Dot,Default,anim_move,text,침대 아래 무언가 있는 것 같아!,What is that under the bed?,114,,,,Sub_Ch1,S1_L0113
+4,6,114,1,Player,Sub,anim_eyesblink,text,응?,Sorry?,115,,,,Sub_Ch1,S1_L0114
+4,6,115,1,Dot,Sub,anim_eyesblink,text,"일기를 쓰다가, 낮에 봤던 흥미로운\n놀이를 너와 해 보고 싶어졌어.","I was just writing in my diary, and now\nI'd like to try an interesting game with you.",116,,,,Sub_Ch1,S1_L0115
+4,6,116,1,Dot,Sub,anim_eyesblink,text,단 '여섯 단어'로 하나의 이야기를 만들기.,Making up a complete\nstory with just six words.,117,,,,Sub_Ch1,S1_L0116
+4,6,117,1,Player,Sub,anim_eyesblink,selection,일기 쓰기에 집중하지 않아도 돼?|때마침 나도 수다 상대가 필요했어.,Don't you need to focus on your diary?|I was just in the mood for a chat.,118|118,passive|active,,,Sub_Ch1,S1_L0117
+4,6,118,1,Dot,Sub,anim_eyesside_turn,text,작문하던 나의 지성에게 숨 쉴\n공간을 주는 것도 좋을 듯했지!,I thought my mind could use\na break from all that writing.,119,,,,Sub_Ch1,S1_L0118
+4,6,119,1,Dot,Sub,anim_eyesblink,text,"그래서 말이야, 어떤 저명한\n작가는 이렇게 썼다고 해.",They say that a celebrated\nnovelist wrote this one:,120,,,,Sub_Ch1,S1_L0119
+4,6,120,1,Dot,Sub,anim_eyesblink,text,"“팝니다: 아기 신발. 신은 적 없음.""","""For sale: baby shoes. Never worn.""",121,,,,Sub_Ch1,S1_L0120
+4,6,121,1,Dot,Default,anim_eyesclosed,text,"아기의 마지막 숨소리가 들리고, \n어머니의 텅 빈 슬픔이 내려앉아.","I can almost hear the baby's final\nbreath, see the mother's numb grief,",122,,,,Sub_Ch1,S1_L0121
+4,6,122,1,Dot,Default,anim_eyesclosed,text,"끔찍하지. 방에 메아리치는 비탄과\n죽음의 손아귀, 그리고 정적...",feel the suffocating silence\necho in the empty nursery...,123,,,,Sub_Ch1,S1_L0122
+4,6,123,1,Dot,Default,anim_eyesclosed,text,이 모든 걸 고작 여섯\n단어 안에 내포하다니.,All this in only six words.,124,,,,Sub_Ch1,S1_L0123
+4,6,124,1,Dot,Sub,anim_eyesblink,text,단어 간 여백의 무게가 내 마음을\n꼭 쥔 채 묵직하게 짓누르고 있어.,The weight of what's left unsaid. How it\nseizes the heart and refuses to let go.,125,,,,Sub_Ch1,S1_L0124
+4,6,125,1,Dot,Default,anim_move,text,"아름다운 천재성이야, 이건!",Pure genius!,126,,,,Sub_Ch1,S1_L0125
+4,6,126,1,Dot,Sub,anim_eyesblink,text,그래서... 나도 여섯 단어\n소설을 만들어봤어!,So... I made up a six-word story too!,127,,,,Sub_Ch1,S1_L0126
+4,6,127,1,Dot,Sub,anim_eyesblink,text,그리고 하루종일 내 이야기를 이어나갈\n수 있는 87가지의 갈래를 생각해봤어.,Then I spent the rest of the day imagining\n87 ways my story could unfold.,128,,,,Sub_Ch1,S1_L0127
+4,6,128,1,Dot,Sub,anim_eyesblink,text,이건 16번째 아이디어야:,Here's my 16th idea:,129,,,,Sub_Ch1,S1_L0128
+4,6,129,1,Dot,Sub,anim_eyesblink,text,“침대 아래 무언가 있는 것 같아.”\n라고 네가 중얼거렸어. 깜깜한 밤이었지.,"""What is that under the bed? It looks scary.""\nsaid <nickname>. It was a dark, dark night.",130,,,,Sub_Ch1,S1_L0129
+4,6,130,1,Dot,Sub,anim_eyesblink,text,“무서워하지 마. 난 널 해치지 않아.”\n조그마한 목소리가 속삭였지.,"""Don't be scared. I won't hurt you.""\nwhispered an echoing voice.",131,,,,Sub_Ch1,S1_L0130
+4,6,131,1,Dot,Sub,anim_eyesblink,text,“왜냐하면... 나인 걸! 놀랐지!”\n하고 내가 침대 밑에서 튀어나와!,"""It's only... me! Boo!"" said I, popping\nout from under the bed! Hehe.",132,,,,Sub_Ch1,S1_L0131
+4,6,132,1,Dot,Default,anim_move,text,마음에 들어? 널 생각하면서 썼어.,Do you like it? I wrote it especially for you.,133,,,,Sub_Ch1,S1_L0132
+4,6,133,1,Player,Sub,anim_eyesblink,text,물론 마음에 들지.,Of course I do.,134,,,,Sub_Ch1,S1_L0133
+4,6,134,1,Dot,Default,anim_move,text,"<nickname>, <nickname>, 궁금해졌어.","<nickname>, <nickname>.\nI'm curious.",135,,,,Sub_Ch1,S1_L0134
+4,6,135,1,Dot,Sub,anim_eyesblink,text,너라면 내 이야기를 어떻게 이어나갈 거야?,How would you continue my six-word story?,136,,,,Sub_Ch1,S1_L0135
+4,6,136,1,Dot,Sub,anim_eyesblink,text,침대 아래 '무엇이' 있는 걸까?,"That is, what <i>is<\i> that under the bed?",137,,,,Sub_Ch1,S1_L0136
+4,6,137,1,Player,Sub,anim_eyesblink,textbox,“침대 아래 무언가 있는 것 같아”,“There is something under the bed.”,138,,,,Sub_Ch1,S1_L0137
+4,6,138,1,Dot,Default,anim_move,text,오! 오와! 정말 놀라워!\n정말 멋진 아이디어야!,Oh! Oh! There you have it!\It's a great idea!,139,,,,Sub_Ch1,S1_L0138
+4,6,139,1,Dot,Sub,anim_eyesblink,text,"좋아. 나의 지성에게 충분한\n휴식을 선사했으니까,","Alright. Now that I've given my\nmind its well-deserved rest,",140,,,,Sub_Ch1,S1_L0139
+4,6,140,1,Dot,Sub,anim_eyesblink,text,난 이만 다시 일기를 쓰러 가 볼게.,I will now go back to my diary.,141,,,,Sub_Ch1,S1_L0140
+4,6,141,1,Dot,Sub,anim_eyesblink,text,나의 첫 번째 일기 말이야!,And my first ever entry!,,,anim_diary,,Sub_Ch1,S1_L0141

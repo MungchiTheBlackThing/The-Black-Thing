@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Sub_Ch4
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: 19eed5d4aeb1ec94386c93eb32c821df, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 8e200ccfe8dd64e4d9098cb4696ce7c0, type: 2}
+  - {fileID: 11400000, guid: db6fd86e5902f134283188ba2a50f6f7, type: 2}
+  m_Extensions:
+  - rid: 5827832154120257631
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds:
+    - rid: 5827832154120257631
+      type: {class: CsvExtension, ns: UnityEditor.Localization.Plugins.CSV, asm: Unity.Localization.Editor}
+      data:
+        m_Collection: {fileID: 11400000}
+        m_ColumnsList:
+        - rid: 5827832154120257632
+        - rid: 5827832154120257633
+        - rid: 5827832154120257634
+        m_ConnectedFile: 
+    - rid: 5827832154120257632
+      type: {class: KeyIdColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_IncludeId: 1
+        m_IncludeSharedComments: 1
+        m_KeyFieldName: Key
+        m_IdFieldName: Id
+        m_CommentFieldName: Shared Comments
+    - rid: 5827832154120257633
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: en-US
+        m_FieldName: English (United States)(en-US)
+        m_CommentFieldName: English (United States)(en-US) Comments
+        m_IncludeComments: 1
+    - rid: 5827832154120257634
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: ko-KR
+        m_FieldName: Korean (South Korea)(ko-KR)
+        m_CommentFieldName: Korean (South Korea)(ko-KR) Comments
+        m_IncludeComments: 1

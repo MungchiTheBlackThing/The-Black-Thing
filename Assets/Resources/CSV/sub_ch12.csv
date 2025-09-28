@@ -1,104 +1,104 @@
-Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption
-1,69,1,0,Dot,,anim_default,text,…….,,2,,,
-1,69,2,0,Dot,,anim_default,text,…….,,3,,,
-1,69,3,0,Player,,anim_default,text,뭉치야!,Dot!,4,,,
-1,69,4,0,Dot,,anim_default,text,…….,,5,,,
-1,69,5,0,Dot,,anim_default,text,…….,,6,,,
-1,69,6,0,Dot,,anim_default,text,응? 어…… 응!,Oh? Oh…… yes!,7,,,
-1,69,7,0,Dot,,anim_default,text,<nickname>.,<nickname>.,8,,,
-1,69,8,0,Dot,,anim_default,text,안녕.,Hello.,9,,,
-1,69,9,0,Player,,anim_default,text,뭐 하던 중이었어?,What were you up to?,10,,,
-1,69,10,0,Dot,,anim_default,text,…….,,11,,,
-1,69,11,0,Dot,,anim_default,text,…….,,12,,,
-1,69,12,0,Dot,,anim_default,text,…….,,13,,,
-1,69,13,0,Dot,,anim_default,text,…….,,14,,,
-1,69,14,0,Dot,,anim_default,text,"나, 하늘을 보고 있었어! 오늘\n날씨가 얼마나 화창한지.",I was gazing at the sky!\nThe weather is so nice today.,15,,,
-1,69,15,0,Player,,anim_default,selection,너의 모퉁이에서도 하늘이 보여?|오늘 날씨가… 화창한가?,You can see the sky from your corner?|You call that… nice?,16|23,,,
-1,69,16,0,Dot,,anim_default,text,…….,,17,,,
-1,69,17,0,Dot,,anim_default,text,…….,,18,,,
-1,69,18,0,Dot,,anim_default,text,"응, 응, 그럼!","Yes, yes of course!",19,,,
-1,69,19,0,Dot,,anim_default,text,그럼.,Of course.,20,,,
-1,69,20,0,Dot,,anim_default,text,"하늘이 보이지, 그럼.","I see it, I do.",21,,,
-1,69,21,0,Player,,anim_default,text,(음……. 뭉치 괜찮은 걸까.),(Hmm…… I’m not sure Dot’s alright.),22,,,
-1,69,22,0,Player,,anim_default,text,(잠시 후 다시 확인하러 와 봐야겠어.),(I should check on them again later.),27,,,
-1,69,23,0,Dot,,anim_default,text,…….,,24,,,
-1,69,24,0,Dot,,anim_default,text,…….,,25,,,
-1,69,25,0,Dot,,anim_default,text,"응, 응, 그럼!","Yes, yes of course!",26,,,
-1,69,26,0,Dot,,anim_default,text,그럼.,Of course.,27,,,
-1,69,27,0,Dot,,anim_default,text,"화창하지, 그럼. 너희 인간들은 이런\n날씨를 화창하다고 판별하지 않는구나?",Nice as anything. I see humans don’t\ngrade this kind of weather as nice?,28,,,
-1,69,28,0,Dot,,anim_default,text,…….,,29,,,
-1,69,29,0,Dot,,anim_default,text,…….,,30,,,
-1,69,30,0,Player,,anim_default,text,"(뭉치, 혼자 있고 싶은가?)",(Does Dot want to be alone?),31,,,
-1,69,31,0,Player,,anim_default,text,(잠시 후 다시 확인하러 와 봐야겠어.),(I should check on them again later.),,,,
-2,70,32,0,Dot,,anim_default,text,지금 나에게는 ‘뒤로 가기’가 필요한 것 같아.,I think I need to ‘rewind’.,33,,,
-2,70,33,0,Player,,anim_default,selection,"응? 무슨 뜻이야?|뭐, 뭐라고? 무슨 뜻이야?","Huh? What do you mean?|Wait, what? What do you mean by that?",34|34,,,
-2,70,34,0,Dot,,anim_default,text,히히. 불가능한 바람을 말해 봤을 뿐이야.,Hehe. Just wishful thinking out loud.,35,,,
-2,70,35,0,Dot,,anim_default,text,너와 나. 지금 우리가 있는 곳. 지구가\n삼차원의 세계에 있다는 글을 봤어.,You and me. Where we stand. I read\nEarth is on the third dimension.,36,,,
-2,70,36,0,Dot,,anim_default,text,삼차원의 시간은 반드시 한쪽 방향으로만\n흐른대. 절대로 뒤로 갈 수가 없대.,They say time in the third dimension only\nflows one way. It can never go backward.,37,,,
-2,70,37,0,Dot,,anim_default,text,구운 빵이 흐물흐물한\n반죽으로 되돌아갈 수 없듯이.,The way baked bread can never\nreturn to being runny batter.,38,,,
-2,70,38,0,Dot,,anim_default,text,불탄 종이가 다시 고운 흰빛을 띨 수 없듯이.,The way paper that catches flames\ncan never retrieve its white glow.,39,,,
-2,70,39,0,Dot,,anim_default,text,그걸 비가역적이라고 하나 봐.,They call it an irreversible state.,40,,,
-2,70,40,0,Dot,,anim_default,text,"어디서 온 규칙인지 나는 알 수\n없지만… <nickname>도, 나도","I don’t know where these rules\ncome from… but you and me,",41,,,
-2,70,41,0,Dot,,anim_default,text,저항할 수 없는 규칙에 따라 파도를 타듯이\n한쪽으로 휩쓸려갈 수밖에 없는 거야.,"we have no choice but to follow them and\nbe swept in one direction, like riding a wave.",42,,,
-2,70,42,0,Dot,,anim_default,text,그러다 마지막에는 반드시…,And in the end…,43,,,
-2,70,43,0,Player,,anim_default,selection,죽음을 맞게 되지.|(가만히 뭉치의 말을 기다린다.),We face death.|(Listen to what Dot has to say.),44|44,,,
-2,70,44,0,Dot,,anim_default,text,……,……,45,,,
-2,70,45,0,Dot,,anim_default,text,음…,Hmm…,46,,,
-2,70,46,0,Dot,,anim_default,text,조금은 부당해. 상당히 무력해.,Somewhat unfair. Definitely powerless.,47,,,
-2,70,47,0,Dot,,anim_default,text,어떤 수를 써도 바꿀 수 있다는\n가능성조차 보이지 않는 견고한 규칙.,"A rigid rule that doesn't even show a hint\nof being open to change, no matter what.",48,,,
-2,70,48,0,Dot,,anim_default,text,그저 세상에 내던져졌다는\n이유로 따라야 하는 규칙이야.,That's the rule we follow simply because\nwe were thrust into this world.,49,,,
-2,70,49,0,Dot,,anim_default,text,일단 나는 동의한 적이 없는 것 같은데…,I don't recall agreeing to it…,50,,,
-2,70,50,0,Dot,,anim_default,text,"어, 혹시 <nickname>은\n동의한 적 있어? … 아니지?","Don't tell me you agreed to it, <nickname>?",51,,,
-2,70,51,0,Player,,anim_default,text,나? 나도 당연히 그런 적이 없지.,Me? Of course not.,52,,,
-2,70,52,0,Dot,,anim_default,text,휴… 역시. 다행이야.,Whew… I though so. What a relief.,53,,,
-2,70,53,0,Dot,,anim_default,text,그래서 상상해 봤어. ‘뒤로 가기’를\n할 수 있는 세상을 말이야.,So I pictured it. A world where I can ‘rewind.’,54,,,
-2,70,54,0,Player,,anim_default,text,…,…,55,,,
-2,70,55,0,Dot,,anim_default,text,같이 상상해 볼래?,Would you like to picture it too?,56,,,
-2,70,56,0,Player,,anim_default,text,"으응, 좋아. 어떻게?","Oh, okay. How?",57,,,
-2,70,57,0,Dot,,anim_default,text,우리가 만난 처음의 시간으로\n돌아가는 모습을 상상해 보자.,Let's picture us going back\nto the first time we met.,58,,,
-2,70,58,0,Dot,,anim_default,text,"나의 모퉁이에 처음 숨어들었던 순간도,\n수많은 별조각 같은 꿈을 관찰하던 순간도","The first time I hid my corner, and the times\nI observed dreams scattered like stars,",59,,,
-2,70,59,0,Dot,,anim_default,text,"일기를 적고 함께 시를 읽는 순간도,","the times I wrote in my diary\nand we read poetry together,",60,,,
-2,70,60,0,Dot,,anim_default,text,조금은 원망하고 상당히 애정하던\n<nickname>과 나의 순간들을,"the times you and I shared, ones I\nresented slightly and adored greatly.",61,,,
-2,70,61,0,Dot,,anim_default,text,모든 걸 잊고 처음부터 ‘완전히\n새롭게’ 시작하는 걸 떠올려 봤어.,I pictured what it would be like to\nforget everything and start anew.,62,,,
-2,70,62,0,Player,,anim_default,text,…,…,63,,,
-2,70,63,0,Dot,,anim_default,text,그러면 너와 나는 영원한\n친구가 될 수 있었을까?,Would we be friends forever?,64,,,
-2,70,64,0,Player,,anim_default,selection,확실히 너와 계속 노는 건 즐거웠을 거야.|계속 기억을 잃는다면 의미가 없을지도 몰라.,I still would have had fun with you.|Losing the memory may diminish its meaning.,65|65,,,
-2,70,65,0,Dot,,anim_default,text,히히. 그건 그래.,Hehe. That's true.,66,,,
-2,70,66,0,Dot,,anim_default,text,그래도 모든 건 상상일 뿐이니까.,"Anyhow, it's mere imagination.",67,,,
-2,70,67,0,Dot,,anim_default,text,고리처럼 돌고 도는 시간 속의 너와\n나를 상상하는 것만으로도 즐거워.,I like to picture you and\nI swirling in time like a ring.,68,,,
-2,70,68,0,Dot,,anim_default,text,그건 분명히…,It must be like…,69,,,
-2,70,69,0,Dot,,anim_default,text,빙글빙글 돌아도 어지럽지\n않은 왈츠였을 거야!,"a waltz, one where we spin\nand spin but never get dizzy!",,,,
-3,71,70,0,Dot,,anim_default,text,"<nickname>, 해파리를\n만나 본 적 있어?","<nickname>, have you ever met a jellyfish?",71,,,
-3,71,71,0,Player,,anim_default,selection,"응, 있어.|아니, 없어.","Yes, I have.|No, I haven’t.",72|72,,,
-3,71,72,0,Dot,,anim_default,text,그럼 해파리의 심장을 본 적은?,Then have you ever seen a jellyfish’s heart?,73,,,
-3,71,73,0,Player,,anim_default,text,…. 없는 것 같은데.,… Not that I can remember.,74,,,
-3,71,74,0,Dot,,anim_default,text,그렇구나. 인간이 무언가를 마주할 때\n심장의 유무를 궁금해 하지는 않으니까.,I thought so. Humans don’t typically question\nwhether something has a heart at first sight.,75,,,
-3,71,75,0,Dot,,anim_default,text,"그거 알아? 책에서 봤는데,\n해파리는 심장이 없대.",Did you know? I read in a book\nthat jellyfish don’t have hearts.,76,,,
-3,71,76,0,Player,,anim_default,text,정말? 그게 가능해?,Really? Is that possible?,77,,,
-3,71,77,0,Dot,,anim_default,text,응. 심장의 무게를 벗고 투명한\n몸으로 유유히 헤엄치는 거야.,Yes. They shed all that weight and swim\nserenely with their transparent body.,78,,,
-3,71,78,0,Dot,,anim_default,text,심장이 있는 것들이 모두\n스러지고 나서도 아주 오랫동안.,Long after beings with hearts\nhave lain down to rest.,79,,,
-3,71,79,0,Dot,,anim_default,text,그런 해파리들에게 궁금한 게 있어.,I have a question for those jellyfish.,80,,,
-3,71,80,0,Dot,,anim_default,text,심장이 없으면 마음도 없는 걸까?,Does no heart mean no emotions?,81,,,
-3,71,81,0,Dot,,anim_default,text,"어떤 상처도 사랑도, 심장이 없는\n그들을 헤집어 놓을 수는 없는 걸까.",Can neither hurt nor love tear at their\ninsides if they don’t have a heart?,82,,,
-3,71,82,0,Dot,,anim_default,text,"가끔 내 안에서 콩닥거리는 심장이\n너무 무겁게 느껴질 때면,","At times when my beating\nheart weighs me down,",83,,,
-3,71,83,0,Dot,,anim_default,text,해파리가 되어 자유로이\n떠오르고 싶어져.,I long to be a jellyfish and float freely.,84,,,
-3,71,84,0,Dot,,anim_default,text,"혹시 나중에 해파리를 만나게 되면,\n정말로 심장이 없는지 살펴봐 줄래?","If you ever meet one in person, could you\ncheck for me whether they have a heart?",85,,,
-3,71,85,0,Dot,,anim_default,text,그리고 그들의 유영이\n얼마나 아름다운지도.,And just how gracefully they swim.,,,,
-4,72,86,0,Dot,,anim_default,text,무엇이 여름이라는 계절을\n사랑스럽게 만드는 걸까?,What makes summer\nso lovely as a season?,87,,,
-4,72,87,0,Dot,,anim_default,text,"시나 소설, 영화에서\n등장하는 여름을 떠올려봐.","Think of summer in poems\nand novels, or movies.",88,,,
-4,72,88,0,Dot,,anim_default,text,"대부분 생기와 활기, 또는\n잊지 못할 열기로 가득 차 있어.","They are full of life and energy,\nor unforgettable heat.",89,,,
-4,72,89,0,Dot,,anim_default,text,"<nickname>, 너의 여름은 어때?","<nickname>, what is your summer like?",90,,,
-4,72,90,0,Dot,,anim_default,text,너도 여름만의 박동을 느껴?,Do you feel the unique\nthrum of summer?,91,,,
-4,72,91,0,Player,,anim_default,selection,"응, 여름은 특별한 계절이야.|아니, 여름은 그저 더운 계절이야.","Yes, summer is special to me.|No, summer is just hot.",92|93,,,
-4,72,92,0,Dot,,anim_default,text,너도 그렇구나.,I see.,94,,,
-4,72,93,0,Dot,,anim_default,text,나도 백과사전에서 여름을 찾았을\n때는 그렇게 생각했었는데…,I thought so too when I looked\nup summer in my encyclopedia…,94,,,
-4,72,94,0,Dot,,anim_default,text,어떤 인간들에게 여름은 책갈피를\n남기고 싶은 계절인가봐.,Some humans want to mark their\nsummers like a page of a book.,95,,,
-4,72,95,0,Dot,,anim_default,text,"그들의 여름 안에선, 초록을\n머금은 잎이 빛에 스며들어.","In their summers, leaves of\ngreen shades melt into light.",96,,,
-4,72,96,0,Dot,,anim_default,text,"아이들이 그림자를\n늘어뜨린 채 뛰어다니고,","Children run with long shadows\nhanging onto their heels,",97,,,
-4,72,97,0,Dot,,anim_default,text,그늘 밑을 구르는 자전거\n바퀴 소리가 들리지.,and the sound of bicycle wheels\nrolling beneath the shade.,98,,,
-4,72,98,0,Dot,,anim_default,text,모든 게 만져질 듯이 선명하면서도\n홀연히 사라질 것 같아.,Everything is vivid enough to touch\nand yet could vanish in an instant.,99,,,
-4,72,99,0,Dot,,anim_default,text,"아름다워, 아름답지, 눈이 부셔.\n그런데 이상하게도…","Beautiful, beautiful, blinding.\nAnd yet strangely…",100,,,
-4,72,100,0,Dot,,anim_default,text,그 풍경 속에 있는 나를\n그려 보기는 어렵네.,I can’t picture myself in the scene.,101,,,
-4,72,101,0,Dot,,anim_default,text,쏟아지는 빛 속에서는 마음껏\n어두워지지 못할 테니까.,The pouring light won’t\nlet me be as dark as I like.,102,,,
-4,72,102,0,Dot,,anim_default,text,"혹여나 습하고 질척이는 존재들이\n해를 피해 숨어 버린다면,","If damp and clinging beings\nwere to hide from the sun,",103,,,
-4,72,103,0,Dot,,anim_default,text,나도 여름 속 보이지 않는 어느\n구석으로 함께 기어 들어가 슬퍼할래.,I too would crawl into some invisible\ncorner of summer and lament.,,,,
+﻿Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
+1,69,1,0,Dot,,anim_default,text,…….,,2,,,,Sub_Ch12,S12_L0001
+1,69,2,0,Dot,,anim_default,text,…….,,3,,,,Sub_Ch12,S12_L0002
+1,69,3,0,Player,,anim_default,text,뭉치야!,Dot!,4,,,,Sub_Ch12,S12_L0003
+1,69,4,0,Dot,,anim_default,text,…….,,5,,,,Sub_Ch12,S12_L0004
+1,69,5,0,Dot,,anim_default,text,…….,,6,,,,Sub_Ch12,S12_L0005
+1,69,6,0,Dot,,anim_default,text,응? 어…… 응!,Oh? Oh…… yes!,7,,,,Sub_Ch12,S12_L0006
+1,69,7,0,Dot,,anim_default,text,<nickname>.,<nickname>.,8,,,,Sub_Ch12,S12_L0007
+1,69,8,0,Dot,,anim_default,text,안녕.,Hello.,9,,,,Sub_Ch12,S12_L0008
+1,69,9,0,Player,,anim_default,text,뭐 하던 중이었어?,What were you up to?,10,,,,Sub_Ch12,S12_L0009
+1,69,10,0,Dot,,anim_default,text,…….,,11,,,,Sub_Ch12,S12_L0010
+1,69,11,0,Dot,,anim_default,text,…….,,12,,,,Sub_Ch12,S12_L0011
+1,69,12,0,Dot,,anim_default,text,…….,,13,,,,Sub_Ch12,S12_L0012
+1,69,13,0,Dot,,anim_default,text,…….,,14,,,,Sub_Ch12,S12_L0013
+1,69,14,0,Dot,,anim_default,text,"나, 하늘을 보고 있었어! 오늘\n날씨가 얼마나 화창한지.",I was gazing at the sky!\nThe weather is so nice today.,15,,,,Sub_Ch12,S12_L0014
+1,69,15,0,Player,,anim_default,selection,너의 모퉁이에서도 하늘이 보여?|오늘 날씨가… 화창한가?,You can see the sky from your corner?|You call that… nice?,16|23,,,,Sub_Ch12,S12_L0015
+1,69,16,0,Dot,,anim_default,text,…….,,17,,,,Sub_Ch12,S12_L0016
+1,69,17,0,Dot,,anim_default,text,…….,,18,,,,Sub_Ch12,S12_L0017
+1,69,18,0,Dot,,anim_default,text,"응, 응, 그럼!","Yes, yes of course!",19,,,,Sub_Ch12,S12_L0018
+1,69,19,0,Dot,,anim_default,text,그럼.,Of course.,20,,,,Sub_Ch12,S12_L0019
+1,69,20,0,Dot,,anim_default,text,"하늘이 보이지, 그럼.","I see it, I do.",21,,,,Sub_Ch12,S12_L0020
+1,69,21,0,Player,,anim_default,text,(음……. 뭉치 괜찮은 걸까.),(Hmm…… I’m not sure Dot’s alright.),22,,,,Sub_Ch12,S12_L0021
+1,69,22,0,Player,,anim_default,text,(잠시 후 다시 확인하러 와 봐야겠어.),(I should check on them again later.),27,,,,Sub_Ch12,S12_L0022
+1,69,23,0,Dot,,anim_default,text,…….,,24,,,,Sub_Ch12,S12_L0023
+1,69,24,0,Dot,,anim_default,text,…….,,25,,,,Sub_Ch12,S12_L0024
+1,69,25,0,Dot,,anim_default,text,"응, 응, 그럼!","Yes, yes of course!",26,,,,Sub_Ch12,S12_L0025
+1,69,26,0,Dot,,anim_default,text,그럼.,Of course.,27,,,,Sub_Ch12,S12_L0026
+1,69,27,0,Dot,,anim_default,text,"화창하지, 그럼. 너희 인간들은 이런\n날씨를 화창하다고 판별하지 않는구나?",Nice as anything. I see humans don’t\ngrade this kind of weather as nice?,28,,,,Sub_Ch12,S12_L0027
+1,69,28,0,Dot,,anim_default,text,…….,,29,,,,Sub_Ch12,S12_L0028
+1,69,29,0,Dot,,anim_default,text,…….,,30,,,,Sub_Ch12,S12_L0029
+1,69,30,0,Player,,anim_default,text,"(뭉치, 혼자 있고 싶은가?)",(Does Dot want to be alone?),31,,,,Sub_Ch12,S12_L0030
+1,69,31,0,Player,,anim_default,text,(잠시 후 다시 확인하러 와 봐야겠어.),(I should check on them again later.),,,,,Sub_Ch12,S12_L0031
+2,70,32,0,Dot,,anim_default,text,지금 나에게는 ‘뒤로 가기’가 필요한 것 같아.,I think I need to ‘rewind’.,33,,,,Sub_Ch12,S12_L0032
+2,70,33,0,Player,,anim_default,selection,"응? 무슨 뜻이야?|뭐, 뭐라고? 무슨 뜻이야?","Huh? What do you mean?|Wait, what? What do you mean by that?",34|34,,,,Sub_Ch12,S12_L0033
+2,70,34,0,Dot,,anim_default,text,히히. 불가능한 바람을 말해 봤을 뿐이야.,Hehe. Just wishful thinking out loud.,35,,,,Sub_Ch12,S12_L0034
+2,70,35,0,Dot,,anim_default,text,너와 나. 지금 우리가 있는 곳. 지구가\n삼차원의 세계에 있다는 글을 봤어.,You and me. Where we stand. I read\nEarth is on the third dimension.,36,,,,Sub_Ch12,S12_L0035
+2,70,36,0,Dot,,anim_default,text,삼차원의 시간은 반드시 한쪽 방향으로만\n흐른대. 절대로 뒤로 갈 수가 없대.,They say time in the third dimension only\nflows one way. It can never go backward.,37,,,,Sub_Ch12,S12_L0036
+2,70,37,0,Dot,,anim_default,text,구운 빵이 흐물흐물한\n반죽으로 되돌아갈 수 없듯이.,The way baked bread can never\nreturn to being runny batter.,38,,,,Sub_Ch12,S12_L0037
+2,70,38,0,Dot,,anim_default,text,불탄 종이가 다시 고운 흰빛을 띨 수 없듯이.,The way paper that catches flames\ncan never retrieve its white glow.,39,,,,Sub_Ch12,S12_L0038
+2,70,39,0,Dot,,anim_default,text,그걸 비가역적이라고 하나 봐.,They call it an irreversible state.,40,,,,Sub_Ch12,S12_L0039
+2,70,40,0,Dot,,anim_default,text,"어디서 온 규칙인지 나는 알 수\n없지만… <nickname>도, 나도","I don’t know where these rules\ncome from… but you and me,",41,,,,Sub_Ch12,S12_L0040
+2,70,41,0,Dot,,anim_default,text,저항할 수 없는 규칙에 따라 파도를 타듯이\n한쪽으로 휩쓸려갈 수밖에 없는 거야.,"we have no choice but to follow them and\nbe swept in one direction, like riding a wave.",42,,,,Sub_Ch12,S12_L0041
+2,70,42,0,Dot,,anim_default,text,그러다 마지막에는 반드시…,And in the end…,43,,,,Sub_Ch12,S12_L0042
+2,70,43,0,Player,,anim_default,selection,죽음을 맞게 되지.|(가만히 뭉치의 말을 기다린다.),We face death.|(Listen to what Dot has to say.),44|44,,,,Sub_Ch12,S12_L0043
+2,70,44,0,Dot,,anim_default,text,……,……,45,,,,Sub_Ch12,S12_L0044
+2,70,45,0,Dot,,anim_default,text,음…,Hmm…,46,,,,Sub_Ch12,S12_L0045
+2,70,46,0,Dot,,anim_default,text,조금은 부당해. 상당히 무력해.,Somewhat unfair. Definitely powerless.,47,,,,Sub_Ch12,S12_L0046
+2,70,47,0,Dot,,anim_default,text,어떤 수를 써도 바꿀 수 있다는\n가능성조차 보이지 않는 견고한 규칙.,"A rigid rule that doesn't even show a hint\nof being open to change, no matter what.",48,,,,Sub_Ch12,S12_L0047
+2,70,48,0,Dot,,anim_default,text,그저 세상에 내던져졌다는\n이유로 따라야 하는 규칙이야.,That's the rule we follow simply because\nwe were thrust into this world.,49,,,,Sub_Ch12,S12_L0048
+2,70,49,0,Dot,,anim_default,text,일단 나는 동의한 적이 없는 것 같은데…,I don't recall agreeing to it…,50,,,,Sub_Ch12,S12_L0049
+2,70,50,0,Dot,,anim_default,text,"어, 혹시 <nickname>은\n동의한 적 있어? … 아니지?","Don't tell me you agreed to it, <nickname>?",51,,,,Sub_Ch12,S12_L0050
+2,70,51,0,Player,,anim_default,text,나? 나도 당연히 그런 적이 없지.,Me? Of course not.,52,,,,Sub_Ch12,S12_L0051
+2,70,52,0,Dot,,anim_default,text,휴… 역시. 다행이야.,Whew… I though so. What a relief.,53,,,,Sub_Ch12,S12_L0052
+2,70,53,0,Dot,,anim_default,text,그래서 상상해 봤어. ‘뒤로 가기’를\n할 수 있는 세상을 말이야.,So I pictured it. A world where I can ‘rewind.’,54,,,,Sub_Ch12,S12_L0053
+2,70,54,0,Player,,anim_default,text,…,…,55,,,,Sub_Ch12,S12_L0054
+2,70,55,0,Dot,,anim_default,text,같이 상상해 볼래?,Would you like to picture it too?,56,,,,Sub_Ch12,S12_L0055
+2,70,56,0,Player,,anim_default,text,"으응, 좋아. 어떻게?","Oh, okay. How?",57,,,,Sub_Ch12,S12_L0056
+2,70,57,0,Dot,,anim_default,text,우리가 만난 처음의 시간으로\n돌아가는 모습을 상상해 보자.,Let's picture us going back\nto the first time we met.,58,,,,Sub_Ch12,S12_L0057
+2,70,58,0,Dot,,anim_default,text,"나의 모퉁이에 처음 숨어들었던 순간도,\n수많은 별조각 같은 꿈을 관찰하던 순간도","The first time I hid my corner, and the times\nI observed dreams scattered like stars,",59,,,,Sub_Ch12,S12_L0058
+2,70,59,0,Dot,,anim_default,text,"일기를 적고 함께 시를 읽는 순간도,","the times I wrote in my diary\nand we read poetry together,",60,,,,Sub_Ch12,S12_L0059
+2,70,60,0,Dot,,anim_default,text,조금은 원망하고 상당히 애정하던\n<nickname>과 나의 순간들을,"the times you and I shared, ones I\nresented slightly and adored greatly.",61,,,,Sub_Ch12,S12_L0060
+2,70,61,0,Dot,,anim_default,text,모든 걸 잊고 처음부터 ‘완전히\n새롭게’ 시작하는 걸 떠올려 봤어.,I pictured what it would be like to\nforget everything and start anew.,62,,,,Sub_Ch12,S12_L0061
+2,70,62,0,Player,,anim_default,text,…,…,63,,,,Sub_Ch12,S12_L0062
+2,70,63,0,Dot,,anim_default,text,그러면 너와 나는 영원한\n친구가 될 수 있었을까?,Would we be friends forever?,64,,,,Sub_Ch12,S12_L0063
+2,70,64,0,Player,,anim_default,selection,확실히 너와 계속 노는 건 즐거웠을 거야.|계속 기억을 잃는다면 의미가 없을지도 몰라.,I still would have had fun with you.|Losing the memory may diminish its meaning.,65|65,,,,Sub_Ch12,S12_L0064
+2,70,65,0,Dot,,anim_default,text,히히. 그건 그래.,Hehe. That's true.,66,,,,Sub_Ch12,S12_L0065
+2,70,66,0,Dot,,anim_default,text,그래도 모든 건 상상일 뿐이니까.,"Anyhow, it's mere imagination.",67,,,,Sub_Ch12,S12_L0066
+2,70,67,0,Dot,,anim_default,text,고리처럼 돌고 도는 시간 속의 너와\n나를 상상하는 것만으로도 즐거워.,I like to picture you and\nI swirling in time like a ring.,68,,,,Sub_Ch12,S12_L0067
+2,70,68,0,Dot,,anim_default,text,그건 분명히…,It must be like…,69,,,,Sub_Ch12,S12_L0068
+2,70,69,0,Dot,,anim_default,text,빙글빙글 돌아도 어지럽지\n않은 왈츠였을 거야!,"a waltz, one where we spin\nand spin but never get dizzy!",,,,,Sub_Ch12,S12_L0069
+3,71,70,0,Dot,,anim_default,text,"<nickname>, 해파리를\n만나 본 적 있어?","<nickname>, have you ever met a jellyfish?",71,,,,Sub_Ch12,S12_L0070
+3,71,71,0,Player,,anim_default,selection,"응, 있어.|아니, 없어.","Yes, I have.|No, I haven’t.",72|72,,,,Sub_Ch12,S12_L0071
+3,71,72,0,Dot,,anim_default,text,그럼 해파리의 심장을 본 적은?,Then have you ever seen a jellyfish’s heart?,73,,,,Sub_Ch12,S12_L0072
+3,71,73,0,Player,,anim_default,text,…. 없는 것 같은데.,… Not that I can remember.,74,,,,Sub_Ch12,S12_L0073
+3,71,74,0,Dot,,anim_default,text,그렇구나. 인간이 무언가를 마주할 때\n심장의 유무를 궁금해 하지는 않으니까.,I thought so. Humans don’t typically question\nwhether something has a heart at first sight.,75,,,,Sub_Ch12,S12_L0074
+3,71,75,0,Dot,,anim_default,text,"그거 알아? 책에서 봤는데,\n해파리는 심장이 없대.",Did you know? I read in a book\nthat jellyfish don’t have hearts.,76,,,,Sub_Ch12,S12_L0075
+3,71,76,0,Player,,anim_default,text,정말? 그게 가능해?,Really? Is that possible?,77,,,,Sub_Ch12,S12_L0076
+3,71,77,0,Dot,,anim_default,text,응. 심장의 무게를 벗고 투명한\n몸으로 유유히 헤엄치는 거야.,Yes. They shed all that weight and swim\nserenely with their transparent body.,78,,,,Sub_Ch12,S12_L0077
+3,71,78,0,Dot,,anim_default,text,심장이 있는 것들이 모두\n스러지고 나서도 아주 오랫동안.,Long after beings with hearts\nhave lain down to rest.,79,,,,Sub_Ch12,S12_L0078
+3,71,79,0,Dot,,anim_default,text,그런 해파리들에게 궁금한 게 있어.,I have a question for those jellyfish.,80,,,,Sub_Ch12,S12_L0079
+3,71,80,0,Dot,,anim_default,text,심장이 없으면 마음도 없는 걸까?,Does no heart mean no emotions?,81,,,,Sub_Ch12,S12_L0080
+3,71,81,0,Dot,,anim_default,text,"어떤 상처도 사랑도, 심장이 없는\n그들을 헤집어 놓을 수는 없는 걸까.",Can neither hurt nor love tear at their\ninsides if they don’t have a heart?,82,,,,Sub_Ch12,S12_L0081
+3,71,82,0,Dot,,anim_default,text,"가끔 내 안에서 콩닥거리는 심장이\n너무 무겁게 느껴질 때면,","At times when my beating\nheart weighs me down,",83,,,,Sub_Ch12,S12_L0082
+3,71,83,0,Dot,,anim_default,text,해파리가 되어 자유로이\n떠오르고 싶어져.,I long to be a jellyfish and float freely.,84,,,,Sub_Ch12,S12_L0083
+3,71,84,0,Dot,,anim_default,text,"혹시 나중에 해파리를 만나게 되면,\n정말로 심장이 없는지 살펴봐 줄래?","If you ever meet one in person, could you\ncheck for me whether they have a heart?",85,,,,Sub_Ch12,S12_L0084
+3,71,85,0,Dot,,anim_default,text,그리고 그들의 유영이\n얼마나 아름다운지도.,And just how gracefully they swim.,,,,,Sub_Ch12,S12_L0085
+4,72,86,0,Dot,,anim_default,text,무엇이 여름이라는 계절을\n사랑스럽게 만드는 걸까?,What makes summer\nso lovely as a season?,87,,,,Sub_Ch12,S12_L0086
+4,72,87,0,Dot,,anim_default,text,"시나 소설, 영화에서\n등장하는 여름을 떠올려봐.","Think of summer in poems\nand novels, or movies.",88,,,,Sub_Ch12,S12_L0087
+4,72,88,0,Dot,,anim_default,text,"대부분 생기와 활기, 또는\n잊지 못할 열기로 가득 차 있어.","They are full of life and energy,\nor unforgettable heat.",89,,,,Sub_Ch12,S12_L0088
+4,72,89,0,Dot,,anim_default,text,"<nickname>, 너의 여름은 어때?","<nickname>, what is your summer like?",90,,,,Sub_Ch12,S12_L0089
+4,72,90,0,Dot,,anim_default,text,너도 여름만의 박동을 느껴?,Do you feel the unique\nthrum of summer?,91,,,,Sub_Ch12,S12_L0090
+4,72,91,0,Player,,anim_default,selection,"응, 여름은 특별한 계절이야.|아니, 여름은 그저 더운 계절이야.","Yes, summer is special to me.|No, summer is just hot.",92|93,,,,Sub_Ch12,S12_L0091
+4,72,92,0,Dot,,anim_default,text,너도 그렇구나.,I see.,94,,,,Sub_Ch12,S12_L0092
+4,72,93,0,Dot,,anim_default,text,나도 백과사전에서 여름을 찾았을\n때는 그렇게 생각했었는데…,I thought so too when I looked\nup summer in my encyclopedia…,94,,,,Sub_Ch12,S12_L0093
+4,72,94,0,Dot,,anim_default,text,어떤 인간들에게 여름은 책갈피를\n남기고 싶은 계절인가봐.,Some humans want to mark their\nsummers like a page of a book.,95,,,,Sub_Ch12,S12_L0094
+4,72,95,0,Dot,,anim_default,text,"그들의 여름 안에선, 초록을\n머금은 잎이 빛에 스며들어.","In their summers, leaves of\ngreen shades melt into light.",96,,,,Sub_Ch12,S12_L0095
+4,72,96,0,Dot,,anim_default,text,"아이들이 그림자를\n늘어뜨린 채 뛰어다니고,","Children run with long shadows\nhanging onto their heels,",97,,,,Sub_Ch12,S12_L0096
+4,72,97,0,Dot,,anim_default,text,그늘 밑을 구르는 자전거\n바퀴 소리가 들리지.,and the sound of bicycle wheels\nrolling beneath the shade.,98,,,,Sub_Ch12,S12_L0097
+4,72,98,0,Dot,,anim_default,text,모든 게 만져질 듯이 선명하면서도\n홀연히 사라질 것 같아.,Everything is vivid enough to touch\nand yet could vanish in an instant.,99,,,,Sub_Ch12,S12_L0098
+4,72,99,0,Dot,,anim_default,text,"아름다워, 아름답지, 눈이 부셔.\n그런데 이상하게도…","Beautiful, beautiful, blinding.\nAnd yet strangely…",100,,,,Sub_Ch12,S12_L0099
+4,72,100,0,Dot,,anim_default,text,그 풍경 속에 있는 나를\n그려 보기는 어렵네.,I can’t picture myself in the scene.,101,,,,Sub_Ch12,S12_L0100
+4,72,101,0,Dot,,anim_default,text,쏟아지는 빛 속에서는 마음껏\n어두워지지 못할 테니까.,The pouring light won’t\nlet me be as dark as I like.,102,,,,Sub_Ch12,S12_L0101
+4,72,102,0,Dot,,anim_default,text,"혹여나 습하고 질척이는 존재들이\n해를 피해 숨어 버린다면,","If damp and clinging beings\nwere to hide from the sun,",103,,,,Sub_Ch12,S12_L0102
+4,72,103,0,Dot,,anim_default,text,나도 여름 속 보이지 않는 어느\n구석으로 함께 기어 들어가 슬퍼할래.,I too would crawl into some invisible\ncorner of summer and lament.,,,,,Sub_Ch12,S12_L0103

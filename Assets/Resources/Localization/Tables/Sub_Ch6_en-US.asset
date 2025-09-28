@@ -1,0 +1,899 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Sub_Ch6_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 57be9569e58e16f418ea85625e09a6ef, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 665025802240
+    m_Localized: What were you doing, Dot?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773760
+    m_Localized: Nothing. Just looking at myself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773761
+    m_Localized: Beyond this black abyss of nothingness.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773762
+    m_Localized: "I\u2019ve been meaning to ask."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773763
+    m_Localized: Why do you hate your\nblackness so much?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773764
+    m_Localized: eng1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773765
+    m_Localized: "Hate isn\u2019t the right\\nword for this emotion."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773766
+    m_Localized: "It\u2019s something much more impure.\\nGrubby. Something that
+      runs deep."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773767
+    m_Localized: Crude and noiseless.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773768
+    m_Localized: Some days it creeps upward\nbefore sinking down,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773769
+    m_Localized: and other days it wraps around me and\n swallows me whole, wet and
+      slimy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773770
+    m_Localized: Disgust?|Fear?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665046773771
+    m_Localized: Correct and incorrect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968064
+    m_Localized: Revulsion, distaste, hostility? Fear, self-hatred,\nloathing. No,
+      no. Perhaps all of the above.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968065
+    m_Localized: But no word in the dictionary could\nbe enough to express how I
+      feel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968066
+    m_Localized: I think I understand.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968067
+    m_Localized: (I know how they feel. Be empathetic.)|(Try to make Dot see differently.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968068
+    m_Localized: eng2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968069
+    m_Localized: eng3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968070
+    m_Localized: eng4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968071
+    m_Localized: "I don\u2019t understand why you hate it so much."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968072
+    m_Localized: eng5-1|eng5-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968073
+    m_Localized: eng6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968074
+    m_Localized: eng7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968075
+    m_Localized: eng8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968076
+    m_Localized: eng9-1|eng9-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968077
+    m_Localized: "I like your blackness. It\u2019s special and unique."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968078
+    m_Localized: eng10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968079
+    m_Localized: "> But it\u2019s so very you. Small but clever, a lovely ball of
+      black!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968080
+    m_Localized: eng11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968081
+    m_Localized: eng12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968082
+    m_Localized: eng13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968083
+    m_Localized: eng14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968084
+    m_Localized: eng15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968085
+    m_Localized: You like my black?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968086
+    m_Localized: "\u2026\u2026 <nickname>."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968087
+    m_Localized: "\u2026\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968088
+    m_Localized: eng16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968089
+    m_Localized: "It doesn\u2019t disgust me from my very core,\\nnor does it taint
+      you from your very soul."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968090
+    m_Localized: You really had no idea?\nThis whole time?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968091
+    m_Localized: eng17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968092
+    m_Localized: "This is rancid vomit, shameful\\ninferiority\u2026 squirming cockroaches."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968093
+    m_Localized: Think. Think about it\nfrom a human perspective.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968094
+    m_Localized: "Imagine you\u2019re made of them, and you smell\\nthem every time
+      you look at yourself."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968095
+    m_Localized: "Isn\u2019t it disgusting? Revolting?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968096
+    m_Localized: "Aren\u2019t you seized with the urge to\\npeel off your skin layer
+      by layer?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968097
+    m_Localized: To chop it off?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968098
+    m_Localized: "A bathtub\u2026 or just plain old bleach."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968099
+    m_Localized: "Don\u2019t you want to submerge yourself in anything\\nand pray
+      pray pray that it purifies you?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968100
+    m_Localized: "Oh, oh, oh. Oh\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968101
+    m_Localized: "If you\u2019d been born from filth, from the foulest\\nand largest
+      pool on the dark side of the moon."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968102
+    m_Localized: "Then you wouldn\u2019t be able to say these words so easily."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968103
+    m_Localized: "Dot\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968104
+    m_Localized: "You\u2019re pitying me but you have\\nno idea what it\u2019s really
+      like."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968105
+    m_Localized: "You\u2019re being arrogant, thinking\\nyou can fix anything. You
+      can\u2019t."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968106
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968107
+    m_Localized: I thought you would understand.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968108
+    m_Localized: No, no, no.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968109
+    m_Localized: "Maybe you can\u2019t understand,\\nbecause you\u2019re you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968110
+    m_Localized: And you could never be me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968111
+    m_Localized: "Because you\u2019re human."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968112
+    m_Localized: "And I\u2019m\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968113
+    m_Localized: "I\u2019m."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968114
+    m_Localized: A monster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968115
+    m_Localized: "\u2026\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968116
+    m_Localized: "I don\u2019t want to see you right now."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968117
+    m_Localized: Leave. Please.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968118
+    m_Localized: <nickname>, is it special to be unique?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968119
+    m_Localized: Is being unique a good thing?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968120
+    m_Localized: "Yes, it\u2019s a valuable thing.|Depends on what kind of unique."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968121
+    m_Localized: Are you sure?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968122
+    m_Localized: I see.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968123
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968124
+    m_Localized: <nickname>, I envy you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968125
+    m_Localized: Everywhere you go you have your\nspecies staring back like a mirror.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968126
+    m_Localized: On a walk in the park near your house, or\non some hidden beach
+      in a faraway land,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968127
+    m_Localized: your species resemble you and\nassure you exist as a human being.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968128
+    m_Localized: He, she, and them, here\nand there and every where.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968129
+    m_Localized: They all look like you, and their\nlives interlace with yours like
+      a net.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968130
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968131
+    m_Localized: Assurance. That I too can and should\nexist. Not a coincidence,
+      but a fact.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968132
+    m_Localized: Exist. That my existence in itself grants me\nthe right to make
+      up part of this universe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968133
+    m_Localized: "It\u2019s a privilege only\\nthose with kin are given."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968134
+    m_Localized: "(Dot is right. They\u2019ve always been a source of comfort.)|(But
+      are they always good for you?)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968135
+    m_Localized: One could think that. I agree with you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968136
+    m_Localized: "Humans\u2026 are like one another\\nin each and every unique way."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968137
+    m_Localized: Wholesome happiness is shared\nwith others in a ecstatic roar,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968138
+    m_Localized: "while a stranger\u2019s word can soothe\\nover the deepest caverns
+      of sorrow."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968139
+    m_Localized: The fact that someone shares my\nemotions and perspective alone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968140
+    m_Localized: can at times give me confidence\nin myself, and my existence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968141
+    m_Localized: "I see\u2026\u2026. I knew it. I was right."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968142
+    m_Localized: <nickname>, you see, I envy\nthat loose thread of connection.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968143
+    m_Localized: "It\u2019s not always a good thing."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968144
+    m_Localized: Being similar means being subjected to\ncomparison, evaluation,
+      or projection.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968145
+    m_Localized: The more people look like you,\nthe easier you can be replaced.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968146
+    m_Localized: You might lose faith in your existence,\nand even your individuality.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968147
+    m_Localized: "Losing, or forgetting\u2026. whichever\\nit may be I\u2019ll never
+      know."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968148
+    m_Localized: "But it\u2019s tiring and scary to have beings\\nthat share my emotions
+      and perspectives."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968149
+    m_Localized: "I even wanted all of them to go away.|That\u2019s why I don\u2019t
+      like people very much."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968150
+    m_Localized: Really?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968151
+    m_Localized: "Humans\u2026 as peculiar\\nas they are beautiful."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968152
+    m_Localized: That even you can sometimes\nbe tired of your kin.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968153
+    m_Localized: "But\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968154
+    m_Localized: "I can\u2019t stop thinking how that sentiment\\nis yet another
+      privilege for those with kin."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968155
+    m_Localized: I.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968156
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968157
+    m_Localized: So I.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968158
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968159
+    m_Localized: "I\u2019m unique anywhere I go."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968160
+    m_Localized: One of a kind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968161
+    m_Localized: "They call beings like me a \u2018rarity\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968162
+    m_Localized: "Like a pink diamond from the desert,\\nor a baby\u2019s first tooth,
+      solid and white."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968163
+    m_Localized: To be rare should mean to be beautiful.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968164
+    m_Localized: And desirable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968165
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968166
+    m_Localized: But why am I like this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968167
+    m_Localized: Small and sticky and mouthless and\ncolorless and kinless and useless
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968168
+    m_Localized: useless
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968169
+    m_Localized: useless
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968170
+    m_Localized: and no one wants me. Like a nasty piece of\ncandy, stuck to the
+      bottom of a picnic basket.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968171
+    m_Localized: "Dot\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968172
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968173
+    m_Localized: "I\u2019m unique."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968174
+    m_Localized: One of a kind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968175
+    m_Localized: Singular because no one needs me,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968176
+    m_Localized: like a leftover. With no\nright to this universe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968177
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968178
+    m_Localized: "\u2026. Lonely. I think I\u2019m lonely."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968179
+    m_Localized: I can only ever be me
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968180
+    m_Localized: and you can only ever be you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968181
+    m_Localized: "I know, I know, I know! But! I think I\u2019ve found\\nthe sole
+      exception, where we can be one!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968182
+    m_Localized: (Look at Dot.)|(Inquire.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968183
+    m_Localized: What exception?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968184
+    m_Localized: It has to do with this book I read today!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968185
+    m_Localized: The protagonist was a monster just like me,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968186
+    m_Localized: and we were alike in many ways,\nand so were our thought processes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968187
+    m_Localized: The way he thought and felt,\nfeared, rejoiced, and questioned.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968188
+    m_Localized: All of it was a carbon copy of every\nsingle voice flowing within
+      me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968189
+    m_Localized: Even his hatred toward himself\nfelt like my very own.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968190
+    m_Localized: "And I, oh, oh, oh\u2014! I felt my heart\\ncry out\u2026 and I
+      resonated with him!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968191
+    m_Localized: I was him!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968192
+    m_Localized: "But Dot, you said before that we\u2019re separate \\nbeings that
+      could never be one, right?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968193
+    m_Localized: Yes, I did.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968194
+    m_Localized: But no! Really? Really, truly? No!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968195
+    m_Localized: But despite knowing it to be true, the mere \nthought made my heart
+      ache with desolation,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968196
+    m_Localized: "so I was searching for clues, exceptions\\nthat will exclaim, \u201CPreposterous!\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968197
+    m_Localized: If there truly is no exception, am I doomed\nto the fundamental
+      solitude of existence,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968198
+    m_Localized: abandoned and left alone to slowly dry out?\nNo, not a chance. Seek
+      the exception I shall!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968199
+    m_Localized: The way you searched for characters\nin books that resemble you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968200
+    m_Localized: Yes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968201
+    m_Localized: "I\u2019m not just bound to me, and\\nyou\u2019re not just bound
+      to you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968202
+    m_Localized: We can be each other!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968203
+    m_Localized: "But he\u2019s only a character from a book.|Can a man-made monster
+      back your logic, though?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968204
+    m_Localized: They exist as print on the pages of a book.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968205
+    m_Localized: "They don\u2019t contain multitudes, they don\u2019t live\\nor breathe,
+      and they don\u2019t interact with you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968206
+    m_Localized: You might have been deeply\ntouched by reading that book,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968207
+    m_Localized: "but the way you resonated\u2026 might just\\nbe you projecting
+      a piece of you onto him."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968208
+    m_Localized: "But\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968209
+    m_Localized: But.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968210
+    m_Localized: "In that moment I felt whole\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968211
+    m_Localized: (Pat Dot.)|(Look at Dot.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968212
+    m_Localized: Was it a moment of fulfillment,\na moment of illusion?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968213
+    m_Localized: "Oh, oh\u2026. All unique beings are inevitably\\nlonely. I know,
+      I know, I know."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968214
+    m_Localized: I know, I know it has to be so, and yet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968215
+    m_Localized: "It\u2019s a wall I desperately want to\\ntear down. I thirst, and
+      I desire."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968216
+    m_Localized: "(Stay by Dot\u2019s side.)|(Give Dot some space.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968217
+    m_Localized: <nickname>, look over here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968218
+    m_Localized: Hmm?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968219
+    m_Localized: What do you think?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968220
+    m_Localized: (Oh, shit. A bug.)|(Gah! What is that!)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968221
+    m_Localized: "Oh\u2026 a bug."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968222
+    m_Localized: What are you doing with a bug, Dot?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968223
+    m_Localized: (Please, please get away from it.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968224
+    m_Localized: "Yes, it\u2019s a present from Dame Spider\\nthat lives on our windowsill!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968225
+    m_Localized: "I think humans call this a \u2018caterpillar\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968226
+    m_Localized: "Look at it. It\u2019s plump\\nand long and flexible."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968227
+    m_Localized: Just how many places has it\nbeen to with its wriggling body?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968228
+    m_Localized: It must have visited the corner store, the local\ngraveyard, and
+      your favorite diner easily.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968229
+    m_Localized: "(I guess that sounds pretty\u2026cute?)|(Blegh\u2026 It gives me
+      the creeps.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968230
+    m_Localized: "Yeah\u2026 I guess\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665050968231
+    m_Localized: I want to hear what it has to say.\nIt must be like an adventure
+      novel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162368
+    m_Localized: 'I like to think this caterpillar is a lovable\n
+
+      prankster
+      who likes to get up to mischief.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162369
+    m_Localized: What do you think?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162370
+    m_Localized: "(I\u2019d rather not think about it\u2026)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162371
+    m_Localized: Dot, no!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162372
+    m_Localized: "Diners don\u2019t allow bugs!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162373
+    m_Localized: Why not? Caterpillars get hungry too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162374
+    m_Localized: What would be the best\ndish for our little friend here?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162375
+    m_Localized: "Oh, um\u2026. the best dish?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162376
+    m_Localized: "Uh, I guess I\u2019d say\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162377
+    m_Localized: "\u2026 I like it!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162378
+    m_Localized: You know,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162379
+    m_Localized: "I\u2019m on closer terms with Dame\\nSpider, wouldn\u2019t you
+      say?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162380
+    m_Localized: I always said hello to her\nafter our first encounter,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162381
+    m_Localized: "but she didn\u2019t seem to recognize me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162382
+    m_Localized: And it felt like a weight on my chest every time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162383
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162384
+    m_Localized: Until today, when she dropped\nthis bug in front of me!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162385
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162386
+    m_Localized: "Only then did I guess how Dame Spider felt,\\nthough we haven\u2019t
+      said a word to each other."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162387
+    m_Localized: "She must think we\u2019re closer now, and this\\ncaterpillar must
+      be a token of our friendship."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162388
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162389
+    m_Localized: I would like to be good friends with it,\nso kindly offered to me
+      by the Dame.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162390
+    m_Localized: "\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162391
+    m_Localized: How should I go about\nmaking friends with it? Help!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162392
+    m_Localized: "\u2018What do I do\u2026.\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665055162393
+    m_Localized: "Well\u2026 I\u2019ll think about it\u2026"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
