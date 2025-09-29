@@ -180,7 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1097236181}
-  editPopup: {fileID: 955649265}
+  editNamePopup: {fileID: 0}
+  LangPopup: {fileID: 0}
   closePopup: {fileID: 1503305164}
   alterPopup: {fileID: 455389249}
   nameSetting: {fileID: 260770877}
@@ -44176,7 +44177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1429493248}
-  editPopup: {fileID: 1911660353}
+  editNamePopup: {fileID: 0}
+  LangPopup: {fileID: 0}
   closePopup: {fileID: 768318864}
   alterPopup: {fileID: 431683098}
   nameSetting: {fileID: 556456982}
@@ -64870,7 +64872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2046645039688417541
 Transform:
   m_ObjectHideFlags: 0
