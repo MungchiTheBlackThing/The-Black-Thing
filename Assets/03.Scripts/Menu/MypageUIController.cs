@@ -4,33 +4,28 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Localization.Components;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public class MypageUIController : MonoBehaviour
 {
-    [SerializeField]
-    GameObject menu;
+    [SerializeField] GameObject menu;
 
-    [SerializeField]
-    GameObject editPopup;
-    [SerializeField]
-    [Tooltip("Nickname Input")]
-    GameObject closePopup;
-    [SerializeField]
-    [Tooltip("Nickname Alert")]
-    GameObject alterPopup;
-    [SerializeField]
-    GameObject nameSetting;
+    [SerializeField] GameObject editNamePopup;
+    [SerializeField] GameObject LangPopup;
+    [SerializeField] GameObject closePopup;
+    [SerializeField] GameObject alterPopup;
+    [SerializeField] GameObject nameSetting;
 
-    [SerializeField]
-    List<Button> pushAlert;
-    [SerializeField]
-    List<Button> languageAlert;
+    [SerializeField] List<Button> pushAlert;
+    [SerializeField] List<Button> languageAlert;
 
-    [SerializeField]
-    Slider seSlider;
-    [SerializeField]
-    Slider musicSlider;
+    [SerializeField] Slider seSlider;
+    [SerializeField] Slider musicSlider;
+
+    [SerializeField] string navStringTable = "SystemUIText";
+    [SerializeField] List<string> popupPageLocalizationKeys;
 
 
     string userID = "";
@@ -51,24 +46,26 @@ public class MypageUIController : MonoBehaviour
     #endregion
 
 
-    [SerializeField]
-    List<GameObject> popupPage;
+    [SerializeField] List<GameObject> popupPage;
 
-    [SerializeField]
-    GameObject prevBut;
+    [SerializeField] GameObject prevBut;
 
-    [SerializeField]
-    GameObject nextBut;
-    [SerializeField]
-    List<Color> colors;
+    [SerializeField] GameObject nextBut;
+    [SerializeField] List<Color> colors;
 
     List<List<string>> popupPageName;
 
-    TranslateManager translator;
+    TMP_Text _nextButText;
+    TMP_Text _prevButText;
+    TMP_Text _nameSettingText;
+    bool _inited = false;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        _nextButText = nextBut.GetComponent<TMP_Text>();
+        _prevButText = prevBut.GetComponent<TMP_Text>();
+        _nameSettingText = nameSetting.GetComponent<TMP_Text>();
         popupPageName = new List<List<string>>();
 
         Init();
@@ -79,7 +76,7 @@ public class MypageUIController : MonoBehaviour
         //켜질때마다
         pageIdx = 0;
 
-        for(int i=0;i<popupPage.Count;i++)
+        for (int i = 0; i < popupPage.Count; i++)
         {
             //모두 정리
             popupPage[i].SetActive(false);
@@ -87,7 +84,10 @@ public class MypageUIController : MonoBehaviour
         prevBut.SetActive(false);
         popupPage[pageIdx].SetActive(true);
 
-        if(popupPageName.IsUnityNull() == false)
+        UpdateNavButtonsVisibility();
+        UpdateNavButtonText();
+
+        if (popupPageName.IsUnityNull() == false)
         {
             int Idx = (int)player.GetLanguage();
             nextBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx + 1][Idx];
@@ -96,49 +96,72 @@ public class MypageUIController : MonoBehaviour
 
     void Init()
     {
-        isEnableAlert = player.GetisPushNotificationEnabled();
-        isKorean = player.GetLanguage() == LANGUAGE.KOREAN;
-        userName = player.GetNickName();
-        nameSetting.GetComponent<TMP_Text>().text = userName;
-        musicVolume = player.GetMusicVolume();
-        seVolume = player.GetAcousticVolume();
-        seSlider.value = seVolume;
-        musicSlider.value = musicVolume;
+        if (_inited) return;
+        _inited = true;
 
-        //delegate 연결,실제 음악 델리게이트 연결
-        seSlider.onValueChanged.AddListener( OnValueChangeSE );
-        seSlider.onValueChanged.AddListener( player.SetSEVolume);
-       // seSlider.onValueChanged.AddListener( MusicManager.Instance.AdjustSEVolume);
+        if (player != null)
+        {
+            isEnableAlert = player.GetisPushNotificationEnabled();
+            isKorean = player.GetLanguage() == LANGUAGE.KOREAN;
+            userName = player.GetNickName();
+            musicVolume = player.GetMusicVolume();
+            seVolume = player.GetAcousticVolume();
+        }
+        _nameSettingText.text = userName;
 
-        musicSlider.onValueChanged.AddListener(OnValueChangedBGM);
-        musicSlider.onValueChanged.AddListener(player.SetBGMVolume);
-        // musicSlider.onValueChanged.AddListener(MusicManager.Instance.AdjustBGMVolume);  
+        if (seSlider != null)
+        {
+            seSlider.value = seVolume;
+            seSlider.onValueChanged.RemoveListener(OnValueChangeSE);
+            seSlider.onValueChanged.RemoveAllListeners();
+            //delegate 연결,실제 음악 델리게이트 연결
+            seSlider.onValueChanged.AddListener(OnValueChangeSE);
+            if (player != null) seSlider.onValueChanged.AddListener(player.SetSEVolume);
+            // seSlider.onValueChanged.AddListener( MusicManager.Instance.AdjustSEVolume);
+        }
+
+        if (musicSlider != null)
+        {
+            musicSlider.value = musicVolume;
+            musicSlider.onValueChanged.RemoveListener(OnValueChangedBGM);
+            musicSlider.onValueChanged.RemoveAllListeners();
+            musicSlider.onValueChanged.AddListener(OnValueChangedBGM);
+            if (player != null) musicSlider.onValueChanged.AddListener(player.SetBGMVolume);
+            // musicSlider.onValueChanged.AddListener(MusicManager.Instance.AdjustBGMVolume);  
+        }
 
 
-        List<string> setting = new List<string>();
-        setting.Add(DataManager.Instance.Settings.menuMyPage.settings[0]);
-        setting.Add(DataManager.Instance.Settings.menuMyPage.settings[1]);
+        List<string> setting = new List<string>
+        {
+            DataManager.Instance.Settings.menuMyPage.settings[0],
+            DataManager.Instance.Settings.menuMyPage.settings[1]
+        };
 
-        List<string> community = new List<string>();
-        community.Add(DataManager.Instance.Settings.menuMyPage.community[0]);
-        community.Add(DataManager.Instance.Settings.menuMyPage.community[1]);
+        List<string> community = new List<string>
+        {
+            DataManager.Instance.Settings.menuMyPage.community[0],
+            DataManager.Instance.Settings.menuMyPage.community[1]
+        };
 
-        List<string> credit = new List<string>();
-        credit.Add(DataManager.Instance.Settings.menuMyPage.credit[0]);
-        credit.Add(DataManager.Instance.Settings.menuMyPage.credit[1]);
+        List<string> credit = new List<string>
+        {
+            DataManager.Instance.Settings.menuMyPage.credit[0],
+            DataManager.Instance.Settings.menuMyPage.credit[1]
+        };
 
         popupPageName.Add(setting);
         popupPageName.Add(community);
         popupPageName.Add(credit);
 
+        UpdateNavButtonText();
+        EnablePushAlertColor();
+
         int Idx = (int)player.GetLanguage();
         nextBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx + 1][Idx];
-        EnablePushAlertColor();
-        EnableLanguageColor();
     }
     public void OnValueChangedBGM(float value)
     {
-        musicVolume=value;   
+        musicVolume = value;
         //델리게이트 float 값 주어서 값이 변경될 때 음악도 변경
     }
 
@@ -150,38 +173,52 @@ public class MypageUIController : MonoBehaviour
 
     public void StoreName()
     {
-        userName = "";
-        //InputField로부터 text를 가져온다.
-        //alter팝업을 띄운다
-        //이름을 바꾼다
-
-        //1. EditPopup으로부터 실제 저장할 Nickname을 가져온다.
-        //popup_namesetting - NameInput - TextBoxInput으로부터 text를 가져온다.
+        //1. EditPopup으로부터 실제 저장할 Nickname을 가져온다.popup_namesetting - NameInput - TextBoxInput으로부터 text를 가져온다.
         userName = nicknameTxt.text;
 
-        //4. 셋팅
+        //2. 셋팅
         player.SetNickName(userName);
 
-        //2. closePopup <nickname>을 찾아서 Nickname으로 수정한다.
-        string edit = closeTxt.text.Replace("<nickname>", userName); //<nickname>을 제거 후 붙여넣기
-        closeTxt.text = edit;
+        //3. closePopup <nickname>을 찾아서 Nickname으로 수정한다.
+        var lse = closeTxt.GetComponent<LocalizeStringEvent>();
+        if (lse != null)
+        {
+            lse.StringReference.Arguments = new object[] { new { nickname = userName } };
+            lse.RefreshString();
+        }
+        else
+        {
+            closeTxt.text = closeTxt.text.Replace("<nickname>", userName);
+            Debug.Log("LocalizeStringEvent 없음");
+        }
 
-        //3. 1.5초 뒤 꺼진다. (후처리)
-        editPopup.SetActive(false);
+        //4. 1.5초 뒤 꺼진다.
+        editNamePopup.SetActive(false);
         closePopup.SetActive(true);
-        nameSetting.GetComponent<TMP_Text>().text = userName;
+        _nameSettingText.text = userName;
+
         Invoke("CloseAlter", 1.5f);
     }
 
     /*Edit과 CancelEdit이 같이 사용*/
     public void ToggleEditName()
     {
-        if (editPopup.activeSelf)
+        if (editNamePopup.activeSelf)
         {
-            editPopup.gameObject.SetActive(false);
+            editNamePopup.gameObject.SetActive(false);
             return;
         }
-        editPopup.gameObject.SetActive(true);
+        editNamePopup.gameObject.SetActive(true);
+    }
+
+    public void OpenLangPopup()
+    {
+        if (LangPopup.activeSelf)
+        {
+            LangPopup.gameObject.SetActive(false);
+            return;
+        }
+        LangPopup.gameObject.SetActive(true);
     }
 
     void CloseAlter()
@@ -191,77 +228,43 @@ public class MypageUIController : MonoBehaviour
 
     public void NextPage()
     {
-        pageIdx++;
-        
+        int nextIndex = pageIdx + 1;
+
         //한계 설정, 페이지 개수에 따라서 페이지를 넘을 경우 조절
-        if (pageIdx >= popupPage.Count)
+        if (popupPage == null || popupPage.Count == 0) return;
+
+        if (nextIndex >= popupPage.Count)
         {
-            pageIdx = popupPageName.Count - 1;
+            pageIdx = popupPageName != null && popupPageName.Count > 0 ? popupPageName.Count - 1 : popupPage.Count - 1;
+            UpdateNavButtonsVisibility();
+            UpdateNavButtonText();
             return;
-        }
-        //다음 페이지가 없을 경우에는 버튼을 없애버림
-        if (pageIdx+1>=popupPageName.Count)
-        {
-            nextBut.SetActive(false);
         }
 
         //현재 페이지를 보여주고, 이전 페이지를 없앰
-        popupPage[pageIdx].SetActive(true);
-        popupPage[pageIdx-1].SetActive(false);
-        prevBut.SetActive(true);
+        SetActivePage(nextIndex, pageIdx);
+        pageIdx = nextIndex;
 
-        if (nextBut.activeSelf)
-        {
-            //활성화 되어있는 경우에, 현재 페이지 앞 뒤에 대한 이름 명으로 변경
-            if (popupPage.Count > 0)
-            {
-                int Idx = (int)player.GetLanguage();
-                nextBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx + 1][Idx];
-            }
-        }
-        if (prevBut.activeSelf)
-        {
-            if (popupPage.Count > 0)
-            {
-                int Idx = (int)player.GetLanguage();
-                prevBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx - 1][Idx];
-            }
-        }
+        UpdateNavButtonsVisibility();
+        UpdateNavButtonText();
     }
 
     public void PrePage()
     {
-        pageIdx--;
+        int prevIndex = pageIdx - 1;
+
         if (pageIdx < 0)
         {
             pageIdx = 0;
+            UpdateNavButtonsVisibility();
+            UpdateNavButtonText();
             return;
         }
-        if (pageIdx-1 < 0)
-        {
-            prevBut.SetActive(false);
-        }
+        SetActivePage(prevIndex, pageIdx);
+        pageIdx = prevIndex;
 
-        popupPage[pageIdx].SetActive(true);
-        popupPage[pageIdx + 1].SetActive(false);
-        nextBut.SetActive(true);
-
-        if (prevBut.activeSelf)
-        {
-            if (popupPage.Count > 0)
-            {
-                int Idx = (int)player.GetLanguage();
-                prevBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx - 1][Idx];
-            }
-        }
-        if (nextBut.activeSelf)
-        {
-            if (popupPage.Count > 0)
-            {
-                int Idx = (int)player.GetLanguage();
-                nextBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx + 1][Idx];
-            }
-        }
+        UpdateNavButtonsVisibility();
+        UpdateNavButtonText();
     }
 
     public void OnPushAlert()
@@ -286,7 +289,7 @@ public class MypageUIController : MonoBehaviour
 
     public void On()
     {
-        isEnableAlert = true; 
+        isEnableAlert = true;
         EnablePushAlertColor();
         player.SetisPushNotificationEnabled(isEnableAlert);
         alterPopup.SetActive(false);
@@ -296,14 +299,16 @@ public class MypageUIController : MonoBehaviour
     {
         isKorean = true;
         player.SetLanguage(LANGUAGE.KOREAN);
-        EnableLanguageColor();
+        //EnableLanguageColor();
+        UpdateNavButtonText();
     }
 
     public void SetEnglish()
     {
         isKorean = false;
         player.SetLanguage(LANGUAGE.ENGLISH);
-        EnableLanguageColor();
+        //EnableLanguageColor();
+        UpdateNavButtonText();
     }
     public void Exit()
     {
@@ -312,32 +317,105 @@ public class MypageUIController : MonoBehaviour
 
     void EnablePushAlertColor()
     {
+        if (pushAlert == null || pushAlert.Count < 2) return;
+        if (colors == null || colors.Count < 2) return;
+
         int Idx = Convert.ToInt32(isEnableAlert) % 2;
-        pushAlert[Idx].GetComponent<Image>().color = colors[0]; //0번이 활성화
-        pushAlert[(Idx + 1) % 2].GetComponent<Image>().color = colors[1]; //1번 비활성화
+        var onBtn = pushAlert[Idx];
+        var offBtn = pushAlert[(Idx + 1) % 2];
+
+        if (onBtn != null)
+        {
+            var img = onBtn.GetComponent<Image>();
+            if (img != null) img.color = colors[0]; //0번이 활성화
+        }
+
+        if (offBtn != null)
+        {
+            var img = offBtn.GetComponent<Image>();
+            if (img != null) img.color = colors[1]; //1번 비활성화
+        }
     }
 
-    void EnableLanguageColor()
+    // void EnableLanguageColor()
+    // {
+    //     int Idx = Convert.ToInt32(isKorean) % 2;
+    //     //languageAlert[Idx].GetComponent<TMP_Text>().color = colors[0]; //0번이 활성화
+    //     //languageAlert[(Idx + 1) % 2].GetComponent<TMP_Text>().color = colors[1]; //1번 비활성화
+
+    //     if (prevBut.activeSelf)
+    //     {
+    //         if (popupPage.Count > 0)
+    //         {
+    //             int LangIdx = (int)player.GetLanguage();
+    //             prevBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx - 1][LangIdx];
+    //         }
+    //     }
+    //     if (nextBut.activeSelf)
+    //     {
+    //         if (popupPage.Count > 0)
+    //         {
+    //             int LangIdx = (int)player.GetLanguage();
+    //             nextBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx + 1][LangIdx];
+    //         }
+    //     }
+    // }
+
+    void UpdateNavButtonsVisibility()
     {
-        int Idx = Convert.ToInt32(isKorean) % 2;
-        languageAlert[Idx].GetComponent<TMP_Text>().color = colors[0]; //0번이 활성화
-        languageAlert[(Idx + 1) % 2].GetComponent<TMP_Text>().color = colors[1]; //1번 비활성화
-        
-        if (prevBut.activeSelf)
+        // prev
+        if (prevBut != null)
         {
-            if (popupPage.Count > 0)
-            {
-                int LangIdx = (int)player.GetLanguage();
-                prevBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx - 1][LangIdx];
-            }
+            bool showPrev = pageIdx - 1 >= 0;
+            prevBut.SetActive(showPrev);
         }
-        if (nextBut.activeSelf)
+
+        // next
+        if (nextBut != null)
         {
-            if (popupPage.Count > 0)
-            {
-                int LangIdx = (int)player.GetLanguage();
-                nextBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx + 1][LangIdx];
-            }
+            bool showNext = popupPageName != null && pageIdx + 1 < popupPageName.Count;
+            if (popupPage != null && pageIdx + 1 < popupPage.Count)
+                showNext = showNext && true;
+            nextBut.SetActive(showNext);
         }
     }
+
+    void UpdateNavButtonText()
+    {
+        if (nextBut.activeSelf)
+        {
+            int nextLabelIdx = pageIdx + 1;
+            _nextButText.text = GetPageNameLocalized(nextLabelIdx);
+
+        }
+        if (prevBut.activeSelf)
+        {
+            int prevLabelIdx = pageIdx - 1;
+            _prevButText.text = GetPageNameLocalized(prevLabelIdx);
+        }
+    }
+
+    void SetActivePage(int newIdx, int oldIdx)
+    {
+        if (popupPage == null) return;
+
+        if (oldIdx >= 0 && oldIdx < popupPage.Count && popupPage[oldIdx] != null)
+            popupPage[oldIdx].SetActive(false);
+
+        if (newIdx >= 0 && newIdx < popupPage.Count && popupPage[newIdx] != null)
+            popupPage[newIdx].SetActive(true);
+    }
+
+    string GetPageNameLocalized(int idx)
+    {
+        if (idx >= 0 && idx < popupPageLocalizationKeys.Count &&
+            !string.IsNullOrEmpty(popupPageLocalizationKeys[idx]))
+        {
+            return LocalizationSettings.StringDatabase.GetLocalizedString(navStringTable, popupPageLocalizationKeys[idx]);
+        }
+
+        return string.Empty;
+    }
+
+
 }
