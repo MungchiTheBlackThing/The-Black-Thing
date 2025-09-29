@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: Chapter
+  m_Name: SrcDay5
   m_EditorClassIdentifier: 
-  m_SharedTableData: {fileID: 11400000, guid: 1b40c81899d6c924b8bf1ebde234f7b6, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: 2b320c1715aabe349b9d513cb0c75fcf, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: f3f6b2d54df6f5340923727d1753a277, type: 2}
-  - {fileID: 11400000, guid: 70a36aadb71424f4fb3cae2abe65ec44, type: 2}
+  - {fileID: 11400000, guid: 351486b2ec797d645939077c4e2530d3, type: 2}
+  - {fileID: 11400000, guid: 068d1dc9407e1e7449baa9e6a259d438, type: 2}
   m_Extensions:
-  - rid: 5827831787663917072
+  - rid: 5827832305795465265
   m_Group: String Table
   references:
     version: 2
     RefIds:
-    - rid: 5827831787663917072
+    - rid: 5827832305795465265
       type: {class: CsvExtension, ns: UnityEditor.Localization.Plugins.CSV, asm: Unity.Localization.Editor}
       data:
         m_Collection: {fileID: 11400000}
         m_ColumnsList:
-        - rid: 5827831787663917073
-        - rid: 5827831787663917074
-        - rid: 5827831787663917075
+        - rid: 5827832305795465266
+        - rid: 5827832305795465267
+        - rid: 5827832305795465268
         m_ConnectedFile: 
-    - rid: 5827831787663917073
+    - rid: 5827832305795465266
       type: {class: KeyIdColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
       data:
         m_IncludeId: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
         m_KeyFieldName: Key
         m_IdFieldName: Id
         m_CommentFieldName: Shared Comments
-    - rid: 5827831787663917074
+    - rid: 5827832305795465267
       type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
       data:
         m_LocaleIdentifier:
@@ -47,7 +47,7 @@ MonoBehaviour:
         m_FieldName: English (United States)(en-US)
         m_CommentFieldName: English (United States)(en-US) Comments
         m_IncludeComments: 1
-    - rid: 5827831787663917075
+    - rid: 5827832305795465268
       type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
       data:
         m_LocaleIdentifier:
