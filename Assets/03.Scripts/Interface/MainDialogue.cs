@@ -134,10 +134,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         maindata.LineKey = DialogueEntries[idx].LineKey;
         maindata.Actor = DialogueEntries[idx].Actor;
         maindata.TextType = DialogueEntries[idx].TextType;
-
-        //maindata.Text = DialogueEntries[idx].KorText;
-        //maindata.Text = GetDisplayText(DialogueEntries[idx]);
-
+        
         if (string.IsNullOrEmpty(DialogueEntries[idx].LocTable))
         {
             Debug.Log("LocTable 비어있음 :" + DialogueEntries[idx].KorText);

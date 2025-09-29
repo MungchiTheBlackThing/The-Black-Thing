@@ -218,6 +218,7 @@ public class GameManager : MonoBehaviour
         }
         currentPattern = patternState;
         activeState = states[patternState];
+        Debug.Log("[디버깅]스테이트 변경: " + patternState);
         activeState.Enter(this, dot);
 
         if(dot.GetSubScriptListCount(patternState) != 0)

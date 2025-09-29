@@ -23,24 +23,24 @@ public class SubDialAlert : MonoBehaviour
 
         if (player == null || chapterInfo == null)
         {
-            Debug.LogWarning("SubDialAlert: player ¶Ç´Â chapterInfo°¡ ºñ¾î ÀÖÀ½");
+            Debug.LogWarning("SubDialAlert: player ë˜ëŠ” chapterInfoê°€ ë¹„ì–´ ìˆìŒ");
             return;
         }
 
         int phase = player.GetAlreadyEndedPhase();
         int subseq = player.GetSubseq();
 
-        // <int> Ä¡È¯
+        // <int> ì¹˜í™˜
         if (secondText != null)
         {
             int remain = Mathf.Max(0, GetPhaseLength(phase) - subseq);
             secondText.text = secondText.text.Replace("<int>", remain.ToString());
         }
 
-        // ¼º°ø ¿©ºÎ
+        // ì„±ê³µ ì—¬ë¶€
         List<bool> successPhase = player.GetSubPhase(chapterInfo.id);
 
-        // ¾ÆÀÌÄÜ Àû¿ë
+        // ì•„ì´ì½˜ ì ìš©
         ApplySubPhaseIcons(chapterInfo, successPhase, phase);
     }
 
@@ -53,16 +53,16 @@ public class SubDialAlert : MonoBehaviour
         for (int i =0; i<allowed.Count; i++)
         {
             int allowindex = allowed[i];
-            Debug.Log("¼º°ø ÆäÀÌÁî: " + successPhase[allowindex]);
-            // ½½·Ô ¼¼ÆÃ
+            Debug.Log("ì„±ê³µ í˜ì´ì¦ˆ: " + successPhase[allowindex]);
+            // ìŠ¬ë¡¯ ì„¸íŒ…
             if (successPhase[allowindex])
             {
-                Debug.Log("¼º°ø ÀÌ¹ÌÁö " + i + " " + chapterInfo.subLockFilePath[i]);
+                Debug.Log("ì„±ê³µ ì´ë¯¸ì§€ " + i + " " + chapterInfo.subLockFilePath[i]);
                 images[i].sprite = Resources.Load<Sprite>(chapterInfo.subFilePath[i]);
             }
             else
             {
-                Debug.Log("½ÇÆĞ ÀÌ¹ÌÁö " + i + " " + chapterInfo.subLockFilePath[i]);
+                Debug.Log("ì‹¤íŒ¨ ì´ë¯¸ì§€ " + i + " " + chapterInfo.subLockFilePath[i]);
                 images[i].sprite = Resources.Load<Sprite>(chapterInfo.subLockFilePath[i]);
             }
 

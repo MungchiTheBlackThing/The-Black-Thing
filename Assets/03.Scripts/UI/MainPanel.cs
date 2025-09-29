@@ -296,10 +296,11 @@ public class MainPanel : MonoBehaviour
                     if (korText.Contains("<nickname>") && pc)
                         korText = korText.Replace("<nickname>", pc.GetNickName());
 
+                    //[디버깅]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         DotPanel,
                         DotPanel.GetComponent<CanvasGroup>(),
-                        0.5f,
+                        0.01f,
                         MainClick.GetComponent<UnityEngine.UI.Button>(),
                         () => { DotTextUI.text = korText; },
                         waitVideo
@@ -308,10 +309,11 @@ public class MainPanel : MonoBehaviour
                 else if (actor == "Player")
                 {
                     MainClick.SetActive(true);
+                    //[디버깅]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         PlayPanel,
                         PlayPanel.GetComponent<CanvasGroup>(),
-                        0.5f,
+                        0.01f,
                         PlayPanel.transform.GetChild(0).GetComponent<UnityEngine.UI.Button>(),
                         () => { PlayTextUI.text = korText; },
                         waitVideo

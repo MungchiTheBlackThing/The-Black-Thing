@@ -4,6 +4,8 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Video;
 using TMPro;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 
 public class MainVideo : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class MainVideo : MonoBehaviour
 
     private bool waitingToPlay = false;
 
-    [SerializeField] GameObject text;        
+    [SerializeField] GameObject text;
     [SerializeField] int chapter;
     [SerializeField] GameObject background;
 
@@ -22,6 +24,11 @@ public class MainVideo : MonoBehaviour
     private List<VideoSubtitleEntry> entries;
     private int lastIndex = -1;
     private double[] startsCache;
+
+    [SerializeField] private bool useLocalization = true;
+    private string subtitleTableName;
+    private string[] entryKeys;
+    private string[] localizedCache;
 
     private void Start()
     {
@@ -53,6 +60,12 @@ public class MainVideo : MonoBehaviour
         startsCache = null;
         EnsureSubtitleText();
         if (subtitleText != null) subtitleText.text = "";
+
+        subtitleTableName = $"SrcDay{Day}";
+        entryKeys = (entries != null) ? BuildEntryKeys(Day, entries.Count) : null;
+        RebuildLocalizedCache();
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged_Subtitle;
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged_Subtitle;
 
         Rawimage.SetActive(false);
 
@@ -186,6 +199,7 @@ public class MainVideo : MonoBehaviour
         if (subtitleText != null) subtitleText.text = "";
         text.SetActive(false);
         EndGameNow();
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged_Subtitle;
     }
 
     private void OnVideoError(VideoPlayer vp, string message)
@@ -222,7 +236,10 @@ public class MainVideo : MonoBehaviour
             if (idx >= 0)
             {
                 var e = entries[idx];
-                subtitleText.text = (currentLanguage == LANGUAGE.ENGLISH) ? e.EngText : e.KorText;
+                string loc = (useLocalization) ? TryGetLocalized(idx) : null;
+                subtitleText.text = !string.IsNullOrEmpty(loc)
+                    ? loc
+                    : ((currentLanguage == LANGUAGE.ENGLISH) ? e.EngText : e.KorText);
             }
             else
             {
@@ -315,9 +332,9 @@ public class MainVideo : MonoBehaviour
                 videoPlayer.errorReceived -= OnVideoError;
                 videoPlayer.seekCompleted -= OnSeekCompleted;
 
-                videoPlayer.Stop();              
-                videoPlayer.time = 0;             
-                videoPlayer.frame = 0;           
+                videoPlayer.Stop();
+                videoPlayer.time = 0;
+                videoPlayer.frame = 0;
                 videoPlayer.SetDirectAudioMute(0, true);
 
                 if (videoPlayer.clip != null)
@@ -347,8 +364,88 @@ public class MainVideo : MonoBehaviour
     private void OnDestroy()
     {
         EndGameNow();
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged_Subtitle;
+    }
+
+    private string[] BuildEntryKeys(int day, int count)
+    {
+        if (count <= 0) return null;
+        var arr = new string[count];
+        for (int i = 0; i < count; i++)
+            arr[i] = $"SD{day}_L{(i + 1):0000}";
+        return arr;
+    }
+
+    private void RebuildLocalizedCache()
+    {
+        if (!useLocalization || string.IsNullOrEmpty(subtitleTableName) || entryKeys == null)
+        {
+            localizedCache = null;
+            return;
+        }
+
+        if (localizedCache == null || localizedCache.Length != entryKeys.Length)
+            localizedCache = new string[entryKeys.Length];
+
+        for (int i = 0; i < entryKeys.Length; i++)
+        {
+            var key = entryKeys[i];
+            string s = string.Empty;
+
+            if (!string.IsNullOrEmpty(key))
+            {
+                try
+                {
+                    s = LocalizationSettings.StringDatabase.GetLocalizedString(subtitleTableName, key);
+                }
+                catch { s = string.Empty; }
+            }
+
+            localizedCache[i] = s;
+        }
+    }
+
+    private string TryGetLocalized(int idx)
+    {
+        if (!useLocalization || localizedCache == null || idx < 0 || idx >= localizedCache.Length)
+            return null;
+
+        var cached = localizedCache[idx];
+        if (!string.IsNullOrEmpty(cached)) return cached;
+
+        try
+        {
+            var key = (entryKeys != null && idx < entryKeys.Length) ? entryKeys[idx] : null;
+            if (!string.IsNullOrEmpty(key))
+            {
+                string s = LocalizationSettings.StringDatabase.GetLocalizedString(subtitleTableName, key);
+                if (!string.IsNullOrEmpty(s))
+                {
+                    localizedCache[idx] = s;
+                    return s;
+                }
+            }
+        }
+        catch { }
+
+        return null;
+    }
+
+    private void OnLocaleChanged_Subtitle(Locale _)
+    {
+        RebuildLocalizedCache();
+
+        if (subtitleText != null && lastIndex >= 0 && entries != null && lastIndex < entries.Count)
+        {
+            var e = entries[lastIndex];
+            string loc = TryGetLocalized(lastIndex);
+            subtitleText.text = !string.IsNullOrEmpty(loc)
+                ? loc
+                : ((currentLanguage == LANGUAGE.ENGLISH) ? e.EngText : e.KorText);
+        }
     }
 }
+
 
 
 /*--------------------------------------------CSV 파싱 부분----------------------------------------------------*/

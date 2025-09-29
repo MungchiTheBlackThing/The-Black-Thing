@@ -477,7 +477,8 @@ public class SubPanel : MonoBehaviour
         LocationSet(selectedDot);
         // 단일 버튼(넘김 버튼)만 페이드할 때는 button 전달
         var btn = subClick ? subClick.GetComponent<Button>() : null;
-        StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.5f, btn));
+        //[디버깅] 0.5f -> 0.01f
+        StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.01f, btn));
         if (btn) RegisterNextButton(btn);
     }
 
@@ -486,7 +487,8 @@ public class SubPanel : MonoBehaviour
         if (subClick) subClick.SetActive(true);
         PlayerLocationSet(selectedDot);
         var btn = subClick ? subClick.GetComponent<Button>() : null;
-        StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.5f, btn));
+        //[디버깅] 0.5f -> 0.01f
+        StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.01f, btn));
         if (btn) RegisterNextButton(btn);
     }
 
