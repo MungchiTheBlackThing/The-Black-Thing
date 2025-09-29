@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{5f427cc6-8f3a-43bd-899e-c885c9f1d748}">
+		<property name="assetPath">
+			<value>Night_Cat_2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.7455416666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{43364ee9-4226-457d-872d-c9efc1122b1e}</destination>
+		</relationship>
+	</object>
+</objects>
