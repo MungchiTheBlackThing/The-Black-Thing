@@ -548,6 +548,7 @@ Transform:
   - {fileID: 8178644287984673794}
   - {fileID: 6302579719705188332}
   - {fileID: 1140059116552149453}
+  - {fileID: 2640845510171953762}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -859,6 +860,90 @@ MonoBehaviour:
   isDoorOpen: 1
   dot: {fileID: 0}
   targetCollider: {fileID: 4726462250068791661}
+--- !u!1 &5115604210121406721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2640845510171953762}
+  - component: {fileID: 6377651393861164359}
+  m_Layer: 0
+  m_Name: fix_cat_day
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2640845510171953762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115604210121406721}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.537, y: 2.686, z: 0}
+  m_LocalScale: {x: 1.0895, y: 1.0895, z: 1.0895}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4525410702864086747}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &6377651393861164359
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115604210121406721}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1580129183
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 5a231fd514f89f94cbb9743fad74225e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.58, y: 1.49}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &5375679905758892564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,6 +1973,13 @@ MonoBehaviour:
   moonRadioController: {fileID: 0}
   alert: {fileID: 6730126151556917055}
   text: {fileID: 2697451036034109642}
+  screen: {fileID: 0}
+  Dot: {fileID: 0}
+  originaltext: "\uB2EC\uC774 \uB72C \uBC24, \uC800\uB141 \uC5EC\uB35F \uC2DC\uBD80\uD130
+    \n\uC0C8\uBCBD \uC138 \uC2DC \uAE4C\uC9C0"
+  endtext: "\uCE58\uC775-\uCE58\uC774\uC775.\uCE58\uC9C1.\n\uC1A1\uC2E0\uBD88\uAC00.\uC1A1\uC2E0\uBD88\uAC00"
+  checktext: "\uC791\uB3D9\uD558\uC9C0 \uC54A\uB294\uB2E4.\n\uC1A1\uC2E0\uAE30\uAC00
+    \uACE0\uC7A5\uB09C \uB4EF\uD558\uB2E4."
 --- !u!1 &8178644287984673795
 GameObject:
   m_ObjectHideFlags: 0

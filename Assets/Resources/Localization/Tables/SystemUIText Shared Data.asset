@@ -1,0 +1,356 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: SystemUIText Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: SystemUIText
+  m_TableCollectionNameGuidString: da3ace5be7811444ba98c75a009f3c97
+  m_Entries:
+  - m_Id: 52855701504
+    m_Key: menu_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52956364800
+    m_Key: menu_howto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52956364801
+    m_Key: menu_progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52956364802
+    m_Key: menu_mypage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52956364803
+    m_Key: settings_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52956364804
+    m_Key: settings_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52956364805
+    m_Key: settings_BGM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52956364806
+    m_Key: settings_SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52956364807
+    m_Key: settings_alert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753408
+    m_Key: settings_namechanged
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753409
+    m_Key: settings_namesetting_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753410
+    m_Key: settings_namesetting_placeholder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753411
+    m_Key: settings_namesetting_no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753412
+    m_Key: settings_namesetting_yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753413
+    m_Key: settings_pushoff_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753414
+    m_Key: settings_pushoff_no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753415
+    m_Key: settings_pushoff_yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753416
+    m_Key: settings_language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753417
+    m_Key: community_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753418
+    m_Key: community_instagram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753419
+    m_Key: community_discord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753420
+    m_Key: community_discordTip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753421
+    m_Key: community_x
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753422
+    m_Key: community_url_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753423
+    m_Key: community_url_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753424
+    m_Key: community_url_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753425
+    m_Key: credit_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753426
+    m_Key: credit_text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753427
+    m_Key: progress_alert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753428
+    m_Key: progress_title_ch1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753429
+    m_Key: progress_title_ch2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753430
+    m_Key: progress_title_ch3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753431
+    m_Key: progress_title_ch4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753432
+    m_Key: progress_title_ch5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753433
+    m_Key: progress_title_ch6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753434
+    m_Key: progress_title_ch7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753435
+    m_Key: progress_title_ch8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753436
+    m_Key: progress_title_ch9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753437
+    m_Key: progress_title_ch10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753438
+    m_Key: progress_title_ch11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753439
+    m_Key: progress_title_ch12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753440
+    m_Key: progress_title_ch13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753441
+    m_Key: progress_title_ch14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753442
+    m_Key: progress_subtitle_ch1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753443
+    m_Key: progress_subtitle_ch2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753444
+    m_Key: progress_subtitle_ch3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753445
+    m_Key: progress_subtitle_ch4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753446
+    m_Key: progress_subtitle_ch5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753447
+    m_Key: progress_subtitle_ch6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753448
+    m_Key: progress_subtitle_ch7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753449
+    m_Key: progress_subtitle_ch8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753450
+    m_Key: progress_subtitle_ch9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753451
+    m_Key: progress_subtitle_ch10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753452
+    m_Key: progress_subtitle_ch11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753453
+    m_Key: progress_subtitle_ch12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753454
+    m_Key: progress_subtitle_ch13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753455
+    m_Key: progress_subtitle_ch14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753456
+    m_Key: progress_longtext_ch1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753457
+    m_Key: progress_longtext_ch2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753458
+    m_Key: progress_longtext_ch3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753459
+    m_Key: progress_longtext_ch4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753460
+    m_Key: progress_longtext_ch5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753461
+    m_Key: progress_longtext_ch6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753462
+    m_Key: progress_longtext_ch7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753463
+    m_Key: progress_longtext_ch8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753464
+    m_Key: progress_longtext_ch9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753465
+    m_Key: progress_longtext_ch10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753466
+    m_Key: progress_longtext_ch11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753467
+    m_Key: progress_longtext_ch12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753468
+    m_Key: progress_longtext_ch13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753469
+    m_Key: progress_longtext_ch14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753470
+    m_Key: howto_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753471
+    m_Key: timeskip_popup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753472
+    m_Key: timeskip_yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753473
+    m_Key: timeskip_no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753474
+    m_Key: checklist_phase1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753475
+    m_Key: checklist_phase2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753476
+    m_Key: checklist_phase3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753477
+    m_Key: checklist_phase4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753478
+    m_Key: mapalert_moonRadio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52964753479
+    m_Key: mapalert_diary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48771676372992
+    m_Key: settings_current_language
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5827832305795465218
+  references:
+    version: 2
+    RefIds:
+    - rid: 5827832305795465218
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1759136836093

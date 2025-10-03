@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: SrcDay2 Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: SrcDay2
+  m_TableCollectionNameGuidString: f3930ad896203f34a8e28132088e510e
+  m_Entries:
+  - m_Id: 558315470848
+    m_Key: SD2_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968320
+    m_Key: SD2_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968321
+    m_Key: SD2_L0003
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968322
+    m_Key: SD2_L0004
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968323
+    m_Key: SD2_L0005
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968324
+    m_Key: SD2_L0006
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968325
+    m_Key: SD2_L0007
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968326
+    m_Key: SD2_L0008
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968327
+    m_Key: SD2_L0009
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968328
+    m_Key: SD2_L0010
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968329
+    m_Key: SD2_L0011
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968330
+    m_Key: SD2_L0012
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968331
+    m_Key: SD2_L0013
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968332
+    m_Key: SD2_L0014
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968333
+    m_Key: SD2_L0015
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968334
+    m_Key: SD2_L0016
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968335
+    m_Key: SD2_L0017
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968336
+    m_Key: SD2_L0018
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968337
+    m_Key: SD2_L0019
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968338
+    m_Key: SD2_L0020
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558390968339
+    m_Key: SD2_L0021
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5827832305795465236
+  references:
+    version: 2
+    RefIds:
+    - rid: 5827832305795465236
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1759158343818

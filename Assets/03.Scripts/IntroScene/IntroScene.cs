@@ -41,11 +41,11 @@ public class IntroScene : MonoBehaviour
         {
             splashAnimator.gameObject.SetActive(false);
             loadingAnimator.gameObject.SetActive(true);
+            introGroup.SetActive(true);
 
             StartCoroutine(Wait_Animation(loadingAnimator, "DefaultLoadingAnimation", () =>
             {
                 loadingAnimator.gameObject.SetActive(false);
-                introGroup.SetActive(true);
                 continueButton.SetActive(data != null && data.isContinue == 1);
             }));
         }));

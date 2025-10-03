@@ -20,12 +20,13 @@ public class LoadSceneManager : MonoBehaviour
     public TextMeshProUGUI chTitleText;
     public TextMeshProUGUI chLoadingText;
     public Slider loadingSlider;
+    public Image loadingSliderFill;
     public TextMeshProUGUI loadingNumText;
 
     public FadeInOutManager fadeInOut;
 
     [Header("로딩 패널 로컬라이제이션 테이블")]
-    private string _stringTableName = "Chapter";
+    private string _stringTableName = "ChapterLoadingUIText";
 
     private string _currentSceneName;
     private string _targetSceneName;
@@ -163,7 +164,11 @@ public class LoadSceneManager : MonoBehaviour
             _visualProgress += Time.deltaTime * 0.3f;
             if (_visualProgress > _realProgress) _visualProgress = _realProgress;
 
-            if (loadingSlider != null) loadingSlider.value = _visualProgress;
+            if (loadingSlider != null)
+            {
+                //loadingSlider.value = _visualProgress;
+                loadingSliderFill.fillAmount = _visualProgress;
+            }
             if (loadingNumText != null) loadingNumText.text = $"{(_visualProgress * 100):F0}%";
 
             yield return null;
@@ -180,13 +185,21 @@ public class LoadSceneManager : MonoBehaviour
             elapsed += Time.deltaTime;
             _visualProgress = Mathf.Lerp(startProgress, 1f, elapsed / duration);
 
-            if (loadingSlider != null) loadingSlider.value = _visualProgress;
+            if (loadingSlider != null)
+            {
+                //loadingSlider.value = _visualProgress;
+                loadingSliderFill.fillAmount = _visualProgress;
+            }
             if (loadingNumText != null) loadingNumText.text = $"{(_visualProgress * 100):F0}%";
 
             yield return null;
         }
 
-        if (loadingSlider != null) loadingSlider.value = 1f;
+        if (loadingSlider != null)
+        {
+            //loadingSlider.value = 1f;
+            loadingSliderFill.fillAmount = 1f;
+        }
         if (loadingNumText != null) loadingNumText.text = "100%";
 
         yield return new WaitForSeconds(0.5f);

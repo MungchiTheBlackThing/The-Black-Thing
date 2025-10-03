@@ -269,11 +269,12 @@ public class MainPanel : MonoBehaviour
                     if (korText.Contains("<nickname>") && pc)
                         korText = korText.Replace("<nickname>", pc.GetNickName());
 
+                    //[디버깅]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         DotPanel,
                         DotPanel.GetComponent<CanvasGroup>(),
                         0.5f,
-                        new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null }, // ✅ 리스트
+                        new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null }, 
                         () => { DotTextUI.text = korText; },
                         waitVideo
                     ));
@@ -285,7 +286,7 @@ public class MainPanel : MonoBehaviour
                         PlayPanel,
                         PlayPanel.GetComponent<CanvasGroup>(),
                         0.5f,
-                        new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null }, // ✅ 리스트
+                        new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null },
                         () => { PlayTextUI.text = korText; },
                         waitVideo
                     ));

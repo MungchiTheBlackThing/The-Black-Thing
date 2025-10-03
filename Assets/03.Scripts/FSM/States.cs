@@ -174,13 +174,15 @@ public class Writing : GameState, ILoadingInterface, IResetStateInterface
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         Debug.Log("뭉치 일기 써야함");
-        if(RunSubScript(dot, manager) == false)
-        {
-            Write(manager, dot);
-        }
+        // if (RunSubScript(dot, manager) == false)
+        // {
+        //     Debug.Log("[디버깅]뭉치 일기 씀");
+        //     Write(manager, dot);
+        // }
+        Write(manager, dot);
     }
 
-    public void Write(GameManager manager, DotController dot = null, TutorialManager tutomanger = null) // 희진 님 여기예요 근데 왜 안 될까요 ㅠㅠ...
+    public void Write(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         manager.ObjectManager.PlayThinking();
         manager.ObjectManager.ShowDiary(false);
