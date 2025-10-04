@@ -8,16 +8,15 @@ using UnityEngine.EventSystems;
 
 public class MainPanel : MonoBehaviour
 {
-    //게임매니저
-    [SerializeField]
-    GameManager gameManager;
-    [SerializeField] 
-    PlayerController pc;
-    
+    [SerializeField] GameManager gameManager;
+    [SerializeField] PlayerController pc;
+
     MainDialogue mainDialogue;
+
     [SerializeField] TextMeshProUGUI DotTextUI;
     [SerializeField] TextMeshProUGUI PlayTextUI;
     [SerializeField] TextMeshProUGUI InputTextUI;
+
     [SerializeField] GameObject DotPanel;
     [SerializeField] GameObject PlayPanel;
     [SerializeField] GameObject InputPanel;
@@ -26,27 +25,27 @@ public class MainPanel : MonoBehaviour
     [SerializeField] GameObject Checkbox4Panel;
     [SerializeField] GameObject Selection3Panel;
     [SerializeField] GameObject Selection4Panel;
+
     [SerializeField] Button NextButton;
-    [SerializeField] private TMP_InputField Textinput;
+    [SerializeField] TMP_InputField Textinput;
+
     [SerializeField] GameObject MainClick;
     [SerializeField] GameObject BackBut;
     [SerializeField] public GameObject UITutorial;
+
     [SerializeField] int backindex = -1;
     [SerializeField] string backtag = "";
 
-    public int dialogueIndex = 0;  // Current dialogue index
-    public int Day = 0;  // Current day
+    public int dialogueIndex = 0;
+    public int Day = 0;
     public LANGUAGE LANGUAGE;
 
-    // Start is called before the first frame update
     void OnEnable()
     {
-        //게임매니저 게임패턴
         mainDialogue = (MainDialogue)gameManager.CurrentState;
         pc = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         MainClick = GameObject.Find("MainClick");
     }
-
 
     public void InitializePanels()
     {
@@ -85,8 +84,6 @@ public class MainPanel : MonoBehaviour
         Selection4Panel.SetActive(false);
         Selection4Panel.AddComponent<CanvasGroup>();
 
-       
-
         if (MainClick != null && BackBut != null && BackBut.transform.parent == transform)
         {
             BackBut.transform.SetSiblingIndex(transform.childCount - 1);
@@ -94,13 +91,14 @@ public class MainPanel : MonoBehaviour
         }
         else
         {
-            MainClick.transform.SetSiblingIndex(transform.childCount - 1);
+            if (MainClick) MainClick.transform.SetSiblingIndex(transform.childCount - 1);
         }
     }
+
     void ShowSelection(string options)
     {
         var selections = options.Split('|');
-        var buttons = SelectionPanel.GetComponentsInChildren<Button>(true); // 자식 전체에서 Button만 수집
+        var buttons = SelectionPanel.GetComponentsInChildren<Button>(true);
 
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -118,7 +116,6 @@ public class MainPanel : MonoBehaviour
             btn.onClick.AddListener(() => OnSelectionClicked(index));
         }
     }
-
 
     void ShowCheckboxOptions(GameObject checkboxPanel, string options)
     {
@@ -145,90 +142,58 @@ public class MainPanel : MonoBehaviour
         Debug.Log($"선택 클릭됨: {index}");
         var currentEntry = mainDialogue.GetData(dialogueIndex);
         Debug.Log("currentEntry.NextLineKey: " + currentEntry.NextLineKey);
+
         if (!string.IsNullOrEmpty(currentEntry.NextLineKey))
         {
-            Debug.Log("다음 키 상황: " + currentEntry.NextLineKey);
             string[] nextKeys = currentEntry.NextLineKey.Split('|');
-            Debug.Log(nextKeys[0] + "," + nextKeys[1]);
-            Debug.Log(currentEntry.DeathNote);
-            //여기서 sun, moon, active, passive 체크해서 올리기
-            if (currentEntry.DeathNote != "")
-            {
-                string[] archeTags = currentEntry.DeathNote.Split('|'); // 예: "sun|moon", "moon|sun", "active|passive", "passive|active" 등
 
-                if (archeTags.Length == 2) // 항상 두 개의 값이 존재해야 함
+            if (!string.IsNullOrEmpty(currentEntry.DeathNote))
+            {
+                string[] archeTags = currentEntry.DeathNote.Split('|');
+
+                if (archeTags.Length == 2)
                 {
                     string firstTag = archeTags[0].Trim().ToLower();
                     string secondTag = archeTags[1].Trim().ToLower();
 
-                    if (index == 0)
-                    {
-                        Debug.Log(firstTag);
-                        backtag = firstTag;
-                        pc.UpdateArcheType(firstTag);
-                    }
-                    else if (index == 1)
-                    {
-                        Debug.Log(secondTag);
-                        backtag= secondTag;
-                        pc.UpdateArcheType(secondTag);
-                    }
+                    if (index == 0) { backtag = firstTag; pc.UpdateArcheType(firstTag); }
+                    else if (index == 1) { backtag = secondTag; pc.UpdateArcheType(secondTag); }
                 }
-
                 else if (archeTags.Length == 4)
                 {
                     pc.checkdeath(index);
                 }
+                else backtag = "";
             }
-            else
-            {
-                backtag = "";
-            }
+            else backtag = "";
 
             if (index < nextKeys.Length && int.TryParse(nextKeys[index], out int nextLineKey))
             {
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
-                Debug.Log("다음 인덱스: " + nextIndex);
                 if (nextIndex != -1)
                 {
                     backindex = dialogueIndex;
                     dialogueIndex = nextIndex;
                 }
-                else
-                {
-                    Debug.Log("Next LineKey not found in dialogue list. Ending dialogue.");
-                    DialEnd();
-                    return;
-                }
+                else { DialEnd(); return; }
             }
-            else
-            {
-                Debug.Log("Invalid NextLineKey index or parse failure. Ending dialogue.");
-                DialEnd();
-                return;
-            }
+            else { DialEnd(); return; }
         }
-        else
-        {
-            Debug.Log("Current entry is null. Ending dialogue.");
-            DialEnd();
-            return;
-        }
+        else { DialEnd(); return; }
 
         SelectionPanel.SetActive(false);
         Selection3Panel.SetActive(false);
         Selection4Panel.SetActive(false);
-        Debug.Log("돌아갈수 있는 번호: " + backindex);
         ShowNextDialogue();
     }
-    
+
     public void DialEnd()
     {
         Debug.Log("메인 끝");
         mainDialogue.currentDialogueList.Clear();
         dialogueIndex = 0;
         backindex = -1;
-        Debug.Log(gameManager.GetComponent<TutorialManager>());
+
         if (gameManager.GetComponent<TutorialManager>() != null)
         {
             PanelOff();
@@ -237,37 +202,45 @@ public class MainPanel : MonoBehaviour
         else
         {
             PanelOff();
-            Debug.Log("버튼 끄기");
-            BackBut.SetActive(false);
+            if (BackBut) BackBut.SetActive(false);
             mainDialogue.MainEnd();
         }
     }
+
     void PanelOff()
     {
         GameObject[] panels = { DotPanel, PlayPanel, SelectionPanel, InputPanel, Checkbox3Panel, Checkbox4Panel, Selection3Panel, Selection4Panel };
         foreach (GameObject panel in panels)
-        {
-            panel.SetActive(false);
-        }
-        if (MainClick)
-            MainClick.SetActive(false);
+            if (panel) panel.SetActive(false);
+
+        if (MainClick) MainClick.SetActive(false);
     }
 
-    private IEnumerator ShowPanelWithDelay(GameObject panel, CanvasGroup cg, float fadeSeconds, UnityEngine.UI.Button focusButton, System.Action beforeActivate, bool waitForVideo)
+    private IEnumerator ShowPanelWithDelay(
+        GameObject panel,
+        CanvasGroup cg,
+        float fadeSeconds,
+        IList<Button> focusButtons,               // 🔁 여러 버튼 지원
+        System.Action beforeActivate,
+        bool waitForVideo)
     {
         if (waitForVideo)
         {
-            Debug.Log("영상 시작");
             gameManager.mainVideo.PlayVideo();
-            yield return new WaitForSeconds(1f); // 영상 페이드인 시간만큼 대기
+            yield return new WaitForSeconds(1f);
         }
 
         beforeActivate?.Invoke();
         panel.SetActive(true);
-        yield return StartCoroutine(FadeIn(cg, fadeSeconds, focusButton));
-        if (focusButton != null && panel != SelectionPanel)
-            RegisterNextButton(focusButton);
 
+        yield return StartCoroutine(FadeIn(cg, fadeSeconds, focusButtons)); // 🔁 리스트 전달
+
+        // selection 류는 Next 등록 안 함
+        if (focusButtons != null && panel != SelectionPanel)
+        {
+            foreach (var b in focusButtons)
+                if (b) RegisterNextButton(b);
+        }
     }
 
     public void ShowNextDialogue()
@@ -292,7 +265,7 @@ public class MainPanel : MonoBehaviour
             case "text":
                 if (actor == "Dot")
                 {
-                    MainClick.SetActive(true);
+                    if (MainClick) MainClick.SetActive(true);
                     if (korText.Contains("<nickname>") && pc)
                         korText = korText.Replace("<nickname>", pc.GetNickName());
 
@@ -300,21 +273,20 @@ public class MainPanel : MonoBehaviour
                     StartCoroutine(ShowPanelWithDelay(
                         DotPanel,
                         DotPanel.GetComponent<CanvasGroup>(),
-                        0.01f,
-                        MainClick.GetComponent<UnityEngine.UI.Button>(),
+                        0.5f,
+                        new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null }, 
                         () => { DotTextUI.text = korText; },
                         waitVideo
                     ));
                 }
                 else if (actor == "Player")
                 {
-                    MainClick.SetActive(true);
-                    //[디버깅]0.5f -> 0.01f
+                    if (MainClick) MainClick.SetActive(true);
                     StartCoroutine(ShowPanelWithDelay(
                         PlayPanel,
                         PlayPanel.GetComponent<CanvasGroup>(),
-                        0.01f,
-                        PlayPanel.transform.GetChild(0).GetComponent<UnityEngine.UI.Button>(),
+                        0.5f,
+                        new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null },
                         () => { PlayTextUI.text = korText; },
                         waitVideo
                     ));
@@ -326,7 +298,7 @@ public class MainPanel : MonoBehaviour
                     SelectionPanel,
                     SelectionPanel.GetComponent<CanvasGroup>(),
                     0.5f,
-                    SelectionPanel.GetComponentInChildren<UnityEngine.UI.Button>(),
+                    new List<Button>(SelectionPanel.GetComponentsInChildren<Button>(true)), // ✅ 두 버튼 모두
                     () => { ShowSelection(korText); },
                     waitVideo
                 ));
@@ -337,8 +309,9 @@ public class MainPanel : MonoBehaviour
                     InputPanel,
                     InputPanel.GetComponent<CanvasGroup>(),
                     0.5f,
-                    InputPanel.transform.GetChild(1).GetComponent<UnityEngine.UI.Button>(),
-                    () => {
+                    new List<Button> { InputPanel.transform.GetChild(1).GetComponent<Button>() },
+                    () =>
+                    {
                         InputTextUI.text = korText;
                         Resetinputfield(InputPanel);
                     },
@@ -351,7 +324,7 @@ public class MainPanel : MonoBehaviour
                     Checkbox3Panel,
                     Checkbox3Panel.GetComponent<CanvasGroup>(),
                     0.5f,
-                    Checkbox3Panel.transform.GetChild(1).GetComponent<UnityEngine.UI.Button>(),
+                    new List<Button> { Checkbox3Panel.transform.GetChild(1).GetComponent<Button>() },
                     () => { ShowCheckboxOptions(Checkbox3Panel, korText); },
                     waitVideo
                 ));
@@ -362,7 +335,7 @@ public class MainPanel : MonoBehaviour
                     Checkbox4Panel,
                     Checkbox4Panel.GetComponent<CanvasGroup>(),
                     0.5f,
-                    Checkbox4Panel.transform.GetChild(1).GetComponent<UnityEngine.UI.Button>(),
+                    new List<Button> { Checkbox4Panel.transform.GetChild(1).GetComponent<Button>() },
                     () => { ShowCheckboxOptions(Checkbox4Panel, korText); },
                     waitVideo
                 ));
@@ -373,7 +346,7 @@ public class MainPanel : MonoBehaviour
                     Selection3Panel,
                     Selection3Panel.GetComponent<CanvasGroup>(),
                     0.5f,
-                    Selection3Panel.transform.GetChild(1).GetComponent<UnityEngine.UI.Button>(),
+                    new List<Button> { Selection3Panel.transform.GetChild(1).GetComponent<Button>() },
                     () => { ShowSelectionOptions(Selection3Panel, korText); },
                     waitVideo
                 ));
@@ -384,7 +357,7 @@ public class MainPanel : MonoBehaviour
                     Selection4Panel,
                     Selection4Panel.GetComponent<CanvasGroup>(),
                     0.5f,
-                    Selection4Panel.transform.GetChild(1).GetComponent<UnityEngine.UI.Button>(),
+                    new List<Button> { Selection4Panel.transform.GetChild(1).GetComponent<Button>() },
                     () => { ShowSelectionOptions(Selection4Panel, korText); },
                     waitVideo
                 ));
@@ -392,22 +365,29 @@ public class MainPanel : MonoBehaviour
         }
     }
 
-    IEnumerator FadeIn(CanvasGroup canvasGroup, float duration, Button button)
+    IEnumerator FadeIn(CanvasGroup canvasGroup, float duration, IList<Button> buttons)
     {
         float counter = 0f;
-        button.interactable = false;
+
+        if (buttons != null)
+            foreach (var b in buttons) if (b) b.interactable = false;
+
         while (counter < duration)
         {
             counter += Time.deltaTime;
             canvasGroup.alpha = Mathf.Lerp(0, 1, counter / duration);
             yield return null;
         }
+
         canvasGroup.alpha = 1;
-        button.interactable = true;
+
+        if (buttons != null)
+            foreach (var b in buttons) if (b) b.interactable = true;
     }
 
     void RegisterNextButton(Button button)
     {
+        if (!button) return;
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(NextDialogue);
     }
@@ -420,31 +400,13 @@ public class MainPanel : MonoBehaviour
             if (int.TryParse(currentEntry.NextLineKey, out int nextLineKey))
             {
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
+                if (nextIndex != -1) dialogueIndex = nextIndex;
+                else { DialEnd(); return; }
+            }
+            else { DialEnd(); return; }
+        }
+        else { DialEnd(); return; }
 
-                if (nextIndex != -1)
-                {
-                    Debug.Log("다음키: " + nextIndex);
-                    dialogueIndex = nextIndex;
-                }
-                else
-                {
-                    DialEnd();
-                    return;
-                }
-            }
-            else
-            {
-                Debug.Log("NextLineKey is not a valid integer. Moving to the next entry by index.");
-                DialEnd();
-                return;
-            }
-        }
-        else
-        {
-            Debug.Log("Current entry is null. Ending dialogue.");
-            DialEnd();
-            return;
-        }
         AudioManager.instance.PlayOneShot(FMODEvents.instance.dialougueDefault, this.transform.position);
         ShowNextDialogue();
     }
@@ -462,19 +424,14 @@ public class MainPanel : MonoBehaviour
     {
         if (backindex != -1)
         {
-            // 아직 backindex에 도달하지 않았다면
             if (dialogueIndex > backindex)
             {
-                dialogueIndex--; // 한 칸 뒤로 가기
+                dialogueIndex--;
                 ShowNextDialogue();
             }
-            // 딱 backindex에 도달했을 때 동작
             else if (dialogueIndex == backindex)
             {
-                if (!string.IsNullOrEmpty(backtag))
-                {
-                    pc.DownArcheType(backtag);
-                }
+                if (!string.IsNullOrEmpty(backtag)) pc.DownArcheType(backtag);
                 ShowNextDialogue();
             }
         }
