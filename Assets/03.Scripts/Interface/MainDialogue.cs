@@ -213,8 +213,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         Debug.Log(uITutorial);
         prePos = dot.Position;
         preanimkey = dot.AnimKey;
-        TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + fileName);
-
+        TextAsset dialogueData = Resources.Load<TextAsset>("CSV/" + "main_script/" + fileName);
+        Debug.Log(dialogueData);
         if (dialogueData == null)
         {
             Debug.LogError("Dialogue file not found in Resources folder.");
