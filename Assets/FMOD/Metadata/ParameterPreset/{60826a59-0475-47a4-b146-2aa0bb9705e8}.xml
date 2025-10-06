@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{60826a59-0475-47a4-b146-2aa0bb9705e8}">
+		<property name="name">
+			<value>AMB_Room</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b7f50997-d893-4a4a-939d-b2ff378d9d96}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f729311a-8e44-4655-8646-e1c251bb44fc}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f729311a-8e44-4655-8646-e1c251bb44fc}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Dawn</value>
+			<value>Morning</value>
+			<value>Evening</value>
+			<value>Night</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
