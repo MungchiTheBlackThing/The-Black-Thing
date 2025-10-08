@@ -16,62 +16,80 @@ MonoBehaviour:
     m_Code: en-US
   m_SharedData: {fileID: 11400000, guid: 93e0ecc345cbfbb4d880ae810813c309, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 3674199710174543944
   m_TableData:
   - m_Id: 537905987584
     m_Localized: I met a person with a charming white hat.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485056
     m_Localized: Brave and brash as a lion one moment,
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485057
     m_Localized: and quiet and prudent as a scholar the next.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485058
     m_Localized: Indeed, the White Hat had a different face day after day.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485059
     m_Localized: Then I heard her being confronted by someone... perhaps her friend?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485060
     m_Localized: "\u201CYou\u2019re someone different every day! Which one's the
       real you?\u201D"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485061
     m_Localized: Instead of answering, she led the person to her home.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485062
     m_Localized: They stood in front of a mirror. Then, slowly, the White Hat took
       off her hat.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485063
     m_Localized: And revealed her myriad heads.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485064
     m_Localized: "\u201CWe\u2019re ALL real!\u201D they roared and whirled with abandon!"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485065
     m_Localized: The friend ran home in terror,
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485066
     m_Localized: and the White Hat, now alone,
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   - m_Id: 537981485067
     m_Localized: seemed somehow sad.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543944
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3674199710174543944
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0000b23d7d000000000032427d000000010032427d000000020032427d000000030032427d000000040032427d000000050032427d000000060032427d000000070032427d000000080032427d000000090032427d0000000a0032427d0000000b0032427d000000

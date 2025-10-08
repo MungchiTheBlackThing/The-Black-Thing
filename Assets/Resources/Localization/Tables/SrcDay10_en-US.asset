@@ -16,60 +16,78 @@ MonoBehaviour:
     m_Code: en-US
   m_SharedData: {fileID: 11400000, guid: d017b73f50695d54f866458d5948df41, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 3674199710174543967
   m_TableData:
   - m_Id: 502950658048
     m_Localized: A black blob was forming.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961216
     m_Localized: As soon as I saw him I hoped I was wrong.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961217
     m_Localized: But alas. I could sense him, on an intuitive level.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961218
     m_Localized: His actions and emotions.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961219
     m_Localized: I felt... pain. As if it were my body being scratched.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961220
     m_Localized: As his nails peeled back his skin, with every acute pulse of pain,
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961221
     m_Localized: black blobs began to form.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961222
     m_Localized: Blobs that looked like balled-up screams.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961223
     m_Localized: Balled-up screams.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961224
     m_Localized: From within him.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961225
     m_Localized: Cinders from a dead flame,
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961226
     m_Localized: swarms of cockroaches,
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   - m_Id: 503021961227
     m_Localized: "globs of red-black blood\u2026"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543967
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3674199710174543967
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0000321a750000000000721e750000000100721e750000000200721e750000000300721e750000000400721e750000000500721e750000000600721e750000000700721e750000000800721e750000000900721e750000000a00721e750000000b00721e75000000

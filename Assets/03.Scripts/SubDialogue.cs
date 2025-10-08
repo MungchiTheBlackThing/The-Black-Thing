@@ -297,7 +297,7 @@ public class SubDialogue : MonoBehaviour
         SubPanel subPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
         if (!SystemUI)
             SystemUI = GameObject.Find("SystemUI");
-        dialogueData = Resources.Load<TextAsset>("CSV/" + "tutorial_sub");
+        dialogueData = Resources.Load<TextAsset>("CSV/sub_script/" + "tutorial_sub");
         if (dialogueData == null)
         {
             Debug.LogError("Dialogue file not found in Resources folder.");

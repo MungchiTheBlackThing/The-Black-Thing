@@ -22,15 +22,18 @@ MonoBehaviour:
   - m_Id: 18389257197584384
     m_Localized: CONTINUE
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827831968918929420
   - m_Id: 18389257340190724
     m_Localized: LANGUAGE
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827831968918929420
   - m_Id: 18389257340190720
     m_Localized: NEW GAME
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827831968918929420
   - m_Id: 18389257340190725
     m_Localized: "Humans have a system of communication they call\\n\u201Clanguage.\u201D
       Choose the one you and Dot will share."
@@ -40,11 +43,13 @@ MonoBehaviour:
   - m_Id: 18389257340190726
     m_Localized: Cancel
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827831968918929420
   - m_Id: 18389257340190727
     m_Localized: Confirm
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827831968918929420
   - m_Id: 18389257340190721
     m_Localized: "\u201CYou are forever responsible for what you have tamed.\u201D\\nEven
       so, erase all memories and begin anew?"
@@ -54,15 +59,17 @@ MonoBehaviour:
   - m_Id: 18389257340190722
     m_Localized: Yes, reset
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827831968918929420
   - m_Id: 18389257340190723
     m_Localized: No, cancel
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827831968918929420
   references:
     version: 2
     RefIds:
     - rid: 5827831968918929420
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0100729fee5441000500729fee544100
+        m_Entries: 0100729fee5441000500729fee5441000000f296ee5441000400729fee5441000000729fee5441000600729fee5441000700729fee5441000200729fee5441000300729fee544100
