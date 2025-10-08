@@ -45,9 +45,9 @@ public class DiaryController : BaseObject, ISleepingInterface
         {
             playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
         }
-        isClicked = playerController.GetIsDiaryCheck(); //´ÙÀÌ¾î¸®¸¦ ÀĞ¾ú´ÂÁö °¡Á®¿Â´Ù.
+        isClicked = playerController.GetIsDiaryCheck(); //ë‹¤ì´ì–´ë¦¬ë¥¼ ì½ì—ˆëŠ”ì§€ ê°€ì ¸ì˜¨ë‹¤.
         isDiaryUpdated = playerController.GetIsUpdatedDiary();
-        //´ÙÀÌ¾î¸®°¡ ¾÷µ¥ÀÌÆ® µÇ¾îÀÖÁö¸¸, Å¬¸¯ÇÏÁö ¾Ê¾ÒÀ» °æ¿ì ´ÙÀÌ¾î¸®´Â Áö¼ÓÀûÀ¸·Î ºÒºûÀÌ µé¾î¿Â´Ù.
+        //ë‹¤ì´ì–´ë¦¬ê°€ ì—…ë°ì´íŠ¸ ë˜ì–´ìˆì§€ë§Œ, í´ë¦­í•˜ì§€ ì•Šì•˜ì„ ê²½ìš° ë‹¤ì´ì–´ë¦¬ëŠ” ì§€ì†ì ìœ¼ë¡œ ë¶ˆë¹›ì´ ë“¤ì–´ì˜¨ë‹¤.
         if (isDiaryUpdated)
         {
             if(isClicked == false)
@@ -57,13 +57,13 @@ public class DiaryController : BaseObject, ISleepingInterface
             }
         }
 
-        //Å¬¸¯Çß°Å³ª, ¾÷µ¥ÀÌÆ®°¡ ¾ÈµÆÀ¸¸é ¾Æ¹« ÀÇ¹Ì¾øÀ½
+        //í´ë¦­í–ˆê±°ë‚˜, ì—…ë°ì´íŠ¸ê°€ ì•ˆëìœ¼ë©´ ì•„ë¬´ ì˜ë¯¸ì—†ìŒ
     }
     public void OpenSleeping()
     {
-        //Play¿¡¼­ ´ÙÀÌ¾î¸®°¡ ¾÷µ¥ÀÌÆ®
-        //´ÙÀÌ¾î¸®°¡ ¾÷µ¥ÀÌÆ® µÇ¾ú±â ¶§¹®¿¡ SleepingÀ¸·Î µé¾î¿Ã¶© Ç×»ó ´ÙÀÌ¾î¸® ºÒºûÀÌ µé¾î¿Â´Ù.
-        //´ÙÀÌ¾î¸® ºÒºûÀÌ µé¾î¿Â´Ù.    
+        //Playì—ì„œ ë‹¤ì´ì–´ë¦¬ê°€ ì—…ë°ì´íŠ¸
+        //ë‹¤ì´ì–´ë¦¬ê°€ ì—…ë°ì´íŠ¸ ë˜ì—ˆê¸° ë•Œë¬¸ì— Sleepingìœ¼ë¡œ ë“¤ì–´ì˜¬ë• í•­ìƒ ë‹¤ì´ì–´ë¦¬ ë¶ˆë¹›ì´ ë“¤ì–´ì˜¨ë‹¤.
+        //ë‹¤ì´ì–´ë¦¬ ë¶ˆë¹›ì´ ë“¤ì–´ì˜¨ë‹¤.    
         if(light.activeSelf == false)
         {
             light.SetActive(true);
@@ -71,7 +71,7 @@ public class DiaryController : BaseObject, ISleepingInterface
 
             if(playerController)
             {
-                //ÇÃ·¹ÀÌ¾î Á¤º¸µµ ¾÷µ¥ÀÌÆ® ÇÑ´Ù.
+                //í”Œë ˆì´ì–´ ì •ë³´ë„ ì—…ë°ì´íŠ¸ í•œë‹¤.
                 playerController.SetIsUpdatedDiary(isDiaryUpdated);
             }
         }
@@ -89,10 +89,10 @@ public class DiaryController : BaseObject, ISleepingInterface
             diaryUI = GameObject.Find("Diary").GetComponent<DiaryUIController>();
         }
 
-        //Å¬¸¯ÇßÀ» ¶§ ÇöÀç ¹¶Ä¡°¡ ¿ÜÃâ ÁßÀÎ°¡, SleepingÀÎ°¡¿¡ µû¶ó¼­ ¸¶¿ì½º Å¬¸¯À» ¸·¾Æ¾ßÇÑ´Ù.
+        //í´ë¦­í–ˆì„ ë•Œ í˜„ì¬ ë­‰ì¹˜ê°€ ì™¸ì¶œ ì¤‘ì¸ê°€, Sleepingì¸ê°€ì— ë”°ë¼ì„œ ë§ˆìš°ìŠ¤ í´ë¦­ì„ ë§‰ì•„ì•¼í•œë‹¤.
         GamePatternState CurrentPhase = (GamePatternState)playerController.GetAlreadyEndedPhase();
 
-        //ÀÎÅÍÆäÀÌ½º·Î »©ÀÚ
+        //ì¸í„°í˜ì´ìŠ¤ë¡œ ë¹¼ì
         if(CurrentPhase != GamePatternState.Watching && CurrentPhase != GamePatternState.Sleeping)
         {
             OpenAlert();
@@ -101,7 +101,7 @@ public class DiaryController : BaseObject, ISleepingInterface
 
         if(CurrentPhase == GamePatternState.Watching)
         {
-            //AtHomeÀÏ ¶§ return;
+            //AtHomeì¼ ë•Œ return;
             string WatchState = DataManager.Instance.Watchinginfo.pattern[playerController.GetChapter()];
 
             EWatching watch;
@@ -115,10 +115,10 @@ public class DiaryController : BaseObject, ISleepingInterface
         }
 
         isClicked = true;
-        //ÇÃ·¹ÀÌ¾î Á¤º¸µµ ¾÷µ¥ÀÌÆ® ÇÑ´Ù.
+        //í”Œë ˆì´ì–´ ì •ë³´ë„ ì—…ë°ì´íŠ¸ í•œë‹¤.
         light.SetActive(false);
         playerController.SetIsDiaryCheck(isClicked);
-        //Å³ ¶§ ÇöÀç Ã©ÅÍ¸¦ È®ÀÎÇÑ´Ù.
+        //í‚¬ ë•Œ í˜„ì¬ ì±•í„°ë¥¼ í™•ì¸í•œë‹¤.
         if (playerController.GetChapter() == 1)
         {
             diaryUI.SetActiveGuide();
