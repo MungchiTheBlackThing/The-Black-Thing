@@ -18,7 +18,7 @@ public class NicknamePopup : MonoBehaviour
     {
         playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
 
-        // ¹öÆ° ¿ÀºêÁ§Æ®¿¡ CanvasGroupÀÌ ¾øÀ¸¸é Ãß°¡
+        // ë²„íŠ¼ ì˜¤ë¸Œì íŠ¸ì— CanvasGroupì´ ì—†ìœ¼ë©´ ì¶”ê°€
         confirmButtonCanvasGroup = confirmButtonObject.GetComponent<CanvasGroup>();
         if (confirmButtonCanvasGroup == null)
             confirmButtonCanvasGroup = confirmButtonObject.AddComponent<CanvasGroup>();
@@ -38,14 +38,14 @@ public class NicknamePopup : MonoBehaviour
 
         if (string.IsNullOrEmpty(trimmed))
         {
-            // ´Ğ³×ÀÓÀÌ ¾øÀ¸¸é Åõ¸íµµ 50% + »óÈ£ÀÛ¿ë ºñÈ°¼ºÈ­
+            // ë‹‰ë„¤ì„ì´ ì—†ìœ¼ë©´ íˆ¬ëª…ë„ 50% + ìƒí˜¸ì‘ìš© ë¹„í™œì„±í™”
             confirmButtonCanvasGroup.alpha = 0.5f;
             confirmButtonCanvasGroup.interactable = false;
             confirmButtonCanvasGroup.blocksRaycasts = false;
         }
         else
         {
-            // ´Ğ³×ÀÓ ÀÖÀ¸¸é ºÒÅõ¸í + »óÈ£ÀÛ¿ë °¡´É
+            // ë‹‰ë„¤ì„ ìˆìœ¼ë©´ ë¶ˆíˆ¬ëª… + ìƒí˜¸ì‘ìš© ê°€ëŠ¥
             confirmButtonCanvasGroup.alpha = 1f;
             confirmButtonCanvasGroup.interactable = true;
             confirmButtonCanvasGroup.blocksRaycasts = true;
