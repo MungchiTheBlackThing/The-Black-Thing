@@ -16,20 +16,28 @@ MonoBehaviour:
     m_Code: en-US
   m_SharedData: {fileID: 11400000, guid: e378c868bae99ea4280e069079af1357, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 7826956241281482754
   m_TableData:
   - m_Id: 16914530304
     m_Localized: Hold the left side to go back,\nand the right side to go forward.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 7826956241281482754
   - m_Id: 19812794368
     m_Localized: Dot asked you to never open this.\nWill you bear the guilt anyways?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 7826956241281482754
   - m_Id: 22895607808
     m_Localized: Yes.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 7826956241281482754
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 7826956241281482754
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00402ff0030000000040ef9c040000000040af5405000000
