@@ -42,11 +42,12 @@ MonoBehaviour:
   - m_Id: 1056470710829056
     m_Localized: ... Okay. I'll go to bed now.\nNo hard feelings. Nope...
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199740306685955
   references:
     version: 2
     RefIds:
     - rid: 3674199740306685955
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0070a0411f0000000070e0471f000000007020481f000000017020481f000000
+        m_Entries: 0070a0411f0000000070e0471f000000007020481f000000017020481f00000000406fc1dac00300

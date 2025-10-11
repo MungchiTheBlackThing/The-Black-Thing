@@ -276,4 +276,34 @@ public class LoadSceneManager : MonoBehaviour
         yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
 
     }
+
+    public IEnumerator ShowDefaultOverlayOnce(float seconds = 2.0f)
+    {
+        fadeInOutImg.SetActive(true);
+
+        fadeInOut.StartFadeOut();
+        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
+
+        defaultLoadingScreenPanel.SetActive(true);
+        chapterLoadingScreenPanel.SetActive(false);
+
+        fadeInOut.StartFadeIn();
+        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + seconds);
+
+        fadeInOut.StartFadeOut();
+        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
+
+        defaultLoadingScreenPanel.SetActive(false);
+        fadeInOutImg.SetActive(false);
+
+        fadeInOut.StartFadeIn();
+        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
+    }
+
+    public void HideAllLoadingOverlays()
+    {
+        defaultLoadingScreenPanel.SetActive(false);
+        chapterLoadingScreenPanel.SetActive(false);
+        fadeInOutImg.SetActive(false);
+    }
 }

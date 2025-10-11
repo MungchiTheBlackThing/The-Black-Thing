@@ -88,19 +88,30 @@ public class IntroScene : MonoBehaviour
     void Play()
     {
         string nextScene;
-        //int chapter = playerInfo.chapter;
+        bool goingTutorial;
 
         if (data != null && data.tutoend == false)
         {
             nextScene = "Tutorial";
+            goingTutorial = true;
             playerInfo.currentPhase = 0;
             WritePlayerFile();
         }
         else
         {
             nextScene = "MainScene";
+            goingTutorial = false;
         }
-        LoadSceneManager.Instance.LoadScene("IntroScene", nextScene, 0);
+        
+        var p = FindObjectOfType<PrologueVideoManager>(true);
+        if (p != null)
+        {
+            p.TryRunPrologueThenGo(nextSceneIfNotTutorial: "MainScene", goingTutorial: goingTutorial, currentSceneName: "IntroScene");
+        }
+        else
+        {
+            LoadSceneManager.Instance.LoadScene("IntroScene", nextScene, 0);
+        }
     }
 
     IEnumerator Wait_Animation(Animator animator, string animationName, Action callBack)

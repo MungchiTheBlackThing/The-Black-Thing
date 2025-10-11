@@ -45,11 +45,12 @@ MonoBehaviour:
     m_Localized: "\uC751... \uC54C\uACA0\uC5B4. \uB098\uB294 \uC790\uB7EC \uAC08\uAC8C.\\n\uC808\uB300
       \uC544\uC27D\uC9C0 \uC54A\uC544! \uAD1C\uCC2E\uC544!"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199740306685954
   references:
     version: 2
     RefIds:
     - rid: 3674199740306685954
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0070a0411f0000000070e0471f000000007020481f000000017020481f000000
+        m_Entries: 0070a0411f0000000070e0471f000000007020481f000000017020481f00000000406fc1dac00300
