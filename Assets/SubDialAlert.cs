@@ -28,14 +28,16 @@ public class SubDialAlert : MonoBehaviour
         }
 
         int phase = player.GetAlreadyEndedPhase();
-        int subseq = player.GetSubseq();
+        List<int> subseq = player.GetWatchedList();
 
-        // <int> 치환
         if (secondText != null)
         {
-            int remain = Mathf.Max(0, GetPhaseLength(phase) - subseq);
+            int lastValue = (subseq.Count > 0) ? subseq[subseq.Count - 1] : 0;
+
+            int remain = Mathf.Max(0, GetPhaseLength(phase) - lastValue);
             secondText.text = secondText.text.Replace("<int>", remain.ToString());
         }
+
 
         // 성공 여부
         List<bool> successPhase = player.GetSubPhase(chapterInfo.id);
@@ -57,13 +59,13 @@ public class SubDialAlert : MonoBehaviour
             // 슬롯 세팅
             if (successPhase[allowindex])
             {
-                Debug.Log("성공 이미지 " + i + " " + chapterInfo.subLockFilePath[i]);
-                images[i].sprite = Resources.Load<Sprite>(chapterInfo.subFilePath[i]);
+                Debug.Log("성공 이미지 " + i + " " + chapterInfo.subLockFilePath[allowindex]);
+                images[i].sprite = Resources.Load<Sprite>(chapterInfo.subFilePath[allowindex]);
             }
             else
             {
-                Debug.Log("실패 이미지 " + i + " " + chapterInfo.subLockFilePath[i]);
-                images[i].sprite = Resources.Load<Sprite>(chapterInfo.subLockFilePath[i]);
+                Debug.Log("실패 이미지 " + i + " " + chapterInfo.subLockFilePath[allowindex]);
+                images[i].sprite = Resources.Load<Sprite>(chapterInfo.subLockFilePath[allowindex]);
             }
 
         }
@@ -85,9 +87,9 @@ public class SubDialAlert : MonoBehaviour
     {
         switch (phase)
         {
-            case 2: return 3;
-            case 4: return 4;
-            case 6: return 5;
+            case 2: return 2;
+            case 4: return 3;
+            case 6: return 4;
             default: return 0;
         }
     }

@@ -27,6 +27,8 @@ public class MoonRadioMainController : MonoBehaviour
     [SerializeField]
     GameObject popupUI;
 
+    [SerializeField]
+    GameObject menu;
     private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<IPlayerInterface>();
@@ -50,6 +52,11 @@ public class MoonRadioMainController : MonoBehaviour
         if(systemUI)
         {
             systemUI.SetActive(true);
+        }
+        if (menu)
+        {
+            menu.SetActive(true);
+            menu.GetComponent<MenuController>().tuto();
         }
     }
 

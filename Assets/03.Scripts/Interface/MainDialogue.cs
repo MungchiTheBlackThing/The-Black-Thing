@@ -16,10 +16,11 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     protected GameObject background = null;
     protected DotController dot = null;
     protected LANGUAGE CurrentLanguage = LANGUAGE.KOREAN;
-    protected List<DialogueEntry> DialogueEntries = new List<DialogueEntry>();
+    public List<DialogueEntry> DialogueEntries = new List<DialogueEntry>();
     public List<object> currentDialogueList = new List<object>();
     public GameObject SystemUI;
     public GameManager manager;
+    public TimeSkipUIController time;
     public int phase = 1;
     MainPanel mainPanel;
     MenuController menuController;
@@ -49,6 +50,11 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         {
             dot.gameObject.SetActive(true);
         }
+        time = GameObject.Find("TimeSkip").GetComponent<TimeSkipUIController>();
+        if (time)
+        {
+            time.gameObject.SetActive(false);
+        }
         //n초 뒤에 아래가 뜬다.
         manager.ObjectManager.PlayThinking();
         Debug.Log("메인 부분");
@@ -57,6 +63,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         this.manager = manager;
         this.dot = dot;
         phase = (int)manager.Pattern;
+        Debug.Log("페이즈 숫자: " + phase);
         dot.TriggerMain(true);
         //dot 한테 chapterList 에서 해당 위치랑 애니메이션이 변함.
         SystemUI = GameObject.Find("SystemUI");
@@ -74,7 +81,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     {
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         CurrentLanguage = playerController.GetLanguage();
-        listclear();
+        mainPanel.dialogueIndex = 0;
         for (int i = 1; i < lines.Length; i++)
         {
             string line = lines[i];
@@ -89,7 +96,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                 int main = int.Parse(parts[0]);
                 if (main == phase)
                 {
-                    //Debug.Log("엔트리 시작");
+                    Debug.Log(phase);
                     DialogueEntry entry = new DialogueEntry
                     {
                         Main = main,
@@ -115,8 +122,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                     //entry.KorText = displayedText;
                     DialogueEntries.Add(entry);
                     currentDialogueList.Add(entry);
-
-
+                    Debug.Log("다이얼 엔트리: "+ DialogueEntries.Count);
+                    Debug.Log(currentDialogueList.Count);
                 }
             }
             else
@@ -149,7 +156,13 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         //이 Text안에서 <name>이 있을 경우 변경
         maindata.NextLineKey = DialogueEntries[idx].NextLineKey;
         maindata.AnimScene = DialogueEntries[idx].AnimScene;
+        if (!pos.TryGetValue(DialogueEntries[idx].Background, out fixedPos))
+        {
+            Debug.LogWarning($"pos 딕셔너리에 '{DialogueEntries[idx].Background}' 키가 없습니다. 기본값 14(main_bed)로 대체합니다.");
+            fixedPos = pos["main_bed"];
+        }
         fixedPos = pos[DialogueEntries[idx].Background];
+
 
         if (string.IsNullOrEmpty(DialogueEntries[idx].DotBody))
         {
@@ -185,7 +198,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             if (text.Contains("<nickname>"))
             {
                 string playerName = playerController.GetNickName();
-                text = text.Replace("<name>", playerName);
+                text = text.Replace("<nickname>", playerName);
             }
         }
         return text;
@@ -194,6 +207,9 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     public void StartMain(GameManager manager, string fileName)
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
+        var mp = GameObject.Find("MainDialougue").GetComponent<MainPanel>();
+        mp.Bind(this);
+        mp.dialogueIndex = 0;
         dot = GameObject.Find("Dot").GetComponent<DotController>();
         Debug.Log(dot);
         if (dot)
@@ -251,33 +267,44 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         Debug.Log("메인 Exit1");
         dot.TriggerMain(false);
         manager.ScrollManager.StopCamera(false);
+
         if (background)
         {
             Debug.Log("현재 배경:" + background.name);
             background.SetActive(false);
         }
+
         manager.ObjectManager.activeSystemUIDelegate(true);
         menuController.allon();
         dot.ChangeState(DotPatternState.Default, preanimkey, prePos);
         menuController.tuto();
+        listclear();
+
         if (phase == 1 && manager.Chapter == 1)
         {
             menuController.onlyskipoff();
             uITutorial.gameObject.SetActive(true);
         }
-        if (phase == 3 && manager.Chapter == 1)
+        else if (phase == 3 && manager.Chapter == 1)
         {
             menuController.onlyskipoff();
-            //Tutorial_9 대사 실행
+            // Tutorial_9 대사 실행
             GameObject subdial = manager.subDialoguePanel;
             subdial.SetActive(true);
             subdial.GetComponent<SubDialogue>().Tuto_start(106);
         }
-        if (phase == 3 && manager.Chapter == 14)
+        else if (phase == 3 && manager.Chapter == 14)
         {
             manager.Ending();
         }
+        else
+        {
+            playerController.NextPhase();
+            time.gameObject.SetActive(true);
+            listclear();
+        }
     }
+
 
     void listclear()
     {

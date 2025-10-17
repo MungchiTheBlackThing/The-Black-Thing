@@ -173,12 +173,23 @@ public class DotController : MonoBehaviour
                 DotPositionKeyDic[state].Add(anim.key, anim.value.positions);
             }
         }
+
+        Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
+
+        // 콜라이더 크기 조정
+        boxcollider.size = spriteSize;
+        boxcollider.offset = spriteRenderer.sprite.bounds.center;
     }
 
 
     void Start()
     {
         StartCoroutine(InitStart());
+        Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
+
+        // 콜라이더 크기 조정
+        boxcollider.size = spriteSize;
+        boxcollider.offset = spriteRenderer.sprite.bounds.center;
     }
 
     private IEnumerator InitStart()
@@ -209,6 +220,11 @@ public class DotController : MonoBehaviour
         chapter = manager.Chapter;
         Debug.Log("현재 챕터: " + chapter);
         animator.keepAnimatorStateOnDisable = true; //애니메이션 유지
+        Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
+
+        // 콜라이더 크기 조정
+        boxcollider.size = spriteSize;
+        boxcollider.offset = spriteRenderer.sprite.bounds.center;
     }
 
     public ScriptList GetMainScriptList(int index)
@@ -285,6 +301,11 @@ public class DotController : MonoBehaviour
         {
             EyesAnim.SetInteger("FaceKey", (int)eyes);
         }
+        Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
+
+        // 콜라이더 크기 조정
+        boxcollider.size = spriteSize;
+        boxcollider.offset = spriteRenderer.sprite.bounds.center;
     }
 
     public void EndSubScriptList(GamePatternState State)
@@ -375,6 +396,7 @@ public class DotController : MonoBehaviour
     {
         //잠자러 가는 애니메이션 실행.
         ChangeState(DotPatternState.Phase, "phase_sleep", 19);
+        alertOff();
     }
 
     public void EndPlay()
@@ -386,6 +408,7 @@ public class DotController : MonoBehaviour
             //this.transform.position = new Vector2(10.92f, -5.13f);
             return;
         }
+        alertOff();
         manager.NextPhase();
     }
 

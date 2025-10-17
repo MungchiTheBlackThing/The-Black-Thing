@@ -252,6 +252,11 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         return player.subseq;
     }
+
+    public List<int> GetWatchedList()
+    {
+        return player.watchedSubseq;
+    }
     //시간 설정 : (현재 시간 - watching이 진행된 시간)+60분
     public void PassWathingTime()
     {

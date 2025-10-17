@@ -46,6 +46,10 @@ public class MainPanel : MonoBehaviour
         pc = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         MainClick = GameObject.Find("MainClick");
     }
+    public void Bind(MainDialogue md)
+    {
+        mainDialogue = md;
+    }
 
     public void InitializePanels()
     {
@@ -175,11 +179,11 @@ public class MainPanel : MonoBehaviour
                     backindex = dialogueIndex;
                     dialogueIndex = nextIndex;
                 }
-                else { DialEnd(); return; }
+                else { Debug.Log("1");  DialEnd(); return; }
             }
-            else { DialEnd(); return; }
+            else { Debug.Log("2"); DialEnd(); return; }
         }
-        else { DialEnd(); return; }
+        else { Debug.Log("3"); DialEnd(); return; }
 
         SelectionPanel.SetActive(false);
         Selection3Panel.SetActive(false);
@@ -191,6 +195,7 @@ public class MainPanel : MonoBehaviour
     {
         Debug.Log("메인 끝");
         mainDialogue.currentDialogueList.Clear();
+        mainDialogue.DialogueEntries.Clear();
         dialogueIndex = 0;
         backindex = -1;
 
@@ -220,7 +225,7 @@ public class MainPanel : MonoBehaviour
         GameObject panel,
         CanvasGroup cg,
         float fadeSeconds,
-        IList<Button> focusButtons,               // 🔁 여러 버튼 지원
+        IList<Button> focusButtons,         
         System.Action beforeActivate,
         bool waitForVideo)
     {
@@ -233,7 +238,7 @@ public class MainPanel : MonoBehaviour
         beforeActivate?.Invoke();
         panel.SetActive(true);
 
-        yield return StartCoroutine(FadeIn(cg, fadeSeconds, focusButtons)); // 🔁 리스트 전달
+        yield return StartCoroutine(FadeIn(cg, fadeSeconds, focusButtons));
 
         // selection 류는 Next 등록 안 함
         if (focusButtons != null && panel != SelectionPanel)
@@ -246,8 +251,10 @@ public class MainPanel : MonoBehaviour
     public void ShowNextDialogue()
     {
         PanelOff();
-        if (dialogueIndex >= mainDialogue.currentDialogueList.Count)
+        Debug.Log("다이얼: " + dialogueIndex + "리스트: " + mainDialogue.currentDialogueList.Count);
+        if (dialogueIndex > mainDialogue.currentDialogueList.Count)
         {
+            Debug.Log("4");
             DialEnd();
             return;
         }
@@ -298,7 +305,7 @@ public class MainPanel : MonoBehaviour
                     SelectionPanel,
                     SelectionPanel.GetComponent<CanvasGroup>(),
                     0.5f,
-                    new List<Button>(SelectionPanel.GetComponentsInChildren<Button>(true)), // ✅ 두 버튼 모두
+                    new List<Button>(SelectionPanel.GetComponentsInChildren<Button>(true)),
                     () => { ShowSelection(korText); },
                     waitVideo
                 ));
@@ -401,11 +408,11 @@ public class MainPanel : MonoBehaviour
             {
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
                 if (nextIndex != -1) dialogueIndex = nextIndex;
-                else { DialEnd(); return; }
+                else { Debug.Log("5"); DialEnd(); return; }
             }
-            else { DialEnd(); return; }
+            else { Debug.Log("6"); DialEnd(); return; }
         }
-        else { DialEnd(); return; }
+        else { Debug.Log("7"); DialEnd(); return; }
 
         AudioManager.instance.PlayOneShot(FMODEvents.instance.dialougueDefault, this.transform.position);
         ShowNextDialogue();
