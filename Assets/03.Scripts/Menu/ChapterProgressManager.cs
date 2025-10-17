@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Tables;
 
 public class ChapterProgressManager : MonoBehaviour
 {
@@ -24,10 +26,19 @@ public class ChapterProgressManager : MonoBehaviour
     [SerializeField]
     Alertmanager alertmanager;
     
+    private string _stringTableName = "SystemUIText";
+
     public void PassData(ChapterInfo chapterInfo, PlayerController player)
     {
-        this.title.text = chapterInfo.title[(int)player.GetLanguage()];
-        this.sentence.text = chapterInfo.longText[(int)player.GetLanguage()];
+        StringTable stringTable = LocalizationSettings.StringDatabase.GetTable(_stringTableName);
+        var titleKey = $"progress_title_ch{chapterInfo.id}";
+        var sentenceKey = $"progress_longtext_ch{chapterInfo.id}";
+        this.title.text = stringTable.GetEntry(titleKey).GetLocalizedString();
+        this.sentence.text = stringTable.GetEntry(sentenceKey).GetLocalizedString();
+
+        //this.title.text = chapterInfo.title[(int)player.GetLanguage()];
+        //this.sentence.text = chapterInfo.longText[(int)player.GetLanguage()];
+
         this.player = player;
 
         List<bool> successPhase = this.player.GetSubPhase(chapterInfo.id);

@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: MoonRadioUIText Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: MoonRadioUIText
+  m_TableCollectionNameGuidString: bc083a32b20bf07489e5814db06c106e
+  m_Entries:
+  - m_Id: 67762077696
+    m_Key: moonradio_main_text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310675193856
+    m_Key: moonradio_main_earth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 347312439296
+    m_Key: moonradio_main_moon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 369810685952
+    m_Key: moonradio_main_exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 392875163648
+    m_Key: moonradio_turnOff_text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398646525952
+    m_Key: moonradio_turnOff_yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 403834880000
+    m_Key: moonradio_turnOff_no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 405336440832
+    m_Key: moonradio_earth_placeholder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496214425600
+    m_Key: moonradio_earth_alert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 498051530752
+    m_Key: moonradio_earth_exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 498735202304
+    m_Key: moonradio_earth_sent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 499691503616
+    m_Key: moonradio_earth_popup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 501000126464
+    m_Key: moonradio_earth_popup_no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 501708963840
+    m_Key: 'moonradio_earth_popup_yes
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3906984689664
+    m_Key: moonradio_popup_twotimes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3914760929280
+    m_Key: moonradio_popup_twotimes_yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4772311547904
+    m_Key: moonradio_moon_popup_onemore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4777575399424
+    m_Key: moonradio_moon_popup_onemore_yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4779261509632
+    m_Key: moonradio_moon_popup_onemore_no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6166494003200
+    m_Key: moonradio_moon_popup_end
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6168146558976
+    m_Key: moonradio_moon_popup_end_yes
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7826956197650759680
+  references:
+    version: 2
+    RefIds:
+    - rid: 7826956197650759680
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1759998945148

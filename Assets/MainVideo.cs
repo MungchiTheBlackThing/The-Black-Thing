@@ -30,6 +30,16 @@ public class MainVideo : MonoBehaviour
     private string[] entryKeys;
     private string[] localizedCache;
 
+    [Header("Skip Hint")]
+    [SerializeField] private GameObject skipHintRoot;
+    [SerializeField] private TMP_Text skipHintText;
+    [SerializeField] private float skipHintFadeDuration = 2f;
+
+    private bool isVideoPlaying = false;
+    private bool skipArmed = false;
+    private Coroutine skipHintFadeCo;
+    public event System.Action OnUserSkipRequested;
+
     private void Start()
     {
         if (videoPlayer != null)
@@ -121,14 +131,17 @@ public class MainVideo : MonoBehaviour
 
         Rawimage.SetActive(true);
         text.SetActive(true);
+        HideSkipHintImmediate();
 
         yield return null; // or: yield return new WaitForEndOfFrame();
         Rawimage.transform.SetAsLastSibling();
 
         if (videoPlayer.isPrepared)
         {
-            AudioManager.instance.StopBGM();
+            if (AudioManager.instance != null) AudioManager.instance.StopBGM();
+            else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
             videoPlayer.SetDirectAudioMute(0, false);
+            isVideoPlaying = true;
             videoPlayer.Play();
         }
         else
@@ -148,8 +161,10 @@ public class MainVideo : MonoBehaviour
         if (waitingToPlay)
         {
             waitingToPlay = false;
-            AudioManager.instance.StopBGM();
+            if (AudioManager.instance != null) AudioManager.instance.StopBGM();
+            else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
             videoPlayer.SetDirectAudioMute(0, false);
+            isVideoPlaying = true;
             videoPlayer.Play();
         }
     }
@@ -168,6 +183,8 @@ public class MainVideo : MonoBehaviour
 
     private void OnVideoEnd(VideoPlayer vp)
     {
+        isVideoPlaying = false;
+        HideSkipHintImmediate();
         StartCoroutine(FadeOutAndEnd(vp));
     }
 
@@ -186,11 +203,14 @@ public class MainVideo : MonoBehaviour
         yield return StartCoroutine(FadeCanvasGroup(bgCg, 1f, 0f, 1f));
         background.SetActive(false);
 
-        AudioManager.instance.UpdateBGMByChapter(chapter);
+        if (AudioManager.instance != null) AudioManager.instance.UpdateBGMByChapter(chapter);
+        else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
     }
 
     private void OnDisable()
     {
+        isVideoPlaying = false;
+        HideSkipHintImmediate();
         if (videoPlayer != null)
         {
             videoPlayer.Stop();
@@ -244,6 +264,23 @@ public class MainVideo : MonoBehaviour
             else
             {
                 subtitleText.text = "";
+            }
+        }
+        //스킵 입력처리
+        if (isVideoPlaying)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (!skipArmed)
+                {
+                    ShowSkipHint();
+                }
+                else
+                {
+                    isVideoPlaying = false;
+                    HideSkipHintImmediate();
+                    OnUserSkipRequested?.Invoke();
+                }
             }
         }
     }
@@ -444,6 +481,62 @@ public class MainVideo : MonoBehaviour
                 : ((currentLanguage == LANGUAGE.ENGLISH) ? e.EngText : e.KorText);
         }
     }
+
+    private void ShowSkipHint()
+    {
+        skipArmed = true;
+
+        if (skipHintRoot == null)
+        {
+            Debug.LogWarning("[MainVideo] skipHintRoot is null.");
+            return;
+        }
+        var cg = skipHintRoot.GetComponent<CanvasGroup>() ?? skipHintRoot.AddComponent<CanvasGroup>();
+        cg.alpha = 1f;
+
+        skipHintRoot.SetActive(true);
+
+        if (skipHintFadeCo != null)
+        {
+            StopCoroutine(skipHintFadeCo);
+            skipHintFadeCo = null;
+        }
+
+        skipHintFadeCo = StartCoroutine(FadeOutSkipHint(cg, skipHintFadeDuration));
+    }
+
+    private IEnumerator FadeOutSkipHint(CanvasGroup cg, float duration)
+    {
+        float t = 0f;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            cg.alpha = Mathf.Lerp(1f, 0f, t / duration);
+            yield return null;
+        }
+        cg.alpha = 0f;
+
+        if (skipHintRoot != null) skipHintRoot.SetActive(false);
+        skipArmed = false;
+        skipHintFadeCo = null;
+    }
+
+    private void HideSkipHintImmediate()
+    {
+        if (skipHintFadeCo != null)
+        {
+            StopCoroutine(skipHintFadeCo);
+            skipHintFadeCo = null;
+        }
+        if (skipHintRoot != null)
+        {
+            var cg = skipHintRoot.GetComponent<CanvasGroup>();
+            if (cg != null) cg.alpha = 0f;
+            skipHintRoot.SetActive(false);
+        }
+        skipArmed = false;
+    }
+
 }
 
 

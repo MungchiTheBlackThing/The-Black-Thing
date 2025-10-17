@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: PoetryUIText_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: c60c4c1b05b6a944fa2cbf59346f250c, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 3674199740306685955
+  m_TableData:
+  - m_Id: 134245019648
+    m_Localized: I'm done writing in my diary.\nHow about a bedtime poem?
+    m_Metadata:
+      m_Items:
+      - rid: 3674199740306685955
+  - m_Id: 134349877248
+    m_Localized: Not today.
+    m_Metadata:
+      m_Items:
+      - rid: 3674199740306685955
+  - m_Id: 134354071552
+    m_Localized: Sounds lovely!
+    m_Metadata:
+      m_Items:
+      - rid: 3674199740306685955
+  - m_Id: 134354071553
+    m_Localized: My eyelids are drooping. Time\nto nestle into my web bed.
+    m_Metadata:
+      m_Items:
+      - rid: 3674199740306685955
+  - m_Id: 1056470710829056
+    m_Localized: ... Okay. I'll go to bed now.\nNo hard feelings. Nope...
+    m_Metadata:
+      m_Items:
+      - rid: 3674199740306685955
+  references:
+    version: 2
+    RefIds:
+    - rid: 3674199740306685955
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0070a0411f0000000070e0471f000000007020481f000000017020481f00000000406fc1dac00300

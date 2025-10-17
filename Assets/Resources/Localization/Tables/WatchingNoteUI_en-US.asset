@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: WatchingNoteUI_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 159d798ce45a843498be5fed1ad6a61e, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 3674199710174543908
+  m_TableData:
+  - m_Id: 56067387392
+    m_Localized: eng3
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543908
+  - m_Id: 56168050688
+    m_Localized: eng4
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543908
+  - m_Id: 56168050689
+    m_Localized: eng6
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543908
+  - m_Id: 56168050690
+    m_Localized: eng7
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543908
+  - m_Id: 56168050691
+    m_Localized: eng9
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543908
+  - m_Id: 56168050692
+    m_Localized: eng11
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543908
+  - m_Id: 56168050693
+    m_Localized: eng12
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543908
+  - m_Id: 56168050694
+    m_Localized: eng14
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543908
+  references:
+    version: 2
+    RefIds:
+    - rid: 3674199710174543908
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0070e00d0d0000000070e0130d0000000170e0130d0000000270e0130d0000000370e0130d0000000470e0130d0000000570e0130d0000000670e0130d000000

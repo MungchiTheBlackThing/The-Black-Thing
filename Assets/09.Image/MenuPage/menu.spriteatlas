@@ -23,11 +23,11 @@ SpriteAtlas:
     platformSettings: []
     packingSettings:
       serializedVersion: 2
-      padding: 4
+      padding: 8
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 1
-      enableTightPacking: 1
+      enableTightPacking: 0
       enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
@@ -43,6 +43,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 1094680199d23794fa73ea935572c9f1, type: 3}
   - {fileID: 21300000, guid: ac8e32d383da1384887a07946381b2c2, type: 3}
   - {fileID: 21300000, guid: b6392754aa94c8d4bb475eec5773d77f, type: 3}
+  - {fileID: 21300000, guid: d1e293d49bca13a4ea95315f51d22188, type: 3}
   - {fileID: 21300000, guid: 329395f4edfb8e5488913e73f3523b28, type: 3}
   - {fileID: 21300000, guid: cc3b0d957157a2840841b2df0163dc8d, type: 3}
   - {fileID: 21300000, guid: 18da7a66b8b81d840be1ea1b68130b10, type: 3}
@@ -62,6 +63,7 @@ SpriteAtlas:
   - settings_bgm
   - mypage_arrowL
   - mypage_arrowR
+  - popup_box
   - menu_progress
   - lightbox01 (1) 1
   - progress_lock_main_lock_sub

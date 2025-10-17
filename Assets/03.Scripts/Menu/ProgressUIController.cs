@@ -2,6 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
+using UnityEditor.Localization.Editor;
+using UnityEngine.Localization.Tables;
+using UnityEngine.Localization.Settings;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
 
 public class ProgressUIController : MonoBehaviour
 { 
@@ -39,6 +43,8 @@ public class ProgressUIController : MonoBehaviour
 
     [Tooltip("Init Rect Size(width,height)")]
     Vector2 InitScrollSize;
+
+    private string _stringTableName = "WatchingNoteUI";
 
     private void Awake()
     {
@@ -104,16 +110,18 @@ public class ProgressUIController : MonoBehaviour
 
     void InstantiateDragIcon()
     {
-        for (int i=1;i<=14;i++)
+        for (int i = 1; i <= 14; i++)
         {
             ChapterInfo info = DataManager.Instance.ChapterList.chapters[i];
-            GameObject icon = Instantiate(dragIconPrefab,dragScroller.transform.GetChild(0));
+            GameObject icon = Instantiate(dragIconPrefab, dragScroller.transform.GetChild(0));
             icon.name = info.chapter;
-            dragIconList.Add(i,icon);
+            dragIconList.Add(i, icon);
 
             DragIcon curIconScript = icon.GetComponent<DragIcon>();
             /*모든 상태를 업데이트 한다.*/
-            curIconScript.Settings(i,info,player.GetLanguage());
+
+            curIconScript.Settings(i, info, player.GetLanguage());
+
             icon.GetComponent<Button>().onClick.AddListener(onClickdragIcon);
 
             if (i > player.GetChapter())
@@ -123,6 +131,16 @@ public class ProgressUIController : MonoBehaviour
         }
 
         SetActiveDragIcon(player.GetChapter()); //재사용
+    }
+
+    public void RefreshProgressUI()
+    {
+        foreach (var icon in dragIconList)
+        {
+            DragIcon curIconScript = icon.Value.GetComponent<DragIcon>();
+            ChapterInfo info = DataManager.Instance.ChapterList.chapters[icon.Key];
+            curIconScript.Settings(icon.Key, info, player.GetLanguage());
+        }
     }
 
     public void onClickdragIcon()

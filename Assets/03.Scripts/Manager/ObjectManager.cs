@@ -301,18 +301,14 @@ public class ObjectManager : MonoBehaviour
         {
             IWatchingInterface watching = value.GetComponent<IWatchingInterface>();
 
-            if (watching != null)
+            if (watching != null && watching.IsCurrentPattern(type))
             {
-                if (watching.IsCurrentPattern(type))
-                {
-                    search = watching;
-                }
-
-                if(watches.Count < 2)
+                if (watches.Count < 2)
                 {
                     Debug.Log(watching.ToString());
                     watches.Add(value);
                 }
+                search = watching;
             }
 
         }

@@ -25,10 +25,10 @@ public class PlayAnswerController : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        //YES¸¦ ÀÇ¹Ì
+        //YESë¥¼ ì˜ë¯¸
         if (answer)
         {
-            //½Ã Canvas¸¦ Å²´Ù.
+            //ì‹œ Canvasë¥¼ í‚¨ë‹¤.
             if(poem)
             {
                 Instantiate(poem, GameObject.Find("Canvas").transform);
@@ -36,7 +36,7 @@ public class PlayAnswerController : MonoBehaviour
         }
         else
         {
-            //No¸¦ ÀÇ¹ÌÇÑ´Ù. NoÀÏ °æ¿ì ¹¶Ä¡ ÀÚ´Â ¾Ö´Ï¸ŞÀÌ¼Ç ¼öÇà
+            //Noë¥¼ ì˜ë¯¸í•œë‹¤. Noì¼ ê²½ìš° ë­‰ì¹˜ ìëŠ” ì• ë‹ˆë©”ì´ì…˜ ìˆ˜í–‰
             gameManager.GoSleep();
         }
 

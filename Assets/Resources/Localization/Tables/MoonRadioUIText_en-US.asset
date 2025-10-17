@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MoonRadioUIText_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: bc083a32b20bf07489e5814db06c106e, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 7826956241281482753
+  m_TableData:
+  - m_Id: 67762077696
+    m_Localized: You can write letters to the Moon,\nor eavesdrop on the Moon Beings.\nWhich
+      channel?
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 310675193856
+    m_Localized: '> Channel Earth - 365.3Hz'
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 347312439296
+    m_Localized: '> Channel Moon - 27.32Hz'
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 369810685952
+    m_Localized: Turn Radio Off >>
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 392875163648
+    m_Localized: The Moon Radio is powered by moonlight and gravity.\nLeave it on
+      the windowsill to charge overnight.\nTurn off the Moon Radio?
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 398646525952
+    m_Localized: '> Yes, it needs its rest.'
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 403834880000
+    m_Localized: '> No, not just yet.'
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 405336440832
+    m_Localized: Write a letter to the Moon.
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 496214425600
+    m_Localized: Too heavy to fly to the Moon!\nKeep it under <b>500 characters</b>,\nor
+      send a second letter!
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 498051530752
+    m_Localized: Leave Channel >>
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 498735202304
+    m_Localized: Made a wish, asked after a friend?\nYour story will ride gravity
+      on its way\nto the other side of the Moon.
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 499691503616
+    m_Localized: Stop sending your wish to the moon?\nYour draft will not be saved.
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 501000126464
+    m_Localized: Write more.
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 501708963840
+    m_Localized: Yes, stop.
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 3906984689664
+    m_Localized: You can listen to the Moon Channel twice each day.\nTune into it
+      again tomorrow night!
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 3914760929280
+    m_Localized: Sure, I will.
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 4772311547904
+    m_Localized: The first story of the day has ended,\nbut you still have one more
+      message. (1/2)
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 4779261509632
+    m_Localized: I'll save it for later.
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 4777575399424
+    m_Localized: Yes, please!
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 6166494003200
+    m_Localized: To hear about those living beyond the pale moonlight,\ncome back
+      to listen another time. (2/2)
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  - m_Id: 6168146558976
+    m_Localized: Alright, I will.
+    m_Metadata:
+      m_Items:
+      - rid: 7826956241281482753
+  references:
+    version: 2
+    RefIds:
+    - rid: 7826956241281482753
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0040efc60f0000000040af554800000000406fdd5000000000406f1a5600000000402f795b00000000402fd15c00000000406f065e0000000040ef5f5e0000000040af88730000000040ef1e7400000000402ff6730000000040ef57740000000040efa57400000000402fd07400000000406faa8d0300000040af5d580400000040ef23570400000040ef798f03000000402fc2580400000040afbf9b05000000402f229c050000

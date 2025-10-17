@@ -35,7 +35,7 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 3ac90fb91b7a7284fa87bc4ab224abe1
     m_Address: Assets/Resources/Localization/Tables/IntroUIText Shared Data.asset
-    m_ReadOnly: 0
+    m_ReadOnly: 1
     m_SerializedLabels: []
   - m_GUID: 313565204005ef941847a55be1cdc9dc
     m_Address: Assets/Resources/Localization/Tables/Main_Ch2 Shared Data.asset
@@ -207,6 +207,22 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 1b40c81899d6c924b8bf1ebde234f7b6
     m_Address: Assets/Resources/Localization/Tables/ChapterLoadingUIText Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 159d798ce45a843498be5fed1ad6a61e
+    m_Address: Assets/Resources/Localization/Tables/WatchingNoteUI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: c60c4c1b05b6a944fa2cbf59346f250c
+    m_Address: Assets/Resources/Localization/Tables/PoetryUIText Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: bc083a32b20bf07489e5814db06c106e
+    m_Address: Assets/Resources/Localization/Tables/MoonRadioUIText Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: e378c868bae99ea4280e069079af1357
+    m_Address: Assets/Resources/Localization/Tables/DiaryUIText Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
   m_ReadOnly: 1

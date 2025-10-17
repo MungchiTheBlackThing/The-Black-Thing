@@ -15,156 +15,160 @@ MonoBehaviour:
   m_TableCollectionName: TutorialUIText
   m_TableCollectionNameGuidString: 0a93236d17cf7584e951aa70576a623b
   m_Entries:
-  - m_Id: 2924754370560
-    m_Key: name_prompt
+  - m_Id: 8636494539419648
+    m_Key: tuto_name_popup
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588288
-    m_Key: name_recommendation
+  - m_Id: 8636494539419649
+    m_Key: tuto_name_placeholder
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588289
-    m_Key: name_confirm
+  - m_Id: 8636494539419650
+    m_Key: tuto_name_confirm
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588290
-    m_Key: moon_device_comment
+  - m_Id: 8635361376890880
+    m_Key: tuto_howto_playerbubble
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588291
-    m_Key: moon_letter_title
+  - m_Id: 8636494539419651
+    m_Key: tuto_howto_title
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588292
-    m_Key: dot_first_meeting
+  - m_Id: 8636494539419652
+    m_Key: tuto_skip_popup
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588293
-    m_Key: dot_waiting
+  - m_Id: 8636494539419653
+    m_Key: tuto_skip_yes
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588294
-    m_Key: dot_okay
+  - m_Id: 8636494539419654
+    m_Key: tuto_skip_no
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588295
-    m_Key: dot_time_passing
+  - m_Id: 8636494539419655
+    m_Key: tuto_skip_text
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588296
-    m_Key: revisit_prompt
+  - m_Id: 8636494539419656
+    m_Key: tuto_mainA_stack01
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588297
-    m_Key: revisit_button
+  - m_Id: 8636494539419657
+    m_Key: tuto_mainA_stack02
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588298
-    m_Key: revisit_warning
+  - m_Id: 8636494539419658
+    m_Key: tuto_mainA_stack03
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588299
-    m_Key: nav_thisway
+  - m_Id: 8636494539419659
+    m_Key: tuto_settingsguide_01
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588300
-    m_Key: nav_herehere
+  - m_Id: 8636494539419660
+    m_Key: tuto_settingsguide_02
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588301
-    m_Key: menu_main
+  - m_Id: 8636494539419661
+    m_Key: tuto_menu_title
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588302
-    m_Key: menu_letters
+  - m_Id: 8636494539419662
+    m_Key: tuto_menu_howto
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588303
-    m_Key: menu_progress
+  - m_Id: 8636494539419663
+    m_Key: tuto_menu_progress
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588304
-    m_Key: menu_settings
+  - m_Id: 8636494539419664
+    m_Key: tuto_menu_mypage
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588305
-    m_Key: today_square
+  - m_Id: 8636494539419665
+    m_Key: tuto_settingsguide_03
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588306
-    m_Key: click_click_click
+  - m_Id: 8636494539419666
+    m_Key: tuto_settingsguide_04
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588307
-    m_Key: dot_observation_end
+  - m_Id: 8636494539419667
+    m_Key: tuto_settingsguide_05
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588308
-    m_Key: fly_snared
+  - m_Id: 8636494539419668
+    m_Key: tuto_settingsguide_06
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588309
-    m_Key: dot_thinking_start
+  - m_Id: 8636494539419669
+    m_Key: tuto_settingsguide_07
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588310
-    m_Key: fly_webbed
+  - m_Id: 8636494539419670
+    m_Key: tuto_settingsguide_08
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588311
-    m_Key: story_special_note
+  - m_Id: 8636494539419671
+    m_Key: tuto_settingsguide_09
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588312
-    m_Key: story_storage
+  - m_Id: 8636494539419672
+    m_Key: tuto_settingsguide_10
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588313
-    m_Key: missed_chats_warning
+  - m_Id: 8636494539419673
+    m_Key: tuto_settingsguide_11
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588314
-    m_Key: go_meet_dot
+  - m_Id: 8636494539419674
+    m_Key: tuto_settingsguide_12
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588315
-    m_Key: room_polaroid
+  - m_Id: 8636494539419675
+    m_Key: tuto_aftersub_playerbubble
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588316
-    m_Key: nav_return
+  - m_Id: 8636494539419676
+    m_Key: tuto_subdialguide_01
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588317
-    m_Key: menu_polaroids
+  - m_Id: 8636494539419677
+    m_Key: tuto_subdialguide_02
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588318
-    m_Key: chat_colored
+  - m_Id: 8636494539419678
+    m_Key: tuto_subdialguide_03
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588319
-    m_Key: chat_diary_trace
+  - m_Id: 8636494539419679
+    m_Key: tuto_subdialguide_04
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588320
-    m_Key: chat_absent_log
+  - m_Id: 8636494539419680
+    m_Key: tuto_subdialguide_05
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588321
-    m_Key: room_item_hint
+  - m_Id: 8636494539419681
+    m_Key: tuto_subdialguide_06
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588322
-    m_Key: room_memory_fill
+  - m_Id: 8636494539419682
+    m_Key: tuto_subdialguide_07
     m_Metadata:
       m_Items: []
-  - m_Id: 2924888588323
-    m_Key: skip_chat_warning
+  - m_Id: 8636494539419683
+    m_Key: tuto_subdialguide_08
     m_Metadata:
       m_Items: []
   - m_Id: 2924888588324
     m_Key: skip_choice_reminder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8635361376890880
+    m_Key: tuto_howto_playerbubble
     m_Metadata:
       m_Items: []
   m_Metadata:

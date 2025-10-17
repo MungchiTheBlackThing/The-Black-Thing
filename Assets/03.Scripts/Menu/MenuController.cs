@@ -226,6 +226,7 @@ public class MenuController : MonoBehaviour
     {
         //DayProgressUI on,.,
         DayProgressUI.SetActive(true);
+        DayProgressUI.GetComponent<ProgressUIController>().RefreshProgressUI();
         isprogress = true;
     }
 

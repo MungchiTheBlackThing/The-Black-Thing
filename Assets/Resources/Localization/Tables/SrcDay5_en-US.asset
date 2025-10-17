@@ -16,68 +16,88 @@ MonoBehaviour:
     m_Code: en-US
   m_SharedData: {fileID: 11400000, guid: 2b320c1715aabe349b9d513cb0c75fcf, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 3674199710174543893
   m_TableData:
   - m_Id: 526157742080
     m_Localized: The curtain rises. Applause fills the room.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433856
     m_Localized: The small piece of luck buried in the Vasilopita cake has been waiting.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433857
     m_Localized: The one who takes that lucky coin will be the star of the party.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433858
     m_Localized: "The best gifts are the ones you didn\u2019t see coming, right?"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433859
     m_Localized: The radiant lights, the pounding beat,
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433860
     m_Localized: the hundreds of eyes tracking your every move.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433861
     m_Localized: Exhilarating.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433862
     m_Localized: Electrifying.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433863
     m_Localized: The party, in full swing.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433864
     m_Localized: But fate was searching for that one lucky person.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433865
     m_Localized: Is it you?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433866
     m_Localized: You?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433867
     m_Localized: How about you?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433868
     m_Localized: "\u201CWOW, I dig your moves.\u201D"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   - m_Id: 526237433869
     m_Localized: "Without any warning, she\u2026"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543893
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3674199710174543893
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 000072817a000000000032867a000000010032867a000000020032867a000000030032867a000000040032867a000000050032867a000000060032867a000000070032867a000000080032867a000000090032867a0000000a0032867a0000000b0032867a0000000c0032867a0000000d0032867a000000

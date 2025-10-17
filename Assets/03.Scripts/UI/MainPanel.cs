@@ -280,7 +280,7 @@ public class MainPanel : MonoBehaviour
                     StartCoroutine(ShowPanelWithDelay(
                         DotPanel,
                         DotPanel.GetComponent<CanvasGroup>(),
-                        0.5f,
+                        0.01f,
                         new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null }, 
                         () => { DotTextUI.text = korText; },
                         waitVideo
