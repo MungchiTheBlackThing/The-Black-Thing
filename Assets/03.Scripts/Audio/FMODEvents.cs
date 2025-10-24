@@ -1,21 +1,19 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 
 public class FMODEvents : MonoBehaviour
 {
-
-    [field:Header ("Diary")]
-    [field:SerializeField] public EventReference Pagesound { get; private set; }
+    [field: Header("Diary")]
+    [field: SerializeField] public EventReference Pagesound { get; private set; }
     [field: SerializeField] public EventReference DiaryButton { get; private set; }
 
-[field: Header("Menu")]
+    [field: Header("Menu")]
     [field: SerializeField] public EventReference MenuOn { get; private set; }
     [field: SerializeField] public EventReference checklistOn { get; private set; }
     [field: SerializeField] public EventReference checklistSet { get; private set; }
-    [field: SerializeField] public EventReference moonnote  { get; private set; }
-    [field: SerializeField] public EventReference buttonClick  { get; private set; }
+    [field: SerializeField] public EventReference moonnote { get; private set; }
+    [field: SerializeField] public EventReference buttonClick { get; private set; }
     [field: SerializeField] public EventReference lockClick { get; private set; }
 
     [field: Header("Object")]
@@ -26,7 +24,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference note { get; private set; }
     [field: SerializeField] public EventReference binocular { get; private set; }
 
-    [field:Header("Dialogue")]
+    [field: Header("Dialogue")]
     [field: SerializeField] public EventReference mainEnter { get; private set; }
     [field: SerializeField] public EventReference dialougueDefault { get; private set; }
     [field: SerializeField] public EventReference dialougeSelect { get; private set; }
@@ -47,16 +45,22 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference bgmmain_3 { get; private set; }
     [field: SerializeField] public EventReference bgmmain_3_ver2 { get; private set; }
     [field: SerializeField] public EventReference bgmmain_4 { get; private set; }
-    [field: SerializeField] public EventReference bgmmain_death{ get; private set; }
+    [field: SerializeField] public EventReference bgmmain_death { get; private set; }
+
+    // --- 추가: AMB ---
+    [field: Header("AMB")]
+    [field: SerializeField] public EventReference ambRoom { get; private set; }   // event:/AMB/AMB_Room (파라미터 전환용)
 
     public static FMODEvents instance { get; private set; }
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null && instance != this)
         {
-            Debug.LogError("No FModEvents");
+            Destroy(gameObject);
+            return;
         }
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 }

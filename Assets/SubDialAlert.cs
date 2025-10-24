@@ -12,6 +12,7 @@ public class SubDialAlert : MonoBehaviour
 
     [SerializeField] private List<Image> images;
 
+    private int lastvalue = 0;
     void OnEnable()
     {
         foreach (Image image in images)
@@ -20,7 +21,7 @@ public class SubDialAlert : MonoBehaviour
         }
         int findChapter = player.GetChapter();
         ChapterInfo chapterInfo = DataManager.Instance.ChapterList.chapters[findChapter];
-
+        Debug.Log("챕터 정보: " + chapterInfo);
         if (player == null || chapterInfo == null)
         {
             Debug.LogWarning("SubDialAlert: player 또는 chapterInfo가 비어 있음");
@@ -32,9 +33,9 @@ public class SubDialAlert : MonoBehaviour
 
         if (secondText != null)
         {
-            int lastValue = (subseq.Count > 0) ? subseq[subseq.Count - 1] : 0;
+            lastvalue = (subseq.Count > 0) ? subseq[subseq.Count - 1] : 0;
 
-            int remain = Mathf.Max(0, GetPhaseLength(phase) - lastValue);
+            int remain = Mathf.Max(0, GetPhaseLength(phase) - lastvalue);
             secondText.text = secondText.text.Replace("<int>", remain.ToString());
         }
 
@@ -57,9 +58,9 @@ public class SubDialAlert : MonoBehaviour
             int allowindex = allowed[i];
             Debug.Log("성공 페이즈: " + successPhase[allowindex]);
             // 슬롯 세팅
-            if (successPhase[allowindex])
+            if (successPhase[allowindex] && allowindex <= lastvalue - 1)
             {
-                Debug.Log("성공 이미지 " + i + " " + chapterInfo.subLockFilePath[allowindex]);
+                Debug.Log("성공 이미지 " + i + " " + chapterInfo.subFilePath[allowindex]);
                 images[i].sprite = Resources.Load<Sprite>(chapterInfo.subFilePath[allowindex]);
             }
             else
@@ -76,9 +77,9 @@ public class SubDialAlert : MonoBehaviour
     {
         switch (phase)
         {
-            case 2: return new List<int> { 1, 2 };
-            case 4: return new List<int> { 3 };
-            case 6: return new List<int> { 4 };
+            case 2: return new List<int> { 0, 1 };
+            case 4: return new List<int> { 2 };
+            case 6: return new List<int> { 3 };
             default: return new List<int>();
         }
     }

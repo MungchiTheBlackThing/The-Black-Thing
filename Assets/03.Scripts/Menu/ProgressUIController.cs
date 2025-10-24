@@ -2,10 +2,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
+
+#if UNITY_EDITOR
+using UnityEditor;
 using UnityEditor.Localization.Editor;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
+#endif
+
 using UnityEngine.Localization.Tables;
 using UnityEngine.Localization.Settings;
-using UnityEditor.Localization.Plugins.XLIFF.V20;
+
 
 public class ProgressUIController : MonoBehaviour
 { 

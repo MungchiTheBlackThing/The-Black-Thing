@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using Assets.Script.TimeEnum;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
 
     private EventInstance bgmInstance; // 현재 BGM 인스턴스
+    private EventInstance ambInstance;
+    const string EVENT_PATH = "event:/AMB/AMB_Room";
 
     private void Awake()
     {
@@ -110,5 +113,21 @@ public class AudioManager : MonoBehaviour
         }
 
         AudioManager.instance.ChangeBGM(bgmToPlay);
+    }
+
+    public void EnsureAMB(EventReference ambEvent, string label = null)
+    {
+
+        if (!ambInstance.isValid())
+        {
+            ambInstance = RuntimeManager.CreateInstance(ambEvent);
+            ambInstance.start(); // 항상 루프 유지
+        }
+
+        if (!string.IsNullOrEmpty(label))
+        {
+            // 파라미터 이름: AMB_Room
+            ambInstance.setParameterByNameWithLabel("AMB_Room", label);
+        }
     }
 }
