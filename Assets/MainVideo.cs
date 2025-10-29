@@ -134,7 +134,7 @@ public class MainVideo : MonoBehaviour
         HideSkipHintImmediate();
 
         yield return null; // or: yield return new WaitForEndOfFrame();
-        Rawimage.transform.SetAsLastSibling();
+        //Rawimage.transform.SetAsLastSibling();//
 
         if (videoPlayer.isPrepared)
         {
@@ -197,7 +197,7 @@ public class MainVideo : MonoBehaviour
         Rawimage.SetActive(false);
 
         yield return null;
-        Rawimage.transform.SetAsFirstSibling();
+        //Rawimage.transform.SetAsFirstSibling();//
 
         var bgCg = background.GetComponent<CanvasGroup>() ?? background.AddComponent<CanvasGroup>();
         yield return StartCoroutine(FadeCanvasGroup(bgCg, 1f, 0f, 1f));
