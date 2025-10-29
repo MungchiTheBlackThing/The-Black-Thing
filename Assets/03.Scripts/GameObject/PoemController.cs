@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Tables;
 using UnityEngine.UI;
 
 public class PoemController : MonoBehaviour
@@ -24,13 +26,16 @@ public class PoemController : MonoBehaviour
     GameObject DotText;
     const string path = "Background/PoemBackground/";
 
-    //ÇöÀç Å¸ÀÓÀÌ ¹ãÀÎÁö, ³·ÀÎÁö´Â GameManager°¡ °¡Áö°íÀÖÀ½
+    //í˜„ì¬ íƒ€ì„ì´ ë°¤ì¸ì§€, ë‚®ì¸ì§€ëŠ” GameManagerê°€ ê°€ì§€ê³ ìˆìŒ
     GameManager gameManager;
+    public PlayAnswerController playAnswerController;
 
     private bool hasShownDotText = false;
     int currentPage;
     int totalPage;
     int chapter;
+
+    private const string poemTableName = "PoemText";
 
 
     private void OnEnable()
@@ -44,34 +49,49 @@ public class PoemController : MonoBehaviour
             background.sprite = Resources.Load<Sprite>(path + gameManager.Time);
         }
         prevPage.gameObject.SetActive(false);
-        currentPage = 0; //¶ã ¶§ ¸¶´Ù Ã¹¹øÂ° ÆäÀÌÁö·Î
-        LoadPoem();
+        currentPage = 0; //ëœ° ë•Œ ë§ˆë‹¤ ì²«ë²ˆì§¸ í˜ì´ì§€ë¡œ
+        StartCoroutine(LoadPoem());
     }
 
 
-    void LoadPoem()
+    private IEnumerator LoadPoem()
     {
-        if (gameManager)
+        yield return LocalizationSettings.InitializationOperation;
+        
+        //ì‹œ ë‚´ìš©ì„ ì—…ë°ì´íŠ¸
+        chapter = gameManager.Chapter;
+
+        totalPage = DataManager.Instance.PoemData.poems[chapter].text.Count; //ê°€ì¥ ë§ˆì§€ë§‰ ìœ„ì¹˜ë¡œë“œ
+         
+        LoadPageLocalized(currentPage);
+    }
+
+
+    private void LoadPageLocalized(int pageIndex)
+    {
+        string key = $"PT{chapter}_L{pageIndex + 1:0000}";
+        StringTable table = LocalizationSettings.StringDatabase.GetTable(poemTableName);
+
+        if (table != null)
         {
-            //½Ã ³»¿ëÀ» ¾÷µ¥ÀÌÆ®
-            chapter = gameManager.Chapter;
-
-            if (currentPage < DataManager.Instance.PoemData.poems[chapter].text.Count)
-                text.text = DataManager.Instance.PoemData.poems[chapter].text[currentPage].textKor;
-
-            totalPage = DataManager.Instance.PoemData.poems[chapter].text.Count; //°¡Àå ¸¶Áö¸· À§Ä¡·Îµå
-            
-            if(totalPage == currentPage)
+            var entry = table.GetEntry(key);
+            if (entry != null)
             {
-                nextPage.gameObject.SetActive(false);
+                text.text = entry.GetLocalizedString();
+            }
+            else
+            {
+                text.text = "(Missing Translation)";
             }
         }
+        
+        nextPage.gameObject.SetActive(pageIndex + 1 < totalPage);
+        prevPage.gameObject.SetActive(pageIndex > 0);
     }
 
 
     public void NextPage()
     {
-
         currentPage++;
 
         if (currentPage >= totalPage)
@@ -79,13 +99,13 @@ public class PoemController : MonoBehaviour
             currentPage = totalPage - 1;
             return;
         }
-        //´ÙÀ½ ÆäÀÌÁö°¡ ¾øÀ» °æ¿ì¿¡´Â ¹öÆ°À» ¾ø¾Ö¹ö¸²
+        //ë‹¤ìŒ í˜ì´ì§€ê°€ ì—†ì„ ê²½ìš°ì—ëŠ” ë²„íŠ¼ì„ ì—†ì• ë²„ë¦¼
         if (currentPage + 1 >= totalPage)
         {
-            //°¨»óÆò ON
+            //ê°ìƒí‰ ON
             if (!hasShownDotText)
             {
-                // °¨»óÆò ON (ÇÑ ¹ø¸¸ ½ÇÇà)
+                // ê°ìƒí‰ ON (í•œ ë²ˆë§Œ ì‹¤í–‰)
                 DotTextOn();
                 hasShownDotText = true;
             }
@@ -94,7 +114,7 @@ public class PoemController : MonoBehaviour
         }
 
         prevPage.gameObject.SetActive(true);
-        text.text = DataManager.Instance.PoemData.poems[chapter].text[currentPage].textKor;
+        LoadPageLocalized(currentPage);
     }
 
     public void PrevPage() 
@@ -113,7 +133,7 @@ public class PoemController : MonoBehaviour
         }
 
         nextPage.gameObject.SetActive(true);
-        text.text = DataManager.Instance.PoemData.poems[chapter].text[currentPage].textKor;
+        LoadPageLocalized(currentPage);
     }
 
     private void DotTextOn()
@@ -124,8 +144,8 @@ public class PoemController : MonoBehaviour
 
     public void Exit()
     {
-        //manager¿¡¼­ sleep ¿äÃ»
-        gameManager.GoSleep();
+        playAnswerController = GameObject.FindWithTag("PlayAnswerController").GetComponent<PlayAnswerController>();
+        playAnswerController.AfterReadingPoem();
         Destroy(gameObject.transform.parent.gameObject);
         hasShownDotText = false;
     }
