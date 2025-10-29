@@ -39,6 +39,7 @@
 		</relationship>
 		<relationship name="banks">
 			<destination>{9beef7f9-ab26-40f2-9cbf-17a6848b6e6b}</destination>
+			<destination>{2f8cfdc0-fed2-4fec-9908-cad6c1a4dce6}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{17eb59e3-8aa9-4476-9d2a-798bdb356207}">
@@ -285,7 +286,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{9e2e6d6f-725d-4c1f-9cbb-d036a1ba1137}">
 		<property name="name">
-			<value>Morning</value>
+			<value>Night</value>
 		</property>
 		<relationship name="automators">
 			<destination>{dd8201aa-826a-4eee-af73-889e736de5e8}</destination>

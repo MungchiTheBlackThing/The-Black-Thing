@@ -106,7 +106,7 @@ public class PlayerInfo
         {
             //0 1 2 3
             //chapter 1, 4 5 6 7
-            //2 8 9 10 11
+            //c2, 8 9 10 11
             subPhase.Add(subSuccessOrNot[Chapter * 4 + i]);
         }
 
