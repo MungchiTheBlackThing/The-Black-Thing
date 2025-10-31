@@ -48,7 +48,7 @@ public class MainVideo : MonoBehaviour
             videoPlayer.skipOnDrop = true;
             videoPlayer.isLooping = false;
         }
-
+        Rawimage.SetActive(false);
         if (text != null)
             subtitleText = text.GetComponentInChildren<TMP_Text>(true);
     }

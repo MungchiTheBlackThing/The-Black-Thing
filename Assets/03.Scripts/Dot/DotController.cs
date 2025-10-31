@@ -426,7 +426,6 @@ public class DotController : MonoBehaviour
         {
             Debug.Log("플레이 되어야 하는 애니메이션 : " + OutAnimKey);
             animator.Play(OutAnimKey);
-
             var split = OutAnimKey.Split("_");
             if (split[0] == "anim")
             {

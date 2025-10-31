@@ -49018,7 +49018,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467358317}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bfcb2d5168b0394f8432fdcf4fe7c03, type: 3}
   m_Name: 
@@ -70715,7 +70715,7 @@ MonoBehaviour:
   Ch1: {fileID: 0}
   DayProgress: {fileID: 1651024148}
   Subicon: {fileID: 1827726167}
-  Screentouch: {fileID: 634939024}
+  Screentouch: {fileID: 0}
 --- !u!222 &728480254008036783
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -74022,6 +74022,10 @@ PrefabInstance:
     - target: {fileID: 4960701870914578075, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
       propertyPath: m_Name
       value: MainVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960701870914578075, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe1fd947064171c45b986bfcd423d821, type: 3}

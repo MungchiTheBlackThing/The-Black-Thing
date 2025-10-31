@@ -180,6 +180,5 @@ public class UITutorial : MonoBehaviour
     public void OnDisable()
     {
         Screentouch.SetActive(false);
-        Destroy(Screentouch);
     }
 }

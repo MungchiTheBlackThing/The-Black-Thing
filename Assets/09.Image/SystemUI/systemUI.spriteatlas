@@ -53,7 +53,9 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 57c07b638dcb05647a73cf756f272b25, type: 3}
   - {fileID: 21300000, guid: 17dc02836ab2eaf44b95ae06aa1f2831, type: 3}
   - {fileID: 21300000, guid: 353b92141998d794f9cdf231c8670290, type: 3}
+  - {fileID: 21300000, guid: 34755ba456a38cd408109576c3c86995, type: 3}
   - {fileID: 21300000, guid: 4938e5b47b0fdd24ab836b2ff214fee7, type: 3}
+  - {fileID: 21300000, guid: c56653852b4cfdf4bb8aed25f4c9c236, type: 3}
   - {fileID: 21300000, guid: ba1d89e5a9c1ef043bd82f16ca57344b, type: 3}
   - {fileID: 21300000, guid: 6ac017267d705b245a202544e59d6f0d, type: 3}
   - {fileID: 21300000, guid: 9ad1bc26a0683d44bb88ad613da465c0, type: 3}
@@ -80,9 +82,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0e8ab32bda7801741bfb6c71792ac646, type: 3}
   - {fileID: 21300000, guid: 3d0dd79bca6c64340a24eeea8e556748, type: 3}
   - {fileID: 21300000, guid: 728710cb2b357724a98af7dc4b26e978, type: 3}
+  - {fileID: 21300000, guid: 61d7532cd30e9ee4382fbaad2deeda15, type: 3}
   - {fileID: 21300000, guid: 56c73a4c835c4894dba1178b9d0103d7, type: 3}
+  - {fileID: 21300000, guid: c393535ccb99dea4c9cc67f4691ff8ea, type: 3}
   - {fileID: 21300000, guid: 6e30bb7c0582725469df952919a2a9a0, type: 3}
   - {fileID: 21300000, guid: f418d69cd636259448fd4ac2d2111918, type: 3}
+  - {fileID: 21300000, guid: 495e766dc8bb6614aa42169ca71cb45f, type: 3}
   - {fileID: 21300000, guid: ba23948de0ccf9c44b275dd242fb778a, type: 3}
   - {fileID: 21300000, guid: ea0f5a8d52756984693e82ab2ef80948, type: 3}
   - {fileID: 21300000, guid: d5b056adfef28f348bb2bc1d68c806e3, type: 3}
@@ -106,7 +111,9 @@ SpriteAtlas:
   - checklist_check
   - alert_moonradio
   - Rectangle 16 (1)
+  - iconVideo_replay
   - Sub Red Dot
+  - iconVideo_next_click
   - icon_blackX
   - icon_trigger_sub
   - alert_diary
@@ -133,9 +140,12 @@ SpriteAtlas:
   - icon_whiteX
   - Lang_toggleBG
   - alert_diary
+  - icon_click
   - splash_moonstew
+  - iconVideo_next
   - popup_box
   - alert_diary
+  - iconVideo_replay_click
   - icon_trigger_main
   - box1
   - menu_spider
