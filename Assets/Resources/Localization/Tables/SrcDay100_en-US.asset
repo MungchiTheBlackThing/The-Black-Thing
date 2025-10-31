@@ -20,7 +20,7 @@ MonoBehaviour:
     - rid: 3674199784801173506
   m_TableData:
   - m_Id: 74098700288
-    m_Localized: '  '
+    m_Localized: \n
     m_Metadata:
       m_Items:
       - rid: 3674199784801173506
@@ -35,25 +35,25 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199784801173506
   - m_Id: 74211946497
-    m_Localized: 'He worked at the Dream Factory, a wondrous place dedicated to crafting
-      human dreams. '
+    m_Localized: 'He worked at the Dream Factory, a wondrous place\ndedicated to
+      crafting human dreams. '
     m_Metadata:
       m_Items:
       - rid: 3674199784801173506
   - m_Id: 74216140800
-    m_Localized: "Every night, Red received the newly updated memory of his humans\u2019
+    m_Localized: "Every night, Red received the newly\\nupdated memory of his humans\u2019
       day. "
     m_Metadata:
       m_Items:
       - rid: 3674199784801173506
   - m_Id: 74216140801
-    m_Localized: 'From them he carefully selected the boldest moments to feed into
+    m_Localized: 'From them he carefully selected the boldest\nmoments to feed into
       the dream machine. '
     m_Metadata:
       m_Items:
       - rid: 3674199784801173506
   - m_Id: 74216140802
-    m_Localized: 'And with a soft twinkle, the machine popped out five fresh, vibrant
+    m_Localized: 'And with a soft twinkle, the machine\npopped out five fresh, vibrant
       dreams. '
     m_Metadata:
       m_Items:
@@ -69,12 +69,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199784801173506
   - m_Id: 74216140805
-    m_Localized: Red cherished his humans and every minute spent at the Dream Factory.
+    m_Localized: Red cherished his humans and every\nminute spent at the Dream Factory.
     m_Metadata:
       m_Items:
       - rid: 3674199784801173506
   - m_Id: 74216140806
-    m_Localized: "But one foggy night, a defective dream slipped past Red\u2019s
+    m_Localized: "But one foggy night, a defective dream\\nslipped past Red\u2019s
       fingers,"
     m_Metadata:
       m_Items:
@@ -220,7 +220,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199784801173506
   - m_Id: 74216140835
-    m_Localized: "The black thing stared at the Pitch Black for a very long time\u2026"
+    m_Localized: "The black thing stared at the\\nPitch Black for a very long time\u2026"
     m_Metadata:
       m_Items:
       - rid: 3674199784801173506
@@ -265,7 +265,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199784801173506
   - m_Id: 74220335107
-    m_Localized: Along with their dreams, hopes, and their eyeballs
+    m_Localized: Along with their dreams, hopes, and their eyeballs!
     m_Metadata:
       m_Items:
       - rid: 3674199784801173506
@@ -279,6 +279,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 3674199784801173506
+  - m_Id: 74216140837
+    m_Localized: \n
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
