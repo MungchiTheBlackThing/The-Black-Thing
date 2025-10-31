@@ -270,9 +270,9 @@ public class GameManager : MonoBehaviour
         {
             sltime = SITime.Night;
         }
-        Debug.Log("tlqkf: " + sltime.ToString());
-        AudioManager.instance.EnsureAMB(FMODEvents.instance.ambRoom, sltime.ToString());
         StartCoroutine(LoadDataAsync());
+        Debug.Log("시간: " + sltime.ToString());
+        //AudioManager.instance.EnsureAMB(FMODEvents.instance.ambRoom, sltime.ToString());
     }
     IEnumerator LoadDataAsync()
     {
