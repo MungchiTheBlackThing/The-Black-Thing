@@ -36,6 +36,9 @@ public class SubPanel : MonoBehaviour
     public int dialogueIndex = 0;
     public int Day = 0;
 
+    private const string PH_KO = "당신의 생각을 입력해주세요";
+    private const string PH_EN = "Please enter your thoughts";
+
     void OnEnable()
     {
         pc = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
@@ -62,6 +65,27 @@ public class SubPanel : MonoBehaviour
         SetActiveAll(prObjects, false);
         SetActiveAll(prTbObjects, false);
         SetActiveAll(Sels, false);
+
+        int LANGUAGE = (int)pc.GetLanguage();
+        List<GameObject> targetsList = new List<GameObject>(32);
+        foreach (Transform t in transform.GetComponentsInChildren<Transform>(true))
+        {
+            if (t.gameObject.CompareTag("Placeholder"))
+                targetsList.Add(t.gameObject);
+        }
+        GameObject[] targets = targetsList.ToArray();
+        string placeholderText = (LANGUAGE == 0) ? PH_KO : PH_EN;
+        Debug.Log("찾은 Placeholder: " + targets.Length);
+        for (int i = 0; i < targets.Length; i++)
+        {
+            var go = targets[i];
+
+            var tmpText = go.GetComponent<TextMeshProUGUI>();
+            if (tmpText != null)
+            {
+                tmpText.text = placeholderText;
+            }
+        }
     }
 
     private static List<GameObject> InstantiateList(List<GameObject> src, Transform parent)

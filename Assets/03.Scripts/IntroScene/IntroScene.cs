@@ -95,7 +95,7 @@ public class IntroScene : MonoBehaviour
             nextScene = "Tutorial";
             goingTutorial = true;
             playerInfo.currentPhase = 0;
-            WritePlayerFile();
+            //WritePlayerFile();
         }
         else
         {

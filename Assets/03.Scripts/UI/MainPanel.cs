@@ -38,13 +38,16 @@ public class MainPanel : MonoBehaviour
 
     public int dialogueIndex = 0;
     public int Day = 0;
-    public LANGUAGE LANGUAGE;
+    public int LANGUAGE;
 
+    private const string PH_KO = "당신의 생각을 입력해주세요";
+    private const string PH_EN = "Please enter your thoughts";
     void OnEnable()
     {
         mainDialogue = (MainDialogue)gameManager.CurrentState;
         pc = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         MainClick = GameObject.Find("MainClick");
+        LANGUAGE = (int)pc.GetLanguage();
     }
     public void Bind(MainDialogue md)
     {
@@ -87,6 +90,27 @@ public class MainPanel : MonoBehaviour
         Selection4Panel = Instantiate(Resources.Load("DialBalloon/Selection4Selection") as GameObject, transform);
         Selection4Panel.SetActive(false);
         Selection4Panel.AddComponent<CanvasGroup>();
+
+        LANGUAGE = (int)pc.GetLanguage();
+        List<GameObject> targetsList = new List<GameObject>(32);
+        foreach (Transform t in transform.GetComponentsInChildren<Transform>(true))
+        {
+            if (t.gameObject.CompareTag("Placeholder"))
+                targetsList.Add(t.gameObject);
+        }
+        GameObject[] targets = targetsList.ToArray();
+        string placeholderText = (LANGUAGE == 0) ? PH_KO : PH_EN;
+        Debug.Log("찾은 Placeholder: " + targets.Length);
+        for (int i = 0; i < targets.Length; i++)
+        {
+            var go = targets[i];
+
+            var tmpText = go.GetComponent<TextMeshProUGUI>();
+            if (tmpText != null)
+            {
+                tmpText.text = placeholderText;
+            }
+        }
 
         if (MainClick != null && BackBut != null && BackBut.transform.parent == transform)
         {

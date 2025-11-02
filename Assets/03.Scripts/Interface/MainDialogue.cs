@@ -244,7 +244,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         fixedPos = pos[DialogueEntries[0].Background]; //현재 배경화면이 어떤 값인지 변경해주길
         //dot.ChangeState(DotPatternState.Main, "body_default1", fixedPos, "face_null");
         mainPanel.Day = manager.Chapter;
-        mainPanel.LANGUAGE = CurrentLanguage;
+        mainPanel.LANGUAGE = (int)CurrentLanguage;
         mainPanel.ShowNextDialogue();
         manager.ScrollManager.StopCamera(true);
         background = manager.ObjectManager.SetMain(DialogueEntries[0].Background); // 현재 배경이 어떤 값인지 변경
