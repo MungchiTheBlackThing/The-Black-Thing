@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: PoemText Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: PoemText
+  m_TableCollectionNameGuidString: d10cc167b5ec424409ebaacc42d28df8
+  m_Entries:
+  - m_Id: 59700805632
+    m_Key: PT1_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59776303104
+    m_Key: PT2_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59780497408
+    m_Key: PT2_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59780497409
+    m_Key: PT3_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59784691712
+    m_Key: PT3_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59784691713
+    m_Key: PT3_L0003
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59784691714
+    m_Key: PT4_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59784691715
+    m_Key: PT4_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304512
+    m_Key: PT5_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304513
+    m_Key: PT5_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304514
+    m_Key: PT5_L0003
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304515
+    m_Key: PT5_L0004
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304516
+    m_Key: PT6_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304517
+    m_Key: PT6_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304518
+    m_Key: PT6_L0003
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304519
+    m_Key: PT6_L0004
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304520
+    m_Key: PT7_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304521
+    m_Key: PT7_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304522
+    m_Key: PT8_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304523
+    m_Key: PT8_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304524
+    m_Key: PT8_L0003
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304525
+    m_Key: PT9_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304526
+    m_Key: PT9_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304527
+    m_Key: PT10_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304528
+    m_Key: PT10_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304529
+    m_Key: PT10_L0003
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304530
+    m_Key: PT10_L0004
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304531
+    m_Key: PT10_L0005
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304532
+    m_Key: PT10_L0006
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304533
+    m_Key: PT10_L0007
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304534
+    m_Key: PT11_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304535
+    m_Key: PT11_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304536
+    m_Key: PT11_L0003
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304537
+    m_Key: PT12_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304538
+    m_Key: PT12_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304539
+    m_Key: PT13_L0001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304540
+    m_Key: PT13_L0002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065818304541
+    m_Key: PT13_L0003
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3674200168201191426
+  references:
+    version: 2
+    RefIds:
+    - rid: 3674200168201191426
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1761652663986
