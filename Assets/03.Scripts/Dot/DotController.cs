@@ -217,7 +217,7 @@ public class DotController : MonoBehaviour
 
     public void DotControllerStart()
     {
-        chapter = manager.Chapter;
+        chapter = pc.GetChapter();
         Debug.Log("현재 챕터: " + chapter);
         animator.keepAnimatorStateOnDisable = true; //애니메이션 유지
         Vector2 spriteSize = spriteRenderer.sprite.bounds.size;

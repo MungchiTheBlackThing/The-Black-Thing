@@ -45,15 +45,46 @@ public class MainPanel : MonoBehaviour
     void OnEnable()
     {
         mainDialogue = (MainDialogue)gameManager.CurrentState;
-        pc = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         MainClick = GameObject.Find("MainClick");
         LANGUAGE = (int)pc.GetLanguage();
+        TcPlacholder();
     }
     public void Bind(MainDialogue md)
     {
         mainDialogue = md;
     }
+    public void TcPlacholder()
+    {
+        List<GameObject> targetsList = new List<GameObject>(32);
+        foreach (Transform t in transform.GetComponentsInChildren<Transform>(true))
+        {
+            if (t.gameObject.CompareTag("Placeholder"))
+                targetsList.Add(t.gameObject);
+        }
+        GameObject[] targets = targetsList.ToArray();
+        string placeholderText = (LANGUAGE == 0) ? PH_KO : PH_EN;
+        Debug.Log("찾은 Placeholder: " + targets.Length);
+        for (int i = 0; i < targets.Length; i++)
+        {
+            var go = targets[i];
 
+            var tmpText = go.GetComponent<TextMeshProUGUI>();
+            if (tmpText != null)
+            {
+                tmpText.text = placeholderText;
+            }
+        }
+
+        if (MainClick != null && BackBut != null && BackBut.transform.parent == transform)
+        {
+            BackBut.transform.SetSiblingIndex(transform.childCount - 1);
+            MainClick.transform.SetSiblingIndex(transform.childCount - 2);
+        }
+        else
+        {
+            if (MainClick) MainClick.transform.SetSiblingIndex(transform.childCount - 1);
+        }
+    }
     public void InitializePanels()
     {
         DotPanel = Instantiate(Resources.Load("DialBalloon/DotBalloon") as GameObject, transform);
@@ -90,37 +121,6 @@ public class MainPanel : MonoBehaviour
         Selection4Panel = Instantiate(Resources.Load("DialBalloon/Selection4Selection") as GameObject, transform);
         Selection4Panel.SetActive(false);
         Selection4Panel.AddComponent<CanvasGroup>();
-
-        LANGUAGE = (int)pc.GetLanguage();
-        List<GameObject> targetsList = new List<GameObject>(32);
-        foreach (Transform t in transform.GetComponentsInChildren<Transform>(true))
-        {
-            if (t.gameObject.CompareTag("Placeholder"))
-                targetsList.Add(t.gameObject);
-        }
-        GameObject[] targets = targetsList.ToArray();
-        string placeholderText = (LANGUAGE == 0) ? PH_KO : PH_EN;
-        Debug.Log("찾은 Placeholder: " + targets.Length);
-        for (int i = 0; i < targets.Length; i++)
-        {
-            var go = targets[i];
-
-            var tmpText = go.GetComponent<TextMeshProUGUI>();
-            if (tmpText != null)
-            {
-                tmpText.text = placeholderText;
-            }
-        }
-
-        if (MainClick != null && BackBut != null && BackBut.transform.parent == transform)
-        {
-            BackBut.transform.SetSiblingIndex(transform.childCount - 1);
-            MainClick.transform.SetSiblingIndex(transform.childCount - 2);
-        }
-        else
-        {
-            if (MainClick) MainClick.transform.SetSiblingIndex(transform.childCount - 1);
-        }
     }
 
     void ShowSelection(string options)
