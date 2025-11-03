@@ -135,10 +135,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //Player 단계를 가져온다.
-        if (mainDialoguePanel)
-        {
-            mainDialoguePanel.GetComponent<MainPanel>().InitializePanels();
-        }
         StartCoroutine(InitMain());
         loadingProgressBar.onValueChanged.AddListener(OnValueChanged);
     }
@@ -149,6 +145,10 @@ public class GameManager : MonoBehaviour
 
         pc = GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerController>();
         pc.nextPhaseDelegate += ChangeGameState;
+        if (mainDialoguePanel)
+        {
+            mainDialoguePanel.GetComponent<MainPanel>().InitializePanels();
+        }
         objectManager = GameObject.FindWithTag("ObjectManager").gameObject.GetComponent<ObjectManager>();
         scrollManager = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<ScrollManager>();
         cameraZoom = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<CameraZoom>();
