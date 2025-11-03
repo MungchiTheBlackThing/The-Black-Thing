@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 7912599220681631651}
   - component: {fileID: 7912599220681631648}
   - component: {fileID: 7912599220681631649}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CircleLeft
   m_TagString: optic
   m_Icon: {fileID: 0}
@@ -309,8 +309,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7912599222272830548}
-  - {fileID: 7912599221333818610}
-  - {fileID: 7912599222679928559}
   - {fileID: 681145704517490958}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -326,7 +324,7 @@ GameObject:
   - component: {fileID: 7912599221333818610}
   - component: {fileID: 7912599221333818612}
   - component: {fileID: 7912599221333818613}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Optic
   m_TagString: optic
   m_Icon: {fileID: 0}
@@ -347,8 +345,8 @@ Transform:
   m_Children:
   - {fileID: 7912599221748030628}
   - {fileID: 7912599220681631662}
-  m_Father: {fileID: 7912599221020610146}
-  m_RootOrder: 1
+  m_Father: {fileID: 7912599222272830548}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!331 &7912599221333818612
 SpriteMask:
@@ -453,7 +451,7 @@ Transform:
   - {fileID: 7912599221500383940}
   - {fileID: 5893758804913914266}
   m_Father: {fileID: 7912599222272830548}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7912599221391676631
 Rigidbody2D:
@@ -649,7 +647,7 @@ GameObject:
   - component: {fileID: 7912599221748030617}
   - component: {fileID: 7912599221748030630}
   - component: {fileID: 7912599221748030631}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CircleRight
   m_TagString: optic
   m_Icon: {fileID: 0}
@@ -840,6 +838,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7912599221333818610}
+  - {fileID: 7912599222679928559}
   - {fileID: 7912599221391676626}
   m_Father: {fileID: 7912599221020610146}
   m_RootOrder: 0
@@ -906,7 +906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7912599222679928559}
   - component: {fileID: 7912599222679928558}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BlackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,8 +925,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7912599221020610146}
-  m_RootOrder: 2
+  m_Father: {fileID: 7912599222272830548}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7912599222679928558
 SpriteRenderer:
@@ -968,7 +968,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1823390695
   m_SortingLayer: 5
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 00989f7e49d15754aa86a6d1d918a308, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1012,7 +1012,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7912599221020610146}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1556362549344522284
 SpriteRenderer:
