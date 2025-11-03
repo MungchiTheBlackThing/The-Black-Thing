@@ -7,7 +7,7 @@ public class DotTextReview : MonoBehaviour
 {
     [SerializeField] private PlayerController PlayerController;
     [SerializeField] private TMP_Text displayText;
-    [SerializeField] private Button inputBlockerButton; // ÀüÃ¼È­¸é ¹öÆ°
+    [SerializeField] private Button inputBlockerButton; // ì „ì²´í™”ë©´ ë²„íŠ¼
     [SerializeField] private float fadeDuration = 1.0f;
     [SerializeField] private int currentChapter = 1;
     [SerializeField] private GameObject speechBubble;
@@ -29,26 +29,26 @@ public class DotTextReview : MonoBehaviour
 
     public void Translate(LANGUAGE language)
     {
-        Debug.Log("¸®ºä ¹ø¿ªÀ» ½ÃÀÛÇÕ´Ï´Ù.");
+        Debug.Log("ë¦¬ë·° ë²ˆì—­ì„ ì‹œì‘í•©ë‹ˆë‹¤.");
 
         DotReview dotReview = DataManager.Instance.DotReview;
         if (dotReview == null)
         {
-            Debug.LogError("DotReview µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù.");
+            Debug.LogError("DotReview ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
             return;
         }
 
         Chapter chapter = GetChapter(dotReview, currentChapter);
         if (chapter == null)
         {
-            Debug.LogError("Ã©ÅÍ µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù.");
+            Debug.LogError("ì±•í„° ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
             return;
         }
 
         string rawText = (language == LANGUAGE.KOREAN) ? chapter.kortext : chapter.engtext;
         if (string.IsNullOrEmpty(rawText))
         {
-            Debug.LogError("ÇØ´ç ¾ğ¾î ÅØ½ºÆ®°¡ ¾ø½À´Ï´Ù.");
+            Debug.LogError("í•´ë‹¹ ì–¸ì–´ í…ìŠ¤íŠ¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
             return;
         }
 
@@ -97,7 +97,7 @@ public class DotTextReview : MonoBehaviour
             }
             else
             {
-                // ¸¶Áö¸· ÁÙÀÌ¸é À¯ÁöÇÏ°í ¹öÆ° ºñÈ°¼ºÈ­
+                // ë§ˆì§€ë§‰ ì¤„ì´ë©´ ìœ ì§€í•˜ê³  ë²„íŠ¼ ë¹„í™œì„±í™”
                 inputBlockerButton.onClick.RemoveListener(OnUserClick);
                 inputBlockerButton.gameObject.SetActive(false);
                 yield break;
@@ -126,7 +126,7 @@ public class DotTextReview : MonoBehaviour
     {
         float time = 0f;
 
-        // ½ÃÀÛ ¼³Á¤
+        // ì‹œì‘ ì„¤ì •
         speechBubbleGroup.alpha = 0f;
         speechBubbleGroup.blocksRaycasts = true;
         speechBubbleGroup.interactable = true;

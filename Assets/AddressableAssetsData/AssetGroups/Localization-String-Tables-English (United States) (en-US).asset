@@ -331,6 +331,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
+  - m_GUID: 7fdd2a33d11d6ff4781b7f3e4f4c43fd
+    m_Address: PoemText_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: ccf0751a4aca0824caf678229173be50, type: 2}
   m_SchemaSet:

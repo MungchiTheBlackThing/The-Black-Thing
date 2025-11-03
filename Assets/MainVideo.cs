@@ -51,6 +51,8 @@ public class MainVideo : MonoBehaviour
         Rawimage.SetActive(false);
         if (text != null)
             subtitleText = text.GetComponentInChildren<TMP_Text>(true);
+
+        HideSkipHintImmediate();
     }
 
     public void Setting(int Day, LANGUAGE language)
