@@ -729,18 +729,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8632590687242122825}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0012703013, w: -0.99999917}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0063425815, w: -0.99998}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8632590688364400046}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.146}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.727}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00030755997, y: 15.396985}
-  m_SizeDelta: {x: 848.09, y: 901.53}
+  m_AnchoredPosition: {x: 2.6035454, y: 4.1645026}
+  m_SizeDelta: {x: 845.0735, y: 843.9401}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8632590687242122828
 CanvasRenderer:
@@ -770,10 +770,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Default Text
+  m_text: Us Two\nBy A. A. Milne\nWherever I am,\nthere's always Pooh,\nThere's always
+    Pooh and Me.\nWhatever I do,\nhe wants to do,\n"Where are you going today?" says
+    Pooh:\n"Well, that's very odd\n'cos I was too.\nLet's go together,"\nsays Pooh,
+    says he.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b59276104c36729489bc91cda605f0b4, type: 2}
-  m_sharedMaterial: {fileID: 1770994840934059161, guid: b59276104c36729489bc91cda605f0b4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
+  m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -797,21 +800,21 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 59
+  m_fontSizeBase: 59
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: -10
+  m_lineSpacing: -4
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: -4
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
@@ -833,7 +836,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0.2637024, z: 0, w: -0.89489746}
+  m_margin: {x: 0, y: -25.73526, z: 0, w: -0.89489746}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1009,8 +1012,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.918}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 653.49384, y: 23}
-  m_SizeDelta: {x: 798.09, y: 899.459}
+  m_AnchoredPosition: {x: 656.75507, y: 27.957703}
+  m_SizeDelta: {x: 792.0911, y: 890.231}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8632590688687354139
 GameObject:

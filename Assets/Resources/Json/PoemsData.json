@@ -6,7 +6,7 @@
       [
           {
               "textKor": "꿈\n랭스턴 휴스\n\n꿈을 꼭 붙잡아라\n꿈이 죽는다면\n삶은 곧 날지 못하는\n날개 다친 새\n꿈을 꼭 붙잡아라\n꿈이 떠나는 그 때\n삶은 곧 눈으로 얼어붙은\n황량한 들판",
-              "textEng": "eng"
+              "textEng": "Dreams\nLangston Hughes\n\nHold fast to dreams\nFor if dreams die\nLife is a broken-winged bird\nThat cannot fly.\n\nHold fast to dreams\nFor when dreams go\n\nLife is a barren field\nFrozen with snow."
           }
       ]
     },
@@ -16,11 +16,15 @@
       [
           {
               "textKor": "길\n윤동주\n\n잃어 버렸습니다\n무얼 어디다 잃었는지 몰라\n두 손이 주머니를 더듬어\n길에 나아갑니다\n\n돌과 돌과 돌이 끝없이 연달아\n길은 돌담을 끼고 갑니다",
-              "textEng": "eng"
+              "textEng": "The Road\nBy Yun Dong-ju\n\nI lost something\nNot knowing what I lost \nor where I lost it\n\nTwo hands search my pockets\nI head out onto the road"
           },
           {
               "textKor": "담은 쇠문을 굳게 닫아\n길 위에 긴 그림자를 드리우고\n\n길은 아침에서 저녁으로\n저녁에서 아침으로 통했습니다\n\n돌담을 더듬어 눈물짓다\n쳐다보면 하늘은 부끄럽게 푸릅니다",
-              "textEng": "eng"
+              "textEng": "Stones and stones and stones endlessly continue\nThe road stretches along the stone wall\n\nThe wall firmly shuts the iron gate\nCasts a long shadow upon the road\n\nThe road led\nfrom morning to evening\nFrom evening to morning"
+          },
+          {
+              "textKor": "풀 한 포기 없는 이 길을 걷는 것은\n담 저쪽에 내가 남아 있는 까닭이고\n\n내가 사는 것은, 다만,\n잃은 것을 찾는 까닭입니다",
+              "textEng": "I feel at the stone wall and tear up\nOnly to look up at a sky mortifyingly blue\n\nI walk this road barren of green\nFor I remain on the other side of the wall\n\nAnd I live, solely,\nFor I search for what is lost"
           }
       ]
     },
@@ -52,7 +56,11 @@
           },
           {
               "textKor": "나무만은 아니다.\n계곡의 물소리를 들어보아라.\n얼음장 밑으로 공명하면서\n바위에 부딪혀 흐르는 물도\n음악이다.\n\n윗가지에서는 고음이,\n아랫가지에서는 저음이 울리는 나무는\n현악기,\n큰 바위에서는 강음이\n작은 바위에서는 약음이 울리는 계곡은,\n관악기.",
-              "textEng": "eng"
+              "textEng": "Not just trees.\nListen to the babbling creek.\nWater that resounds under ice and flows into rocks \nis also music.\nHigh notes from higher branches, low notes from lower ones\ntrees are violins,\nstrong notes from large rocks, weak notes from small rocks,\ncreeks are flutes."
+          },
+          {
+              "textKor": "오늘처럼\n천지에 흰 눈이 하얗게 내려\n그리운 이의 모습이 그리운 날은\n창가에 기대어 음악을\n듣자.\n\n감동은 눈으로 오기보다\n귀로 오는 것,\n겨울은 청각으로 떠오르는 무지개다.",
+              "textEng": "On days like this,\nwhen the world is covered in snow and we dearly miss our dear ones\nlet us lean on the window and listen\nto music.\n\nThe heart is moved not by what one sees,\nbut what one hears.\nAnd winter is a rainbow of sounds."
           }
       ]
     },
@@ -61,20 +69,22 @@
       "text" :
       [
           {
-              "textKor": "좋은 뼈대\n매기 스미스\n\n인생은 짧다, 내 아이들에게\n이 사실은 숨기지만.\n인생은 짧고, 나는 내 수명을\n천 가지 달콤하고, 무분별한 방법으로\n단축했으며\n이런 천 가지 달콤하게 무분별한 방법은\n내 아이들에게선 숨길 것이다.",
-              "textEng": "eng"
+              "textKor": "좋은 뼈대\n매기 스미스\n\n인생은 짧다, 내 아이들에게\n이 사실은 숨기지만.\n인생은 짧고, 나는 내 수명을\n천 가지 달콤하고, 무분별한 \n방법으로 단축했으며\n이런 천 가지 달콤하게\n무분별한 방법은 내 아이들에게선 숨길 것이다.",
+              "textEng": "Good Bones\nMaggie Smith\n\nLife is short, though I keep this from my children.\nLife is short, and\nI’ve shortened mine\nin a thousand delicious,\nill-advised ways,\na thousand deliciously\nill-advised ways\nI’ll keep from my children."
           },
           {
               "textKor": "세상은 적어도 오십 퍼센트는 끔찍하고,\n이는 낮게 잡은 수치이다,\n아이들에게 이 사실은 숨기지만.\n새 한 마리가 있다면 누군가 그 새에게\n던지는 돌 또한 한 개씩 있다.\n사랑받은 아이가 한 명 있다면\n망가지고, 자루에 담겨,\n호수에 가라앉은 아이도 한 명씩.",
-              "textEng": "eng"
+              "textEng": "The world is at least\nfifty percent terrible, and that’s a conservative\nestimate, though I keep this from my children.\n\nFor every bird there is a stone thrown at a bird.\n\nFor every loved child,\na child broken, bagged,\nsunk in a lake."
           },
           {
               "textKor": "인생은 짧고 세상은 적어도 반절은\n끔찍하며, 다정한 낯선 사람이\n한 명 있다면, 너를 망가뜨리려는\n낯선 사람도 한 명씩 있다,\n내 아이들에게 이 사실은 숨기지만.\n나는 그 애들에게\n세상을 소개하려 하고 있다.",
-              "textEng": "eng"
+              "textEng": "Life is short and the world\nis at least half terrible, and for every kind\nstranger, there is one who would break you,\n\nthough I keep this from my children. I am trying\nto sell them the world."
           },
           {
               "textKor": "그럭저럭 실력있는 부동산 업자라면\n누구든 거지 같은 곳을 소개할 때\n뼈대는 좋다고\n재잘거릴 것이다:\n\n여긴 아름다워질 수 있을 거예요,\n그렇죠?\n당신이라면 이곳을\n아름답게 만들 수 있을 거예요.",
-              "textEng": "eng"
+              "textEng": "Any decent realtor,\nwalking you through a real shithole, chirps on\nabout good bones:\n\nThis place could be beautiful,
+
+\nright? You could make this place beautiful."
           }
       ]
     },
@@ -84,7 +94,7 @@
       [
           {
               "textKor": "우리 둘\nA. A. 밀른\n\n내가 있는 곳엔 늘 푸가 있어,\n푸와 나는 언제나 함께야.\n내가 무엇을 하든\n푸도 함께 하고 싶어 해\n\n\"오늘 어디 가?\" 푸는 물었어:\n“이상하다, 나도 그러려고 했는데.\n\"같이 가자\" 푸는 말했어, 말했지 푸는.\n\"같이 가자\" 푸는 말했어.",
-              "textEng": ""
+              "textEng": "Us Two\nBy A. A. Milne\n\nWherever I am,\nthere's always Pooh,\nThere's always Pooh and Me.\nWhatever I do,\nhe wants to do,\n"Where are you going today?" says Pooh:\n"Well, that's very odd\n'cos I was too.\nLet's go together,"\nsays Pooh, says he."
           },
           {
               "textKor": "\"우리, 용을 찾아보자\" 난 푸에게 말했어.\n\"그래, 찾아보자\" 푸는 나에게 말했지.\n강을 건너니 용이 몇 마리 있었어-\n\n\"그래, 쟤네는 용일 수밖에 없어\"\n푸는 말했어.\n\"부리를 보자마자 알았어.\"\n\"용이고 말고\" 푸는 말했어, 말했지 푸는.\n\"용이고 말고\" 푸는 말했어.",
