@@ -770,11 +770,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "And the Raven, never flitting,\\nstill is sitting,\_still\_is sitting\r\\nOn
-    the pallid bust of Pallas\\njust above my chamber door;\r\\nAnd his eyes have
-    all the\\nseeming of a demon\u2019s\\nthat is dreaming,\r\\nAnd the lamp-light
-    o\u2019er him\\nstreaming throws his shadow\\non the floor;\r\\nAnd my soul from
-    out\\nthat shadow that lies\\nfloating on the floor\r\r\\nShall be lifted-nevermore!"
+  m_text: The question, O me! so sad, recurring - What good amid these, O me, O life?\n\nAnswer:\n\nThat
+    you are here - that life exists and identity,\nThat the powerful play\ngoes on,
+    and you may\ncontribute a verse.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
@@ -801,7 +799,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57
+  m_fontSize: 59
   m_fontSizeBase: 58
   m_fontWeight: 400
   m_enableAutoSizing: 1
