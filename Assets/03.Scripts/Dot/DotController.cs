@@ -513,7 +513,7 @@ public class DotController : MonoBehaviour
 
     public IEnumerator DotvisibleCheck(bool setoff)
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.08f);
         if (setoff)
         {
             Invisible();
