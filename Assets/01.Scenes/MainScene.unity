@@ -9404,6 +9404,7 @@ GameObject:
   - component: {fileID: 609387112}
   - component: {fileID: 609387111}
   - component: {fileID: 609387110}
+  - component: {fileID: 609387113}
   m_Layer: 5
   m_Name: Popup
   m_TagString: Untagged
@@ -9526,6 +9527,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609387108}
   m_CullTransparentMesh: 1
+--- !u!114 &609387113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609387108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8469da0d8ce338b4ab1c4461cb7faa85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtuto: {fileID: 1467358320}
 --- !u!1 &611372142
 GameObject:
   m_ObjectHideFlags: 0
@@ -9811,6 +9825,7 @@ MonoBehaviour:
   - {fileID: 1139226965}
   objectManager: {fileID: 606963712}
   PlayerController: {fileID: 0}
+  UItutoEnd: 0
 --- !u!95 &619721726
 Animator:
   serializedVersion: 5
@@ -27306,7 +27321,6 @@ GameObject:
   - component: {fileID: 1467358318}
   - component: {fileID: 1467358323}
   - component: {fileID: 1467358322}
-  - component: {fileID: 1467358321}
   - component: {fileID: 1467358320}
   - component: {fileID: 1467358319}
   m_Layer: 5
@@ -27429,28 +27443,7 @@ MonoBehaviour:
   DayProgress: {fileID: 1651024148}
   Subicon: {fileID: 1827726167}
   gameManager: {fileID: 199268581}
---- !u!114 &1467358321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467358317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bfcb2d5168b0394f8432fdcf4fe7c03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Guideline: []
-  MenuController: {fileID: 619721725}
-  menuBut: {fileID: 201689321}
-  progressBut: {fileID: 1606072028}
-  progressUIController: {fileID: 269175213}
-  icon: {fileID: 965754506}
-  Ch1: {fileID: 0}
-  DayProgress: {fileID: 1651024148}
-  Subicon: {fileID: 1827726167}
-  Screentouch: {fileID: 0}
+  Screentouch: {fileID: 634939024}
 --- !u!114 &1467358322
 MonoBehaviour:
   m_ObjectHideFlags: 0

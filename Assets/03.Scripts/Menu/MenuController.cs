@@ -64,6 +64,10 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     PlayerController PlayerController;
 
+    private int phase;
+
+    public bool UItutoEnd = false;
+
     public static event Action OnMenuOpened;
     private void Start()
     {
@@ -173,6 +177,7 @@ public class MenuController : MonoBehaviour
 
     public void onMenu()
     {
+        phase = PlayerController.GetAlreadyEndedPhase();
         MenuBut.GetComponent<Button>().enabled = false;
         isOpening = !isOpening;
         MenuButAnim.SetFloat("speed", 1f);
@@ -217,9 +222,17 @@ public class MenuController : MonoBehaviour
         }
         else
         {
-            TimeUI.SetActive(true);
-            checkList.SetActive(true);
-            MenuDefault.SetActive(false);
+            if ((phase != 1 || phase != 3) && !UItutoEnd)
+            {
+                checkList.SetActive(true);
+                MenuDefault.SetActive(false);
+            }
+            else
+            {
+                TimeUI.SetActive(true);
+                checkList.SetActive(true);
+                MenuDefault.SetActive(false);
+            }
         }
     }
     public void onDayProgressUI()

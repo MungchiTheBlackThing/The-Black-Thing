@@ -118,6 +118,7 @@ public class DotController : MonoBehaviour
 
     GamePatternState tmpState;
 
+    private Vector2 spriteSize;
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -185,7 +186,7 @@ public class DotController : MonoBehaviour
     void Start()
     {
         StartCoroutine(InitStart());
-        Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
+        spriteSize = spriteRenderer.sprite.bounds.size;
 
         // 콜라이더 크기 조정
         boxcollider.size = spriteSize;
@@ -425,7 +426,11 @@ public class DotController : MonoBehaviour
         if (OutAnimKey != "")
         {
             Debug.Log("플레이 되어야 하는 애니메이션 : " + OutAnimKey);
-            animator.Play(OutAnimKey);
+            animator.Play(OutAnimKey, 0, 0f);
+            animator.Update(0f);
+            spriteSize = spriteRenderer.sprite.bounds.size;
+            boxcollider.size = spriteSize;
+            boxcollider.offset = spriteRenderer.sprite.bounds.center;
             var split = OutAnimKey.Split("_");
             if (split[0] == "anim")
             {
@@ -460,8 +465,7 @@ public class DotController : MonoBehaviour
         }
 
         // 스프라이트의 실제 픽셀 단위 크기 가져오기 (로컬 단위로 변환됨)
-        Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
-
+        spriteSize = spriteRenderer.sprite.bounds.size;
         // 콜라이더 크기 조정
         boxcollider.size = spriteSize;
         boxcollider.offset = spriteRenderer.sprite.bounds.center;

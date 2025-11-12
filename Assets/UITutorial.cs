@@ -168,6 +168,7 @@ public class UITutorial : MonoBehaviour
             if (index >= transform.childCount)
             {
                 Screentouch.SetActive(false);
+                MenuController.UItutoEnd = true;
                 this.gameObject.SetActive(false);
             }
             else

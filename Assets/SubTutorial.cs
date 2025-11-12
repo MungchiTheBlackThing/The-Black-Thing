@@ -18,6 +18,7 @@ public class SubTutorial : MonoBehaviour
     [SerializeField] GameObject DayProgress;
     [SerializeField] GameObject Subicon;
     [SerializeField] GameManager gameManager;
+    [SerializeField] GameObject Screentouch;
     CanvasGroup tutorialMaskGroup;
     CanvasGroup Spider;
     CanvasGroup Progress;
@@ -37,7 +38,8 @@ public class SubTutorial : MonoBehaviour
         MenuController.isprogress = false;
         progressUIController.guide1 = false;
         progressUIController.guide2 = false;
-
+        Screentouch.SetActive(true);
+        subtutoinit();
         index = 0;
 
         GameObject go;
@@ -54,8 +56,6 @@ public class SubTutorial : MonoBehaviour
         tutorialMaskGroup = this.GetComponent<CanvasGroup>();
         Spider = menuBut.GetComponent<CanvasGroup>();
         Progress = progressBut.GetComponent<CanvasGroup>();
-
-        StartCoroutine(guide());
     }
     private void Update()
     {
@@ -79,9 +79,22 @@ public class SubTutorial : MonoBehaviour
             progressUIController.guide2 = false;
         }
     }
-    IEnumerator guide()
+    public void subtutoinit()
     {
-        yield return new WaitForSeconds(1f);
+        G2 = false;
+        G3 = false;
+        G4 = false;
+        G5 = false;
+        G6 = false;
+    }
+
+    public void guidestart()
+    {
+        StartCoroutine(guide());
+    }
+    public IEnumerator guide()
+    {
+        yield return new WaitForSeconds(0.5f);
         Guide0();
     }
     public void Guide0()
@@ -93,6 +106,7 @@ public class SubTutorial : MonoBehaviour
     }
     public void Guide1()
     {
+        index = 0;
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
@@ -105,6 +119,7 @@ public class SubTutorial : MonoBehaviour
 
     public void Guide2()
     {
+        index = 1;
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
@@ -113,11 +128,13 @@ public class SubTutorial : MonoBehaviour
         preparent = progressBut.transform.parent.gameObject;
         progressBut.transform.SetParent(this.transform);
         progressBut.transform.SetAsLastSibling();
+        G2 = true;
         Debug.Log("Guide2");
     }
 
     public IEnumerator Guide3()
     {
+        index = 2;
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
@@ -134,6 +151,7 @@ public class SubTutorial : MonoBehaviour
     }
     public void Guide5()
     {
+        index = 3;
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
@@ -164,6 +182,7 @@ public class SubTutorial : MonoBehaviour
             {
                 Subicon.transform.SetParent(preparent.transform);
                 Subicon.transform.SetSiblingIndex(3);
+                Screentouch.SetActive(false);
                 this.gameObject.SetActive(false);
                 return;
             }
