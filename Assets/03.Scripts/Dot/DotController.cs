@@ -132,8 +132,6 @@ public class DotController : MonoBehaviour
 
         parser.Load(mainScriptLists, subScriptLists);
         Debug.Log("메인 길이:" + mainScriptLists.Count);
-        subDialogue = GameObject.Find("SubDialougue");
-        subPanel = GameObject.Find("SubPanel");
         subPanel.GetComponent<SubPanel>().InitializePanels();
 
         spriteRenderer = this.GetComponent<SpriteRenderer>();
