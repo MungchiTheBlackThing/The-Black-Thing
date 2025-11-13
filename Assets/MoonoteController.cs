@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class MoonoteController : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> pages; // ÆäÀÌÁö GameObjectµéÀ» ÀúÀåÇÒ ¸®½ºÆ®
+    private List<GameObject> pages; // í˜ì´ì§€ GameObjectë“¤ì„ ì €ì¥í•  ë¦¬ìŠ¤íŠ¸
 
-    private int currentPageIndex = 0; // ÇöÀç ÆäÀÌÁö ÀÎµ¦½º
+    private int currentPageIndex = 0; // í˜„ì¬ í˜ì´ì§€ ì¸ë±ìŠ¤
 
     [SerializeField]
     private Button next;
@@ -31,9 +31,9 @@ public class MoonoteController : MonoBehaviour
         {
             pages.Add(child.gameObject);
         }
-        // ÃÊ±âÈ­: Ã¹ ÆäÀÌÁö È°¼ºÈ­, ³ª¸ÓÁö ºñÈ°¼ºÈ­
+        // ì´ˆê¸°í™”: ì²« í˜ì´ì§€ í™œì„±í™”, ë‚˜ë¨¸ì§€ ë¹„í™œì„±í™”
         UpdatePageVisibility();
-        // ¹öÆ° ÀÌº¥Æ® Ãß°¡
+        // ë²„íŠ¼ ì´ë²¤íŠ¸ ì¶”ê°€
     }
     public void ButtonUpNext()
     {
@@ -44,7 +44,7 @@ public class MoonoteController : MonoBehaviour
         }
         else
         {
-            Debug.Log("ÀÛ¼ºµÇÁö ¾ÊÀº ÀÏ±â");
+            Debug.Log("ì‘ì„±ë˜ì§€ ì•Šì€ ì¼ê¸°");
         }
     }
     public void ButtonUpPrev()
@@ -56,12 +56,12 @@ public class MoonoteController : MonoBehaviour
         }
         else
         {
-            Debug.Log("ÀÏ±âÀåÀº À½¼ö°¡ ¾ø´Ù");
+            Debug.Log("ì¼ê¸°ì¥ì€ ìŒìˆ˜ê°€ ì—†ë‹¤");
         }
     }
     private void UpdatePageVisibility()
     {
-        // ¸ğµç ÆäÀÌÁö¸¦ ºñÈ°¼ºÈ­ÇÏ°í ÇöÀç ÆäÀÌÁö¸¸ È°¼ºÈ­
+        // ëª¨ë“  í˜ì´ì§€ë¥¼ ë¹„í™œì„±í™”í•˜ê³  í˜„ì¬ í˜ì´ì§€ë§Œ í™œì„±í™”
         for (int i = 0; i < pages.Count; i++)
         {
             pages[i].SetActive(i == currentPageIndex);

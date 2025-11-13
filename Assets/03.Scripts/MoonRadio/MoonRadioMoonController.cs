@@ -43,7 +43,7 @@ public class MoonRadioMoonController : MonoBehaviour
 
         this.gameObject.SetActive(false);
         exit.gameObject.SetActive(false);
-        //ÇÃ·¹ÀÌ¾î°¡ ÇöÀç º» Idx ÀúÀå (Áï, popupIdx ¸¦ ÀúÀåÇÏ¸é µÈ´Ù.)
+        //í”Œë ˆì´ì–´ê°€ í˜„ì¬ ë³¸ Idx ì €ì¥ (ì¦‰, popupIdx ë¥¼ ì €ì¥í•˜ë©´ ëœë‹¤.)
         player.SetMoonRadioIdx(popupIdx + 1);
     }
 

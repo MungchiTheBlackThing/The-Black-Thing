@@ -85,8 +85,8 @@ namespace Assets.Script.DialClass
     public class MoonRadioDial
     {
         public EMoonChacter Actor;
-        public string KorText;
-        public string EngText;
+        public string TextKey;
+        public string Sfx;
     }
 
     [System.Serializable]

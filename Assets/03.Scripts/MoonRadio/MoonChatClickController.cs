@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public enum EMoonChacter
@@ -69,7 +70,6 @@ public class MoonChatClickController : MonoBehaviour, IPointerDownHandler
         }
         radioScript.Clear();
 
-        //MoonRadio�� �б� ���� ���� ���� ���½��Ѿ���.
         List<MoonRadioDial> Dial = DataManager.Instance.MoonRadioParser.GetMoonRadioDial(chapter, number, lan);
         
         int len = Dial.Count;
@@ -77,7 +77,11 @@ public class MoonChatClickController : MonoBehaviour, IPointerDownHandler
         {
             GameObject moonRadioObj = Instantiate(pref[(int)Dial[i].Actor].prefab, this.transform);
 
-            moonRadioObj.GetComponent<ChatAreaScript>().SettingText(Dial[i].KorText);
+            string key = Dial[i].TextKey;
+            string localizedText = LocalizationSettings.StringDatabase
+            .GetLocalizedString("MoonRadioText", key);
+            
+            moonRadioObj.GetComponent<ChatAreaScript>().SettingText(localizedText);
             moonRadioObj.SetActive(false);
 
             if (i == 0)
@@ -121,7 +125,6 @@ public class MoonChatClickController : MonoBehaviour, IPointerDownHandler
 
     public void Reset(int MoonRadioIdx)
     {
-        //������ number + 1�� ����.
         Init(pc.GetChapter(), MoonRadioIdx, pc.GetLanguage()); 
     }
 }

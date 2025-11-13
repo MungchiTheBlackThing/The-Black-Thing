@@ -23,13 +23,13 @@ public class MoonRadio : MonoBehaviour
     Animator blinkMoonRadioAnim;
 
     [SerializeField]
-    string originaltext = "´ŞÀÌ ¶á ¹ã, Àú³á ¿©´ü ½ÃºÎÅÍ \n»õº® ¼¼ ½Ã ±îÁö";
+    string originaltext = "ë‹¬ì´ ëœ¬ ë°¤, ì €ë… ì—¬ëŸ ì‹œë¶€í„° \nìƒˆë²½ ì„¸ ì‹œ ê¹Œì§€";
 
     [SerializeField]
-    string endtext = "Ä¡ÀÍ-Ä¡ÀÌÀÍ.Ä¡Á÷.\n¼Û½ÅºÒ°¡.¼Û½ÅºÒ°¡";
+    string endtext = "ì¹˜ìµ-ì¹˜ì´ìµ.ì¹˜ì§.\nì†¡ì‹ ë¶ˆê°€.ì†¡ì‹ ë¶ˆê°€";
 
     [SerializeField]
-    string checktext = "ÀÛµ¿ÇÏÁö ¾Ê´Â´Ù.\n¼Û½Å±â°¡ °íÀå³­ µíÇÏ´Ù.";
+    string checktext = "ì‘ë™í•˜ì§€ ì•ŠëŠ”ë‹¤.\nì†¡ì‹ ê¸°ê°€ ê³ ì¥ë‚œ ë“¯í•˜ë‹¤.";
 
 
     private void Start()
@@ -54,7 +54,7 @@ public class MoonRadio : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            // ¸¶¿ì½º°¡ UI À§¿¡ ÀÖÀ» ¶§´Â ÀÌ ÇÔ¼ö°¡ µ¿ÀÛÇÏÁö ¾Êµµ·Ï ÇÔ
+            // ë§ˆìš°ìŠ¤ê°€ UI ìœ„ì— ìˆì„ ë•ŒëŠ” ì´ í•¨ìˆ˜ê°€ ë™ì‘í•˜ì§€ ì•Šë„ë¡ í•¨
             return;
         }
 
@@ -67,19 +67,19 @@ public class MoonRadio : MonoBehaviour
         if (alert != null)
         {
             OpenAlert();
-            //alert ¾Ë¶÷¶ß±â
+            //alert ì•ŒëŒëœ¨ê¸°
             return;
         }
 
-        //½Ã°£´ë°¡ ¹ãÀÌ ¾Æ´Ò °æ¿ì¿¡´Â ¾Æ·¡´Â ÀÛµ¿ÇÏÁö ¾Ê´Â´Ù.
+        //ì‹œê°„ëŒ€ê°€ ë°¤ì´ ì•„ë‹ ê²½ìš°ì—ëŠ” ì•„ë˜ëŠ” ì‘ë™í•˜ì§€ ì•ŠëŠ”ë‹¤.
         if (moonRadioController.activeSelf == false && !Dot.tutorial && !GameManager.isend)
         {
-            //¹ãÀÏ ¶§ speed 1, ¹ãÀÌ ¾Æ´Ï¸é 0
+            //ë°¤ì¼ ë•Œ speed 1, ë°¤ì´ ì•„ë‹ˆë©´ 0
             blinkMoonRadioAnim.SetFloat("speed", 0f);
             moonRadioController.SetActive(true);
             screen.SetActive(false);
         }
-        Debug.Log("¹®¶óµğ¿À Å¬¸¯");
+        Debug.Log("ë¬¸ë¼ë””ì˜¤ í´ë¦­");
     }
 
     public void OpenAlert()
