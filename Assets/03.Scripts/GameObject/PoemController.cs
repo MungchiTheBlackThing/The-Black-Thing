@@ -57,13 +57,31 @@ public class PoemController : MonoBehaviour
     private IEnumerator LoadPoem()
     {
         yield return LocalizationSettings.InitializationOperation;
-        
+
         //시 내용을 업데이트
         chapter = gameManager.Chapter;
 
-        totalPage = DataManager.Instance.PoemData.poems[chapter].text.Count; //가장 마지막 위치로드
-         
+        totalPage = GetTotalPages(chapter);
+
         LoadPageLocalized(currentPage);
+    }
+
+    private int GetTotalPages(int chapter)
+    {
+        StringTable table = LocalizationSettings.StringDatabase.GetTable(poemTableName);
+        if (table != null)
+        {
+            int page = 1;
+            while (true)
+            {
+                string key = $"PT{chapter}_L{page:0000}";
+                if (table.GetEntry(key) == null)
+                    break;
+                page++;
+            }
+            return page - 1;
+        }
+        return 0;
     }
 
 
@@ -84,14 +102,36 @@ public class PoemController : MonoBehaviour
                 text.text = "(Missing Translation)";
             }
         }
-        
-        nextPage.gameObject.SetActive(pageIndex + 1 < totalPage);
-        prevPage.gameObject.SetActive(pageIndex > 0);
+
+        bool isFirstPage = pageIndex == 0;
+        bool isLastPage = (pageIndex + 1 >= totalPage);
+
+        if (totalPage == 1)
+        {
+            nextPage.gameObject.SetActive(!hasShownDotText);
+            prevPage.gameObject.SetActive(false);
+        }
+        else
+        {
+            nextPage.gameObject.SetActive(!isLastPage);
+            prevPage.gameObject.SetActive(!isFirstPage);
+        }
     }
 
 
     public void NextPage()
     {
+        if (totalPage == 1)
+        {
+            if (!hasShownDotText)
+            {
+                DotTextOn();
+                hasShownDotText = true;
+            }
+
+            nextPage.gameObject.SetActive(false);
+            return;
+        }
         currentPage++;
 
         if (currentPage >= totalPage)
@@ -99,13 +139,11 @@ public class PoemController : MonoBehaviour
             currentPage = totalPage - 1;
             return;
         }
-        //다음 페이지가 없을 경우에는 버튼을 없애버림
+
         if (currentPage + 1 >= totalPage)
         {
-            //감상평 ON
             if (!hasShownDotText)
             {
-                // 감상평 ON (한 번만 실행)
                 DotTextOn();
                 hasShownDotText = true;
             }

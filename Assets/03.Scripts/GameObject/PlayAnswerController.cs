@@ -35,10 +35,6 @@ public class PlayAnswerController : MonoBehaviour
     private void Start()
     {
         dot = playDot.transform.parent.GetComponent<DotController>();
-
-        yesPoemBubble.onClick.AddListener(YesPoemBubbleClicked);
-        noPoemBubble.onClick.AddListener(NoPoemBubbleClicked);
-        playDotButton.onClick.AddListener(OnPlayDotClicked);
     }
 
     private void OnEnable()
