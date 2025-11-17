@@ -586,7 +586,7 @@ public class SubPanel : MonoBehaviour
         subTuto = gameManager.gameObject.GetComponent<SubTuto>();
         if (subTuto)
         {
-            subTuto.Subcontinue();
+            subTuto.Subcontinue(this.dialogueIndex);
             prePos = dotcontroller.Position;
         }
         else

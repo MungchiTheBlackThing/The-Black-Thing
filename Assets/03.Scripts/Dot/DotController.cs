@@ -67,6 +67,8 @@ public class DotController : MonoBehaviour
     [SerializeField]
     PlayerController playerController;
 
+    [SerializeField]
+    private bool visible = true;
     public bool tutorial = false; //DoorController에 쓰임
     public GameObject Dust
     {
@@ -421,6 +423,29 @@ public class DotController : MonoBehaviour
 
         chapter = manager.Chapter;
 
+        //outPos -1일경우 랜덤위치
+        if (position == -1)
+        {
+            if (DotPositionKeyDic.TryGetValue(state, out var dic))
+            {
+                if (dic.TryGetValue(OutAnimKey, out var list))
+                {
+                    int maxIdx = list.Count;
+                    position = list[UnityEngine.Random.Range(0, maxIdx)];
+                }
+            }
+        }
+
+        //위치 조절
+        if (DotPositionDic.ContainsKey(position))
+        {
+            transform.position = DotPositionDic[position];
+        }
+
+        if (!visible)
+            return;
+
+
         if (OutAnimKey != "")
         {
             Debug.Log("플레이 되어야 하는 애니메이션 : " + OutAnimKey);
@@ -443,25 +468,6 @@ public class DotController : MonoBehaviour
             PlayEyeAnimation();
         }
 
-        //outPos -1일경우 랜덤위치
-        if (position == -1)
-        {
-            if (DotPositionKeyDic.TryGetValue(state, out var dic))
-            {
-                if (dic.TryGetValue(OutAnimKey, out var list))
-                {
-                    int maxIdx = list.Count;
-                    position = list[UnityEngine.Random.Range(0, maxIdx)];
-                }
-            }
-        }
-
-        //위치 조절
-        if (DotPositionDic.ContainsKey(position))
-        {
-            transform.position = DotPositionDic[position];
-        }
-
         // 스프라이트의 실제 픽셀 단위 크기 가져오기 (로컬 단위로 변환됨)
         spriteSize = spriteRenderer.sprite.bounds.size;
         // 콜라이더 크기 조정
@@ -472,7 +478,7 @@ public class DotController : MonoBehaviour
     public void Invisible()
     {
         Debug.Log("안보여야하는데.");
-
+        visible = false;
         // 애니메이터 비활성화 (색상 덮어쓰기 방지)
         Animator animator = GetComponent<Animator>();
         if (animator != null)
@@ -492,7 +498,7 @@ public class DotController : MonoBehaviour
     public void Visible()
     {
         Debug.Log("보여야 하는데.");
-
+        visible = true;
         SpriteRenderer dotRenderer = GetComponent<SpriteRenderer>();
         Color color = dotRenderer.color;
         color.a = 1f;

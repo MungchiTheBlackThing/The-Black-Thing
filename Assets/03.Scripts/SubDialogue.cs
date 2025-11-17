@@ -142,14 +142,14 @@ public class SubDialogue : MonoBehaviour
             Debug.LogError("Dialogue file not found in Resources folder.");
             return;
         }
-        //if (manager.Pattern == GamePatternState.Writing)
-        //{
-        //    subseq = 3;
-        //}
-        //if (manager.Pattern == GamePatternState.Sleeping)
-        //{
-        //    subseq = 4;
-        //}
+        if (manager.Pattern == GamePatternState.Writing)
+        {
+            playerController.SetSubseq(3);
+        }
+        if (manager.Pattern == GamePatternState.Sleeping)
+        {
+            playerController.SetSubseq(4);
+        }
         scroll.stopscroll(); //임시 방편
         string[] lines = dialogueData.text.Split('\n');
         LoadSubDialogue(lines);
@@ -293,6 +293,7 @@ public class SubDialogue : MonoBehaviour
     }
     public void Tuto_start(int index)
     {
+        playerController.SetSubseq(1);
         dialogueData = null;
         SubPanel subPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
         if (!SystemUI)
@@ -315,6 +316,6 @@ public class SubDialogue : MonoBehaviour
     private IEnumerator ShowNextDialogueAfterDelay(float delay,SubPanel subPanel)
     {
         yield return new WaitForSeconds(delay);
-        subPanel.ShowNextDialogue();
+        this.SubContinue();
     }
 }

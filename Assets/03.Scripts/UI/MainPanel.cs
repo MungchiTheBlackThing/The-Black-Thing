@@ -226,6 +226,7 @@ public class MainPanel : MonoBehaviour
         if (gameManager.GetComponent<TutorialManager>() != null)
         {
             PanelOff();
+            if (BackBut) BackBut.SetActive(false);
             TutorialManager.Instance.ChangeGameState(TutorialState.Sub);
         }
         else
@@ -455,16 +456,27 @@ public class MainPanel : MonoBehaviour
     {
         if (backindex != -1)
         {
-            if (dialogueIndex > backindex)
+            if (dialogueIndex > backindex + 1)
             {
                 dialogueIndex--;
                 ShowNextDialogue();
             }
-            else if (dialogueIndex == backindex)
+            else if (dialogueIndex == backindex + 1) 
             {
                 if (!string.IsNullOrEmpty(backtag)) pc.DownArcheType(backtag);
                 ShowNextDialogue();
+                StartCoroutine(backmessage());
             }
         }
     }
+
+    private IEnumerator backmessage()
+    {
+        Transform child = BackBut.transform.GetChild(0);
+
+        child.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        child.gameObject.SetActive(false);
+    }
+
 }

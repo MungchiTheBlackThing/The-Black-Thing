@@ -174,8 +174,10 @@ public class SubTuto : MonoBehaviour
         tutorialManager.ChangeGameState(TutorialState.Sub);
     }
 
-    public void Subcontinue()
+    public void Subcontinue(int index = 0)
     {
+        if (index < 0)
+            index = 0;
         RecentData data = RecentManager.Load();
         if (data != null && data.isContinue == 1)
         {
@@ -196,10 +198,7 @@ public class SubTuto : MonoBehaviour
             else
             {
                 Debug.Log("서브이어 2");
-                if (data.value == 0)
-                    subPanel.dotballoon(targetObj);
-                else
-                    subPanel.playerballoon(targetObj);
+                subDialogue.StartSub("tutorial_sub", subPanel.dialogueIndex);
             }
         }
         else

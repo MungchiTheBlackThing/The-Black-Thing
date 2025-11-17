@@ -28171,6 +28171,7 @@ MonoBehaviour:
   screen: {fileID: 606963710}
   popupUI: {fileID: 1337521961}
   menu: {fileID: 619721723}
+  screenshield: {fileID: 634939024}
 --- !u!1 &1503305164
 GameObject:
   m_ObjectHideFlags: 0
@@ -42987,6 +42988,7 @@ MonoBehaviour:
   subDialogue: {fileID: 1720718688}
   subPanel: {fileID: 1109418667}
   playerController: {fileID: 0}
+  visible: 1
   tutorial: 0
   spriteRenderer: {fileID: 0}
   boxcollider: {fileID: 0}
