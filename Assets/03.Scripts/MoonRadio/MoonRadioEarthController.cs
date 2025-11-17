@@ -31,7 +31,7 @@ public class MoonRadioEarthController : MonoBehaviour
     }
     public void Write2Moon(TMP_Text text)
     {
-        //´©¸£¸é, ¹Ú½º´Â »ç¶óÁø´Ù.
+        //ëˆ„ë¥´ë©´, ë°•ìŠ¤ëŠ” ì‚¬ë¼ì§„ë‹¤.
 
         if (text.text.Length >= 1)
         {
@@ -55,9 +55,9 @@ public class MoonRadioEarthController : MonoBehaviour
             exceedAlert.SetActive(false);
             isCheckingWithin500 = true;
         }
-        //ÇÑ±ÛÀÚ¶óµµ ÀÖÀ¸¸é ¾ø¾Ö°í, ÇÑ±ÛÀÚ Á¸ÀçÇÏ¸é »ı±è.
-        //±Û¾¾ Ã³¸®..
-        //text.text´Â moonbut´©¸¦½Ã Àü´ŞµÉ string
+        //í•œê¸€ìë¼ë„ ìˆìœ¼ë©´ ì—†ì• ê³ , í•œê¸€ì ì¡´ì¬í•˜ë©´ ìƒê¹€.
+        //ê¸€ì”¨ ì²˜ë¦¬..
+        //text.textëŠ” moonbutëˆ„ë¥¼ì‹œ ì „ë‹¬ë  string
     }
 
     public void OnEndEdit(TMP_Text text)
@@ -67,13 +67,13 @@ public class MoonRadioEarthController : MonoBehaviour
 
     public void Send2MoonBut()
     {
-        //textfield°¡ »ç¶óÁø´Ù.
-        //ÇöÀç ´©¸¥ ¿ÀºêÁ§Æ® ½ÇÇà ÈÄ ¾Ö´Ï¸ŞÀÌ¼Ç ³¡³ª¸é ÇÔ¼ö ½ÇÇà
+        //textfieldê°€ ì‚¬ë¼ì§„ë‹¤.
+        //í˜„ì¬ ëˆ„ë¥¸ ì˜¤ë¸Œì íŠ¸ ì‹¤í–‰ í›„ ì• ë‹ˆë©”ì´ì…˜ ëë‚˜ë©´ í•¨ìˆ˜ ì‹¤í–‰
         //Debug.Log(inputText);
-        if (isCheckingWithin500 == false) //500±ÛÀÚ ÀÌ³»
+        if (isCheckingWithin500 == false) //500ê¸€ì ì´ë‚´
         {
             exceedAlert.SetActive(true);
-            //Àü¼Û ºÒ°¡´ÉÇÔ.
+            //ì „ì†¡ ë¶ˆê°€ëŠ¥í•¨.
             return;
         }
         exceedAlert.SetActive(false);
@@ -83,9 +83,9 @@ public class MoonRadioEarthController : MonoBehaviour
     }
     void Reset()
     {
-        //µ¹¾Æ¿À´Â ¾Ö´Ï¸ŞÀÌÅÍ 
+        //ëŒì•„ì˜¤ëŠ” ì• ë‹ˆë©”ì´í„° 
         //animator.ResetTrigger("YourTrigger");
-        answerTextBox.SetActive(true); //´Ù½Ã ¾µ¼ö ÀÖ±â ¶§¹®¿¡ °ÔÀÓ¿ÀºêÁ§Æ®¸¦ ÄÑÁØ´Ùs
+        answerTextBox.SetActive(true); //ë‹¤ì‹œ ì“¸ìˆ˜ ìˆê¸° ë•Œë¬¸ì— ê²Œì„ì˜¤ë¸Œì íŠ¸ë¥¼ ì¼œì¤€ë‹¤s
     }
     public void WaitAlert()
     {
@@ -112,24 +112,24 @@ public class MoonRadioEarthController : MonoBehaviour
         Invoke("WaitAlert", .5f);
     }
 
-    //channel exit but ´©¸¥´Ù.
+    //channel exit but ëˆ„ë¥¸ë‹¤.
     public void ExitChannelBut()
     {
-        //close_AlterÀÌ ¶á´Ù.
+        //close_Alterì´ ëœ¬ë‹¤.
         closePopup.SetActive(true);
     }
-    //Ã¤³Î Á¾·á
+    //ì±„ë„ ì¢…ë£Œ
     public void YesBut()
     {
-        //yes¸¦ ´©¸£¸é send_Alert ¶ä.. È­¸é Å¬¸¯½Ã ¸ŞÀÎ È­¸éÀ¸·Î ÀÌµ¿
+        //yesë¥¼ ëˆ„ë¥´ë©´ send_Alert ëœ¸.. í™”ë©´ í´ë¦­ì‹œ ë©”ì¸ í™”ë©´ìœ¼ë¡œ ì´ë™
         closePopup.SetActive(false);
         this.gameObject.SetActive(false);
     }
 
-    //Ã¤³Î Á¾·á ¾ÈÇÔ
+    //ì±„ë„ ì¢…ë£Œ ì•ˆí•¨
     public void NoBut()
     {
-        //noÀÏ½Ã... ¹°¾îºÁ¾ßÇÒµí ¹ºµ¥..? 
+        //noì¼ì‹œ... ë¬¼ì–´ë´ì•¼í• ë“¯ ë­”ë°..? 
         closePopup.SetActive(false);
     }
 }

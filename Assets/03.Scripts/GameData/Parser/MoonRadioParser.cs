@@ -21,7 +21,7 @@ public class MoonRadioParser
 
     public List<MoonRadioDial> GetMoonRadioDial(int chapter, int number, LANGUAGE lan)
     {
-        ChangeLanguage(chapter, lan); //πŸ≤€ »ƒ ¿¸¥ﬁ
+        curLanguage = lan;
         return MoonRadios[chapter][number];
     }
 
@@ -39,29 +39,20 @@ public class MoonRadioParser
         LoadMoonRadioDial(lines);
     }
 
-    //Change Korean -> English or English -> Korean
     public void ChangeLanguage(int chapter, LANGUAGE language)
     {
-        if(curLanguage != language)
-        {
-            foreach (var Dial in MoonRadios[chapter])
-            {
-                foreach(var List in Dial.Value)
-                {
-                    string displayedText = curLanguage == LANGUAGE.KOREAN ? List.KorText : List.EngText;
-                    List.KorText = displayedText;
-                }
-            }
-            curLanguage = language;
-        }
+        curLanguage = language;
     }
 
     void LoadMoonRadioDial(string[] lines)
     {
         int chapter = 0;
         int number = 0;
+        int prevChapter = -1;
+        int prevMoonNumber = -1;
+        int lineIndex = 0;
 
-        //Ω«¡¶∑– [ID][MoonNumber][entry]
+        //Ïã§Ï†úÎ°† [ID][MoonNumber][entry]
         for (int i = 1; i < lines.Length; i++)
         {
             string line = lines[i];
@@ -70,26 +61,41 @@ public class MoonRadioParser
             {
                 continue;
             }
-
             string[] parts = ParseCSVLine(line);
-            //Debug.Log($"Parsed line {i}: {string.Join(", ", parts)}");
 
             if (parts.Length >= 5)
             {
-
                 int ID = int.Parse(parts[0]);
                 int MoonNumber = int.Parse(parts[1]);
                 string Actor = parts[2];
+
+                string textKor = ApplyLineBreaks(parts[3]); 
+                string textEng = ApplyLineBreaks(parts[4]);
+
+                string sfx = parts.Length >= 6 ? parts[5] : string.Empty;
 
                 EMoonChacter eMoonChacter;
 
                 if (Enum.TryParse(Actor, true, out eMoonChacter))
                 {
+                    if (ID != prevChapter || MoonNumber != prevMoonNumber)
+                    {
+                        lineIndex = 1;
+                        prevChapter = ID;
+                        prevMoonNumber = MoonNumber;
+                    }
+                    else
+                    {
+                        lineIndex++;
+                    }
+                    //MoonRadioText Î°úÏª¨ÎùºÏù¥Ï†úÏù¥ÏÖò ÌÖåÏù¥Î∏î ÌÇ§ ÏÉùÏÑ±
+                    string key = $"MR{ID:D2}{MoonNumber:D2}_L{lineIndex:D3}";
+
                     MoonRadioDial entry = new MoonRadioDial
                     {
                         Actor = eMoonChacter,
-                        KorText = ApplyLineBreaks(parts[3]),
-                        EngText = ApplyLineBreaks(parts[4]),
+                        TextKey = key,
+                        Sfx = sfx
                     };
 
                     if (chapter != ID)
@@ -100,7 +106,6 @@ public class MoonRadioParser
 
                     if (number != MoonNumber)
                     {
-                        //ªı∑ŒøÓ Dictionary
                         MoonRadios[ID][MoonNumber] = new List<MoonRadioDial>();
                         number = MoonNumber;
                     }

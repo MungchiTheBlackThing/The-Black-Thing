@@ -19,7 +19,7 @@ public class MoonRadioMainController : MonoBehaviour
     GameObject moonRadioEarth;
 
     [SerializeField]
-    GameObject systemUI; //¿Ã∞≈ µ®∏Æ∞‘¿Ã∆Æ∑Œ ¥Î√º«“ øπ¡§
+    GameObject systemUI; //Ïù¥Í±∞ Îç∏Î¶¨Í≤åÏù¥Ìä∏Î°ú ÎåÄÏ≤¥Ìï† ÏòàÏ†ï
     [SerializeField]
     GameObject screen;
     IPlayerInterface player;
@@ -42,7 +42,6 @@ public class MoonRadioMainController : MonoBehaviour
         moonRadioOff.SetActive(false);
         moonRadioOn.SetActive(true);
         screenshield.SetActive(true);
-        //systemUI∏¶ ≤®¡ÿ¥Ÿ.
         systemUI = GameObject.Find("SystemUI");
         if(systemUI)
         {

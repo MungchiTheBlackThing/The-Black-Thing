@@ -2,6 +2,9 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Tables;
+using System.Collections.Generic;
 
 public class DotTextReview : MonoBehaviour
 {
@@ -11,51 +14,59 @@ public class DotTextReview : MonoBehaviour
     [SerializeField] private float fadeDuration = 1.0f;
     [SerializeField] private int currentChapter = 1;
     [SerializeField] private GameObject speechBubble;
+
     private CanvasGroup speechBubbleGroup;
+    private bool userClicked = false;
+
+    private const string reviewTableName = "PoemReview";
 
     private void Awake()
     {
         speechBubbleGroup = speechBubble.GetComponent<CanvasGroup>();
     }
 
-    private bool userClicked = false;
-
     public void StartReview()
     {
         PlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         currentChapter = PlayerController.GetChapter();
-        Translate(PlayerController.GetLanguage());
+        StartCoroutine(LoadAndPlayReview());
     }
 
-    public void Translate(LANGUAGE language)
+    public IEnumerator LoadAndPlayReview()
     {
-        Debug.Log("리뷰 번역을 시작합니다.");
+        StringTable table = LocalizationSettings.StringDatabase.GetTable(reviewTableName);
+        List<string> lines = new List<string>();
+        int lineIndex = 1;
 
-        DotReview dotReview = DataManager.Instance.DotReview;
-        if (dotReview == null)
+        while (true)
         {
-            Debug.LogError("DotReview 데이터가 없습니다.");
-            return;
+            string key = $"PR{currentChapter}_L{lineIndex:0000}";
+            var entry = table.GetEntry(key);
+
+            if (entry == null)
+            {
+                // 더 이상 키가 없으면 종료
+                break;
+            }
+
+            string lineText = entry.GetLocalizedString();
+            if (!string.IsNullOrWhiteSpace(lineText))
+            {
+                lines.Add(lineText.Trim());
+            }
+
+            lineIndex++;
         }
 
-        Chapter chapter = GetChapter(dotReview, currentChapter);
-        if (chapter == null)
+        if (lines.Count == 0)
         {
-            Debug.LogError("챕터 데이터가 없습니다.");
-            return;
+            Debug.LogError($"[DotTextReview] 챕터 {currentChapter} 에 해당하는 리뷰 텍스트가 없습니다.");
+            yield break;
         }
 
-        string rawText = (language == LANGUAGE.KOREAN) ? chapter.kortext : chapter.engtext;
-        if (string.IsNullOrEmpty(rawText))
-        {
-            Debug.LogError("해당 언어 텍스트가 없습니다.");
-            return;
-        }
-
-        string[] lines = rawText.Split(new[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
-
+        // 혹시 기존 코루틴이 돌고 있다면 정지 후 새로 시작
         StopAllCoroutines();
-        StartCoroutine(PlayLines(lines));
+        StartCoroutine(PlayLines(lines.ToArray()));
     }
 
     private Chapter GetChapter(DotReview review, int chapterNumber)

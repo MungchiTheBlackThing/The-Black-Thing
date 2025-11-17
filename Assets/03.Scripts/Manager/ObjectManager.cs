@@ -152,20 +152,21 @@ public class ObjectManager : MonoBehaviour
     public IEnumerator LoadObjectAsync(string path, int chapter)
     {
         string tmpPath = "";
-        for(int idx=0; idx < googlePath.Count; idx++)
+        for (int idx = 0; idx < googlePath.Count; idx++)
         {
             if (googlePath[idx].Time.ToString() == path)
             {
+                //[디버깅]tmpPath = googlePath[idx].path;
                 tmpPath = googlePath[idx].path;
                 break;
             }
         }
 
-        string MainPath = "https://drive.google.com/uc?export=download&id="+ tmpPath;
+        yield return StartCoroutine(LoadAssetBundleFromLocal(tmpPath, LoadMainBackground));
 
-        Action<AssetBundle> callback = LoadMainBackground;
-
-        yield return StartCoroutine(pool.LoadFromMemoryAsync(MainPath, callback));
+        //string MainPath = "https://drive.google.com/uc?export=download&id="+ tmpPath;
+        //Action<AssetBundle> callback = LoadMainBackground;
+        // yield return StartCoroutine(pool.LoadFromMemoryAsync(MainPath, callback));
 
         isObjectLoadComplete = false;  // 로드가 시작되므로 false로 설정
         loadProgress = 0f;  // 진행 상황 초기화
@@ -247,6 +248,26 @@ public class ObjectManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         isObjectLoadComplete = true;
+    }
+
+    private IEnumerator LoadAssetBundleFromLocal(string bundleFileName, Action<AssetBundle> onLoaded)
+    {
+        //Assets/StreamingAssets/NewAssetBundles
+        string candidateStreaming = Path.Combine(Application.streamingAssetsPath, "NewAssetBundles", bundleFileName);
+        string fullPath = candidateStreaming;
+
+        // 파일에서 에셋번들 비동기 로드
+        var request = AssetBundle.LoadFromFileAsync(fullPath);
+        yield return request;
+
+        var bundle = request.assetBundle;
+        if (bundle == null)
+        {
+            Debug.LogError($"[ObjectManager] AssetBundle 로드 실패: {fullPath}");
+            yield break;
+        }
+
+        onLoaded?.Invoke(bundle);
     }
 
     public void LoadObject(string path, int chapter)

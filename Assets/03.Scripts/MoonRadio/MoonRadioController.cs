@@ -25,8 +25,8 @@ public class MoonRadioController : MonoBehaviour
 
     void Translate(LANGUAGE language, TMP_FontAsset font)
     {
-        //¹ø¿ªÇÑ´Ù.
-        Debug.Log("´Ş³ª¶ó ¼Û½Å±â¸¦ ¹ø¿ªÇÕ´Ï´Ù.\n");
+        //ë²ˆì—­í•œë‹¤.
+        Debug.Log("ë‹¬ë‚˜ë¼ ì†¡ì‹ ê¸°ë¥¼ ë²ˆì—­í•©ë‹ˆë‹¤.\n");
 
         int Idx = (int)language;
 
