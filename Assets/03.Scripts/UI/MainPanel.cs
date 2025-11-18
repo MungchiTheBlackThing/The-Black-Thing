@@ -40,8 +40,8 @@ public class MainPanel : MonoBehaviour
     public int Day = 0;
     public int LANGUAGE;
 
-    private const string PH_KO = "당신의 생각을 입력해주세요";
-    private const string PH_EN = "Please enter your thoughts";
+    private const string PH_KO = "당신의 생각을 입력해 주세요.";
+    private const string PH_EN = "Please enter your thoughts.";
     void OnEnable()
     {
         mainDialogue = (MainDialogue)gameManager.CurrentState;

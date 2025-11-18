@@ -1,141 +1,141 @@
-﻿Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
+Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
 1,tutorial_1,1,0,Dot,default,anim_eyesclosed,text,지구의 밝음과 아름다움 사이를 탐험\n하느라 몸이 조금 저리게 되었지만,My body aches a bit from\nexploring Earth’s bright beauty.,2,,,,Tuto_Sub,TS_L0001
-1,,2,0,Dot,default,anim_eyesclosed,text,그럴 만한 가치가 있었지.\n이곳을 찾게 되었으니!,"But it was worth it, since\nI discovered this place!",3,,,,Tuto_Sub,TS_L0002
-1,,3,0,Dot,default,anim_eyesclosed,text,작고 구석진 모퉁이. 나를 닮은 곳.,"A small, cozy corner.\nIt’s a lot like me.",4,,,,Tuto_Sub,TS_L0003
-1,,4,0,Dot,default,anim_eyesclosed,text,"아이, 어두워. 비좁아. 지저분해.",Dark. Cramped. Grimy.,5,,,,Tuto_Sub,TS_L0004
-1,,5,0,Dot,default,anim_eyesclosed,text,끈적한 그림자가 감싸는 것 같지.,Like a hug from a sticky shadow.,6,,,,Tuto_Sub,TS_L0005
-1,,6,0,Dot,default,anim_eyesclosed,text,이곳일까? 나의 멋진\n‘인간’을 만나게 될 곳?,Is this it? Is this where I’ll meet\nmy very own amazing ‘human’?,,,,,Tuto_Sub,TS_L0006
+1,,2,0,Dot,default,,text,그럴 만한 가치가 있었지.\n이곳을 찾게 되었으니!,"But it was worth it, since\nI discovered this place!",3,,,,Tuto_Sub,TS_L0002
+1,,3,0,Dot,default,,text,작고 구석진 모퉁이. 나를 닮은 곳.,"A small, cozy corner.\nIt’s a lot like me.",4,,,,Tuto_Sub,TS_L0003
+1,,4,0,Dot,default,,text,"아이, 어두워. 비좁아. 지저분해.",Dark. Cramped. Grimy.,5,,,,Tuto_Sub,TS_L0004
+1,,5,0,Dot,default,,text,끈적한 그림자가 감싸는 것 같지.,Like a hug from a sticky shadow.,6,,,,Tuto_Sub,TS_L0005
+1,,6,0,Dot,default,,text,이곳일까? 나의 멋진\n‘인간’을 만나게 될 곳?,Is this it? Is this where I’ll meet\nmy very own amazing ‘human’?,,,,,Tuto_Sub,TS_L0006
 1,tutorial_2,7,0,Dot,default,anim_bounce,text,으아아!,Ahh!,8,,,,Tuto_Sub,TS_L0007
 1,,8,0,Player,sub,anim_eyesblink,text,으아아아아!,Ahhhh!,9,,,,Tuto_Sub,TS_L0008
-1,,9,0,Dot,sub,anim_eyesblink,text,으아아아아아아아!,Ahhhhhhh!,10,,,,Tuto_Sub,TS_L0009
+1,,9,0,Dot,sub,,text,으아아아아아아아!,Ahhhhhhh!,10,,,,Tuto_Sub,TS_L0009
 1,,10,0,Dot,default,anim_eyeswide,text,나의 어둠. 나의 어둠이 사라졌어.,My darkness. My darkness is gone.,11,,,,Tuto_Sub,TS_L0010
 1,,11,0,Dot,default,anim_omg,text,내 지구에서의 여정은 따가운 빛에 물어뜯기다\n저 거대한 괴물에 발에 밟히며 끝나겠구나….,It seems my journey on Earth now ends under the feet of this humongous monster.,12,,,,Tuto_Sub,TS_L0011
-1,,12,0,Dot,default,anim_omg,text,역시 삶은 덧없는 것이었나?,Is life really this fleeting?,13,,,,Tuto_Sub,TS_L0012
-1,,13,0,Dot,default,anim_omg,text,꿈 구슬처럼 영롱히 빛나다가도,"One day shining radiantly\nlike a dream marble,",14,,,,Tuto_Sub,TS_L0013
-1,,14,0,Dot,default,anim_omg,text,언제든지 포악한 구덩이의 진창\n속으로 빠져 버릴 수 있는 것?,"And dropped into a vicious,\nmuddy pit the next?",15,,,,Tuto_Sub,TS_L0014
-1,,15,0,Dot,default,anim_omg,text,나는 대체 무엇을 위해\n지구를 바라보며 꿈을 꾸었지?,"For what did I dream, staring\nat Earth all this time?",16,,,,Tuto_Sub,TS_L0015
-1,,16,0,Player,default,anim_omg,selection,(저게 뭐야? 무섭다. 하지만 티를 낼 수는 없지.)|(’거대 괴물’이라니…! 난 착한 인간이다…..),"(What’s that? I’m scared, but I won’t show it.)|(’Humongous monster’?! I’m human, a nice one, even…….)",17|22,passive|active,,,Tuto_Sub,TS_L0016
-1,,17,0,Player,default,anim_omg,text,"괴물, 꿈 구슬, 구덩이? 뭐?","Monster, dream marble, pit? What?",18,,,,Tuto_Sub,TS_L0017
-1,,18,0,Player,default,anim_omg,text,(외계인인가? 괴물? 이게\n뭐든… ‘말’을 하고 있어...!),"(Is it an alien? A monster?\nWhatever it is, it’s talking…!)",19,,,,Tuto_Sub,TS_L0018
-1,,19,0,Player,default,anim_omg,text,(겁에 질린 건가? 하지만 왜?\n내가 제일 무서워야 하지 않나?),(Is it frightened? But why?\nI’m the one who should be scared!),20,,,,Tuto_Sub,TS_L0019
-1,,20,0,Player,default,anim_omg,text,(우선 심호흡을 하고... 후 하.),"(Okay, let’s take a deep breath…\nInhale, exhale.)",21,,,,Tuto_Sub,TS_L0020
-1,,21,0,Player,default,anim_omg,text,"저기, 나는 너를 해치지 않아.","Hey, I won’t hurt you.",25,,,,Tuto_Sub,TS_L0021
-1,,22,0,Player,default,anim_omg,text,"정체 모를 검정 덩어리, 진창\n같은 곳에 떨어질 일은 없을 거야....","I won’t push you into a muddy pit,\nyou Unidentified Black Blob.",23,,,,Tuto_Sub,TS_L0022
-1,,23,0,Player,default,anim_omg,text,우선 나는 너를 밟지 않을 생각이거든.,"I also have no intention of stepping\non you, if that’s what you mean.",24,,,,Tuto_Sub,TS_L0023
-1,,24,0,Player,default,anim_omg,text,그러니까... 너를 해치지\n않겠다는 뜻이야. 진정해도 돼.,"Like I said, I won’t hurt you.\nYou can calm down.",25,,,,Tuto_Sub,TS_L0024
-1,,25,0,Dot,sub,anim_eyesblink,text,해치지 않아? 해치지 않아?,Won’t hurt me? Won’t hurt me?,26,,,,Tuto_Sub,TS_L0025
-1,,26,0,Dot,default,anim_eyesdown,text,… 나의 어둠. 그것을 뜯어 간\n순간 나는 이미 다쳐 버렸는걸.,…My darkness. Your attack began the\nmoment you ripped away my darkness.,27,,,,Tuto_Sub,TS_L0026
-1,,27,0,Player,default,anim_eyesdown,text,…….,……,28,,,,Tuto_Sub,TS_L0027
-1,,28,0,Player,default,anim_eyesdown,text,"어어, 미, 미안.","Uh, s, sorry.",29,,,,Tuto_Sub,TS_L0028
-1,,29,0,Player,sub,anim_eyesblink,text,갑자기 밝아져서 놀랐구나.\n여기… 돌려 줄게.,"I guess the sudden brightness must have\nshocked you. Here, I’ll bring it back.",,,,,Tuto_Sub,TS_L0029
+1,,12,0,Dot,default,,text,역시 삶은 덧없는 것이었나?,Is life really this fleeting?,13,,,,Tuto_Sub,TS_L0012
+1,,13,0,Dot,default,,text,꿈 구슬처럼 영롱히 빛나다가도,"One day shining radiantly\nlike a dream marble,",14,,,,Tuto_Sub,TS_L0013
+1,,14,0,Dot,default,,text,언제든지 포악한 구덩이의 진창\n속으로 빠져 버릴 수 있는 것?,"And dropped into a vicious,\nmuddy pit the next?",15,,,,Tuto_Sub,TS_L0014
+1,,15,0,Dot,default,,text,나는 대체 무엇을 위해\n지구를 바라보며 꿈을 꾸었지?,"For what did I dream, staring\nat Earth all this time?",16,,,,Tuto_Sub,TS_L0015
+1,,16,0,Player,default,,selection,(저게 뭐야? 무섭다. 하지만 티를 낼 수는 없지.)|(’거대 괴물’이라니…! 난 착한 인간이다…..),"(What’s that? I’m scared, but I won’t show it.)|(’Humongous monster’?! I’m human, a nice one, even…….)",17|22,passive|active,,,Tuto_Sub,TS_L0016
+1,,17,0,Player,default,,text,"괴물, 꿈 구슬, 구덩이? 뭐?","Monster, dream marble, pit? What?",18,,,,Tuto_Sub,TS_L0017
+1,,18,0,Player,default,,text,(외계인인가? 괴물? 이게\n뭐든… ‘말’을 하고 있어...!),"(Is it an alien? A monster?\nWhatever it is, it’s talking…!)",19,,,,Tuto_Sub,TS_L0018
+1,,19,0,Player,default,,text,(겁에 질린 건가? 하지만 왜?\n내가 제일 무서워야 하지 않나?),(Is it frightened? But why?\nI’m the one who should be scared!),20,,,,Tuto_Sub,TS_L0019
+1,,20,0,Player,default,,text,(우선 심호흡을 하고... 후 하.),"(Okay, let’s take a deep breath…\nInhale, exhale.)",21,,,,Tuto_Sub,TS_L0020
+1,,21,0,Player,default,,text,"저기, 나는 너를 해치지 않아.","Hey, I won’t hurt you.",25,,,,Tuto_Sub,TS_L0021
+1,,22,0,Player,default,,text,"정체 모를 검정 덩어리, 진창\n같은 곳에 떨어질 일은 없을 거야....","I won’t push you into a muddy pit,\nyou Unidentified Black Blob.",23,,,,Tuto_Sub,TS_L0022
+1,,23,0,Player,default,,text,우선 나는 너를 밟지 않을 생각이거든.,"I also have no intention of stepping\non you, if that’s what you mean.",24,,,,Tuto_Sub,TS_L0023
+1,,24,0,Player,default,,text,그러니까... 너를 해치지\n않겠다는 뜻이야. 진정해도 돼.,"Like I said, I won’t hurt you.\nYou can calm down.",25,,,,Tuto_Sub,TS_L0024
+1,,25,0,Dot,sub,,text,해치지 않아? 해치지 않아?,Won’t hurt me? Won’t hurt me?,26,,,,Tuto_Sub,TS_L0025
+1,,26,0,Dot,default,,text,… 나의 어둠. 그것을 뜯어 간\n순간 나는 이미 다쳐 버렸는걸.,…My darkness. Your attack began the\nmoment you ripped away my darkness.,27,,,,Tuto_Sub,TS_L0026
+1,,27,0,Player,default,,text,…….,……,28,,,,Tuto_Sub,TS_L0027
+1,,28,0,Player,default,,text,"어어, 미, 미안.","Uh, s, sorry.",29,,,,Tuto_Sub,TS_L0028
+1,,29,0,Player,sub,,text,갑자기 밝아져서 놀랐구나.\n여기… 돌려 줄게.,"I guess the sudden brightness must have\nshocked you. Here, I’ll bring it back.",,,,,Tuto_Sub,TS_L0029
 1,tutorial_3,30,0,Player,sub,anim_eyesblink,text,(저 정체 모를 덩어리가\n진정되기까지만이라도 기다리자.),(Let’s wait until that\nmystery blob calms down.),31,,,,Tuto_Sub,TS_L0030
-1,,31,0,Player,sub,anim_eyesblink,text,.......,.......,32,,,,Tuto_Sub,TS_L0031
-1,,32,0,Dot,sub,anim_eyesblink,text,.......,.......,33,,,,Tuto_Sub,TS_L0032
-1,,33,0,Player,sub,anim_eyesblink,text,.......,.......,34,,,,Tuto_Sub,TS_L0033
-1,,34,0,Dot,sub,anim_eyesblink,text,.......,.......,,,,,Tuto_Sub,TS_L0034
+1,,31,0,Player,sub,,text,.......,.......,32,,,,Tuto_Sub,TS_L0031
+1,,32,0,Dot,sub,,text,.......,.......,33,,,,Tuto_Sub,TS_L0032
+1,,33,0,Player,sub,,text,.......,.......,34,,,,Tuto_Sub,TS_L0033
+1,,34,0,Dot,sub,,text,.......,.......,,,,,Tuto_Sub,TS_L0034
 1,tutorial_4,35,0,Dot,sub,anim_eyesblink,text,너는 나의 어둠을 앗아가고 평화를\n깨뜨렸지만 그래도 다시 돌려주었어.,"You ripped away my darkness and disturbed\nmy peace, but you also gave it back.",36,,,,Tuto_Sub,TS_L0035
-1,,36,0,Dot,sub,anim_eyesblink,text,너는 친절하구나?,You are kind.,37,,,,Tuto_Sub,TS_L0036
-1,,37,0,Player,sub,anim_eyesblink,text,정말이지 빼앗아 갈 생각은 없었어.,I really didn’t mean to rip away\nanything of yours.,38,,,,Tuto_Sub,TS_L0037
-1,,38,0,Player,sub,anim_eyesblink,text,어느 평범한 하루처럼 책장\n문을 열었을 뿐이야.,I just opened the bookshelf cabinet door\nlike any other day.,39,,,,Tuto_Sub,TS_L0038
-1,,39,0,Player,sub,anim_eyesblink,text,.... 나의 집에 놓인... 내 책장 문을.,… My cabinet door… In my house.,40,,,,Tuto_Sub,TS_L0039
-1,,40,0,Dot,sub,anim_eyesblink,text,"이런, 이 공간은 원래 너의 것이었구나.","Oh my, so this place belongs to you.",41,,,,Tuto_Sub,TS_L0040
-1,,41,0,Dot,sub,anim_eyesblink,text,실례를 했어. 그렇지만 꼭\n하고 싶은 말이 있는데!,Please excuse me. But there is\nsomething I really need to say!,42,,,,Tuto_Sub,TS_L0041
-1,,42,0,Dot,sub,anim_eyesup,text,이 목재 조형물의 모퉁이는 정말\n아름답고 안전하고 못난 곳이야.,"This corner of the wooden structure is\na beautiful, safe, and ugly place, truly.",43,,,,Tuto_Sub,TS_L0042
-1,,43,0,Dot,sub,anim_eyesup,text,덕분에 지구에 와 처음으로\n온전하게 안락해질 수 있었어.,"Thanks to it, I could rest wholeheartedly\nfor the first time since arriving on Earth.",44,,,,Tuto_Sub,TS_L0043
+1,,36,0,Dot,sub,,text,너는 친절하구나?,You are kind.,37,,,,Tuto_Sub,TS_L0036
+1,,37,0,Player,sub,,text,정말이지 빼앗아 갈 생각은 없었어.,I really didn’t mean to rip away\nanything of yours.,38,,,,Tuto_Sub,TS_L0037
+1,,38,0,Player,sub,,text,어느 평범한 하루처럼 책장\n문을 열었을 뿐이야.,I just opened the bookshelf cabinet door\nlike any other day.,39,,,,Tuto_Sub,TS_L0038
+1,,39,0,Player,sub,,text,.... 나의 집에 놓인... 내 책장 문을.,… My cabinet door… In my house.,40,,,,Tuto_Sub,TS_L0039
+1,,40,0,Dot,sub,,text,"이런, 이 공간은 원래 너의 것이었구나.","Oh my, so this place belongs to you.",41,,,,Tuto_Sub,TS_L0040
+1,,41,0,Dot,sub,,text,실례를 했어. 그렇지만 꼭\n하고 싶은 말이 있는데!,Please excuse me. But there is\nsomething I really need to say!,42,,,,Tuto_Sub,TS_L0041
+1,,42,0,Dot,sub,anim_eyesup_turn,text,이 목재 조형물의 모퉁이는 정말\n아름답고 안전하고 못난 곳이야.,"This corner of the wooden structure is\na beautiful, safe, and ugly place, truly.",43,,,,Tuto_Sub,TS_L0042
+1,,43,0,Dot,sub,,text,덕분에 지구에 와 처음으로\n온전하게 안락해질 수 있었어.,"Thanks to it, I could rest wholeheartedly\nfor the first time since arriving on Earth.",44,,,,Tuto_Sub,TS_L0043
 1,,44,0,Player,sub,anim_eyesblink,text,책장 구석? 거기가 좋았구나.\n먼지 안 닦았을 텐데….,"The bookshelf corner, you mean? You like it there,\nhuh. I don’t remember dusting it…",45,,,,Tuto_Sub,TS_L0044
-1,,45,0,Player,sub,anim_eyesblink,text,모쪼록 칭찬해 줘서 고마워.\n칭찬이… 맞다면?,"Anyway, thanks for the\ncompliment. (If it is one?)",46,,,,Tuto_Sub,TS_L0045
-1,,46,0,Dot,sub,anim_eyesblink,text,너는 내가 지구에서 만난\n첫 번째 생명체.,You are the first creature I’ve met on Earth.,47,,,,Tuto_Sub,TS_L0046
-1,,47,0,Dot,sub,anim_eyesblink,text,기억에 오래 남을 소중한\n상징이 됐어.,You have become a precious symbol\nthat will live on in my memory.,48,,,,Tuto_Sub,TS_L0047
-1,,48,0,Dot,sub,anim_eyesblink,text,너는 뭐야?,What are you?,49,,,,Tuto_Sub,TS_L0048
-1,tutorial_5,49,0,Player,default,anim_eyesblink,text,나는……,I am……,,,,,Tuto_Sub,TS_L0049
-1,,50,0,Player,default,anim_eyesblink,text,나는 <nickname>이야.,I am <nickname>.,51,,,,Tuto_Sub,TS_L0050
-1,,51,0,Dot,sub,anim_eyesblink,text,<nickname> 종족은 어떤\n특성을 가지고 있어?,What characteristics does\nthe <nickname> species possess?,52,,,,Tuto_Sub,TS_L0051
-1,,52,0,Player,sub,anim_eyesblink,text,"아, 그건 내 이름이야.","Oh, that’s actually my name.",53,,,,Tuto_Sub,TS_L0052
+1,,45,0,Player,sub,,text,모쪼록 칭찬해 줘서 고마워.\n칭찬이… 맞다면?,"Anyway, thanks for the\ncompliment. (If it is one?)",46,,,,Tuto_Sub,TS_L0045
+1,,46,0,Dot,sub,,text,너는 내가 지구에서 만난\n첫 번째 생명체.,You are the first creature I’ve met on Earth.,47,,,,Tuto_Sub,TS_L0046
+1,,47,0,Dot,sub,,text,기억에 오래 남을 소중한\n상징이 됐어.,You have become a precious symbol\nthat will live on in my memory.,48,,,,Tuto_Sub,TS_L0047
+1,,48,0,Dot,sub,,text,너는 뭐야?,What are you?,49,,,,Tuto_Sub,TS_L0048
+1,,49,0,Player,default,,text,나는……,I am……,,,,,Tuto_Sub,TS_L0049
+1,tutorial_5,50,0,Player,default,anim_eyesblink,text,나는 <nickname>이야.,I am <nickname>.,51,,,,Tuto_Sub,TS_L0050
+1,,51,0,Dot,sub,,text,<nickname> 종족은 어떤\n특성을 가지고 있어?,What characteristics does\nthe <nickname> species possess?,52,,,,Tuto_Sub,TS_L0051
+1,,52,0,Player,sub,,text,"아, 그건 내 이름이야.","Oh, that’s actually my name.",53,,,,Tuto_Sub,TS_L0052
 1,,53,0,Dot,default,anim_move,text,아! 이름. 이름. 이름은\n존재의 표지 같은 것.,"Ah! Name. Name. Name, the sign of being.",54,,,,Tuto_Sub,TS_L0053
 1,,54,0,Dot,sub,anim_eyesblink,text,이름이 불릴 때면\n영혼은 가벼이 들썩이지.,"When one’s name is called,\nthe soul sways restlessly.",55,,,,Tuto_Sub,TS_L0054
-1,,55,0,Dot,sub,anim_eyesblink,text,나는 ‘뭉치’야. 달에서 알게\n된 이들이 지어 주었어.,I am ‘Dot.’ The beings I met on\nthe Moon gave me this name.,56,,,,Tuto_Sub,TS_L0055
-1,,56,0,Player,sub,anim_eyesblink,text,.... 응? 달?,…Huh? The Moon?,57,,,,Tuto_Sub,TS_L0056
-1,,57,0,Player,sub,anim_eyesblink,text,달에 누가 살고 있니?,Who lives on the Moon?,58,,,,Tuto_Sub,TS_L0057
+1,,55,0,Dot,sub,,text,나는 ‘뭉치’야. 달에서 알게\n된 이들이 지어 주었어.,I am ‘Dot.’ The beings I met on\nthe Moon gave me this name.,56,,,,Tuto_Sub,TS_L0055
+1,,56,0,Player,sub,,text,.... 응? 달?,…Huh? The Moon?,57,,,,Tuto_Sub,TS_L0056
+1,,57,0,Player,sub,,text,달에 누가 살고 있니?,Who lives on the Moon?,58,,,,Tuto_Sub,TS_L0057
 1,,58,0,Dot,default,anim_move,text,"응, 아주 많은 이들이 살지!",Many beings!,59,,,,Tuto_Sub,TS_L0058
 1,,59,0,Dot,sub,anim_eyesblink,text,달의 뒤편에는 ‘인간’들이 잘 때 꾸는\n꿈을 만드는 아름다운 꿈 공장이 있어!,The dark side of the Moon has a Dream\nFactory that creates human dreams!,60,,,,Tuto_Sub,TS_L0059
 1,,60,0,Dot,default,anim_eyesup,text,"공장 위에서 꿈을 만들고\n검수하는 직원들도,","Above and below the factory, the workers\nwho create and oversee dreams",61,,,,Tuto_Sub,TS_L0060
 1,,61,0,Dot,default,anim_eyesdown,text,공장 아래에서 송출되지 못한\n꿈들의 폐기물을 치우는 청소부들도,"And the cleaners who dispose of the Filth\nfrom dreams unfit for delivery,",62,,,,Tuto_Sub,TS_L0061
 1,,62,0,Dot,sub,anim_eyesblink,text,모두 달 위에서 어엿하게\n살아 있고 말고!,They all live full-fledged lives on the Moon!,63,,,,Tuto_Sub,TS_L0062
-1,,63,0,Player,sub,anim_eyesblink,text,(혼란하다.),(Confusing.),64,,,,Tuto_Sub,TS_L0063
-1,,64,0,Player,sub,anim_eyesblink,text,(검은 덩어리가 내 집에 떨어져 말을\n주고받는 이 상황조차 믿기지 않는데),(A black blob appears out of nowhere\nand starts talking),65,,,,Tuto_Sub,TS_L0064
-1,,65,0,Player,sub,anim_eyesblink,text,(더 믿기 힘든 이야기를\n꺼내니 당황스러운걸.),(And now it’s asking me to believe\nthere are beings on the Moon?!),66,,,,Tuto_Sub,TS_L0065
-1,,66,0,Dot,sub,anim_eyesblink,text,"아, 이런. 벌써 구름이 저만큼이나\n흘러가 버렸다니! 지체할 시간이 없어.","Oh, my. That cloud has floated to over\nthere already! There is no time to waste.",67,,,,Tuto_Sub,TS_L0066
-1,,67,0,Dot,sub,anim_eyesblink,text,혹시 나를 ‘인간’에게\n데려다 줄 수 있어?,Would it be possible for you to\ntake me to a ‘human’?,68,,,,Tuto_Sub,TS_L0067
-1,,68,0,Dot,sub,anim_eyesblink,text,"레드와 첼로 경, 그리고 에디슨이 달에서\n내려다보며 한껏 기대하고 있을 거야.","I’m sure Red, Sir Cello, and Edison are\nlooking down from the Moon, elated.",69,,,,Tuto_Sub,TS_L0068
-1,,69,0,Dot,sub,anim_eyesblink,text,"아, 저런. 혹시 인간이\n뭐지 모른다면......",Oof. If you don’t know what a human is……,,,,,Tuto_Sub,TS_L0069
+1,,63,0,Player,sub,,text,(혼란하다.),(Confusing.),64,,,,Tuto_Sub,TS_L0063
+1,,64,0,Player,sub,,text,(검은 덩어리가 내 집에 떨어져 말을\n주고받는 이 상황조차 믿기지 않는데),(A black blob appears out of nowhere\nand starts talking),65,,,,Tuto_Sub,TS_L0064
+1,,65,0,Player,sub,,text,(더 믿기 힘든 이야기를\n꺼내니 당황스러운걸.),(And now it’s asking me to believe\nthere are beings on the Moon?!),66,,,,Tuto_Sub,TS_L0065
+1,,66,0,Dot,sub,,text,"아, 이런. 벌써 구름이 저만큼이나\n흘러가 버렸다니! 지체할 시간이 없어.","Oh, my. That cloud has floated to over\nthere already! There is no time to waste.",67,,,,Tuto_Sub,TS_L0066
+1,,67,0,Dot,sub,,text,혹시 나를 ‘인간’에게\n데려다 줄 수 있어?,Would it be possible for you to\ntake me to a ‘human’?,68,,,,Tuto_Sub,TS_L0067
+1,,68,0,Dot,sub,,text,"레드와 첼로 경, 그리고 에디슨이 달에서\n내려다보며 한껏 기대하고 있을 거야.","I’m sure Red, Sir Cello, and Edison are\nlooking down from the Moon, elated.",69,,,,Tuto_Sub,TS_L0068
+1,,69,0,Dot,sub,,text,"아, 저런. 혹시 인간이\n뭐지 모른다면......",Oof. If you don’t know what a human is……,,,,,Tuto_Sub,TS_L0069
 1,tutorial_7,70,1,Dot,sub,anim_eyesblink,text,나는 이제 떠날 준비가 됐어.,I’m ready to leave now.,71,,,,Tuto_Sub,TS_L0070
-1,,71,1,Dot,sub,anim_eyesblink,text,돌아갈 곳이 있다면 떠나는 행위는 작별이 아닌 모험이 되지!,"With somewhere to return to, departure\nis no longer a farewell but an adventure!",72,,,,Tuto_Sub,TS_L0071
-1,,72,1,Player,sub,anim_eyesblink,text,"모험이라, 멋진걸?","An adventure, that sounds cool.",73,,,,Tuto_Sub,TS_L0072
-1,,73,1,Dot,sub,anim_eyesblink,text,산책. 모험. 산책. 모험.,Adventure. Adventure…!,74,,,,Tuto_Sub,TS_L0073
-1,,74,1,Dot,sub,anim_eyesblink,text,떠날 준비가 됐어.,I am ready to leave.,75,,,,Tuto_Sub,TS_L0074
-1,,75,1,Dot,sub,anim_eyesblink,text,나는 떠날 준비가 됐어!,I am ready to leave!,76,,,,Tuto_Sub,TS_L0075
-1,,76,1,Player,sub,anim_eyesblink,text,"뭉치, 떠날 준비가 아직 안 됐어…?","Dot, are you really ready to leave?",77,,,,Tuto_Sub,TS_L0076
-1,,77,1,Dot,sub,anim_eyesblink,text,아니! 떠날 준비가 됐어! 나는 괜찮을 거야. 괜찮을 거야.,Yes! I am ready to leave!\nI’ll be fine. Fine.,78,,,,Tuto_Sub,TS_L0077
+1,,71,1,Dot,sub,,text,돌아갈 곳이 있다면 떠나는 행위는 작별이 아닌 모험이 되지!,"With somewhere to return to, departure\nis no longer a farewell but an adventure!",72,,,,Tuto_Sub,TS_L0071
+1,,72,1,Player,sub,,text,"모험이라, 멋진걸?","An adventure, that sounds cool.",73,,,,Tuto_Sub,TS_L0072
+1,,73,1,Dot,sub,,text,산책. 모험. 산책. 모험.,Adventure. Adventure…!,74,,,,Tuto_Sub,TS_L0073
+1,,74,1,Dot,sub,,text,떠날 준비가 됐어.,I am ready to leave.,75,,,,Tuto_Sub,TS_L0074
+1,,75,1,Dot,sub,,text,나는 떠날 준비가 됐어!,I am ready to leave!,76,,,,Tuto_Sub,TS_L0075
+1,,76,1,Player,sub,,text,"뭉치, 떠날 준비가 아직 안 됐어…?","Dot, are you really ready to leave?",77,,,,Tuto_Sub,TS_L0076
+1,,77,1,Dot,sub,,text,아니! 떠날 준비가 됐어! 나는 괜찮을 거야. 괜찮을 거야.,Yes! I am ready to leave!\nI’ll be fine. Fine.,78,,,,Tuto_Sub,TS_L0077
 1,,78,1,Dot,sub,,text,"그럼, <nickname>, 용기 있게 다녀올게. 반드시 안전하게 살아서….","<nickname>, I’ll be brave and go.\nI’ll be back, safe and alive, hopefully…",,,,,Tuto_Sub,TS_L0078
 1,tutorial_8,79,0,Player,sub,anim_eyesblink,text,"뭉치, 죽지 않고 원형 몸체\n그대로 성하게 돌아왔구나!","Dot, you’ve made it back safely\nin one single round piece!",80,,,,Tuto_Sub,TS_L0079
-1,,80,0,Dot,sub,anim_eyesblink,text,응… 산책이란 특색 있고\n새콤한 경험이었어!,"Yes... an extraordinary,\nenthralling exprience!",81,,,,Tuto_Sub,TS_L0080
-1,,81,0,Dot,sub,anim_eyesblink,text,나의 몸이 꿈처럼 예쁘게 채색된\n모양이었다면 더욱 투명히 기뻐했겠지만....,It would have been more pleasant\nif my body was colored like that of a dream.,82,,,,Tuto_Sub,TS_L0081
-1,,82,0,Dot,sub,anim_eyesblink,text,이 불쾌하고 끔찍한 검정 덩어리.,"But I am but foul, lumpy\nand so very black.",83,,,,Tuto_Sub,TS_L0082
-1,,83,0,Dot,sub,anim_eyesblink,text,만물 사이에서 홀로 새까맣게 짓눌려 있는 게 얼마나 고독한 일이던지.,How lonesome it was to be a black spot\namongst every other being in the world.,84,,,,Tuto_Sub,TS_L0083
-1,,84,0,Dot,sub,anim_eyesblink,text,그래도 괜찮아. 길거리를 걸어다니는 수많은 인간들을 소리 없이 구경할 수 있었으니까!,But it was alright. I was able to quietly\nhumans people going their way!,85,,,,Tuto_Sub,TS_L0084
-1,,85,0,Player,sub,anim_eyesblink,text,"(문득 궁금해. 뭉치,\n어둠을 좋아하지 않았던가?)",(Curious. I thought Dot liked the dark?),86,,,,Tuto_Sub,TS_L0085
-1,,86,0,Player,sub,anim_eyesblink,text,(자신의 검은 몸은 왜 싫어하는 거지?),(So why do they dislike their body so?),87,,,,Tuto_Sub,TS_L0086
-1,,87,0,Player,sub,anim_eyesblink,text,"뭉치, 그런데 뭉치는 어둑한\n장소들과 그림자를 좋아하지 않아?","But Dot, don’t you like\ndark places and shadows?",88,,,,Tuto_Sub,TS_L0087
-1,,88,0,Player,sub,anim_eyesblink,text,빛을 무서워하는 거지?,"You’re scared of the light, right?",89,,,,Tuto_Sub,TS_L0088
-1,,89,0,Dot,sub,anim_eyesblink,text,… 세심하게 관찰하고 기억해 주었구나!\n맞아. 정확해!,… You paid attention and remembered!\nYes. That’s exactly it!,90,,,,Tuto_Sub,TS_L0089
-1,,90,0,Player,sub,anim_eyesblink,text,"그, 그런데 공교롭게도 너의 검은 몸은\n싫어하는 것 같네. 왜 그런 거야?","Um, but you don’t seem to like your body\ndespite it being a similar shade. Why is that?",91,,,,Tuto_Sub,TS_L0090
-1,,91,0,Dot,sub,anim_eyesblink,text,음… 음. 으음.,Hm… hm. Hmm.,92,,,,Tuto_Sub,TS_L0091
-1,,92,0,Dot,sub,anim_eyesblink,text,…….,……,93,,,,Tuto_Sub,TS_L0092
-1,,93,0,Dot,sub,anim_eyesblink,text,어둠은 나를 닮아 좋아. 편안해.,I like the dark because it\nresembles me. It’s comforting.,94,,,,Tuto_Sub,TS_L0093
-1,,94,0,Dot,sub,anim_eyesblink,text,"빛이 나를 지워 버리려 들 때, 내가 안전하게\n존재할 수 있는 공간이 되어 주거든.",It’s a safe space for me when\nthe light tries to erase me whole.,95,,,,Tuto_Sub,TS_L0094
-1,,95,0,Dot,sub,anim_eyesblink,text,어둠은 포근하고 자애로운 평화야.,The dark is a snug and loving peace.,96,,,,Tuto_Sub,TS_L0095
-1,,96,0,Dot,sub,anim_eyesblink,text,암흑은… 달라. 그것은 한 치\n앞도 볼 수 없는 무한 증식의 공간.,The black is… different. An infinitely\nexpanding void that robs one of sight.,97,,,,Tuto_Sub,TS_L0096
-1,,97,0,Dot,sub,anim_eyesblink,text,모든 것을 가리기에 역설적으로 모든 걸\n가장 잔인한 방식으로 들춰 내지.,"It hides all, and ironically reveals\nall in the cruelest of ways.",98,,,,Tuto_Sub,TS_L0097
-1,,98,0,Dot,sub,anim_eyesblink,text,그 속엔 가장 잔혹하고 날카로운 이를 가진\n존재들이 스멀거려. 차마 이름을 댈 수도 없는….,"Beings with vicious, sharp teeth lurk within.\nThose I cannot even name…",99,,,,Tuto_Sub,TS_L0098
-1,,99,0,Player,sub,anim_eyesblink,text,"알 것 같아. 적당히 내려앉은\n어둠은 편히 쉴 수 있는 공간,","I get it. The right amount\nof dark is a place to relax,",100,,,,Tuto_Sub,TS_L0099
-1,,100,0,Player,sub,anim_eyesblink,text,상상력이 다리를 쭉\n뻗을 수 있는 공간이지만,one where imagination can stretch its legs,101,,,,Tuto_Sub,TS_L0100
-1,,101,0,Player,sub,anim_eyesblink,text,"아주 깜깜한 독방이나, 가로등이 고장 난\n야밤의 공원은 늘 두려움의 존재였어.","but a small room with zero light, or a park\nin the dead of night was always scary.",102,,,,Tuto_Sub,TS_L0101
-1,,102,0,Dot,sub,anim_eyesblink,text,어둠과 암흑은 꽤나 닮아서 헷갈려 할 것\n같았는데! 단박에 이해해 주다니.,You caught right on to the nuanced\ndifference between the two.,103,,,,Tuto_Sub,TS_L0102
-1,,103,0,Dot,sub,anim_eyesblink,text,"내 검정은... 그런 검정이거든. 해롭고, 두렵고, 불결한 꿈 폐기물의 검정....","My blackness... is like that.\nA fearful, filthy sort of thing...",104,,,,Tuto_Sub,TS_L0103
-1,,104,0,Dot,sub,anim_eyesblink,text,아. 아니. 더는 이야기하고 싶지 않아.,"No, no. I don't want\nto talk about it anymore.",105,,,,Tuto_Sub,TS_L0104
-1,,105,0,Dot,sub,anim_eyesblink,text,대신 나의 산책에 대한 이야기를\n마음껏 풀어헤쳐 보아도 될까?,Would it be alright for me to regale\nyou with tales from my walk instead?,106,,,,Tuto_Sub,TS_L0105
-1,,106,0,Player,sub,anim_eyesblink,text,"음, 네가 그게 편하다면\n그렇게 하자. 이야기해 줄래?",If that makes you comfortable.\nWould you like to start?,,,,,Tuto_Sub,TS_L0106
-1,tutorial_9,107,1,Dot,sub,anim_eyesblink,text,"아, <nickname>, 실은….","<nickname>, the truth is…",108,,,,Tuto_Sub,TS_L0107
-1,,108,1,Player,sub,anim_eyesblink,text,응?,Huh?,109,,,,Tuto_Sub,TS_L0108
-1,,109,1,Dot,sub,anim_eyesblink,text,너희에게 일기라는 근사한 풍습이 있다고 들었어.,I heard you humans have a splendid\ncustom called ‘writing a diary.’,110,,,,Tuto_Sub,TS_L0109
-1,,110,1,Player,sub,anim_eyesblink,text,달의 이들이 그랬니?,Did the beings on the Moon tell you?,111,,,,Tuto_Sub,TS_L0110
-1,,111,1,Dot,sub,anim_eyesblink,text,"응 응. 하루가 끝나기 전에\n하루에 대한 감상을 적는 건데,","Yes, they said humans write\nabout their day before it ends.",112,,,,Tuto_Sub,TS_L0111
-1,,112,1,Dot,sub,anim_eyesblink,text,"보이지 않는 것을 보게 해주고,","It lets you see what is unseen,",113,,,,Tuto_Sub,TS_L0112
-1,,113,1,Dot,sub,anim_eyesblink,text,소중한 것을 더욱 소중하게\n해 주는 마법 같은 의식이래.,"and makes what is special even more so.\nA magical ritual, don’t you think?",114,,,,Tuto_Sub,TS_L0113
-1,,114,1,Player,sub,anim_eyesblink,text,(달의 이들… 그들은 인간을 정말\n특별하게 생각해 주고 있는 것 같아.),(The beings on the Moon… They really\nseem to value humans in a special way.),115,,,,Tuto_Sub,TS_L0114
-1,,115,1,Player,sub,anim_eyesblink,text,"나한테 남는 노트와 펜이\n있는데, 뭉치가 이걸 쓸래?",I have a leftover notebook and a pen.\nWould you like to use it to write a diary?,116,,,,Tuto_Sub,TS_L0115
-1,,116,1,Dot,sub,anim_eyesblink,text,<nickname>.,<nickname>.,117,,,,Tuto_Sub,TS_L0116
-1,,117,1,Dot,sub,anim_eyesblink,text,눈 아래에서 찰랑이는 느낌이\n들어. 이게 고마움이라는 걸까?,Some kind of water seems to blur my vision.\nIs this what thankfulness feels like?,118,,,,Tuto_Sub,TS_L0117
-1,,118,1,Player,sub,anim_eyesblink,selection,"(아주 감성적인 친구가 생겼군.)|(뭐야, 귀엽고 착하잖아…!)","(It seems I’ve made quite an emotional friend.)|(Huh, they’re cute and nice…!)",,,,,Tuto_Sub,TS_L0118
-1,tutorial_10,119,1,Dot,sub,anim_eyesblink,text,그나저나….,Anyway…,120,,,,Tuto_Sub,TS_L0119
+1,,80,0,Dot,sub,,text,응… 산책이란 특색 있고\n새콤한 경험이었어!,"Yes... an extraordinary,\nenthralling exprience!",81,,,,Tuto_Sub,TS_L0080
+1,,81,0,Dot,sub,,text,나의 몸이 꿈처럼 예쁘게 채색된\n모양이었다면 더욱 투명히 기뻐했겠지만....,It would have been more pleasant\nif my body was colored like that of a dream.,82,,,,Tuto_Sub,TS_L0081
+1,,82,0,Dot,sub,,text,이 불쾌하고 끔찍한 검정 덩어리.,"But I am but foul, lumpy\nand so very black.",83,,,,Tuto_Sub,TS_L0082
+1,,83,0,Dot,sub,,text,만물 사이에서 홀로 새까맣게 짓눌려 있는 게 얼마나 고독한 일이던지.,How lonesome it was to be a black spot\namongst every other being in the world.,84,,,,Tuto_Sub,TS_L0083
+1,,84,0,Dot,sub,,text,그래도 괜찮아. 길거리를 걸어다니는 수많은 인간들을 소리 없이 구경할 수 있었으니까!,But it was alright. I was able to quietly\nhumans people going their way!,85,,,,Tuto_Sub,TS_L0084
+1,,85,0,Player,sub,,text,"(문득 궁금해. 뭉치,\n어둠을 좋아하지 않았던가?)",(Curious. I thought Dot liked the dark?),86,,,,Tuto_Sub,TS_L0085
+1,,86,0,Player,sub,,text,(자신의 검은 몸은 왜 싫어하는 거지?),(So why do they dislike their body so?),87,,,,Tuto_Sub,TS_L0086
+1,,87,0,Player,sub,,text,"뭉치, 그런데 뭉치는 어둑한\n장소들과 그림자를 좋아하지 않아?","But Dot, don’t you like\ndark places and shadows?",88,,,,Tuto_Sub,TS_L0087
+1,,88,0,Player,sub,,text,빛을 무서워하는 거지?,"You’re scared of the light, right?",89,,,,Tuto_Sub,TS_L0088
+1,,89,0,Dot,sub,,text,… 세심하게 관찰하고 기억해 주었구나!\n맞아. 정확해!,… You paid attention and remembered!\nYes. That’s exactly it!,90,,,,Tuto_Sub,TS_L0089
+1,,90,0,Player,sub,,text,"그, 그런데 공교롭게도 너의 검은 몸은\n싫어하는 것 같네. 왜 그런 거야?","Um, but you don’t seem to like your body\ndespite it being a similar shade. Why is that?",91,,,,Tuto_Sub,TS_L0090
+1,,91,0,Dot,sub,,text,음… 음. 으음.,Hm… hm. Hmm.,92,,,,Tuto_Sub,TS_L0091
+1,,92,0,Dot,sub,,text,…….,……,93,,,,Tuto_Sub,TS_L0092
+1,,93,0,Dot,sub,,text,어둠은 나를 닮아 좋아. 편안해.,I like the dark because it\nresembles me. It’s comforting.,94,,,,Tuto_Sub,TS_L0093
+1,,94,0,Dot,sub,,text,"빛이 나를 지워 버리려 들 때, 내가 안전하게\n존재할 수 있는 공간이 되어 주거든.",It’s a safe space for me when\nthe light tries to erase me whole.,95,,,,Tuto_Sub,TS_L0094
+1,,95,0,Dot,sub,,text,어둠은 포근하고 자애로운 평화야.,The dark is a snug and loving peace.,96,,,,Tuto_Sub,TS_L0095
+1,,96,0,Dot,sub,,text,암흑은… 달라. 그것은 한 치\n앞도 볼 수 없는 무한 증식의 공간.,The black is… different. An infinitely\nexpanding void that robs one of sight.,97,,,,Tuto_Sub,TS_L0096
+1,,97,0,Dot,sub,,text,모든 것을 가리기에 역설적으로 모든 걸\n가장 잔인한 방식으로 들춰 내지.,"It hides all, and ironically reveals\nall in the cruelest of ways.",98,,,,Tuto_Sub,TS_L0097
+1,,98,0,Dot,sub,,text,그 속엔 가장 잔혹하고 날카로운 이를 가진\n존재들이 스멀거려. 차마 이름을 댈 수도 없는….,"Beings with vicious, sharp teeth lurk within.\nThose I cannot even name…",99,,,,Tuto_Sub,TS_L0098
+1,,99,0,Player,sub,,text,"알 것 같아. 적당히 내려앉은\n어둠은 편히 쉴 수 있는 공간,","I get it. The right amount\nof dark is a place to relax,",100,,,,Tuto_Sub,TS_L0099
+1,,100,0,Player,sub,,text,상상력이 다리를 쭉\n뻗을 수 있는 공간이지만,one where imagination can stretch its legs,101,,,,Tuto_Sub,TS_L0100
+1,,101,0,Player,sub,,text,"아주 깜깜한 독방이나, 가로등이 고장 난\n야밤의 공원은 늘 두려움의 존재였어.","but a small room with zero light, or a park\nin the dead of night was always scary.",102,,,,Tuto_Sub,TS_L0101
+1,,102,0,Dot,sub,,text,어둠과 암흑은 꽤나 닮아서 헷갈려 할 것\n같았는데! 단박에 이해해 주다니.,You caught right on to the nuanced\ndifference between the two.,103,,,,Tuto_Sub,TS_L0102
+1,,103,0,Dot,sub,,text,"내 검정은... 그런 검정이거든. 해롭고,\n두렵고, 불결한 꿈 폐기물의 검정....","My blackness... is like that.\nA fearful, filthy sort of thing...",104,,,,Tuto_Sub,TS_L0103
+1,,104,0,Dot,sub,,text,아. 아니. 더는 이야기하고 싶지 않아.,"No, no. I don't want\nto talk about it anymore.",105,,,,Tuto_Sub,TS_L0104
+1,,105,0,Dot,sub,,text,대신 나의 산책에 대한 이야기를\n마음껏 풀어헤쳐 보아도 될까?,Would it be alright for me to regale\nyou with tales from my walk instead?,106,,,,Tuto_Sub,TS_L0105
+1,,106,0,Player,sub,,text,"음, 네가 그게 편하다면\n그렇게 하자. 이야기해 줄래?",If that makes you comfortable.\nWould you like to start?,,,,,Tuto_Sub,TS_L0106
+1,tutorial_9,107,1,Dot,sub,,text,"아, <nickname>, 실은….","<nickname>, the truth is…",108,,,,Tuto_Sub,TS_L0107
+1,,108,1,Player,sub,,text,응?,Huh?,109,,,,Tuto_Sub,TS_L0108
+1,,109,1,Dot,sub,,text,너희에게 일기라는 근사한 풍습이 있다고 들었어.,I heard you humans have a splendid\ncustom called ‘writing a diary.’,110,,,,Tuto_Sub,TS_L0109
+1,,110,1,Player,sub,,text,달의 이들이 그랬니?,Did the beings on the Moon tell you?,111,,,,Tuto_Sub,TS_L0110
+1,,111,1,Dot,sub,,text,"응 응. 하루가 끝나기 전에\n하루에 대한 감상을 적는 건데,","Yes, they said humans write\nabout their day before it ends.",112,,,,Tuto_Sub,TS_L0111
+1,,112,1,Dot,sub,,text,"보이지 않는 것을 보게 해주고,","It lets you see what is unseen,",113,,,,Tuto_Sub,TS_L0112
+1,,113,1,Dot,sub,,text,소중한 것을 더욱 소중하게\n해 주는 마법 같은 의식이래.,"and makes what is special even more so.\nA magical ritual, don’t you think?",114,,,,Tuto_Sub,TS_L0113
+1,,114,1,Player,sub,,text,(달의 이들… 그들은 인간을 정말\n특별하게 생각해 주고 있는 것 같아.),(The beings on the Moon… They really\nseem to value humans in a special way.),115,,,,Tuto_Sub,TS_L0114
+1,,115,1,Player,sub,,text,"나한테 남는 노트와 펜이\n있는데, 뭉치가 이걸 쓸래?",I have a leftover notebook and a pen.\nWould you like to use it to write a diary?,116,,,,Tuto_Sub,TS_L0115
+1,,116,1,Dot,sub,,text,<nickname>.,<nickname>.,117,,,,Tuto_Sub,TS_L0116
+1,,117,1,Dot,sub,,text,눈 아래에서 찰랑이는 느낌이\n들어. 이게 고마움이라는 걸까?,Some kind of water seems to blur my vision.\nIs this what thankfulness feels like?,118,,,,Tuto_Sub,TS_L0117
+1,,118,1,Player,sub,,selection,"(아주 감성적인 친구가 생겼군.)|(뭐야, 귀엽잖아…!)","(It seems I’ve made an emotional friend.)|(Huh, they’re cute…!)",,,,,Tuto_Sub,TS_L0118
+1,tutorial_10,119,1,Dot,sub,,text,그나저나….,Anyway…,120,,,,Tuto_Sub,TS_L0119
 1,,120,1,Dot,default,anim_eyesclosed,text,"정말이었어. 오늘을 일기 속에 담아 두고\n나니 보이지 않던 것들이 보이고,","It was true. I wrapped today in my diary\n—now I see what was unseen,",121,,,,Tuto_Sub,TS_L0120
 1,,121,1,Dot,sub,anim_eyesblink,text,소중해하던 것들이\n더욱 반짝이게 되었어.,And what was special\nsparkles even more so.,122,,,,Tuto_Sub,TS_L0121
 1,,122,1,Dot,sub,anim_eyescorner,text,있지… 괜찮다면 내 일기는\n<nickname>에게 비밀로 하고 싶어.,"Um… If it’s alright with you, I’d like\nto keep my writings to myself.",123,,,,Tuto_Sub,TS_L0122
 1,,123,1,Dot,sub,anim_eyesblink,text,절대 열어 보지 않기로\n약속해 줄 수 있지?,Can you promise me\nyou won’t ever read it?,124,,,,Tuto_Sub,TS_L0123
-1,,124,1,Player,sub,anim_eyesblink,selection,"그럼, 비밀 지킬게. |잘 숨겨 놓는다면!","Sure, I promise. Your secrets are safe.|Only if you hide it well enough!",125|126,,,,Tuto_Sub,TS_L0124
+1,,124,1,Player,sub,,selection,"그럼, 비밀 지킬게. |잘 숨겨 놓는다면!","Sure, I promise. Your secrets are safe.|Only if you hide it well enough!",125|126,,,,Tuto_Sub,TS_L0124
 1,,125,1,Dot,default,anim_move,text,고마워. 우리 비밀은 침대 밑에\n영원히 감춰져 있을 거야!,Thank you! Our secret will remain\nsafe under the bed forever!,127,,,,Tuto_Sub,TS_L0125
-1,,126,1,Dot,default,anim_move,text,좋아! 침대 밑에 꽁꽁\n철저하게 숨겨 놓겠어.,Of course! I’m going to hide it\nso well under the bed.,127,,,,Tuto_Sub,TS_L0126
+1,,126,1,Dot,default,,text,좋아! 침대 밑에 꽁꽁\n철저하게 숨겨 놓겠어.,Of course! I’m going to hide it\nso well under the bed.,127,,,,Tuto_Sub,TS_L0126
 1,,127,1,Dot,sub,anim_eyesblink,text,"<nickname>, 나는 이제\n잠에 빠져들 계획이야.","<nickname>, I plan to\nfall asleep soon.",128,,,,Tuto_Sub,TS_L0127
-1,,128,1,Dot,sub,anim_eyesblink,text,"아까 침대 밑에서 아주 포근해\n보이는 무언가를 발견했는데,","I discovered somewhere very snuggly\nunder the bed just before,",129,,,,Tuto_Sub,TS_L0128
-1,,129,1,Dot,sub,anim_eyesblink,text,혹시 내가 그곳을 내 잠의\n공간으로 사용해도 될까?,May I please use it\nas my place of sleep?,130,,,,Tuto_Sub,TS_L0129
-1,,130,1,Player,sub,anim_eyesblink,text,침대 밑…? 어디?,Under the bed…? Where?,,,,,Tuto_Sub,TS_L0130
+1,,128,1,Dot,sub,,text,"아까 침대 밑에서 아주 포근해\n보이는 무언가를 발견했는데,","I discovered somewhere very snuggly\nunder the bed just before,",129,,,,Tuto_Sub,TS_L0128
+1,,129,1,Dot,sub,,text,혹시 내가 그곳을 내 잠의\n공간으로 사용해도 될까?,May I please use it\nas my place of sleep?,130,,,,Tuto_Sub,TS_L0129
+1,,130,1,Dot,sub,,text,침대 밑…? 어디?,Under the bed…? Where?,,,,,Tuto_Sub,TS_L0130
 1,tutorial_11,131,0,Dot,default,anim_spiderweb1,text,여기!,Here!,132,,,,Tuto_Sub,TS_L0131
-1,,132,0,Player,default,anim_spiderweb1,text,"어, 어라. 거미줄이네.","Uh, ugh. It’s a spiderweb.",133,,,,Tuto_Sub,TS_L0132
-1,,133,0,Player,default,anim_spiderweb1,selection,(으아아악.)|(하아아아….),(Gaaah!)|(Eeeew.),134|134,,,,Tuto_Sub,TS_L0133
-1,,134,0,Dot,default,anim_spiderweb1,text,거미줄? 거미줄. 거미줄.,Spiderweb? Spiderweb.\nSpiderweb.,135,,,,Tuto_Sub,TS_L0134
+1,,132,0,Player,default,,text,"어, 어라. 거미줄이네.","Uh, ugh. It’s a spiderweb.",133,,,,Tuto_Sub,TS_L0132
+1,,133,0,Player,default,,selection,(으아아악.)|(하아아아….),(Gaaah!)|(Eeeew.),134|134,,,,Tuto_Sub,TS_L0133
+1,,134,0,Dot,default,,text,거미줄? 거미줄. 거미줄.,Spiderweb? Spiderweb.\nSpiderweb.,135,,,,Tuto_Sub,TS_L0134
 1,,135,0,Dot,default,anim_spiderweb2,text,‘거미’ 더하기 ‘줄’인 걸까?\n거미란 뭘까? 거미. 거미!,Is it ‘spider’ plus ‘web’?\nWhat is a spider? Spider. Spider!,136,,,,Tuto_Sub,TS_L0135
-1,,136,0,Dot,default,anim_spiderweb2,text,한숨 자고 일어나면\n‘거미’에 대해 공부해 볼 거야.,"After some sleep,\nI plan to study ‘spiders.’",137,,,,Tuto_Sub,TS_L0136
-1,,137,0,Dot,default,anim_spiderweb2,text,이 폭신한 잠 공간의 비밀을\n알게 될 수 있을지도 모르지.,Perhaps then I’ll learn the secret\nto this plush sleeping spot.,138,,,,Tuto_Sub,TS_L0137
+1,,136,0,Dot,default,,text,한숨 자고 일어나면\n‘거미’에 대해 공부해 볼 거야.,"After some sleep,\nI plan to study ‘spiders.’",137,,,,Tuto_Sub,TS_L0136
+1,,137,0,Dot,default,,text,이 폭신한 잠 공간의 비밀을\n알게 될 수 있을지도 모르지.,Perhaps then I’ll learn the secret\nto this plush sleeping spot.,138,,,,Tuto_Sub,TS_L0137
 1,,138,0,Dot,default,anim_spiderweb1,text,"그리고 <nickname>, 자고 일어나면. 너와 함께\n또 산책과 공상과 사유의 모험을 할래!","<nickname>, when I wake up, let’s walk and\ndaydream and think even more together!",139,,,,Tuto_Sub,TS_L0138
 1,,139,0,Dot,default,anim_sleepy_spiderweb,text,하아암. 마음이 들떠\n날아가 버린다면….,"My heart feels so giddy and full,\nit feels like it’s going to float away…",140,,,,Tuto_Sub,TS_L0139
 1,,140,0,Dot,default,anim_spiderweb1,text,어쩌지….,"Up, up, and away…",,,,,Tuto_Sub,TS_L0140

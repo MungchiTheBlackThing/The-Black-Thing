@@ -1,4 +1,4 @@
-﻿Main,ScriptNumber,LineKey,Background,Actor,AnimState,DotBody,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+Main,ScriptNumber,LineKey,Background,Actor,AnimState,DotBody,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,tutorial_6,1,main_door_open,Dot,main,body_default1,face_blink,text,"인간은 동그란 머리 하나와 판판한 몸, \n기다란 선 같은 팔다리를 가지고 있는데,","Humans have a round head, flat\nbody, long stick-like arms and legs,",2,,,,Tuto_Main,TM_L0001
 1,,2,main_door_open,Dot,main,,,text,그 팔다리 네 개 끝에는 정교하게 꼬물거리는\n손발가락들이 무려 다섯 개나 달려 있어.,"and at the end of each limb are no more than\nfive fingers and toes, flexing intricately.",3,,,,Tuto_Main,TM_L0002
 1,,3,main_door_open,Dot,main,,,text,또 기이다란 머리털이 그들의\n고등한 뇌를 지키기 위해 자라나지.,And they grow loooong hair to\nprotect their advanced brain.,4,,,,Tuto_Main,TM_L0003
@@ -29,23 +29,23 @@
 1,,28,main_door_open,Player,main,,,text,음… 어라? 그런 것 같아!,Hmm… oh? I guess I do!,29,,,,Tuto_Main,TM_L0028
 1,,29,main_door_open,Dot,main,body_move,,text,말도 안 돼.,Unbelievable.,30,,,,Tuto_Main,TM_L0029
 1,,30,main_door_open,Dot,main,body_bounce,,text,말도 안 돼!,Unbelievable!,31,,,,Tuto_Main,TM_L0030
-1,,31,main_door_open,Dot,main,body_bounce,,text,인 간을 만났어! 만났어? 만난 거야!,I met a human! I did it? I did it!,32,,,,Tuto_Main,TM_L0031
-1,,32,main_door_open,Dot,main,body_bounce,face_staryeyes,text,"<nickname>, 달에 있는\n모두가 너를 사랑해!","<nickname>, everyone on\nthe moon loves you!",33,,,,Tuto_Main,TM_L0032
-1,,33,main_door_open,Dot,main,body_bounce,,text,인간! 인 간! 인간이야!,Human! Hu-man! HUMAN!,34,,,,Tuto_Main,TM_L0033
-1,,34,main_door_open,Dot,main,body_bounce,,text,"인간 <nickname>, 몸이 콩콩 뛰고\n심장이 빙글 돌아갈 것처럼 반가워.","Human <nickname>, my body pounds and my\nheart swivels, it’s just that nice to meet you.",35,,,,Tuto_Main,TM_L0034
+1,,31,main_door_open,Dot,main,body_rhythm,,text,인 간을 만났어! 만났어? 만난 거야!,I met a human! I did it? I did it!,32,,,,Tuto_Main,TM_L0031
+1,,32,main_door_open,Dot,main,,face_staryeyes,text,"<nickname>, 달에 있는\n모두가 너를 사랑해!","<nickname>, everyone on\nthe moon loves you!",33,,,,Tuto_Main,TM_L0032
+1,,33,main_door_open,Dot,main,,,text,인간! 인 간! 인간이야!,Human! Hu-man! HUMAN!,34,,,,Tuto_Main,TM_L0033
+1,,34,main_door_open,Dot,main,body_default1,,text,"인간 <nickname>, 몸이 콩콩 뛰고\n심장이 빙글 돌아갈 것처럼 반가워.","Human <nickname>, my body pounds and my\nheart swivels, it’s just that nice to meet you.",35,,,,Tuto_Main,TM_L0034
 1,,35,main_door_open,Dot,main,,,text,너의 이 머리카락에서 보여지는\n색은 지구에서 뭐라고 불려?,How does one on Earth call\nthe color I see on your hair?,36,,,,Tuto_Main,TM_L0035
 1,,36,main_door_open,Player,main,,,textbox,내 머리의 색은……,That would be……,37,,,,Tuto_Main,TM_L0036
 1,,37,main_door_open,Dot,main,,,text,그렇구나! 결코 잊지 않을게!,I see! I won’t ever forget!,38,,,,Tuto_Main,TM_L0037
 1,,38,main_door_open,Dot,main,,,text,"아, 아, 아! <nickname>, 나는 달 뒤편에서 태어난 덩어리 괴물!","Oh, oh, oh! <nickname>, I’m a blobby creature\nborn on the dark side of the Moon!",39,,,,Tuto_Main,TM_L0038
-1,,39,main_door_open,Dot,main,body_default1,face_eyeroll3,text,"비록 꿈 공장의 폐기물\n웅덩이 속에서 눈을 떴지만,","I opened my eyes in a puddle of\nFilth from the dream factory,",40,,,,Tuto_Main,TM_L0039
-1,,40,main_door_open,Dot,main,,face_blink,text,"그러한 나의 눈에 최초로 담긴\n것은 색색의 꿈 구슬들이었어.","but the first things that these eyes saw were\ndream marbles, iridescent and glowing.",41,,,,Tuto_Main,TM_L0040
+1,,39,main_door_open,Dot,main,,face_eyeroll3,text,"비록 꿈 공장의 폐기물\n웅덩이 속에서 눈을 떴지만,","I opened my eyes in a puddle of\nFilth from the dream factory,",40,,,,Tuto_Main,TM_L0039
+1,,40,main_door_open,Dot,main,,face_blink,text,그러한 나의 눈에 최초로 담긴\n것은 색색의 꿈 구슬들이었어.,"but the first things that these eyes saw were\ndream marbles, iridescent and glowing.",41,,,,Tuto_Main,TM_L0040
 1,,41,main_door_open,Dot,main,,face_blink,text,지금은 불쾌하고 끈적한\n몸을 가지고 있지만…,And though I have a unpleasant\nsticky body for the moment…,42,,,,Tuto_Main,TM_L0041
 1,,42,main_door_open,Dot,main,body_move,,text,언젠가는 인간의 아름다운\n꿈이 될 것이라는 확신이 있어!,I know that one day I will become\na beautiful dream of a human!,43,,,,Tuto_Main,TM_L0042
 1,,43,main_door_open,Dot,main,,face_omg,text,실은 없어…. 아무것도 확실한 게 없어서\n환희 속에서도 절망에 휘어감기는 나지만,"I don’t, actually… Nothing is certain and even\nin bliss I find myself wrapped in despair",44,,,,Tuto_Main,TM_L0043
 1,,44,main_door_open,Dot,main,,face_blink,text,하지만 소망만은 확고해.,but my hopes are unshaken.,45,,,,Tuto_Main,TM_L0044
 1,,45,main_door_open,Dot,main,,face_eyeroll3,text,그러니까… 그러니까….,So… So…,46,,,,Tuto_Main,TM_L0045
 1,,46,main_door_open,Dot,main,,face_blink,text,너에게 부탁을 하나 해도 될까?,Could I ask a favor of you?,47,,,,Tuto_Main,TM_L0046
-1,,47,main_door_open,Player,main,,,selection,"뭔… 데…?|응, 뭔데?","Which… would be…?|Yes, what is it?",48|48,,,,Tuto_Main,TM_L0047
+1,,47,main_door_open,Player,main,,,selection,"뭔… 데…?|응, 뭔데?","Which… would be…?|Yes, what is it?",48,,,,Tuto_Main,TM_L0047
 1,,48,main_door_open,Dot,main,,,text,"음, 음, 흠, 흠!","Hmm, hmm, hem, hem!",49,,,,Tuto_Main,TM_L0048
 1,,49,main_door_open,Dot,main,body_move,face_blink,text,"나, 나, 인간을 위한 최고의 꿈이 되고\n싶어. 인간에 대한 모든 걸 알려줘!","I, I, I want to become the best dream for\nhumans. Tell me everything about them!",50,,,,Tuto_Main,TM_L0049
 1,,50,main_door_open,Dot,main,,face_staryeyes,text,어디서나 먼지 내려앉은 구석에 틀어박혀\n너의 뒷모습을 관찰하고 싶어.,I want take place in any old dusty\ncorner and observe you from behind.,51,,,,Tuto_Main,TM_L0050
@@ -90,7 +90,7 @@
 1,,89,main_door_open,Dot,main,body_move,,text,<nickname>은 어떻게 그런\n방법을 생각해 낸 거야?,Just how did you come up\nwith a plan like that?,90,,,,Tuto_Main,TM_L0089
 1,,90,main_door_open,Player,main,body_default1,,text,"인간들은 자주 외출하고, 늘 집으로\n돌아오거든. 우리는 그걸 산책이라 불러.","Humans go out, and come home\nall the time. We call it taking a walk.",91,,,,Tuto_Main,TM_L0090
 1,,91,main_door_open,Dot,main,body_move,,text,"산책, 산책, 산책.\n그리고 근사한 나의 공간.","Walk, walk, walk.\nAnd my very own corner.",92,,,,Tuto_Main,TM_L0091
-1,,92,main_door_open,Dot,main,body_default1,face_squeeze,text,이보다 좋을 수는 없어!,Life couldn’t be better!,93,,,,Tuto_Main,TM_L0092
+1,,92,main_door_open,Dot,main,body_default1,face_smile,text,이보다 좋을 수는 없어!,Life couldn’t be better!,93,,,,Tuto_Main,TM_L0092
 1,,93,main_door_open,Player,main,body_default1,face_blink,selection,(좋아하는 걸 보니 뿌듯해.)|(잘 넘긴 것 같다.),(It’s nice to see Dot so happy.)|(I think that worked.),94|94,,,,Tuto_Main,TM_L0093
 1,,94,main_door_open,Player,main,,,text,"뭉치의 인간 공부에도 도움이 되고,\n나에게도 작은 말동무가 생길 테니…","It will help your human studies,\nand I’ll have a little companion…",95,,,,Tuto_Main,TM_L0094
 1,,95,main_door_open,Player,main,,,text,서로에게 좋은 일일 거야.,This will work for both of us.,96,,,,Tuto_Main,TM_L0095
