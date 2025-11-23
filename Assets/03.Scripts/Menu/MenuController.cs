@@ -324,6 +324,15 @@ public class MenuController : MonoBehaviour
         checkList.SetActive(true);
         tuto();
     }
+    
+    public void nextandoff()
+    {
+        UItutoEnd = true;
+        DayProgressUI.GetComponent<ProgressUIController>().exit();
+        DayProgressUI.GetComponent<ProgressUIController>().exit();
+        offMenu();
+        PlayerController.NextPhase();
+    }
     IEnumerator later()
     {
         yield return new WaitForSeconds(2.5f);

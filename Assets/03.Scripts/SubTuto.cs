@@ -18,6 +18,7 @@ public class SubTuto : MonoBehaviour
     [SerializeField] GameObject SystemUI;
     [SerializeField] PlayerController playerController;
     [SerializeField] DotController dotController;
+    private bool tuto11chk = false;
 
     public string prefabPath = "TouchGuide";
 
@@ -131,7 +132,7 @@ public class SubTuto : MonoBehaviour
         //RecentManager.Save(selectedDot, determine, index); // 저장
         if (playerController.GetAlreadyEndedPhase() == 5)
         {
-            Subcontinue();
+            subPanel.dotballoon(selectedDot);
         }
         else
         {
@@ -145,13 +146,13 @@ public class SubTuto : MonoBehaviour
     {
         //RecentManager.Save(selectedDot, determine, index); // 저장
         dotController.GoSleep();
-        StartCoroutine(subcon());
+        StartCoroutine(subcon(selectedDot, determine, index));
     }
 
-    private IEnumerator subcon()
+    private IEnumerator subcon(GameObject selectedDot, int determine, int index)
     {
         yield return new WaitForSeconds(4f);
-        Subcontinue();
+        subPanel.dotballoon(selectedDot);
     }
 
     private IEnumerator LoadSceneCoroutine(string sceneName)
@@ -174,10 +175,8 @@ public class SubTuto : MonoBehaviour
         tutorialManager.ChangeGameState(TutorialState.Sub);
     }
 
-    public void Subcontinue(int index = 0)
+    public void Subcontinue(int index = -1)
     {
-        if (index < 0)
-            index = 0;
         RecentData data = RecentManager.Load();
         if (data != null && data.isContinue == 1)
         {
@@ -190,7 +189,7 @@ public class SubTuto : MonoBehaviour
 
             subPanel.prePos = dotController.Position;
 
-            if (subDialogue.currentDialogueList == null || subDialogue.currentDialogueList.Count == 0)
+            if (subDialogue.currentDialogueList == null || subDialogue.currentDialogueList.Count == 0 && index != -1)
             {
                 Debug.Log("서브이어 1");
                 subDialogue.StartSub("tutorial_sub", data.index);

@@ -301,6 +301,7 @@ public class SubPanel : MonoBehaviour
 
     public void ShowNextDialogue()
     {
+        Debug.Log("현재 대사 index :" + dialogueIndex);
         prePos = dotcontroller.Position;
         PanelOff();
 
