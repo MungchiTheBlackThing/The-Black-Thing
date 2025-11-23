@@ -7617,7 +7617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &469792794
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28030,7 +28030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1483853041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32610,7 +32610,7 @@ MonoBehaviour:
   SubDialogueEntries: []
   scroll: {fileID: 1526469518}
   SystemUI: {fileID: 1705030965}
-  SubPanel: {fileID: 0}
+  SubPanel: {fileID: 1109418669}
   manager: {fileID: 199268581}
   menuController: {fileID: 619721725}
   subTutorial: {fileID: 1467358320}
@@ -40394,6 +40394,7 @@ MonoBehaviour:
   DayProgress: {fileID: 1651024148}
   Subicon: {fileID: 1827726167}
   Screentouch: {fileID: 634939024}
+  player: {fileID: 2022455605}
 --- !u!222 &728480254008036783
 CanvasRenderer:
   m_ObjectHideFlags: 0

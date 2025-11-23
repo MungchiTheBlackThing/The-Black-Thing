@@ -316,6 +316,6 @@ public class SubDialogue : MonoBehaviour
     private IEnumerator ShowNextDialogueAfterDelay(float delay,SubPanel subPanel)
     {
         yield return new WaitForSeconds(delay);
-        this.SubContinue();
+        subPanel.ShowNextDialogue();
     }
 }

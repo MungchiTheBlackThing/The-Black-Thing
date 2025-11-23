@@ -15,6 +15,7 @@ public class UITutorial : MonoBehaviour
     [SerializeField] GameObject DayProgress;
     [SerializeField] GameObject Subicon;
     [SerializeField] GameObject Screentouch;
+    [SerializeField] PlayerController player;
     CanvasGroup tutorialMaskGroup;
     CanvasGroup Spider;
     CanvasGroup Progress;
@@ -168,7 +169,7 @@ public class UITutorial : MonoBehaviour
             if (index >= transform.childCount)
             {
                 Screentouch.SetActive(false);
-                MenuController.UItutoEnd = true;
+                MenuController.nextandoff();
                 this.gameObject.SetActive(false);
             }
             else
