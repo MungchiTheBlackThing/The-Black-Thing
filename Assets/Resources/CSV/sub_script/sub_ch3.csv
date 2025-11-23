@@ -1,204 +1,205 @@
-﻿Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
-1,15,1,0,Dot,,anim_eyesblink,text,"<nickname>, 내 침대 있잖아.","<nickname>, about my bed.",2,,,,Sub_Ch3,S3_L0001
-1,15,2,0,Player,,anim_idle,text,네 침대?,Your bed?,3,,,,Sub_Ch3,S3_L0002
-1,15,3,0,Dot,,anim_idle,text,"응. 네 침대의 그림자 속에서, 희멀겋지만\n탄력 있는 호흡으로 존재하는 나의 침대.","My bed, woven with resilience and\nsilk in the shadow of your bed.",4,,,,Sub_Ch3,S3_L0003
-1,15,4,0,Dot,,anim_eyesblink,text,나의 끈적끈적하고 안락한 침대 말이야!,My sticky snug bed!,5,,,,Sub_Ch3,S3_L0004
-1,15,5,0,Player,,anim_idle,text,‘… 이게 무슨 뜻일까.’,‘… What does this mean.’,6,,,,Sub_Ch3,S3_L0005
-1,15,6,0,Player,,anim_idle,text,"‘… 아, 아아. 저 구석의 거미줄을\n뭉치가 침대로 쓰겠다 했었지.’","‘… Oh, right. Dot’s using the cobweb\nin the corner as a bed.",7,,,,Sub_Ch3,S3_L0006
-1,15,7,0,Player,,anim_eyesblink,text,"응, 뭉치야. 네 침대. 기억했어.","Right, Dot. Your bed. I remember.",8,,,,Sub_Ch3,S3_L0007
-1,15,8,0,Dot,,anim_idle,text,오늘 그 침대를 만들어 준 예술가\n선생과 우연히 마주쳤어.,Today I stumbled upon the\nartist who crafted the bed.,9,,,,Sub_Ch3,S3_L0008
-1,15,9,0,Player,,anim_idle,text,"‘세상에. 안 돼. 설마, 제발….’","‘Oh. No. Please, no…’",10,,,,Sub_Ch3,S3_L0009
-1,15,10,0,Player,,anim_eyesblink,text,예술가 선생? 혹시\n우리 집에서 만난 거야?,The artist? You met the artist here?,11,,,,Sub_Ch3,S3_L0010
-1,15,11,0,Dot,,anim_idle,text,"응, 응. 그는 저쪽 창틀 위에\n고고하게 앉아 있었지.","Yes, yes. She was perched elegantly \non the windowsill over there.",12,,,,Sub_Ch3,S3_L0011
-1,15,12,0,Player,,anim_idle,text,"‘오, 이런. 설마가 사람 잡았군.’",‘My worst fears are coming true.’,13,,,,Sub_Ch3,S3_L0012
-1,15,13,0,Dot,,anim_eyesblink,text,"난 조금 가까이 다가가서… 실례를 범하지\n않았길 바라며, 그의 여덟 개나 되는 눈,","I came closer… and, with the utmost\nregard, counted her eight eyes,",14,,,,Sub_Ch3,S3_L0013
-1,15,14,0,Dot,,anim_idle,text,그리고 경이롭게도 ‘역시’ 여덟 개나 되는\n다리를 하나하나 세어 보고 있었는데.,and her magnificent\neight legs one by one.,15,,,,Sub_Ch3,S3_L0014
-1,15,15,0,Dot,,anim_idle,text,그때.,And then.,16,,,,Sub_Ch3,S3_L0015
-1,15,16,0,Player,,anim_eyesblink,text,그때…?,And then…?,17,,,,Sub_Ch3,S3_L0016
-1,15,17,0,Dot,,anim_idle,text,"눈이 마주친 거야. 허공에서,\n조금은 어색하게,","Our eyes met. Midair,\na little awkwardly.",18,,,,Sub_Ch3,S3_L0017
-1,15,18,0,Dot,,anim_idle,text,그의 눈알 여덟 개와\n나의 눈알 두 개가 말이야.,Her eight eyes and my\ntwo eyes locked together.,19,,,,Sub_Ch3,S3_L0018
-1,15,19,0,Dot,,anim_eyesblink,text,"가까이에서 본 그는 훨씬 새하얀데,\n멋진 줄무늬도 있고! 아주 복실복실했어.","She was much paler up close,\nwith glorious stripes! Very fluffy.",20,,,,Sub_Ch3,S3_L0019
-1,15,20,0,Dot,,anim_idle,text,털을 만져보는 것도 허락해 주었지.\n근사한데 상냥하기까지.,She even let me touch her fur.\nSweet as well as handsome.,21,,,,Sub_Ch3,S3_L0020
-1,15,21,0,Dot,,anim_eyesside_turn,text,"이건 너와 나 사이의 귓속말인데,\n어, 그가 아직 창가에 있어.","And this is between you and me,\nbut she’s still on the windowsill.",22,,,,Sub_Ch3,S3_L0021
-1,15,22,0,Player,,anim_eyesblink,text,"어, 어… 어? 저기 있다고, 지금?","Right, so… So. She’s\nstill there, right now?",23,,,,Sub_Ch3,S3_L0022
-1,15,23,0,Player,,anim_idle,text,"거미가? 아니, 하하…\n예술가 선생이?","The spider? Wait, no… the artist?",24,,,,Sub_Ch3,S3_L0023
-1,15,24,0,Dot,,anim_eyesblink,text,"응, 응, <nickname>. 털을 만지게 해 준 답례로\n나도 선물을 주고 싶은데,","Yes, that’s it, <nickname>. I’d like to\ngive her a thank-you present.",25,,,,Sub_Ch3,S3_L0024
-1,15,25,0,Dot,,anim_sub_spiderdot,text,"어때, 좀 닮았어? 그에\n대한 나의 존경을 담았어.",Can you see the resemblance?\nIt’s a token of my respect.,26,,,,Sub_Ch3,S3_L0025
-1,15,26,0,Player,,anim_eyesblink,selection,"오, 그럼. 그가 정말 기뻐할걸?|거미들의 취향은 잘 모르겠네.","Oh, sure. I know she’ll be thrilled.|I’m not sure what spiders find appealing.",27|28,,,,Sub_Ch3,S3_L0026
-1,15,27,0,Dot,,anim_idle,text,"한시름 놓을 수 있겠어. 고마워, <nickname>.","What a relief. Thank you, <nickname>.",29,,,,Sub_Ch3,S3_L0027
-1,15,28,0,Dot,,anim_idle,text,아무래도 그럴 수 있겠다.\n<nickname>은 인간이니까.,"I don’t blame you.\nYou are human, <nickname>.",29,,,,Sub_Ch3,S3_L0028
-1,15,29,0,Dot,,anim_bounce,text,다녀올게. 행운을 빌어 줘!,I’ll be back. Wish me luck!,,,,,Sub_Ch3,S3_L0029
-2,16,30,0,Dot,,anim_bounce,text,"아, 얼마나 황홀할까, <nickname>!","Oh, how splendid it must be, <nickname>",31,,,,Sub_Ch3,S3_L0030
-2,16,31,0,Dot,,anim_bounce,text,푸르른 하늘을 가로지르며\n구름 너머로 내달리는 삶이란!,To soar across the blue sky and\nrace far beyond the clouds!,32,,,,Sub_Ch3,S3_L0031
-2,16,32,0,Dot,,anim_bounce,text,"날 묶어 두는 어떠한 족쇄도 없이,\n그저 나로서 자유롭게 영원한 아이가 되어","To be a child forever, free and whole,\nwith no chains binding me,",33,,,,Sub_Ch3,S3_L0032
-2,16,33,0,Dot,,anim_bounce,text,매일 매일을 행복하게 모험하고\n탐구하고 탐닉하기만 하며 살 수 있다면!,and live a life of adventuring and\nexploring and seeking every day!,34,,,,Sub_Ch3,S3_L0033
-2,16,34,0,Player,,anim_eyesblink,text,(어디에서 들어 본 이야기다.)|(이게 대체 무슨 소리일까.),(This sounds familiar.)|(Where is this coming from.),35|36,,,,Sub_Ch3,S3_L0034
-2,16,35,0,Player,,anim_idle,text,"혹시 뭉치, 어떠한 책을 읽은 거야?","Have you been reading\nwhat I think you have, Dot?",37,,,,Sub_Ch3,S3_L0035
-2,16,36,0,Player,,anim_idle,text,"혹시 뭉치, 지금 어떤 이야기를 하는 거야?","Do you mind me asking\nwhat this is about, Dot?",37,,,,Sub_Ch3,S3_L0036
-2,16,37,0,Dot,,anim_eyesblink,text,<피터 팬>이라는 책을 읽게 되었어.,I’ve been reading <Peter Pan>.,38,,,,Sub_Ch3,S3_L0037
-2,16,38,0,Dot,,anim_move,text,"순수하고 쾌활한, 때로는 매정한 피터처럼\n난 그 어떤 것도 짊어지지 않으려 해!","And like him, pure and merry and at times\ncruel, I won’t be burdened by anything!",39,,,,Sub_Ch3,S3_L0038
-2,16,39,0,Dot,,anim_idle,text,"그래서 그 어떤 것도 잃을 수 없는,\n영원한 아이가 될 거야.","And so forever a child I will be,\nwith nothing to lose.",40,,,,Sub_Ch3,S3_L0039
-2,16,40,0,Dot,,anim_eyesblink,text,"그곳엔 상실이 없을 거야, 압박도, 불안도,\n고통스러운 고민들도 없을 거야!","No more loss, pressure, anxiety,\nor agonizing troubles!",41,,,,Sub_Ch3,S3_L0040
-2,16,41,0,Player,,anim_idle,selection,(눈감고 뭉치를 응원한다.)|(뭉치에게 현실을 이야기해 준다.),(Cheer Dot on.)|(Speak of reality.),42|52,,,,Sub_Ch3,S3_L0041
-2,16,42,0,Player,,anim_idle,text,영원히 아이 같은 뭉치.,"Dot, the eternal child.",43,,,,Sub_Ch3,S3_L0042
-2,16,43,0,Player,,anim_eyesblink,text,넌 인간이 아니니까 가능할지도 모르겠다! \n응원하고 싶어.,You’re not human so it might be possible!\nI’d like to cheer you on.,44,,,,Sub_Ch3,S3_L0043
-2,16,44,0,Player,,anim_idle,text,"하지만 계속 지금의 천진한 뭉치로 남아\n있다면, 꿈 또한 될 수 없는 것 아니야?","But if you remain innocent forever,\nwon’t you have to give up on being a dream?",45,,,,Sub_Ch3,S3_L0044
-2,16,45,0,Player,,anim_idle,text,…,…,46,,,,Sub_Ch3,S3_L0045
-2,16,46,0,Dot,,anim_eyesdown_turn,text,어…? 어…. 어……. 그건 정말이지\n생각도 못한 불상사인데…….,Oh…? Oh…. Well…… Quite the unexpected\nand unfortunate outcome…….,47,,,,Sub_Ch3,S3_L0046
-2,16,47,0,Player,,anim_idle,text,(나도 어릴 땐 자라는 게 무서웠지.)|(나는 빨리 어른이 되고 싶었었는데….),(I was scared to grow up once too.)|(I couldn’t wait to grow up….),48|50,,,,Sub_Ch3,S3_L0047
-2,16,48,0,Player,,anim_eyesblink,text,나도 어릴 땐 자라나고 싶지 않았어.\n너의 마음을 알아.,I was scared to grow up once too.\nI know how you feel.,49,,,,Sub_Ch3,S3_L0048
-2,16,49,0,Player,,anim_idle,text,"하지만 뭉치야, 자라나는 건\n생각만큼 두려워할 일이 아니야!","But Dot, growing up isn’t\nsomething to be afraid of!",55,,,,Sub_Ch3,S3_L0049
-2,16,50,0,Player,,anim_idle,text,"뭉치, 그것 알아? 나는 빨리 어른이\n되고 싶어 하던 아이였어.","You know what, Dot? I couldn’t wait\nto grow up when I was young.",51,,,,Sub_Ch3,S3_L0050
-2,16,51,0,Player,,anim_eyesblink,text,자라나는 건 생각보다 신나는 일이었거든!,Growing up was so much\nmore exciting than I’d thought!,55,,,,Sub_Ch3,S3_L0051
-2,16,52,0,Player,,anim_idle,text,그런데 책 속이 아닌 실제의\n세계 속에서는 그러기 어려워.,"Maybe in books, but it’s hard\nto do so in the real world.",53,,,,Sub_Ch3,S3_L0052
-2,16,53,0,Player,,anim_idle,text,"모든 아이는 자라나기 마련이고,","All children grow,",54,,,,Sub_Ch3,S3_L0053
-2,16,54,0,Player,,anim_eyesblink,text,뭉치 또한 이루고 싶은 꿈이 있으니까\n천천히 시간이 흐르며 자라나겠지.,"and so will you, because you have\nsomething you want to achieve.",55,,,,Sub_Ch3,S3_L0054
-2,16,55,0,Dot,,anim_idle,text,너 역시 ‘자라난’ 거야?,Did you ‘grow’ too?,56,,,,Sub_Ch3,S3_L0055
-2,16,56,0,Player,,anim_idle,text,"그럼, 나도 더 이상 어린 아이가 아니지.","Of course, I’m not a child anymore.",57,,,,Sub_Ch3,S3_L0056
-2,16,57,0,Player,,anim_eyesblink,text,나도 처음에는 아쉬웠어. 자라나기 위해\n하늘을 뛰노는 자유를 잃어야 하니까.,I wasn’t happy at first either. I was\nno longer free to romp about the sky.,58,,,,Sub_Ch3,S3_L0057
-2,16,58,0,Player,,anim_idle,text,하지만 뛰노는 자유를 잃은 대신\n나에겐 또 다른 힘이 생겼어.,But in losing that freedom I gained \na different kind of strength.,59,,,,Sub_Ch3,S3_L0058
-2,16,59,0,Dot,,anim_idle,text,어떤 힘?,The power to do what?,60,,,,Sub_Ch3,S3_L0059
-2,16,60,0,Player,,anim_eyesblink,selection,스스로 결정을 내릴 수 있는 힘.|자신을 정의해 나갈 수 있는 힘.,To decide for myself.|To define myself.,61|85,,,,Sub_Ch3,S3_L0060
-2,16,61,0,Player,,anim_idle,text,누군가에게 의지할 필요 없이\n스스로 결정을 내릴 수 있는 힘.,The power to make decisions for myself\n without having to rely on others.,62,,,,Sub_Ch3,S3_L0061
-2,16,62,0,Player,,anim_idle,text,그 힘은 곧 책임감과 또 다른\n모양의 자유를 동시에 쥐여 줬어.,"And that power gave me responsibility,\nas well as a different form of freedom.",63,,,,Sub_Ch3,S3_L0062
-2,16,63,0,Player,,anim_eyesblink,text,책임 없이 마냥 뛰놀 수 있던\n아이의 자유와는 달라.,Not like that of a naive child\nwith no responsibilities.,64,,,,Sub_Ch3,S3_L0063
-2,16,64,0,Player,,anim_idle,text,하나를 얻기 위해 당연히\n하나를 잃어야 하는 세상 속에서,In a world where to gain something\nmeans to lose something,65,,,,Sub_Ch3,S3_L0064
-2,16,65,0,Player,,anim_idle,text,"무엇을 얻고 잃을지를 나의 의지대로 선택하고,\n그 결과를 책임지고자 하는 자유지.","I’m free to decide what I’ll lose and gain,\nand free to face the consequences.",66,,,,Sub_Ch3,S3_L0065
-2,16,66,0,Dot,,anim_eyesblink,text,인간들에게는 그런 힘이\n생기는구나. 나에게도 그럴까?,I didn’t know humans gained that kind of\n strength. Will I have it too someday?,67,,,,Sub_Ch3,S3_L0066
-2,16,67,0,Dot,,anim_idle,text,꿈이 된 후에?,After I become a dream?,68,,,,Sub_Ch3,S3_L0067
-2,16,68,0,Player,,anim_idle,selection,글쎄….|그럼.,Well….|Of course.,69|73,,,,Sub_Ch3,S3_L0068
-2,16,69,0,Player,,anim_eyesblink,text,"글쎄, 미래를 확신할 수는 없겠지.","Well, we can’t say for certain just yet.",70,,,,Sub_Ch3,S3_L0069
-2,16,70,0,Player,,anim_idle,text,하지만 어떠한 강렬한 꿈들은\n나의 하루를 종일 뒤흔들기도 했어.,But some striking dreams would\nrock my day from start to finish.,71,,,,Sub_Ch3,S3_L0070
-2,16,71,0,Player,,anim_idle,text,아주 잔잔한 물결처럼\n아침을 울리던 꿈들도 있었지.,And others would echo in my\nmornings like gentle ripples.,72,,,,Sub_Ch3,S3_L0071
-2,16,72,0,Player,,anim_eyesblink,text,"뭉치가 울림을 주는 꿈이 된다면,\n힘이 생겼다고 말할 수 있을 거야.","If you become a dream that echoes within,\nthat would mean you have that strength.",78,,,,Sub_Ch3,S3_L0072
-2,16,73,0,Player,,anim_idle,text,"그럼. 한 사람의 아침을 좌우할 수 있는 힘,",Of course. The strength to determine\n someone’s morning.,74,,,,Sub_Ch3,S3_L0073
-2,16,74,0,Player,,anim_idle,text,한 사람의 무의식에 하나의 점을\n남길 수 있는 힘이 주어지지 않을까?,Wouldn’t you have the strength to leave a\n single blot on someone’s subconscious?,75,,,,Sub_Ch3,S3_L0074
-2,16,75,0,Dot,,anim_eyesblink,text,…!,…!,76,,,,Sub_Ch3,S3_L0075
-2,16,76,0,Dot,,anim_move,text,하나의 점! 동그란 나를 닮은?,A single blot! Round like me?,77,,,,Sub_Ch3,S3_L0076
-2,16,77,0,Player,,anim_idle,selection,"응, 이왕이면 끈적거리는 점.|응, 이왕이면 눈썹도 찍힌 점.","Yes, and a sticky one to boot.|Yes, one with eyebrows to boot.",78|78,,,,Sub_Ch3,S3_L0077
-2,16,78,0,Player,,anim_eyesblink,text,그리고 지금의 너에게도 힘이 있는 걸.,And you’re strong in your\nown way right now too.,79,,,,Sub_Ch3,S3_L0078
-2,16,79,0,Dot,,anim_idle,text,아직은 보이지 않지만….,I don’t see it just yet….,80,,,,Sub_Ch3,S3_L0079
-2,16,80,0,Dot,,anim_idle,text,정말 <nickname>의 말처럼\n어딘가에 숨어 있을지 몰라.,"But it might be hiding\nsomewhere, like you said.",81,,,,Sub_Ch3,S3_L0080
-2,16,81,0,Dot,,anim_eyesdown,text,내 작고 검은 몸 사이에 꽂혀 있다거나….,Pinned somewhere in my small black body….,82,,,,Sub_Ch3,S3_L0081
-2,16,82,0,Dot,,anim_eyescorner,text,으음. 으으으음….,Hm. Hmmm….,83,,,,Sub_Ch3,S3_L0082
-2,16,83,0,Dot,,anim_eyesside,text,그때의 나는 어떻게 변해 있을까?,I wonder how different I’ll be?,84,,,,Sub_Ch3,S3_L0083
-2,16,84,0,Dot,,anim_eyesup,text,"어떤 자유를 누리며,\n어떤 책임을 지고 있을까?","What freedoms will I have, and\nwhat responsibilities will I bear?",110,,,,Sub_Ch3,S3_L0084
-2,16,85,0,Player,,anim_eyesblink,text,자신을 무한히 정의해 나갈 수 있는 힘.,The power to define myself infinitely.,86,,,,Sub_Ch3,S3_L0085
-2,16,86,0,Player,,anim_idle,text,어른이 되었다는 게 성장이\n끝났다는 뜻은 아니야.,Being an adult doesn’t mean\nyou’re done growing up.,87,,,,Sub_Ch3,S3_L0086
-2,16,87,0,Player,,anim_idle,text,"자신과 긴밀하게 소통하며\n진정으로 원하는 것을 찾아가는 기회,","You’ll be gifted with the opportunity\nto communicate with yourself,",88,,,,Sub_Ch3,S3_L0087
-2,16,88,0,Player,,anim_eyesblink,text,자유롭게 나를 정의해 나갈 수 있는\n기회를 매일 매일 선물받게 되거든.,"discover what you truly want,\nand define yourself freely, every day.",89,,,,Sub_Ch3,S3_L0088
-2,16,89,0,Player,,anim_idle,text,성장의 새로운 챕터가\n시작되었다고 볼 수도 있을 거야!,It will be like a brand new\nchapter of your growth!,90,,,,Sub_Ch3,S3_L0089
-2,16,90,0,Player,,anim_idle,text,"무거운 책임감이 부여되기도 하지만,\n그만큼 재미있고 벅차오르는 일이야.","It requires responsibility, but more than\nworth it. It’s that fun and exciting.",91,,,,Sub_Ch3,S3_L0090
-2,16,91,0,Dot,,anim_eyesblink,text,인간들에게는 그런 힘이 생기는구나.\n나에게도 그럴까?,I didn’t know humans gained that kind of\nstrength. Will I have it too someday?,92,,,,Sub_Ch3,S3_L0091
-2,16,92,0,Dot,,anim_idle,text,꿈이 된 후에?,After I become a dream?,93,,,,Sub_Ch3,S3_L0092
-2,16,93,0,Player,,anim_idle,selection,글쎄….|그럼.,Well….|Of course.,94|98,,,,Sub_Ch3,S3_L0093
-2,16,94,0,Player,,anim_eyesblink,text,"글쎄, 미래를 확신할 수는 없겠지.","Well, we can’t say for certain just yet.",95,,,,Sub_Ch3,S3_L0094
-2,16,95,0,Player,,anim_idle,text,하지만 어떠한 강렬한 꿈들은\n나의 하루를 종일 뒤흔들기도 했어.,But some striking dreams would\nrock my day from start to finish.,96,,,,Sub_Ch3,S3_L0095
-2,16,96,0,Player,,anim_idle,text,아주 잔잔한 물결처럼\n아침을 울리던 꿈들도 있었지.,And others would echo my\nmornings like gentle ripples.,97,,,,Sub_Ch3,S3_L0096
-2,16,97,0,Player,,anim_eyesblink,text,"뭉치가 울림을 주는 꿈이 된다면,\n힘이 생겼다고 말할 수 있을 거야.","If you become a dream that moves people,\nthat will mean you have that strength.",103,,,,Sub_Ch3,S3_L0097
-2,16,98,0,Player,,anim_idle,text,"그럼. 한 사람의 아침을 좌우할 수 있는 힘,",Of course. The power to determine\nsomeone’s morning.,99,,,,Sub_Ch3,S3_L0098
-2,16,99,0,Player,,anim_idle,text,한 사람의 무의식에 하나의 점을\n남길 수 있는 힘이 주어지지 않을까?,Wouldn’t you have the power to leave a\nsingle blot on someone’s subconscious?,100,,,,Sub_Ch3,S3_L0099
-2,16,100,0,Dot,,anim_eyesblink,text,…!,…!,101,,,,Sub_Ch3,S3_L0100
-2,16,101,0,Dot,,anim_idle,text,하나의 점! 동그란 나를 닮은?,A single blot! Round like me?,102,,,,Sub_Ch3,S3_L0101
-2,16,102,0,Player,,anim_idle,selection,"응, 이왕이면 끈적거리는 점.|응, 이왕이면 눈썹도 찍힌 점.","Yes, and a sticky one to boot.|Yes, one with eyebrows to boot.",103|103,,,,Sub_Ch3,S3_L0102
-2,16,103,0,Player,,anim_eyesblink,text,그리고 지금의 너에게도 힘이 있는 걸.,And you have power just now too.,104,,,,Sub_Ch3,S3_L0103
-2,16,104,0,Dot,,anim_idle,text,아직은 보이지 않지만….,I don’t see it just yet….,105,,,,Sub_Ch3,S3_L0104
-2,16,105,0,Dot,,anim_idle,text,정말 <nickname>의 말처럼\n어딘가에 숨어 있을지 몰라.,"But it might be hiding\nsomewhere, like you said.",106,,,,Sub_Ch3,S3_L0105
-2,16,106,0,Dot,,anim_eyesdown,text,내 작고 검은 몸 사이에 꽂혀 있다거나….,Pinned somewhere in my small black body….,107,,,,Sub_Ch3,S3_L0106
-2,16,107,0,Dot,,anim_eyescorner,text,으음. 으으으음….,Hm. Hmmm….,108,,,,Sub_Ch3,S3_L0107
-2,16,108,0,Dot,,anim_eyesside,text,그때의 나는 어떻게 변해 있을까.,I wonder how different I’ll be?,109,,,,Sub_Ch3,S3_L0108
-2,16,109,0,Dot,,anim_eyesup,text,"어떤 자유를 누리며, 어떤 이름으로\n스스로를 부르고 있을까?","What freedoms will I have, and\nwhat responsibilities will I bear?",110,,,,Sub_Ch3,S3_L0109
-2,16,110,0,Player,,anim_eyesblink,text,"성장에 성장에 성장을, 변화에 변화를\n거듭하면서도 내가 꾹 쥐고 있는 게 있다면","Constant growth, constant change.\nBut if there’s something I hold tight to,",111,,,,Sub_Ch3,S3_L0110
-2,16,111,0,Player,,anim_idle,text,그걸 바라보며 나에게 뭐가 제일\n소중한 것인지를 알아갈 수 있을 거야.,I’ll be able to look at it and learn\nwhat matters most to me.,112,,,,Sub_Ch3,S3_L0111
-2,16,112,0,Player,,anim_idle,selection,성장을 가장 소중히 여기게 될지도 몰라.|그것을 알게 되는 것이 바로 성장일지 몰라.,And what matters most to me might be growth.|And maybe that’s what growth is.,113|113,,,,Sub_Ch3,S3_L0112
-2,16,113,0,Dot,,anim_eyesblink,text,"응, 맞아! 성장한다는 게 생각보다\n두려운 게 아닐지도 모르겠어.",You’re right! Growing up might\nnot be so scary after all.,114,,,,Sub_Ch3,S3_L0113
-2,16,114,0,Dot,,anim_idle,text,분명 불안해지지만…,I’m still anxious…,115,,,,Sub_Ch3,S3_L0114
-2,16,115,0,Dot,,anim_idle,text,지금의 떨림 안엔 설렘도 함께\n돌아다니는 것 같거든.,"but it’s a good kind of anxious,\nlike trembling butterflies.",,,,,Sub_Ch3,S3_L0115
-3,17,116,0,Dot,,anim_eyesblink,text,"<nickname>, 처음으로 눈을 떴던 순간,\n넌 어떤 기분이었어?","<nickname>. What was it like, when you,\nopened your eyes for the first time?",117,,,,Sub_Ch3,S3_L0116
-3,17,117,0,Player,,anim_idle,text,처음으로 눈을 떴던 순간?,When I opened my eyes for the first time?,118,,,,Sub_Ch3,S3_L0117
-3,17,118,0,Player,,anim_idle,selection,잘 이해가 안 돼.|그게 무슨 뜻이야?,I don’t understand.|What do you mean?,119|119,,,,Sub_Ch3,S3_L0118
-3,17,119,0,Dot,,anim_eyesblink,text,그러니까… 네가 세상에 태어나\n처음으로 두 눈을 뜨게 되었던 순간 말이야.,"When you came into this world, and,\nopened your eyes for the first time.",120,,,,Sub_Ch3,S3_L0119
-3,17,120,0,Dot,,anim_idle,text,그 순간은 어땠어? 너에게\n어떤 기억으로 남아 있어?,"Looking back on that moment,,\nwhat do you see?",121,,,,Sub_Ch3,S3_L0120
-3,17,121,0,Player,,anim_idle,selection,(솔직하게 대답한다.)|(장난스럽게 대답한다.),(Be honest.)|(Be playful.),122|123,,,,Sub_Ch3,S3_L0121
-3,17,122,0,Player,,anim_eyesblink,text,"음, 고백하지만 처음 눈을 떴던\n순간은 전혀 기억나지 않아.","Well, to be honest, I can’t remember,\nwhat it was like at all.",124,,,,Sub_Ch3,S3_L0122
-3,17,123,0,Player,,anim_idle,text,너무 오래 지난 일이라 살아오던\n길에 실수로 기억을 잃어버렸어!,"Foggy nothingness. Seems,\nI’ve misplaced that certain memory.",124,,,,Sub_Ch3,S3_L0123
-3,17,124,0,Dot,,anim_idle,text,첫 숨을 틔워 내며 세계를\n온몸으로 감각한 순간인데도?,"But it was the first time the,\nworld flooded your senses!",125,,,,Sub_Ch3,S3_L0124
-3,17,125,0,Dot,,anim_eyesblink,text,그다지도 강렬하고 아름다운 찰나에\n 대한 기억이 없단 말이야? 어째서?,"Such a powerful moment,,\nand you remember nothing? How?",126,,,,Sub_Ch3,S3_L0125
-3,17,126,0,Player,,anim_idle,text,인간들에게는 주기적으로 ‘망각’이라는 것이 찾아와.,Humans periodically ‘forget’ things.,127,,,,Sub_Ch3,S3_L0126
-3,17,127,0,Player,,anim_idle,text,"기억을 잃는다는 뜻인데,","As in, we lose our memories.",128,,,,Sub_Ch3,S3_L0127
-3,17,128,0,Player,,anim_eyesblink,text,"그래서 아주 오랜 기억들은 대개 휘발되거나,\n어렴풋한 잔상으로나마 존재하게 돼.","So old memories either evaporate,\nor barely linger as vague images.",129,,,,Sub_Ch3,S3_L0128
-3,17,129,0,Dot,,anim_eyesup_turn,text,망각. 망각…. 생소하지만 이해하고 싶어.,"Forgetting…. an unfamiliar concept,,\nbut one I’d like to comprehend.",130,,,,Sub_Ch3,S3_L0129
-3,17,130,0,Dot,,anim_idle,text,시간이 필요해. 나중에 다시 망각에\n대한 이야기를 나눌 수 있었으면 좋겠다.,"I need time to absorb this.,\nI hope we’ll talk about ‘forgetting’ later.",131,,,,Sub_Ch3,S3_L0130
-3,17,131,0,Player,,anim_eyesblink,text,음….,Well…,132,,,,Sub_Ch3,S3_L0131
-3,17,132,0,Player,,anim_idle,text,뭉치 너는?,"What about you, Dot-who-doesn’t-forget?",133,,,,Sub_Ch3,S3_L0132
-3,17,133,0,Player,,anim_idle,text,"망각 없는 너에게, 최초로 눈을 뜬\n순간은 어떠한 기억으로 남아 있어?","What was it like to open,\nyour eyes for the very first time?",134,,,,Sub_Ch3,S3_L0133
-3,17,134,0,Player,,anim_eyesblink,selection,공유해 줄 수 있어?|이야기해 줘. 궁금해.,Share it with me?|Tell me. I’m curious.,135|135,,,,Sub_Ch3,S3_L0134
-3,17,135,0,Dot,,anim_eyescorner,text,응. 내가 최초로 눈을 뜬 순간.,Alright. The very first time.,136,,,,Sub_Ch3,S3_L0135
-3,17,136,0,Dot,,anim_eyescorner,text,그건 처음 느껴 본 ‘생’의 감각이었어.,It was my first time experiencing life.,137,,,,Sub_Ch3,S3_L0136
-3,17,137,0,Dot,,anim_eyesside,text,처음 가져 보는 눈알과 씨름하느라 그를\n제대로 살피기까지는 오랜 시간이 걸렸는데.,"My first pair of eyeballs, too, so it took,\na while to get a good look at him.",138,,,,Sub_Ch3,S3_L0137
-3,17,138,0,Dot,,anim_idle,text,조금 적응이 되니 눈 앞에 고요하지만\n뜨겁게 일렁이는 형체가 보였어.,"But when I finally did, I saw a silent,\nbut flickering body of heat.",139,,,,Sub_Ch3,S3_L0138
-3,17,139,0,Dot,,anim_eyesblink,text,불을 닮은 소년이었지.,It was a boy with flaming red hair.,140,,,,Sub_Ch3,S3_L0139
-3,17,140,0,Player,,anim_idle,text,소년? 그도 꿈 공장의 직원이었던 거야?,A boy? Was he also a factory worker?,141,,,,Sub_Ch3,S3_L0140
-3,17,141,0,Dot,,anim_idle,text,"아니. 꿈 공장 위에도 달 사람들은\n살겠지만… 나와 함께 있던 이들은,","No. There must be moon people,\nabove the factory, but the ones I met",142,,,,Sub_Ch3,S3_L0141
-3,17,142,0,Dot,,anim_eyesdown,text,꿈 공장 아래에 살았어. 꿈 폐기물이\n버려지던 구덩이인 ‘크레이터’를 청소하며.,"lived under the factory. Cleaning the,\nCrater where dream filth is discarded.",143,,,,Sub_Ch3,S3_L0142
-3,17,143,0,Player,,anim_idle,text,"아, 그렇구나.","Oh, I see.",144,,,,Sub_Ch3,S3_L0143
-3,17,144,0,Player,,anim_idle,text,(크레이터 청소부라니. 꿈 공장 위와\n아래의 풍경이 사뭇 다른가 보네….),"(Crater Cleaners. I guess hierarchy,\nexists everywhere, even on the Moon.)",145,,,,Sub_Ch3,S3_L0144
-3,17,145,0,Dot,,anim_eyesblink,text,….,….,146,,,,Sub_Ch3,S3_L0145
-3,17,146,0,Player,,anim_idle,text,그러면 그 불 소년이 네가 눈을\n뜨는 것을 도와주었던 거야?,So did the fire boy help you open your eyes?,147,,,,Sub_Ch3,S3_L0146
-3,17,147,0,Dot,,anim_idle,text,"응, <nickname>, 직감적으로 알 수 있었어.","Yes, <nickname>, I just knew.",148,,,,Sub_Ch3,S3_L0147
-3,17,148,0,Dot,,anim_eyesblink,text,"손에 분필이 들려 있었던 것으로 보아,\n나에게 눈을 그려 주었던 건 그였을 거야.","From the chalk in his hands, I knew,\nhe was the one to drew me my eyes.",149,,,,Sub_Ch3,S3_L0148
-3,17,149,0,Dot,,anim_idle,text,너에게 눈을 그려 준?,Draw you your eyes?,150,,,,Sub_Ch3,S3_L0149
-3,17,150,0,Dot,,anim_move,text,"응, 우연히 바닥에 떨어진 오물 방울에…\n그가 분필로 눈을 그려 주었어!","Yes, I was nothing but a drop of filth,\non the floor… and he drew me my eyes!",151,,,,Sub_Ch3,S3_L0150
-3,17,151,0,Player,,anim_eyesblink,selection,(신기해한다.)|(공감한다.),(Be impressed.)|(Be moved.),152|153,,,,Sub_Ch3,S3_L0151
-3,17,152,0,Player,,anim_idle,text,"(인간의 탄생 과정과는 매우 다르지만,\n뭉치는 인간이 아니니까. 정말 신선하다.)","(Not at all the human way, but then,\nagain Dot isn’t human. Fascinating.)",154,,,,Sub_Ch3,S3_L0152
-3,17,153,0,Player,,anim_idle,text,(따뜻한 이야기야. 호기심 어린 손길로\n그린 눈 한 쌍이 뭉치를 ‘존재’하게 했구나.),"(How sweet. Curious hands drew,\na pair of eyes and brought Dot to life.)",154,,,,Sub_Ch3,S3_L0153
-3,17,154,0,Dot,,anim_eyesclosed_turn,text,그를 올려다보며 처음\n느꼈던 감각은 ‘따뜻하다.’,"The first thing I felt as I looked,\nup at him was… warm.",155,,,,Sub_Ch3,S3_L0154
-3,17,155,0,Dot,,anim_idle,text,"모닥불처럼은 아니지만, 타다\n남은 잿더미 속 불씨만큼은 따뜻했어.","Not like a flame, but like\nembers among a heap of ashes.",156,,,,Sub_Ch3,S3_L0155
-3,17,156,0,Dot,,anim_idle,text,"그는 나와 ‘눈’이 마주치자 아주 놀라며\n내 몸뚱이를 손바닥에 얹어 들어올렸고,","As our eyes met, he startled before\nplacing me in the palm of his hand,",157,,,,Sub_Ch3,S3_L0156
-3,17,157,0,Dot,,anim_eyescorner,text,그때 그의 손에선 들풀\n타는 향이 났던 것 같아.,And I smelled something smoky…\nlike wild grass burning.,158,,,,Sub_Ch3,S3_L0157
-3,17,158,0,Player,,anim_idle,selection,(고개를 끄덕인다.)|(머리를 쓰다듬어 준다.),(Nod)|(Pat Dot on the head),159|159,,,,Sub_Ch3,S3_L0158
-3,17,159,0,Dot,,anim_move,text,그 소년은 날 보며 “오…? 오! 오!!\n안녕?”이라는 말을 했고,"He looked at me and said,\n“Oh…? Oh! OH! Hi there.”",160,,,,Sub_Ch3,S3_L0159
-3,17,160,0,Dot,,anim_eyesblink,text,난 내 두 눈알로 그의 두\n눈알을 한참 마주보다가,"I stared into his eyes with my eyes,",161,,,,Sub_Ch3,S3_L0160
-3,17,161,0,Dot,,anim_idle,text,"그의 얼굴, 이 손바닥의 온기를 나는 아주,\n오래 기억하겠구나—직감했을 뿐이야.","And I just knew—that\nI would remember his face,",162,,,,Sub_Ch3,S3_L0161
-3,17,162,0,Dot,,anim_idle,text,그렇게 나의 첫 번째 기억은 끝이 나.,and the warmth of his palms\nfor a very long time.,163,,,,Sub_Ch3,S3_L0162
-3,17,163,0,Dot,,anim_eyesblink,text,"약 이삼 초의 시간이 지나고 난 후,",That’s how my first memory ends.,164,,,,Sub_Ch3,S3_L0163
-3,17,164,0,Dot,,anim_idle,text,"내 엉덩이가 그의 따가운 촛불 같은,\n손 위에서 조금씩 녹아 내리려 하던 때에.","A few seconds later,",165,,,,Sub_Ch3,S3_L0164
-3,17,165,0,Dot,,anim_idle,text,"내 주변으로 다른 이들이,\n몰려들어 조금은 소란해졌어.","Just as my bottom was about to melt\nfrom the candle-like heat of his palm,",166,,,,Sub_Ch3,S3_L0165
-3,17,166,0,Dot,,anim_eyesdown_turn,text,…….,people crowded around me\nand it became rather noisy.,167,,,,Sub_Ch3,S3_L0166
-3,17,167,0,Dot,,anim_eyesblink,text,그게 이 이야기의 끝이야.,That’s the end of this story.,,,,,Sub_Ch3,S3_L0167
-4,18,168,0,Dot,,anim_spiderweb1,text,<nickname>. 안녕.,<nickname>. Hello.,169,,,,Sub_Ch3,S3_L0168
-4,18,169,0,Dot,,anim_eyesblink,text,잠이 잘 오지 않네. 머리를\n기어오르는 사념에 휘감겨 있느라.,I can’t seem to sleep. I’m swathed in all\nthese thoughts crawling through my head.,170,,,,Sub_Ch3,S3_L0169
-4,18,170,0,Player,,anim_idle,text,… 이야기해 줄래? 대화하고\n나면 괜찮아질지 모르니까.,… Could we talk? I might\nfeel better afterwards.,171,,,,Sub_Ch3,S3_L0170
-4,18,171,0,Dot,,anim_idle,text,….,….,172,,,,Sub_Ch3,S3_L0171
-4,18,172,0,Dot,,anim_eyesside_turn,text,불결한 모든 것에는 다 검정이 있어.,All filth has black in it.,173,,,,Sub_Ch3,S3_L0172
-4,18,173,0,Dot,,anim_idle,text,"달에만 그럴까 싶었는데,",I thought it was only so on the Moon.,174,,,,Sub_Ch3,S3_L0173
-4,18,174,0,Dot,,anim_idle,text,아니었어. 지구에서도 같아.,But it wasn’t. It’s the same on Earth.,175,,,,Sub_Ch3,S3_L0174
-4,18,175,0,Player,,anim_eyesblink,text,그게 무슨 말이야?,What do you mean by that?,176,,,,Sub_Ch3,S3_L0175
-4,18,176,0,Dot,,anim_idle,text,한 줄기 빛조차 들지 않는 암흑은 가장 불결하고\n불쾌할지 모르는 존재들을 기꺼이 숨겨 줘.,The Dark willingly hides\nthe most filthy and vile of beings.,177,,,,Sub_Ch3,S3_L0176
-4,18,177,0,Dot,,anim_idle,text,그리고 그들의 상징이 돼.,And becomes a symbol for them.,178,,,,Sub_Ch3,S3_L0177
-4,18,178,0,Dot,,anim_eyesblink,text,"흑묘와 까마귀, 악당과 악마.\n전쟁, 장례, 죽음.","Black cats and ravens, villains\nand devils. War, funeral, death.",179,,,,Sub_Ch3,S3_L0178
-4,18,179,0,Dot,,anim_idle,text,"악한 것, 두려운 것,\n고통스러운 것, 불운한 것.","All that is evil, fearful, painful, cursed.",180,,,,Sub_Ch3,S3_L0179
-4,18,180,0,Dot,,anim_idle,text,전부 암흑의 이불 아래 도사려.,They all lurk under\nthe blanket of the Dark.,181,,,,Sub_Ch3,S3_L0180
-4,18,181,0,Dot,,anim_eyesclosed,text,"그러다 어느 날, 그 누구도 예상하지 못했던,\n아주 평화로웠던 어느 오후에","And one day, on a peaceful afternoon\nwhen everyone least expects it,",182,,,,Sub_Ch3,S3_L0181
-4,18,182,0,Dot,,anim_eyesclosed,text,"그들은 양지의 세계로 손 뻗어,","they will reach out to the sunlit world,",183,,,,Sub_Ch3,S3_L0182
-4,18,183,0,Dot,,anim_omg,text,아름다웠던 모든 것들을\n하나씩 오염시킬 거야.,and stain all that was\nbeautiful one by one.,184,,,,Sub_Ch3,S3_L0183
-4,18,184,0,Dot,,anim_omg,text,"느리게, 추잡하게, 그 누구도 모르게.","Slowly, sickeningly, and secretly.",185,,,,Sub_Ch3,S3_L0184
-4,18,185,0,Player,,anim_omg,selection,"진정해, 뭉치야.|그런 일은 일어나지 않아.","Calm down, Dot.|Nothing will happen.",186|186,,,,Sub_Ch3,S3_L0185
-4,18,186,0,Player,,anim_omg,text,"넌 안전할 거야. 너만의 작은 모퉁이도 있고,\n아늑한 거미줄 침대도 있는걸.","You’re safe. You have your own little corner,\nand a snug spiderweb bed.",187,,,,Sub_Ch3,S3_L0186
-4,18,187,0,Player,,anim_omg,text,무엇보다 내가 있잖아.,And you have me.,188,,,,Sub_Ch3,S3_L0187
-4,18,188,0,Player,,anim_omg,text,암흑은 너를 해칠 수 없을 거야.,The Dark can’t hurt you.,189,,,,Sub_Ch3,S3_L0188
-4,18,189,0,Dot,,anim_omg,text,"나의 어둑한 모퉁이도, 아늑한\n거미줄도, 심지어 너 역시","My dark corner, my snug\nweb, and not even you",190,,,,Sub_Ch3,S3_L0189
-4,18,190,0,Dot,,anim_omg,text,나를 지켜 줄 수 없어.,can’t keep me safe.,191,,,,Sub_Ch3,S3_L0190
-4,18,191,0,Dot,,anim_eyesblink,text,"아니, 아니, 아니야. 감정에 휩쓸려\n실언을 했어…. 미안해.","No, no, no. I became emotional\nand was careless…. I’m sorry.",192,,,,Sub_Ch3,S3_L0191
-4,18,192,0,Dot,,anim_eyescorner,text,네가 있다는 사실엔 감사하지.\n그러나… 난 그것들을 두려워하는 게 아니야.,I’m thankful that you’re here. But…\nit’s not that I am afraid of them.,193,,,,Sub_Ch3,S3_L0192
-4,18,193,0,Dot,,anim_eyesdown,text,난… 난 그것들을\n두려워하지 못하는걸.,I… I can’t be afraid of them.,194,,,,Sub_Ch3,S3_L0193
-4,18,194,0,Dot,,anim_eyesdown,text,…,…,195,,,,Sub_Ch3,S3_L0194
-4,18,195,0,Dot,,anim_eyesdown,text,날 구성하는…,It’s a part of me…,196,,,,Sub_Ch3,S3_L0195
-4,18,196,0,Dot,,anim_eyesdown,text,"그 질척한 오물의 깊고,\n징그러운 암흑을….","The deep, sickening darkness of\nthat squelching filth…",197,,,,Sub_Ch3,S3_L0196
-4,18,197,0,Dot,,anim_eyesdown,text,나는 그걸…,And I…,198,,,,Sub_Ch3,S3_L0197
-4,18,198,0,Dot,,anim_eyeswide,text,아… 아.,Oh… oh.,199,,,,Sub_Ch3,S3_L0198
-4,18,199,0,Dot,,anim_eyeswide,text,"나는 어쩌면 나를, 나를…",I look at myself and I…,200,,,,Sub_Ch3,S3_L0199
-4,18,200,0,Dot,,anim_eyeswide,text,…,…,201,,,,Sub_Ch3,S3_L0200
-4,18,201,0,Dot,,anim_eyeswide,text,불쾌해. 불결해.,Vile. Filthy.,202,,,,Sub_Ch3,S3_L0201
-4,18,202,0,Dot,,anim_eyeswide,text,이건 그런 검정이야.,That’s the kind of black this is.,203,,,,Sub_Ch3,S3_L0202
-4,18,203,0,Dot,,anim_eyeswide,text,이건… 그런….,That’s… this is…,,,,,Sub_Ch3,S3_L0203
+Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
+1,15,1,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 내 침대 있잖아.","<nickname>, about my bed.",2,,,,Sub_Ch3,S3_L0001
+1,15,2,1,Player,Sub,,text,네 침대?,Your bed?,3,,,,Sub_Ch3,S3_L0002
+1,15,3,1,Dot,Sub,,text,"응. 네 침대의 그림자 속에서, 희멀겋지만\n탄력 있는 호흡으로 존재하는 나의 침대.","My bed, woven with resilience and\nsilk in the shadow of your bed.",4,,,,Sub_Ch3,S3_L0003
+1,15,4,1,Dot,Default,anim_move,text,나의 끈적끈적하고 안락한 침대 말이야!,My snug and sticky bed!,5,,,,Sub_Ch3,S3_L0004
+1,15,5,1,Player,Sub,anim_eyesblink,text,(... 이게 무슨 뜻일까.),(... What does this mean.),6,,,,Sub_Ch3,S3_L0005
+1,15,6,1,Player,Sub,,text,"(... 아, 아아. 저 구석의 거미줄을\n뭉치가 침대로 쓰겠다 했었지.)","(... Oh, right. Dot’s using the cobweb\nin the corner as a bed)",7,,,,Sub_Ch3,S3_L0006
+1,15,7,1,Player,Sub,,text,"응, 뭉치야. 네 침대. 기억했어.","Right, Dot. Your bed.\nI do remember.",8,,,,Sub_Ch3,S3_L0007
+1,15,8,1,Dot,Sub,,text,오늘 그 침대를 만들어 준 예술가\n선생과 우연히 마주쳤어.,Today I stumbled upon the\nartist who crafted the bed.,9,,,,Sub_Ch3,S3_L0008
+1,15,9,1,Player,Sub,,selection,"(세상에. 안 돼. 설마, 제발...)|(동거인이 한 마리 더 있었구나!)","(Oh no. Please, no...)|(Wow. A third roommate!)",10|10,moon|sun,,,Sub_Ch3,S3_L0009
+1,15,10,1,Player,Sub,,text,예술가 선생? 혹시\n우리 집에서 만난 거야?,"The artist? You met them\nhere, in this room?",11,,,,Sub_Ch3,S3_L0010
+1,15,11,1,Dot,Sub,,text,"응, 응. 그는 저쪽 창틀 위에\n고고하게 앉아 있었지.","Yes, yes. She was perched elegantly\non the windowsill over there.",12,,,,Sub_Ch3,S3_L0011
+1,15,12,1,Player,Sub,,selection,(상상하지 말자. 상상하지 말자.)|(고고한 거미? 상상하니 귀엽잖아!),(Stop imagining it. Stop!)|(An elegant spider? How cute!),13|13,moon|sun,,,Sub_Ch3,S3_L0012
+1,15,13,1,Dot,Sub,anim_sub_light,text,"난 조금 가까이 다가가서... 실례를 범하지\n않았길 바라며, 그의 여덟 개나 되는 눈,","I inched closer... and, with the utmost\nregard, counted her eight eyes,",14,,,,Sub_Ch3,S3_L0013
+1,15,14,1,Dot,Sub,,text,그리고 경이롭게도 ‘역시’ 여덟 개나 되는\n다리를 하나하나 세어 보고 있었는데.,and eight magnificent\nlegs one by one.,15,,,,Sub_Ch3,S3_L0014
+1,15,15,1,Dot,Sub,anim_eyesblink,text,그때.,And then.,16,,,,Sub_Ch3,S3_L0015
+1,15,16,1,Player,Sub,,text,그때...?,And then...?,17,,,,Sub_Ch3,S3_L0016
+1,15,17,1,Dot,Sub,,text,"눈이 마주친 거야. 허공에서,\n조금은 어색하게,","Our eyes met. Midair,\na little awkwardly.",18,,,,Sub_Ch3,S3_L0017
+1,15,18,1,Dot,Sub,,text,그의 눈알 여덟 개와\n나의 눈알 두 개가 말이야.,Her eight eyes and my\ntwo eyes locked together.,19,,,,Sub_Ch3,S3_L0018
+1,15,19,1,Dot,Sub,,text,"가까이에서 본 그는 훨씬 새하얀데,\n멋진 줄무늬도 있고! 아주 복실복실했어.","She was much paler up close, and\nhad glorious stripes! Very fluffy.",20,,,,Sub_Ch3,S3_L0019
+1,15,20,1,Dot,Sub,,text,털을 만져보는 것도 허락해 주었지.\n근사한데 상냥하기까지.,She even let me touch her fur.\nA truly refined lady.,21,,,,Sub_Ch3,S3_L0020
+1,15,21,1,Dot,Sub,anim_eyesside_turn,text,"이건 너와 나 사이의 귓속말인데,\n어, 그가 아직 창가에 있어.","And just between you and me,\nshe’s still on the windowsill.",22,,,,Sub_Ch3,S3_L0021
+1,15,22,1,Player,Sub,anim_eyesblink,text,"어... 저기 있다고, 지금?","Right, so... So. She’s still\nthere, like, right now?",23,,,,Sub_Ch3,S3_L0022
+1,15,23,1,Player,Sub,,text,"거미가? 아니, 하하...\n예술가 선생이?","The spider? Wait, no... the artist?",24,,,,Sub_Ch3,S3_L0023
+1,15,24,1,Dot,Sub,,text,"응, 응, <nickname>. 털을 만지게 해 준 답례로\n나도 선물을 주고 싶은데,","Yes, that’s it, <nickname>. I’d like\nto give her a thank-you present.",25,,,,Sub_Ch3,S3_L0024
+1,15,25,1,Dot,Sub,anim_sub_spiderdot,text,"어때, 좀 닮았어? 그에\n대한 나의 존경을 담았어.",See the resemblance?\nIt’s a token of my respect.,26,,,,Sub_Ch3,S3_L0025
+1,15,26,1,Player,Sub,,selection,"오, 그럼. 그가 정말 기뻐할걸?|거미들의 취향은 잘 모르겠네.",Sure. I know she’ll be thrilled.|I’m not sure what spiders find appealing.,27|28,sun|moon,,,Sub_Ch3,S3_L0026
+1,15,27,1,Dot,Sub,anim_eyesblink,text,"한시름 놓을 수 있겠어. 고마워, <nickname>.","What a relief.\nThank you, <nickname>.",29,,,,Sub_Ch3,S3_L0027
+1,15,28,1,Dot,Sub,anim_eyesblink,text,"아무래도 그럴 수 있겠다.\n<nickname>, 너는 인간이니까.","I don’t blame you.\nYou are human, after all.",29,,,,Sub_Ch3,S3_L0028
+1,15,29,1,Dot,Default,anim_bounce,text,다녀올게. 행운을 빌어 줘!,"Well, I’ll be back.\nWish me luck!",,,anim_walking,,Sub_Ch3,S3_L0029
+2,16,30,1,Dot,Default,anim_bounce,text,"아, 얼마나 황홀할까, <nickname>!","Oh, how splendid it\nmust be, <nickname>",31,,,,Sub_Ch3,S3_L0030
+2,16,31,1,Dot,Default,anim_sub_light,text,푸르른 하늘을 가로지르며\n구름 너머로 내달리는 삶이란!,To soar across the blue sky and\nrace far beyond the clouds!,32,,,,Sub_Ch3,S3_L0031
+2,16,32,1,Dot,Default,,text,"날 묶어 두는 어떠한 족쇄도 없이,\n그저 나로서 자유롭게 영원한 아이가 되어","To be a child forever,\nfree and whole and unchained,",33,,,,Sub_Ch3,S3_L0032
+2,16,33,1,Dot,Default,,text,"매일 매일을 행복하게 모험하고\n
+탐구하고 탐닉하기만 하며 살 수 있다면!",and spend each day adventuring\nand exploring life itself!,34,,,,Sub_Ch3,S3_L0033
+2,16,34,1,Player,Sub,,selection,(어디에서 들어 본 이야기다.)|(이게 대체 무슨 소리일까.),(This sounds familiar.)|(Where is this coming from?),35|36,sun|moon,,,Sub_Ch3,S3_L0034
+2,16,35,1,Player,Sub,anim_eyesblink,text,"혹시 뭉치, 어떠한 책을 읽은 거야?","Have you been reading\nwhat I think you have, Dot?",37,,,,Sub_Ch3,S3_L0035
+2,16,36,1,Player,Sub,anim_eyesblink,text,"혹시 뭉치, 지금 어떤 이야기를 하는 거야?","Do you mind me asking\nwhat this is about, Dot?",37,,,,Sub_Ch3,S3_L0036
+2,16,37,1,Dot,Sub,anim_eyesblink,text,<피터 팬>이라는 책을 읽게 되었어.,I’ve been reading\n<Peter Pan>.,38,,,,Sub_Ch3,S3_L0037
+2,16,38,1,Dot,Default,anim_move,text,"순수하고 쾌활한, 때로는 매정한 피터처럼\n난 그 어떤 것도 짊어지지 않으려 해!","And like him, pure and merry and at times\ncruel, I won’t be burdened by anything!",39,,,,Sub_Ch3,S3_L0038
+2,16,39,1,Dot,Sub,anim_eyesblink,text,"그래서 그 어떤 것도 잃을 수 없는,\n영원한 아이가 될 거야.","And so forever a child I will be,\nwith nothing to lose.",40,,,,Sub_Ch3,S3_L0039
+2,16,40,1,Dot,Sub,,text,"그곳엔 상실이 없을 거야, 압박도, 불안도,\n고통스러운 고민들도 없을 거야!","No more loss, pressure, anxiety,\nor agonizing troubles!",41,,,,Sub_Ch3,S3_L0040
+2,16,41,1,Player,Sub,,selection,(눈감고 뭉치를 응원한다.)|(뭉치에게 현실을 이야기해 준다.),(Cheer Dot on.)|(Speak of reality.),42|52,sun|moon,,,Sub_Ch3,S3_L0041
+2,16,42,1,Player,Sub,,text,영원히 아이 같은 뭉치.,"Dot, the eternal child.",43,,,,Sub_Ch3,S3_L0042
+2,16,43,1,Player,Sub,,text,넌 인간이 아니니까 가능할지도 모르겠다! \n응원하고 싶어.,You’re not human so it might be possible!\nI’d like to cheer you on.,44,,,,Sub_Ch3,S3_L0043
+2,16,44,1,Player,Sub,,text,"하지만 계속 지금의 천진한 뭉치로 남아\n있다면, 꿈 또한 될 수 없는 것 아니야?","But if you remain innocent forever,\nwon’t you have to give up on being a dream?",45,,,,Sub_Ch3,S3_L0044
+2,16,45,1,Player,Sub,,text,...,...,46,,,,Sub_Ch3,S3_L0045
+2,16,46,1,Dot,Sub,anim_eyesdown_turn,text,어...? 어... 어...... 그건 정말이지\n생각도 못한 불상사인데......,Oh...? Oh... well...... I hadn’t\nquite thought of that......,47,,,,Sub_Ch3,S3_L0046
+2,16,47,1,Player,Sub,,selection,(나도 어릴 땐 자라는 게 무서웠지.)|(나는 빨리 어른이 되고 싶었었는데...),(I was scared to grow up once too.)|(I couldn’t wait to grow up...),48|50,moon|sun,,,Sub_Ch3,S3_L0047
+2,16,48,1,Player,Sub,anim_eyesblink,text,나도 어릴 땐 자라나고 싶지 않았어.\n너의 마음을 알아.,I was scared to grow up once too.\nI know how you feel.,49,,,,Sub_Ch3,S3_L0048
+2,16,49,1,Player,Sub,,text,"하지만 뭉치야, 자라나는 건\n생각만큼 두려워할 일이 아니야!","But Dot, growing up isn’t\nsomething to be afraid of!",55,,,,Sub_Ch3,S3_L0049
+2,16,50,1,Player,Sub,anim_eyesblink,text,"뭉치, 그것 알아? 나는 빨리 어른이\n되고 싶어 하던 아이였어.","You know what, Dot? I couldn’t wait\nto grow up when I was young.",51,,,,Sub_Ch3,S3_L0050
+2,16,51,1,Player,Sub,,text,자라나는 건 생각보다 신나는 일이었거든!,Growing up was so much\nmore exciting than I’d thought!,55,,,,Sub_Ch3,S3_L0051
+2,16,52,1,Player,Sub,anim_eyesblink,text,"그런데, 있지... 책 속이 아닌 실제의\n세계에서는 실현되기 어려운 일이야.",Maybe in books... but it’s hard\nto do so in the real world.,53,,,,Sub_Ch3,S3_L0052
+2,16,53,1,Player,Sub,,text,"모든 아이는 자라나기 마련이고,",All children grow.,54,,,,Sub_Ch3,S3_L0053
+2,16,54,1,Player,Sub,,text,뭉치 또한 이루고 싶은 꿈이 있으니까\n천천히 시간이 흐르며 자라나겠지.,"And so will you, because you have\nsomething you want to achieve.",55,,,,Sub_Ch3,S3_L0054
+2,16,55,1,Dot,Sub,anim_eyesblink,text,너 역시 ‘자라난’ 거야?,Did you ‘grow’ too?,56,,,,Sub_Ch3,S3_L0055
+2,16,56,1,Player,Sub,,text,"그럼, 나도 더 이상 어린 아이가 아니지.","Of course, I’m not\na child anymore.",57,,,,Sub_Ch3,S3_L0056
+2,16,57,1,Player,Sub,,text,나도 처음에는 아쉬웠어. 자라나기 위해\n하늘을 뛰노는 자유를 잃어야 하니까.,I wasn’t happy at first either. I was\nno longer free to romp about the sky.,58,,,,Sub_Ch3,S3_L0057
+2,16,58,1,Player,Sub,,text,하지만 뛰노는 자유를 잃은 대신\n나에겐 또 다른 힘이 생겼어.,But in losing that freedom I gained\na different kind of power.,59,,,,Sub_Ch3,S3_L0058
+2,16,59,1,Dot,Sub,,text,어떤 힘?,The power to do what?,60,,,,Sub_Ch3,S3_L0059
+2,16,60,1,Player,Sub,anim_eyesblink,selection,스스로 결정을 내릴 수 있는 힘.|자신을 정의해 나갈 수 있는 힘.,To decide for myself.|To define myself.,61|85,moon|sun,,,Sub_Ch3,S3_L0060
+2,16,61,1,Player,Sub,,text,누군가에게 의지할 필요 없이\n스스로 결정을 내릴 수 있는 힘.,The power to make decisions for myself\n without having to rely on others.,62,,,,Sub_Ch3,S3_L0061
+2,16,62,1,Player,Sub,,text,그 힘은 곧 책임감과 또 다른\n모양의 자유를 동시에 쥐여 줬어.,"And that power gave me responsibility,\nas well as a different form of freedom.",63,,,,Sub_Ch3,S3_L0062
+2,16,63,1,Player,Sub,,text,책임 없이 마냥 뛰놀 수 있던\n아이의 자유와는 달라.,Not like that of a naive child\nwith no responsibilities.,64,,,,Sub_Ch3,S3_L0063
+2,16,64,1,Player,Sub,,text,하나를 얻기 위해 당연히\n하나를 잃어야 하는 세상 속에서,In a world where to gain something\nmeans to lose something,65,,,,Sub_Ch3,S3_L0064
+2,16,65,1,Player,Sub,,text,"무엇을 얻고 잃을지를 나의 의지대로 선택하고,\n그 결과를 책임지고자 하는 자유지.","I’m free to decide what I’ll lose and gain,\nand free to face the consequences.",66,,,,Sub_Ch3,S3_L0065
+2,16,66,1,Dot,Sub,anim_eyesside_turn,text,인간들에게는 그런 힘이\n생기는구나. 나에게도 그럴까?,I didn’t know humans gained that kind of\npower. Will I have it too someday?,67,,,,Sub_Ch3,S3_L0066
+2,16,67,1,Dot,Sub,anim_eyesblink,text,꿈이 된 후에?,After I become a dream?,68,,,,Sub_Ch3,S3_L0067
+2,16,68,1,Player,Sub,,selection,글쎄...|그럼.,Well...|Of course.,69|73,passive|active,,,Sub_Ch3,S3_L0068
+2,16,69,1,Player,Sub,,text,"글쎄, 미래를 확신할 수는 없겠지.","Well, we can’t say\nfor certain just yet.",70,,,,Sub_Ch3,S3_L0069
+2,16,70,1,Player,Sub,,text,하지만 어떠한 강렬한 꿈들은\n나의 하루를 종일 뒤흔들기도 했어.,But I remember dreams that\nrocked my day from start to finish.,71,,,,Sub_Ch3,S3_L0070
+2,16,71,1,Player,Sub,,text,아주 잔잔한 물결처럼\n아침을 울리던 꿈들도 있었지.,And others that echoed in my\nmornings like gentle ripples.,72,,,,Sub_Ch3,S3_L0071
+2,16,72,1,Player,Sub,,text,"뭉치가 울림을 주는 꿈이 된다면,\n힘이 생겼다고 말할 수 있을 거야.","If you become a dream that echoes within,\nthat would mean you have that strength.",78,,,,Sub_Ch3,S3_L0072
+2,16,73,1,Player,Sub,,text,"그럼. 한 사람의 아침을 좌우할 수 있는 힘,",Of course. The strength to determine\n someone’s morning.,74,,,,Sub_Ch3,S3_L0073
+2,16,74,1,Player,Sub,,text,한 사람의 무의식에 하나의 점을\n남길 수 있는 힘이 주어지지 않을까?,Wouldn’t you have the strength to leave a\n single blot on someone’s subconscious?,75,,,,Sub_Ch3,S3_L0074
+2,16,75,1,Dot,Sub,anim_move,text,...!,...!,76,,,,Sub_Ch3,S3_L0075
+2,16,76,1,Dot,Default,anim_move,text,하나의 점! 동그란 나를 닮은?,A single blot! Round like me?,77,,,,Sub_Ch3,S3_L0076
+2,16,77,1,Player,Sub,anim_eyesblink,selection,"응, 이왕이면 끈적거리는 점.|응, 이왕이면 눈썹도 찍힌 점.","Yes, and a sticky one to boot.|Yes, one with eyebrows to boot.",78|78,passive|active,,,Sub_Ch3,S3_L0077
+2,16,78,1,Player,Sub,anim_eyesblink,text,그리고 지금의 너에게도 힘이 있는 걸.,And you’re strong in your\nown way right now too.,79,,,,Sub_Ch3,S3_L0078
+2,16,79,1,Dot,Sub,,text,아직은 보이지 않지만...,I don’t see it just yet...,80,,,,Sub_Ch3,S3_L0079
+2,16,80,1,Dot,Sub,,text,정말 <nickname>의 말처럼\n어딘가에 숨어 있을지 몰라.,"But it might be hiding\nsomewhere, like you said.",81,,,,Sub_Ch3,S3_L0080
+2,16,81,1,Dot,Default,anim_eyesdown_turn,text,내 작고 검은 몸 사이에 꽂혀 있다거나...,Pinned somewhere in my small black body...,82,,,,Sub_Ch3,S3_L0081
+2,16,82,1,Dot,Default,anim_eyescorner,text,으음. 으으으음...,Hm. Hmmm...,83,,,,Sub_Ch3,S3_L0082
+2,16,83,1,Dot,Default,anim_eyesside,text,그때의 나는 어떻게 변해 있을까?,I wonder how different I’ll be?,84,,,,Sub_Ch3,S3_L0083
+2,16,84,1,Dot,Default,,text,"어떤 자유를 누리며,\n어떤 책임을 지고 있을까?","What freedoms will I have, and\nwhat responsibilities will I bear?",110,,,,Sub_Ch3,S3_L0084
+2,16,85,1,Player,Sub,anim_eyesblink,text,자신을 무한히 정의해 나갈 수 있는 힘.,The power to define myself infinitely.,86,,,,Sub_Ch3,S3_L0085
+2,16,86,1,Player,Sub,,text,어른이 되었다는 게 성장이\n끝났다는 뜻은 아니야.,Being an adult doesn’t mean\nyou’re done growing up.,87,,,,Sub_Ch3,S3_L0086
+2,16,87,1,Player,Sub,,text,"자신과 긴밀하게 소통하며\n진정으로 원하는 것을 찾아가는 기회,","You’ll be gifted with the opportunity\nto communicate with yourself,",88,,,,Sub_Ch3,S3_L0087
+2,16,88,1,Player,Sub,,text,자유롭게 나를 정의해 나갈 수 있는\n기회를 매일 매일 선물받게 되거든.,"discover what you truly want,\nand define yourself freely, every day.",89,,,,Sub_Ch3,S3_L0088
+2,16,89,1,Player,Sub,,text,성장의 새로운 챕터가\n시작되었다고 볼 수도 있을 거야!,It will be like a brand new\nchapter of your growth!,90,,,,Sub_Ch3,S3_L0089
+2,16,90,1,Player,Sub,,text,"무거운 책임감이 부여되기도 하지만,\n그만큼 재미있고 벅차오르는 일이야.","It requires responsibility, but more than\nworth it. It’s that fun and exciting.",91,,,,Sub_Ch3,S3_L0090
+2,16,91,1,Dot,Sub,,text,인간들에게는 그런 힘이 생기는구나.\n나에게도 그럴까?,I didn’t know humans gained that kind of\nstrength. Will I have it too someday?,92,,,,Sub_Ch3,S3_L0091
+2,16,92,1,Dot,Sub,,text,꿈이 된 후에?,After I become a dream?,93,,,,Sub_Ch3,S3_L0092
+2,16,93,1,Player,Sub,,selection,글쎄...|그럼.,Well...|Of course.,94|98,passive|active,,,Sub_Ch3,S3_L0093
+2,16,94,1,Player,Sub,,text,"글쎄, 미래를 확신할 수는 없겠지.","Well, we can’t say for certain just yet.",95,,,,Sub_Ch3,S3_L0094
+2,16,95,1,Player,Sub,,text,하지만 어떠한 강렬한 꿈들은\n나의 하루를 종일 뒤흔들기도 했어.,But some striking dreams would\nrock my day from start to finish.,96,,,,Sub_Ch3,S3_L0095
+2,16,96,1,Player,Sub,,text,아주 잔잔한 물결처럼\n아침을 울리던 꿈들도 있었지.,And others would echo my\nmornings like gentle ripples.,97,,,,Sub_Ch3,S3_L0096
+2,16,97,1,Player,Sub,,text,"뭉치가 울림을 주는 꿈이 된다면,\n힘이 생겼다고 말할 수 있을 거야.","If you become a dream that moves people,\nthat will mean you have that strength.",103,,,,Sub_Ch3,S3_L0097
+2,16,98,1,Player,Sub,,text,"그럼. 한 사람의 아침을 좌우할 수 있는 힘,",Of course. The power to determine\nsomeone’s morning.,99,,,,Sub_Ch3,S3_L0098
+2,16,99,1,Player,Sub,,text,한 사람의 무의식에 하나의 점을\n남길 수 있는 힘이 주어지지 않을까?,Wouldn’t you have the power to leave a\nsingle blot on someone’s subconscious?,100,,,,Sub_Ch3,S3_L0099
+2,16,100,1,Dot,Default,anim_move,text,...!,...!,101,,,,Sub_Ch3,S3_L0100
+2,16,101,1,Dot,Default,anim_move,text,하나의 점! 동그란 나를 닮은?,A single blot! Round like me?,102,,,,Sub_Ch3,S3_L0101
+2,16,102,1,Player,Sub,anim_eyesblink,selection,"응, 이왕이면 끈적거리는 점.|응, 이왕이면 눈썹도 찍힌 점.","Yes, and a sticky one to boot.|Yes, one with eyebrows to boot.",103|103,moon|sun,,,Sub_Ch3,S3_L0102
+2,16,103,1,Player,Sub,,text,그리고 지금의 너에게도 힘이 있는 걸.,And you have power just now too.,104,,,,Sub_Ch3,S3_L0103
+2,16,104,1,Dot,Sub,,text,아직은 보이지 않지만...,I don’t see it just yet...,105,,,,Sub_Ch3,S3_L0104
+2,16,105,1,Dot,Sub,,text,정말 <nickname>의 말처럼\n어딘가에 숨어 있을지 몰라.,"But it might be hiding\nsomewhere, like you said.",106,,,,Sub_Ch3,S3_L0105
+2,16,106,1,Dot,Default,anim_eyesdown_turn,text,내 작고 검은 몸 사이에 꽂혀 있다거나...,Pinned somewhere in\nmy small black body...,107,,,,Sub_Ch3,S3_L0106
+2,16,107,1,Dot,Default,anim_eyescorner,text,으음. 으으으음...,Hm. Hmmm...,108,,,,Sub_Ch3,S3_L0107
+2,16,108,1,Dot,Default,anim_eyesside,text,그때의 나는 어떻게 변해 있을까.,I wonder how different I’ll be?,109,,,,Sub_Ch3,S3_L0108
+2,16,109,1,Dot,Default,,text,"어떤 자유를 누리며, 어떤 이름으로\n스스로를 부르고 있을까?","What freedoms will I have, and\nwhat responsibilities will I bear?",110,,,,Sub_Ch3,S3_L0109
+2,16,110,1,Player,Sub,anim_eyesblink,text,"성장에 성장에 성장을, 변화에 변화를\n거듭하면서도 내가 꾹 쥐고 있는 게 있다면","Constant growth, constant change.\nBut if there’s something I hold tight to,",111,,,,Sub_Ch3,S3_L0110
+2,16,111,1,Player,Sub,,text,그걸 바라보며 나에게 뭐가 제일\n소중한 것인지를 알아갈 수 있을 거야.,it will help me realize\nwhat matters most to me.,112,,,,Sub_Ch3,S3_L0111
+2,16,112,1,Player,Sub,,selection,성장을 가장 소중히 여기게 될지도 몰라.|그것을 알게 되는 것이 바로 성장일지 몰라.,And what matters most to me might be growth.|And maybe that’s what growth is.,113|113,sun|moon,,,Sub_Ch3,S3_L0112
+2,16,113,1,Dot,Sub,,text,"응, 맞아! 성장한다는 게 생각보다\n두려운 게 아닐지도 모르겠어.",You’re right! Growing up might\nnot be so scary after all.,114,,,,Sub_Ch3,S3_L0113
+2,16,114,1,Dot,Default,anim_eyescorner_turn,text,분명 불안해지지만...,I’m still anxious...,115,,,,Sub_Ch3,S3_L0114
+2,16,115,1,Dot,Sub,anim_move,text,지금의 떨림 안엔 설렘도 함께\n돌아다니는 것 같거든.,"but it’s a good kind of anxious,\nlike trembling butterflies.",,,anim_writing,,Sub_Ch3,S3_L0115
+3,17,116,0,Dot,Sub,anim_eyesblink,text,"<nickname>, 처음으로 눈을 떴던 순간,\n넌 어떤 기분이었어?","<nickname>. What was it like,\nthe first time you opened your eyes?",117,,,,Sub_Ch3,S3_L0116
+3,17,117,0,Player,Sub,,text,처음으로 눈을 떴던 순간?,The first time I opened my eyes?,118,,,,Sub_Ch3,S3_L0117
+3,17,118,0,Player,Sub,,selection,잘 이해가 안 돼.|그게 무슨 뜻이야?,I don’t understand.|What do you mean?,119|119,passive|active,,,Sub_Ch3,S3_L0118
+3,17,119,0,Dot,Sub,,text,그러니까... 네가 세상에 태어나\n처음으로 두 눈을 뜨게 되었던 순간 말이야.,"When you came into this world, and\nopened your eyes for the first time.",120,,,,Sub_Ch3,S3_L0119
+3,17,120,0,Dot,Sub,,text,그 순간은 어땠어? 너에게\n어떤 기억으로 남아 있어?,"Looking back on that moment,\nwhat do you see?",121,,,,Sub_Ch3,S3_L0120
+3,17,121,0,Player,Sub,,selection,(솔직하게 대답한다.)|(장난스럽게 대답한다.),(Be honest.)|(Be playful.),122|123,passive|active,,,Sub_Ch3,S3_L0121
+3,17,122,0,Player,Sub,,text,"음, 고백하지만 처음 눈을 떴던\n순간은 전혀 기억나지 않아.","To be honest, I can’t remember\nwhat it was like at all.",124,,,,Sub_Ch3,S3_L0122
+3,17,123,0,Player,Sub,,text,너무 오래 지난 일이라 살아오던\n길에 실수로 기억을 잃어버렸어!,"Foggy nothingness. Seems,\nI’ve misplaced that certain memory.",124,,,,Sub_Ch3,S3_L0123
+3,17,124,0,Dot,Sub,,text,첫 숨을 틔워 내며 세계를\n온몸으로 감각한 순간인데도?,"But it was the first time the,\nworld flooded your senses!",125,,,,Sub_Ch3,S3_L0124
+3,17,125,0,Dot,Sub,,text,그다지도 강렬하고 아름다운 찰나에\n 대한 기억이 없단 말이야? 어째서?,"Such a powerful moment,,\nand you remember nothing? How?",126,,,,Sub_Ch3,S3_L0125
+3,17,126,0,Player,Sub,,text,인간들에게는 주기적으로 ‘망각’이라는 것이 찾아와.,Humans periodically ‘forget’ things.,127,,,,Sub_Ch3,S3_L0126
+3,17,127,0,Player,Default,,text,"기억을 잃는다는 뜻인데,","As in, we lose our memories.",128,,,,Sub_Ch3,S3_L0127
+3,17,128,0,Player,Sub,,text,"그래서 아주 오랜 기억들은 대개 휘발되거나,\n어렴풋한 잔상으로나마 존재하게 돼.",So old memories either evaporate\nor linger as vague images.,129,,,,Sub_Ch3,S3_L0128
+3,17,129,0,Dot,Sub,anim_eyesup_turn,text,망각. 망각... 생소하지만 이해하고 싶어.,Forgetting... an unfamiliar concept\nbut one I’d like to comprehend.,130,,,,Sub_Ch3,S3_L0129
+3,17,130,0,Dot,Sub,anim_eyesblink,text,시간이 필요해. 나중에 다시 기억에\n대한 이야기를 나눌 수 있었으면 좋겠다.,I need time to absorb this.\nI hope we’ll talk about ‘forgetting’ later.,131,,,,Sub_Ch3,S3_L0130
+3,17,131,0,Player,Sub,,text,음...,Well...,132,,,,Sub_Ch3,S3_L0131
+3,17,132,0,Player,Sub,,text,뭉치 너는?,"What about you, Dot?",133,,,,Sub_Ch3,S3_L0132
+3,17,133,0,Player,Sub,,text,"망각 없는 너에게, 최초로 눈을 뜬\n순간은 어떠한 기억으로 남아 있어?",What was it like to open\nyour eyes for the very first time?,134,,,,Sub_Ch3,S3_L0133
+3,17,134,0,Player,Sub,,selection,공유해 줄 수 있어?|이야기해 줘. 궁금해.,Share it with me?|Tell me. I’m curious.,135|135,active|passive,,,Sub_Ch3,S3_L0134
+3,17,135,0,Dot,Default,anim_eyescorner_turn,text,응. 내가 최초로 눈을 뜬 순간.,Alright. The very first time.,136,,,,Sub_Ch3,S3_L0135
+3,17,136,0,Dot,Default,anim_eyescorner,text,그건 처음 느껴 본 ‘생’의 감각이었어.,It was my first time experiencing life.,137,,,,Sub_Ch3,S3_L0136
+3,17,137,0,Dot,Default,anim_eyesside,text,처음 가져 보는 눈알과 씨름하느라 그를\n제대로 살피기까지는 오랜 시간이 걸렸는데.,"My first pair of eyeballs, too, so it took\na while to get a good look at him.",138,,,,Sub_Ch3,S3_L0137
+3,17,138,0,Dot,Sub,anim_eyesblink,text,조금 적응이 되니 눈 앞에 고요하지만\n뜨겁게 일렁이는 형체가 보였어.,"But when I finally did, I saw a silent\nbut flickering body of heat.",139,,,,Sub_Ch3,S3_L0138
+3,17,139,0,Dot,Sub,anim_move,text,불을 닮은 소년이었지.,It was a boy with flaming red hair.,140,,,,Sub_Ch3,S3_L0139
+3,17,140,0,Player,Sub,anim_eyesblink,text,소년? 그도 꿈 공장의 직원이었던 거야?,A boy? Was he also a factory worker?,141,,,,Sub_Ch3,S3_L0140
+3,17,141,0,Dot,Sub,,text,"아니. 꿈 공장 위에도 달 사람들은\n살겠지만... 나와 함께 있던 이들은,","No. There must be moon people\nabove the factory, but the ones I met",142,,,,Sub_Ch3,S3_L0141
+3,17,142,0,Dot,Default,anim_eyesdown_turn,text,꿈 공장 아래에 살았어. 꿈 폐기물이\n버려지던 구덩이인 ‘크레이터’를 청소하며.,lived under the factory. Cleaning the\nCrater where dream filth is discarded.,143,,,,Sub_Ch3,S3_L0142
+3,17,143,0,Player,Sub,anim_eyesdown,text,"아, 그렇구나.","Oh, I see.",144,,,,Sub_Ch3,S3_L0143
+3,17,144,0,Player,Sub,,text,(크레이터 청소부라니. 꿈 공장 위와\n아래의 풍경이 사뭇 다른가 보네...),"(Crater Cleaners. I guess hierarchy\nexists everywhere, even on the Moon.)",145,,,,Sub_Ch3,S3_L0144
+3,17,145,0,Dot,Sub,,text,...,...,146,,,,Sub_Ch3,S3_L0145
+3,17,146,0,Player,Sub,anim_eyesblink,text,그러면 그 불 소년이 네가 눈을\n뜨는 것을 도와주었던 거야?,So did the fire boy help you open your eyes?,147,,,,Sub_Ch3,S3_L0146
+3,17,147,0,Dot,Sub,,text,"응, <nickname>, 직감적으로 알 수 있었어.","Yes, <nickname>, I just knew.",148,,,,Sub_Ch3,S3_L0147
+3,17,148,0,Dot,Sub,,text,"손에 분필이 들려 있었던 것으로 보아,\n나에게 눈을 그려 주었던 건 그였을 거야.","From the chalk in his hands, I knew\nhe was the one to drew me my eyes.",149,,,,Sub_Ch3,S3_L0148
+3,17,149,0,Dot,Sub,,text,너에게 눈을 그려 준?,Draw you your eyes?,150,,,,Sub_Ch3,S3_L0149
+3,17,150,0,Dot,Default,anim_move,text,"응, 우연히 바닥에 떨어진 오물 방울에...\n그가 분필로 눈을 그려 주었어!","Yes, I was nothing but a drop of filth\non the floor... and he drew me my eyes!",151,,,,Sub_Ch3,S3_L0150
+3,17,151,0,Player,Sub,anim_eyesblink,selection,(신기해한다.)|(공감한다.),(Be impressed.)|(Be moved.),152|153,moon|sun,,,Sub_Ch3,S3_L0151
+3,17,152,0,Player,Sub,,text,"(인간의 탄생 과정과는 매우 다르지만,\n뭉치는 인간이 아니니까. 정말 신선하다.)","(Not at all the human way, but then\nagain Dot isn’t human. Fascinating.)",154,,,,Sub_Ch3,S3_L0152
+3,17,153,0,Player,Sub,,text,(따뜻한 이야기야. 호기심 어린 손길로\n그린 눈 한 쌍이 뭉치를 ’존재’하게 했구나.),(How sweet. Curious hands drew\na pair of eyes and brought Dot to life.),154,,,,Sub_Ch3,S3_L0153
+3,17,154,0,Dot,Sub,anim_eyesclosed_turn,text,그를 올려다보며 처음\n느꼈던 감각은... ’따뜻하다.’,The first thing I felt as I looked\nup at him was... warm.,155,,,,Sub_Ch3,S3_L0154
+3,17,155,0,Dot,Sub,anim_eyesblink,text,"모닥불처럼은 아니지만, 타다\n남은 잿더미 속 불씨만큼은 따뜻했어.","Not like a flame, but like\nembers among a heap of ashes.",156,,,,Sub_Ch3,S3_L0155
+3,17,156,0,Dot,Sub,,text,"그는 나와 ’눈’이 마주치자 아주 놀라며\n내 몸뚱이를 손바닥에 얹어 들어올렸고,","As our eyes met, he startled before\nplacing me in the palm of his hand,",157,,,,Sub_Ch3,S3_L0156
+3,17,157,0,Dot,Default,anim_eyescorner_turn,text,그때 그의 손에선 들풀\n타는 향이 났던 것 같아.,And I smelled something smoky...\nlike wild grass burning.,158,,,,Sub_Ch3,S3_L0157
+3,17,158,0,Player,Sub,anim_eyesblink,selection,(고개를 끄덕인다.)|(머리를 쓰다듬어 준다.),(Nod)|(Pat Dot on the head),159|159,passive|active,,,Sub_Ch3,S3_L0158
+3,17,159,0,Dot,Default,,text,그 소년은 날 보며 “오...? 오! 오!!\n안녕?”이라는 말을 했고,"He looked at me and said,\n“Oh...? Oh! OH! Hi there.”",160,,,,Sub_Ch3,S3_L0159
+3,17,160,0,Dot,Sub,,text,난 내 두 눈알로 그의 두\n눈알을 한참 마주보다가,"I stared into his eyes with my eyes,",161,,,,Sub_Ch3,S3_L0160
+3,17,161,0,Dot,Sub,,text,"그의 얼굴, 이 손바닥의 온기를 나는 아주,\n오래 기억하겠구나—직감했을 뿐이야.","And I just knew—that\nI would remember his face,",162,,,,Sub_Ch3,S3_L0161
+3,17,162,0,Dot,Sub,,text,그렇게 나의 첫 번째 기억은 끝이 나.,and the warmth of his palms\nfor a very long time.,163,,,,Sub_Ch3,S3_L0162
+3,17,163,0,Dot,Sub,,text,"약 이삼 초의 시간이 지나고 난 후,",That’s how my first memory ends.,164,,,,Sub_Ch3,S3_L0163
+3,17,164,0,Dot,Sub,,text,"내 엉덩이가 그의 따가운 촛불 같은,\n손 위에서 조금씩 녹아 내리려 하던 때에.","A few seconds later,",165,,,,Sub_Ch3,S3_L0164
+3,17,165,0,Dot,Sub,,text,"내 주변으로 다른 이들이,\n몰려들어 조금은 소란해졌어.","Just as my bottom was about to melt\nfrom the candle-like heat of his palm,",166,,,,Sub_Ch3,S3_L0165
+3,17,166,0,Dot,Sub,anim_eyesside_turn,text,......,people crowded around me\nand it became rather noisy.,167,,,,Sub_Ch3,S3_L0166
+3,17,167,0,Dot,Sub,anim_eyesblink,text,그게 이 이야기의 끝이야.,... That’s all there is to this story.,,,,,Sub_Ch3,S3_L0167
+4,18,168,0,Dot,Default,anim_omg,text,<nickname>. 안녕.,<nickname>. Hello.,169,,,,Sub_Ch3,S3_L0168
+4,18,169,0,Dot,,,text,잠이 잘 오지 않네. 머리를\n기어오르는 사념에 휘감겨 있느라.,I can’t seem to sleep. I’m swathed in all\nthese thoughts crawling through my head.,170,,,,Sub_Ch3,S3_L0169
+4,18,170,0,Player,Sub,anim_eyesblink,text,... 이야기해 줄래? 대화하고\n나면 괜찮아질지 모르니까.,... How about we talk? You might\nfeel better afterwards.,171,,,,Sub_Ch3,S3_L0170
+4,18,171,0,Dot,,,text,...,...,172,,,,Sub_Ch3,S3_L0171
+4,18,172,0,Dot,Sub,anim_eyesside_turn,text,불결한 모든 것에는 다 검정이 있어.,All filth has black in it.,173,,,,Sub_Ch3,S3_L0172
+4,18,173,0,Dot,Sub,anim_eyesblink,text,"달에만 그럴까 싶었는데,",I thought it was only so on the Moon.,174,,,,Sub_Ch3,S3_L0173
+4,18,174,0,Dot,Sub,,text,아니었어. 지구에서도 같아.,But it wasn’t. It’s the same on Earth.,175,,,,Sub_Ch3,S3_L0174
+4,18,175,0,Player,Sub,,text,그게 무슨 말이야?,What do you mean by that?,176,,,,Sub_Ch3,S3_L0175
+4,18,176,0,Dot,Sub,,text,한 줄기 빛조차 들지 않는 암흑은 가장 불결하고\n불쾌할지 모르는 존재들을 기꺼이 숨겨 줘.,The Dark willingly hides\nthe most filthy and vile of beings.,177,,,,Sub_Ch3,S3_L0176
+4,18,177,0,Dot,Sub,,text,그리고 그들의 상징이 돼.,And becomes a symbol for them.,178,,,,Sub_Ch3,S3_L0177
+4,18,178,0,Dot,Sub,,text,"흑묘와 까마귀, 악당과 악마.\n전쟁, 장례, 죽음.","Black cats and ravens, villains\nand devils. War, funeral, death.",179,,,,Sub_Ch3,S3_L0178
+4,18,179,0,Dot,Sub,,text,"악한 것, 두려운 것,\n고통스러운 것, 불운한 것.","All that is evil, fearful, painful, cursed.",180,,,,Sub_Ch3,S3_L0179
+4,18,180,0,Dot,Sub,,text,전부 암흑의 이불 아래 도사려.,They all lurk under\nthe blanket of the Dark.,181,,,,Sub_Ch3,S3_L0180
+4,18,181,0,Dot,Default,anim_eyesclosed_turn,text,"그러다 어느 날, 그 누구도 예상하지 못했던,\n아주 평화로웠던 어느 오후에","And one day, on a peaceful afternoon\nwhen everyone least expects it,",182,,,,Sub_Ch3,S3_L0181
+4,18,182,0,Dot,Default,,text,"그들은 양지의 세계로 손 뻗어,","they will reach out to the sunlit world,",183,,,,Sub_Ch3,S3_L0182
+4,18,183,0,Dot,Default,anim_omg,text,아름다웠던 모든 것들을\n하나씩 오염시킬 거야.,and stain all that was\nbeautiful one by one.,184,,,,Sub_Ch3,S3_L0183
+4,18,184,0,Dot,Sub,,text,"느리게, 추잡하게, 그 누구도 모르게.","Slowly, sickeningly, and secretly.",185,,,,Sub_Ch3,S3_L0184
+4,18,185,0,Player,Sub,,selection,"진정해, 뭉치야.|그런 일은 일어나지 않아.","Calm down, Dot.|Nothing will happen.",186|186,sun|moon,,,Sub_Ch3,S3_L0185
+4,18,186,0,Player,Sub,,text,"넌 안전할 거야. 너만의 작은 모퉁이도 있고,\n아늑한 거미줄 침대도 있는걸.","You’re safe. You have your own little corner,\nand a snug spiderweb bed.",187,,,,Sub_Ch3,S3_L0186
+4,18,187,0,Player,Sub,,text,무엇보다 내가 있잖아.,And you have me.,188,,,,Sub_Ch3,S3_L0187
+4,18,188,0,Player,Sub,,text,암흑은 너를 해칠 수 없을 거야.,The Dark can’t hurt you.,189,,,,Sub_Ch3,S3_L0188
+4,18,189,0,Dot,Sub,,text,"나의 어둑한 모퉁이도, 아늑한\n거미줄도, 심지어 너 역시","My dark corner, my snug\nweb, and not even you",190,,,,Sub_Ch3,S3_L0189
+4,18,190,0,Dot,Default,,text,나를 지켜 줄 수 없어.,can’t keep me safe.,191,,,,Sub_Ch3,S3_L0190
+4,18,191,0,Dot,Sub,anim_eyesblink,text,"아니, 아니, 아니야. 감정에 휩쓸려\n실언을 했어... 미안해.","No, no, no. I became emotional\nand was careless... I’m sorry.",192,,,,Sub_Ch3,S3_L0191
+4,18,192,0,Dot,Default,anim_eyescorner_turn,text,네가 있다는 사실엔 감사하지.\n그러나... 난 그것들을 두려워하는 게 아니야.,I’m thankful that you’re here. But...\nit’s not that I am afraid of them.,193,,,,Sub_Ch3,S3_L0192
+4,18,193,0,Dot,Default,anim_eyesdown,text,난... 난 그것들을\n두려워하지 못하는걸.,I... I can’t be afraid of them.,194,,,,Sub_Ch3,S3_L0193
+4,18,194,0,Dot,Default,,text,...,...,195,,,,Sub_Ch3,S3_L0194
+4,18,195,0,Dot,Default,,text,날 구성하는...,It’s a part of me...,196,,,,Sub_Ch3,S3_L0195
+4,18,196,0,Dot,Default,,text,"그 질척한 오물의 깊고,\n징그러운 암흑을...","The deep, sickening darkness of\nthat squelching filth...",197,,,,Sub_Ch3,S3_L0196
+4,18,197,0,Dot,Default,,text,나는 그걸...,And I...,198,,,,Sub_Ch3,S3_L0197
+4,18,198,0,Dot,Default,anim_eyeswide,text,아... 아.,Oh... oh.,199,,,,Sub_Ch3,S3_L0198
+4,18,199,0,Dot,Default,,text,"나는 어쩌면 나를, 나를...",I look at myself and I...,200,,,,Sub_Ch3,S3_L0199
+4,18,200,0,Dot,Default,,text,...,...,201,,,,Sub_Ch3,S3_L0200
+4,18,201,0,Dot,Default,,text,불쾌해. 불결해.,Vile. Filthy.,202,,,,Sub_Ch3,S3_L0201
+4,18,202,0,Dot,Default,anim_omg,text,이건 그런 검정이야.,That’s the kind of black this is.,203,,,,Sub_Ch3,S3_L0202
+4,18,203,0,Dot,Default,,text,이건... 그런...,That’s... this is...,,,anim_sleepy_spiderweb,,Sub_Ch3,S3_L0203
