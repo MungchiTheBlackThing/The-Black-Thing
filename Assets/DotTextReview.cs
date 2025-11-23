@@ -20,6 +20,10 @@ public class DotTextReview : MonoBehaviour
 
     private const string reviewTableName = "PoemReview";
 
+    private void Start()
+    {
+        
+    }
     private void Awake()
     {
         speechBubbleGroup = speechBubble.GetComponent<CanvasGroup>();
@@ -98,6 +102,11 @@ public class DotTextReview : MonoBehaviour
         for (int i = 0; i < lines.Length; i++)
         {
             displayText.text = lines[i].Trim();
+            if (displayText.text.Contains("<nickname>"))
+            {
+                string playerName = PlayerController.GetNickName();
+                displayText.text = displayText.text.Replace("<name>", playerName);
+            }
             yield return FadeIn();
 
             yield return WaitForUserInput();
