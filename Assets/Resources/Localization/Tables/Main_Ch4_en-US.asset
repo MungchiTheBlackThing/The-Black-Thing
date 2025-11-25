@@ -20,7 +20,7 @@ MonoBehaviour:
     - rid: 3674199710174543922
   m_TableData:
   - m_Id: 55106891776
-    m_Localized: "Hello, <name>\u2026."
+    m_Localized: Hello, <nickname>...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -40,18 +40,18 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749379
-    m_Localized: Against my will, I failed, utterly and wholly.
+    m_Localized: Despite my will, I failed.\nUtterly and wholly.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749380
-    m_Localized: "According to the language\\nsystem, I \u2018couldn\u2019t\u2019
+    m_Localized: "So according to the language\\nsystem, I \u2018couldn\u2019t\u2019
       go out."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749381
-    m_Localized: "Your eyes are missing, Dot\u2026\\nIs something wrong?"
+    m_Localized: Your eyes are missing, Dot...\nIs something wrong?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -76,12 +76,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749386
-    m_Localized: "I see\u2026 \u2018worried\u2019 is a warm and loving state."
+    m_Localized: "I see... \u2018worried\u2019 is\\na warm and loving state."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749387
-    m_Localized: "Thank you, <name>.\\nIt\u2019s a small comfort."
+    m_Localized: "Thank you, <nickname>.\\nIt\u2019s a small comfort."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -92,12 +92,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749389
-    m_Localized: "\u2026\u2026."
+    m_Localized: ......
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749390
-    m_Localized: "Well, it\u2019s\u2026."
+    m_Localized: "Well, it\u2019s..."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -108,23 +108,23 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749392
-    m_Localized: "Heavy but kind. And so it\u2019s hard\\nto simply soothe them away\u2026"
+    m_Localized: "Heavy but kind. And so it\u2019s hard\\nto simply soothe them away..."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749393
-    m_Localized: "That\u2019s what\u2019s tying me to this corner."
+    m_Localized: "That\u2019s what ties me to this corner."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749394
-    m_Localized: Why did the moon people save me?
+    m_Localized: Why did the three\nMoon Beings save me?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749395
-    m_Localized: "<name>, I can\u2019t comprehend it no matter how\\nhard I think.
-      I can\u2019t even begin to guess."
+    m_Localized: "<nickname>, I can\u2019t comprehend it.\\nI can\u2019t even begin
+      to guess."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -135,12 +135,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749397
-    m_Localized: "I was nothing but a blob of\\nfilth, grimy and meaningless\u2026"
+    m_Localized: I was nothing but a blob of\nfilth, grimy and meaningless...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749398
-    m_Localized: "From what you\u2019ve said\u2026 I guess your\\nlast words struck
+    m_Localized: "From what you\u2019ve said... I guess your\\nlast words struck
       something in them."
     m_Metadata:
       m_Items:
@@ -156,7 +156,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749401
-    m_Localized: Maybe the workers saw your unending optimism,
+    m_Localized: Maybe the workers saw\nyour unending optimism,
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -167,8 +167,8 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749403
-    m_Localized: "It\u2019s a valuable thing on Earth as well, you see.|It\u2019s
-      a difficult feat even for humans, you see."
+    m_Localized: "It\u2019s a valuable quality on Earth too.|It\u2019s a difficult
+      feat even for humans."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -184,18 +184,17 @@ MonoBehaviour:
       - rid: 3674199710174543922
   - m_Id: 55211749406
     m_Localized: At the time I was gazing into cold death and,\ncolder still, the
-      darkness of the universe,
+      darkness of the universe.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749407
-    m_Localized: turbulating fear in my throat,
+    m_Localized: Turbulating fear lodged in my throat,
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749408
-    m_Localized: when my gaze happened to swim over onto\nsomething on the far corner
-      of the universe.
+    m_Localized: my gaze drifted onto something\nin the far corner of the universe.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -216,7 +215,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749412
-    m_Localized: If there really is no one that wants me as a dream.
+    m_Localized: If there really is no one\nthat wants me as a dream.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -226,27 +225,27 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749414
-    m_Localized: "No, no. It wasn\u2019t like that. Nothing like that."
+    m_Localized: No, no. Not that.\nNothing like that.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749415
-    m_Localized: "Something much more vague\u2026."
+    m_Localized: Something much more vague...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749416
-    m_Localized: "\u2026\u2026"
+    m_Localized: ......
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749417
-    m_Localized: "(Silence.)|I wonder what it was\u2026."
+    m_Localized: (Silence.)|I wonder what it was...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749418
-    m_Localized: "It\u2019s a mystery, <name>."
+    m_Localized: "It\u2019s a mystery, <nickname>."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -266,13 +265,13 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749422
-    m_Localized: I looked back, back, back on my past,\none of questions with no
-      answers.
+    m_Localized: I looked back, back, back on my past,\none full of questions with
+      no answers.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749423
-    m_Localized: and lost precious hours of what\nmatters most, my time on Earth.
+    m_Localized: And I lost hours of something\nprecious. That is, my time on Earth.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -288,8 +287,8 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749426
-    m_Localized: "It grieves me to think that I\u2019ll never recall\\nRed, Edison,
-      and Sir Cello ever again,"
+    m_Localized: "To think that I\u2019ll never recall Red, Edison,\\nand Sir Cello
+      again pains me."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -300,13 +299,13 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749428
-    m_Localized: "If I could rip out those nightmarish times\u2026\\nIf I could focus
-      solely on my future on Earth\u2026"
+    m_Localized: If I could rip out those nightmarish times...\nIf I could focus
+      solely on my future on Earth...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749429
-    m_Localized: "\u2026\u2026."
+    m_Localized: .....
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -316,7 +315,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749431
-    m_Localized: "\u2026 Do you have a past like that too?"
+    m_Localized: ... Do you have a past like that too?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -337,7 +336,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749435
-    m_Localized: "Well\u2026"
+    m_Localized: Well...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -357,14 +356,14 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749439
-    m_Localized: "Precious, but long since lost.|Dim and hunched, reeking of mold.|Like
+    m_Localized: "Precious, but long since lost.|Dim and crooked, reeking of mold.|Like
       falling head first down a cliff.|I can\u2019t even bring myself to describe
       it."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749440
-    m_Localized: "If my memory serves me\u2026"
+    m_Localized: If my memory serves me...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -380,13 +379,13 @@ MonoBehaviour:
       - rid: 3674199710174543922
   - m_Id: 55211749443
     m_Localized: "But that\u2019s what the past is like, thankfully.\\nNo matter
-      what I want\u2026 I can\u2019t ever go back."
+      what I want... I can\u2019t ever go back."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749444
     m_Localized: "But that\u2019s what the past is like, regrettably.\\nNo matter
-      what I want\u2026 I can\u2019t ever go back."
+      what I want... I can\u2019t ever go back."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -403,7 +402,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749447
-    m_Localized: "It\u2019s the only way to stop me from losing anything."
+    m_Localized: "It\u2019s the only way to stop\\nme from losing anything."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -419,7 +418,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749450
-    m_Localized: "I wouldn\u2019t want you to throw your past away."
+    m_Localized: "I wouldn\u2019t want you\\nto throw your past away."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -447,12 +446,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749455
-    m_Localized: Now picture the Moon. The dark side of it.
+    m_Localized: Now picture the Moon.\nThe dark side of it.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749456
-    m_Localized: "It\u2019s rough but beautiful, I see the factory,"
+    m_Localized: "It\u2019s rough but beautiful,\\nI see the factory,"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -468,12 +467,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749459
-    m_Localized: What else do you see? Down below?
+    m_Localized: What else do you see?\nDown below?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749460
-    m_Localized: The guillotine of dreams, the eerie\nfan and the filth disposal
+    m_Localized: The guillotine of dreams. The eerie\nfan and the filth disposal
       site.
     m_Metadata:
       m_Items:
@@ -484,7 +483,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749462
-    m_Localized: "Memories of the Moon\u2026\\nare like a nest made of thorns."
+    m_Localized: Memories of the Moon...\nare like a nest made of thorns.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -495,13 +494,13 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749464
-    m_Localized: "Memories from then are dotted\\nwith my\u2026 worthlessness,"
+    m_Localized: Memories from then are dotted\nwith my... worthlessness,
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749465
-    m_Localized: of having been born from the stench of dream\nfilth and never having
-      made it far away from it.
+    m_Localized: of having been born from the stench of\ndream filth and never quite
+      escaping it.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -512,13 +511,13 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749467
-    m_Localized: "The beings on it were blindingly vivid. My\\nfirst\u2026 friends.
-      Something like\u2026 my family."
+    m_Localized: The beings on it, blindingly vivid. My\nfirst... friends. Something
+      like... my family.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749468
-    m_Localized: You mean the moon cleaners you told me about.
+    m_Localized: You mean the Moon Cleaners\nyou told me about.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -552,24 +551,23 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749474
-    m_Localized: "Wouldn\u2019t it hurt\u2026 not being able\\nto recall all those
-      memories?"
+    m_Localized: "Wouldn\u2019t it hurt... not being able\\nto recall all those memories?"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749475
-    m_Localized: "I don\u2019t know\u2026"
+    m_Localized: "I don\u2019t know..."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749476
-    m_Localized: "But, but if I ever saw them again\u2026 I would\\ngrasp the opportunity
-      again and again"
+    m_Localized: But, but if I ever saw them again... I would\ngrasp the opportunity
+      again and again
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749477
-    m_Localized: and tell them how very thankful I am.
+    m_Localized: and tell them\nhow very thankful I am.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -580,7 +578,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749479
-    m_Localized: "Us humans, we can\u2019t even perceive them."
+    m_Localized: "Us humans, we can\u2019t\\neven perceive them."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -596,13 +594,13 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749482
-    m_Localized: "No longer hearing their sweet chatterings\u2026|To transmit to
-      them that you forgot them\u2026"
+    m_Localized: No longer hearing their sweet chatterings...|To transmit that you
+      forgot who they were...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749483
-    m_Localized: "\u2026\u2026."
+    m_Localized: .....
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -625,12 +623,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749487
-    m_Localized: "(Is there no way to convince Dot\u2026.)"
+    m_Localized: (Is there no way to convince Dot...)
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749488
-    m_Localized: "(Oh\u2026 there is one.)"
+    m_Localized: (Oh... there is one.)
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -647,7 +645,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749491
-    m_Localized: "Wait\u2026 huh?"
+    m_Localized: Wait... huh?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -658,13 +656,13 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749493
-    m_Localized: "Turning over a new leaf doesn\u2019t sound so bad!|I can\u2019t
-      stand myself whenever I remember."
+    m_Localized: "A new leaf doesn\u2019t sound so bad!|I can\u2019t stand myself
+      whenever I remember."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749494
-    m_Localized: "But you might start over with\\na huge part of yourself missing\u2026"
+    m_Localized: But you might start over with\na huge part of yourself missing...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -702,7 +700,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749501
-    m_Localized: Violent ones leave behind purpling bruises,\nlike sharp ones leave
+    m_Localized: Violent ones leave behind purpling bruises.\nLike sharp ones leave
       behind thin nicks of a blade.
     m_Metadata:
       m_Items:
@@ -719,7 +717,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749504
-    m_Localized: Losing a loved one leaves behind a fear of love,
+    m_Localized: Losing a loved one leaves\nbehind a fear of love,
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -740,8 +738,8 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749508
-    m_Localized: "\u2026 Right. Not looking back means we can\u2019t\\ntell what
-      traces remain from that time."
+    m_Localized: "... Right. Not looking back means\\nwe can\u2019t tell what\u2019s
+      left from that time."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -763,12 +761,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749512
-    m_Localized: "Oh\u2026 well\u2026"
+    m_Localized: Oh... well...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749513
-    m_Localized: "\u2026."
+    m_Localized: ...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -779,30 +777,30 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749515
-    m_Localized: Because those memories left behind vivid things.
+    m_Localized: Because those memories\nleft behind vivid things.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749516
-    m_Localized: First, memories of the moon trio. Ones\nyou can gaze into and smile
-      at every day.
+    m_Localized: First, memories of the Moon Beings. Ones\nyou can gaze into and
+      smile at every day.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749517
-    m_Localized: "\u2026."
+    m_Localized: ...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749518
-    m_Localized: "I\u2019m positive recalling those instances of having\\nbeen loved
-      and trusted will tie you to the world."
+    m_Localized: I know those instances of having been\nloved and trusted will tie
+      you to this world.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749519
-    m_Localized: "And above all\u2026 you\u2019ll know where that darkness\\nyou
-      loathe so comes from, and why it pains you."
+    m_Localized: "And... you\u2019ll know where that darkness you\\nloathe so comes
+      from, and why it pains you."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -818,14 +816,14 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749522
-    m_Localized: "\u2026 and I\u2019ll go far far away, and\\nbecome a colorful dream
+    m_Localized: "... and I\u2019ll go far far away, and\\nbecome a colorful dream
       of yours."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749523
-    m_Localized: "I don\u2019t know how not to abuse\\nmy past. It still feels awkward,
-      but\u2026."
+    m_Localized: "I don\u2019t know how not to resent my\\npast. I\u2019m not yet
+      used to it, but..."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -840,7 +838,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749526
-    m_Localized: "Of course. We\u2019re all layers of our past."
+    m_Localized: "Of course. We\u2019re all\\nlayers of our past."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -850,24 +848,24 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749528
-    m_Localized: "\u2026. It takes courage not to forget.\\nBut I\u2019ve made up
-      my mind."
+    m_Localized: "... It takes courage not to forget.\\nBut I\u2019ve made up my
+      mind."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749529
-    m_Localized: I see now, <name>.
+    m_Localized: I see now, <nickname>.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749530
     m_Localized: "I\u2019ll look back, beyond the atmosphere, and never\\nforget.
-      The trio\u2014my first friends and family,"
+      The trio\u2014my first friends and family."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749531
-    m_Localized: the dry white land, the harsh attacks surrounding\nme, the terrifying
+    m_Localized: The dry white land, the harsh words surrounding\nme, the terrifying
       blackness of the dream filth.
     m_Metadata:
       m_Items:
@@ -889,25 +887,25 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749535
-    m_Localized: Because those layers lead to who we are now.
+    m_Localized: Because those layers\nlead to who we are now.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749536
-    m_Localized: "It won\u2019t be easy on my heart when past\\npains stab me, but
-      I\u2019ll have you as a friend."
+    m_Localized: "It won\u2019t be easy when past pains stab me,\\nbut I\u2019ll
+      have you as a friend."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749537
-    m_Localized: "Yes, it won\u2019t be as hard now that you\u2019re not alone.\\nDo
-      you think you can be free now, Dot?"
+    m_Localized: "It wil be easier now that you\u2019re not alone.\\nDo you think
+      you can be free now, Dot?"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749538
-    m_Localized: "Yes, I think I\u2019m freer. And look.\\nThe color of my heart\u2026
-      oh\u2026!"
+    m_Localized: "Yes, I think I\u2019m freer. And look.\\nThe color of my heart...
+      oh...!"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
@@ -924,8 +922,8 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543922
   - m_Id: 55211749541
-    m_Localized: "Now I\u2019d like to gaze at the sky and miss this\\nshade of gray.
-      Thank you for our talk, <name>."
+    m_Localized: "Now I\u2019d like to gaze at the sky and long for that\\nvery shade
+      of gray. Thank you, <nickname>."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543922
