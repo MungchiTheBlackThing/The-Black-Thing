@@ -515,6 +515,18 @@ public class DotController : MonoBehaviour
         }
     }
 
+    public void Spriteoff()
+    {
+        Invisible();
+        eyes.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void Spriteon()
+    {
+        Visible();
+        eyes.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
     public IEnumerator DotvisibleCheck(bool setoff)
     {
         yield return new WaitForSeconds(0.08f);

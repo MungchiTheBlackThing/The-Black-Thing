@@ -24,7 +24,7 @@ public class SubTuto : MonoBehaviour
 
     Vector3 guide1 = new Vector3(-810, -145, 0);
     Vector3 guide2 = new Vector3(-1095, -195, 0);
-    Vector3 guide3 = new Vector3(-1100, -400, 0);
+    Vector3 guide3 = new Vector3(-880, -470, 0);
 
     public void tutorial_2(GameObject selectedDot, int determine, int index)
     {
@@ -197,7 +197,7 @@ public class SubTuto : MonoBehaviour
             else
             {
                 Debug.Log("서브이어 2");
-                subDialogue.StartSub("tutorial_sub", subPanel.dialogueIndex);
+                subDialogue.StartSub("tutorial_sub", index);
             }
         }
         else

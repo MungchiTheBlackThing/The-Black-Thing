@@ -34,8 +34,8 @@ public class DragGuide : MonoBehaviour
     }
     private IEnumerator SubStart()
     {
-        yield return new WaitForSeconds(2.5f); // 2초 대기
-        subDialogue.SubContinue();
+        yield return new WaitForSeconds(0.5f); // 2초 대기
+        subDialogue.Tuto_start(69);  // 여기 수정 25.11.23 - 서브 continue 오류 많음
         Destroy(this.gameObject);
     }
 

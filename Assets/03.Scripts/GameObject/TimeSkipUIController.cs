@@ -150,7 +150,7 @@ public class TimeSkipUIController : MonoBehaviour
         dotController.Visible();
         dotController.ChangeState(DotPatternState.Default, anim, 3);
         Destroy(GameObject.FindWithTag("TouchGuide"));
-        StartCoroutine(subcontinue(1.2f));
+        StartCoroutine(subcontinue(0.1f));
     }
     IEnumerator subcontinue (float delay)
     {

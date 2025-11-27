@@ -33,6 +33,15 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     protected float prePos;
     protected string preanimkey;
     
+    public GameObject GetBackground()
+    {
+        return this.background;
+    }
+
+    public void SetBackground(GameObject back)
+    {
+        background = back;
+    }
     public MainDialogue()
     {
         pos.Add("main_bed", 14);
@@ -141,7 +150,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         maindata.LineKey = DialogueEntries[idx].LineKey;
         maindata.Actor = DialogueEntries[idx].Actor;
         maindata.TextType = DialogueEntries[idx].TextType;
-        
+        maindata.Background = DialogueEntries[idx].Background;
         if (string.IsNullOrEmpty(DialogueEntries[idx].LocTable))
         {
             Debug.Log("LocTable 비어있음 :" + DialogueEntries[idx].KorText);

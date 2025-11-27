@@ -25,6 +25,7 @@ public class MainPanel : MonoBehaviour
     [SerializeField] GameObject Checkbox4Panel;
     [SerializeField] GameObject Selection3Panel;
     [SerializeField] GameObject Selection4Panel;
+    [SerializeField] DotController DotController;
 
     [SerializeField] Button NextButton;
     [SerializeField] TMP_InputField Textinput;
@@ -46,6 +47,7 @@ public class MainPanel : MonoBehaviour
     {
         mainDialogue = (MainDialogue)gameManager.CurrentState;
         MainClick = GameObject.Find("MainClick");
+        DotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
         LANGUAGE = (int)pc.GetLanguage();
         TcPlacholder();
     }
@@ -290,7 +292,19 @@ public class MainPanel : MonoBehaviour
         string actor = mainDial.Actor;
         string korText = mainDial.Text;
         string animScene = mainDial.AnimScene;
+        string background = mainDial.Background;
         bool waitVideo = animScene == "1";
+
+        if (background == "main_door_close")
+        {
+            mainDialogue.SetBackground(gameManager.ObjectManager.SetMain(background));
+            DotController.Spriteoff();
+        }
+        else if (background == "main_door_open")
+        {
+            mainDialogue.SetBackground(gameManager.ObjectManager.SetMain(background));
+            DotController.Spriteon();
+        }
 
         switch (textType)
         {

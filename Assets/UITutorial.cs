@@ -169,6 +169,7 @@ public class UITutorial : MonoBehaviour
             if (index >= transform.childCount)
             {
                 Screentouch.SetActive(false);
+                MenuController.allon();
                 MenuController.nextandoff();
                 this.gameObject.SetActive(false);
             }

@@ -506,7 +506,7 @@ public class GameManager : MonoBehaviour
 
     public void SubContinue()
     {
-        subDialoguePanel.GetComponent<SubDialogue>().SubContinue();
+        subDialoguePanel.GetComponent<SubDialogue>().Tuto_start(79);
     }
     public void Delay(string function, float delay)
     {
