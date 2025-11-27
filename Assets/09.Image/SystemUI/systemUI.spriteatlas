@@ -43,6 +43,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ede168408d6393f4d9806917bf9873ef, type: 3}
   - {fileID: 21300000, guid: 2cbd5ee0a16a365459d3af6094739f1e, type: 3}
   - {fileID: 21300000, guid: 6683a481617bfd547bd0595c13b78e33, type: 3}
+  - {fileID: 21300000, guid: db87f29102d4bf6448c37dde7991c4d3, type: 3}
   - {fileID: 21300000, guid: eaa877a1a6ab34c4490904d334ee9ff3, type: 3}
   - {fileID: 21300000, guid: 92841da1d3fcf034b93f91215fe63bb6, type: 3}
   - {fileID: 21300000, guid: 183dcda1f1188fe4291d2abcb788d99f, type: 3}
@@ -51,6 +52,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 91f35ef1ce85882478ae8bc640ee6a22, type: 3}
   - {fileID: 21300000, guid: 284184633e16f7242ae7f3e60e4dae59, type: 3}
   - {fileID: 21300000, guid: 57c07b638dcb05647a73cf756f272b25, type: 3}
+  - {fileID: 21300000, guid: f5fe997314da38d4183d1ba5ff5bd5c3, type: 3}
   - {fileID: 21300000, guid: 17dc02836ab2eaf44b95ae06aa1f2831, type: 3}
   - {fileID: 21300000, guid: 353b92141998d794f9cdf231c8670290, type: 3}
   - {fileID: 21300000, guid: 34755ba456a38cd408109576c3c86995, type: 3}
@@ -60,6 +62,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 6ac017267d705b245a202544e59d6f0d, type: 3}
   - {fileID: 21300000, guid: 9ad1bc26a0683d44bb88ad613da465c0, type: 3}
   - {fileID: 21300000, guid: 74057036a72660c4d92d73bd22eee6da, type: 3}
+  - {fileID: 21300000, guid: b3385c56eda28584d8dff911b62d448c, type: 3}
   - {fileID: 21300000, guid: f2263176d1b9bb141b59e30c205edd56, type: 3}
   - {fileID: 21300000, guid: 286b8476ab71e45f8914153fcbaf411b, type: 3}
   - {fileID: 21300000, guid: 3f4c66760d2f999479872b8cc84798f2, type: 3}
@@ -91,8 +94,10 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ba23948de0ccf9c44b275dd242fb778a, type: 3}
   - {fileID: 21300000, guid: ea0f5a8d52756984693e82ab2ef80948, type: 3}
   - {fileID: 21300000, guid: d5b056adfef28f348bb2bc1d68c806e3, type: 3}
+  - {fileID: 21300000, guid: a927cc5e403ea4849aedec18f2b120df, type: 3}
   - {fileID: 21300000, guid: 094c1d5e74c3ef84d80f1272330ddd04, type: 3}
   - {fileID: 21300000, guid: 71dbab1f44331e442bec7cd2b22d9506, type: 3}
+  - {fileID: 21300000, guid: e9c7252f69648ee4a834ea74765c8973, type: 3}
   - {fileID: 21300000, guid: fff827bfedb9d9740a6f2d0f969e6e45, type: 3}
   - {fileID: 21300000, guid: a959bfef0d77d8543b9964a6a27e45d1, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -101,6 +106,7 @@ SpriteAtlas:
   - spalsh_title
   - alert_diary
   - menu_line
+  - howto2_eng
   - background_main
   - loading_text
   - Popup_scrollbar
@@ -109,6 +115,7 @@ SpriteAtlas:
   - loading_handle
   - Lang_select
   - checklist_check
+  - howto4_eng
   - alert_moonradio
   - Rectangle 16 (1)
   - iconVideo_replay
@@ -118,6 +125,7 @@ SpriteAtlas:
   - icon_trigger_sub
   - alert_diary
   - name_input
+  - howto1_eng
   - howto1
   - icon_letter
   - Ellipse 108_2693_1796
@@ -149,8 +157,10 @@ SpriteAtlas:
   - icon_trigger_main
   - box1
   - menu_spider
+  - howto3_eng
   - checklist_box
   - lightbox
+  - howto5_eng
   - loading_background
   - Popup_input
   m_RenderDataMap: {}

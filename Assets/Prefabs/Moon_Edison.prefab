@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 931.74207, y: 0}
+  m_AnchoredPosition: {x: 865.95703, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4328370983836190600
@@ -118,7 +118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 433.87, y: 0}
+  m_AnchoredPosition: {x: 499.655, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4328370983973424882
@@ -265,8 +265,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uADF8\uAC83, \uCCBC\uB85C \uACBD\uC774 \uBB49\uCE58\uC5D0 \uAF42\uC544
-    \uBCF4\uB0C4. \n\uBB49\uCE58\uB3C4 \uAC04\uC2DD \uD544\uC694\uD558\uB2E4 \uD588\uC74C."
+  m_text: And so she threw herself into her work.\nEvery second of every hour\n...
+    of every day.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a22a5b2268ab7c4408cbd8d3143a3d4f, type: 2}
   m_sharedMaterial: {fileID: 4737232077059985368, guid: a22a5b2268ab7c4408cbd8d3143a3d4f, type: 2}
