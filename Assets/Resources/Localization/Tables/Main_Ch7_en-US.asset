@@ -20,13 +20,13 @@ MonoBehaviour:
     - rid: 3674199710174543973
   m_TableData:
   - m_Id: 35326554112
-    m_Localized: "\u2026! Dot, what happened?"
+    m_Localized: ...! Dot, what happened?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35427217408
-    m_Localized: "Don\u2019t mind me, <name>. I\u2019m putting\\ninto motion what
-      I\u2019ve learned today."
+    m_Localized: "Don\u2019t mind me, <nickname>. I\u2019m putting\\ninto motion
+      what I\u2019ve learned today."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -51,7 +51,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35427217413
-    m_Localized: "Well\u2026 one could call it that. But isn\u2019t\\n\u2018man-made
+    m_Localized: "Well... one could call it that. But isn\u2019t\\n\u2018man-made
       metallic bird\u2019 much cooler?"
     m_Metadata:
       m_Items:
@@ -62,8 +62,8 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35427217415
-    m_Localized: "But Dot, the way you\u2019re tangled up in dust\\nkeeps distracting
-      me from what you\u2019re saying."
+    m_Localized: "But Dot, you being tangled up in dust\\nreally distracts me from
+      what you\u2019re saying."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -73,17 +73,17 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35427217417
-    m_Localized: "\u2026."
+    m_Localized: ...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35427217418
-    m_Localized: Now can I tell you about my triumph, <name>?
+    m_Localized: Now can I tell you about\nmy triumph, <nickname>?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35427217419
-    m_Localized: "Yes. But first tell me what\u2019s going on."
+    m_Localized: "Yes. First, tell me what\u2019s going on."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -94,7 +94,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35427217421
-    m_Localized: I became a black ball of fuzz!
+    m_Localized: And I became a black ball of fuzz!
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -105,17 +105,17 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411713
-    m_Localized: I thought you might have left the window open.
+    m_Localized: "I thought maybe you\u2019d\\nleft the window open."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411714
-    m_Localized: "Oh, I\u2019m sorry. I\u2019ll remember to close it from now."
+    m_Localized: "Oh, I\u2019m sorry. I\u2019ll remember\\nto close it from now."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411715
-    m_Localized: No need, <name>. Like I said,\nthis is a story of triumph.
+    m_Localized: No need, <nickname>. Like I said,\nthis is a story of triumph.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -126,7 +126,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411717
-    m_Localized: "The human that smiles like a teddy\\nbear in the face of tragedies\u2026"
+    m_Localized: The human that smiles like a teddy\nbear in the face of tragedies...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -137,7 +137,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411719
-    m_Localized: "To picture myself as something\u2026 that sways\u2026"
+    m_Localized: To picture myself as\nsomething... that sways...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -147,20 +147,18 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411721
-    m_Localized: "A Venus flytrap\u2026 or rather, dust-trap?|A piece of gum with
-      dust stuck to it?"
+    m_Localized: A Venus flytrap... or rather, dust-trap?|A piece of gum with dust
+      stuck to it?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411722
-    m_Localized: "Admittedly a charming plant, but\\nyou\u2019re wrong. Something
-      much kinder."
+    m_Localized: Admittedly a charming plant,\nbut no. Something much kinder.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411723
-    m_Localized: "Admittedly a charming plant, but\\nyou\u2019re wrong. Something
-      much kinder."
+    m_Localized: Admittedly a sweet scent, but no.\nSomething far more fragile.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -204,12 +202,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411731
-    m_Localized: (Refuse firmly)|(Refuse gently)
+    m_Localized: (Refuse firmly.)|(Refuse gently.)
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411732
-    m_Localized: "But I\u2019ve never learned how to get along with dust."
+    m_Localized: "But I\u2019ve never learned\\nhow to get along with dust."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -220,7 +218,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411734
-    m_Localized: "I\u2019m not sure I\u2019m okay with that. We\\nhumans don\u2019t
+    m_Localized: "I\u2019m not sure if I\u2019m okay with that.\\nWe humans don\u2019t
       have infallible lungs."
     m_Metadata:
       m_Items:
@@ -233,12 +231,12 @@ MonoBehaviour:
       - rid: 3674199710174543973
   - m_Id: 35431411736
     m_Localized: "Don\u2019t, don\u2019t, don\u2019t come near me.\\nPlease. Just
-      leave us alone\u2026!"
+      leave us alone...!"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411737
-    m_Localized: "But\u2026 you said you were uncomfortable."
+    m_Localized: But... you said you\nwere uncomfortable.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -260,7 +258,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411741
-    m_Localized: "Just the thought of it puts me in misery\u2026"
+    m_Localized: Just the thought of it\nputs me in misery...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -280,33 +278,33 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411745
-    m_Localized: "Dot, I\u2019m sorry if I\u2019ve offended you\u2026\\nI\u2019ll
-      wait until you\u2019re ready to come out."
+    m_Localized: "Dot, I\u2019m sorry if I\u2019ve offended you...\\nI\u2019ll wait
+      until you\u2019re ready to come out."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411746
-    m_Localized: "\u2026"
+    m_Localized: ...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411747
-    m_Localized: "\u2026\u2026."
+    m_Localized: .....
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411748
-    m_Localized: Dot, are you still upset? Is it alright if I come in?
+    m_Localized: Dot, are you still upset?\nIs it alright if I come in?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411749
-    m_Localized: "\u2026."
+    m_Localized: ...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411750
-    m_Localized: "\u2026."
+    m_Localized: ...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -316,59 +314,59 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411752
-    m_Localized: "Dot, I\u2019m sorry if I\u2019ve offended you\u2026\\nI\u2019ll
-      wait until you\u2019re ready to come out."
+    m_Localized: "Dot, I\u2019m sorry if I\u2019ve offended you...\\nI\u2019ll wait
+      until you\u2019re ready to come out."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411753
-    m_Localized: "\u2026."
+    m_Localized: ...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411754
-    m_Localized: "\u2026\u2026.."
+    m_Localized: .....
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411755
-    m_Localized: "Ohhhh my leg\u2026 If only Dot\\nwould open the door\u2026"
+    m_Localized: Ohhhh my leg... If only\nDot would open the door...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411756
-    m_Localized: "\u2026."
+    m_Localized: ...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411757
-    m_Localized: "\u2026 Sorry about that. And I\u2019m sorry\\nfor earlier, too.
-      I\u2019d like to talk it out."
+    m_Localized: "... Sorry about that. And I\u2019m sorry\\nfor earlier, too. I\u2019d
+      like to talk it out."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411758
-    m_Localized: "\u2026."
+    m_Localized: ...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411759
-    m_Localized: "\u2026 I\u2019m sorry I was stubborn."
+    m_Localized: "... I\u2019m sorry I was stubborn."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411760
-    m_Localized: "You weren\u2019t the one to cause me pain."
+    m_Localized: "It\u2019s not like you were\\nthe one causing me pain."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411761
-    m_Localized: "\u2026! Dot, the dust on you is gone."
+    m_Localized: ...! Dot, the dust is gone!
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411762
-    m_Localized: "You seem smaller too. Don\u2019t tell me\u2026"
+    m_Localized: "You seem smaller too. Don\u2019t tell me..."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -396,7 +394,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411767
-    m_Localized: I will crumble like a leaf on a windowsill,
+    m_Localized: I will crumble like\na leaf on a windowsill,
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -406,12 +404,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411769
-    m_Localized: "Without knowing you would grieve for me\u2026"
+    m_Localized: Without knowing you\nwould grieve for me...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411770
-    m_Localized: "You\u2019re right. It would make me very sad."
+    m_Localized: "You\u2019re right. It would\\nmake me very sad."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -422,7 +420,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411772
-    m_Localized: "\u2026 Your heart?"
+    m_Localized: ... Your heart?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -437,7 +435,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411775
-    m_Localized: Ahem, well, <name>!
+    m_Localized: Ahem, well, <nickname>!
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -459,7 +457,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411779
-    m_Localized: Like scars on your body that\ndeepen if you overlook them,
+    m_Localized: Like scrapes on your body that\nleave scars if you overlook them,
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -492,8 +490,8 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411785
-    m_Localized: "<name>, as a wise book once said,\\nbirds don\u2019t avoid the
-      toughest of winds."
+    m_Localized: "<nickname>, as a wise book once said,\\nbirds don\u2019t avoid
+      the toughest of winds."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -519,8 +517,8 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411790
-    m_Localized: All the moving and tragic things that\nhumans today strive not to
-      look back on.
+    m_Localized: "All the moving and tragic things that\\ntoday\u2019s human fought
+      not to look back on."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -531,13 +529,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411792
-    m_Localized: "I\u2019d like to let that human\\nknow this too\u2026 is it too
-      late?"
+    m_Localized: "I\u2019d like to let that human\\nknow this too... is it too late?"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411793
-    m_Localized: "Well\u2026"
+    m_Localized: Well...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
@@ -570,22 +567,22 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411799
-    m_Localized: "I hope he\u2019ll one day be freed\\nfrom all that he feared."
+    m_Localized: "If only one day he\u2019ll be set free\\nfrom all he once feared..."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411800
-    m_Localized: "I hope he hurts and grieves to his heart\u2019s content."
+    m_Localized: "That he hurts and grieves\\nto his heart\u2019s content."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411801
-    m_Localized: "Our hopes are one and the same\u2026"
+    m_Localized: Our hopes are one and the same...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411802
-    m_Localized: <name>, I think it will be alright for you\nto have a nightmare
+    m_Localized: <nickname>, I think it will be alright for you\nto have a nightmare
       just this one night.
     m_Metadata:
       m_Items:
@@ -597,7 +594,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543973
   - m_Id: 35431411804
-    m_Localized: Tomorrow, let me know what you dreamed of.
+    m_Localized: Tomorrow, let me know\nwhat you dreamed of.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543973
