@@ -1,4 +1,4 @@
-                        ,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+﻿                        ,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,31,1,main_bed,Dot,Main,body_default1,face_blink,text,"<nickname>, 나는 널 온전히 알 수 있을까?","<nickname>, will I ever\nknow you completely?",2,,,,Main_Ch6,M6_L0001
 1,31,2,main_bed,Player,Main,,,text,그게 무슨 말이야?,What do you mean?,3,,,,Main_Ch6,M6_L0002
 1,31,3,main_bed,Dot,Main,,,text,난 항상 나일 거야. 넌 항상 너일 테고.,I will always be me.\nAnd you will always be you.,4,,,,Main_Ch6,M6_L0003
@@ -175,4 +175,4 @@
 3,32,174,main_door_open,Player,Main,,,text,"남는 건 자유지만,","You can stay if you like,",175,,,,Main_Ch6,M6_L0174
 3,32,175,main_door_open,Player,Main,,,text,내 마음엔 네 상상 속 ‘괴물 친구’에\n대한 질투도 함께 남게 될 거야.,but I’ll always be jealous of\nyour imaginary ‘creature friend’.,176,,,,Main_Ch6,M6_L0175
 3,32,176,main_door_open,Player,Main,,,text,각오해.,So brace yourself.,177,,,,Main_Ch6,M6_L0176
-3,32,177,main_door_open,Dot,Main,body_bounce,face_squeeze,text,안 돼...!,Oh no...!,,,anim_walking,,Main_Ch6,M6_L0177
+3,32,177,main_door_open,Dot,Main,body_bounce,face_squeeze,text,안 돼...!,Oh no...!,,,,,Main_Ch6,M6_L0177

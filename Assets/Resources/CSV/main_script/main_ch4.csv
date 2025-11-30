@@ -1,4 +1,4 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,19,1,main_door_open,Dot,Main,body_mud,face_null,text,"안녕, <nickname>...","Hello, <nickname>...",2,,,,Main_Ch4,M4_L0001
 1,19,2,main_door_open,Player,Main,,,selection,(차분하게 물어본다)|(다정하게 걱정한다.),(Calmly question.)|(Gently worry.),3|7,,,moon|sun,Main_Ch4,M4_L0002
 1,19,3,main_door_open,Player,Main,,,text,"뭉치, 오늘은 안 나갔어?","Dot, did you go out today?",4,,,,Main_Ch4,M4_L0003
@@ -165,4 +165,4 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,20,164,main_door_open,Dot,Main,body_ch4_heartup,,text,응. 이제 조금은 자유로워진 것 같아.\n이것 봐. 심장 색도... 어...!,"Yes, I think I’m freer. And look.\nThe color of my heart... oh...!",165,,,,Main_Ch4,M4_L0164
 3,20,165,main_door_open,Player,Main,,,selection,달을 닮은 회빛이네. 예쁘다.|네 마음속 달이 고마워하고 있나 봐.,Gray like the moon. It’s pretty.|I think the moon inside of you is thanking you.,166|166,,,active|passive,Main_Ch4,M4_L0165
 3,20,166,main_door_open,Dot,Main,,,text,"그러게. 따뜻하고 고마운 그림자의 색.\n나의 시초지와, 나의 모퉁이를 닮은.","You’re right. Gray like a warm shadow.\nThe color of my birthplace, my corner.",167,,,,Main_Ch4,M4_L0166
-3,20,167,main_door_open,Dot,Main,body_ch4_heartdown,,text,이제 눈을 감고 이 회색빛을 마음껏\n그리워해 보고 싶어. 이야기 나눠 주어 고마웠어.,"Now I’d like to gaze at the sky and long for that\nvery shade of gray. Thank you, <nickname>.",,,anim_eyesclosed,,Main_Ch4,M4_L0167
+3,20,167,main_door_open,Dot,Main,body_ch4_heartdown,,text,이제 눈을 감고 이 회색빛을 마음껏\n그리워해 보고 싶어. 이야기 나눠 주어 고마웠어.,"Now I’d like to gaze at the sky and long for that\nvery shade of gray. Thank you, <nickname>.",,,,,Main_Ch4,M4_L0167
