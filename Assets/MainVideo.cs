@@ -246,7 +246,7 @@ public class MainVideo : MonoBehaviour
     private void Update()
     {
         // subtitle sync
-        if (videoPlayer == null || entries == null || entries.Count == 0) return;
+        if (videoPlayer == null || entries == null || entries.Count == 0 || !videoPlayer.isPlaying) return;
         if (subtitleText == null) return;
 
         double t = videoPlayer.time;
@@ -258,10 +258,15 @@ public class MainVideo : MonoBehaviour
             if (idx >= 0)
             {
                 var e = entries[idx];
+                string subtitleContent = "";
                 string loc = (useLocalization) ? TryGetLocalized(idx) : null;
-                subtitleText.text = !string.IsNullOrEmpty(loc)
+                subtitleContent = !string.IsNullOrEmpty(loc)
                     ? loc
                     : ((currentLanguage == LANGUAGE.ENGLISH) ? e.EngText : e.KorText);
+
+                subtitleText.text = subtitleContent;
+
+                Debug.Log($"[Subtitle] Time: {t:F3}s, Index: {idx}, Start: {e.Start:F3}s, End: {e.End:F3}s, Text: {subtitleContent}");
             }
             else
             {
