@@ -73,6 +73,9 @@ public class IntroScene : MonoBehaviour
     }
     public void InitStart()
     {
+        PlayerPrefs.DeleteKey("PROLOGUE_PLAYED"); //프롤로그 다시 재생하도록 초기화
+        PlayerPrefs.Save();
+        
         RecentManager.ResetFlagOnly();
         playerInfo.Replay();
         WritePlayerFile();

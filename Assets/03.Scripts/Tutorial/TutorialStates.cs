@@ -160,6 +160,10 @@ namespace Tutorial
                 background.SetActive(false);
             }
             RecentManager.TutoNumChange();
+
+            PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1); //프롤로그 재생 완료 플래그 설정
+            PlayerPrefs.Save();
+
             //manager.ObjectManager.activeSystemUIDelegate(true);
             //SystemUI.SetActive(true);
         }
