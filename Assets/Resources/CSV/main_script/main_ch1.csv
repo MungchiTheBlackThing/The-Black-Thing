@@ -1,4 +1,4 @@
-   ,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+﻿   ,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,1,1,main_door_open,Dot,Main,body_default1,face_blink,text,오늘 어떤 남자를 만났어.,I met a man today.,2,,,,Main_Ch1,M1_L0001
 1,1,2,main_door_open,Dot,Main,,,text,그런데 이상하지.,But there was something\nstrange about him.,3,,,,Main_Ch1,M1_L0002
 1,1,3,main_door_open,Dot,Main,,,text,"그의 동공 속을 들여다본 순간, 나는 그\n속으로 빨려 들어가는 것 같았거든.","The moment I looked into\nhis eyes, I was sucked into them.",4,,,,Main_Ch1,M1_L0003
@@ -144,7 +144,7 @@
 3,2,144,main_bed,Player,Main,,,text,하지만 뭉치의 말을 듣고 나니\n그것도 무의미하게 느껴지네.,"But having listened to you, Dot, even\nthose questions seem meaningless.",145,,,,Main_Ch1,M1_L0143
 3,2,145,main_bed,Dot,Main,,,text,너 역시 그런 순간이 있었어?\n단어에 속아 감정을 들여다보지 못했던...,Were you ever tricked by words\ninto neglecting your emotions...?,146,,,,Main_Ch1,M1_L0144
 3,2,146,main_bed,Player,Main,,,text,아마도.,Probably.,147,,,,Main_Ch1,M1_L0145
-3,2,147,main_bed,Player,Main,,,selection,그때 누군가에게 사랑한단 말을 했을 때|그때 그 순간 행복하단 말을 했을 때,"When I said ‘I love you’ to somebody,|When I said ‘I am happy’ to somebody,",148,,,active|passive,Main_Ch1,M1_L0146
+3,2,147,main_bed,Player,Main,,,selection,그때 누군가에게 사랑한단 말을 했을 때|그때 그 순간 행복하단 말을 했을 때,"When I said ‘I love you’ to somebody,|When I said ‘I am happy’ to somebody,",148|148,,,active|passive,Main_Ch1,M1_L0146
 3,2,148,main_bed,Player,Main,,,textbox,내가 정말 ‘느꼈던’ 감정은...,what I really ‘felt’ was...,149,,,,Main_Ch1,M1_L0147
 3,2,149,main_bed,Dot,Main,,,text,그랬구나. 이야기해 주어 고마워.,I see. Thank you for telling me.,150,,,,Main_Ch1,M1_L0148
 3,2,150,main_bed,Dot,Main,,,text,"그래서 말인데...... <nickname>, 약속 하나만 해 줄래? 나에겐 중요해.","On that note...... <nickname>, promise\nme something? It’s important to me.",151,,,,Main_Ch1,M1_L0149
