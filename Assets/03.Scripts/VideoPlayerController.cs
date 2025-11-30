@@ -3,13 +3,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
-public enum EVideoIdx
+public enum SkipVideoIdx
 {
     SkipPhase,
     SkipSleeping,
     NoVideo
 }
 
+//SkipPhase, SkipSleeping Animation 재생 컨트롤러
 public class VideoPlayerController : MonoBehaviour
 {
     [SerializeField]
@@ -27,41 +28,42 @@ public class VideoPlayerController : MonoBehaviour
     [SerializeField]
     GameObject video;
 
-    private EVideoIdx eVideoIdx = EVideoIdx.NoVideo;
+    private SkipVideoIdx skipVideoIdx = SkipVideoIdx.NoVideo;
 
-    public void ShowVideo(EVideoIdx idx, bool looping = true)
+    //비디오 재생
+    public void ShowSkipVideo(SkipVideoIdx idx, bool looping = true)
     {
-        eVideoIdx = idx;
+        skipVideoIdx = idx;
 
-        if (eVideoIdx == EVideoIdx.NoVideo)
+        if (skipVideoIdx == SkipVideoIdx.NoVideo)
         {
             Debug.Log("No video to play.");
             return;
         }
 
         video.SetActive(true);
-        loading[0].SetActive(true); // ù �ε� ������Ʈ �ѱ�
+        loading[0].SetActive(true); // 첫 로딩 오브젝트 켜기
 
         videoPlayer.isLooping = looping;
         videoPlayer.renderMode = VideoRenderMode.RenderTexture;
 
-        // ���� �ؽ�ó ����
-        RenderTexture renderTexture = new RenderTexture(1920, 1080, 0);
-        videoPlayer.targetTexture = renderTexture;
-        videoImage.texture = renderTexture;
+        // 렌더 텍스처 연결
+        RenderTexture renderTexture = new RenderTexture(1920, 1080, 0); // 해상도 설정
+        videoPlayer.targetTexture = renderTexture; 
+        videoImage.texture = renderTexture; 
 
-        // enum �̸� �״�� ��� (e.g., SkipPhase �� SkipPhase.mp4)
-        string clipName = eVideoIdx.ToString(); // "SkipPhase" or "SkipSleeping"
-        VideoClip clip = Resources.Load<VideoClip>($"SkipAnimation/{clipName}");
+        // enum 이름 그대로 사용 (e.g., SkipPhase → SkipPhase.mp4)
+        string clipName = skipVideoIdx.ToString(); // "SkipPhase" or "SkipSleeping"
+        VideoClip clip = Resources.Load<VideoClip>($"SkipAnimation/{clipName}"); // Resources/SkipAnimation 폴더에서 비디오 클립 로드
 
         if (clip != null)
         {
-            videoPlayer.clip = clip;
-            videoPlayer.Play();
+            videoPlayer.clip = clip; // 비디오 클립 설정
+            videoPlayer.Play(); // 비디오 재생
 
-            if (eVideoIdx == EVideoIdx.SkipPhase)
+            if (skipVideoIdx == SkipVideoIdx.SkipPhase) // SkipPhase 비디오의 경우 재생이 끝나면 자동으로 창을 닫음.
             {
-                videoPlayer.loopPointReached += OnVideoFinished;
+                videoPlayer.loopPointReached += OnVideoFinished; 
             }
         }
         else
@@ -72,7 +74,7 @@ public class VideoPlayerController : MonoBehaviour
 
     public void CloseVideo()
     {
-        if (eVideoIdx == EVideoIdx.SkipPhase)
+        if (skipVideoIdx == SkipVideoIdx.SkipPhase)
         {
             Close();
         }

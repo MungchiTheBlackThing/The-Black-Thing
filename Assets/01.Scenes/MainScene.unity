@@ -3132,6 +3132,7 @@ MonoBehaviour:
   canvas: {fileID: 1193627963}
   menu: {fileID: 619721725}
   mainVideo: {fileID: 986681969}
+  timeSkipUIController: {fileID: 1007219009}
   test: {fileID: 852685771}
   pc: {fileID: 2022455605}
   mainDialoguePanel: {fileID: 8899152122286662226}
@@ -16604,6 +16605,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   dotController: {fileID: 0}
   objectManager: {fileID: 606963712}
+  IsSkipButtonClicked: 0
 --- !u!114 &1007219010
 MonoBehaviour:
   m_ObjectHideFlags: 0

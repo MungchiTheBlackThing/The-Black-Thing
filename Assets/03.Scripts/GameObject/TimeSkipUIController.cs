@@ -42,10 +42,13 @@ public class TimeSkipUIController : MonoBehaviour
     float time = 0;
     const int HOUR = 3600;
     const int MIN = 60;
+    public bool IsSkipButtonClicked = false; //GameManager에서 사용 (스킵 버튼 클릭 시에만 스킵 영상 나오도록)
 
 
     private void Start()
     {
+        IsSkipButtonClicked = false;
+
         if(playerController == null)
         {
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
@@ -132,9 +135,10 @@ public class TimeSkipUIController : MonoBehaviour
 
     public void YesClick()
     {
+        IsSkipButtonClicked = true;
         popup.SetActive(false);
         playerController.NextPhase();
-        Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        Debug.Log("스킵 클릭");
     }
     public void TutoNoClick()
     {
