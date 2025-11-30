@@ -35,6 +35,8 @@ public class PlayAnswerController : MonoBehaviour
     private void Start()
     {
         dot = playDot.transform.parent.GetComponent<DotController>();
+        StringTable stringTable = LocalizationSettings.StringDatabase.GetTable("PoetryUIText");
+        dotText.text = stringTable.GetEntry("poem_start").GetLocalizedString();
     }
 
     private void OnEnable()
@@ -65,7 +67,7 @@ public class PlayAnswerController : MonoBehaviour
     public void AfterReadingPoem()
     {
         //자러가야지 대사 출력
-        //응 알겠어 자러갈게 대사 출력
+        Debug.Log("시 읽은 후 처리 실행");
         StringTable stringTable = LocalizationSettings.StringDatabase.GetTable("PoetryUIText");
         dotText.text = stringTable.GetEntry("poem_end").GetLocalizedString();
         playDot.SetActive(true);

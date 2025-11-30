@@ -477,7 +477,7 @@ public class DotController : MonoBehaviour
 
     public void Invisible()
     {
-        Debug.Log("안보여야하는데.");
+        Debug.Log("Dot invisible");
         visible = false;
         // 애니메이터 비활성화 (색상 덮어쓰기 방지)
         Animator animator = GetComponent<Animator>();
@@ -497,7 +497,7 @@ public class DotController : MonoBehaviour
 
     public void Visible()
     {
-        Debug.Log("보여야 하는데.");
+        Debug.Log("Dot visible");
         visible = true;
         SpriteRenderer dotRenderer = GetComponent<SpriteRenderer>();
         Color color = dotRenderer.color;

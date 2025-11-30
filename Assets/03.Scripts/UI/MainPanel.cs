@@ -328,10 +328,11 @@ public class MainPanel : MonoBehaviour
                 else if (actor == "Player")
                 {
                     if (MainClick) MainClick.SetActive(true);
+                    //[디버깅]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         PlayPanel,
                         PlayPanel.GetComponent<CanvasGroup>(),
-                        0.5f,
+                        0.01f,
                         new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null },
                         () => { PlayTextUI.text = korText; },
                         waitVideo

@@ -4,17 +4,17 @@ using System.Collections.Generic;
 [Serializable]
 public class Diary
 {
-    public List<DiaryEntry> DiaryEntry; // ¿©·¯ DiaryEntry¸¦ Æ÷ÇÔÇÏ´Â ¸®½ºÆ®
+    public List<DiaryEntry> DiaryEntry; // ì—¬ëŸ¬ DiaryEntryë¥¼ í¬í•¨í•˜ëŠ” ë¦¬ìŠ¤íŠ¸
 }
 
 [Serializable]
 public class DiaryEntry
 {
-    public int id;                        // DiaryEntryÀÇ ID
-    public List<string> title;            // Á¦¸ñ ¸®½ºÆ®
-    public List<string> leftPage;         // ÅØ½ºÆ® ¸®½ºÆ®
-    public RightPage rightPage;           // DiarySubEntry °´Ã¼
-    public List<string> imagePath;        // ÀÌ¹ÌÁö °æ·Î ¸®½ºÆ®
+    public int id;                        // DiaryEntryì˜ ID
+    public List<string> title;            // ì œëª© ë¦¬ìŠ¤íŠ¸
+    public List<string> leftPage;         // í…ìŠ¤íŠ¸ ë¦¬ìŠ¤íŠ¸
+    public RightPage rightPage;           // DiarySubEntry ê°ì²´
+    public List<string> imagePath;        // ì´ë¯¸ì§€ ê²½ë¡œ ë¦¬ìŠ¤íŠ¸
 }
 
 [System.Serializable]
@@ -27,6 +27,6 @@ public class RightPage
 [Serializable]
 public class SubEntry
 {
-    public string[] success; // ¼º°ø ÅØ½ºÆ® ±×·ì (0: ÇÑ±Û, 1: ¿µ¾î)
-    public string[] fail;    // ½ÇÆĞ ÅØ½ºÆ® ±×·ì (0: ÇÑ±Û, 1: ¿µ¾î)
+    public string[] success; // ì„±ê³µ í…ìŠ¤íŠ¸ ê·¸ë£¹ (0: í•œê¸€, 1: ì˜ì–´)
+    public string[] fail;    // ì‹¤íŒ¨ í…ìŠ¤íŠ¸ ê·¸ë£¹ (0: í•œê¸€, 1: ì˜ì–´)
 }
