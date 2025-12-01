@@ -131,7 +131,7 @@ namespace Tutorial
         }
         public void recentStart(int index)
         {
-            subdial.GetComponent<SubDialogue>().Tuto_start(index);
+            subdial.GetComponent<SubDialogue>().Tuto_start(index, 1.0f);
         }
     }
     public class Main: MainDialogue

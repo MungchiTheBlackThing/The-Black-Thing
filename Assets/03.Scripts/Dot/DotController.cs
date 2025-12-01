@@ -405,8 +405,7 @@ public class DotController : MonoBehaviour
         Debug.Log("자러 갈 시간");
         if (pc.GetChapter() == 1)
         {
-            //this.position = 10;
-            //this.transform.position = new Vector2(10.92f, -5.13f);
+            ChangeState(DotPatternState.Phase, "anim_spiderweb1", 10);
             return;
         }
         alertOff();
@@ -416,7 +415,7 @@ public class DotController : MonoBehaviour
     public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "")
     {
         Debug.Log($"애니메이션 함수 호출: {new System.Diagnostics.StackTrace().GetFrame(1).GetMethod().Name}");
-        Debug.Log(OutAnimKey + OutExpression);
+        Debug.Log("키: " + OutAnimKey + "표현: " + OutExpression + "위치: " + OutPos);
         position = OutPos;
         dotExpression = OutExpression;
         animKey = OutAnimKey;

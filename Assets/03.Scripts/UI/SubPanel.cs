@@ -529,6 +529,7 @@ public class SubPanel : MonoBehaviour
         if (currentEntry.NextLineKey != null)
         {
             if (!string.IsNullOrEmpty(currentEntry.DotAnim))
+                prePos = dotcontroller.Position;
                 dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim, prePos);
 
             if (int.TryParse(currentEntry.NextLineKey, out int nextLineKey))

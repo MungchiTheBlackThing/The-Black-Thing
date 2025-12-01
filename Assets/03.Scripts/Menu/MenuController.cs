@@ -85,6 +85,14 @@ public class MenuController : MonoBehaviour
         this.gameObject.SetActive(InActive);
     }
 
+    public void OnEnable()
+    {
+        if (PlayerController.GetChapter() >= 2)
+        {
+            tuto();
+        }
+    }
+
     public void Translate(LANGUAGE language, TMP_FontAsset font)
     {
         //번역한다.
@@ -196,7 +204,6 @@ public class MenuController : MonoBehaviour
             MenuButAnim.SetBool("isDowning", false);
         }
     }
-
     public void offMenu()
     {
         if(ExitBut != null)
