@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     private int currentChapter;
     const float passTime = 1800f; //30분을 기준으로 한다.
 
-
     public delegate void NextPhaseDelegate(GamePatternState state);
     public NextPhaseDelegate nextPhaseDelegate;
 
@@ -309,7 +308,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     public int GetChapter()
     {
-        return player.CurrentChapter;
+        return this.currentChapter;
     }
 
     public ArcheType GetArcheType()

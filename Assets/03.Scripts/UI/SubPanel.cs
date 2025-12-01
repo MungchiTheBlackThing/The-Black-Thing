@@ -446,7 +446,16 @@ public class SubPanel : MonoBehaviour
         Vector2 offset = AnimBubbleDB.GetOffset(currentAnim);
 
         // 오프셋 적용
-        anchoredPos += offset;
+        if (dotcontroller.transform.position.x < 0) {
+            anchoredPos.x += offset.x;
+            anchoredPos.y += offset.y;
+        } 
+        else
+        {
+            anchoredPos.x -= offset.x;
+            anchoredPos.y += offset.y;
+        }
+            
 
         speech.anchoredPosition = anchoredPos;
         dotbub.SetActive(true);
@@ -491,7 +500,7 @@ public class SubPanel : MonoBehaviour
         {
             rect.anchorMin = rect.anchorMax = new Vector2(0, 0);
             rect.pivot = new Vector2(0, 0);
-            rect.anchoredPosition = new Vector2(200, 600);
+            rect.anchoredPosition = new Vector2(-900, 0);
         }
         rect.gameObject.SetActive(true);
     }

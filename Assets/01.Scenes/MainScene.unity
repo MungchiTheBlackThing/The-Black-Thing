@@ -9789,6 +9789,7 @@ MonoBehaviour:
   checkList: {fileID: 574559039}
   Replay: {fileID: 1016603270}
   tutoalert: {fileID: 0}
+  MenuButAnim: {fileID: 619721726}
   isOpening: 0
   isprogress: 0
   menu:
@@ -9825,7 +9826,7 @@ MonoBehaviour:
   - {fileID: 968173784}
   - {fileID: 1139226965}
   objectManager: {fileID: 606963712}
-  PlayerController: {fileID: 0}
+  PlayerController: {fileID: 2022455605}
   UItutoEnd: 0
 --- !u!95 &619721726
 Animator:
@@ -40713,7 +40714,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -300, y: 100}
   m_SizeDelta: {x: 564, y: 244.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094932320799833008
