@@ -49,9 +49,7 @@ public class LoadSceneManager : MonoBehaviour
     }
    
 
-    /// <summary>
-    /// 챕터 번호가 0이면 디폴트 로딩 패널을 사용하고, 그 외의 경우 챕터 로딩 패널을 사용하여 씬 로드
-    /// </summary>
+    // 챕터 번호가 0이면 디폴트 로딩 패널을 사용하고, 그 외의 경우 챕터 로딩 패널을 사용하여 씬 로드
     public void LoadScene(string currentSceneName, string targetSceneName, int chapter = 0)
     {
         _currentSceneName = currentSceneName;

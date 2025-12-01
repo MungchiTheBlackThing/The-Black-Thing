@@ -116,7 +116,7 @@ public class SubTuto : MonoBehaviour
         {
             Subcontinue();
         }
-        else
+        else //튜토리얼 끝
         {
             dotController.tutorial = false;
             Debug.Log("3");
