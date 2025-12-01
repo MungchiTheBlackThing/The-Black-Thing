@@ -291,7 +291,7 @@ public class SubDialogue : MonoBehaviour
         SubPanel.gameObject.SetActive(true);
         SubPanel.Subcontinue();
     }
-    public void Tuto_start(int index)
+    public void Tuto_start(int index, float delay)
     {
         playerController.SetSubseq(1);
         dialogueData = null;
@@ -308,7 +308,7 @@ public class SubDialogue : MonoBehaviour
         string[] lines = dialogueData.text.Split('\n');
         LoadSubDialogue(lines);
         subPanel.dialogueIndex = index;
-        StartCoroutine(ShowNextDialogueAfterDelay(2.0f, subPanel));
+        StartCoroutine(ShowNextDialogueAfterDelay(delay, subPanel));
         //manager.ScrollManager.StopCamera(true); -> 자꾸 오류 발생함
         if (menuController)
             menuController.alloff();

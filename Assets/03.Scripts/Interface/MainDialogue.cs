@@ -300,7 +300,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             // Tutorial_9 대사 실행
             GameObject subdial = manager.subDialoguePanel;
             subdial.SetActive(true);
-            subdial.GetComponent<SubDialogue>().Tuto_start(106);
+            subdial.GetComponent<SubDialogue>().Tuto_start(106, 2.0f);
         }
         else if (phase == 3 && manager.Chapter == 14)
         {

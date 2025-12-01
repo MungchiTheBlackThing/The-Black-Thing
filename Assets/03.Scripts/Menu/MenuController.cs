@@ -41,6 +41,8 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     GameObject tutoalert;
 
+
+    [SerializeField]
     Animator MenuButAnim;
 
     public bool isOpening = false;
@@ -71,8 +73,6 @@ public class MenuController : MonoBehaviour
     public static event Action OnMenuOpened;
     private void Start()
     {
-        PlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        MenuButAnim = GetComponent<Animator>();
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
 
         translator.translatorDel += Translate;
@@ -83,6 +83,14 @@ public class MenuController : MonoBehaviour
     public void CallbackActiveSystemUI(bool InActive)
     {
         this.gameObject.SetActive(InActive);
+    }
+
+    public void OnEnable()
+    {
+        if (PlayerController && PlayerController.GetChapter() >= 2)
+        {
+            tuto();
+        }
     }
 
     public void Translate(LANGUAGE language, TMP_FontAsset font)
@@ -196,7 +204,6 @@ public class MenuController : MonoBehaviour
             MenuButAnim.SetBool("isDowning", false);
         }
     }
-
     public void offMenu()
     {
         if(ExitBut != null)

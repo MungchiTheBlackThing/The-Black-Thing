@@ -179,7 +179,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Tuto 다시 시작");
             subDialoguePanel.SetActive(true);
-            subDialogue.Tuto_start(118);
+            subDialogue.Tuto_start(118, 1.5f);
             return;
         }
         dot.GoSleep();
@@ -521,7 +521,7 @@ public class GameManager : MonoBehaviour
 
     public void SubContinue()
     {
-        subDialoguePanel.GetComponent<SubDialogue>().Tuto_start(79);
+        subDialoguePanel.GetComponent<SubDialogue>().Tuto_start(79, 2.0f);
     }
     public void Delay(string function, float delay)
     {

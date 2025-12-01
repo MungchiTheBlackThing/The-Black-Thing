@@ -117,7 +117,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 1,,116,1,Dot,sub,,text,<nickname>.,<nickname>.,117,,,,Tuto_Sub,TS_L0116
 1,,117,1,Dot,sub,,text,눈 아래에서 찰랑이는 느낌이\n들어. 이게 고마움이라는 걸까?,Some kind of water seems to blur my vision.\nIs this what thankfulness feels like?,118,,,,Tuto_Sub,TS_L0117
 1,,118,1,Player,sub,,selection,"(아주 감성적인 친구가 생겼군.)|(뭐야, 귀엽잖아…!)","(It seems I’ve made an emotional friend.)|(Huh, they’re cute…!)",,,,,Tuto_Sub,TS_L0118
-1,tutorial_10,119,1,Dot,sub,,text,그나저나….,Anyway…,120,,,,Tuto_Sub,TS_L0119
+1,tutorial_10,119,1,Dot,sub,anim_eyesclosed,text,그나저나….,Anyway…,120,,,,Tuto_Sub,TS_L0119
 1,,120,1,Dot,default,anim_eyesclosed,text,"정말이었어. 오늘을 일기 속에 담아 두고\n나니 보이지 않던 것들이 보이고,","It was true. I wrapped today in my diary\n—now I see what was unseen,",121,,,,Tuto_Sub,TS_L0120
 1,,121,1,Dot,sub,anim_eyesblink,text,소중해하던 것들이\n더욱 반짝이게 되었어.,And what was special\nsparkles even more so.,122,,,,Tuto_Sub,TS_L0121
 1,,122,1,Dot,sub,anim_eyescorner,text,있지… 괜찮다면 내 일기는\n<nickname>에게 비밀로 하고 싶어.,"Um… If it’s alright with you, I’d like\nto keep my writings to myself.",123,,,,Tuto_Sub,TS_L0122
