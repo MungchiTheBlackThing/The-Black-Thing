@@ -2656,6 +2656,7 @@ MonoBehaviour:
   canvas: {fileID: 1193627963}
   menu: {fileID: 619721725}
   mainVideo: {fileID: 0}
+  timeSkipUIController: {fileID: 0}
   test: {fileID: 1286256050}
   pc: {fileID: 2022455605}
   mainDialoguePanel: {fileID: 2119342186}
@@ -8648,13 +8649,13 @@ MonoBehaviour:
   skipSleep: {fileID: 1600102976213365414}
   googlePath:
   - Time: 2
-    path: 11RepjB6uvnmlJFiDTPIKE0cLGyoFUKNO
+    path: morning
   - Time: 3
-    path: 1cStFtCELu0YbV5-a7SbWPwRfI3uEVmOn
+    path: night
   - Time: 0
-    path: 1vm-7eTCrBNAs3--geV1qbf2Qi5WTfUNm
+    path: dawn
   - Time: 1
-    path: 1Oo6U5oL0-wNNrlQuSRnCGe04MmYDp38Q
+    path: evening
 --- !u!1 &611498834
 GameObject:
   m_ObjectHideFlags: 0
@@ -14044,6 +14045,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   dotController: {fileID: 0}
   objectManager: {fileID: 606963712}
+  IsSkipButtonClicked: 0
 --- !u!114 &1007219010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32995,6 +32997,7 @@ MonoBehaviour:
   Checkbox4Panel: {fileID: 0}
   Selection3Panel: {fileID: 0}
   Selection4Panel: {fileID: 0}
+  DotController: {fileID: 0}
   NextButton: {fileID: 0}
   Textinput: {fileID: 0}
   MainClick: {fileID: 809888060}

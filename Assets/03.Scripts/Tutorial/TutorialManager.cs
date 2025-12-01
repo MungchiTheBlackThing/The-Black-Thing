@@ -73,7 +73,6 @@ public class TutorialManager : GameManager
     private void Start()
     {
         mainDialoguePanel?.GetComponent<MainPanel>()?.InitializePanels();
-        //로딩화면 추가 후 카메라를 찾지 못하는 오류가 발생해서 구조를 조금 수정했습니다
         StartCoroutine(InitTutorial());
     }
 
@@ -176,9 +175,8 @@ public class TutorialManager : GameManager
         loadingProgressBar.value = 1;
 
         TutorialState patternState = (TutorialState)pc.GetAlreadyEndedPhase();
-        Tutorial.Sub sub = (Tutorial.Sub)states[patternState];
-        sub.InitEnter(this, dot, this);
-        activeState = sub;
+        tutostate = patternState;
+        activeState = states[patternState];
         activeState.Enter(this, dot, this);
     }
 

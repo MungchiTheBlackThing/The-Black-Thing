@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
     protected MenuController menu;
     [SerializeField]
     public MainVideo mainVideo;
+    [SerializeField]
+    public TimeSkipUIController timeSkipUIController;
 
     private Coroutine subDialogCoroutine;
     private bool isSkipping = false;
@@ -202,6 +204,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("1");
         pc.NextPhase();
     }
+
     public void ChangeGameState(GamePatternState patternState)
     {
         Debug.Log($"[Test] ChangeGameState 실행: {patternState}");
@@ -228,14 +231,26 @@ public class GameManager : MonoBehaviour
             ShowSubDial();
         }
         //C#에서 명시적 형변환은 강제, as 할지말지를 결정.. 즉, 실패 유무를 알고 싶다면, as를 사용한다.
+        //activeState가 ILoadingInterface를 구현하고 있는지 확인, 맞다면 loadingInterface에 할당하고 아니면 null
+        //현재 상태가 비디오를 재생해야하는 로딩 관련 상태인지 확인하는 역할
         ILoadingInterface loadingInterface = activeState as ILoadingInterface;
+
+        //skip video 재생
         if (loadingInterface != null)
         {
-            EVideoIdx VideoIdx = currentPattern == GamePatternState.NextChapter ? EVideoIdx.SkipSleeping : EVideoIdx.SkipPhase;
-            bool IsLooping = VideoIdx == EVideoIdx.SkipSleeping ? true : false;
-            videoController.ShowVideo(VideoIdx, IsLooping);
-        }
+            SkipVideoIdx videoIdx = (currentPattern == GamePatternState.NextChapter) ? SkipVideoIdx.SkipSleeping : SkipVideoIdx.SkipPhase;
+
+            // SkipSleeping 비디오는 항상 재생, SkipPhase 비디오는 버튼 클릭 시에만 재생
+            if (videoIdx == SkipVideoIdx.SkipSleeping || 
+               (videoIdx == SkipVideoIdx.SkipPhase && timeSkipUIController.IsSkipButtonClicked))
+            {
+                bool isLooping = (videoIdx == SkipVideoIdx.SkipSleeping);
+                videoController.ShowSkipVideo(videoIdx, isLooping);
+                timeSkipUIController.IsSkipButtonClicked = false;
+            }
+        }                   
     }
+
     public void StartMain()
     {
         MainDialogue mainState = (MainDialogue)activeState;

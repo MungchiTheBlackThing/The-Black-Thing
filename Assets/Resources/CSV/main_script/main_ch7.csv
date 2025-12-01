@@ -1,4 +1,4 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,37,1,main_door_open,Player,Main,body_dust,face_blink,text,"...! 뭉치, 무슨 일 있었어?","...! Dot, what happened?",2,,,,Main_Ch7,M7_L0001
 1,37,2,main_door_open,Dot,Main,,,text,"신경 쓰지 마, <nickname>. 낮에 배운 것을\n성공적으로 실천하는 중이야.","Don’t mind me, <nickname>. I’m putting\ninto motion what I’ve learned today.",3,,,,Main_Ch7,M7_L0002
 1,37,3,main_door_open,Dot,Main,,,text,‘기분이 좋다’고 생각하면\n‘기분이 좋아’진다는 사실 말이야!,That thinking that I feel good\ncan make me feel good!,4,,,,Main_Ch7,M7_L0003
@@ -106,4 +106,4 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,38,105,main_door_open,Dot,Main,,face_sad,text,우린 같은 것을 바라고 있구나...,Our hopes are one and the same...,106,,,,Main_Ch7,M7_L0105
 3,38,106,main_door_open,Dot,Main,body_ch7_heartup,face_blink,text,"<nickname>, 오늘 밤 하루 정도는\n네가 악몽을 꿔도 괜찮을 것 같아.","<nickname>, I think it will be alright for you\nto have a nightmare just this one night.",107,,,,Main_Ch7,M7_L0106
 3,38,107,main_door_open,Dot,Main,body_ch7_heart,,text,"그 속에서 너의 낯선 슬픔을 발견하고,\n깨어났을 때 마음껏 눈물 흘릴 수 있다면.","And if you discover an unfamiliar sorrow within,\nand shed tears with abandon once you wake—",108,,,,Main_Ch7,M7_L0107
-3,38,108,main_door_open,Dot,Main,body_ch7_heartdown,,text,부디 내일 무슨 꿈을 꿨는지 말해 줘.,"Tomorrow, let me know\nwhat you dreamed of.",,,anim_mud_day7,,Main_Ch7,M7_L0108
+3,38,108,main_door_open,Dot,Main,body_ch7_heartdown,,text,부디 내일 무슨 꿈을 꿨는지 말해 줘.,"Tomorrow, let me know\nwhat you dreamed of.",,,,,Main_Ch7,M7_L0108

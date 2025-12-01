@@ -1,97 +1,97 @@
-﻿LocTable,LocKey,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
-Sub_Ch1,S1_L0001,1,0,Dot,,anim_default,text,난 네게 칼자루를 들려줬어.,I handed you a knife.,2,,,,Sub_Ch8,S8_L0001
-1,45,2,0,Dot,,anim_default,text,잔인하리만치 퍼렇게 날이\n서 있는 칼의 칼자루를.,A knife with a sharpened blade\nmore than ready for blood.,3,,,,Sub_Ch8,S8_L0002
-1,45,3,0,Dot,,anim_default,text,너의 휘두르는 몸짓은 낱낱이\n나의 생채기가 되겠지.,Your every move would\nbecome a cut in my body.,4,,,,Sub_Ch8,S8_L0003
-1,45,4,0,Player,,anim_default,text,칼이라니?,Knife?,5,,,,Sub_Ch8,S8_L0004
-1,45,5,0,Player,,anim_default,selection,뭉치가 준 칼을 가진 적은 없는걸.|내가 널 다치게 할 리 없잖아.,You’ve never handed me a knife.|There’s no way I’d hurt you.,6|7,,,,Sub_Ch8,S8_L0005
-1,45,6,0,Dot,,anim_default,text,"그 칼은 보이지 않는데다 이름도\n여러 개지만, 넌 이미 갖고 있어.",The knife can’t be seen and has\nmany names—and you do have it.,8,,,,Sub_Ch8,S8_L0006
-1,45,7,0,Dot,,anim_default,text,확신할 수 있겠어?,Are you sure?,8,,,,Sub_Ch8,S8_L0007
-1,45,8,0,Dot,,anim_default,text,인간들은 대개 그 칼을\n애정이라고 부르거든.,Humans usually call\nthat knife affection.,9,,,,Sub_Ch8,S8_L0008
-1,45,9,0,Player,,anim_default,text,"아, 으음.",Ah. Hm.,10,,,,Sub_Ch8,S8_L0009
-1,45,10,0,Dot,,anim_default,text,그러니까 뭉치 네 말은… 네가\n내게 준 애정이 칼과 같다는 거야?,So you’re saying… that the affection\nyou gave me is like a knife?,11,,,,Sub_Ch8,S8_L0010
-1,45,11,0,Dot,,anim_default,text,그래서 널 상처 입힐 거라고?,And that I’ll cut you with it?,12,,,,Sub_Ch8,S8_L0011
-1,45,12,0,Dot,,anim_default,text,그래.,Yes.,13,,,,Sub_Ch8,S8_L0012
-1,45,13,0,Player,,anim_default,selection,나도 비슷한 생각을 해 본 적 있어.|왜 그런 생각을 하게 됐어?,I’ve had similar thoughts.|What led you to think this?,14|17,,,,Sub_Ch8,S8_L0013
-1,45,14,0,Player,,anim_default,text,소중하게 생각하는 대상에게 받는\n상처가 배로 아프다는 걸 느꼈거든.,"I’ve realized wounds caused by those you\nfeel affection for hurts twice, thrice as much.",15,,,,Sub_Ch8,S8_L0014
-1,45,15,0,Dot,,anim_default,text,응. 어쩌면 회복 불가능할 정도로.,Yes. So much so that it feels\nimpossible to come back from.,20,,,,Sub_Ch8,S8_L0015
-1,45,16,0,Dot,,anim_default,text,"애정을 갖는다는 건, 그 앞에서만은\n무방비해질 수 있다는 거야.",To have affection for someone is to\nbe defenseless in their presence.,17,,,,Sub_Ch8,S8_L0016
-1,45,17,0,Dot,,anim_default,text,"내가 가진 방패를 내려 놓고,","It’s a resolve to let down my guard,",18,,,,Sub_Ch8,S8_L0017
-1,45,18,0,Dot,,anim_default,text,연약한 부분을 뒤집어 보여 줄 수 있다는 각오지.,and expose my delicate underbelly.,19,,,,Sub_Ch8,S8_L0018
-1,45,19,0,Dot,,anim_default,text,반대로 상대에게 가장 강력한 무기를 쥐어 주는 것과 같아.,It’s also like handing someone\nthe most powerful weapon.,20,,,,Sub_Ch8,S8_L0019
-1,45,20,0,Dot,,anim_default,text,그래서 난… 나는…,So I… I…,21,,,,Sub_Ch8,S8_L0020
-1,45,21,0,Player,,anim_default,selection,두려워?|후회해?,Are you afraid?|Do you regret it?,22|23,,,,Sub_Ch8,S8_L0021
-1,45,22,0,Dot,,anim_default,text,맞아. 두려워.,Yes. I am afraid.,24,,,,Sub_Ch8,S8_L0022
-1,45,23,0,Dot,,anim_default,text,후회와는 달라. 하지만… 두려워.,It’s not regret. But… I’m afraid.,24,,,,Sub_Ch8,S8_L0023
-1,45,24,0,Dot,,anim_default,text,문득 두려워졌어.\n애정의 마음을 갖는 일이.,"All of a sudden, I’m afraid.\nTo have affection.",,,,,Sub_Ch8,S8_L0024
-2,46,25,0,Dot,,anim_default,text,"<nickname>, 두려울 만큼 아름다운\n바다에 뛰어들고 싶었던 적이 있어?","<nickname>, ever thought about running\ninto the terrifyingly beautiful sea?",26,,,,Sub_Ch8,S8_L0025
-2,46,26,0,Player,,anim_default,text,응. 있어.|아니. 없어.,"Yeah, I have.",27|33,,,,Sub_Ch8,S8_L0026
-2,46,27,0,Dot,,anim_default,text,파도가 너를 집어 삼킬 걸 알면서도?,Even though you know the\nwaves will swallow you whole?,28,,,,Sub_Ch8,S8_L0027
-2,46,28,0,Player,,anim_default,text,가끔은 그래.,"Sometimes, yes.",29,,,,Sub_Ch8,S8_L0028
-2,46,29,0,Dot,,anim_default,text,… 누구나 종종 눈부신 심연\n속에 뛰어들기를 원하지.,… I guess we all want to jump into\nthe dazzling abyss from time to time.,30,,,,Sub_Ch8,S8_L0029
-2,46,30,0,Dot,,anim_default,text,나를 끈적하게 휘감을 무언가.,Into something that would\nembrace us fiercely.,31,,,,Sub_Ch8,S8_L0030
-2,46,31,0,Dot,,anim_default,text,"마주 안고, 끝내 모래알처럼\n흩어지게 할 무언가에 말이야.","Embrace us, but then shatter us into sand.",32,,,,Sub_Ch8,S8_L0031
-2,46,32,0,Dot,,anim_default,text,이렇게 작고 새까만 나도\n바다에 안길 수 있을까?,Do you think the sea would\ntake me… Even as I am?,37,,,,Sub_Ch8,S8_L0032
-2,46,33,0,Dot,,anim_default,text,"그런 강렬한 마음이 아직 너에게 찾아간 적이\n없다니. 그건 소소한 불행이야, <nickname>.",I see that impulse has yet to\nfind you. That is a misfortune.,34,,,,Sub_Ch8,S8_L0033
-2,46,34,0,Dot,,anim_default,text,마음이 치닫는 것은 쉽게 오지 않는\n기회거든. 나는 그런 기회를 누리고 싶어.,Such a crescendo of the mind is hard\nto come by. I want to experience it.,35,,,,Sub_Ch8,S8_L0034
-2,46,35,0,Dot,,anim_default,text,"눈부시지만, 나를 끝내 모래알처럼\n흩어지게 할 무언가에 뛰어들고 싶다는 것.",The urge to throw myself headfirst into\nwhat would shatter me into sand.,36,,,,Sub_Ch8,S8_L0035
-2,46,36,0,Dot,,anim_default,text,이렇게 작고 새까만 나도\n바다에 안길 수 있을까?,Do you think the sea would\ntake me… Even as I am?,37,,,,Sub_Ch8,S8_L0036
-2,46,37,0,Player,,anim_default,text,아마 그럴 거야. 바다의\n품은 아주 넓으니까.,I would think so. The sea\ndoesn’t discriminate.,38,,,,Sub_Ch8,S8_L0037
-2,46,38,0,Dot,,anim_default,text,"<nickname>, 바다로 날아갈\n수도 있을 듯한 기분이야!","<nickname>, I could just soar\nacross an entire ocean!",39,,,,Sub_Ch8,S8_L0038
-2,46,39,0,Dot,,anim_default,text,나를 흩어지게 하는 게 달콤한\n향이 나는 사탕 바구니나,If a sweet smelling candy basket or\nthe nightmare of an extinct creature,40,,,,Sub_Ch8,S8_L0039
-2,46,40,0,Dot,,anim_default,text,멸종된 동물의 악몽이었다면\n이렇게 기쁘지는 않았을 거야!,were to scatter me I wouldn’t\nbe nearly as joyful!,41,,,,Sub_Ch8,S8_L0040
-2,46,41,0,Dot,,anim_default,text,"파도에 휩쓸리면 바다는 나를 부드럽게 안고, 강렬하게 찢어 발기겠지.","The sea would tenderly carry me away,\nthen rip me apart without hesitation.",42,,,,Sub_Ch8,S8_L0041
-2,46,42,0,Dot,,anim_default,text,그 거대한 아름다움을 만끽하는 것—\n그건 내가 진정으로 바라던 것일지 몰라.,"To relish such beauty — perhaps\nthat’s what I want, deep down…",43,,,,Sub_Ch8,S8_L0042
-2,46,43,0,Player,,anim_default,text,뭉치를 말린다.|생각을 이어가도록 둔다.,(Talk Dot down)|(Let Dot go on.),44|48,,,,Sub_Ch8,S8_L0043
-2,46,44,0,Player,,anim_default,text,"하지만 뭉치, 그 길은 위험해보여.","But Dot, the road seems dangerous.",45,,,,Sub_Ch8,S8_L0044
-2,46,45,0,Dot,,anim_default,text,그래 맞아. 쉽지만은 않은 일이야.\n그러려면 널 떠나야 하니까.,You’re right. It won’t be\neasy. I’d have to leave you.,46,,,,Sub_Ch8,S8_L0045
-2,46,46,0,Dot,,anim_default,text,과묵하지만 따뜻한 친구였던 빵 곰팡이와,"And say goodbye to my silent\nbut kind companion, the mold",47,,,,Sub_Ch8,S8_L0046
-2,46,47,0,Dot,,anim_default,text,제멋대로 흩어진 그의\n포자들에게도 작별을 해야 하지.,as well as its many spores scattered\nhere there and everywhere.,52,,,,Sub_Ch8,S8_L0047
-2,46,48,0,Dot,,anim_default,text,그래. 어쩌면 잊지 못할\n경험이 될 수도 있겠어.,Yes. Perhaps it will be an\nunforgettable experience.,49,,,,Sub_Ch8,S8_L0048
-2,46,49,0,Dot,,anim_default,text,…. 하지만 그러려면 널 떠나야 할 거야.,But then I’d have to leave you.,50,,,,Sub_Ch8,S8_L0049
-2,46,50,0,Dot,,anim_default,text,과묵하지만 따뜻한 친구였던 빵 곰팡이와,"And say goodbye to my silent\nbut kind companion, the mold,",51,,,,Sub_Ch8,S8_L0050
-2,46,51,0,Dot,,anim_default,text,제멋대로 흩어진 그의\n포자들에게도 작별을 해야 하지.,as well as its many spores scattered\nhere there and everywhere.,52,,,,Sub_Ch8,S8_L0051
-2,46,52,0,Player,,anim_default,text,(조심스럽게 안심한다.),(Feel relieved.),53,,,,Sub_Ch8,S8_L0052
-2,46,53,0,Dot,,anim_default,text,무엇보다 아직 꿈이 되지 못했으니…,"Besides, I’ve yet to become a dream…",54,,,,Sub_Ch8,S8_L0053
-2,46,54,0,Dot,,anim_default,text,"꿈이 되고 나서는, 마음껏 바다의 품에\n안길 수 있을 것 같다는 생각이 들어.","When I become one, I think I’d be quite\ncontent to run into the sea’s arms.",55,,,,Sub_Ch8,S8_L0054
-2,46,55,0,Dot,,anim_default,text,난 끝없이 파도치는 꿈이 될 거야.,"I’ll be a dream, dreaming\none never-ending dream.",56,,,,Sub_Ch8,S8_L0055
-2,46,56,0,Dot,,anim_default,text,눈을 감고… 두둥실 떠오르겠지. 그때의\n나는 분명 바다를 닮아 있을 거야.,"I’ll close my eyes and soon I’ll\nbe floating - up, up, and away.",,,,,Sub_Ch8,S8_L0056
-3,47,57,0,Dot,,anim_default,text,"<nickname>, <nickname>. 어제 하루 종일 팀\n버튼의 <크리스마스의 악몽>을 봤어!",I spent all day watching Tim Burton’s\n“The Night Before Christmas” yesterday!,58,,,,Sub_Ch8,S8_L0057
-3,47,58,0,Dot,,anim_default,text,"한 숨도 쉬지 않고, 눈을 최대한\n적게 깜빡이려 노력하며","I didn’t dare breathe, I didn’t dare blink,",59,,,,Sub_Ch8,S8_L0058
-3,47,59,0,Dot,,anim_default,text,"계속, 계속, 계속 봤어.","and I watched, and watched, and watched.",60,,,,Sub_Ch8,S8_L0059
-3,47,60,0,Dot,,anim_default,text,모든 것이 끝났다는\n검은 화면이 뜰 때까지.,Until the black screen signaled the end.,61,,,,Sub_Ch8,S8_L0060
-3,47,61,0,Dot,,anim_default,text,………,………,62,,,,Sub_Ch8,S8_L0061
-3,47,62,0,Dot,,anim_default,text,………,………,63,,,,Sub_Ch8,S8_L0062
-3,47,63,0,Dot,,anim_default,text,………,………,64,,,,Sub_Ch8,S8_L0063
-3,47,64,0,Dot,,anim_default,text,"세상에, 멋있어. 강렬해!","My, it’s stunning. It’s intense!",65,,,,Sub_Ch8,S8_L0064
-3,47,65,0,Dot,,anim_default,text,세상엔 폼 나는 검정도\n있다는 걸 배웠어.,I never knew black could be so cool.,66,,,,Sub_Ch8,S8_L0065
-3,47,66,0,Dot,,anim_default,text,그런데.,But.,67,,,,Sub_Ch8,S8_L0066
-3,47,67,0,Dot,,anim_default,text,"나의 검정은 왜…. 왜 이럴까, <nickname>?","Why… why is my black like this, <nickname>?",68,,,,Sub_Ch8,S8_L0067
-3,47,68,0,Dot,,anim_default,text,볼품없어.,It’s ugly.,69,,,,Sub_Ch8,S8_L0068
-3,47,69,0,Dot,,anim_default,text,… 볼품없어.,… It’s ugly.,,,,,Sub_Ch8,S8_L0069
-4,48,70,0,Dot,,anim_default,text,“듣지 않는 상대와 함께 있는 건\n혼자일 때보다 더 외로운 일이다.”,“Being with people who don’t\nlisten is lonelier than being alone.”,71,,,,Sub_Ch8,S8_L0070
-4,48,71,0,Dot,,anim_default,text,…,…,72,,,,Sub_Ch8,S8_L0071
-4,48,72,0,Dot,,anim_default,text,놀랍도록 철학적이지 않아?,Isn’t that wonderfully profound?,73,,,,Sub_Ch8,S8_L0072
-4,48,73,0,Dot,,anim_default,text,…,…,74,,,,Sub_Ch8,S8_L0073
-4,48,74,0,Dot,,anim_default,text,"그래, 뭐, 꼭 내가 좋아한다고\n좋아할 필요는 없어.","Okay, well, you don’t have\nto like it because I like it.",75,,,,Sub_Ch8,S8_L0074
-4,48,75,0,Dot,,anim_default,text,"듣지 않는 상대와 함께 있는 건 혼자일\n때보다 외로운 게 확실해, 그렇지?","Being with people who don’t listen\nis lonelier than being alone, isn’t it?",76,,,,Sub_Ch8,S8_L0075
-4,48,76,0,Dot,,anim_default,text,…,…,77,,,,Sub_Ch8,S8_L0076
-4,48,77,0,Dot,,anim_default,text,"그래, 오직 <nickname> 한 명과\n이야기를 나눠 본 난 확답을 줄 수 없겠지만.","Fine, I’ve only ever talked to\n<nickname>, so I don’t really know.",78,,,,Sub_Ch8,S8_L0077
-4,48,78,0,Dot,,anim_default,text,그렇지만 분명 그럴\n거야. 외로울 거야.,"But it must be. Lonely, I mean.",79,,,,Sub_Ch8,S8_L0078
-4,48,79,0,Dot,,anim_default,text,혼자 있을 때면 난 마음을 풀어\n헤치고 상상 속을 거닐어.,"When I’m alone, I let my mind wander.",80,,,,Sub_Ch8,S8_L0079
-4,48,80,0,Dot,,anim_default,text,"비 대신 반짝이가 내리는 낯선\n행성으로 여행을 떠나기도 하고,","I travel to foreign planets\nwhere it rains glitter,",81,,,,Sub_Ch8,S8_L0080
-4,48,81,0,Dot,,anim_default,text,"심해 아귀와의 깜깜한 담소를 즐기기도 하고,\n1880년대의 어린 소녀가 되어 보기도 해.","chat with anglerfish in the deep dark ocean, and live as a little girl in the 1880s.",82,,,,Sub_Ch8,S8_L0081
-4,48,82,0,Dot,,anim_default,text,"그리고 <nickname>과 함께일 때면,\n<nickname>만은 내 말을 들어줘.","And when I’m with <nickname>, they listen.",83,,,,Sub_Ch8,S8_L0082
-4,48,83,0,Dot,,anim_default,text,"내 사색, 질문, 고해, 그 모든 걸.","They listen to my musings,\nquestions, and confessions, all of it.",84,,,,Sub_Ch8,S8_L0083
-4,48,84,0,Dot,,anim_default,text,그렇지만 듣지 않는 상대는 어떨까?,But to be with someone who doesn’t listen?,85,,,,Sub_Ch8,S8_L0084
-4,48,85,0,Dot,,anim_default,text,꼭 벽이랑 대화하는 기분일 거야.,"It must feel as if you’re talking to a wall,",86,,,,Sub_Ch8,S8_L0085
-4,48,86,0,Dot,,anim_default,text,아니면 스치는 바람과 대화하는 기분.,or a gust of wind passing by.,87,,,,Sub_Ch8,S8_L0086
-4,48,87,0,Dot,,anim_default,text,바쁜 도시 한가운데 유리 상자\n속 갇혀있는 기분일 거야.,"It must feel as if you are locked in a\nglass box in the middle of a busy city,",88,,,,Sub_Ch8,S8_L0087
-4,48,88,0,Dot,,anim_default,text,"날카롭고 간절하게 소리치며 벽을 긁어\n보지만, 아무도 내 비명을 듣지 못하는.",where you’re screaming and\nscreaming but no one ever hears you.,89,,,,Sub_Ch8,S8_L0088
-4,48,89,0,Dot,,anim_default,text,…,…,90,,,,Sub_Ch8,S8_L0089
-4,48,90,0,Dot,,anim_default,text,난 절대 너를 외롭게 두지 않아.,I would never do that to you.,91,,,,Sub_Ch8,S8_L0090
-4,48,91,0,Dot,,anim_default,text,알고 있지?,"You know that, right?",92,,,,Sub_Ch8,S8_L0091
-4,48,92,0,Dot,,anim_default,text,…,…,93,,,,Sub_Ch8,S8_L0092
-4,48,93,0,Dot,,anim_default,text,난 언제나 들을 준비가\n되어 있으니까.,I’m always ready to listen.,94,,,,Sub_Ch8,S8_L0093
-4,48,94,0,Dot,,anim_default,text,…,…,95,,,,Sub_Ch8,S8_L0094
-4,48,95,0,Dot,,anim_default,text,여기서 기다리고 있을게.,"I’ll be right here, waiting.",96,,,,Sub_Ch8,S8_L0095
-4,48,96,0,Dot,,anim_default,text,네가 포자 흩뿌리는 소리밖에 못\n낼지라도. 나는 듣고 있을 거야.,"Even if the only sound you make is the\nsound of your spores, fluttering mid-air.",,,,,Sub_Ch8,S8_L0096
+Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
+1,45,1,0,Dot,Sub,anim_eyesblink,text,난 네게 칼자루를 들려줬어.,I handed you a knife.,2,,,,Sub_Ch8,S8_L0001
+1,45,2,0,Dot,Sub,,text,잔인하리만치 퍼렇게 날이\n서 있는 칼의 칼자루를.,"A knife with a sharpened blade,\nmore than ready for blood.",3,,,,Sub_Ch8,S8_L0002
+1,45,3,0,Dot,Sub,,text,너의 휘두르는 몸짓은 낱낱이\n나의 생채기가 되겠지.,Your every move will\ncut into my body.,4,,,,Sub_Ch8,S8_L0003
+1,45,4,0,Player,Sub,,text,칼이라니?,A knife?,5,,,,Sub_Ch8,S8_L0004
+1,45,5,0,Player,Sub,,selection,뭉치가 칼을 준 적은 없을걸?|내가 널 다치게 할 리 없잖아.,You’ve never handed me a knife.|There’s no way I’d hurt you.,6|7,moon|sun,,,Sub_Ch8,S8_L0005
+1,45,6,0,Dot,Sub,,text,"그 칼은 보이지 않는데다 이름도\n여러 개지만, 넌 이미 갖고 있어.",The knife can’t be seen and has\nmany names—and you do have it.,8,,,,Sub_Ch8,S8_L0006
+1,45,7,0,Dot,Sub,,text,확신할 수 있겠어?,Are you sure?,8,,,,Sub_Ch8,S8_L0007
+1,45,8,0,Dot,Sub,,text,인간들은 대개 그 칼을\n애정이라고 부르거든.,"You see, humans call it affection.",9,,,,Sub_Ch8,S8_L0008
+1,45,9,0,Player,Sub,,text,"아, 으음.",Ah. Hm.,10,,,,Sub_Ch8,S8_L0009
+1,45,10,0,Player,Sub,,text,그러니까 뭉치 네 말은... 네가\n내게 준 애정이 칼과 같다는 거야?,So you’re saying... that the affection\nyou gave me is like a knife?,11,,,,Sub_Ch8,S8_L0010
+1,45,11,0,Player,Sub,,text,그래서 널 상처 입힐 거라고?,And that I’ll cut you with it?,12,,,,Sub_Ch8,S8_L0011
+1,45,12,0,Dot,Sub,,text,그래.,Yes.,13,,,,Sub_Ch8,S8_L0012
+1,45,13,0,Player,Sub,,selection,나도 비슷한 생각을 해 본 적 있어.|왜 그런 생각을 하게 됐어?,I’ve had similar thoughts.|What led you to think this?,14|16,passive|active,,,Sub_Ch8,S8_L0013
+1,45,14,0,Player,Sub,,text,소중하게 생각하는 대상에게 받는\n상처가 배로 아프다는 걸 느꼈거든.,"I’ve realized wounds caused by those you\nfeel affection for hurts twice, thrice as much.",15,,,,Sub_Ch8,S8_L0014
+1,45,15,0,Dot,Sub,,text,응. 어쩌면 회복 불가능할 정도로.,Yes. So much so that it feels\nimpossible to come back from.,20,,,,Sub_Ch8,S8_L0015
+1,45,16,0,Dot,Sub,,text,"애정을 갖는다는 건, 그 앞에서만은\n무방비해질 수 있다는 거야.",To feel affection for someone is to\nbe defenseless in their presence.,17,,,,Sub_Ch8,S8_L0016
+1,45,17,0,Dot,Sub,,text,"내가 가진 방패를 내려 놓고,","It’s a resolve to let down my guard,",18,,,,Sub_Ch8,S8_L0017
+1,45,18,0,Dot,Sub,,text,연약한 부분을 뒤집어 보여 줄 수 있다는 각오지.,and expose my delicate underbelly.,19,,,,Sub_Ch8,S8_L0018
+1,45,19,0,Dot,Sub,,text,반대로 상대에게 가장 강력한 무기를 쥐어 주는 것과 같아.,It’s also like handing someone\nthe most powerful of weapons.,20,,,,Sub_Ch8,S8_L0019
+1,45,20,0,Dot,Sub,,text,그래서 난... 나는...,So I... I...,21,,,,Sub_Ch8,S8_L0020
+1,45,21,0,Player,Sub,,selection,두려워?|후회해?,Are you afraid?|Do you regret it?,22|23,passive|active,,,Sub_Ch8,S8_L0021
+1,45,22,0,Dot,Sub,anim_eyescorner_turn,text,맞아. 두려워.,Yes. I am afraid.,24,,,,Sub_Ch8,S8_L0022
+1,45,23,0,Dot,Sub,anim_eyesblink,text,후회와는 달라. 하지만... 두려워.,It’s not regret. But... I’m afraid.,24,,,,Sub_Ch8,S8_L0023
+1,45,24,0,Dot,Sub,anim_eyesclosed,text,문득 두려워졌어.\n애정의 마음을 갖는 일이.,"All of a sudden, I’m afraid.\nTo feel affection.",,,anim_mud_day7,,Sub_Ch8,S8_L0024
+2,46,25,0,Dot,Sub,anim_eyesblink,text,"<nickname>, 두려울 만큼 아름다운\n바다에 뛰어들고 싶었던 적이 있어?","<nickname>, ever thought about running\ninto the terrifyingly beautiful sea?",26,,,,Sub_Ch8,S8_L0025
+2,46,26,0,Player,Sub,,selection,"응, 있어.|아니, 없어.","Yeah, I have.|No, I haven't.",27|33,active|passive,,,Sub_Ch8,S8_L0026
+2,46,27,0,Dot,Sub,,text,파도가 너를 집어 삼킬 걸 알면서도?,Despite knowing the waves\nwill swallow you whole?,28,,,,Sub_Ch8,S8_L0027
+2,46,28,0,Player,Sub,,text,가끔은 그래.,"Sometimes, yes.",29,,,,Sub_Ch8,S8_L0028
+2,46,29,0,Dot,Sub,,text,... 누구나 종종 눈부신 심연\n속에 뛰어들기를 원하지.,... I guess we all want to jump into\nthe dazzling abyss from time to time.,30,,,,Sub_Ch8,S8_L0029
+2,46,30,0,Dot,Sub,,text,나를 끈적하게 휘감을 무언가.,Into something that will\nembrace us fiercely.,31,,,,Sub_Ch8,S8_L0030
+2,46,31,0,Dot,Sub,anim_eyesside_turn,text,"마주 안고, 끝내 모래알처럼\n흩어지게 할 무언가에 말이야.","Embrace us, only to shatter us\ninto a thousand specks of sand.",32,,,,Sub_Ch8,S8_L0031
+2,46,32,0,Dot,Sub,anim_eyesblink,text,이렇게 작고 새까만 나도\n바다에 안길 수 있을까?,Do you think the sea would\ntake me... Even as I am?,37,,,,Sub_Ch8,S8_L0032
+2,46,33,0,Dot,Sub,anim_eyesside_turn,text,"그런 강렬한 마음이 아직 너에게 찾아간 적이\n없다니. 그건 소소한 불행이야, <nickname>.",I see that impulse has yet to\nfind you. That's unfortunate.,34,,,,Sub_Ch8,S8_L0033
+2,46,34,0,Dot,Sub,anim_eyesside,text,마음이 치닫는 것은 쉽게 오지 않는\n기회거든. 나는 그런 기회를 누리고 싶어.,Such a crescendo of the mind is hard\nto come by. I want to experience it.,35,,,,Sub_Ch8,S8_L0034
+2,46,35,0,Dot,Sub,anim_eyesblink,text,"눈부시지만, 나를 끝내 모래알처럼\n흩어지게 할 무언가에 뛰어들고 싶다는 것.",The urge to throw myself into what\nwill shatter me like grains of sand.,36,,,,Sub_Ch8,S8_L0035
+2,46,36,0,Dot,Sub,,text,이렇게 작고 새까만 나도\n바다에 안길 수 있을까?,Do you think the sea would\ntake me... Even as I am?,37,,,,Sub_Ch8,S8_L0036
+2,46,37,0,Player,Sub,,text,아마 그럴 거야. 바다의\n품은 아주 넓으니까.,I would think so. The sea\ndoesn’t discriminate.,38,,,,Sub_Ch8,S8_L0037
+2,46,38,0,Dot,Sub,anim_move,text,"<nickname>, 바다로 날아갈\n수도 있을 듯한 기분이야!","<nickname>, I could just soar\nacross an entire ocean!",39,,,,Sub_Ch8,S8_L0038
+2,46,39,0,Dot,Sub,anim_eyesblink,text,나를 흩어지게 하는 게 달콤한\n향이 나는 사탕 바구니나,If a sweet smelling candy basket or\nthe nightmare of an extinct creature,40,,,,Sub_Ch8,S8_L0039
+2,46,40,0,Dot,Sub,,text,멸종된 동물의 악몽이었다면\n이렇게 기쁘지는 않았을 거야!,"were to scatter me, I wouldn’t\nbe nearly as joyful!",41,,,,Sub_Ch8,S8_L0040
+2,46,41,0,Dot,Sub,anim_eyesclosed_turn,text,"파도에 휩쓸리면 바다는 나를 부드럽게 안고, 강렬하게 찢어 발기겠지.","The sea would tenderly carry me away,\nthen tear me apart without hesitation.",42,,,,Sub_Ch8,S8_L0041
+2,46,42,0,Dot,Sub,,text,그 거대한 아름다움을 만끽하는 것—\n그건 내가 진정으로 바라던 것일지 몰라.,"To relish such beauty—perhaps\nthat’s what I want, deep down...",43,,,,Sub_Ch8,S8_L0042
+2,46,43,0,Player,Sub,,selection,(뭉치를 말린다.)|(생각을 이어가도록 둔다.),(Talk Dot down.)|(Let Dot go on.),44|48,active|passive,,,Sub_Ch8,S8_L0043
+2,46,44,0,Player,Sub,,text,"하지만 뭉치, 그 길은 위험해 보여.","But Dot, that road\nseems dangerous.",45,,,,Sub_Ch8,S8_L0044
+2,46,45,0,Dot,Sub,anim_eyesblink,text,그래 맞아. 쉽지만은 않은 일이야.\n그러려면 널 떠나야 하니까.,You’re right. It won’t be\neasy. I’d have to leave you.,46,,,,Sub_Ch8,S8_L0045
+2,46,46,0,Dot,Sub,anim_eyescorner,text,과묵하지만 따뜻한 친구였던 빵 곰팡이와,"And say goodbye to my silent\nbut kind companion, the mold",47,,,,Sub_Ch8,S8_L0046
+2,46,47,0,Dot,Sub,anim_eyesblink,text,제멋대로 흩어진 그의\n포자들에게도 작별을 해야 하지.,"as well as its many spores scattered\nhere, there, and everywhere.",52,,,,Sub_Ch8,S8_L0047
+2,46,48,0,Dot,Sub,anim_eyesblink,text,그래. 어쩌면 잊지 못할\n경험이 될 수도 있겠어.,Yes. Perhaps it will be an\nunforgettable experience.,49,,,,Sub_Ch8,S8_L0048
+2,46,49,0,Dot,Sub,anim_eyescorner,text,... 하지만 그러려면 널 떠나야 할 거야.,But then I’d have to leave you.,50,,,,Sub_Ch8,S8_L0049
+2,46,50,0,Dot,Sub,,text,과묵하지만 따뜻한 친구였던 빵 곰팡이와,"And say goodbye to my silent\nbut kind companion, the mold,",51,,,,Sub_Ch8,S8_L0050
+2,46,51,0,Dot,Sub,anim_eyesblink,text,제멋대로 흩어진 그의\n포자들에게도 작별을 해야 하지.,"as well as its many spores scattered\nhere, there, and everywhere.",52,,,,Sub_Ch8,S8_L0051
+2,46,52,0,Player,Sub,,text,(조심스럽게 안심한다.),(Feel relieved.),53,,,,Sub_Ch8,S8_L0052
+2,46,53,0,Dot,Sub,,text,무엇보다 아직 꿈이 되지 못했으니...,"Besides, I’ve yet to\nbecome a dream...",54,,,,Sub_Ch8,S8_L0053
+2,46,54,0,Dot,Sub,anim_eyesclosed_turn,text,"꿈이 되고 나서는, 마음껏 바다의 품에\n안길 수 있을 것 같다는 생각이 들어.","When I become one, I think I’d be quite\ncontent to run into the sea’s arms.",55,,,,Sub_Ch8,S8_L0054
+2,46,55,0,Dot,Sub,,text,난 끝없이 파도치는 꿈이 될 거야.,"I’ll be a dream, dreaming\none never-ending dream.",56,,,,Sub_Ch8,S8_L0055
+2,46,56,0,Dot,Sub,,text,눈을 감고... 두둥실 떠오르겠지. 그때의\n나는 분명 바다를 닮아 있을 거야.,"I’ll close my eyes and soon I’ll\nbe floating—up, up, and away.",,,anim_eyesclosed,,Sub_Ch8,S8_L0056
+3,47,57,0,Dot,Sub,anim_bounce,text,"<nickname>, <nickname>. 어제 하루 종일 팀\n버튼의 <크리스마스의 악몽>을 봤어!",I spent all day watching Tim Burton’s\n‘The Night Before Christmas’ yesterday!,58,,,,Sub_Ch8,S8_L0057
+3,47,58,0,Dot,Sub,,text,"한 숨도 쉬지 않고, 눈을 최대한\n적게 깜빡이려 노력하며","I didn’t dare breathe, I didn’t dare blink,",59,,,,Sub_Ch8,S8_L0058
+3,47,59,0,Dot,Sub,,text,"계속, 계속, 계속 봤어.","and I watched, and watched, and watched.",60,,,,Sub_Ch8,S8_L0059
+3,47,60,0,Dot,Sub,anim_eyesblink,text,모든 것이 끝났다는\n검은 화면이 뜰 때까지.,Until the black screen\nsignaled the end.,61,,,,Sub_Ch8,S8_L0060
+3,47,61,0,Dot,Sub,,text,.......,.......,62,,,,Sub_Ch8,S8_L0061
+3,47,62,0,Dot,Sub,,text,.......,.......,63,,,,Sub_Ch8,S8_L0062
+3,47,63,0,Dot,Sub,,text,.......,.......,64,,,,Sub_Ch8,S8_L0063
+3,47,64,0,Dot,Sub,,text,"세상에, 멋있어. 강렬해!","My, it’s stunning. It’s intense!",65,,,,Sub_Ch8,S8_L0064
+3,47,65,0,Dot,Sub,,text,세상엔 폼 나는 검정도\n있다는 걸 배웠어.,I never knew black could be so cool.,66,,,,Sub_Ch8,S8_L0065
+3,47,66,0,Dot,Sub,anim_eyescorner_turn,text,그런데.,But.,67,,,,Sub_Ch8,S8_L0066
+3,47,67,0,Dot,Sub,anim_eyesblink,text,"나의 검정은 왜... 왜 이럴까, <nickname>?","Why... why is my black like this,\n<nickname>?",68,,,,Sub_Ch8,S8_L0067
+3,47,68,0,Dot,Sub,anim_eyesdown_turn,text,볼품없어.,It’s ugly.,69,,,,Sub_Ch8,S8_L0068
+3,47,69,0,Dot,Sub,anim_omg,text,... 볼품없어.,... It’s ugly.,,,,,Sub_Ch8,S8_L0069
+4,48,70,0,Dot,Sub,anim_mold2,text,“듣지 않는 상대와 함께 있는 건\n혼자일 때보다 더 외로운 일이다.”,“Being with people who don’t\nlisten is lonelier than being alone.”,71,,,,Sub_Ch8,S8_L0070
+4,48,71,0,Dot,Sub,,text,...,...,72,,,,Sub_Ch8,S8_L0071
+4,48,72,0,Dot,Sub,,text,놀랍도록 철학적이지 않아?,Isn’t that wonderfully profound?,73,,,,Sub_Ch8,S8_L0072
+4,48,73,0,Dot,Sub,,text,...,...,74,,,,Sub_Ch8,S8_L0073
+4,48,74,0,Dot,Sub,,text,"그래, 뭐, 꼭 내가 좋아한다고\n좋아할 필요는 없어.","Okay, well, you don’t have\nto like it because I like it.",75,,,,Sub_Ch8,S8_L0074
+4,48,75,0,Dot,Sub,,text,"듣지 않는 상대와 함께 있는 건 혼자일\n때보다 외로운 게 확실해, 그렇지?","Being with people who don’t listen\nis lonelier than being alone, isn’t it?",76,,,,Sub_Ch8,S8_L0075
+4,48,76,0,Dot,Sub,,text,...,...,77,,,,Sub_Ch8,S8_L0076
+4,48,77,0,Dot,Sub,,text,"그래, 오직 <nickname> 한 명과\n이야기를 나눠 본 난 확답을 줄 수 없겠지만.","Fine. I've only ever talked\nto you, so I wouldn’t know.",78,,,,Sub_Ch8,S8_L0077
+4,48,78,0,Dot,Sub,,text,그렇지만 분명 그럴\n거야. 외로울 거야.,"But it must be. Lonely, I mean.",79,,,,Sub_Ch8,S8_L0078
+4,48,79,0,Dot,Sub,,text,혼자 있을 때면 난 마음을 풀어\n헤치고 상상 속을 거닐어.,"When I’m alone, I let my mind wander.",80,,,,Sub_Ch8,S8_L0079
+4,48,80,0,Dot,Sub,anim_sub_light,text,"비 대신 반짝이가 내리는 낯선\n행성으로 여행을 떠나기도 하고,","I travel to foreign planets\nwhere it rains glitter,",81,,,,Sub_Ch8,S8_L0080
+4,48,81,0,Dot,Sub,,text,"심해 아귀와의 깜깜한 담소를 즐기기도 하고,\n1880년대의 어린 소녀가 되어 보기도 해.","chat with anglerfish in the deep dark ocean,\nand live as a little girl in the 1880s.",82,,,,Sub_Ch8,S8_L0081
+4,48,82,0,Dot,Sub,anim_eyescorner,text,"그리고 <nickname>과 함께일 때면,\n<nickname>만은 내 말을 들어줘.","And when I’m with <nickname>,\n<nickname> listens.",83,,,,Sub_Ch8,S8_L0082
+4,48,83,0,Dot,Sub,,text,"내 사색, 질문, 고해, 그 모든 걸.","Listens to my musings, questions\nand confessions, all of it.",84,,,,Sub_Ch8,S8_L0083
+4,48,84,0,Dot,Sub,anim_mold2,text,그렇지만 듣지 않는 상대는 어떨까?,But to be with someone\nwho doesn’t listen?,85,,,,Sub_Ch8,S8_L0084
+4,48,85,0,Dot,Sub,,text,꼭 벽이랑 대화하는 기분일 거야.,"It must feel as if you’re\ntalking to a wall,",86,,,,Sub_Ch8,S8_L0085
+4,48,86,0,Dot,Sub,,text,아니면 스치는 바람과 대화하는 기분.,or a gust of wind passing by.,87,,,,Sub_Ch8,S8_L0086
+4,48,87,0,Dot,Sub,,text,바쁜 도시 한가운데 유리 상자\n속 갇혀있는 기분일 거야.,"It must feel as if you are locked in a\nglass box in the middle of a busy city,",88,,,,Sub_Ch8,S8_L0087
+4,48,88,0,Dot,Sub,,text,"날카롭고 간절하게 소리치며 벽을 긁어\n보지만, 아무도 내 비명을 듣지 못하는.",where you’re screaming and\nscreaming but no one ever hears you.,89,,,,Sub_Ch8,S8_L0088
+4,48,89,0,Dot,Sub,,text,...,...,90,,,,Sub_Ch8,S8_L0089
+4,48,90,0,Dot,Sub,anim_mold1,text,"곰팡이, 난 절대 너를 외롭게 두지 않아.",I would never do that to you.,91,,,,Sub_Ch8,S8_L0090
+4,48,91,0,Dot,Sub,,text,알고 있지?,"You know that, right?",92,,,,Sub_Ch8,S8_L0091
+4,48,92,0,Dot,Sub,,text,...,...,93,,,,Sub_Ch8,S8_L0092
+4,48,93,0,Dot,Sub,,text,난 언제나 들을 준비가\n되어 있으니까.,I’m always ready to listen.,94,,,,Sub_Ch8,S8_L0093
+4,48,94,0,Dot,Sub,,text,...,...,95,,,,Sub_Ch8,S8_L0094
+4,48,95,0,Dot,Sub,,text,여기서 기다리고 있을게.,"I’ll be right here, waiting.",96,,,,Sub_Ch8,S8_L0095
+4,48,96,0,Dot,Sub,,text,네가 포자 흩뿌리는 소리밖에 못\n낼지라도. 나는 듣고 있을 거야.,Even if all I hear is the fluttering\nof your spores... I’ll be listening.,,,,,Sub_Ch8,S8_L0096

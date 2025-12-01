@@ -1,4 +1,4 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,EngText,KorText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,EngText,KorText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,13,1,main_web,Dot,Main,body_spiderweb_move,face_blink,text,<nickname>!,<nickname>!,2,,,,Main_Ch3,M3_L0001
 1,13,2,main_web,Dot,Main,body_spiderweb,,text,How have you been?,잘 지냈어? 오늘도 들려줄 이야기가 있어!,3,1,,,Main_Ch3,M3_L0002
 1,13,3,main_web,Dot,Main,,,text,"<nickname>, would you\nlike to know a secret?","<nickname>, 비밀을 하나 알려 줄까?",4,,,,Main_Ch3,M3_L0003
@@ -100,4 +100,4 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,14,99,main_door_open,Dot,Main,,face_eyeroll3,text,or a thinker pondering with\nyou over beloved humans. Just me.,너라는 친구와 사랑하는 인간에 대해 사유하는\n나도 전부 나로서 존재할 수 있으면 해.,100,,,,Main_Ch3,M3_L0099
 3,14,100,main_door_open,Dot,Main,body_ch3_heartup,face_blink,text,"Even with these arms full of despair, I still long to make room for hope.",우글거리는 모든 절망을 끌어안은\n동시에 희망을 품을 수 있으면 해...,101,,,,Main_Ch3,M3_L0100
 3,14,101,main_door_open,Dot,Main,body_ch3_heart,,text,"so that, surrounded by possibilities of the days\nahead, I’ll be less lonely than the one before.",그러면 다양한 내일의 가능성 속에서\n어제보다 덜 외로운 내가 될 거야.,102,,,,Main_Ch3,M3_L0101
-3,14,102,main_door_open,Dot,Main,body_ch3_heartdown,face_mad,text,Do you think I can? Could I really?,부디 그럴 수 있을까? 응?,,,anim_mud_day3,,Main_Ch3,M3_L0102
+3,14,102,main_door_open,Dot,Main,body_ch3_heartdown,face_mad,text,Do you think I can? Could I really?,부디 그럴 수 있을까? 응?,,,,,Main_Ch3,M3_L0102

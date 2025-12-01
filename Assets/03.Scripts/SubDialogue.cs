@@ -86,7 +86,7 @@ public class SubDialogue : MonoBehaviour
                 Debug.LogError($"Line {i} does not have enough parts: {line}");
             }
         }
-        Debug.Log("현재 인덱스 숫자: " + currentDialogueList.Count);
+        Debug.Log("현재 서브 길이: " + currentDialogueList.Count);
     }
 
     string[] ParseCSVLine(string line)

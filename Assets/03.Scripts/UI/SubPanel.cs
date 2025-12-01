@@ -29,6 +29,7 @@ public class SubPanel : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject subClick;
+    [SerializeField] private GameObject subPanelObj;
 
     [SerializeField] private SubTuto subTuto;
 
@@ -48,6 +49,7 @@ public class SubPanel : MonoBehaviour
 
     public void InitializePanels()
     {
+        subPanelObj = this.gameObject;
         Transform parent = transform;
 
         dotObjects = InstantiateList(dotObjects, parent);
@@ -499,6 +501,7 @@ public class SubPanel : MonoBehaviour
     public void dotballoon(GameObject selectedDot)
     {
         if (subClick) subClick.SetActive(true);
+        if (subPanelObj) subPanelObj.SetActive(true);
         LocationSet(selectedDot);
         // 단일 버튼(넘김 버튼)만 페이드할 때는 button 전달
         var btn = subClick ? subClick.GetComponent<Button>() : null;

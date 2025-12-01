@@ -16,10 +16,12 @@ public class PrologueVideoManager : MonoBehaviour
     private const string ProloguePlayedKey = "PROLOGUE_PLAYED";
     private bool _skipTriggered = false;
 
+    // 프롤로그 영상 재생, 튜토리얼로 이동
     public void TryRunPrologueThenGo(string nextSceneIfNotTutorial, bool goingTutorial, string currentSceneName = "IntroScene")
     {
-        PlayerPrefs.DeleteKey("PROLOGUE_PLAYED");
-        PlayerPrefs.Save();
+        //PlayerPrefs.DeleteKey("PROLOGUE_PLAYED"); //[디버깅] 매번 프롤로그 재생하도록
+        //PlayerPrefs.Save();
+
         int flag = PlayerPrefs.GetInt(ProloguePlayedKey, 0);
         Debug.Log($"[Prologue] goingTutorial={goingTutorial}, playedFlag={flag}, current={currentSceneName}, nextIfNotTutorial={nextSceneIfNotTutorial}");
 
@@ -57,9 +59,6 @@ public class PrologueVideoManager : MonoBehaviour
         yield return new WaitUntil(() => done || _skipTriggered);
 
         mainVideo.OnUserSkipRequested -= HandleUserSkip;
-
-        //PlayerPrefs.SetInt(ProloguePlayedKey, 1);
-        //PlayerPrefs.Save();
 
         if (_skipTriggered)
         {
