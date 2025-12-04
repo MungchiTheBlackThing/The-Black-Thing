@@ -163,12 +163,15 @@ MonoBehaviour:
       m_Items:
       - rid: 5827832305795465233
   - m_Id: 52964753426
-    m_Localized: "Director & Lead Designer: \uC774\uC8FC\uD76C\nArt Director & Animator:
-      \uC774\uC724\uC120\nNarrative Designer: \uC774\uC8FC\uD76C, \uACE0\uC740\uC11C,
-      \uC774\uC2DC\uC740\nProgrammer: \uC2EC\uC900\uD604, \uC7A5\uD76C\uC9C4, \uC1A1\uC218\uC601\nEnglish
-      Translation: \uC7A5\uD55C\uC194, \uAE30\uD61C\uC2B9, \uC774\uC8FC\uD76C\nSystem
-      and Interface Design: \uC774\uC8FC\uD76C, \uCD5C\uC720\uB9AC\n\n\xA9 2025 moonstew
-      games All rights reserved."
+    m_Localized: "Created and Directed by Juhee Lee\nDrawn and Animated by Yoonsun
+      Lee\nStory Written by Juhee Lee, Sieun Lee and Eunseo Go\nDeveloped in Unity
+      by Junhyun Sim and Heejin Jang\nEnglish Localization by Hansol Jang, Haeseung
+      Ki and Juhee Lee\nSystem and Interface Designed by Juhee Lee, Yuri Choi\n\n\xA9
+      2025 moonstew games All rights reserved.\n\nSound designed and composed by
+      Wooyeol Choi, Woochan Kim and Sam Shandley\nProgramming Assistance by Sooyoung
+      Song\nQA Testing by Kihyun Lee\n\nSpecial Thanks to our loved ones, friends
+      and familes, and most importantly our funders and backers from all over the
+      world.\n\n"
     m_Metadata:
       m_Items:
       - rid: 5827832305795465233
@@ -487,6 +490,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5827832305795465233
+  - m_Id: 22964806309855232
+    m_Localized: Write what you think.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

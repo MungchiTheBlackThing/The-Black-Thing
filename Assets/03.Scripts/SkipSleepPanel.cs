@@ -84,7 +84,7 @@ public class SkipSleepPanel : MonoBehaviour
                 Debug.LogError($"Line {i} does not have enough parts: {line}");
             }
         }
-        Debug.Log("ÇöÀç ÀÎµ¦½º ¼ıÀÚ: " + currentDialogueList.Count);
+        Debug.Log("í˜„ì¬ ì¸ë±ìŠ¤ ìˆ«ì: " + currentDialogueList.Count);
     }
 
     string[] ParseCSVLine(string line)
