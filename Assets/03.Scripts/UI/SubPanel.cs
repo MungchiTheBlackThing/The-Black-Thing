@@ -447,12 +447,12 @@ public class SubPanel : MonoBehaviour
 
         // 오프셋 적용
         if (dotcontroller.transform.position.x < 0) {
-            anchoredPos.x += offset.x;
+            anchoredPos.x += Mathf.Abs(offset.x);
             anchoredPos.y += offset.y;
         } 
         else
         {
-            anchoredPos.x -= offset.x;
+            anchoredPos.x -= Mathf.Abs(offset.x);
             anchoredPos.y += offset.y;
         }
             

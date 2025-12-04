@@ -47,8 +47,8 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 1,,46,0,Dot,sub,,text,너는 내가 지구에서 만난\n첫 번째 생명체.,You are the first creature I’ve met on Earth.,47,,,,Tuto_Sub,TS_L0046
 1,,47,0,Dot,sub,,text,기억에 오래 남을 소중한\n상징이 됐어.,You have become a precious symbol\nthat will live on in my memory.,48,,,,Tuto_Sub,TS_L0047
 1,,48,0,Dot,sub,,text,너는 뭐야?,What are you?,49,,,,Tuto_Sub,TS_L0048
-1,,49,0,Player,default,,text,나는……,I am……,,,,,Tuto_Sub,TS_L0049
-1,tutorial_5,50,0,Player,default,anim_eyesblink,text,나는 <nickname>이야.,I am <nickname>.,51,,,,Tuto_Sub,TS_L0050
+1,tutorial_5,49,0,Player,default,,text,나는……,I am……,,,,,Tuto_Sub,TS_L0049
+1,,50,0,Player,default,anim_eyesblink,text,나는 <nickname>이야.,I am <nickname>.,51,,,,Tuto_Sub,TS_L0050
 1,,51,0,Dot,sub,,text,<nickname> 종족은 어떤\n특성을 가지고 있어?,What characteristics does\nthe <nickname> species possess?,52,,,,Tuto_Sub,TS_L0051
 1,,52,0,Player,sub,,text,"아, 그건 내 이름이야.","Oh, that’s actually my name.",53,,,,Tuto_Sub,TS_L0052
 1,,53,0,Dot,default,anim_move,text,아! 이름. 이름. 이름은\n존재의 표지 같은 것.,"Ah! Name. Name. Name, the sign of being.",54,,,,Tuto_Sub,TS_L0053

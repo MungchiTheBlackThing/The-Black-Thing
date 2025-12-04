@@ -41,15 +41,15 @@ public class DoorController : MonoBehaviour
             {
                 if (collider != targetCollider && collider.gameObject == dot)
                 {
-                    StartCoroutine(dot.GetComponent<DotController>().DotvisibleCheck(true));
+                    dot.GetComponent<DotController>().dotvicheck(true);
                 }
             }
         }
         else
         {
-            if (dot.GetComponent<BoxCollider2D>().enabled == false)
+            if (dot.GetComponent<BoxCollider2D>())
             {
-                StartCoroutine(dot.GetComponent<DotController>().DotvisibleCheck(false));
+                dot.GetComponent<DotController>().dotvicheck(false);
             }
         }
     }

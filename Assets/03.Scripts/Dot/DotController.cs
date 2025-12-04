@@ -525,7 +525,10 @@ public class DotController : MonoBehaviour
         Visible();
         eyes.GetComponent<SpriteRenderer>().enabled = true;
     }
-
+    public void dotvicheck(bool set)
+    {
+        StartCoroutine(DotvisibleCheck(set));
+    }
     public IEnumerator DotvisibleCheck(bool setoff)
     {
         yield return new WaitForSeconds(0.08f);

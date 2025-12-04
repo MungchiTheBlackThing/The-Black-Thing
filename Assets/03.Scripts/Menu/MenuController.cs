@@ -310,6 +310,10 @@ public class MenuController : MonoBehaviour
     }
     public void tuto()
     {
+        if (!MenuButAnim)
+        {
+            MenuButAnim = this.GetComponent<Animator>();
+        }
         MenuButAnim.SetFloat("tuto", 1f);
     }
     public void LaterON()
