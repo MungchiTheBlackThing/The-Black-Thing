@@ -109,24 +109,6 @@ public class SubTuto : MonoBehaviour
         StartCoroutine(Scroallable());
     }
 
-    public void tutorial_9(GameObject selectedDot, int determine, int index)
-    {
-        //RecentManager.Save(selectedDot, determine, index); // 저장
-        if (!tutorialManager)
-        {
-            Subcontinue();
-        }
-        else //튜토리얼 끝
-        {
-            dotController.tutorial = false;
-            Debug.Log("3");
-            playerController.NextPhase();
-            playerController.WritePlayerFile();
-            RecentManager.tutoSceneEnd();
-            LoadSceneManager.Instance.LoadScene("Tutorial", "MainScene", 1);
-        }
-    }
-
     public void tutorial_10(GameObject selectedDot, int determine, int index)
     {
         //RecentManager.Save(selectedDot, determine, index); // 저장
@@ -191,12 +173,12 @@ public class SubTuto : MonoBehaviour
 
             if (subDialogue.currentDialogueList == null || subDialogue.currentDialogueList.Count == 0 && index != -1)
             {
-                Debug.Log("서브이어 1");
+                Debug.Log("서브이어 1" + data.index);
                 subDialogue.StartSub("tutorial_sub", data.index);
             }
             else
             {
-                Debug.Log("서브이어 2");
+                Debug.Log("서브이어 2" +  index);
                 subDialogue.StartSub("tutorial_sub", index);
             }
         }

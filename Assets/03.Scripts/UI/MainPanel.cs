@@ -295,6 +295,11 @@ public class MainPanel : MonoBehaviour
         string background = mainDial.Background;
         bool waitVideo = animScene == "1";
 
+        if (waitVideo) //메인 비디오도 뒤로 가지 못하게
+        {
+            backindex = dialogueIndex;
+        }
+
         if (background == "main_door_close")
         {
             mainDialogue.SetBackground(gameManager.ObjectManager.SetMain(background));
@@ -469,14 +474,15 @@ public class MainPanel : MonoBehaviour
 
     public void Maincontinue()
     {
-        if (backindex != -1)
+        if (true)
         {
             if (dialogueIndex > backindex + 1)
             {
+                Debug.Log("뒤로가기");
                 dialogueIndex--;
                 ShowNextDialogue();
             }
-            else if (dialogueIndex == backindex + 1) 
+            else if (dialogueIndex <= backindex + 1) 
             {
                 if (!string.IsNullOrEmpty(backtag)) pc.DownArcheType(backtag);
                 ShowNextDialogue();
