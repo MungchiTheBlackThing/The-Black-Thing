@@ -108,6 +108,23 @@ public class SubTuto : MonoBehaviour
         moonnote = GameObject.FindWithTag("moonnote").GetComponent<Moonnote>();
         StartCoroutine(Scroallable());
     }
+    public void tutorial_9(GameObject selectedDot, int determine, int index)
+    {
+        //RecentManager.Save(selectedDot, determine, index); // 저장
+        if (!tutorialManager)
+        {
+            Subcontinue(106);
+        }
+        else //튜토리얼 끝
+        {
+            dotController.tutorial = false;
+            Debug.Log("3");
+            playerController.NextPhase();
+            playerController.WritePlayerFile();
+            RecentManager.tutoSceneEnd();
+            LoadSceneManager.Instance.LoadScene("Tutorial", "MainScene", 1);
+        }
+    }
 
     public void tutorial_10(GameObject selectedDot, int determine, int index)
     {
