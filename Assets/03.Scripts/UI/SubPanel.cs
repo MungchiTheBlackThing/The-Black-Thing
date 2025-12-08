@@ -334,7 +334,7 @@ public class SubPanel : MonoBehaviour
                     if (korText.Contains("<nickname>") && pc)
                         korText = korText.Replace("<nickname>", pc.GetNickName());
 
-                    GameObject selectedDot = PickBubble(dotObjects, color, dotcontroller.transform.position.x < 0 ? "_L" : "_R");
+                    GameObject selectedDot = PickBubble(dotObjects, color, dotcontroller.transform.position.x < mainCamera.transform.position.x ? "_L" : "_R");
                     if (selectedDot)
                     {
                         DotTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
@@ -354,7 +354,7 @@ public class SubPanel : MonoBehaviour
                     if (korText.Contains("<nickname>") && pc)
                         korText = korText.Replace("<nickname>", pc.GetNickName());
 
-                    GameObject selectedDot = PickBubble(prObjects, color, dotcontroller.transform.position.x < 0 ? "_R" : "_L");
+                    GameObject selectedDot = PickBubble(prObjects, color, dotcontroller.transform.position.x < mainCamera.transform.position.x ? "_R" : "_L");
                     if (selectedDot)
                     {
                         PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
@@ -373,7 +373,7 @@ public class SubPanel : MonoBehaviour
             case "textbox": // Player 기준
                 {
                     determine = 1;
-                    GameObject selectedDot = PickBubble(prTbObjects, color, dotcontroller.transform.position.x < 0 ? "_R" : "_L");
+                    GameObject selectedDot = PickBubble(prTbObjects, color, dotcontroller.transform.position.x < mainCamera.transform.position.x ? "_R" : "_L");
                     if (selectedDot)
                     {
                         PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
@@ -392,7 +392,7 @@ public class SubPanel : MonoBehaviour
                 {
                     if (subClick) subClick.SetActive(false); // 선택지는 오버레이가 가리지 않게
 
-                    GameObject selectedDot = PickBubble(Sels, color, dotcontroller.transform.position.x < 0 ? "_R" : "_L");
+                    GameObject selectedDot = PickBubble(Sels, color, dotcontroller.transform.position.x < mainCamera.transform.position.x ? "_R" : "_L");
                     if (selectedDot)
                     {
                         selectedDot.SetActive(true);
@@ -446,7 +446,7 @@ public class SubPanel : MonoBehaviour
         Vector2 offset = AnimBubbleDB.GetOffset(currentAnim);
 
         // 오프셋 적용
-        if (dotcontroller.transform.position.x < 0) {
+        if (dotcontroller.transform.position.x < mainCamera.transform.position.x) {
             anchoredPos.x += Mathf.Abs(offset.x);
             anchoredPos.y += offset.y;
         } 
@@ -468,7 +468,7 @@ public class SubPanel : MonoBehaviour
     public void PlayerLocationSet(GameObject dotbub)
     {
         RectTransform rect = dotbub.GetComponent<RectTransform>();
-        bool left = dotcontroller.transform.position.x < 0;
+        bool left = dotcontroller.transform.position.x < mainCamera.transform.position.x;
 
         if (left)
         {
@@ -488,7 +488,7 @@ public class SubPanel : MonoBehaviour
     public void SelLocationSet(GameObject dotbub)
     {
         RectTransform rect = dotbub.GetComponent<RectTransform>();
-        bool left = dotcontroller.transform.position.x < 0;
+        bool left = dotcontroller.transform.position.x < mainCamera.transform.position.x;
 
         if (left)
         {

@@ -33,6 +33,18 @@ public class SubDialogue : MonoBehaviour
     [SerializeField]
     TextAsset dialogueData;
 
+    static readonly Dictionary<float, float> CameraXByDotPos = new Dictionary<float, float>
+    {
+        { 0f,  -2.6f },
+        { 1f,  -0.5f },
+        { 3f,   4.9f },
+        { 5f,  -2.0f },
+        { 6f,   4.5f },
+        { 8f,   4.6f },
+        { 9f,   4.6f },
+        { 10f,  1.5f },
+        { 11f,  4.6f },
+    };
 
     public void LoadSubDialogue(string[] lines)
     {
@@ -150,7 +162,12 @@ public class SubDialogue : MonoBehaviour
         {
             playerController.SetSubseq(4);
         }
-        scroll.stopscroll(); //임시 방편
+        ScriptList sclist = dot.GetSubScriptList(manager.Pattern);
+        float dPosition = sclist.DotPosition;
+        float camx = SclistGetCameraX(dPosition);
+        scroll.MoveCamera(new Vector3(camx, 0, -10), 1f);
+        scroll.stopscroll();
+
         string[] lines = dialogueData.text.Split('\n');
         LoadSubDialogue(lines);
 
@@ -317,5 +334,14 @@ public class SubDialogue : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         subPanel.ShowNextDialogue();
+    }
+
+    public static float SclistGetCameraX(float pos)
+    {
+        if (CameraXByDotPos.TryGetValue(pos, out float x))
+            return x;
+
+        Debug.LogWarning($"[DotCameraPosTable] unmapped pos: {pos}");
+        return 0f;
     }
 }

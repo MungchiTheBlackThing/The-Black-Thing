@@ -361,6 +361,7 @@ public class DotController : MonoBehaviour
             ScriptList tmp = GetSubScriptList(tmpState);
             //pc.successSubDialDelegate((int)tmpState,tmp.ScriptKey);
 
+
             TriggerSub(false);
         }
     }
@@ -419,7 +420,7 @@ public class DotController : MonoBehaviour
         position = OutPos;
         dotExpression = OutExpression;
         animKey = OutAnimKey;
-
+        string prevAnimKey = animKey;
         chapter = manager.Chapter;
 
         //outPos -1일경우 랜덤위치
@@ -472,6 +473,28 @@ public class DotController : MonoBehaviour
         // 콜라이더 크기 조정
         boxcollider.size = spriteSize;
         boxcollider.offset = spriteRenderer.sprite.bounds.center;
+
+
+        if (Dust != null)
+        {
+            var spawner = Dust.GetComponent<DustSpawner>();
+            if (spawner != null)
+            {
+                bool wasSleep = prevAnimKey == "anim_sleep";
+                bool nowSleep = OutAnimKey == "anim_sleep";
+
+                // anim_sleep → 다른 애니 : 스폰 정지
+                if (wasSleep && !nowSleep)
+                {
+                    spawner.PauseSpawner();
+                }
+                // 다른 애니 → anim_sleep : 스폰 재개
+                else if (!wasSleep && nowSleep)
+                {
+                    spawner.ResumeSpawner();
+                }
+            }
+        }
     }
 
     public void Invisible()

@@ -42,6 +42,8 @@ public class DustSpawner : MonoBehaviour
 
     const float accelerationY = -600f;
 
+    private bool isPaused = false;
+
 
     Vector2 initPos;
 
@@ -198,5 +200,32 @@ public class DustSpawner : MonoBehaviour
         //코루틴을 종료한다.
         StopAllCoroutines();
         CancelInvoke("DropRandom");
+    }
+
+    public void PauseSpawner()
+    {
+        if (isPaused)
+            return;
+
+        isPaused = true;
+        CancelInvoke("DropRandom");
+    }
+
+    public void ResumeSpawner()
+    {
+        if (!isPaused)
+            return;
+
+        isPaused = false;
+        StartSpawnLoop();
+    }
+
+    void StartSpawnLoop()
+    {
+        if (isPaused)
+            return;
+
+        if (!IsInvoking("DropRandom"))
+            InvokeRepeating("DropRandom", 0.5f, spawnInterval);
     }
 }
