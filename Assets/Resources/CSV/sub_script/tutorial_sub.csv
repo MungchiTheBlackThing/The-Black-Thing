@@ -1,4 +1,4 @@
-Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
+﻿Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
 1,tutorial_1,1,0,Dot,default,anim_eyesclosed,text,지구의 밝음과 아름다움 사이를 탐험\n하느라 몸이 조금 저리게 되었지만,My body aches a bit from\nexploring Earth’s bright beauty.,2,,,,Tuto_Sub,TS_L0001
 1,,2,0,Dot,default,,text,그럴 만한 가치가 있었지.\n이곳을 찾게 되었으니!,"But it was worth it, since\nI discovered this place!",3,,,,Tuto_Sub,TS_L0002
 1,,3,0,Dot,default,,text,작고 구석진 모퉁이. 나를 닮은 곳.,"A small, cozy corner.\nIt’s a lot like me.",4,,,,Tuto_Sub,TS_L0003
@@ -128,7 +128,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 1,,127,1,Dot,sub,anim_eyesblink,text,"<nickname>, 나는 이제\n잠에 빠져들 계획이야.","<nickname>, I plan to\nfall asleep soon.",128,,,,Tuto_Sub,TS_L0127
 1,,128,1,Dot,sub,,text,"아까 침대 밑에서 아주 포근해\n보이는 무언가를 발견했는데,","I discovered somewhere very snuggly\nunder the bed just before,",129,,,,Tuto_Sub,TS_L0128
 1,,129,1,Dot,sub,,text,혹시 내가 그곳을 내 잠의\n공간으로 사용해도 될까?,May I please use it\nas my place of sleep?,130,,,,Tuto_Sub,TS_L0129
-1,,130,1,Dot,sub,,text,침대 밑…? 어디?,Under the bed…? Where?,,,,,Tuto_Sub,TS_L0130
+1,,130,1,Player,sub,,text,침대 밑…? 어디?,Under the bed…? Where?,,,,,Tuto_Sub,TS_L0130
 1,tutorial_11,131,0,Dot,default,anim_spiderweb1,text,여기!,Here!,132,,,,Tuto_Sub,TS_L0131
 1,,132,0,Player,default,,text,"어, 어라. 거미줄이네.","Uh, ugh. It’s a spiderweb.",133,,,,Tuto_Sub,TS_L0132
 1,,133,0,Player,default,,selection,(으아아악.)|(하아아아….),(Gaaah!)|(Eeeew.),134|134,,,,Tuto_Sub,TS_L0133

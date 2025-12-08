@@ -63,8 +63,8 @@ public class ChecklistController : MonoBehaviour
     }
     void Translate(LANGUAGE language, TMP_FontAsset font)
     {
-        //¹ø¿ªÇÑ´Ù.
-        Debug.Log("Checklist ¹ø¿ªÇÕ´Ï´Ù.\n");
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+        Debug.Log("Checklist ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.\n");
 
         int Idx = (int)language;
 
@@ -107,10 +107,10 @@ public class ChecklistController : MonoBehaviour
         StartCoroutine(ChangeState(state));
     }
 
-    //ÄÚ·çÆ¾À¸·Î ÇÑ´Ù.
+    //ï¿½Ú·ï¿½Æ¾ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
     IEnumerator ChangeState(GamePatternState state)
     {
-        yield return new WaitForSeconds(5.5f);
+        yield return new WaitForSeconds(2.5f);
 
         int Idx = (int)state;
 
@@ -163,7 +163,7 @@ public class ChecklistController : MonoBehaviour
 
     IEnumerator CloseAlter(GameObject checkList)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         checkList.SetActive(false);
     }
 
