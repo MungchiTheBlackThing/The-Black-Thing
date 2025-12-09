@@ -678,10 +678,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59
+  m_fontSize: 58
   m_fontSizeBase: 58
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 53
   m_fontSizeMax: 59
   m_fontStyle: 1
@@ -755,8 +755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 396.465, y: -197.60501}
-  m_SizeDelta: {x: 392.93, y: 155.21}
+  m_AnchoredPosition: {x: 530.02, y: -158.605}
+  m_SizeDelta: {x: 820.04, y: 57.20999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8632590687326017521
 CanvasRenderer:
@@ -786,8 +786,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uADF8\uB7EC\uBA74 \uB098\uB294 \uB4DC\uB514\uC5B4\n\uAFC8\uC744 \uAFB8\uB294
-    \uAFC8!!"
+  m_text: "\uB610\uB294 \uC544\uB984\uB2E4\uC6B4 \uC778\uAC04\uACFC \uB2E4\uC2DC\uAE08
+    \uB9CC\uB0A0 \uC218\uB294 \uC788\uB294\uAC00?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c3a811db9d859443bb965aaf474cb38, type: 2}
   m_sharedMaterial: {fileID: -4252666411373407831, guid: 5c3a811db9d859443bb965aaf474cb38, type: 2}
@@ -814,8 +814,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 47
+  m_fontSizeBase: 47
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -934,8 +934,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -820, y: -417}
-  m_SizeDelta: {x: 792.93, y: 345.21002}
+  m_AnchoredPosition: {x: -687, y: -399}
+  m_SizeDelta: {x: 1060.04, y: 247.20999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8632590688687354142
 CanvasRenderer:
@@ -1032,10 +1032,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 200
-    m_Right: 200
-    m_Top: 120
-    m_Bottom: 70
+    m_Left: 120
+    m_Right: 120
+    m_Top: 130
+    m_Bottom: 60
   m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
