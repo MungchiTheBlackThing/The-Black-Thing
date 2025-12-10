@@ -282,8 +282,20 @@ public class SubDialogue : MonoBehaviour
         }
 
         Debug.Log("끝났을때 서브 번호: " + playerController.GetSubseq());
+
         // 다음 서브 실행
-        manager.CurrentState.RunSubScript(dot, manager);
+        if (!manager.CurrentState.RunSubScript(dot, manager))
+        {
+            //AfterScript가 존재한다면 재생
+            if (currentDialogueList.Count > 0)
+            {
+                var lastEntry = currentDialogueList[currentDialogueList.Count - 1] as SubDialogueEntry;
+                if (lastEntry != null && !string.IsNullOrEmpty(lastEntry.AfterScript))
+                {
+                    dot.PlayAfterScript(lastEntry.AfterScript, dot.Position);
+                }
+            }
+        }
     }
 
     public void TutoExit()

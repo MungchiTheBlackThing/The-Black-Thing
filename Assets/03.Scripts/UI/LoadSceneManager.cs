@@ -176,7 +176,7 @@ public class LoadSceneManager : MonoBehaviour
         }
         else
         {
-            yield return LoadingOperation();
+            yield return StartCoroutine(LoadingOperation());
         }
     }
 
@@ -227,7 +227,8 @@ public class LoadSceneManager : MonoBehaviour
         loadOperation.allowSceneActivation = true;
 
         yield return new WaitUntil(() => loadOperation.isDone);
-        
+        yield return new WaitForSeconds(3.0f); // 씬 진입 후 오브젝트 초기화 대기 시간 추가
+
         if (fadeInOut != null)
         {
             fadeInOut.StartFadeOut();
