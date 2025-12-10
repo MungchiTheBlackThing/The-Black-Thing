@@ -35,6 +35,8 @@ public class LoadSceneManager : MonoBehaviour
     private float _visualProgress = 0f;
     private float _realProgress = 0f;
 
+    private bool _isLoadChapterImage = false;
+
     void Awake()
     {
         if (Instance == null)
@@ -49,29 +51,79 @@ public class LoadSceneManager : MonoBehaviour
     }
    
 
-    // 챕터 번호가 0이면 디폴트 로딩 패널을 사용하고, 그 외의 경우 챕터 로딩 패널을 사용하여 씬 로드
+    // IntroScene -> 튜토/메인씬, 챕터 번호가 0이면 디폴트 로딩 패널을 사용하고, 그 외의 경우 챕터 로딩 패널을 사용하여 씬 로드
     public void LoadScene(string currentSceneName, string targetSceneName, int chapter = 0)
     {
         _currentSceneName = currentSceneName;
         _targetSceneName = targetSceneName;
         _targetChapter = chapter;
+        _isLoadChapterImage = false;
 
         InitLoadingState();
-        StartCoroutine(OpenLoadingUI());
-        StartCoroutine(LoadSceneCoroutine());
+
+        StartCoroutine(OpenLoadingUI()); //UI 열기
+        StartCoroutine(LoadSceneCoroutine()); //로딩 진행
+    }
+
+    // MainScene에서 챕터 변경시 이미지 로드
+    public void LoadChapterImage(int chapter)
+    {
+        if (chapter < 1 || chapter > 14)
+        {
+            Debug.LogError("Invalid chapter number");
+            return;
+        }
+        if (Instance == null)
+        {
+            Debug.LogError("LoadSceneManager instance not found");
+            return;
+        }
+
+        _targetChapter = chapter;
+        _isLoadChapterImage = true;
+        InitLoadingState();
+        StartCoroutine(LoadChapter());
+    }
+
+    public IEnumerator ShowDefaultOverlayOnce(float seconds = 2.0f)
+    {
+        fadeInOutImg.SetActive(true);
+
+        yield return FadeOutAndWait(0.2f);
+
+        defaultLoadingScreenPanel.SetActive(true);
+        chapterLoadingScreenPanel.SetActive(false);
+
+        yield return FadeInAndWait(seconds);
+
+        fadeInOutImg.SetActive(false);
+    }
+
+    public void HideAllLoadingOverlays()
+    {
+        defaultLoadingScreenPanel.SetActive(false);
+        chapterLoadingScreenPanel.SetActive(false);
+        fadeInOutImg.SetActive(false);
     }
 
     private void InitLoadingState()
     {
-        loadingSlider.value = 0;
-        loadingNumText.text = "0%";
+        if (loadingSlider != null)
+        {
+            loadingSlider.value = 0;
+            if (loadingSliderFill != null)
+                loadingSliderFill.fillAmount = 0f;
+        }
+
+        if (loadingNumText != null)
+            loadingNumText.text = "0%";
+
         fadeInOutImg.SetActive(true);
     }
 
     private IEnumerator OpenLoadingUI()
     {
-        fadeInOut.StartFadeOut();
-        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
+        yield return FadeOutAndWait(0.2f);
 
         if (_targetChapter > 0) //챕터로딩 패널
         {
@@ -82,8 +134,7 @@ public class LoadSceneManager : MonoBehaviour
             OpenDefaultPanel();
         }
 
-        fadeInOut.StartFadeIn();
-        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
+        yield return FadeInAndWait(0.2f);
     }
 
     private void OpenChapterPanel()
@@ -97,7 +148,7 @@ public class LoadSceneManager : MonoBehaviour
         {
             string titleKey = $"loading_title_ch{_targetChapter}";
             if (chTitleText != null)
-                chTitleText.text = stringTable.GetEntry(titleKey)?.GetLocalizedString() ?? $"default title text";
+                chTitleText.text = stringTable.GetEntry(titleKey)?.GetLocalizedString() ?? "default title text";
 
             string loadingKey = $"loading_contents_ch{_targetChapter}";
             if (chLoadingText != null)
@@ -105,7 +156,7 @@ public class LoadSceneManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"StringTable not found");
+            Debug.LogError("StringTable not found");
         }
     }
 
@@ -118,7 +169,15 @@ public class LoadSceneManager : MonoBehaviour
     private IEnumerator LoadSceneCoroutine()
     {
         yield return CheckLocalizationSettings();
-        yield return StartCoroutine(LoadingOperation());
+        if (_isLoadChapterImage)
+        {
+            yield return LoadChapterImageAsync();
+            _isLoadChapterImage = false;
+        }
+        else
+        {
+            yield return LoadingOperation();
+        }
     }
 
     private IEnumerator CheckLocalizationSettings()
@@ -131,25 +190,50 @@ public class LoadSceneManager : MonoBehaviour
         yield return LocalizationSettings.InitializationOperation;
     }
 
+    private IEnumerator LoadChapterImageAsync()
+    {
+        _visualProgress = 0f;
+        _realProgress = 0f;
+
+        float fakeLoadTime = 1.5f;
+        float elapsedTime = 0f;
+        while (elapsedTime < fakeLoadTime)
+        {
+            elapsedTime += Time.deltaTime;
+            _visualProgress = Mathf.Clamp01(elapsedTime / fakeLoadTime) * 0.9f;
+            UpdateLoadingUI(_visualProgress);
+            yield return null;
+        }
+        _visualProgress = 0.9f;
+        UpdateLoadingUI(_visualProgress);
+
+        yield return UpdateProgress(_visualProgress);
+    }
+
     private IEnumerator LoadingOperation()
     {
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(_targetSceneName, LoadSceneMode.Single);
         loadOperation.allowSceneActivation = false;
-
+        
         _visualProgress = 0f;
         _realProgress = 0f;
 
-        yield return StartCoroutine(UpdateLoadingProgress(loadOperation)); //loadOperation.allowSceneActivation = false 상태에서는 progress가 0.9까지만 진행되므로
-        yield return StartCoroutine(UpdateProgress(_visualProgress)); //나머지는 UpdateProgress에서 페이크로 자연스럽게 채워준다
+        // allowSceneActivation = false 상태에서는 progress가 0.9까지만 진행되므로
+        yield return UpdateLoadingProgress(loadOperation);
+
+        // 나머지는 페이크로 자연스럽게 채워준다
+        yield return UpdateProgress(_visualProgress);
 
         loadOperation.allowSceneActivation = true;
 
         yield return new WaitUntil(() => loadOperation.isDone);
-        yield return new WaitForSeconds(5.0f);
-
-        fadeInOut.StartFadeOut();
-        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.3f);
-        fadeInOut.StartFadeIn();
+        
+        if (fadeInOut != null)
+        {
+            fadeInOut.StartFadeOut();
+            yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.3f);
+            fadeInOut.StartFadeIn();
+        }
 
         CompleteLoading();
     }
@@ -160,15 +244,11 @@ public class LoadSceneManager : MonoBehaviour
         {
             _realProgress = Mathf.Clamp01(loadOperation.progress / 0.9f);
             _visualProgress += Time.deltaTime * 0.3f;
-            if (_visualProgress > _realProgress) _visualProgress = _realProgress;
 
-            if (loadingSlider != null)
-            {
-                //loadingSlider.value = _visualProgress;
-                loadingSliderFill.fillAmount = _visualProgress;
-            }
-            if (loadingNumText != null) loadingNumText.text = $"{(_visualProgress * 100):F0}%";
+            if (_visualProgress > _realProgress) 
+                _visualProgress = _realProgress;
 
+            UpdateLoadingUI(_visualProgress);
             yield return null;
         }
     }
@@ -183,23 +263,11 @@ public class LoadSceneManager : MonoBehaviour
             elapsed += Time.deltaTime;
             _visualProgress = Mathf.Lerp(startProgress, 1f, elapsed / duration);
 
-            if (loadingSlider != null)
-            {
-                //loadingSlider.value = _visualProgress;
-                loadingSliderFill.fillAmount = _visualProgress;
-            }
-            if (loadingNumText != null) loadingNumText.text = $"{(_visualProgress * 100):F0}%";
-
+            UpdateLoadingUI(_visualProgress);
             yield return null;
         }
 
-        if (loadingSlider != null)
-        {
-            //loadingSlider.value = 1f;
-            loadingSliderFill.fillAmount = 1f;
-        }
-        if (loadingNumText != null) loadingNumText.text = "100%";
-
+        UpdateLoadingUI(1f);
         yield return new WaitForSeconds(0.5f);
     }
     
@@ -213,34 +281,14 @@ public class LoadSceneManager : MonoBehaviour
         _targetChapter = 0;
     }
 
-    /// <summary>
-    /// MainScene에서 챕터 변경시 이미지 로드 (씬 전환 X)
-    /// </summary>
-    public void LoadChapterImage(int chapter) 
-    {
-        if (chapter < 1 || chapter > 14)
-        {
-            Debug.LogError("Invalid chapter number");
-            return;
-        }
-        if (Instance == null)
-        {
-            Debug.LogError("LoadSceneManager instance not found");
-            return;
-        }
-
-        _targetChapter = chapter;
-        fadeInOutImg.SetActive(true);
-        StartCoroutine(LoadChapter());
-    }
-
+    
     private IEnumerator LoadChapter()
     {
-        yield return CheckLocalizationSettings();
-
-        StartCoroutine(OpenChapterUI());
+        StartCoroutine(OpenLoadingUI());
 
         yield return new WaitForSeconds(2.0f);
+
+        StartCoroutine(LoadSceneCoroutine());
 
         Utility.Instance.WaitForFirstTouch(() =>
         {
@@ -249,59 +297,47 @@ public class LoadSceneManager : MonoBehaviour
         yield return null;
     }
 
-    private IEnumerator OpenChapterUI()
-    {
-        fadeInOut.StartFadeOut();
-        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
-
-        OpenChapterPanel();
-
-        fadeInOut.StartFadeIn();
-        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
-    }
 
     private IEnumerator CloseChapterUI()
     {
-        fadeInOut.StartFadeOut();
-        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
+        yield return FadeOutAndWait(0.2f);
 
-        chapterLoadingScreenPanel.SetActive(false);
-        defaultLoadingScreenPanel.SetActive(false);
-        fadeInOutImg.SetActive(false);
-        _targetChapter = 0;
+        CompleteLoading();
 
-        fadeInOut.StartFadeIn();
-        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
-
+        yield return FadeInAndWait(0.2f);
     }
 
-    public IEnumerator ShowDefaultOverlayOnce(float seconds = 2.0f)
+    #region Helpers
+
+    private IEnumerator FadeOutAndWait(float extraDelay)
     {
-        fadeInOutImg.SetActive(true);
+        if (fadeInOut == null)
+            yield break;
 
         fadeInOut.StartFadeOut();
-        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
+        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + extraDelay);
+    }
 
-        defaultLoadingScreenPanel.SetActive(true);
-        chapterLoadingScreenPanel.SetActive(false);
+    private IEnumerator FadeInAndWait(float extraDelay)
+    {
+        if (fadeInOut == null)
+            yield break;
 
         fadeInOut.StartFadeIn();
-        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + seconds);
-
-        //fadeInOut.StartFadeOut();
-        //yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
-
-        //defaultLoadingScreenPanel.SetActive(false);
-        fadeInOutImg.SetActive(false);
-
-        //fadeInOut.StartFadeIn();
-        //yield return new WaitForSeconds(fadeInOut.GetFadeTime() + 0.2f);
+        yield return new WaitForSeconds(fadeInOut.GetFadeTime() + extraDelay);
     }
 
-    public void HideAllLoadingOverlays()
+    private void UpdateLoadingUI(float progress)
     {
-        defaultLoadingScreenPanel.SetActive(false);
-        chapterLoadingScreenPanel.SetActive(false);
-        fadeInOutImg.SetActive(false);
+        if (loadingSlider != null && loadingSliderFill != null)
+        {
+            // loadingSlider.value는 주석 처리되어 있었으므로 그대로 둠
+            loadingSliderFill.fillAmount = progress;
+        }
+
+        if (loadingNumText != null)
+            loadingNumText.text = $"{(progress * 100):F0}%";
     }
+
+    #endregion
 }

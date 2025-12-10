@@ -63,6 +63,7 @@ public class MoonChatClickController : MonoBehaviour, IPointerDownHandler
 
     void Init(int chapter, int number, LANGUAGE lan)
     {
+            curIdx = 0; // 현재 인덱스 초기화
 
         for(int i=0;i< radioScript.Count;i++)
         {

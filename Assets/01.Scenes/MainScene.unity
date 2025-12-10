@@ -2781,6 +2781,7 @@ GameObject:
   - component: {fileID: 178607445}
   - component: {fileID: 178607447}
   - component: {fileID: 178607446}
+  - component: {fileID: 178607448}
   m_Layer: 5
   m_Name: dial2
   m_TagString: Untagged
@@ -2805,8 +2806,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40, y: 71}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -42, y: 70.15161}
+  m_SizeDelta: {x: 204, y: 51.6967}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &178607446
 MonoBehaviour:
@@ -2828,8 +2829,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB2E4\uC74C \uD560\uC77C \uAE4C\uC9C0 \uBB49\uCE58\uC640 <int>\uBC88
-    \uB300\uD654\uD560 \uC218 \uC788\uC5B4\uC694."
+  m_text: "\uB2E4\uC74C \uD560 \uC77C\uAE4C\uC9C0 \uC774\uC57C\uAE30\\n<int>\uAC1C\uAC00
+    \uB0A8\uC544 \uC788\uC5B4\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
   m_sharedMaterial: {fileID: 1188920287867902073, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
@@ -2856,8 +2857,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33
-  m_fontSizeBase: 33
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2892,7 +2893,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -116.514404, w: -108.89917}
+  m_margin: {x: 0.98779297, y: 9.409973, z: -99.54736, w: -108.89923}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2906,6 +2907,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178607444}
   m_CullTransparentMesh: 1
+--- !u!114 &178607448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178607444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:da3ace5be7811444ba98c75a009f3c97
+    m_TableEntryReference:
+      m_KeyId: 25432680089731072
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 178607446}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &179907801
 GameObject:
   m_ObjectHideFlags: 0
@@ -5779,7 +5820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74, y: -77}
+  m_AnchoredPosition: {x: 74, y: -85}
   m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &363048093
@@ -19577,7 +19618,6 @@ MonoBehaviour:
   subClick: {fileID: 2053125744}
   subPanelObj: {fileID: 0}
   subTuto: {fileID: 0}
-  camera: {fileID: 1526469516}
   prePos: 0
   dialogueIndex: 0
   Day: 0
@@ -24659,7 +24699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81, y: -77}
+  m_AnchoredPosition: {x: -81, y: -85}
   m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318950555
@@ -27073,6 +27113,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 619721724}
     m_Modifications:
+    - target: {fileID: 5706921898496011385, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+      propertyPath: Menu
+      value: 
+      objectReference: {fileID: 619721723}
+    - target: {fileID: 5706921898496011385, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 199268581}
+    - target: {fileID: 8279466840924991748, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e8ab32bda7801741bfb6c71792ac646, type: 3}
+    - target: {fileID: 8279466840924991748, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8279466841920894809, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
       propertyPath: m_Name
       value: MoonnoteUI
@@ -27816,6 +27872,7 @@ GameObject:
   - component: {fileID: 1466943262}
   - component: {fileID: 1466943264}
   - component: {fileID: 1466943263}
+  - component: {fileID: 1466943265}
   m_Layer: 5
   m_Name: dial1
   m_TagString: Untagged
@@ -27863,7 +27920,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uBB49\uCE58\uC640\uC758 \uC7A1\uB2F4"
+  m_text: "\uBB49\uCE58\uC640\uC758 \uC218\uB2E4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
   m_sharedMaterial: {fileID: 1188920287867902073, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
@@ -27940,6 +27997,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466943261}
   m_CullTransparentMesh: 1
+--- !u!114 &1466943265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466943261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:da3ace5be7811444ba98c75a009f3c97
+    m_TableEntryReference:
+      m_KeyId: 25432610883715072
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1466943263}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1467358317
 GameObject:
   m_ObjectHideFlags: 0
@@ -30738,7 +30835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1604353568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30760,8 +30857,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 357, y: 0}
-  m_SizeDelta: {x: 380, y: 418}
+  m_AnchoredPosition: {x: 354, y: 0.5845}
+  m_SizeDelta: {x: 384.0598, y: 411.7942}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1604353569
 MonoBehaviour:
@@ -37601,6 +37698,7 @@ GameObject:
   - component: {fileID: 2001109054}
   - component: {fileID: 2001109056}
   - component: {fileID: 2001109055}
+  - component: {fileID: 2001109057}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -37676,8 +37774,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -37726,6 +37824,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001109053}
   m_CullTransparentMesh: 1
+--- !u!114 &2001109057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001109053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:da3ace5be7811444ba98c75a009f3c97
+    m_TableEntryReference:
+      m_KeyId: 25431153644093440
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2001109055}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &2003793957
 GameObject:
   m_ObjectHideFlags: 0
@@ -39847,7 +39985,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1200, y: 500}
+  m_SizeDelta: {x: 1114, y: 348}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2141370318
 MonoBehaviour:
@@ -39869,7 +40007,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e30bb7c0582725469df952919a2a9a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38b47c0e68d6f514b807a3b97f6f5c06, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
