@@ -162,11 +162,21 @@ public class SubDialogue : MonoBehaviour
         {
             playerController.SetSubseq(4);
         }
-        ScriptList sclist = dot.GetSubScriptList(manager.Pattern);
-        float dPosition = sclist.DotPosition;
-        float camx = SclistGetCameraX(dPosition);
-        scroll.MoveCamera(new Vector3(camx, 0, -10), 1f);
-        scroll.stopscroll();
+
+        if (manager != null && manager.GetType() == typeof(GameManager))
+        {
+            ScriptList sclist = dot.GetSubScriptList(manager.Pattern);
+            Debug.Log("테스트1: " + sclist);
+            float dPosition = sclist.DotPosition;
+            Debug.Log("테스트2: " + dPosition);
+            float camx = SclistGetCameraX(dPosition);
+            scroll.MoveCamera(new Vector3(camx, 0, -10), 1f);
+            scroll.stopscroll();
+        }
+        else
+        {
+            scroll.stopscroll();
+        }
 
         string[] lines = dialogueData.text.Split('\n');
         LoadSubDialogue(lines);
