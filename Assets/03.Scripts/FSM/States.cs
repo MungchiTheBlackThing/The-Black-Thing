@@ -61,10 +61,9 @@ public class Watching : GameState, IResetStateInterface
         }
         //Stay일 때 뭉치 등장
         //애님머드 네이밍은 anim_mud_day(현재챕터), 1일차 제외
-        if (manager.Chapter > 1)
+        if (dot != null)
         {
-            string mudName = "anim_mud_day" + manager.Chapter.ToString();
-            dot.ChangeState(DotPatternState.Phase, mudName, 3);
+            dot.PlayMudAnimation(manager.Chapter);
         }
     }
 
@@ -135,11 +134,7 @@ public class Thinking : GameState, ILoadingInterface
     public void Think(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         //Default값 랜덤으로 사용예정
-
-        DotAnimState anim = (DotAnimState)UnityEngine.Random.Range(0, (int)DotAnimState.anim_eyesblink);
-
-        dot.ChangeState(DotPatternState.Default, anim.ToString());
-
+        dot.RefreshDailyAnimation();
         manager.ObjectManager.PlayThinking();
     }
 

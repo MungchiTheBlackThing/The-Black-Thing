@@ -118,6 +118,10 @@ public class DotController : MonoBehaviour
     [SerializeField]
     BoxCollider2D boxcollider;
 
+    private bool isAfterScriptPlaying = false;
+    private float animationStartTime;
+    private const float ANIMATION_DURATION_LIMIT = 7f * 60f; //애니메이션 재생 시간 제한 (7분)
+
     GamePatternState tmpState;
 
     private Vector2 spriteSize;
@@ -175,6 +179,8 @@ public class DotController : MonoBehaviour
             }
         }
 
+        InitializeAnimationPositions();
+
         Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
 
         // 콜라이더 크기 조정
@@ -191,6 +197,26 @@ public class DotController : MonoBehaviour
         // 콜라이더 크기 조정
         boxcollider.size = spriteSize;
         boxcollider.offset = spriteRenderer.sprite.bounds.center;
+    }
+
+    void Update()
+    {
+        //7분 경과시 애니메이션 갱신
+        if (Time.time - animationStartTime > ANIMATION_DURATION_LIMIT)
+        {
+            if (isAfterScriptPlaying) //AfterScript 재생중이라면 기본 로직으로 전환
+            {
+                StopAfterScript();
+            }
+            else if (manager.Pattern == GamePatternState.Thinking) //phase_thinking이면 기본 로직 갱신
+            {
+                RefreshDailyAnimation();
+            }
+            else
+            {
+                animationStartTime = Time.time; //타이머 리셋
+            }
+        }
     }
 
     private IEnumerator InitStart()
@@ -214,6 +240,22 @@ public class DotController : MonoBehaviour
             if (animator == null) Debug.LogError("Animator를 찾을 수 없습니다!");
         }
         DotControllerStart();
+    }
+
+    //백그라운드 전환시 애니메이션 변경
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if (!pauseStatus)
+        {
+            if (isAfterScriptPlaying)
+            {
+                StopAfterScript();
+            }
+            else if (manager.Pattern == GamePatternState.Thinking)
+            {
+                RefreshDailyAnimation();
+            }
+        }
     }
 
     public void DotControllerStart()
@@ -415,8 +457,15 @@ public class DotController : MonoBehaviour
 
     public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "")
     {
+        var st = new System.Diagnostics.StackTrace();
+        if (isAfterScriptPlaying && st.GetFrame(1).GetMethod().Name != "PlayAfterScript")
+        {
+            Debug.Log($"[DotController] ChangeState call from {st.GetFrame(1).GetMethod().Name} blocked because AfterScript is playing.");
+            return;
+        }
+
         Debug.Log($"애니메이션 함수 호출: {new System.Diagnostics.StackTrace().GetFrame(1).GetMethod().Name}");
-        Debug.Log("키: " + OutAnimKey + "표현: " + OutExpression + "위치: " + OutPos);
+        Debug.Log("키: " + OutAnimKey + " 표현: " + OutExpression + " 위치: " + OutPos);
         position = OutPos;
         dotExpression = OutExpression;
         animKey = OutAnimKey;
@@ -563,5 +612,162 @@ public class DotController : MonoBehaviour
         {
             Visible();
         }
+    }
+
+    public void PlayAfterScript(string animKey, float position)
+    {
+        if (string.IsNullOrEmpty(animKey)) return;
+
+        string currentMudAnim = "anim_mud_day" + chapter.ToString();
+        if (this.animKey == currentMudAnim)
+        {
+            Debug.Log($"[DotController] PlayAfterScript blocked because {currentMudAnim} is playing.");
+            return;
+        }
+
+        Debug.Log($"[DotController] PlayAfterScript: {animKey} at {position}");
+        isAfterScriptPlaying = true;
+        animationStartTime = Time.time;
+        ChangeState(DotPatternState.Default, animKey, position);
+    }
+
+    private void StopAfterScript()
+    {
+        Debug.Log("[DotController] StopAfterScript");
+        isAfterScriptPlaying = false;
+        RefreshDailyAnimation();
+    }
+
+    public void RefreshDailyAnimation()
+    {
+        if (!string.IsNullOrEmpty(animKey) && animKey.StartsWith("anim_mud"))
+        {
+            animationStartTime = Time.time;
+            return;
+        }
+
+        if (isAfterScriptPlaying) return;
+
+        animationStartTime = Time.time;
+
+        if (manager.Pattern == GamePatternState.Thinking)
+        {
+            string anim = GetRandomAnimationForChapter(chapter);
+            Debug.Log($"[DotController] RefreshDailyAnimation: {anim}");
+            ChangeState(DotPatternState.Default, anim, -1);
+        }
+    }
+
+    private string GetRandomAnimationForChapter(int chapter)
+    {
+        List<string> animList = new List<string>();
+        List<string> defaultSet =   new List<string> { 
+            "anim_default", "anim_reading", "anim_bed", "anim_mold", 
+            "anim_laptop", "anim_walking", "anim_mold2", "anim_spiderweb1", 
+            "anim_spiderweb2", "anim_eyesclosed", "anim_eyescorner", "anim_eyesdown", 
+            "anim_eyesside", "anim_eyesup", "anim_sleepy_bed", "anim_sleepy_spiderweb" };
+        
+        switch (chapter)
+        {
+            case 1:
+                animList.AddRange(defaultSet);
+                animList.Add("anim_happy");
+                break;
+            case 2:
+            case 5:
+            case 8:
+            case 12:
+            case 13:
+                animList.AddRange(defaultSet);
+                break;
+            case 3:
+                animList.AddRange(new string[] { "anim_mud_day2", "anim_omg", "anim_sleepy_bed", "anim_sleepy_spiderweb", "anim_mold2" });
+                break;
+            case 4:
+                animList.AddRange(defaultSet);
+                animList.Add("anim_mud_day3");
+                break;
+            case 6:
+                animList.AddRange(new string[] { "anim_omg", "anim_mud_day5", "anim_reading", "anim_walking", "anim_laptop" });
+                break;
+            case 7:
+                animList.AddRange(new string[] { "anim_sleepy_bed", "anim_sleepy_spiderweb", "anim_reading", "anim_reading", "anim_bed" });
+                break;
+            case 9:
+                animList.AddRange(new string[] { "anim_mud_day8", "anim_omg", "anim_eyesdown" });
+                break;
+            case 10:
+                animList.AddRange(new string[] { "anim_mud_day9", "anim_omg", "anim_eyeswide", "anim_mold2", "anim_sleepy_spiderweb" });
+                break;
+            case 11:
+                animList.AddRange(new string[] { "anim_mud_day10", "anim_walking", "anim_omg", "anim_eyesdown" });
+                break;
+            case 14:
+                animList.AddRange(new string[] { "anim_reading", "anim_writing", "anim_mud_day13", "anim_eyesclosed", "anim_bed", "anim_walking", "anim_eyesdown" });
+                break;
+            default:
+                animList.AddRange(defaultSet);
+                break;
+        }
+
+        return animList[UnityEngine.Random.Range(0, animList.Count)];
+    }
+
+    public void PlayMudAnimation(int chapter)
+    {
+        if (chapter > 1)
+        {
+            if (isAfterScriptPlaying)
+            {
+                Debug.Log("[DotController] PlayMudAnimation: Force stopping AfterScript for anim_mud");
+                isAfterScriptPlaying = false;
+            }
+
+            string mudName = "anim_mud_day" + chapter.ToString();
+            ChangeState(DotPatternState.Phase, mudName, 3);
+        }
+    }
+
+    private void InitializeAnimationPositions()
+    {
+        if (!DotPositionKeyDic.ContainsKey(DotPatternState.Default))
+        {
+            DotPositionKeyDic[DotPatternState.Default] = new Dictionary<string, List<float>>();
+        }
+
+        var dic = DotPositionKeyDic[DotPatternState.Default];
+
+        void SetPos(string key, params float[] pos)
+        {
+            if (dic.ContainsKey(key)) dic[key] = new List<float>(pos);
+            else dic.Add(key, new List<float>(pos));
+        }
+
+        SetPos("anim_default", 0, 1, 3, 5, 6, 8, 11);
+        SetPos("anim_bed", 6, 8);
+        SetPos("anim_reading", 0, 1, 3, 5, 6);
+        SetPos("anim_writing", 6, 8);
+        SetPos("anim_mold", 0.5f);
+        SetPos("anim_bounce", 0, 1, 3, 5, 6, 8, 11);
+        SetPos("anim_laptop", 7);
+        SetPos("anim_walking", 5, 8);
+        SetPos("anim_mold2", 0);
+        SetPos("anim_happy", 1, 3, 6, 8);
+        SetPos("anim_spiderweb1", 10);
+        SetPos("anim_spiderweb2", 10);
+        SetPos("anim_eyesclosed", 0, 1, 3, 5, 6, 8, 11);
+        SetPos("anim_eyescorner", 0, 1, 3, 5, 6, 8, 11);
+        SetPos("anim_eyesdown", 0, 1, 3, 5, 6, 8, 11);
+        SetPos("anim_eyesside", 0, 1, 3, 5, 6, 8, 11);
+        SetPos("anim_eyesup", 0, 1, 3, 5, 6, 8, 11);
+        SetPos("anim_sleepy_bed", 6, 8);
+        SetPos("anim_sleepy_spiderweb", 10);
+        for (int i = 1; i <= 14; i++) SetPos($"anim_mud_day{i}", 3.5f);
+        SetPos("anim_eyeswide", 0, 1, 3, 5, 6, 8, 11);
+        SetPos("anim_eyesblink", 0, 1, 3, 5, 6, 8, 11);
+        SetPos("anim_move", 0, 1, 3, 5, 6, 8, 11);
+        SetPos("anim_sleep", 10);
+        SetPos("anim_sub_ch7_1", 0, 1, 3, 5, 6, 8, 11);
+        SetPos("anim_sub_ch7_2", 0, 1, 3, 5, 6, 8, 11);
     }
 }

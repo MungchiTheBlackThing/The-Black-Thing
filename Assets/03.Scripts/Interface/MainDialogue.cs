@@ -32,7 +32,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
     protected float prePos;
     protected string preanimkey;
-    
+
     public GameObject GetBackground()
     {
         return this.background;
@@ -78,7 +78,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         SystemUI = GameObject.Find("SystemUI");
         menuController = GameObject.FindWithTag("Menu").GetComponent<MenuController>();
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        CurrentLanguage = playerController.GetLanguage(); 
+        CurrentLanguage = playerController.GetLanguage();
         if (manager.mainVideo)
         {
             Debug.Log("미리 영상 가져오기");
@@ -131,7 +131,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
                     //entry.KorText = displayedText;
                     DialogueEntries.Add(entry);
                     currentDialogueList.Add(entry);
-                    Debug.Log("다이얼 엔트리: "+ DialogueEntries.Count);
+                    Debug.Log("다이얼 엔트리: " + DialogueEntries.Count);
                     Debug.Log(currentDialogueList.Count);
                 }
             }
@@ -142,7 +142,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         }
     }
     //준현아 여기에 함수 만들어놓을게 파라미터랑 리턴값 등 너가 필요한대로 바꿔
- 
+
     public main GetData(int idx)
     {
         main maindata = new main();
@@ -285,7 +285,22 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
         manager.ObjectManager.activeSystemUIDelegate(true);
         menuController.allon();
-        dot.ChangeState(DotPatternState.Default, preanimkey, prePos);
+
+        //AfterScript 재생
+        bool afterScriptPlayed = false;
+        if (currentDialogueList.Count > 0)
+        {
+            var lastEntry = currentDialogueList[currentDialogueList.Count - 1] as DialogueEntry;
+            if (lastEntry != null && !string.IsNullOrEmpty(lastEntry.AfterScript))
+            {
+                dot.PlayAfterScript(lastEntry.AfterScript, dot.Position);
+                afterScriptPlayed = true;
+            }
+        }
+
+        if (!afterScriptPlayed)
+            dot.ChangeState(DotPatternState.Default, preanimkey, prePos);
+
         menuController.tuto();
         listclear();
 

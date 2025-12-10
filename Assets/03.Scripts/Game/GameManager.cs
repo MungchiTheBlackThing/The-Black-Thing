@@ -205,6 +205,8 @@ public class GameManager : MonoBehaviour
         pc.NextPhase();
     }
 
+
+    //페이즈 변경
     public void ChangeGameState(GamePatternState patternState)
     {
         Debug.Log($"[Test] ChangeGameState 실행: {patternState}");
@@ -223,8 +225,9 @@ public class GameManager : MonoBehaviour
         activeState = states[patternState];
         Debug.Log("[디버깅]스테이트 변경: " + patternState);
         activeState.Enter(this, dot);
+        dot.RefreshDailyAnimation(); //페이즈 변경시 애니메이션 갱신
 
-        if(dot.GetSubScriptListCount(patternState) != 0)
+        if (dot.GetSubScriptListCount(patternState) != 0)
         {
             Debug.Log("changeGameState:Sub");
             //서브 실행
@@ -324,6 +327,7 @@ public class GameManager : MonoBehaviour
         loadingProgressBar.value = 1; //모든 작업이 끝났음.
         GamePatternState patternState = (GamePatternState)pc.GetAlreadyEndedPhase();
         currentPattern = patternState;
+        Debug.Log($"[디버깅]초기 스테이트 설정: {patternState}");
         activeState = states[patternState];
         activeState.Enter(this, dot);
         subDialogue.gameObject.SetActive(false);

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-/*½Ì±ÛÅæÀ¸·Î ±¸Çö ¿¹Á¤*/
+/*ì‹±ê¸€í†¤ìœ¼ë¡œ êµ¬í˜„ ì˜ˆì •*/
 public class DataManager : MonoBehaviour
 {
     static DataManager instance;
-    #region Json¿¡ ´ëÇÑ º¯¼ö 
+    #region Jsonì— ëŒ€í•œ ë³€ìˆ˜ 
     Chapters chapterList;
 
     public Chapters ChapterList
@@ -127,7 +127,7 @@ public class DataManager : MonoBehaviour
         }
         else
         {
-            //¾ÀÀÌ ²¨Áö³ª?
+            //ì”¬ì´ êº¼ì§€ë‚˜?
         }
     }
 
