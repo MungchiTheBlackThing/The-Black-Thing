@@ -49,7 +49,6 @@ public class MypageUIController : MonoBehaviour
     [SerializeField] List<GameObject> popupPage;
 
     [SerializeField] GameObject prevBut;
-
     [SerializeField] GameObject nextBut;
     [SerializeField] List<Color> colors;
 
@@ -60,7 +59,7 @@ public class MypageUIController : MonoBehaviour
     TMP_Text _nameSettingText;
     bool _inited = false;
 
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         _nextButText = nextBut.GetComponent<TMP_Text>();
@@ -86,12 +85,6 @@ public class MypageUIController : MonoBehaviour
 
         UpdateNavButtonsVisibility();
         UpdateNavButtonText();
-
-        if (popupPageName.IsUnityNull() == false)
-        {
-            int Idx = (int)player.GetLanguage();
-            nextBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx + 1][Idx];
-        }
     }
 
     void Init()
@@ -155,9 +148,6 @@ public class MypageUIController : MonoBehaviour
 
         UpdateNavButtonText();
         EnablePushAlertColor();
-
-        int Idx = (int)player.GetLanguage();
-        nextBut.GetComponent<TMP_Text>().text = popupPageName[pageIdx + 1][Idx];
     }
     public void OnValueChangedBGM(float value)
     {
