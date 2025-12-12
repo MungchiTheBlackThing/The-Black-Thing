@@ -1,4 +1,4 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,1,1,main_door_open,Dot,Main,body_default1,face_blink,text,오늘 어떤 남자를 만났어.,I met a man today.,2,,,,Main_Ch1,M1_L0001
 1,1,2,main_door_open,Dot,Main,,,text,그런데 이상하지.,But there was something\nstrange about him.,3,,,,Main_Ch1,M1_L0002
 1,1,3,main_door_open,Dot,Main,,,text,"그의 동공 속을 들여다본 순간, 나는 그\n속으로 빨려 들어가는 것 같았거든.","The moment I looked into\nhis eyes, I was sucked into them.",4,,,,Main_Ch1,M1_L0003
@@ -35,7 +35,7 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,1,34,main_door_open,Dot,Main,,,text,지구를 홀로 사랑하며 공전하는 달처럼...,"Like the lonely orbit of the Moon,\ndevoted to its planet so blue.",35,,,,Main_Ch1,M1_L0034
 1,1,35,main_door_open,Dot,Main,,face_close_turn,text,매일이 회빛일 거야.,Every day would be grey.,36,,,,Main_Ch1,M1_L0035
 1,1,36,main_door_open,Player,Main,,face_close,text,(지구를 홀로 사랑하는 달이라...),(The Moon’s devotion to Earth...),37,,,,Main_Ch1,M1_L0036
-1,1,37,main_door_open,Player,Main,,,selection,(낭만적인 상상이네.)|(흥미로운 관점이네.),(A romantic thought.)|(An interesting perspective.),38|38,,,sun|moon,Main_Ch1,M1_L0037
+1,1,37,main_door_open,Player,Main,,face_close,selection,(낭만적인 상상이네.)|(흥미로운 관점이네.),(A romantic thought.)|(An interesting perspective.),38|38,,,sun|moon,Main_Ch1,M1_L0037
 1,1,38,main_door_open,Player,Main,,face_open,text,"응, 하지만 애인과 사랑한다는\n말을 주고받는 순간에는","Anyway, the moment you\nhear or say ‘I love you,’",39,,,,Main_Ch1,M1_L0038
 1,1,39,main_door_open,Player,Main,,face_blink,text,서로가 비슷한 층위의 애정을 느끼며\n교류하고 있다는 확신을 가질 수 있으니까.,you can confirm that you are sharing\nsimilar levels of affection with each other.,40,,,,Main_Ch1,M1_L0039
 1,1,40,main_door_open,Player,Main,,,text,"그 확신은 단단한 기반이 되어 주겠지,\n사랑이 발돋움할 수 있도록.",That confirmation will be the foundation\nfor their love to grow on.,41,,,,Main_Ch1,M1_L0040
