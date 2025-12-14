@@ -250,7 +250,7 @@ public class DotController : MonoBehaviour
         {
             if (isAfterScriptPlaying)
             {
-                StopAfterScript();
+                // StopAfterScript(); // 앱 재진입 시 AfterScript 유지
             }
             else if (manager.Pattern == GamePatternState.Thinking)
             {
@@ -269,6 +269,18 @@ public class DotController : MonoBehaviour
         // 콜라이더 크기 조정
         boxcollider.size = spriteSize;
         boxcollider.offset = spriteRenderer.sprite.bounds.center;
+
+        // AfterScript 상태 복원
+        if (PlayerPrefs.GetInt("AS_IsPlaying", 0) == 1)
+        {
+            string savedAnim = PlayerPrefs.GetString("AS_AnimKey", "");
+            float savedPos = PlayerPrefs.GetFloat("AS_Pos", -1f);
+            if (!string.IsNullOrEmpty(savedAnim))
+            {
+                Debug.Log($"[DotController] Restoring AfterScript: {savedAnim}");
+                PlayAfterScript(savedAnim, savedPos);
+            }
+        }
     }
 
     public ScriptList GetMainScriptList(int index)
@@ -458,11 +470,11 @@ public class DotController : MonoBehaviour
 
     public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "", bool force = false)
     {
-        if (isAfterScriptPlaying && !force)
-        {
-            Debug.Log($"[DotController] ChangeState blocked because AfterScript is playing.");
-            return;
-        }
+        // if (isAfterScriptPlaying && !force)
+        // {
+        //     Debug.Log($"[DotController] ChangeState blocked because AfterScript is playing.");
+        //     return;
+        // }
 
         Debug.Log($"애니메이션 함수 호출: {new System.Diagnostics.StackTrace().GetFrame(1).GetMethod().Name}");
         Debug.Log("키: " + OutAnimKey + " 표현: " + OutExpression + " 위치: " + OutPos);
@@ -618,7 +630,15 @@ public class DotController : MonoBehaviour
     {
         Debug.Log($"[DotController] Starting Sub-dialogue animation: {animKey}");
         isSubDialoguePlaying = true;
-        isAfterScriptPlaying = false; // 서브 다이얼로그가 우선순위가 더 높음
+
+        if (isAfterScriptPlaying)
+        {
+            // Debug.Log($"[DotController]AfterScript 실행중, StartSubDialogueAnimation 차단됨");
+            // return;
+            Debug.Log($"[DotController] Stopping AfterScript because SubDialogue has higher priority.");
+            StopAfterScript();
+        }
+
         ChangeState(state, animKey, position, "", true);
     }
 
@@ -650,6 +670,12 @@ public class DotController : MonoBehaviour
         Debug.Log($"[DotController] PlayAfterScript: {animKey} at {position}");
         isAfterScriptPlaying = true;
         animationStartTime = Time.time;
+
+        PlayerPrefs.SetString("AS_AnimKey", animKey);
+        PlayerPrefs.SetFloat("AS_Pos", position);
+        PlayerPrefs.SetInt("AS_IsPlaying", 1);
+        PlayerPrefs.Save();
+
         ChangeState(DotPatternState.Default, animKey, position, "", true);
     }
 
@@ -657,6 +683,12 @@ public class DotController : MonoBehaviour
     {
         Debug.Log("[DotController] StopAfterScript");
         isAfterScriptPlaying = false;
+
+        PlayerPrefs.DeleteKey("AS_AnimKey");
+        PlayerPrefs.DeleteKey("AS_Pos");
+        PlayerPrefs.DeleteKey("AS_IsPlaying");
+        PlayerPrefs.Save();
+
         RefreshDailyAnimation();
     }
 
@@ -664,7 +696,7 @@ public class DotController : MonoBehaviour
     {
         if (isSubDialoguePlaying)
         {
-            Debug.Log("[DotController] RefreshDailyAnimation blocked because SubDialogue is playing.");
+            animationStartTime = Time.time;
             return;
         }
 
@@ -749,6 +781,10 @@ public class DotController : MonoBehaviour
             {
                 Debug.Log("[DotController] PlayMudAnimation: Force stopping AfterScript for anim_mud");
                 isAfterScriptPlaying = false;
+                PlayerPrefs.DeleteKey("AS_AnimKey");
+                PlayerPrefs.DeleteKey("AS_Pos");
+                PlayerPrefs.DeleteKey("AS_IsPlaying");
+                PlayerPrefs.Save();
             }
             int mudDay = chapter-1;
 
