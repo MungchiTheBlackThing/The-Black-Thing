@@ -120,8 +120,9 @@ MonoBehaviour:
       m_Items:
       - rid: 5827832305795465234
   - m_Id: 52964753418
-    m_Localized: "\uC81C\uC791\uC790\uB4E4\uC758 \uBB38\uD559, \uCCA0\uD559, \uD574\uD559\uC774\\n\uB2F4\uAE34
-      \uAE00\uB4E4\uC744 \uB77C\uB514\uC624 \uB4E3\uB4EF\\n\uAC10\uC0C1\uD574 \uBCF4\uC138\uC694!"
+    m_Localized: "\uC628\uD1B5 \uB124\uBAA8\uB09C \uC138\uC0C1 \uC18D\\n\uC720\uC77C\uD558\uAC8C
+      \uB3D9\uADF8\uB780 \uBB49\uCE58\uC758\\n \uBE44\uD558\uC778\uB4DC-\uB354-\uC52C
+      \uC0AC\uC9C4\uCCA9"
     m_Metadata:
       m_Items:
       - rid: 5827832305795465234
@@ -166,13 +167,19 @@ MonoBehaviour:
       m_Items:
       - rid: 5827832305795465234
   - m_Id: 52964753426
-    m_Localized: "\uD06C\uB9AC\uC5D0\uC774\uD2F0\uBE0C \uB514\uB809\uD130: \uC774\uC8FC\uD76C\n\uC544\uD2B8
-      \uB514\uB809\uD130 & \uC560\uB2C8\uBA54\uC774\uD130: \uC774\uC724\uC120\n\uB300\uC0AC
-      \uC791\uC131: \uC774\uC8FC\uD76C, \uACE0\uC740\uC11C, \uC774\uC2DC\uC740\n\uD504\uB85C\uADF8\uB798\uBA38:
-      \uC2EC\uC900\uD604, \uC7A5\uD76C\uC9C4\n\uC601\uBB38 \uBC88\uC5ED\uAC00: \uC7A5\uD55C\uC194,
-      \uAE30\uD61C\uC2B9, \uC774\uC8FC\uD76C\n\uC2DC\uC2A4\uD15C & UI \uB514\uC790\uC774\uB108:
-      \uC774\uC8FC\uD76C, \uCD5C\uC720\uB9AC\n\n\xA9 2025 moonstew games All rights
-      reserved."
+    m_Localized: "<size=90>CREDIT</size>\n\nCreated and Directed by Andiemae Lee\r\n\r\nArt
+      Direction & Animation by Yoonsun Lee\r\nGame Design by Andiemae Lee\r\n\r\nNarrative
+      Design & Scriptwriting by\r\nAndiemae Lee, Sieun Lee and Eunseo Go\r\n\r\nProgramming
+      by \r\nJunhyun Sim, Heejin Jang and Sooyoung Song\r\nProgramming Advisory by
+      Jiwon Choi\r\n\r\nEnglish Localization by Hansol Jang and Hae Seung Kie\r\nSystem
+      Design by Yuri Choi\r\n\r\nSound Design by Wooyeol Choi, Andiemae Lee and Yoonsun
+      Lee\r\nBackground Music by Wooyeol Choi\r\n\r\nAnimation BGM\r\nChapters 1,
+      2, 4 by Wooyeol Choi\r\nChapters 5, 6, 9, 11, 13 by Woochan Kim\r\nChapter
+      14 by Sam Shandley\r\nChapters 3, 7, 8, 10, 12 - using free assets from nojisuma\r\n\r\nExternal
+      QA Testing by Kihyun Lee\r\n\r\n\r\nSpecial Thanks to our loved ones,\r\nfriends
+      and family, \r\nand our backers from all over the world.\r\n\r\n(\uB4A4\uC5D0
+      \uD6C4\uC6D0\uC790 \uC774\uB984 \uD45C\uAE30)\r\n\r\n<color=#696969>\xA9 2025
+      moonstew games All rights reserved.</color>"
     m_Metadata:
       m_Items:
       - rid: 5827832305795465234
@@ -520,7 +527,7 @@ MonoBehaviour:
       m_Items:
       - rid: 5827832305795465234
   - m_Id: 11363283670876160
-    m_Localized: "\uB2E4\uC2DC \uB4E3\uAE30"
+    m_Localized: "\uB2E4\uC2DC \uBCF4\uAE30"
     m_Metadata:
       m_Items:
       - rid: 5827832305795465234
@@ -540,6 +547,10 @@ MonoBehaviour:
   - m_Id: 25432680089731072
     m_Localized: "\uB2E4\uC74C \uD560 \uC77C\uAE4C\uC9C0 \uC774\uC57C\uAE30\\n<int>\uAC1C\uAC00
       \uB0A8\uC544 \uC788\uC5B4\uC694."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27661208789139456
+    m_Localized: Start of the Day
     m_Metadata:
       m_Items: []
   references:
