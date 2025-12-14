@@ -26,6 +26,13 @@ public class DiaryController : BaseObject, ISleepingInterface
     void Start()
     {
         Init();
+
+        if (playerController != null && playerController.GetChapter() == 1)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
         translator.translatorDel += Translate;
     }

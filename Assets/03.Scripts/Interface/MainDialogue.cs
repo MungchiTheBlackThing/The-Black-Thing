@@ -27,6 +27,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
     UITutorial uITutorial;
     PlayerController playerController;
 
+    private DialogueEntry _lastDisplayedEntry;
 
     protected int fixedPos = -1;
 
@@ -145,6 +146,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
     public main GetData(int idx)
     {
+        _lastDisplayedEntry = DialogueEntries[idx];
         main maindata = new main();
         maindata.ScriptNumber = DialogueEntries[idx].ScriptNumber;
         maindata.LineKey = DialogueEntries[idx].LineKey;
@@ -215,6 +217,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
     public void StartMain(GameManager manager, string fileName)
     {
+        _lastDisplayedEntry = null;
         string currentSceneName = SceneManager.GetActiveScene().name;
         var mp = GameObject.Find("MainDialougue").GetComponent<MainPanel>();
         mp.Bind(this);
@@ -288,21 +291,32 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
         //AfterScript 재생
         bool afterScriptPlayed = false;
-        if (currentDialogueList.Count > 0)
+        Debug.Log("[MainDialogue] MainEnd: AfterScript 실행");
+        if (_lastDisplayedEntry != null)
         {
-            var lastEntry = currentDialogueList[currentDialogueList.Count - 1] as DialogueEntry;
-            if (lastEntry != null && !string.IsNullOrEmpty(lastEntry.AfterScript))
+            Debug.Log($"[MainDialogue] 마지막으로 표시된 대사 항목 AfterScript 값: '{_lastDisplayedEntry.AfterScript}'");
+            if (!string.IsNullOrEmpty(_lastDisplayedEntry.AfterScript))
             {
-                dot.PlayAfterScript(lastEntry.AfterScript, dot.Position);
+                Debug.Log($"[MainDialogue] AfterScript 값 존재, AfterScript 재생: {_lastDisplayedEntry.AfterScript}");
+                dot.PlayAfterScript(_lastDisplayedEntry.AfterScript, dot.Position);
                 afterScriptPlayed = true;
             }
+            else
+            {
+                Debug.Log("[MainDialogue] AfterScript 값 없음");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("[MainDialogue] 마지막으로 표시된 대사 항목 찾을 수 없음");
         }
 
         if (!afterScriptPlayed)
+        {
+            Debug.Log("[MainDialogue] AfterScript가 재생 X, 이전 애니메이션으로 돌아감");
             dot.ChangeState(DotPatternState.Default, preanimkey, prePos);
-
+        }
         menuController.tuto();
-        listclear();
 
         if (phase == 1 && manager.Chapter == 1)
         {
@@ -325,8 +339,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         {
             playerController.NextPhase();
             time.gameObject.SetActive(true);
-            listclear();
         }
+        listclear();
     }
 
 

@@ -219,13 +219,13 @@ public class GameManager : MonoBehaviour
         }
         if (activeState != null)
         {
+            dot.StopSubDialogueAnimation();
             activeState.Exit(this); //미리 정리한다.
         }
         currentPattern = patternState;
         activeState = states[patternState];
         Debug.Log("[디버깅]스테이트 변경: " + patternState);
         activeState.Enter(this, dot);
-        dot.RefreshDailyAnimation(); //페이즈 변경시 애니메이션 갱신
 
         if (dot.GetSubScriptListCount(patternState) != 0)
         {

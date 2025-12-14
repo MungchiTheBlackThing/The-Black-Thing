@@ -119,6 +119,7 @@ public class DotController : MonoBehaviour
     BoxCollider2D boxcollider;
 
     private bool isAfterScriptPlaying = false;
+    private bool isSubDialoguePlaying = false;
     private float animationStartTime;
     private const float ANIMATION_DURATION_LIMIT = 7f * 60f; //애니메이션 재생 시간 제한 (7분)
 
@@ -455,12 +456,11 @@ public class DotController : MonoBehaviour
         manager.NextPhase();
     }
 
-    public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "")
+    public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "", bool force = false)
     {
-        var st = new System.Diagnostics.StackTrace();
-        if (isAfterScriptPlaying && st.GetFrame(1).GetMethod().Name != "PlayAfterScript")
+        if (isAfterScriptPlaying && !force)
         {
-            Debug.Log($"[DotController] ChangeState call from {st.GetFrame(1).GetMethod().Name} blocked because AfterScript is playing.");
+            Debug.Log($"[DotController] ChangeState blocked because AfterScript is playing.");
             return;
         }
 
@@ -614,6 +614,22 @@ public class DotController : MonoBehaviour
         }
     }
 
+    public void StartSubDialogueAnimation(DotPatternState state, string animKey, float position)
+    {
+        Debug.Log($"[DotController] Starting Sub-dialogue animation: {animKey}");
+        isSubDialoguePlaying = true;
+        isAfterScriptPlaying = false; // 서브 다이얼로그가 우선순위가 더 높음
+        ChangeState(state, animKey, position, "", true);
+    }
+
+    public void StopSubDialogueAnimation()
+    {
+        if (!isSubDialoguePlaying) return;
+        Debug.Log("[DotController] Stopping Sub-dialogue animation state.");
+        isSubDialoguePlaying = false;
+        // 다음 상태에서 애니메이션을 결정하므로 여기서는 Refresh를 호출하지 않음
+    }
+
     public void PlayAfterScript(string animKey, float position)
     {
         if (string.IsNullOrEmpty(animKey)) return;
@@ -625,10 +641,16 @@ public class DotController : MonoBehaviour
             return;
         }
 
+        if (isSubDialoguePlaying)
+        {
+            Debug.Log($"[DotController] PlayAfterScript blocked because SubDialogue is playing.");
+            return;
+        }
+
         Debug.Log($"[DotController] PlayAfterScript: {animKey} at {position}");
         isAfterScriptPlaying = true;
         animationStartTime = Time.time;
-        ChangeState(DotPatternState.Default, animKey, position);
+        ChangeState(DotPatternState.Default, animKey, position, "", true);
     }
 
     private void StopAfterScript()
@@ -640,6 +662,12 @@ public class DotController : MonoBehaviour
 
     public void RefreshDailyAnimation()
     {
+        if (isSubDialoguePlaying)
+        {
+            Debug.Log("[DotController] RefreshDailyAnimation blocked because SubDialogue is playing.");
+            return;
+        }
+
         if (!string.IsNullOrEmpty(animKey) && animKey.StartsWith("anim_mud"))
         {
             animationStartTime = Time.time;
@@ -722,8 +750,9 @@ public class DotController : MonoBehaviour
                 Debug.Log("[DotController] PlayMudAnimation: Force stopping AfterScript for anim_mud");
                 isAfterScriptPlaying = false;
             }
+            int mudDay = chapter-1;
 
-            string mudName = "anim_mud_day" + chapter.ToString();
+            string mudName = "anim_mud_day" + mudDay.ToString();
             ChangeState(DotPatternState.Phase, mudName, 3);
         }
     }

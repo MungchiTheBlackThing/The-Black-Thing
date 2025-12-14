@@ -25,7 +25,7 @@ public abstract class GameState
 
         DotPatternState dotPatternState = DotPatternState.Default;
         Enum.TryParse(sub.AnimState, true, out dotPatternState);
-        dot.ChangeState(dotPatternState, animString, Position);
+    dot.StartSubDialogueAnimation(dotPatternState, animString, Position);
         manager.ShowSubDial();
 
         Debug.Log("현재 서브다이얼로그 진행중 " + animString + " " + Position);
