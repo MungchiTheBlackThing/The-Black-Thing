@@ -338,13 +338,12 @@ public class DotController : MonoBehaviour
 
     public void PlayEyeAnimation()
     {
-        DotEyes eyes;
         Eyes.SetActive(true);
-
-        if (Enum.TryParse(DotExpression, true, out eyes))
-        {
-            EyesAnim.SetInteger("FaceKey", (int)eyes);
-        }
+        EyesAnim.Play(DotExpression);
+        //if (Enum.TryParse(DotExpression, true, out eyes))
+        //{
+        //    EyesAnim.SetInteger("FaceKey", (int)eyes);
+        //}
         Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
 
         // 콜라이더 크기 조정
@@ -467,6 +466,7 @@ public class DotController : MonoBehaviour
         Debug.Log($"애니메이션 함수 호출: {new System.Diagnostics.StackTrace().GetFrame(1).GetMethod().Name}");
         Debug.Log("키: " + OutAnimKey + " 표현: " + OutExpression + " 위치: " + OutPos);
         position = OutPos;
+        bool bPlayEyeAnimation = dotExpression != OutExpression;
         dotExpression = OutExpression;
         animKey = OutAnimKey;
         string prevAnimKey = animKey;
@@ -497,7 +497,7 @@ public class DotController : MonoBehaviour
 
         if (OutAnimKey != "")
         {
-            Debug.Log("플레이 되어야 하는 애니메이션 : " + OutAnimKey);
+            Debug.Log("뭉치 애니메이션 : " + OutAnimKey);
             animator.Play(OutAnimKey, 0, 0f);
             animator.Update(0f);
             spriteSize = spriteRenderer.sprite.bounds.size;
@@ -511,9 +511,9 @@ public class DotController : MonoBehaviour
         }
 
         //눈 작동
-        if (state == DotPatternState.Main)
+        if (state == DotPatternState.Main && bPlayEyeAnimation)
         {
-            Debug.Log(dotExpression);
+            Debug.Log("눈 애니메이션 : " + dotExpression);
             PlayEyeAnimation();
         }
 
