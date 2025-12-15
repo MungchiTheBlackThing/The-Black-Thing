@@ -17,6 +17,9 @@ class DiarySub
 public class DiaryPage : MonoBehaviour
 {
     [SerializeField]
+    PlayerController playerController;
+
+    [SerializeField]
     TMP_Text title;
     [SerializeField]
     TMP_Text text;
@@ -26,19 +29,22 @@ public class DiaryPage : MonoBehaviour
 
     public void UpdateDiaryPage(List<string> title, List<string> text, RightPage subs, List<string> imagePath, int languageIdx, List<bool> isSuccess)
     {
-        this.title.text = title[languageIdx];
-        this.text.text = text[languageIdx];
+        this.title.text = GetTokenString(title[languageIdx]);
+        this.text.text = GetTokenString(text[languageIdx]);
 
         for(int i=0; i<sub_diary.Length; i++)
         {
+            string target = "";
             if (isSuccess[i])
             {
-                sub_diary[i].text.text = subs.sub[i].success[languageIdx];
+                target = subs.sub[i].success[languageIdx];
             }
             else
             {
-                sub_diary[i].text.text = subs.sub[i].fail[languageIdx];
+                target = subs.sub[i].fail[languageIdx];
             }
+
+            sub_diary[i].text.text = GetTokenString(target);
 
             Sprite sprite = Resources.Load<Sprite>(imagePath[i]);
             if (sprite != null)
@@ -50,5 +56,15 @@ public class DiaryPage : MonoBehaviour
                 Debug.LogError($"이미지 로드 실패: {imagePath[i]}");
             }
         }
+    }
+
+    /// <summary>
+    /// <> 토큰을 데이터로 변환
+    /// </summary>
+    string GetTokenString(string target)
+    {
+        target = target.Replace("<nickname>", playerController.GetNickName());
+
+        return target;
     }
 }
