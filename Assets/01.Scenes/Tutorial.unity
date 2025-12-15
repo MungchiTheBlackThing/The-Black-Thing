@@ -5219,7 +5219,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1515975413}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8162,7 +8162,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 466824005}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -25244,6 +25244,7 @@ MonoBehaviour:
   popupUI: {fileID: 0}
   openDiaryUI: {fileID: 1390598891}
   closeDiaryUI: {fileID: 469792793}
+  gameManger: {fileID: 0}
 --- !u!1 &1485801817
 GameObject:
   m_ObjectHideFlags: 0
@@ -38946,7 +38947,7 @@ Animator:
   m_GameObject: {fileID: 4247061019833211656}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 57ad8fb3830d7a04182a191f3f93a49a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 763848c9a58fd4343b483e001cb5f308, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
