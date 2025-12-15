@@ -289,13 +289,12 @@ public class LoadSceneManager : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);
 
-        StartCoroutine(LoadSceneCoroutine());
-
+        yield return StartCoroutine(LoadSceneCoroutine());
+ 
         Utility.Instance.WaitForFirstTouch(() =>
         {
             StartCoroutine(CloseChapterUI());
         });
-        yield return null;
     }
 
 

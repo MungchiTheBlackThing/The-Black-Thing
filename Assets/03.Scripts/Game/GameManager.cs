@@ -201,7 +201,7 @@ public class GameManager : MonoBehaviour
     }
     public void NextPhase()
     {
-        Debug.Log("1");
+        Debug.Log("NextPhase 호출됨");
         pc.NextPhase();
     }
 

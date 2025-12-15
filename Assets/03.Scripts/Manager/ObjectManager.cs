@@ -394,7 +394,7 @@ public class ObjectManager : MonoBehaviour
         {
             GameObject reward = rewardTransform.gameObject;
             Debug.Log("밝게 빛날 물체 :" + reward.ToString());
-            StartCoroutine(Glow(reward));
+            //StartCoroutine(Glow(reward));
         }
         else
         {

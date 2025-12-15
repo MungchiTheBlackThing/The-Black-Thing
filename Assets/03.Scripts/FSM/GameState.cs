@@ -11,7 +11,8 @@ public abstract class GameState
     
     public bool RunSubScript(DotController dot, GameManager manager)
     {
-        Debug.Log("체크용" + dot.GetSubScriptListCount(manager.Pattern));
+        Debug.Log("[GameState] RunSubScript 호출");
+        Debug.Log("[GameState] 서브 스크립트 개수: " + dot.GetSubScriptListCount(manager.Pattern));
         
         if (dot.GetSubScriptListCount(manager.Pattern) == 0)
         {
@@ -25,10 +26,10 @@ public abstract class GameState
 
         DotPatternState dotPatternState = DotPatternState.Default;
         Enum.TryParse(sub.AnimState, true, out dotPatternState);
+        Debug.Log("[GameState] 서브다이얼로그 애니메이션 상태: " + sub.AnimState);
         dot.StartSubDialogueAnimation(dotPatternState, animString, Position);
         manager.ShowSubDial();
 
-        Debug.Log("현재 서브다이얼로그 진행중 " + animString + " " + Position);
         return true;
     }
 
