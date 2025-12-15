@@ -99,33 +99,27 @@ public class DiaryController : BaseObject, ISleepingInterface
         //클릭했을 때 현재 뭉치가 외출 중인가, Sleeping인가에 따라서 마우스 클릭을 막아야한다.
         GamePatternState CurrentPhase = (GamePatternState)playerController.GetCurrentPhase();
 
-        if(CurrentPhase < GamePatternState.Sleeping)
+        //인터페이스로 빼자
+        if (CurrentPhase != GamePatternState.Watching && CurrentPhase != GamePatternState.Sleeping)
         {
             OpenAlert();
             return;
         }
 
-        ////인터페이스로 빼자
-        //if(CurrentPhase != GamePatternState.Watching && CurrentPhase != GamePatternState.Sleeping)
-        //{
-        //    OpenAlert();
-        //    return;
-        //}
+        if (CurrentPhase == GamePatternState.Watching)
+        {
+            //AtHome일 때 return;
+            string WatchState = DataManager.Instance.Watchinginfo.pattern[playerController.GetChapter()];
 
-        //if(CurrentPhase == GamePatternState.Watching)
-        //{
-        //    //AtHome일 때 return;
-        //    string WatchState = DataManager.Instance.Watchinginfo.pattern[playerController.GetChapter()];
-
-        //    EWatching watch;
-        //    if (Enum.TryParse(WatchState,true, out watch))
-        //    {
-        //        if(watch == EWatching.StayAtHome)
-        //        {
-        //            return;
-        //        }
-        //    }
-        //}
+            EWatching watch;
+            if (Enum.TryParse(WatchState, true, out watch))
+            {
+                if (watch == EWatching.StayAtHome)
+                {
+                    return;
+                }
+            }
+        }
 
         isClicked = true;
         //플레이어 정보도 업데이트 한다.

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DiaryPageController : MonoBehaviour
 {
     [SerializeField] DiaryPage page;
-    [SerializeField] GameManager gameManger;
+    [SerializeField] GameManager gameManager;
 
     [SerializeField] float turnCooldown = 0.2f; 
     private int currentPageIndex = 0;
@@ -16,7 +16,11 @@ public class DiaryPageController : MonoBehaviour
 
     private void OnEnable()
     {
-        maxChapterIdx = gameManger.Chapter - 1;
+        maxChapterIdx = gameManager.Chapter - 1;
+        if (gameManager.Pattern <= GamePatternState.Writing)
+        {
+            maxChapterIdx--;
+        }
         currentPageIndex = maxChapterIdx;
 
         isTurning = false;
@@ -54,12 +58,12 @@ public class DiaryPageController : MonoBehaviour
     private void UpdatePageVisibility()
     {
         DiaryEntry entry = DataManager.Instance.DiaryData.DiaryEntry[currentPageIndex];
-        int language = (int)gameManger.pc.GetLanguage();
+        int language = (int)gameManager.pc.GetLanguage();
 
         AudioManager.instance.PlayOneShot(FMODEvents.instance.Pagesound, this.transform.position);
 
         // 서브 성공 여부 확인을 위한 부울 리스트
-        List<bool> sub_success = gameManger.pc.GetSubPhase(gameManger.Chapter);
+        List<bool> sub_success = gameManager.pc.GetSubPhase(gameManager.Chapter);
         page.UpdateDiaryPage(entry.title, entry.leftPage, entry.rightPage, entry.imagePath, language, sub_success);
     }
 }
