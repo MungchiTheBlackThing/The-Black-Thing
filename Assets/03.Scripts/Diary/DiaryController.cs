@@ -125,15 +125,7 @@ public class DiaryController : BaseObject, ISleepingInterface
         //플레이어 정보도 업데이트 한다.
         light.SetActive(false);
         playerController.SetIsDiaryCheck(isClicked);
-        //킬 때 현재 챕터를 확인한다.
-        if (playerController.GetChapter() == 1)
-        {
-            diaryUI.SetActiveGuide();
-        }
-        else
-        {
-            diaryUI.SetActiveCloseDiary();
-        }
+        diaryUI.SetActiveCloseDiary();
     }
 
     public void OpenAlert()

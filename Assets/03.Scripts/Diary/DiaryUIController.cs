@@ -16,12 +16,13 @@ public class DiaryUIController : MonoBehaviour
     GameObject openDiaryUI;
     [SerializeField]
     GameObject closeDiaryUI;
+    [SerializeField]
+    GameManager gameManger;
 
 
     public void SetActiveGuide()
     {
         guideUI.SetActive(true);
-        SetActiveCloseDiary();
     }
 
     public void SetActiveCloseDiary()
@@ -45,6 +46,16 @@ public class DiaryUIController : MonoBehaviour
     {
         popupUI.SetActive(false);
         openDiaryUI.SetActive(true);
+
+        //가이드 UI 활성화 조건
+        //일기장 페이지가 2장 이상일 때
+        //첫 1회만 활성화
+        float isShowGuide = PlayerPrefs.GetFloat("DiaryGuideShown");
+        if (gameManger.Chapter >= 2 && isShowGuide == 0)
+        {
+            SetActiveGuide();
+            PlayerPrefs.SetFloat("DiaryGuideShown", 1);
+        }
     }
 
     public void Exit()
