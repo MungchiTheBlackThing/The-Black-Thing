@@ -20,45 +20,1322 @@ MonoBehaviour:
     - rid: 3674199710174543950
   m_TableData:
   - m_Id: 26649690112
-    m_Localized: eng1
+    m_Localized: "<nickname>! It\u2019s a new day!"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543950
   - m_Id: 26754547712
-    m_Localized: eng2-1|eng2-2
+    m_Localized: "Look who\u2019s sounding lively today!"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543950
   - m_Id: 26754547713
-    m_Localized: eng3
+    m_Localized: "Yes, I\u2019ve decided to be\\nlively for today. I have to."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543950
   - m_Id: 26754547714
-    m_Localized: eng4
+    m_Localized: "(I wonder if Dot\u2019s scared...)|(Maybe this is good...)"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543950
   - m_Id: 26754547715
-    m_Localized: eng5
+    m_Localized: "Dot... You sound scared.\\nI guess it\u2019s only natural."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543950
   - m_Id: 26754547716
-    m_Localized: eng6
+    m_Localized: Yes... I am scared. Death has\nbeen on my mind all night long.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543950
   - m_Id: 26754547717
-    m_Localized: eng7-1|eng7-2
+    m_Localized: ... <nickname>.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543950
   - m_Id: 26754547718
-    m_Localized: eng8
+    m_Localized: "The fact that I\u2019ll soon dissolve\\ninto death may be important."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543950
+  - m_Id: 30176390270631936
+    m_Localized: "But what matters more\\nis that I\u2019ll brave it,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603456
+    m_Localized: and choose to face my fears,\nstanding tall and defiant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603457
+    m_Localized: Today I want to tell you\nabout this choice I made.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603458
+    m_Localized: A fantastic tale of rebellion\nagainst my looming death!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603459
+    m_Localized: "Yes, I\u2019m ready!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603460
+    m_Localized: Now... close your eyes.\nAnd picture if you will,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603461
+    m_Localized: a universe bursting with colors.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603462
+    m_Localized: What about your death,\nmy dearest human?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603463
+    m_Localized: Will it be decades from now,\non a soft white bed?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603464
+    m_Localized: Like drifting off to sleep...|Like an unexpected bang...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603465
+    m_Localized: Perhaps a grave illness will\ntake you twenty years too soon,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603466
+    m_Localized: "or worse... some unforeseen tragedy:\\na car crash, a fall, a split
+      second\u2019s mistake"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603467
+    m_Localized: ending your life in a couple years,\nor even weeks.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603468
+    m_Localized: "A pathetic end to all my struggles...|It\u2019s scary how the future
+      is never promised."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603469
+    m_Localized: Before saying goodbye to this world,\nI just wanted to ask you one
+      thing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603470
+    m_Localized: Despite it all, <nickname>,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603471
+    m_Localized: do you still love this world?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603472
+    m_Localized: This chaotic, cruel, meaningless\nworld you were born into?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603473
+    m_Localized: Even your fate that promises\nan inevitable death?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603474
+    m_Localized: (.... You fall silent, thinking.\nDo I love this world?)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603475
+    m_Localized: "(The answer doesn\u2019t come easily.) |Despite it all, yes. And
+      so I don\u2019t want to die."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603476
+    m_Localized: ......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603477
+    m_Localized: "And I\u2019d like to ask you, Dot."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603478
+    m_Localized: In spite of everything,\ncan you love it too?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603479
+    m_Localized: Your untimely fate...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603480
+    m_Localized: And this indifferent world\nthat allowed it?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603481
+    m_Localized: ......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603482
+    m_Localized: I once told you about that day on the Moon\nwhen I was sentenced
+      to death.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603483
+    m_Localized: When I sat on the pale, colorless ground,\nstaring at the universe
+      for ages,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603484
+    m_Localized: I thought I saw something.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603485
+    m_Localized: Not a shining star, or a dying meteor,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603486
+    m_Localized: but something shapeless, nameless....\nfluttering in the rough,
+      silent dark.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603487
+    m_Localized: Was it a figment of my imagination?\nSomething I conjured to overcome
+      my fears?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603488
+    m_Localized: Maybe it really was a shining star.|Maybe it really was a dying
+      meteor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603489
+    m_Localized: Or maybe just a bit of chalk dust\nclinging to my eyes! Hehe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603490
+    m_Localized: "But <nickname>. Watching you humans,\\nI\u2019ve finally understood."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603491
+    m_Localized: "That \u2018flutter\u2019 was in fact..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603492
+    m_Localized: Nothing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603493
+    m_Localized: Nothing?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603494
+    m_Localized: Yes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603495
+    m_Localized: It was nothing at all.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603496
+    m_Localized: And yet it meant the world to me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603497
+    m_Localized: It let me look straight into the universe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603498
+    m_Localized: It let me seize the possibility that\nsomewhere out there I might
+      be a dream.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603499
+    m_Localized: And at last, it led me to\nmy human friend.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603500
+    m_Localized: Whether it was something or nothing,\nthat truth will never change.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603501
+    m_Localized: When I realized that, I felt... free.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603502
+    m_Localized: I remember how shaken you were. And\nnow you can see your past in
+      a new light.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603503
+    m_Localized: "I\u2019m glad you\u2019re free now."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603504
+    m_Localized: "When you peel away the layer of meaning,\\nthere\u2019s nothing
+      under it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603505
+    m_Localized: The path I walk on each day is one among\nhundreds of thousands
+      on this vast planet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603506
+    m_Localized: Even if it were overturned or ground\nto dust, the world would keep
+      spinning.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603507
+    m_Localized: My friend, the mold, is one among billions of fungi.\nAnd to most
+      humans, an object of disgust.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603508
+    m_Localized: Happiness, sorrow, love, anxiety...\nEmotions that shook me to my
+      core...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603509
+    m_Localized: "\u2018Scientifically\u2019, they\u2019re just illusions sparked\\nby
+      chemical reactions within the body."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603510
+    m_Localized: I hated to admit it, especially\nwhen it came to you,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603511
+    m_Localized: but in the end every living being is just\na carcass-to-be, sprinting
+      toward death.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603512
+    m_Localized: ... Including me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603513
+    m_Localized: "It\u2019s impossible to fathom."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603514
+    m_Localized: Yes. Confusing, horrible, reeling.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603515
+    m_Localized: But... maybe...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603516
+    m_Localized: When we accept the reeling sensation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603517
+    m_Localized: maybe it will set us free.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603518
+    m_Localized: Free?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603519
+    m_Localized: ... Nothing has meaning.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603520
+    m_Localized: So we are free to create it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603521
+    m_Localized: Nothing has value.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603522
+    m_Localized: So we can paint it anew.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603523
+    m_Localized: "And as we keep doing so, the fact that\\nit\u2019s meaningless
+      no longer matters."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603524
+    m_Localized: "Then all that\u2019s left will be your freedom to choose."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603525
+    m_Localized: "On the blank page, what meaning\\nwill you chase\u2014and how?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603526
+    m_Localized: What mark will I leave on the ones I love?|What can I leave that
+      will live on after my time?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603527
+    m_Localized: .....
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603528
+    m_Localized: Knowing something is a mirage and taking\nto the chase anyway. The
+      purest act of rebellion.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603529
+    m_Localized: As is loving the path to that mirage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603530
+    m_Localized: So I choose to love my fate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603531
+    m_Localized: "I was fated to be \u2018nothing\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603532
+    m_Localized: "yet became your <\uC120\uD0DD\uC9C0>,\\nand your only monster friend."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603533
+    m_Localized: So I will rebel against the tide of resignation\nthat tries to swallow
+      me as I reach the edge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603534
+    m_Localized: How I took my walks and observed\nthe little changes around me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603535
+    m_Localized: How I reminisced the bond I shared\nwith my mold friend, now no
+      more.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603536
+    m_Localized: "Joy, sorrow, love, anxiety... How I cherished\\nthose overflowing
+      \u2018chemical reactions\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603537
+    m_Localized: To the last hour I will gaze on\nEarth, my dark snug corner,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603538
+    m_Localized: and you. My dearest, greatest friend.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603539
+    m_Localized: "I know there is no answer. Yet I\u2019ll ponder\\nlife and death,
+      the world and the dark."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603540
+    m_Localized: "So that\u2019s what you chose,\\nand what will set you free."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603541
+    m_Localized: "I\u2019m welling up over here.|I really am proud of you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603542
+    m_Localized: No meaningless void could take away\nwhat a brave creature you were.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603543
+    m_Localized: The thought of death still chills me...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603544
+    m_Localized: But you already know that fear is a part\nof life, a collage of
+      beauty and rebellion.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603545
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603546
+    m_Localized: See. This puny, laughable act of rebellion...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603547
+    m_Localized: has already been made\nheroic by you, my spectator!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603548
+    m_Localized: <nickname>, this may seem out of\nthe blue. But I want you to promise
+      me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603549
+    m_Localized: No matter how unfathomable\nyour fate may seem, never hate it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603550
+    m_Localized: May you rebel by loving the small chaos\nin the palm of your hand.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603551
+    m_Localized: May you live in every continuous moment,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603552
+    m_Localized: and find life reeling and freeing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603553
+    m_Localized: "I\u2019m terrified. Still, I wanted you to know this."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603554
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603555
+    m_Localized: Now... something very private is on\nmy mind that needs resolving.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603556
+    m_Localized: "You\u2019ll call me when you\u2019re done?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603557
+    m_Localized: Of course! My dearest human\nfriend, <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603558
+    m_Localized: And that very private thing on\nmy mind was... drumroll, please.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603559
+    m_Localized: What color I would be as a dream!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603560
+    m_Localized: Blue, red, yellow, purple...\nGreen? Orange? Pink?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603561
+    m_Localized: "They\u2019re each such a character\\nthat I simply can\u2019t decide."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603562
+    m_Localized: "I\u2019d like to hear what you think....."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603563
+    m_Localized: What color calls to you right now?|What used to be your favorite
+      color?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603564
+    m_Localized: "It\u2019s blue, like the ocean waves."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603565
+    m_Localized: It was blue, like the ocean waves.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603566
+    m_Localized: Staring into the blue makes\nsomething rise and fall within me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603567
+    m_Localized: I felt like if I heaved, blue marbles\nwould come rolling out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603568
+    m_Localized: You must have waves within.|... Do you think there are waves within
+      me?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603569
+    m_Localized: I wonder what you would\nbe like as a blue dream.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603570
+    m_Localized: Sometimes my emotions\nswell like the tide, too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603571
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603572
+    m_Localized: I have a question for you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603573
+    m_Localized: What is it?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603574
+    m_Localized: Dot, why did you admire color?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603575
+    m_Localized: Well.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603576
+    m_Localized: Well...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603577
+    m_Localized: Hmm...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603578
+    m_Localized: Because dream filth is black.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603579
+    m_Localized: Dream filth was the first, and most grotesque\nthing I set eyes
+      on when I was born.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603580
+    m_Localized: An entity of evil crawling with possibilities\nthat drive humans
+      to end their lives.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603581
+    m_Localized: So I hated myself, too.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603582
+    m_Localized: I felt like a black lump... born from\nthe filth and unable to escape
+      it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603583
+    m_Localized: You still hate black...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603584
+    m_Localized: No, no. I no longer hate black itself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603585
+    m_Localized: "The darkness is now a friend\\nof mine. I\u2019ve felt peace within
+      it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603586
+    m_Localized: "But my black isn\u2019t that of the Dark,\\nor outer space, or
+      ravens, or paint,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603587
+    m_Localized: but of the filth.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603588
+    m_Localized: The kind of black that harms human souls.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603589
+    m_Localized: A black of filth...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603590
+    m_Localized: "You think the black of filth is irrevocable.|You think the black
+      of Filth isn\u2019t a worthy color."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603591
+    m_Localized: Yes. So I want to leave\nmy black behind in my body.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603592
+    m_Localized: "So that when I\u2019m a dream I can\\nharmlessly enter your slumber"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603593
+    m_Localized: as a beautiful drop of color.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603594
+    m_Localized: "Hehe, it\u2019s like my heart is expanding!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603595
+    m_Localized: Colorful Dot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603596
+    m_Localized: "I understand your dream... but there\u2019s\\nsomething I\u2019ve
+      always been meaning to say."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603597
+    m_Localized: "(I\u2019m glad the lake of filth birthed Dot.)|(Are discarded dreams
+      really so evil?)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603598
+    m_Localized: "It\u2019s about the dream filth,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603599
+    m_Localized: True, it might be a nasty pitch-black\ndarkness to someone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603600
+    m_Localized: But you drew your first breath in its bubbles,\nand opened your
+      eyes to the world.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603601
+    m_Localized: "I can\u2019t bring myself to hate it.\\nI can\u2019t help but feel...
+      tender."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603602
+    m_Localized: Because in that darkness\nlay the possibility of you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603603
+    m_Localized: The possibility of me?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603604
+    m_Localized: Me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603605
+    m_Localized: A tiny, ugly, worthless being.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603606
+    m_Localized: And my special monster friend.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603607
+    m_Localized: But my black is the black of foul filth...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603608
+    m_Localized: "I can\u2019t erase its vast impurity\\njust because it birthed
+      me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603609
+    m_Localized: But you dreamed of becoming a dream\nand making humans happy. A
+      caring dream.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603610
+    m_Localized: "I\u2019m human so I only know as much,\\nbut looking at you makes
+      me think."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603611
+    m_Localized: "Maybe the dream filth, and the lake...\\nweren\u2019t filled with
+      despair and malice."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603612
+    m_Localized: Maybe wishes, hopes, and\nsorrows lay undisturbed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603613
+    m_Localized: .....
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603614
+    m_Localized: Those emotions were a part of me.\nAs if I was born from them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603615
+    m_Localized: ... I feel bad for them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603616
+    m_Localized: "But I shouldn\u2019t."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603617
+    m_Localized: Not when I think of all the lives\nthose nightmares took...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603618
+    m_Localized: .....
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603619
+    m_Localized: "The dream filth and nightmares\\nshouldn\u2019t take all the blame,
+      you know."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603620
+    m_Localized: "Dreams... aren\u2019t all that compel\\na human to take their own
+      life."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603621
+    m_Localized: "That still doesn\u2019t change anything.\\nWanna know what I think?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603622
+    m_Localized: Talking about my black always\nmakes my heart prickle...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603623
+    m_Localized: .....
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603624
+    m_Localized: But why not. I feel like\ntaking a chance this time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603625
+    m_Localized: Maybe it functions as an absolute\nkind of evil on the Moon.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603626
+    m_Localized: But you dreamed of becoming a dream\nand making humans happy. A
+      caring dream.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603627
+    m_Localized: I may not know much as a human,\nbut looking at you makes me think.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603628
+    m_Localized: "Maybe discarded dreams... once\\nlonged to be a human\u2019s dream,
+      too."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603629
+    m_Localized: You mean the dream filth, and the lake...\nmight not be filled with
+      despair and malice?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603630
+    m_Localized: "It\u2019s what I think."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603631
+    m_Localized: Maybe wishes, hopes, and\nsorrows lay undisturbed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603632
+    m_Localized: So there might have been\nslime, not yet monsters,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603633
+    m_Localized: that looked like me\nand dreamed like me?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603634
+    m_Localized: Sure. Picture a squarish or\ntriangular version of you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603635
+    m_Localized: .... But without chalk eyes to gaze at the\nbeauty of Earth, or
+      memories of the Moon Trio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603636
+    m_Localized: All they can do is writhe in the\nmisery of having been discarded.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603637
+    m_Localized: "I pity them. So much that I can\u2019t hate them."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603638
+    m_Localized: "But I\u2019m not supposed to pity them."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603639
+    m_Localized: Not when I think of all the lives\nthose nightmares took...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603640
+    m_Localized: .....
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603641
+    m_Localized: "The dream filth and nightmares\\nshouldn\u2019t take all the blame,
+      you know."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390291603642
+    m_Localized: "Dreams aren\u2019t all that compel\\na human to take their own
+      life."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992064
+    m_Localized: "And even if they are, I\u2019ll still be certain\\nof one thing.
+      Wanna know what that is?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992065
+    m_Localized: Talking about my black always\nmakes my heart prickle...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992066
+    m_Localized: .....
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992067
+    m_Localized: But why not. I feel like\ntaking a chance this time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992068
+    m_Localized: Dot, your black.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992069
+    m_Localized: ..... Yes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992070
+    m_Localized: Well.....
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992071
+    m_Localized: "You\u2019ve heard of a palette?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992072
+    m_Localized: A palette.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992073
+    m_Localized: "Yes, of course. It\u2019s the plate\\nhumans use to paint pictures."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992074
+    m_Localized: Do you know what happens when\nyou mix all the colors on that palette?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992075
+    m_Localized: .....
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992076
+    m_Localized: '!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992077
+    m_Localized: To you, your black is a terrible imperfection.\nOne that trapped
+      you since you were born.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992078
+    m_Localized: "I can\u2019t begin to imagine the pain."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992079
+    m_Localized: But, your black as I understood\nit in my world was this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992080
+    m_Localized: "It\u2019s who you are, made all the more\\ndeeper with each lovable
+      color."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992081
+    m_Localized: A black of possibility that\ncan bloom any color.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992082
+    m_Localized: A black of possibility that\ncan bloom any color?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992083
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992084
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992085
+    m_Localized: Yes, black that can bloom any color.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992086
+    m_Localized: ... But.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992087
+    m_Localized: "What use is possibility on\\nits own? It\u2019s only black."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992088
+    m_Localized: "No, it\u2019s black and that\u2019s great!|Well, black is more
+      than nothing."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992089
+    m_Localized: Because colors stay under\nthe surface of black,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992090
+    m_Localized: it ironically is free to be black with\nno compromise, boundaries
+      or rules.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992091
+    m_Localized: A shade that can hide anything.\nA vast and silent embrace.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992092
+    m_Localized: Because black exists in its virtual state,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992093
+    m_Localized: it ironically is free to be itself with\nno compromise, boundaries
+      or rules.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992094
+    m_Localized: A shade that contains nothing,\nand so can welcome everything.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992095
+    m_Localized: "So I don\u2019t want to lose\\nyour black to colors."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992096
+    m_Localized: "True, you\u2019ve always surprised me\\nwith your multicolored
+      imagination."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992097
+    m_Localized: But if you were to one day bloom blue,\nI would be sorely disappointed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992098
+    m_Localized: Some things are beautiful because\nthey are black, solely black.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992099
+    m_Localized: Meaningless,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992100
+    m_Localized: thus free to have meaning.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992101
+    m_Localized: Worthless,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992102
+    m_Localized: thus free to be of worth.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992103
+    m_Localized: "That\u2019s right."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992104
+    m_Localized: Does my black deserve the same logic?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992105
+    m_Localized: Does it really?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992106
+    m_Localized: My oldest, worst enemy... my black.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992107
+    m_Localized: Does it deserve to be set free?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992108
+    m_Localized: Of course. Of course it does.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992109
+    m_Localized: Why on earth not?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992110
+    m_Localized: .....
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992111
+    m_Localized: Oh. Oh. <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992112
+    m_Localized: Black.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992113
+    m_Localized: My black.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992114
+    m_Localized: "... I\u2019m just getting used to it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992115
+    m_Localized: A little acceptance,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992116
+    m_Localized: and a little pity,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992117
+    m_Localized: and a noisy yet silent gaze.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992118
+    m_Localized: "It\u2019s very strange to gather all of these and look down at
+      my black."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992119
+    m_Localized: Is there a word for these\nsilent, contracting emotions?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992120
+    m_Localized: How strange to have crash-landed\nhere and met you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992121
+    m_Localized: Strange... strange.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992122
+    m_Localized: And so beautiful it brings\ntears to my eyeballs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992123
+    m_Localized: ... Dot, do you have to go?|Will I never see you again?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992124
+    m_Localized: "It\u2019s not like you have to leave today.\\nYou don\u2019t have
+      to be my dream straight away."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992125
+    m_Localized: "Couldn\u2019t you stay with me until the end,\\nand say goodbye
+      only at its very end?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992126
+    m_Localized: "So you\u2019ve noticed."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992127
+    m_Localized: "We\u2019ve truly reached the end of the end."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992128
+    m_Localized: "But I don\u2019t want to scatter helplessly\\njust because my time
+      is up."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992129
+    m_Localized: "And I don\u2019t want you to remember\\nme helpless and terrified."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992130
+    m_Localized: As human friends say goodbye, I want to\nmake a goodbye just for
+      you and me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992131
+    m_Localized: I want to push my heavy emotions down,\nand summon the will to say
+      a joyful goodbye.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992132
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992133
+    m_Localized: I thought you might say that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992134
+    m_Localized: (And so there was\nnothing more to be said.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992135
+    m_Localized: "Don\u2019t worry."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992136
+    m_Localized: "You won\u2019t see me anywhere, but\\nyou might find me everywhere."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992137
+    m_Localized: "And we\u2019ll meet again\\nwhen I become a dream!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992138
+    m_Localized: "I\u2019m not sure when, or\\nwhat dream I\u2019ll end up as..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992139
+    m_Localized: "But you\u2019ll recognize me. Right?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992140
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992141
+    m_Localized: "Hehe. Let\u2019s hope I won\u2019t be your nightmare."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992142
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992143
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992144
+    m_Localized: "What\u2019s wrong with a nightmare?|You could never be my nightmare."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992145
+    m_Localized: "No matter how horrible, damp, and eerie,\\nI\u2019ll take shelter
+      in that nightmare and light a candle."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992146
+    m_Localized: "I\u2019d recognize you in a heartbeat,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992147
+    m_Localized: and that would make it\na fine, beautiful nightmare.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992148
+    m_Localized: "Even if it\u2019s horrible, damp, and eerie,\\nI\u2019ll take shelter
+      in that nightmare and light a candle."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992149
+    m_Localized: You taught me how to\nfind peace in the pitch black.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992150
+    m_Localized: So how could the final story you\nshare with me ever be a nightmare?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992151
+    m_Localized: <nickname>......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992152
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992153
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992154
+    m_Localized: Yes, you really are right.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992155
+    m_Localized: My pitch-black, round monster friend.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992156
+    m_Localized: Thank you for taking your place\nin that dusty corner of my room.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992157
+    m_Localized: "If I\u2019m ever scared or dizzy... I may stumble\\nback into our
+      memories etched in the past."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992158
+    m_Localized: When my room gets dark, when the sunlight\nhurts, when my emotions
+      weigh me down.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992159
+    m_Localized: When you feel like paddling in the dark.\nWhen the dark threatens
+      to choke you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992160
+    m_Localized: "But you\u2019ll find the smallest sliver of strength\\nin the times
+      we spent together."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992161
+    m_Localized: ... Yes. A strength only made\nstronger because I met you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992162
+    m_Localized: "I\u2019ll be afraid, but I won\u2019t stop."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992163
+    m_Localized: Just like you in the pitch black.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992164
+    m_Localized: ... Yes. Thank you for everything.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992165
+    m_Localized: I wonder what our friendship will\nlook like when you look back?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992166
+    m_Localized: "I\u2019ll tell you all about it.\\nWhen we see each other again."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992167
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992168
+    m_Localized: <nickname>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992169
+    m_Localized: "I\u2019ve decided to take a chance\\non my \u2018black\u2019 and
+      its possibilities."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992170
+    m_Localized: "You\u2019ve cherished it this whole time. So I\u2019ll\\nlook forward
+      to what you\u2019ll etch on my black..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992171
+    m_Localized: And become your black dream.\nA thick, certain shade of black.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992172
+    m_Localized: "And I\u2019ll paint one of your nights"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992173
+    m_Localized: with the safest swirling darkness.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992174
+    m_Localized: "I\u2019ll become a black dream!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992175
+    m_Localized: Your black black dream...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30176390299992176
+    m_Localized: Now close your eyes, <nickname>.\nUntil the darkness settles for
+      good.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

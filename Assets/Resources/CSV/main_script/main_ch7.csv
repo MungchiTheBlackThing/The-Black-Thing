@@ -1,72 +1,72 @@
-﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,37,1,main_door_open,Player,Main,body_dust,face_blink,text,"...! 뭉치, 무슨 일 있었어?","...! Dot, what happened?",2,,,,Main_Ch7,M7_L0001
-1,37,2,main_door_open,Dot,Main,,,text,"신경 쓰지 마, <nickname>. 낮에 배운 것을\n성공적으로 실천하는 중이야.","Don’t mind me, <nickname>. I’m putting\ninto motion what I’ve learned today.",3,,,,Main_Ch7,M7_L0002
-1,37,3,main_door_open,Dot,Main,,,text,‘기분이 좋다’고 생각하면\n‘기분이 좋아’진다는 사실 말이야!,That thinking that I feel good\ncan make me feel good!,4,,,,Main_Ch7,M7_L0003
-1,37,4,main_door_open,Dot,Main,,face_squeeze,text,"이전까지는 가능성을 의심했지만, 끝내 성공했지!","I had doubted its potential\nbefore, but it came through!",5,,,,Main_Ch7,M7_L0004
-1,37,5,main_door_open,Dot,Main,,face_blink,text,인간들이 철로 만든 새가\n하늘을 나는 일이 그런 것처럼.,Like how the man-made\nmetallic bird can fly in the air.,6,,,,Main_Ch7,M7_L0005
-1,37,6,main_door_open,Player,Main,,,text,비행기 말이야?,You mean an airplane?,7,,,,Main_Ch7,M7_L0006
-1,37,7,main_door_open,Dot,Main,,face_eyeroll2,text,음... 그렇게도 부르지. 하지만 ‘인간들이\n철로 만든 새’라는 말이 더 멋있지 않아?,Well... one could call it that. But isn’t\n‘man-made metallic bird’ much cooler?,8,,,,Main_Ch7,M7_L0007
-1,37,8,main_door_open,Dot,Main,,face_blink,text,"비, 행, 기. 너무 딱딱해.",Air-plane. So stiff.,9,,,,Main_Ch7,M7_L0008
-1,37,9,main_door_open,Player,Main,,,text,"그런데 뭉치, 먼지 엉킨 너를 보고\n있으니까 대화에 집중이 안 돼.","But Dot, you being tangled up in dust\nreally distracts me from what you’re saying.",10,,,,Main_Ch7,M7_L0009
-1,37,10,main_door_open,Player,Main,,,text,대체 무슨 일이 있었던 거야?,What exactly happened?,11,1,,,Main_Ch7,M7_L0010
-1,37,11,main_door_open,Dot,Main,,,text,... 그렇다면.,...,12,,,,Main_Ch7,M7_L0011
-1,37,12,main_door_open,Dot,Main,,,text,"이제 내 성공담을 들려줘도 될까, <nickname>?","Now can I tell you about\nmy triumph, <nickname>?",13,,,,Main_Ch7,M7_L0012
-1,37,13,main_door_open,Player,Main,,,text,"그래, 우선 무슨 일인지 이야기해 줘.","Yes. First, tell me what’s going on.",14,,,,Main_Ch7,M7_L0013
+1,37,2,main_door_open,Dot,Main,body_dust,,text,"신경 쓰지 마, <nickname>. 낮에 배운 것을\n성공적으로 실천하는 중이야.","Don’t mind me, <nickname>. I’m putting\ninto motion what I’ve learned today.",3,,,,Main_Ch7,M7_L0002
+1,37,3,main_door_open,Dot,Main,body_dust,,text,‘기분이 좋다’고 생각하면\n‘기분이 좋아’진다는 사실 말이야!,That thinking that I feel good\ncan make me feel good!,4,,,,Main_Ch7,M7_L0003
+1,37,4,main_door_open,Dot,Main,body_dust_move,face_squeeze,text,"이전까지는 가능성을 의심했지만, 끝내 성공했지!","I had doubted its potential\nbefore, but it came through!",5,,,,Main_Ch7,M7_L0004
+1,37,5,main_door_open,Dot,Main,body_dust,face_blink,text,인간들이 철로 만든 새가\n하늘을 나는 일이 그런 것처럼.,Like how the man-made\nmetallic bird can fly in the air.,6,,,,Main_Ch7,M7_L0005
+1,37,6,main_door_open,Player,Main,body_dust,,text,비행기 말이야?,You mean an airplane?,7,,,,Main_Ch7,M7_L0006
+1,37,7,main_door_open,Dot,Main,body_dust,face_eyeroll2,text,음... 그렇게도 부르지. 하지만 ‘인간들이\n철로 만든 새’라는 말이 더 멋있지 않아?,Well... one could call it that. But isn’t\n‘man-made metallic bird’ much cooler?,8,,,,Main_Ch7,M7_L0007
+1,37,8,main_door_open,Dot,Main,body_dust,face_blink,text,"비, 행, 기. 너무 딱딱해.",Air-plane. So stiff.,9,,,,Main_Ch7,M7_L0008
+1,37,9,main_door_open,Player,Main,body_dust,,text,"그런데 뭉치, 먼지 엉킨 너를 보고\n있으니까 대화에 집중이 안 돼.","But Dot, you being tangled up in dust\nreally distracts me from what you’re saying.",10,,,,Main_Ch7,M7_L0009
+1,37,10,main_door_open,Player,Main,body_dust,,text,대체 무슨 일이 있었던 거야?,What exactly happened?,11,1,,,Main_Ch7,M7_L0010
+1,37,11,main_door_open,Dot,Main,body_dust,,text,... 그렇다면.,...,12,,,,Main_Ch7,M7_L0011
+1,37,12,main_door_open,Dot,Main,body_dust,,text,"이제 내 성공담을 들려줘도 될까, <nickname>?","Now can I tell you about\nmy triumph, <nickname>?",13,,,,Main_Ch7,M7_L0012
+1,37,13,main_door_open,Player,Main,body_dust,,text,"그래, 우선 무슨 일인지 이야기해 줘.","Yes. First, tell me what’s going on.",14,,,,Main_Ch7,M7_L0013
 1,37,14,main_door_open,Dot,Main,body_dust_move,,text,좋아! 실은 아까 내 몸에\n먼지가 엄청나게 엉겨 붙었어!,"Alright! See, an enormous amount\nof dust clung to me just a while ago.",15,,,,Main_Ch7,M7_L0014
 1,37,15,main_door_open,Dot,Main,body_dust,face_eyeroll,text,난 온몸이 복슬복슬한 검은\n털 덩어리가 되고 말았지!,And I became a black ball of fuzz!,16,,,,Main_Ch7,M7_L0015
-1,37,16,main_door_open,Dot,Main,,face_blink,text,"끔찍해진 겉모습은 물론, 몸 속이 온통\n간지럽고, 까끌까끌하고, 거북했어.","Not only did I look hideous, but I felt\nticklish, prickly, and uncomfortable.",17,,,,Main_Ch7,M7_L0016
-1,37,17,main_door_open,Dot,Main,,face_sad,text,아마 네가 창문을 제대로\n닫지 않은 것 같다고 생각했어.,I thought maybe you’d\nleft the window open.,18,,,,Main_Ch7,M7_L0017
-1,37,18,main_door_open,Player,Main,,face_blink,text,"앗, 그렇구나. 미안해. 다음부터는 꼭 닫고 나갈게.","Oh, I’m sorry. I’ll remember\nto close it from now.",19,,,,Main_Ch7,M7_L0018
-1,37,19,main_door_open,Dot,Main,,,text,"그럴 필요 없어, <nickname>.\n이건 말했듯이 ‘성공담’이니까.","No need, <nickname>. Like I said,\nthis is a story of triumph.",20,,,,Main_Ch7,M7_L0019
-1,37,20,main_door_open,Dot,Main,,,text,"아무튼, 그때 난 방금\n소개한 인간을 떠올렸어.","Anyways, that was when I recalled\nthe human I was just telling you about.",21,,,,Main_Ch7,M7_L0020
-1,37,21,main_door_open,Dot,Main,,,text,어떤 무자비한 일을 겪어도\n곰 인형처럼 웃고 마는 인간을...,The human that smiles like a teddy\nbear in the face of tragedies...,22,,,,Main_Ch7,M7_L0021
-1,37,22,main_door_open,Dot,Main,,face_close_turn,text,그리고 그를 따라해 봤어. 검은 진창 속에서\n불길해진 내 기분을 구원하기 위해서.,And I attempted to imitate him. To save\nmyself from the ominous dark mire.,23,,,,Main_Ch7,M7_L0022
-1,37,23,main_door_open,Dot,Main,,,text,나를 하나의... 움직이는...,To picture myself as\nsomething... that sways...,24,,,,Main_Ch7,M7_L0023
-1,37,24,main_door_open,Dot,Main,,face_open,text,달콤하고 위험한... 그 무엇이라고\n스스로 생각해 본 거야.,sweet yet dangerous.,25,,,,Main_Ch7,M7_L0024
-1,37,25,main_door_open,Player,Main,,face_blink,selection,"파리, 가 아니라 먼지 지옥?|먼지를 사로잡은 풍선껌?","A Venus flytrap... or rather, dust-trap?|A piece of gum with dust stuck to it?",26|27,,,moon|sun,Main_Ch7,M7_L0025
-1,37,26,main_door_open,Dot,Main,,,text,"그도 아주 멋진 식물이지만,\n틀렸어. 그보다는 다정해.","Admittedly a charming plant,\nbut no. Something much kinder.",28,,,,Main_Ch7,M7_L0026
-1,37,27,main_door_open,Dot,Main,,,text,"그도 매력적인 향을 풍기지만,\n틀렸어. 그보다는 연약해.","Admittedly a sweet scent, but no.\nSomething far more fragile.",28,,,,Main_Ch7,M7_L0027
-1,37,28,main_door_open,Player,Main,,,text,반쯤 녹은 솜사탕?,A half-melted stick of cotton candy?,29,,,,Main_Ch7,M7_L0028
-1,37,29,main_door_open,Dot,Main,,,text,맞아. 바로 그거야.,Correct. That’s exactly it.,30,,,,Main_Ch7,M7_L0029
-1,37,30,main_door_open,Dot,Main,,,text,먼지가 붙은 나를 폭신폭신하고 몽글몽글한\n솜사탕이라고 생각하기로 마음먹었어.,"l’ve decided to think of myself, dust\nand all, as a soft piece of cotton candy.",31,,,,Main_Ch7,M7_L0030
-1,37,31,main_door_open,Dot,Main,,,text,그렇게 생각하니 훨씬 기분이 나아졌어.,And that makes me feel so much better.,32,,,,Main_Ch7,M7_L0031
-1,37,32,main_door_open,Dot,Main,,,text,이 모습이 녹여 먹고 싶을\n만큼 사랑스러울 수도 있잖아?,"After all, one might think I look\njust like I could melt in their mouth!",33,,,,Main_Ch7,M7_L0032
-1,37,33,main_door_open,Dot,Main,,,text,이번 기회에 먼지와 함께\n살아가는 것을 배우는 게 좋겠어.,I’d like to use this opportunity\nto learn how to live with dust.,34,,,,Main_Ch7,M7_L0033
-1,37,34,main_door_open,Player,Main,,,text,(뭉치가 말과는 다르게 불편해 보여. 게다가 이미 곰팡이도 있는데!),"(Whatever Dot says, it looks uncomfortable.\nPlus we already have the mold!)",35,,,,Main_Ch7,M7_L0034
-1,37,35,main_door_open,Player,Main,,,selection,(단호하게 거절한다)|(완곡하게 거절한다),(Refuse firmly.)|(Refuse gently.),36|38,,,moon|sun,Main_Ch7,M7_L0035
-1,37,36,main_door_open,Player,Main,,,text,하지만 인간인 나는 먼지 투성이와\n함께 살아가는 걸 배우지 못했는걸.,But I’ve never learned\nhow to get along with dust.,37,,,,Main_Ch7,M7_L0036
-1,37,37,main_door_open,Player,Main,,,text,먼지와 이별하도록 도와줄게.\n되도록이면 이 방 전체에서. ,I’ll help you say goodbye to the dust. And\npreferably eject them from this room entirely.,40,,,,Main_Ch7,M7_L0037
-1,37,38,main_door_open,Player,Main,,,text,그건 내가 곤란해. 인간의\n기관지는 그리 튼튼하지 않거든.,I’m not sure if I’m okay with that.\nWe humans don’t have infallible lungs.,39,,,,Main_Ch7,M7_L0038
-1,37,39,main_door_open,Player,Main,,,text,먼지를 떼어 내는 걸 도와줄게.\n그리고 나서 방 청소를 해야겠어. ,I’ll help you get rid of the dust. And\ndo a thorough spring-clean to boot.,40,,,,Main_Ch7,M7_L0039
+1,37,16,main_door_open,Dot,Main,body_dust,face_blink,text,"끔찍해진 겉모습은 물론, 몸 속이 온통\n간지럽고, 까끌까끌하고, 거북했어.","Not only did I look hideous, but I felt\nticklish, prickly, and uncomfortable.",17,,,,Main_Ch7,M7_L0016
+1,37,17,main_door_open,Dot,Main,body_dust,face_sad,text,아마 네가 창문을 제대로\n닫지 않은 것 같다고 생각했어.,I thought maybe you’d\nleft the window open.,18,,,,Main_Ch7,M7_L0017
+1,37,18,main_door_open,Player,Main,body_dust,face_blink,text,"앗, 그렇구나. 미안해. 다음부터는 꼭 닫고 나갈게.","Oh, I’m sorry. I’ll remember\nto close it from now.",19,,,,Main_Ch7,M7_L0018
+1,37,19,main_door_open,Dot,Main,body_dust,,text,"그럴 필요 없어, <nickname>.\n이건 말했듯이 ‘성공담’이니까.","No need, <nickname>. Like I said,\nthis is a story of triumph.",20,,,,Main_Ch7,M7_L0019
+1,37,20,main_door_open,Dot,Main,body_dust,,text,"아무튼, 그때 난 방금\n소개한 인간을 떠올렸어.","Anyways, that was when I recalled\nthe human I was just telling you about.",21,,,,Main_Ch7,M7_L0020
+1,37,21,main_door_open,Dot,Main,body_dust,,text,어떤 무자비한 일을 겪어도\n곰 인형처럼 웃고 마는 인간을...,The human that smiles like a teddy\nbear in the face of tragedies...,22,,,,Main_Ch7,M7_L0021
+1,37,22,main_door_open,Dot,Main,body_dust,face_close_turn,text,그리고 그를 따라해 봤어. 검은 진창 속에서\n불길해진 내 기분을 구원하기 위해서.,And I attempted to imitate him. To save\nmyself from the ominous dark mire.,23,,,,Main_Ch7,M7_L0022
+1,37,23,main_door_open,Dot,Main,body_dust,face_close,text,나를 하나의... 움직이는...,To picture myself as\nsomething... that sways...,24,,,,Main_Ch7,M7_L0023
+1,37,24,main_door_open,Dot,Main,body_dust,face_open,text,달콤하고 위험한... 그 무엇이라고\n스스로 생각해 본 거야.,sweet yet dangerous.,25,,,,Main_Ch7,M7_L0024
+1,37,25,main_door_open,Player,Main,body_dust,face_blink,selection,"파리, 가 아니라 먼지 지옥?|먼지를 사로잡은 풍선껌?","A Venus flytrap... or rather, dust-trap?|A piece of gum with dust stuck to it?",26|27,,,moon|sun,Main_Ch7,M7_L0025
+1,37,26,main_door_open,Dot,Main,body_dust,,text,"그도 아주 멋진 식물이지만,\n틀렸어. 그보다는 다정해.","Admittedly a charming plant,\nbut no. Something much kinder.",28,,,,Main_Ch7,M7_L0026
+1,37,27,main_door_open,Dot,Main,body_dust,,text,"그도 매력적인 향을 풍기지만,\n틀렸어. 그보다는 연약해.","Admittedly a sweet scent, but no.\nSomething far more fragile.",28,,,,Main_Ch7,M7_L0027
+1,37,28,main_door_open,Player,Main,body_dust,,text,반쯤 녹은 솜사탕?,A half-melted stick of cotton candy?,29,,,,Main_Ch7,M7_L0028
+1,37,29,main_door_open,Dot,Main,body_dust,,text,맞아. 바로 그거야.,Correct. That’s exactly it.,30,,,,Main_Ch7,M7_L0029
+1,37,30,main_door_open,Dot,Main,body_dust,,text,먼지가 붙은 나를 폭신폭신하고 몽글몽글한\n솜사탕이라고 생각하기로 마음먹었어.,"l’ve decided to think of myself, dust\nand all, as a soft piece of cotton candy.",31,,,,Main_Ch7,M7_L0030
+1,37,31,main_door_open,Dot,Main,body_dust,,text,그렇게 생각하니 훨씬 기분이 나아졌어.,And that makes me feel so much better.,32,,,,Main_Ch7,M7_L0031
+1,37,32,main_door_open,Dot,Main,body_dust,,text,이 모습이 녹여 먹고 싶을\n만큼 사랑스러울 수도 있잖아?,"After all, one might think I look\njust like I could melt in their mouth!",33,,,,Main_Ch7,M7_L0032
+1,37,33,main_door_open,Dot,Main,body_dust,,text,이번 기회에 먼지와 함께\n살아가는 것을 배우는 게 좋겠어.,I’d like to use this opportunity\nto learn how to live with dust.,34,,,,Main_Ch7,M7_L0033
+1,37,34,main_door_open,Player,Main,body_dust,,text,(뭉치가 말과는 다르게 불편해 보여. 게다가 이미 곰팡이도 있는데!),"(Whatever Dot says, it looks uncomfortable.\nPlus we already have the mold!)",35,,,,Main_Ch7,M7_L0034
+1,37,35,main_door_open,Player,Main,body_dust,,selection,(단호하게 거절한다)|(완곡하게 거절한다),(Refuse firmly.)|(Refuse gently.),36|38,,,moon|sun,Main_Ch7,M7_L0035
+1,37,36,main_door_open,Player,Main,body_dust,,text,하지만 인간인 나는 먼지 투성이와\n함께 살아가는 걸 배우지 못했는걸.,But I’ve never learned\nhow to get along with dust.,37,,,,Main_Ch7,M7_L0036
+1,37,37,main_door_open,Player,Main,body_dust,,text,먼지와 이별하도록 도와줄게.\n되도록이면 이 방 전체에서. ,I’ll help you say goodbye to the dust. And\npreferably eject them from this room entirely.,40,,,,Main_Ch7,M7_L0037
+1,37,38,main_door_open,Player,Main,body_dust,,text,그건 내가 곤란해. 인간의\n기관지는 그리 튼튼하지 않거든.,I’m not sure if I’m okay with that.\nWe humans don’t have infallible lungs.,39,,,,Main_Ch7,M7_L0038
+1,37,39,main_door_open,Player,Main,body_dust,,text,먼지를 떼어 내는 걸 도와줄게.\n그리고 나서 방 청소를 해야겠어. ,I’ll help you get rid of the dust. And\ndo a thorough spring-clean to boot.,40,,,,Main_Ch7,M7_L0039
 1,37,40,main_door_open,Dot,Main,body_dust_move,face_mad,text,"다, 다, 다가오지 말아줘.\n부탁이야. 그냥 내버려 둬...!","Don’t, don’t, don’t come near me.\nPlease. Just leave us alone...!",41,,,,Main_Ch7,M7_L0040
-1,37,41,main_door_open,Player,Main,,,text,하지만... 너도 불편하다며.,But... you said you\nwere uncomfortable.,42,,,,Main_Ch7,M7_L0041
-1,37,42,main_door_open,Dot,Main,,,text,그 존재의 불편함은 이미 잊었어!,I’ve already put it behind me!,43,,,,Main_Ch7,M7_L0042
-1,37,43,main_door_open,Dot,Main,,,text,먼지와 이별하려면 먼저 먼지\n투성이가 된 나를 마주해야 해.,"To say farewell to the dust, I have\nto first face myself, dust and all.",44,,,,Main_Ch7,M7_L0043
-1,37,44,main_door_open,Dot,Main,,,text,이제는 그걸 마주하는 게 더 아픈 일이야.\n누군가 내 작은 심장을 옥죄듯 괴로울 거야.,Coming to terms with that would be even more\npainful. Like someone crushing my small heart.,45,,,,Main_Ch7,M7_L0044
-1,37,45,main_door_open,Dot,Main,,face_omg,text,떠올리는 것만으로 절망스러워...,Just the thought of it\nputs me in misery...,46,,,,Main_Ch7,M7_L0045
-1,37,46,main_door_open,Dot,Main,,,text,더 이상 날 괴롭히지 말고 이만 나가줘.,"Please, leave me alone and just go.",,,anim_sub_ch7_1,,Main_Ch7,M7_L0046
+1,37,41,main_door_open,Player,Main,body_dust,,text,하지만... 너도 불편하다며.,But... you said you\nwere uncomfortable.,42,,,,Main_Ch7,M7_L0041
+1,37,42,main_door_open,Dot,Main,body_dust,,text,그 존재의 불편함은 이미 잊었어!,I’ve already put it behind me!,43,,,,Main_Ch7,M7_L0042
+1,37,43,main_door_open,Dot,Main,body_dust,,text,먼지와 이별하려면 먼저 먼지\n투성이가 된 나를 마주해야 해.,"To say farewell to the dust, I have\nto first face myself, dust and all.",44,,,,Main_Ch7,M7_L0043
+1,37,44,main_door_open,Dot,Main,body_dust,,text,이제는 그걸 마주하는 게 더 아픈 일이야.\n누군가 내 작은 심장을 옥죄듯 괴로울 거야.,Coming to terms with that would be even more\npainful. Like someone crushing my small heart.,45,,,,Main_Ch7,M7_L0044
+1,37,45,main_door_open,Dot,Main,body_dust,face_omg,text,떠올리는 것만으로 절망스러워...,Just the thought of it\nputs me in misery...,46,,,,Main_Ch7,M7_L0045
+1,37,46,main_door_open,Dot,Main,body_dust,,text,더 이상 날 괴롭히지 말고 이만 나가줘.,"Please, leave me alone and just go.",,,anim_sub_ch7_1,,Main_Ch7,M7_L0046
 3,38,47,main_door_close,Player,Main,body_null,face_null,text,(옷장 문을 두드린다.),(Knock on the closet door.),48,,,,Main_Ch7,M7_L0047
-3,38,48,main_door_close,Player,Main,,,selection,(진심 어리게 사과한다.)|(다정하게 물어본다.),(Apologize sincerely.)|(Question warmly.),49|52,,,moon|sun,Main_Ch7,M7_L0048
-3,38,49,main_door_close,Player,Main,,,text,"뭉치, 내가 기분을 상하게 했다면 미안해...\n네가 나오고 싶어할 때까지 얌전히 기다릴게.","Dot, I’m sorry if I’ve offended you...\nI’ll wait until you’re ready to come out.",50,,,,Main_Ch7,M7_L0049
-3,38,50,main_door_close,Dot,Main,,,text,...,...,51,,,,Main_Ch7,M7_L0050
-3,38,51,main_door_close,Dot,Main,,,text,.....,.....,63,,,,Main_Ch7,M7_L0051
-3,38,52,main_door_close,Player,Main,,,text,"뭉치, 아직 화났어? 나 들어가 보면 안 될까?","Dot, are you still upset?\nIs it alright if I come in?",53,,,,Main_Ch7,M7_L0052
-3,38,53,main_door_close,Dot,Main,,,text,...,...,54,,,,Main_Ch7,M7_L0053
-3,38,54,main_door_close,Dot,Main,,,text,...,...,55,,,,Main_Ch7,M7_L0054
-3,38,55,main_door_close,Player,Main,,,selection,(진심 어리게 사과한다.)|(장난스럽게 달래 본다.),(Apologize sincerely.)|(Appeal humorously.),56|59,,,moon|sun,Main_Ch7,M7_L0055
-3,38,56,main_door_close,Player,Main,,,text,"뭉치, 내가 기분을 상하게 했다면 미안해...\n네가 나오고 싶어할 때까지 얌전히 기다릴게.","Dot, I’m sorry if I’ve offended you...\nI’ll wait until you’re ready to come out.",57,,,,Main_Ch7,M7_L0056
-3,38,57,main_door_close,Dot,Main,,,text,...,...,58,,,,Main_Ch7,M7_L0057
-3,38,58,main_door_close,Dot,Main,,,text,.....,.....,63,,,,Main_Ch7,M7_L0058
-3,38,59,main_door_close,Player,Main,,,text,"아, 다리 아프다~ 뭉치가 빨리 열어줬으면 좋겠다~",Ohhhh my leg... If only\nDot would open the door...,60,,,,Main_Ch7,M7_L0059
-3,38,60,main_door_close,Dot,Main,,,text,...(미동이 없다. 진심으로 사과하자.),...,61,,,,Main_Ch7,M7_L0060
-3,38,61,main_door_close,Player,Main,,,text,... 장난쳐서 미안. 아까도 정말\n미안했어. 너랑 대화 나누고 싶어.,"... Sorry about that. And I’m sorry\nfor earlier, too. I’d like to talk it out.",62,,,,Main_Ch7,M7_L0061
+3,38,48,main_door_close,Player,Main,body_null,face_null,selection,(진심 어리게 사과한다.)|(다정하게 물어본다.),(Apologize sincerely.)|(Question warmly.),49|52,,,moon|sun,Main_Ch7,M7_L0048
+3,38,49,main_door_close,Player,Main,body_null,face_null,text,"뭉치, 내가 기분을 상하게 했다면 미안해...\n네가 나오고 싶어할 때까지 얌전히 기다릴게.","Dot, I’m sorry if I’ve offended you...\nI’ll wait until you’re ready to come out.",50,,,,Main_Ch7,M7_L0049
+3,38,50,main_door_close,Dot,Main,body_null,face_null,text,...,...,51,,,,Main_Ch7,M7_L0050
+3,38,51,main_door_close,Dot,Main,body_null,face_null,text,.....,.....,63,,,,Main_Ch7,M7_L0051
+3,38,52,main_door_close,Player,Main,body_null,face_null,text,"뭉치, 아직 화났어? 나 들어가 보면 안 될까?","Dot, are you still upset?\nIs it alright if I come in?",53,,,,Main_Ch7,M7_L0052
+3,38,53,main_door_close,Dot,Main,body_null,face_null,text,...,...,54,,,,Main_Ch7,M7_L0053
+3,38,54,main_door_close,Dot,Main,body_null,face_null,text,...,...,55,,,,Main_Ch7,M7_L0054
+3,38,55,main_door_close,Player,Main,body_null,face_null,selection,(진심 어리게 사과한다.)|(장난스럽게 달래 본다.),(Apologize sincerely.)|(Appeal humorously.),56|59,,,moon|sun,Main_Ch7,M7_L0055
+3,38,56,main_door_close,Player,Main,body_null,face_null,text,"뭉치, 내가 기분을 상하게 했다면 미안해...\n네가 나오고 싶어할 때까지 얌전히 기다릴게.","Dot, I’m sorry if I’ve offended you...\nI’ll wait until you’re ready to come out.",57,,,,Main_Ch7,M7_L0056
+3,38,57,main_door_close,Dot,Main,body_null,face_null,text,...,...,58,,,,Main_Ch7,M7_L0057
+3,38,58,main_door_close,Dot,Main,body_null,face_null,text,.....,.....,63,,,,Main_Ch7,M7_L0058
+3,38,59,main_door_close,Player,Main,body_null,face_null,text,"아, 다리 아프다~ 뭉치가 빨리 열어줬으면 좋겠다~",Ohhhh my leg... If only\nDot would open the door...,60,,,,Main_Ch7,M7_L0059
+3,38,60,main_door_close,Dot,Main,body_null,face_null,text,...(미동이 없다. 진심으로 사과하자.),...,61,,,,Main_Ch7,M7_L0060
+3,38,61,main_door_close,Player,Main,body_null,face_null,text,... 장난쳐서 미안. 아까도 정말\n미안했어. 너랑 대화 나누고 싶어.,"... Sorry about that. And I’m sorry\nfor earlier, too. I’d like to talk it out.",62,,,,Main_Ch7,M7_L0061
 3,38,62,main_door_open,Dot,Main,body_default1,face_blink,text,...,...,63,,,,Main_Ch7,M7_L0062
 3,38,63,main_door_open,Dot,Main,,,text,... 나도 멋대로 굴어서 미안.,... I’m sorry I was stubborn.,64,,,,Main_Ch7,M7_L0063
 3,38,64,main_door_open,Dot,Main,,,text,"나를 괴롭힌 건 <nickname>, 네가 아니었는데.",It’s not like you were\nthe one causing me pain.,65,,,,Main_Ch7,M7_L0064
 3,38,65,main_door_open,Player,Main,,,text,"...! 뭉치, 네 몸에 박혀 있던\n먼지들이 없어졌네?","...! Dot, the dust is gone!",66,,,,Main_Ch7,M7_L0065
 3,38,66,main_door_open,Player,Main,,,text,"너 조금 작아진 것 같기도 한데, 설마...",You seem smaller too. Don’t tell me...,67,,,,Main_Ch7,M7_L0066
 3,38,67,main_door_open,Dot,Main,,face_eyeroll3,text,"그래. 난 구르고, 토하고, 긁으며 먼지를\n모두 뽑아 냈어. 거친 승부였지.","Yes. I rolled, heaved, scratched, and tore the\ndust away from me. It was a fearsome fight.",68,,,,Main_Ch7,M7_L0067
-3,38,68,main_door_open,Dot,Main,,,text,"그 과정에서 내 몸의 일부가 조금\n딸려 나갔지만, 그건 중요하지 않아.","And in the process a part of me was\ntorn off, but that doesn’t matter.",69,,,,Main_Ch7,M7_L0068
+3,38,68,main_door_open,Dot,Main,,face_eyeroll3_stay,text,"그 과정에서 내 몸의 일부가 조금\n딸려 나갔지만, 그건 중요하지 않아.","And in the process a part of me was\ntorn off, but that doesn’t matter.",69,,,,Main_Ch7,M7_L0068
 3,38,69,main_door_open,Dot,Main,,face_blink,text,너를 내보내고 나서 혼자 생각해 봤어.,After I sent you away I thought.,70,,,,Main_Ch7,M7_L0069
 3,38,70,main_door_open,Dot,Main,,,text,"만약 먼지를 받아들이고, 다음 번엔\n가시가 들어와 내 몸에 박힌다면?","What if next time, after I accept\nthe dust, a thorn pierces my body?",71,,,,Main_Ch7,M7_L0070
 3,38,71,main_door_open,Dot,Main,,,text,"나는 창살에 내려앉은 나뭇잎처럼 무너지거나,","I will crumble like\na leaf on a windowsill,",72,,,,Main_Ch7,M7_L0071
@@ -80,7 +80,7 @@
 3,38,79,main_door_open,Dot,Main,,,text,"큼, 크흠, <nickname>!","Ahem, well, <nickname>!",80,,,,Main_Ch7,M7_L0079
 3,38,80,main_door_open,Dot,Main,,,text,심장과 가슴과 마음의 차이는 지구에서\n보는 별과 별만큼 구분하기 어렵다니까.,Telling a heart and a soul apart is as difficult as\ntelling telling two stars apart from Earth.,81,,,,Main_Ch7,M7_L0080
 3,38,81,main_door_open,Dot,Main,,face_close_turn,text,까끌한 먼지에 익숙해진 몸만큼\n마음도 고통에 젖어들었겠지.,"My soul will have given in to the pain, just\nlike my body, used to the prickly dust.",82,,,,Main_Ch7,M7_L0081
-3,38,82,main_door_open,Dot,Main,,,text,무감각해진 마음은 박힌 가시를\n뺄 의지를 잃었을지도 몰라.,My numb soul might have lost\nthe will to remove the thorn.,83,,,,Main_Ch7,M7_L0082
+3,38,82,main_door_open,Dot,Main,,face_close,text,무감각해진 마음은 박힌 가시를\n뺄 의지를 잃었을지도 몰라.,My numb soul might have lost\nthe will to remove the thorn.,83,,,,Main_Ch7,M7_L0082
 3,38,83,main_door_open,Player,Main,,face_open,text,몸에 난 생채기를 무시하다\n보면 어느새 상처가 쌓이듯이,"Like scrapes on your body that\nleave scars if you overlook them,",84,,,,Main_Ch7,M7_L0083
 3,38,84,main_door_open,Player,Main,,face_blink,text,마음도 그런 법이라는 거구나.,"so too, can the soul be hurt.",85,,,,Main_Ch7,M7_L0084
 3,38,85,main_door_open,Player,Main,,,selection,(깨달아서 다행이야.)|(나도 노력할게.),(I’m glad Dot gets it.)|(I should try harder.),86|87,,,moon|sun,Main_Ch7,M7_L0085
