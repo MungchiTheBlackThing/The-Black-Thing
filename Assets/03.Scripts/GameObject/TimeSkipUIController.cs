@@ -60,7 +60,7 @@ public class TimeSkipUIController : MonoBehaviour
 
         playerController.nextPhaseDelegate += NextPhase;
 
-        timeIdx = playerController.GetAlreadyEndedPhase();
+        timeIdx = playerController.GetCurrentPhase();
 
         if(timeIdx < timeStamp.Length)
         {

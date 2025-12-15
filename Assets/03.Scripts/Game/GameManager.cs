@@ -325,7 +325,7 @@ public class GameManager : MonoBehaviour
         //코루틴이 끝날때까지 대기
         yield return objectLoadCoroutine;
         loadingProgressBar.value = 1; //모든 작업이 끝났음.
-        GamePatternState patternState = (GamePatternState)pc.GetAlreadyEndedPhase();
+        GamePatternState patternState = (GamePatternState)pc.GetCurrentPhase();
         currentPattern = patternState;
         Debug.Log($"[디버깅]초기 스테이트 설정: {patternState}");
         activeState = states[patternState];

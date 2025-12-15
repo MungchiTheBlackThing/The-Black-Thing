@@ -55,7 +55,7 @@ public class ChecklistController : MonoBehaviour
         translator.translatorDel += Translate;
 
         objectManager.activeSystemUIDelegate += CallbackActiveSystemUI;
-        InitPhase((GamePatternState)pc.GetAlreadyEndedPhase());
+        InitPhase((GamePatternState)pc.GetCurrentPhase());
     }
     public void CallbackActiveSystemUI(bool InActive)
     {
