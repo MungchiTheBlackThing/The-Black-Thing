@@ -47,6 +47,8 @@ public class LetterController : BaseObject, IWatchingInterface
 
     public void OpenWatching(int Chapter)
     {
+        currentChapter = Chapter; // 챕터 정보 갱신
+        alert.SetActive(false); 
         alert.SetActive(true);
     }
 

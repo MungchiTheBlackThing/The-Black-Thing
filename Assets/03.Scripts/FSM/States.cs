@@ -52,22 +52,31 @@ public class Watching : GameState, IResetStateInterface
         }
         objectManager.SettingChapter(manager.Chapter);
 
-        watching = objectManager.GetWatchingObject(pattern[manager.Chapter]);
-    
-        if (watching!=null) //외출할 때
+        EWatching currentPattern = pattern[manager.Chapter];
+        
+        // StayAtHome일 때도 쪽지(Letter) 기능을 사용해야 하므로 Letter 컨트롤러를 가져오도록 설정
+        EWatching targetController = currentPattern;
+        if (currentPattern == EWatching.StayAtHome)
         {
-            if (dot)
-            {
-                dot.gameObject.SetActive(false);
-                
-            }
-            watching.OpenWatching(manager.Chapter);
+            targetController = EWatching.Letter;
         }
-        //Stay일 때 뭉치 등장
-        //애님머드 네이밍은 anim_mud_day(현재챕터), 1일차 제외
-        else
+
+        watching = objectManager.GetWatchingObject(targetController);
+    
+        // watching 오브젝트 유무와 상관없이, 패턴이 Binocular거나 Letter면 외출(Dot 숨김) 처리
+        if (currentPattern == EWatching.Binocular || currentPattern == EWatching.Letter)
+        {
+            if (dot) dot.gameObject.SetActive(false);
+        }
+        else // StayAtHome 등: 뭉치 등장 (anim_mud 재생)
         {
             if (dot != null) dot.PlayMudAnimation(manager.Chapter);
+        }
+
+        // 패턴에 맞는 Watching 오브젝트(Alert) 활성화 (Binocular, Letter, StayAtHome 모두 포함)
+        if (watching != null)
+        {
+            watching.OpenWatching(manager.Chapter);
         }
     }
 

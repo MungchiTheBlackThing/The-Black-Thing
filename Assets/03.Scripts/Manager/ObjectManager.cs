@@ -318,22 +318,28 @@ public class ObjectManager : MonoBehaviour
             values = watches;
         }
 
+        // watches 리스트에 추가해야 할 오브젝트들을 임시 저장할 리스트
+        List<GameObject> toAdd = new List<GameObject>();
+
         foreach (GameObject value in values)
         {
             IWatchingInterface watching = value.GetComponent<IWatchingInterface>();
 
             if (watching != null && watching.IsCurrentPattern(type))
             {
-                if (watches.Count < 2)
+                if (watches.Count < 2 && !watches.Contains(value))
                 {
-                    Debug.Log(watching.ToString());
-                    watches.Add(value);
+                    toAdd.Add(value);
                 }
                 search = watching;
             }
-
         }
-
+        // 루프가 끝난 후 리스트에 추가
+        foreach (var item in toAdd)
+        {
+            Debug.Log(item.GetComponent<IWatchingInterface>().ToString());
+            watches.Add(item);
+        }
         return search;
     }
 
