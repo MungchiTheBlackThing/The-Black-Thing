@@ -174,7 +174,7 @@ public class TutorialManager : GameManager
 
         loadingProgressBar.value = 1;
 
-        TutorialState patternState = (TutorialState)pc.GetAlreadyEndedPhase();
+        TutorialState patternState = (TutorialState)pc.GetCurrentPhase();
         tutostate = patternState;
         activeState = states[patternState];
         activeState.Enter(this, dot, this);

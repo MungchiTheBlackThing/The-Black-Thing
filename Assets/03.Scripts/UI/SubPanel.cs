@@ -284,9 +284,9 @@ public class SubPanel : MonoBehaviour
         dialogueIndex = 0;
 
         if (!string.IsNullOrEmpty(pc.currentReward))
-            pc.successSubDialDelegate(pc.GetAlreadyEndedPhase(), pc.currentReward);
+            pc.successSubDialDelegate(pc.GetCurrentPhase(), pc.currentReward);
 
-        if (pc.GetAlreadyEndedPhase() != 5)
+        if (pc.GetCurrentPhase() != 5)
             dotcontroller.EndSubScriptList(gameManager.Pattern);
 
         sub.Subexit();

@@ -129,7 +129,7 @@ public class SubTuto : MonoBehaviour
     public void tutorial_10(GameObject selectedDot, int determine, int index)
     {
         //RecentManager.Save(selectedDot, determine, index); // 저장
-        if (playerController.GetAlreadyEndedPhase() == 5)
+        if (playerController.GetCurrentPhase() == 5)
         {
             subPanel.dotballoon(selectedDot);
         }

@@ -28,7 +28,7 @@ public class SubDialAlert : MonoBehaviour
             return;
         }
 
-        int phase = player.GetAlreadyEndedPhase();
+        int phase = player.GetCurrentPhase();
         List<int> subseq = player.GetWatchedList();
 
         if (secondText != null)

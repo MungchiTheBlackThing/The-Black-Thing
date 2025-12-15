@@ -59,8 +59,8 @@ public class ChapterProgressManager : MonoBehaviour
         else
         {
             //Player Phase 단계에 따라서 진행.
-            int uiPhaseIndex = this.player.GetAlreadyEndedPhase() / 2;
-            Debug.Log($"uiPhaseIndex: {uiPhaseIndex}, Player Phase: {this.player.GetAlreadyEndedPhase()}");
+            int uiPhaseIndex = this.player.GetCurrentPhase() / 2;
+            Debug.Log($"uiPhaseIndex: {uiPhaseIndex}, Player Phase: {this.player.GetCurrentPhase()}");
 
             if (uiPhaseIndex < 0 || uiPhaseIndex >= phaseIngUI.Count)
             {

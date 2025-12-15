@@ -185,7 +185,7 @@ public class MenuController : MonoBehaviour
 
     public void onMenu()
     {
-        phase = PlayerController.GetAlreadyEndedPhase();
+        phase = PlayerController.GetCurrentPhase();
         MenuBut.GetComponent<Button>().enabled = false;
         isOpening = !isOpening;
         MenuButAnim.SetFloat("speed", 1f);
