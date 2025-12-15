@@ -119,9 +119,9 @@ public class DotController : MonoBehaviour
     BoxCollider2D boxcollider;
 
     private bool isAfterScriptPlaying = false;
-    private bool isSubDialoguePlaying = false;
-    private float animationStartTime;
-    private const float ANIMATION_DURATION_LIMIT = 7f * 60f; //애니메이션 재생 시간 제한 (7분)
+    private bool isSubDialogueAnimPlaying = false;
+    private float _idleAnimationTimer;
+    private const float IDLE_ANIMATION_DURATION = 10f; //(단위: 초) 애니메이션 재생 시간 제한 (7분) //[디버깅] 7분 -> 10초
 
     GamePatternState tmpState;
 
@@ -202,21 +202,48 @@ public class DotController : MonoBehaviour
 
     void Update()
     {
-        //7분 경과시 애니메이션 갱신
-        if (Time.time - animationStartTime > ANIMATION_DURATION_LIMIT)
+        // 1. Alert가 활성화된 상태(이벤트 진입 대기)이면 타이머 동작 안함 (진입 애니메이션 유지)
+        if (mainAlert.activeSelf || subAlert.activeSelf || playAlert.activeSelf)
         {
-            if (isAfterScriptPlaying) //AfterScript 재생중이라면 기본 로직으로 전환
+            _idleAnimationTimer = 0f;
+            return;
+        }
+
+        // 2. 대화 중이거나 메인 스토리 진행 중이면 타이머 동작 안함. 
+        // 단, AfterScript가 재생 중일 때는 예외적으로 타이머가 돌아야 함 (시간 경과 후 종료를 위해)
+        bool isBlockedByDialogue = isSubDialogueAnimPlaying || manager.CurrentState is MainDialogue;
+        
+        if (isBlockedByDialogue && !isAfterScriptPlaying)
+        {
+            _idleAnimationTimer = 0f;
+            return;
+        }
+
+        // 3. 타이머 로직 실행 조건: AfterScript 재생 중이거나, Thinking 페이즈(랜덤 애니메이션)인 경우
+        bool shouldRunTimer = isAfterScriptPlaying || manager.Pattern == GamePatternState.Thinking;
+
+        if (shouldRunTimer)
+        {
+            _idleAnimationTimer += Time.deltaTime;
+            if (_idleAnimationTimer >= IDLE_ANIMATION_DURATION)
             {
-                StopAfterScript();
+                Debug.Log("[DotController] IDLE_ANIMATION_DURATION 경과");
+                
+                if (isAfterScriptPlaying)
+                {
+                    // AfterScript 재생 중이었으면 종료하고 기본 상태로 복귀
+                    StopAfterScript();
+                }
+                else
+                {
+                    // Thinking 페이즈라면 새로운 랜덤 애니메이션 재생
+                    UpdateIdleAnimation();
+                }
             }
-            else if (manager.Pattern == GamePatternState.Thinking) //phase_thinking이면 기본 로직 갱신
-            {
-                RefreshDailyAnimation();
-            }
-            else
-            {
-                animationStartTime = Time.time; //타이머 리셋
-            }
+        }
+        else
+        {
+            _idleAnimationTimer = 0f;
         }
     }
 
@@ -226,19 +253,19 @@ public class DotController : MonoBehaviour
         if (manager == null)
         {
             manager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
-            if (manager == null) Debug.LogError("GameManager를 찾을 수 없습니다!");
+            if (manager == null) Debug.LogError("GameManager를 찾을 수 없습니다");
         }
 
         if (pc == null)
         {
             pc = GameObject.FindWithTag("Player")?.GetComponent<PlayerController>();
-            if (pc == null) Debug.LogError("PlayerController를 찾을 수 없습니다!");
+            if (pc == null) Debug.LogError("PlayerController를 찾을 수 없습니다");
         }
 
         if (animator == null)
         {
             animator = GetComponent<Animator>();
-            if (animator == null) Debug.LogError("Animator를 찾을 수 없습니다!");
+            if (animator == null) Debug.LogError("Animator를 찾을 수 없습니다");
         }
         DotControllerStart();
     }
@@ -246,16 +273,12 @@ public class DotController : MonoBehaviour
     //백그라운드 전환시 애니메이션 변경
     void OnApplicationPause(bool pauseStatus)
     {
-        if (!pauseStatus)
+        if (!pauseStatus) // 앱으로 복귀
         {
-            if (isAfterScriptPlaying)
-            {
-                StopAfterScript();
-            }
-            else if (manager.Pattern == GamePatternState.Thinking)
-            {
-                RefreshDailyAnimation();
-            }
+            // AfterScript는 PlayerPrefs로 상태가 유지되므로 별도 처리하지 않습니다.
+            // 그 외의 경우, IDLE 애니메이션을 갱신합니다.
+            Debug.Log("[DotController] 앱 복귀, IDLE 애니메이션을 업데이트합니다.");
+            UpdateIdleAnimation();
         }
     }
 
@@ -269,18 +292,59 @@ public class DotController : MonoBehaviour
         // 콜라이더 크기 조정
         boxcollider.size = spriteSize;
         boxcollider.offset = spriteRenderer.sprite.bounds.center;
+
+        // AfterScript 상태 복원
+        if (PlayerPrefs.GetInt("AS_IsPlaying", 0) == 1)
+        {
+            string savedAnim = PlayerPrefs.GetString("AS_AnimKey", "");
+            float savedPos = PlayerPrefs.GetFloat("AS_Pos", -1f);
+            if (!string.IsNullOrEmpty(savedAnim))
+            {
+                Debug.Log($"[DotController] Restoring AfterScript: {savedAnim}");
+                PlayAfterScript(savedAnim, savedPos);
+            }
+        }
     }
 
     public ScriptList GetMainScriptList(int index)
     {
-        Debug.Log("GetmainScript");
-        Debug.Log(index);
-        Debug.Log(mainScriptLists[chapter - 1].Count);
-        return mainScriptLists[chapter - 1][index];
+        if (manager != null)
+        {
+            chapter = manager.Chapter;
+        }
+
+        Debug.Log($"[DotController] GetMainScriptList called. Chapter: {chapter}, Index: {index}");
+
+        if (mainScriptLists == null)
+        {
+            Debug.LogError("[DotController] mainScriptLists is null!");
+            return null;
+        }
+
+        if (chapter <= 0 || chapter > mainScriptLists.Count)
+        {
+            Debug.LogError($"[DotController] Chapter {chapter} is out of range. mainScriptLists count: {mainScriptLists.Count}");
+            return null;
+        }
+
+        var chapterList = mainScriptLists[chapter - 1];
+        if (index < 0 || index >= chapterList.Count)
+        {
+            Debug.LogError($"[DotController] Index {index} is out of range for chapter {chapter}. List count: {chapterList.Count}");
+            return null;
+        }
+
+        ScriptList script = chapterList[index];
+        Debug.Log($"[DotController] Retrieved ScriptList - Anim: {script.DotAnim}, Pos: {script.DotPosition}");
+        return script;
     }
 
     public int GetSubScriptListCount(GamePatternState State)
     {
+        if (manager != null)
+        {
+            chapter = manager.Chapter;
+        }
 
         Debug.Log("스테이트:" + State);
         Debug.Log("GetSubSCript");
@@ -293,6 +357,11 @@ public class DotController : MonoBehaviour
     }
     public ScriptList GetSubScriptList(GamePatternState State)
     {
+        if (manager != null)
+        {
+            chapter = manager.Chapter;
+        }
+
         int subseq = playerController.GetSubseq();
         /* 원래 방식은 subseq랑 연동되지 않는 문제 발생*/
         if (subScriptLists[chapter - 1][State].Count == 0)
@@ -328,6 +397,11 @@ public class DotController : MonoBehaviour
 
     public ScriptList GetnxSubScriptList(GamePatternState State)
     {
+        if (manager != null)
+        {
+            chapter = manager.Chapter;
+        }
+
         if (subScriptLists[chapter - 1][State].Count == 0 || subScriptLists[chapter - 1][State].Count == 1)
             return null;
 
@@ -353,6 +427,11 @@ public class DotController : MonoBehaviour
 
     public void EndSubScriptList(GamePatternState State)
     {
+        if (manager != null)
+        {
+            chapter = manager.Chapter;
+        }
+
         //다음 챕터?가 없을 때에는 아무 행위를 하지않는다.
         if (subScriptLists[chapter - 1][State].Count == 0 || State == GamePatternState.MainB || State == GamePatternState.MainA || State == GamePatternState.Play)
             return;
@@ -455,21 +534,15 @@ public class DotController : MonoBehaviour
         manager.NextPhase();
     }
 
-    public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "", bool force = false)
+    private void _Internal_SetAnimation(DotPatternState state, string OutAnimKey, float OutPos, string OutExpression)
     {
-        if (isAfterScriptPlaying && !force)
-        {
-            Debug.Log($"[DotController] ChangeState blocked because AfterScript is playing.");
-            return;
-        }
-
         Debug.Log($"애니메이션 함수 호출: {new System.Diagnostics.StackTrace().GetFrame(1).GetMethod().Name}");
         Debug.Log("키: " + OutAnimKey + " 표현: " + OutExpression + " 위치: " + OutPos);
         position = OutPos;
         bool bPlayEyeAnimation = dotExpression != OutExpression;
         dotExpression = OutExpression;
         animKey = OutAnimKey;
-        string prevAnimKey = animKey;
+        _idleAnimationTimer = 0f; // 애니메이션이 변경될 때마다 타이머 초기화
         chapter = manager.Chapter;
 
         //outPos -1일경우 랜덤위치
@@ -481,6 +554,10 @@ public class DotController : MonoBehaviour
                 {
                     int maxIdx = list.Count;
                     position = list[UnityEngine.Random.Range(0, maxIdx)];
+                }
+                else
+                {
+                    Debug.LogWarning($"[DotController] '{OutAnimKey}'에 대한 위치 데이터가 {state} 상태에 정의되지 않았으므로 기본 위치 사용");
                 }
             }
         }
@@ -494,12 +571,18 @@ public class DotController : MonoBehaviour
         if (!visible)
             return;
 
-
         if (OutAnimKey != "")
         {
             Debug.Log("뭉치 애니메이션 : " + OutAnimKey);
-            animator.Play(OutAnimKey, 0, 0f);
-            animator.Update(0f);
+            if (gameObject.activeInHierarchy)
+            {
+                animator.Play(OutAnimKey, 0, 0f);
+                animator.Update(0f);
+            }
+            else
+            {
+                Debug.LogWarning($"[DotController] GameObject is inactive. Skipping animation play: {OutAnimKey}");
+            }
             spriteSize = spriteRenderer.sprite.bounds.size;
             boxcollider.size = spriteSize;
             boxcollider.offset = spriteRenderer.sprite.bounds.center;
@@ -527,6 +610,7 @@ public class DotController : MonoBehaviour
         if (Dust != null)
         {
             var spawner = Dust.GetComponent<DustSpawner>();
+            string prevAnimKey = animator.GetCurrentAnimatorClipInfo(0).Length > 0 ? animator.GetCurrentAnimatorClipInfo(0)[0].clip.name : "";
             if (spawner != null)
             {
                 bool wasSleep = prevAnimKey == "anim_sleep";
@@ -545,6 +629,47 @@ public class DotController : MonoBehaviour
             }
         }
     }
+
+    public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "", bool force = false)
+    {
+        //우선순위 체크
+        if (!force)
+        {
+            // 1. 서브 다이얼로그 애니메이션
+            if (isSubDialogueAnimPlaying && state != DotPatternState.Sub && state != DotPatternState.Main)
+            {
+                Debug.Log($"[DotController] ChangeState for '{OutAnimKey}' blocked by SubDialogue animation.");
+                return;
+            }
+            // 2. AfterScript
+            if (isAfterScriptPlaying)
+            {
+                // 진입 애니메이션(Alert 활성화 상황) 또는 대화 진행 중(Panel 활성화)인 경우에 AfterScript보다 우선순위 높음
+                bool isSubHighPriority = state == DotPatternState.Sub && (subAlert.activeSelf || subDialogue.activeSelf);
+                bool isMainHighPriority = state == DotPatternState.Main && (mainAlert.activeSelf || (manager.mainDialoguePanel != null && manager.mainDialoguePanel.activeSelf));
+                bool isPlayHighPriority = state == DotPatternState.Trigger && playAlert.activeSelf;
+                bool isTutorial = state == DotPatternState.Tutorial || this.tutorial;
+
+                bool isEntryAnimation = isSubHighPriority || isMainHighPriority || isPlayHighPriority || isTutorial;
+
+                if (isEntryAnimation)
+                {
+                    Debug.Log($"[DotController] Stopping AfterScript because entry animation ({state}) requested.");
+                    isAfterScriptPlaying = false;
+                    PlayerPrefs.SetInt("AS_IsPlaying", 0);
+                    PlayerPrefs.Save();
+                }
+                else
+                {
+                    Debug.Log($"[DotController] ChangeState for '{OutAnimKey}' blocked by AfterScript.");
+                    return;
+                }
+            }
+        }
+
+        _Internal_SetAnimation(state, OutAnimKey, OutPos, OutExpression);
+    }
+
 
     public void Invisible()
     {
@@ -617,17 +742,16 @@ public class DotController : MonoBehaviour
     public void StartSubDialogueAnimation(DotPatternState state, string animKey, float position)
     {
         Debug.Log($"[DotController] Starting Sub-dialogue animation: {animKey}");
-        isSubDialoguePlaying = true;
-        isAfterScriptPlaying = false; // 서브 다이얼로그가 우선순위가 더 높음
-        ChangeState(state, animKey, position, "", true);
+        isSubDialogueAnimPlaying = true;
+        ChangeState(state, animKey, position, "", false); // force = true로 강제 실행
     }
 
     public void StopSubDialogueAnimation()
     {
-        if (!isSubDialoguePlaying) return;
+        if (!isSubDialogueAnimPlaying) return;
         Debug.Log("[DotController] Stopping Sub-dialogue animation state.");
-        isSubDialoguePlaying = false;
-        // 다음 상태에서 애니메이션을 결정하므로 여기서는 Refresh를 호출하지 않음
+        isSubDialogueAnimPlaying = false;
+        UpdateIdleAnimation(); // IDLE 상태로 복귀
     }
 
     public void PlayAfterScript(string animKey, float position)
@@ -641,49 +765,91 @@ public class DotController : MonoBehaviour
             return;
         }
 
-        if (isSubDialoguePlaying)
+        if (isSubDialogueAnimPlaying)
         {
-            Debug.Log($"[DotController] PlayAfterScript blocked because SubDialogue is playing.");
-            return;
+            Debug.Log($"[DotController] PlayAfterScript: Resetting isSubDialogueAnimPlaying to false.");
+            isSubDialogueAnimPlaying = false;
         }
 
-        Debug.Log($"[DotController] PlayAfterScript: {animKey} at {position}");
+        Debug.Log($"[DotController] Starting AfterScript: {animKey} at {position}");
         isAfterScriptPlaying = true;
-        animationStartTime = Time.time;
+
+        PlayerPrefs.SetString("AS_AnimKey", animKey);
+        PlayerPrefs.SetFloat("AS_Pos", position);
+        PlayerPrefs.SetInt("AS_IsPlaying", 1);
+        PlayerPrefs.Save();
+
         ChangeState(DotPatternState.Default, animKey, position, "", true);
     }
 
     private void StopAfterScript()
     {
-        Debug.Log("[DotController] StopAfterScript");
+        Debug.Log("[DotController] Stopping AfterScript");
         isAfterScriptPlaying = false;
-        RefreshDailyAnimation();
+        
+        if (isSubDialogueAnimPlaying)
+        {
+            Debug.Log("[DotController] StopAfterScript: Resetting isSubDialogueAnimPlaying to false.");
+            isSubDialogueAnimPlaying = false;
+        }
+
+        PlayerPrefs.DeleteKey("AS_AnimKey");
+        PlayerPrefs.DeleteKey("AS_Pos");
+        PlayerPrefs.DeleteKey("AS_IsPlaying");
+        PlayerPrefs.Save();
+
+        UpdateIdleAnimation();
     }
 
-    public void RefreshDailyAnimation()
+    // 기본 랜덤 애니메이션 재생
+    // 애니메이션 우선순위 로직
+    public void UpdateIdleAnimation()
     {
-        if (isSubDialoguePlaying)
-        {
-            Debug.Log("[DotController] RefreshDailyAnimation blocked because SubDialogue is playing.");
+        // 0. 서브 다이얼로그 애니메이션 재생 중이면 아무것도 하지 않음
+        // 1. AfterScript가 활성화 상태이면 AfterScript를 재생
+        if (isAfterScriptPlaying) {
+            Debug.Log($"[DotController] AfterScript is active, playing '{PlayerPrefs.GetString("AS_AnimKey")}'.");
+            ChangeState(DotPatternState.Default, PlayerPrefs.GetString("AS_AnimKey"), PlayerPrefs.GetFloat("AS_Pos"), "", true);
             return;
         }
 
-        if (!string.IsNullOrEmpty(animKey) && animKey.StartsWith("anim_mud"))
-        {
-            animationStartTime = Time.time;
+        // 2. 페이즈별 예외 처리
+        if (_TryPlayPhaseExceptionAnimation()) {
             return;
         }
 
-        if (isAfterScriptPlaying) return;
-
-        animationStartTime = Time.time;
-
-        if (manager.Pattern == GamePatternState.Thinking)
+        // 3. 일반적인 일차/페이즈별 기본 로직
+        switch (manager.Pattern)
         {
-            string anim = GetRandomAnimationForChapter(chapter);
-            Debug.Log($"[DotController] RefreshDailyAnimation: {anim}");
-            ChangeState(DotPatternState.Default, anim, -1);
+            case GamePatternState.Thinking:
+                string randomAnim = GetRandomAnimationForChapter(chapter);
+                Debug.Log($"[DotController] Playing daily random animation for Thinking phase: {randomAnim}");
+                ChangeState(DotPatternState.Default, randomAnim, -1);
+                break;
+            case GamePatternState.Watching:
+                // Watching 페이즈 때 dot이 외출하지 않았을 때 anim_mud 재생
+                PlayMudAnimation(manager.Chapter);
+                break;
+            case GamePatternState.Sleeping:
+                // Sleeping 페이즈의 기본 애니메이션 복구
+                Debug.Log($"[DotController] Playing default animation for Sleeping phase: anim_sleep");
+                ChangeState(DotPatternState.Trigger, "anim_sleep", 10);
+                break;
+            case GamePatternState.Writing:
+                // Writing 페이즈의 기본 애니메이션 복구
+                Debug.Log($"[DotController] Playing default animation for Writing phase: anim_diary");
+                ChangeState(DotPatternState.Phase, "anim_diary");
+                break;
+            default:
+                Debug.Log($"[DotController] No specific idle animation for phase '{manager.Pattern}'.");
+                break;
         }
+    }
+
+    private bool _TryPlayPhaseExceptionAnimation()
+    {
+        //페이즈 별 예외처리 추가 필요
+        return false; // 예외 애니메이션을 재생했다면 true를 반환
     }
 
     private string GetRandomAnimationForChapter(int chapter)
@@ -747,8 +913,8 @@ public class DotController : MonoBehaviour
         {
             if (isAfterScriptPlaying)
             {
-                Debug.Log("[DotController] PlayMudAnimation: Force stopping AfterScript for anim_mud");
-                isAfterScriptPlaying = false;
+                Debug.Log($"[DotController] PlayMudAnimation is blocked because AfterScript is playing.");
+                return;
             }
             int mudDay = chapter-1;
 

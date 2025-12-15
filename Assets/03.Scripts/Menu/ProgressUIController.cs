@@ -64,7 +64,28 @@ public class ProgressUIController : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("[ProgressUIController] OnEnable 호출됨");
         dragScroller.GetComponent<ScrollRect>().horizontalNormalizedPosition = 0f;
+
+        // 아이콘이 이미 생성된 경우(재활성화 시) UI를 갱신합니다.
+        if (dragIconList != null && dragIconList.Count > 0)
+        {
+            if (player == null)
+                player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+
+            int currentChapter = player.GetChapter();
+            Debug.Log($"[ProgressUIController] UI 활성화됨. 현재 챕터: {currentChapter}, UI 갱신");
+
+            // 언어 설정 등에 따른 텍스트/이미지 갱신
+            RefreshProgressUI();
+            
+            // 챕터 진행 상황에 따른 아이콘 활성화 및 잠금 해제 처리
+            SetActiveDragIcon(currentChapter);
+        }
+        else
+        {
+            Debug.Log("[ProgressUIController] 아이콘 리스트가 비어있음");
+        }
     }
     void Start()
     {
@@ -75,7 +96,12 @@ public class ProgressUIController : MonoBehaviour
     /*Progress 챕터에 의해 활성화된다.*/
     void SetActiveDragIcon(int chapter)
     {
-        if(dragIconList.ContainsKey(chapter) == false) { return; }
+
+        if (dragIconList.ContainsKey(chapter) == false) 
+        { 
+            Debug.LogError($"[ProgressUIController] 챕터 {chapter}에 해당하는 아이콘 없음");
+            return; 
+        }
         //Chapter Update
         curChapter = chapter;
 
@@ -84,18 +110,21 @@ public class ProgressUIController : MonoBehaviour
 
         if (alertmanager != null && alertmanager.isAlert)
         {
-            Debug.Log("되냐?");
+            Debug.Log("[ProgressUIController] AlertManager 활성화 상태, 챕터 알림 설정");
             alertmanager.ChapterAlert = dragIconList[chapter].GetComponent<DragIcon>().RedAlert;
             alertmanager.openChapter();
         }
         //Lock을 해제한다.
+        int unlockedCount = 0;
         foreach (var progress in dragIconList)
         {
             if (progress.Key <= chapter && !dotController.tutorial)
             {
                 progress.Value.GetComponent<DragIcon>().DestoryLock();
+                unlockedCount++;
             }
         }
+        Debug.Log($"[ProgressUIController] {unlockedCount}개의 챕터 아이콘 잠금 해제 완료");
 
         if(curChapter<3)
         {
@@ -116,6 +145,7 @@ public class ProgressUIController : MonoBehaviour
 
     void InstantiateDragIcon()
     {
+        Debug.Log("[ProgressUIController] InstantiateDragIcon: 아이콘 생성");
         for (int i = 1; i <= 14; i++)
         {
             ChapterInfo info = DataManager.Instance.ChapterList.chapters[i];
@@ -141,6 +171,7 @@ public class ProgressUIController : MonoBehaviour
 
     public void RefreshProgressUI()
     {
+        Debug.Log("[ProgressUIController] RefreshProgressUI: 모든 아이콘 설정 갱신");
         foreach (var icon in dragIconList)
         {
             DragIcon curIconScript = icon.Value.GetComponent<DragIcon>();

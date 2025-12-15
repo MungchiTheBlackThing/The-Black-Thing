@@ -35,6 +35,10 @@ public class Watching : GameState, IResetStateInterface
                 {
                     pattern.Add(enumVal);
                 }
+                else
+                {
+                    pattern.Add(EWatching.None);
+                }
             }
         }
 
@@ -61,9 +65,9 @@ public class Watching : GameState, IResetStateInterface
         }
         //Stay일 때 뭉치 등장
         //애님머드 네이밍은 anim_mud_day(현재챕터), 1일차 제외
-        if (dot != null)
+        else
         {
-            dot.PlayMudAnimation(manager.Chapter);
+            if (dot != null) dot.PlayMudAnimation(manager.Chapter);
         }
     }
 
@@ -93,10 +97,21 @@ public class MainA : MainDialogue
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
-        ScriptList scriptList = dot.GetMainScriptList(0);
-        dot.ChangeState(DotPatternState.Default, scriptList.DotAnim, scriptList.DotPosition);
-
+        // Dot을 활성화하고 기본 설정을 하기 위해 base.Enter를 먼저 호출
         base.Enter(manager, dot);
+
+        Debug.Log("[MainA] Enter - Attempting to play entry animation from ScriptList(0)");
+        ScriptList scriptList = dot.GetMainScriptList(0);
+        
+        if (scriptList != null)
+        {
+            Debug.Log($"[MainA] Playing animation: {scriptList.DotAnim} at {scriptList.DotPosition}");
+            dot.ChangeState(DotPatternState.Main, scriptList.DotAnim, scriptList.DotPosition);
+        }
+        else
+        {
+            Debug.LogError("[MainA] Failed to retrieve ScriptList(0)");
+        }
     }
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
@@ -134,7 +149,7 @@ public class Thinking : GameState, ILoadingInterface
     public void Think(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         //Default값 랜덤으로 사용예정
-        dot.RefreshDailyAnimation();
+        dot.UpdateIdleAnimation();
         manager.ObjectManager.PlayThinking();
     }
 
@@ -155,10 +170,21 @@ public class MainB : MainDialogue
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
-        ScriptList scriptList = dot.GetMainScriptList(1);
-        dot.ChangeState(DotPatternState.Default, scriptList.DotAnim, scriptList.DotPosition);
-
+        // Dot을 활성화하고 기본 설정을 하기 위해 base.Enter를 먼저 호출합니다.
         base.Enter(manager, dot);
+
+        Debug.Log("[MainB] Enter - Attempting to play entry animation from ScriptList(1)");
+        ScriptList scriptList = dot.GetMainScriptList(1);
+
+        if (scriptList != null)
+        {
+            Debug.Log($"[MainB] Playing animation: {scriptList.DotAnim} at {scriptList.DotPosition}");
+            dot.ChangeState(DotPatternState.Main, scriptList.DotAnim, scriptList.DotPosition);
+        }
+        else
+        {
+            Debug.LogError("[MainB] Failed to retrieve ScriptList(1)");
+        }
     }
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {

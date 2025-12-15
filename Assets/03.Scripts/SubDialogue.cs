@@ -302,7 +302,7 @@ public class SubDialogue : MonoBehaviour
                 var lastEntry = currentDialogueList[currentDialogueList.Count - 1] as SubDialogueEntry;
                 if (lastEntry != null && !string.IsNullOrEmpty(lastEntry.AfterScript))
                 {
-                    dot.PlayAfterScript(lastEntry.AfterScript, dot.Position);
+                    dot.PlayAfterScript(lastEntry.AfterScript, SubPanel.prePos);
                 }
             }
         }

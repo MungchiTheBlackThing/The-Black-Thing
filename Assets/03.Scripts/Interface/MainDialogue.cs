@@ -298,7 +298,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             if (!string.IsNullOrEmpty(_lastDisplayedEntry.AfterScript))
             {
                 Debug.Log($"[MainDialogue] AfterScript 값 존재, AfterScript 재생: {_lastDisplayedEntry.AfterScript}");
-                dot.PlayAfterScript(_lastDisplayedEntry.AfterScript, dot.Position);
+                dot.PlayAfterScript(_lastDisplayedEntry.AfterScript, prePos);
                 afterScriptPlayed = true;
             }
             else

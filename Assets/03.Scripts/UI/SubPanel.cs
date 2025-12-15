@@ -289,7 +289,7 @@ public class SubPanel : MonoBehaviour
         if (pc.GetCurrentPhase() != 5)
             dotcontroller.EndSubScriptList(gameManager.Pattern);
 
-        sub.Subexit();
+        sub.Subexit(); // AfterScript 재생 로직이 Subexit 내부에 포함되어 있음
     }
 
     void PanelOff()
@@ -541,8 +541,10 @@ public class SubPanel : MonoBehaviour
         if (currentEntry.NextLineKey != null)
         {
             if (!string.IsNullOrEmpty(currentEntry.DotAnim))
+            {
                 prePos = dotcontroller.Position;
                 dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim, prePos);
+            }
 
             if (int.TryParse(currentEntry.NextLineKey, out int nextLineKey))
             {
