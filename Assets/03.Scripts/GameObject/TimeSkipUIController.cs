@@ -37,7 +37,7 @@ public class TimeSkipUIController : MonoBehaviour
     // 3 spleeping 6
 
                         // 0watching   1 thinking 2 wrting   3 play   4 sleeping
-    float[] timeStamp = { 3600f, -1f, 7200f, -1f, 3600f, -1f, 1800f, -1f };
+    float[] timeStamp = { 3600f, -1f, 1800f, -1f, 7200f, -1f, 1800f, -1f };
     int timeIdx = -1;
     float time = 0;
     const int HOUR = 3600;
