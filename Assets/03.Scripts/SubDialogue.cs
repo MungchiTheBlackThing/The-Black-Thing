@@ -272,7 +272,7 @@ public class SubDialogue : MonoBehaviour
 
     public void Subexit()
     {
-        if (dialogueData.name == "tutorial_sub")
+        if (dialogueData != null && dialogueData.name == "tutorial_sub")
         {
             Debug.Log(dialogueData.name);
             TutoExit();
