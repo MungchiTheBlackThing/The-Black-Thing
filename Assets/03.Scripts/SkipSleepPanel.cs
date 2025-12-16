@@ -5,6 +5,7 @@ using Assets.Script.DialClass;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.Localization.Settings;
 public class SkipSleepPanel : MonoBehaviour
 {
     private int chapter = 1;
@@ -46,8 +47,8 @@ public class SkipSleepPanel : MonoBehaviour
     }
     public void LoadSubDialogue(string[] lines)
     {
-        CurrentLanguage = playerController.GetLanguage();
         listclear();
+        int lineIndex = 1;
         for (int i = 1; i < lines.Length; i++)
         {
             string line = lines[i];
@@ -58,23 +59,24 @@ public class SkipSleepPanel : MonoBehaviour
             string[] parts = ParseCSVLine(line);
             //Debug.Log($"Parsed line {i}: {string.Join(", ", parts)}");
 
-            if (parts.Length >= 4)
+            if (parts.Length >= 2)
             {
                 int id = int.Parse(parts[0]);
                 if (id == chapter)
                 {
+                    string key = $"S{id}_L{lineIndex:0000}";
+                    string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("SkipSleeping", key);
+
                     SkipSleep entry = new SkipSleep
                     {
                         ID = id,
                         Actor = parts[1],
-                        KorText = ApplyLineBreaks(parts[2]),
-                        EngText = ApplyLineBreaks(parts[3])
+                        SleepDialogueText = ApplyLineBreaks(localizedText),
                     };
 
-                    string displayedText = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
-                    entry.KorText = displayedText;
                     skipSleeps.Add(entry);
                     currentDialogueList.Add(entry);
+                    lineIndex++;
 
                     //Debug.Log($"Added SubDialogueEntry: {displayedText}");
                 }
@@ -133,19 +135,19 @@ public class SkipSleepPanel : MonoBehaviour
         {
             case "red":
                 red.gameObject.SetActive(true);
-                red.text = skipSleeps[dialogueindex].KorText;
+                red.text = skipSleeps[dialogueindex].SleepDialogueText;
                 break;
 
 
             case "edison":
                 edison.gameObject.SetActive(true);
-                edison.text = skipSleeps[dialogueindex].KorText;
+                edison.text = skipSleeps[dialogueindex].SleepDialogueText;
                 break;
 
 
             case "sircello":
                 sircello.gameObject.SetActive(true);
-                sircello.text = skipSleeps[dialogueindex].KorText;
+                sircello.text = skipSleeps[dialogueindex].SleepDialogueText;
                 break;
         }
 

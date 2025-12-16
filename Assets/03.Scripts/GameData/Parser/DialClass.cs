@@ -116,7 +116,7 @@ namespace Assets.Script.DialClass
     {
         public int ID;
         public string Actor;
-        public string KorText;
+        public string SleepDialogueText;
         public string EngText;
     }
 

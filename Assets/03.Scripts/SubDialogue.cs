@@ -33,6 +33,10 @@ public class SubDialogue : MonoBehaviour
     [SerializeField]
     TextAsset dialogueData;
 
+    private SubDialogueEntry _lastDisplayedEntry;
+    private float prePos;
+    private string preanimkey;
+
     static readonly Dictionary<float, float> CameraXByDotPos = new Dictionary<float, float>
     {
         { 0f,  -2.6f },
@@ -154,6 +158,12 @@ public class SubDialogue : MonoBehaviour
             Debug.LogError("Dialogue file not found in Resources folder.");
             return;
         }
+
+        if (dot != null)
+        {
+            prePos = dot.Position;
+            preanimkey = dot.AnimKey;
+        }
         if (manager.Pattern == GamePatternState.Writing)
         {
             playerController.SetSubseq(3);
@@ -199,6 +209,8 @@ public class SubDialogue : MonoBehaviour
 
     public sub GetData(int idx)
     {
+        _lastDisplayedEntry = SubDialogueEntries[idx];
+
         sub subdata = new sub();
         subdata.ScriptNumber = SubDialogueEntries[idx].ScriptNumber;
         subdata.LineKey = SubDialogueEntries[idx].LineKey;
@@ -293,19 +305,47 @@ public class SubDialogue : MonoBehaviour
 
         Debug.Log("끝났을때 서브 번호: " + playerController.GetSubseq());
 
-        // 다음 서브 실행
-        if (!manager.CurrentState.RunSubScript(dot, manager))
+        // AfterScript가 존재한다면 재생
+        bool afterScriptPlayed = false;
+        Debug.Log("[SubDialogue] Subexit: AfterScript 실행");
+        if (_lastDisplayedEntry != null)
         {
-            //AfterScript가 존재한다면 재생
-            if (currentDialogueList.Count > 0)
+            Debug.Log($"[SubDialogue] 마지막으로 표시된 대사 항목 AfterScript 값: '{_lastDisplayedEntry.AfterScript}'");
+            if (!string.IsNullOrEmpty(_lastDisplayedEntry.AfterScript))
             {
-                var lastEntry = currentDialogueList[currentDialogueList.Count - 1] as SubDialogueEntry;
-                if (lastEntry != null && !string.IsNullOrEmpty(lastEntry.AfterScript))
-                {
-                    dot.PlayAfterScript(lastEntry.AfterScript, SubPanel.prePos);
-                }
+                Debug.Log($"[SubDialogue] AfterScript 값 존재, AfterScript 재생: {_lastDisplayedEntry.AfterScript}");
+                dot.PlayAfterScript(_lastDisplayedEntry.AfterScript, this.prePos);
+                afterScriptPlayed = true;
+            }
+            else
+            {
+                Debug.Log("[SubDialogue] AfterScript 값 없음");
             }
         }
+        else
+        {
+            Debug.LogWarning("[SubDialogue] 마지막으로 표시된 대사 항목 찾을 수 없음");
+        }
+
+        if (!afterScriptPlayed)
+        {
+            if (manager.Pattern == GamePatternState.Writing)
+            {
+                Debug.Log("[SubDialogue] Writing 페이즈, anim_diary로 복귀");
+                if (dot != null)
+                    dot.ChangeState(DotPatternState.Phase, "anim_diary");
+            }
+            else
+            {
+                Debug.Log("[SubDialogue] AfterScript가 재생 X, 이전 애니메이션으로 돌아감");
+                if (dot != null)
+                    dot.ChangeState(DotPatternState.Default, this.preanimkey, this.prePos);
+            }
+        }
+
+        // 다음 서브 이벤트 타이머 시작
+        manager.ShowSubDial();
+        this.gameObject.SetActive(false);
     }
 
     public void TutoExit()
