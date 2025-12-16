@@ -541,7 +541,6 @@ public class DotController : MonoBehaviour
         position = OutPos;
         bool bPlayEyeAnimation = dotExpression != OutExpression;
         dotExpression = OutExpression;
-        animKey = OutAnimKey;
         _idleAnimationTimer = 0f; // 애니메이션이 변경될 때마다 타이머 초기화
         chapter = manager.Chapter;
 
@@ -574,6 +573,7 @@ public class DotController : MonoBehaviour
         if (OutAnimKey != "")
         {
             Debug.Log("뭉치 애니메이션 : " + OutAnimKey);
+            AnimKey = OutAnimKey;
             if (gameObject.activeInHierarchy)
             {
                 animator.Play(OutAnimKey, 0, 0f);
