@@ -1,18 +1,18 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,19,1,main_door_open,Dot,Main,body_mud,face_null,text,"안녕, <nickname>...","Hello, <nickname>...",2,,,,Main_Ch4,M4_L0001
-1,19,2,main_door_open,Player,Main,,,selection,(차분하게 물어본다)|(다정하게 걱정한다.),(Calmly question.)|(Gently worry.),3|7,,,moon|sun,Main_Ch4,M4_L0002
-1,19,3,main_door_open,Player,Main,,,text,"뭉치, 오늘은 안 나갔어?","Dot, did you go out today?",4,,,,Main_Ch4,M4_L0003
-1,19,4,main_door_open,Dot,Main,,,text,못 나갔어.,I couldn’t.,5,,,,Main_Ch4,M4_L0004
-1,19,5,main_door_open,Dot,Main,,,text,"난 나의 의지와는 무관하게,\n명백히, 온전히 실패했어.","Despite my will, I failed.\nUtterly and wholly.",6,,,,Main_Ch4,M4_L0005
-1,19,6,main_door_open,Dot,Main,,,text,인간들의 언어 체계에 따르면\n나는 밖으로 나가지 ‘못’ 한 거야.,"So according to the language\nsystem, I ‘couldn’t’ go out.",15,,,,Main_Ch4,M4_L0006
-1,19,7,main_door_open,Player,Main,,,text,"뭉치, 눈이 왜 사라져\n있을까... 무슨 일 있어?","Your eyes are missing, Dot...\nIs something wrong?",8,,,,Main_Ch4,M4_L0007
-1,19,8,main_door_open,Dot,Main,,,text,무슨 일이 있다? ‘무슨 일’이라\n불릴 만큼 대단한 일은 없어.,Wrong? Nothing so dramatic\nas to be called ‘wrong’.,9,,,,Main_Ch4,M4_L0008
-1,19,9,main_door_open,Dot,Main,,,text,그러나 동시에 ‘어떠한 일’은\n항상 일어나고 있지.,But ‘something’ is always happening.,10,,,,Main_Ch4,M4_L0009
-1,19,10,main_door_open,Player,Main,,,text,걱정의 표현이야.,It’s a saying.,11,,,,Main_Ch4,M4_L0010
-1,19,11,main_door_open,Player,Main,,,text,인간들은 걱정이 될 때면 종종\n‘무슨 일이 있냐’라고 물어보거든.,People ask whether something’s\nwrong when they’re worried.,12,,,,Main_Ch4,M4_L0011
-1,19,12,main_door_open,Dot,Main,,,text,그렇구나... ‘걱정’은 따뜻하고 애정 어린 것.,I see... ‘worried’ is\na warm and loving state.,13,,,,Main_Ch4,M4_L0012
-1,19,13,main_door_open,Dot,Main,,,text,"고마워, <nickname>. 미약하게나마 위안이 돼.","Thank you, <nickname>.\nIt’s a small comfort.",14,,,,Main_Ch4,M4_L0013
-1,19,14,main_door_open,Player,Main,,,text,"뭉치야, 정말 걱정돼. 무겁고\n못된 고민이 있는 거야?","Dot, you’re worrying me. Is something\nheavy and unpleasant bothering you?",15,,,,Main_Ch4,M4_L0014
+1,19,2,main_door_open,Player,Main,body_mud,,selection,(차분하게 물어본다)|(다정하게 걱정한다.),(Calmly question.)|(Gently worry.),3|7,,,moon|sun,Main_Ch4,M4_L0002
+1,19,3,main_door_open,Player,Main,body_mud,,text,"뭉치, 오늘은 안 나갔어?","Dot, did you go out today?",4,,,,Main_Ch4,M4_L0003
+1,19,4,main_door_open,Dot,Main,body_mud,,text,못 나갔어.,I couldn’t.,5,,,,Main_Ch4,M4_L0004
+1,19,5,main_door_open,Dot,Main,body_mud,,text,"난 나의 의지와는 무관하게,\n명백히, 온전히 실패했어.","Despite my will, I failed.\nUtterly and wholly.",6,,,,Main_Ch4,M4_L0005
+1,19,6,main_door_open,Dot,Main,body_mud,,text,인간들의 언어 체계에 따르면\n나는 밖으로 나가지 ‘못’ 한 거야.,"So according to the language\nsystem, I ‘couldn’t’ go out.",15,,,,Main_Ch4,M4_L0006
+1,19,7,main_door_open,Player,Main,body_mud,,text,"뭉치, 눈이 왜 사라져\n있을까... 무슨 일 있어?","Your eyes are missing, Dot...\nIs something wrong?",8,,,,Main_Ch4,M4_L0007
+1,19,8,main_door_open,Dot,Main,body_mud,,text,무슨 일이 있다? ‘무슨 일’이라\n불릴 만큼 대단한 일은 없어.,Wrong? Nothing so dramatic\nas to be called ‘wrong’.,9,,,,Main_Ch4,M4_L0008
+1,19,9,main_door_open,Dot,Main,body_mud,,text,그러나 동시에 ‘어떠한 일’은\n항상 일어나고 있지.,But ‘something’ is always happening.,10,,,,Main_Ch4,M4_L0009
+1,19,10,main_door_open,Player,Main,body_mud,,text,걱정의 표현이야.,It’s a saying.,11,,,,Main_Ch4,M4_L0010
+1,19,11,main_door_open,Player,Main,body_mud,,text,인간들은 걱정이 될 때면 종종\n‘무슨 일이 있냐’라고 물어보거든.,People ask whether something’s\nwrong when they’re worried.,12,,,,Main_Ch4,M4_L0011
+1,19,12,main_door_open,Dot,Main,body_mud,,text,그렇구나... ‘걱정’은 따뜻하고 애정 어린 것.,I see... ‘worried’ is\na warm and loving state.,13,,,,Main_Ch4,M4_L0012
+1,19,13,main_door_open,Dot,Main,body_mud,,text,"고마워, <nickname>. 미약하게나마 위안이 돼.","Thank you, <nickname>.\nIt’s a small comfort.",14,,,,Main_Ch4,M4_L0013
+1,19,14,main_door_open,Player,Main,body_mud,,text,"뭉치야, 정말 걱정돼. 무겁고\n못된 고민이 있는 거야?","Dot, you’re worrying me. Is something\nheavy and unpleasant bothering you?",15,,,,Main_Ch4,M4_L0014
 1,19,15,main_door_open,Dot,Main,body_mudtodefault,,text,......,......,16,,,,Main_Ch4,M4_L0015
 1,19,16,main_door_open,Dot,Main,body_default1,face_blink,text,"음, 으음...","Well, it’s...",17,,,,Main_Ch4,M4_L0016
 1,19,17,main_door_open,Dot,Main,,,text,무거운 것은 맞지. 그러나 못된 고민은 아니야.\n오히려 다정한 것들에 대한 고민이지.,"It’s heavy alright. But not unpleasant.\nRather, I’m nursing over kind things.",18,,,,Main_Ch4,M4_L0017

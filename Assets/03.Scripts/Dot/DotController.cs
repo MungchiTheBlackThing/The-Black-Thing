@@ -856,7 +856,7 @@ public class DotController : MonoBehaviour
     {
         List<string> animList = new List<string>();
         List<string> defaultSet =   new List<string> { 
-            "anim_default", "anim_reading", "anim_bed", "anim_mold", 
+            "anim_reading", "anim_bed", "anim_mold", 
             "anim_laptop", "anim_walking", "anim_mold2", "anim_spiderweb1", 
             "anim_spiderweb2", "anim_eyesclosed", "anim_eyescorner", "anim_eyesdown", 
             "anim_eyesside", "anim_eyesup", "anim_sleepy_bed", "anim_sleepy_spiderweb" };

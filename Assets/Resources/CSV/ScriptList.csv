@@ -35,7 +35,7 @@ ID,GameState,ScriptKey,AnimState,DotAnim,DotPosition,Delay
 6,2,sub_unique,Default,anim_default,11,15
 6,2,sub_monster,Default,anim_default,3,30
 6,4,sub_spider2,Default,anim_default,3,15
-7,1,ch7_A,Default,anim_default,3,0
+7,1,ch7_A,Default,anim_sub_ch7_1,3,0
 7,3,ch7_B,Default,anim_default,3,0
 7,2,sub_feelings,Default,anim_default,0,15
 7,2,sub_hurtmoon,Default,anim_mold2,0,30
@@ -53,7 +53,7 @@ ID,GameState,ScriptKey,AnimState,DotAnim,DotPosition,Delay
 9,2,sub_dare,Default,anim_default,2,30
 9,4,sub_fossil,Default,anim_default,11,15
 9,6,sub_shootingstar,Default,anim_default,3,15
-10,1,ch10_A,Default,anim_default,3,0
+10,1,ch10_A,Default,anim_omg,3,0
 10,3,ch10_B,Default,anim_default,3,0
 10,2,sub_oldfriend,Default,anim_default,3,15
 10,2,sub_sunlight,Default,anim_eyeswide,3,30
