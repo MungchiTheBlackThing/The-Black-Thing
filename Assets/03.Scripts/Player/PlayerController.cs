@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         currentChapter = player.CurrentChapter;
         nickname = player.Nickname;
         AudioManager.Instance.UpdateBGMByChapter(currentChapter);
+        AudioManager.Instance.SetBGMVolume(player.BgmVolume);
+        AudioManager.Instance.SetSFXVolume(player.AcousticVolume);
     }
     private void Start()
     {

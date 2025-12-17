@@ -9,6 +9,8 @@ public class AudioManager : Singleton<AudioManager>
 {
     private EventInstance bgmInstance; // 현재 BGM 인스턴스
     private EventInstance ambInstance;
+    float sfxVolume = 1f;
+    float bgmVolume = 1f;
     const string EVENT_PATH = "event:/AMB/AMB_Room";
 
     /// <summary>
@@ -16,7 +18,7 @@ public class AudioManager : Singleton<AudioManager>
     /// </summary>
     public void PlayOneShot(EventReference sound, Vector3 worldPosition)
     {
-        RuntimeManager.PlayOneShot(sound, worldPosition);
+        RuntimeManager.PlayOneShot(sound, worldPosition, sfxVolume);
     }
 
     /// <summary>
@@ -31,6 +33,7 @@ public class AudioManager : Singleton<AudioManager>
         }
 
         bgmInstance = RuntimeManager.CreateInstance(bgmEvent);
+        bgmInstance.setVolume(bgmVolume);
         bgmInstance.start();
     }
 
@@ -114,5 +117,16 @@ public class AudioManager : Singleton<AudioManager>
             // 파라미터 이름: AMB_Room
             ambInstance.setParameterByNameWithLabel("AMB_Room", label);
         }
+    }
+
+    public void SetSFXVolume(float f)
+    {
+        sfxVolume = f;
+    }
+
+    public void SetBGMVolume(float f)
+    {
+        bgmInstance.setVolume(f);
+        bgmVolume = f;
     }
 }
