@@ -256,6 +256,7 @@ public class MainVideo : MonoBehaviour
 
     public void OnNext()
     {
+        isVideoPlaying = false;
         HideSkipHintImmediate();
         StartCoroutine(FadeOutAndEnd(videoPlayer));
         replayButton.gameObject.SetActive(false);
