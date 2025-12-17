@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MoonnoteUI : MonoBehaviour
 {
+    [Header("Page State")]
+    [SerializeField] int currentPage = 0; // 현재 페이지
+    [SerializeField] int totalPages = 5; // 전체 페이지
+
+    [Header("Page Buttons")]
+    [SerializeField] GameObject prevButton; //드래그해야 함...
+    [SerializeField] GameObject nextButton;
     [SerializeField] GameObject Menu;
 
     private MenuController menuController;
@@ -56,6 +63,7 @@ public class MoonnoteUI : MonoBehaviour
         {
             exitbut.SetActive(false);
         }
+        UpdatePageButtons();
     }
 
     // Update is called once per frame
@@ -81,5 +89,42 @@ public class MoonnoteUI : MonoBehaviour
         
         this.gameObject.SetActive(false);
     }
+
+    void UpdatePageButtons()
+    {
+        // 첫 페이지
+        if (currentPage <= 0)
+        {
+            prevButton.SetActive(false);
+            nextButton.SetActive(true);
+        }
+        // 마지막 페이지
+        else if (currentPage >= totalPages - 1)
+        {
+            prevButton.SetActive(true);
+            nextButton.SetActive(false);
+        }
+        // 중간
+        else
+        {
+            prevButton.SetActive(true);
+            nextButton.SetActive(true);
+        }
+    }
+    public void NextPage()
+    {
+        if (currentPage >= totalPages - 1) return;
+        currentPage++;
+        UpdatePageButtons();
+    }
+
+    public void PreviousPage()
+    {
+        if (currentPage <= 0) return;
+        currentPage--;
+        UpdatePageButtons();
+    }
+
+
    
 }
