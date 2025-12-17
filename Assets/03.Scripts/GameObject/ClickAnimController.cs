@@ -34,12 +34,12 @@ public class ClickAnimController : BaseObject
         switch ((int)Type)
         {
             case 0:
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.mold, this.transform.position);
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.mold, this.transform.position);
                 break;
             case 1:
                 break;
             case 2:
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.hourglass, this.transform.position);
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hourglass, this.transform.position);
                 break;
         }
             

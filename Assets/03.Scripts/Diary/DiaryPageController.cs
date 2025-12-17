@@ -60,7 +60,7 @@ public class DiaryPageController : MonoBehaviour
         DiaryEntry entry = DataManager.Instance.DiaryData.DiaryEntry[currentPageIndex];
         int language = (int)gameManager.pc.GetLanguage();
 
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.Pagesound, this.transform.position);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Pagesound, this.transform.position);
 
         // 서브 성공 여부 확인을 위한 부울 리스트
         List<bool> sub_success = gameManager.pc.GetSubPhase(gameManager.Chapter);

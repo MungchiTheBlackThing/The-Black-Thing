@@ -70,7 +70,7 @@ public class BinocularController : BaseObject , IWatchingInterface
             alert.SetActive(false);
             //≈¨∑Œ¡Ó~
             phase = Instantiate(watching[Idx[chapterIdx]], watchingBackground.transform);
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.binocular, this.transform.position);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.binocular, this.transform.position);
         }
     }
 

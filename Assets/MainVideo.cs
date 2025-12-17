@@ -140,7 +140,7 @@ public class MainVideo : MonoBehaviour
 
         if (videoPlayer.isPrepared)
         {
-            if (AudioManager.instance != null) AudioManager.instance.StopBGM();
+            if (AudioManager.Instance != null) AudioManager.Instance.StopBGM();
             else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
             videoPlayer.SetDirectAudioMute(0, false);
             isVideoPlaying = true;
@@ -163,7 +163,7 @@ public class MainVideo : MonoBehaviour
         if (waitingToPlay)
         {
             waitingToPlay = false;
-            if (AudioManager.instance != null) AudioManager.instance.StopBGM();
+            if (AudioManager.Instance != null) AudioManager.Instance.StopBGM();
             else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
             videoPlayer.SetDirectAudioMute(0, false);
             isVideoPlaying = true;
@@ -205,7 +205,7 @@ public class MainVideo : MonoBehaviour
         yield return StartCoroutine(FadeCanvasGroup(bgCg, 1f, 0f, 1f));
         background.SetActive(false);
 
-        if (AudioManager.instance != null) AudioManager.instance.UpdateBGMByChapter(chapter);
+        if (AudioManager.Instance != null) AudioManager.Instance.UpdateBGMByChapter(chapter);
         else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
     }
 

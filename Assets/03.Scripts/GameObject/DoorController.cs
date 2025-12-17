@@ -90,7 +90,7 @@ public class DoorController : MonoBehaviour
         animator = this.transform.parent.GetComponent<Animator>();
         animator.SetFloat(Animator.StringToHash("speed"), 1.0f);
         animator.SetBool(OpenIdx, false);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.door, this.transform.position);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.door, this.transform.position);
         CheckDot();
     }
     public void open()
@@ -99,7 +99,7 @@ public class DoorController : MonoBehaviour
         animator = this.transform.parent.GetComponent<Animator>();
         animator.SetFloat(Animator.StringToHash("speed"), 1.0f);
         animator.SetBool(OpenIdx, true);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.door, this.transform.position);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.door, this.transform.position);
         CheckDot();
     }
 

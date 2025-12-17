@@ -88,14 +88,14 @@ public class Cursor : MonoBehaviour
                     if (hit[i].collider.tag == "Mungchi")
                     {
                         target.GetComponent<MungchiClick>().OnMouseDown();
-                        AudioManager.instance.PlayOneShot(FMODEvents.instance.binosuccess[(int)num], this.transform.position);
+                        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.binosuccess[(int)num], this.transform.position);
                         isSuccess =true;
                         break;
                     }
                     else
                     {
                         int index = Random.Range(0, 2);
-                        AudioManager.instance.PlayOneShot(FMODEvents.instance.binofails[index], this.transform.position);
+                        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.binofails[index], this.transform.position);
                     }
             }
         }

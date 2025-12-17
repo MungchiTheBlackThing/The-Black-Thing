@@ -5,26 +5,11 @@ using FMODUnity;
 using FMOD.Studio;
 using Assets.Script.TimeEnum;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
-    public static AudioManager instance { get; private set; }
-
     private EventInstance bgmInstance; // 현재 BGM 인스턴스
     private EventInstance ambInstance;
     const string EVENT_PATH = "event:/AMB/AMB_Room";
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // 씬 전환 시에도 유지
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     /// <summary>
     /// 효과음 재생
@@ -81,30 +66,30 @@ public class AudioManager : MonoBehaviour
             case 2:
             case 3:
             case 4:
-                bgmToPlay = FMODEvents.instance.bgmmain_1;
+                bgmToPlay = FMODEvents.Instance.bgmmain_1;
                 break;
 
             case 5:
             case 6:
             case 7:
             case 8:
-                bgmToPlay = FMODEvents.instance.bgmmain_2;
+                bgmToPlay = FMODEvents.Instance.bgmmain_2;
                 break;
 
             case 9:
             case 10:
             case 11:
             case 12:
-                bgmToPlay = FMODEvents.instance.bgmmain_3;
+                bgmToPlay = FMODEvents.Instance.bgmmain_3;
                 break;
 
             case 13: // 예시 - 12 이후에 Ver2 적용
-                bgmToPlay = FMODEvents.instance.bgmmain_3_ver2;
+                bgmToPlay = FMODEvents.Instance.bgmmain_3_ver2;
                 break;
 
             case 14:
             case 15:
-                bgmToPlay = FMODEvents.instance.bgmmain_4;
+                bgmToPlay = FMODEvents.Instance.bgmmain_4;
                 break;
 
             default:
@@ -112,7 +97,7 @@ public class AudioManager : MonoBehaviour
                 return;
         }
 
-        AudioManager.instance.ChangeBGM(bgmToPlay);
+        AudioManager.Instance.ChangeBGM(bgmToPlay);
     }
 
     public void EnsureAMB(EventReference ambEvent, string label = null)
