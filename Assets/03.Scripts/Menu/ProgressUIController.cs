@@ -58,7 +58,7 @@ public class ProgressUIController : MonoBehaviour
         dragIconList = new Dictionary<int, GameObject>();
         iconWidth = dragIconPrefab.GetComponent<RectTransform>().rect.width;
         InitScrollSize = new Vector2(dragScroller.GetComponent<RectTransform>().rect.width, dragScroller.GetComponent<RectTransform>().rect.height);
-        dragScroller.GetComponent<ScrollRect>().onValueChanged.AddListener(Scroll);
+        //dragScroller.GetComponent<ScrollRect>().onValueChanged.AddListener(Scroll);
         //dotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
     }
 
@@ -202,13 +202,13 @@ public class ProgressUIController : MonoBehaviour
         }
     }
 
-    public void Scroll(Vector2 value)
-    {
-        if(value.x>=1f)
-        {
-            alter.SetActive(true);
-        }
-    }
+    //public void Scroll(Vector2 value)
+    //{
+    //    if(value.x>=1f)
+    //    {
+    //        alter.SetActive(true);
+    //    }
+    //}
 
     public void canceled(){
         alter.SetActive(false);
