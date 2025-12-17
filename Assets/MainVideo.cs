@@ -43,6 +43,7 @@ public class MainVideo : MonoBehaviour
 
     private bool isVideoPlaying = false;
     private bool skipArmed = false;
+    private bool allowSkip = false;
     private Coroutine skipHintFadeCo;
     public event System.Action OnUserSkipRequested;
     Action videoEndEvent = null;
@@ -130,6 +131,7 @@ public class MainVideo : MonoBehaviour
     public void PlayVideo(Action videoEndEvent = null)
     {
         this.videoEndEvent = videoEndEvent;
+        allowSkip = false;
         Debug.Log("Video start");
         replayButton.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
@@ -219,6 +221,7 @@ public class MainVideo : MonoBehaviour
 
         // 다시 재생
         PlayVideo(videoEndEvent);
+        allowSkip = true;
     }
 
     private void ResetVideoInternalForReplay()
@@ -344,7 +347,7 @@ public class MainVideo : MonoBehaviour
             }
         }
         //스킵 입력처리
-        if (isVideoPlaying)
+        if (isVideoPlaying && allowSkip)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -354,10 +357,8 @@ public class MainVideo : MonoBehaviour
                 }
                 else
                 {
-                    videoEndEvent?.Invoke();
-                    isVideoPlaying = false;
-                    HideSkipHintImmediate();
                     OnUserSkipRequested?.Invoke();
+                    OnNext();
                 }
             }
         }
