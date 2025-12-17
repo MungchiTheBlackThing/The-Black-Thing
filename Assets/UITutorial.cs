@@ -30,26 +30,42 @@ public class UITutorial : MonoBehaviour
     private bool G6 = false;
     int index = 0;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        index = 0;
         for (int i = 0; i < transform.childCount; i++)
         {
             Guideline.Add(transform.GetChild(i).gameObject);
         }
         tutorialMaskGroup = this.GetComponent<CanvasGroup>();
-        Spider = menuBut.GetComponent<CanvasGroup>();
-        Progress = progressBut.GetComponent<CanvasGroup>();
-        Screentouch.SetActive(true);
+        if (menuBut) Spider = menuBut.GetComponent<CanvasGroup>();
+        if (progressBut) Progress = progressBut.GetComponent<CanvasGroup>();
+    }
 
+    void OnEnable()
+    {
+        ResetState();
+        Screentouch.SetActive(true);
         StartCoroutine(guide());
     }
+
+    void ResetState()
+    {
+        index = 0;
+        G2 = false;
+        G3 = false;
+        G4 = false;
+        G5 = false;
+        G6 = false;
+        if (progressUIController) progressUIController.guide1 = false;
+        if (progressUIController) progressUIController.guide2 = false;
+    }
+
     private void Update()
     {
         if (!G2 && MenuController.isOpening)
         {
             Guide2();
-            G2 = true;  // ÇÑ ¹ø ½ÇÇàµÈ ÈÄ¿¡´Â ¸ØÃã
+            G2 = true;  // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
 
         if (!G3 && MenuController.isprogress)
@@ -172,6 +188,7 @@ public class UITutorial : MonoBehaviour
                 MenuController.allon();
                 MenuController.nextandoff();
                 this.gameObject.SetActive(false);
+                // player.NextPhase();
             }
             else
             {

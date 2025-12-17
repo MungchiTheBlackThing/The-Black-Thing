@@ -496,6 +496,7 @@ public class DotController : MonoBehaviour
     {
         alertOff();
         subAlert.SetActive(isActive);
+        if (isActive) ForceStopAfterScript(); // 진입 시 AfterScript 강제 종료
         if (isActive && !string.IsNullOrEmpty(animKey))
         {
             ChangeState(DotPatternState.Default, animKey, position, "", true);
@@ -505,6 +506,7 @@ public class DotController : MonoBehaviour
     public void TriggerMain(bool isActive)
     {
         alertOff();
+        if (isActive) ForceStopAfterScript(); // 진입 시 AfterScript 강제 종료
         mainAlert.SetActive(isActive);
         /*여기서 OnClick 함수도 연결해준다.*/
         //OutPos 가 있다면 해당 Position으로 바껴야함.
@@ -512,6 +514,7 @@ public class DotController : MonoBehaviour
     public void TriggerPlay(bool isActive)
     {
         alertOff();
+        if (isActive) ForceStopAfterScript(); // 진입 시 AfterScript 강제 종료
         playAlert.SetActive(isActive);
         /*여기서 OnClick 함수도 연결해준다.*/
         //OutPos 가 있다면 해당 Position으로 바껴야함.
@@ -808,6 +811,20 @@ public class DotController : MonoBehaviour
         PlayerPrefs.Save();
 
         UpdateIdleAnimation();
+    }
+
+    // Trigger 함수들에서 호출할 강제 종료 헬퍼 (UpdateIdleAnimation 호출 안 함)
+    private void ForceStopAfterScript()
+    {
+        if (isAfterScriptPlaying)
+        {
+            Debug.Log("[DotController] Force stopping AfterScript for Event Trigger.");
+            isAfterScriptPlaying = false;
+            PlayerPrefs.DeleteKey("AS_AnimKey");
+            PlayerPrefs.DeleteKey("AS_Pos");
+            PlayerPrefs.DeleteKey("AS_IsPlaying");
+            PlayerPrefs.Save();
+        }
     }
 
     // 기본 랜덤 애니메이션 재생

@@ -17,401 +17,344 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 854362a9d8efe594c89411bd3eec8e8a
   m_SerializeEntries:
-  - m_GUID: 148e3682596152c458fcd920f6ac29d4
-    m_Address: Sub_Ch11_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 153946663b5bf924aaba4772b9490b35
-    m_Address: Sub_Ch10_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1700b8df0cb70db47b633589abd14ca7
-    m_Address: SrcDay4_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 17965bda7f11d8042aaf22ad8d7a12bc
-    m_Address: PoemReview_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1a3bf87434e7b2f4da8d1dc1cfffb37f
-    m_Address: Sub_Ch14_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1b02ab52dbd97a141b78d1e5116a4ee5
-    m_Address: Main_Ch6_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1ecf6718b6d09eb4c92405bda84c7649
-    m_Address: SrcDay8_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 227404f6f2f9fd944897156c7686bc7d
-    m_Address: SrcDay6_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 24b61983a96feac45bf15a50de9c7b52
-    m_Address: Sub_Ch1_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 252ec328aae78594081bf0525174b403
-    m_Address: Main_Ch4_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2938e81675075f7449ffe87e07b7f0ef
-    m_Address: Main_Ch13_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 351486b2ec797d645939077c4e2530d3
-    m_Address: SrcDay5_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 352d7016b640f7e42a02a52c9c22d6a2
-    m_Address: SrcDay100_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3715be8c1f1738b42b10261b173886d2
-    m_Address: SrcDay3_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3d1dbadbcded72040a47dfeadd15f7d4
-    m_Address: Main_Ch14_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 43d6a8722f0951d4f8f5f40e16aa6c16
-    m_Address: Main_Ch10_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 48e10a51b4992aa4fbd914c862545fea
-    m_Address: Main_Ch3_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 492c59b96096f9643b0bbf14fa60597b
-    m_Address: Sub_Ch6_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4b9e72cd3dcf6fc45b2077e001c9272e
-    m_Address: TutorialUIText_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4d3284201d1a2934297dae9df585770c
-    m_Address: MoonRadioUIText_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5089d5ef39f17fb4eb3c53c22fba3fbe
-    m_Address: Main_Ch8_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 61db0ba4529739b4ba80d7266290536e
-    m_Address: Main_Ch9_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 64b13a11d14d92541aeeb16a372eddbb
-    m_Address: Main_Ch12_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 657b730c0c6783b4e8cfecb3223e0c46
-    m_Address: Sub_Ch8_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6bb81d133660cfe4f9bbb25238646ff1
-    m_Address: Sub_Ch9_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6c52e673c62266b4ca1264d22fe8d26f
-    m_Address: SrcDay9_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6f74d51060056f44ab2980ec44865374
-    m_Address: SystemUIText_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 70712577ac134af4f98cebeddc300894
-    m_Address: SrcDay2_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 72c36ec6dc0583b46b51936143e315c5
-    m_Address: Main_Ch1_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7abd3cc2dfd7afc4dabfeca134aa39b4
-    m_Address: SkipSleeping_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7fdd2a33d11d6ff4781b7f3e4f4c43fd
-    m_Address: PoemText_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8d286e0615e3bb542a9d138be14c70b0
-    m_Address: DiaryUIText_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8e200ccfe8dd64e4d9098cb4696ce7c0
-    m_Address: Sub_Ch4_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9a7c3aa4722c9b14d8124c8f6e0d9deb
-    m_Address: Tuto_Sub_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9ab32f04de3f8bc4380506b7a01bb407
-    m_Address: SrcDay14_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9f3b7bc2ef5ea2140bc18c888597aaff
-    m_Address: SrcDay1_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a13cc8fcae96c2e42afa108f192fa3ba
-    m_Address: SrcDay12_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a8a49dc7ae2630a46a09c75f065ebf2e
     m_Address: IntroUIText_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ada1be018e694c148a95f7832ed429e7
-    m_Address: Main_Ch7_en-US
+  - m_GUID: f3f6b2d54df6f5340923727d1753a277
+    m_Address: ChapterLoadingUIText_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: bb5a9f18a9fec8148a1cd6660531e510
-    m_Address: WatchingNoteUI_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c0a8de09d0433254cb4b2a71956614a1
-    m_Address: Sub_Ch7_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c680a5ee79a4ee14c8c521d8200c22f8
-    m_Address: SrcDay7_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cac2f111fdd8a0f45817cf7c2d98995b
-    m_Address: Main_Ch5_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cf8ad840626553e44b4f4cbba8ebe39f
-    m_Address: Sub_Ch13_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cfe956db3a385a54188a8dcadf290eef
-    m_Address: PoetryUIText_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d50d107f8a4f87f479650a29b6e0c938
-    m_Address: Main_Ch11_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d9f37d2657fafce45b030c98893de9de
-    m_Address: SrcDay13_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e153096ac90cd2e4382e83a20b2e2618
     m_Address: Tuto_Main_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
     - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e3bf78bf7ffa16948b847ebe8edbe19b
-    m_Address: SrcDay11_en-US
+  - m_GUID: 9a7c3aa4722c9b14d8124c8f6e0d9deb
+    m_Address: Tuto_Sub_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
     - Preload
-    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72c36ec6dc0583b46b51936143e315c5
+    m_Address: Main_Ch1_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 4b9e72cd3dcf6fc45b2077e001c9272e
+    m_Address: TutorialUIText_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
   - m_GUID: ea76ee4f012c14b4b9b6a233fb8d1bc4
     m_Address: Main_Ch2_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
     - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: eaa81ebc20e895f498c23c99f5a45904
-    m_Address: Sub_Ch12_en-US
+  - m_GUID: 48e10a51b4992aa4fbd914c862545fea
+    m_Address: Main_Ch3_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
     - Preload
-    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 252ec328aae78594081bf0525174b403
+    m_Address: Main_Ch4_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: cac2f111fdd8a0f45817cf7c2d98995b
+    m_Address: Main_Ch5_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 1b02ab52dbd97a141b78d1e5116a4ee5
+    m_Address: Main_Ch6_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: ada1be018e694c148a95f7832ed429e7
+    m_Address: Main_Ch7_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 5089d5ef39f17fb4eb3c53c22fba3fbe
+    m_Address: Main_Ch8_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 61db0ba4529739b4ba80d7266290536e
+    m_Address: Main_Ch9_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 43d6a8722f0951d4f8f5f40e16aa6c16
+    m_Address: Main_Ch10_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: d50d107f8a4f87f479650a29b6e0c938
+    m_Address: Main_Ch11_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 64b13a11d14d92541aeeb16a372eddbb
+    m_Address: Main_Ch12_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 2938e81675075f7449ffe87e07b7f0ef
+    m_Address: Main_Ch13_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 3d1dbadbcded72040a47dfeadd15f7d4
+    m_Address: Main_Ch14_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 24b61983a96feac45bf15a50de9c7b52
+    m_Address: Sub_Ch1_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
   - m_GUID: ed08556fa1393944f8b929376e9bc471
     m_Address: Sub_Ch2_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
     - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ee25084e7f58f8646bec922b43934f56
-    m_Address: SrcDay10_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: eed7685e9fc418747a47bb31302b77c1
-    m_Address: Sub_Ch5_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f3489ba278127f842bb0ba5f7a1587bd
-    m_Address: MoonRadioText_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f3f6b2d54df6f5340923727d1753a277
-    m_Address: ChapterLoadingUIText_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fdcee13042668f740ae7b726486b9343
     m_Address: Sub_Ch3_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
     - Preload
-    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e200ccfe8dd64e4d9098cb4696ce7c0
+    m_Address: Sub_Ch4_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: eed7685e9fc418747a47bb31302b77c1
+    m_Address: Sub_Ch5_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 492c59b96096f9643b0bbf14fa60597b
+    m_Address: Sub_Ch6_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: c0a8de09d0433254cb4b2a71956614a1
+    m_Address: Sub_Ch7_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 657b730c0c6783b4e8cfecb3223e0c46
+    m_Address: Sub_Ch8_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 6bb81d133660cfe4f9bbb25238646ff1
+    m_Address: Sub_Ch9_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 153946663b5bf924aaba4772b9490b35
+    m_Address: Sub_Ch10_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 148e3682596152c458fcd920f6ac29d4
+    m_Address: Sub_Ch11_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: eaa81ebc20e895f498c23c99f5a45904
+    m_Address: Sub_Ch12_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: cf8ad840626553e44b4f4cbba8ebe39f
+    m_Address: Sub_Ch13_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 1a3bf87434e7b2f4da8d1dc1cfffb37f
+    m_Address: Sub_Ch14_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 6f74d51060056f44ab2980ec44865374
+    m_Address: SystemUIText_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 9f3b7bc2ef5ea2140bc18c888597aaff
+    m_Address: SrcDay1_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 70712577ac134af4f98cebeddc300894
+    m_Address: SrcDay2_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 3715be8c1f1738b42b10261b173886d2
+    m_Address: SrcDay3_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 1700b8df0cb70db47b633589abd14ca7
+    m_Address: SrcDay4_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 351486b2ec797d645939077c4e2530d3
+    m_Address: SrcDay5_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 227404f6f2f9fd944897156c7686bc7d
+    m_Address: SrcDay6_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: c680a5ee79a4ee14c8c521d8200c22f8
+    m_Address: SrcDay7_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 1ecf6718b6d09eb4c92405bda84c7649
+    m_Address: SrcDay8_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 6c52e673c62266b4ca1264d22fe8d26f
+    m_Address: SrcDay9_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: ee25084e7f58f8646bec922b43934f56
+    m_Address: SrcDay10_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: e3bf78bf7ffa16948b847ebe8edbe19b
+    m_Address: SrcDay11_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: a13cc8fcae96c2e42afa108f192fa3ba
+    m_Address: SrcDay12_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: d9f37d2657fafce45b030c98893de9de
+    m_Address: SrcDay13_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 9ab32f04de3f8bc4380506b7a01bb407
+    m_Address: SrcDay14_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: bb5a9f18a9fec8148a1cd6660531e510
+    m_Address: WatchingNoteUI_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: cfe956db3a385a54188a8dcadf290eef
+    m_Address: PoetryUIText_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 4d3284201d1a2934297dae9df585770c
+    m_Address: MoonRadioUIText_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 8d286e0615e3bb542a9d138be14c70b0
+    m_Address: DiaryUIText_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 352d7016b640f7e42a02a52c9c22d6a2
+    m_Address: SrcDay100_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+  - m_GUID: 7fdd2a33d11d6ff4781b7f3e4f4c43fd
+    m_Address: PoemText_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 17965bda7f11d8042aaf22ad8d7a12bc
+    m_Address: PoemReview_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: f3489ba278127f842bb0ba5f7a1587bd
+    m_Address: MoonRadioText_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 7abd3cc2dfd7afc4dabfeca134aa39b4
+    m_Address: SkipSleeping_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: ccf0751a4aca0824caf678229173be50, type: 2}
   m_SchemaSet:

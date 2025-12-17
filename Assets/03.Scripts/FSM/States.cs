@@ -140,13 +140,9 @@ public class Thinking : GameState, ILoadingInterface
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
-        //Default값 랜덤으로 사용예정
-        
-        //코루틴으로 N분 뒤에 실행 할 수 있도록 변경하기
-        if (RunSubScript(dot, manager) == false)
-        {
-            Think(manager, dot);
-        }
+        // The sub-dialogue timer is started by GameManager.ChangeGameState.
+        // This state's entry should only handle the "thinking" visuals.
+        Think(manager, dot);
     }
 
     public void ResetState(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
@@ -268,10 +264,9 @@ public class Sleeping : GameState, IResetStateInterface
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
-        if (RunSubScript(dot, manager) == false)
-        {
-            Sleep(manager, dot);
-        }
+        // The sub-dialogue timer is started by GameManager.ChangeGameState.
+        // This state's entry should only handle the "sleeping" visuals.
+        Sleep(manager, dot);
     }
     public void Sleep(GameManager manager, DotController dot, TutorialManager tutomanger = null)
     {

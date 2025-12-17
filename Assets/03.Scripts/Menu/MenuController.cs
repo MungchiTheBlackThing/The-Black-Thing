@@ -342,7 +342,7 @@ public class MenuController : MonoBehaviour
         DayProgressUI.GetComponent<ProgressUIController>().exit();
         DayProgressUI.GetComponent<ProgressUIController>().exit();
         offMenu();
-        PlayerController.NextPhase();
+        //PlayerController.NextPhase();
     }
     IEnumerator later()
     {

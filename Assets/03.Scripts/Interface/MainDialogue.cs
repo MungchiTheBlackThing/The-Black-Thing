@@ -333,8 +333,8 @@ public abstract class MainDialogue : GameState, ILoadingInterface
 
         if (phase == 1 && manager.Chapter == 1)
         {
-            menuController.onlyskipoff();
-            uITutorial.gameObject.SetActive(true);
+            // Thinking 상태 진입 후 GameManager가 튜토리얼을 켤 것이므로 여기서는 NextPhase만 호출
+            playerController.NextPhase();
         }
         else if (phase == 3 && manager.Chapter == 1)
         {
