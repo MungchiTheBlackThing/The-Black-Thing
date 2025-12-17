@@ -50,7 +50,7 @@ public class SelectManager : MonoBehaviour
         {
             options[i].transform.GetChild(0).gameObject.SetActive(false);
             selectedCount = 0;
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialouguecheckbox, this.transform.position);
+            //AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialouguecheckbox, this.transform.position);        //엠비언트 효과 빠짐 -> 추후에 추가
         }
 
         // 새로운 선택된 체크박스를 활성화
