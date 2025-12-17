@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using UnityEngine;
-using UnityEngine.Video;
 using TMPro;
-using UnityEngine.Localization.Settings;
+using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class MainVideo : MonoBehaviour
 {
@@ -35,13 +37,20 @@ public class MainVideo : MonoBehaviour
     [SerializeField] private TMP_Text skipHintText;
     [SerializeField] private float skipHintFadeDuration = 2f;
 
+    [Header("Replay")]
+    [SerializeField] Button replayButton;
+    [SerializeField] Button nextButton;
+
     private bool isVideoPlaying = false;
     private bool skipArmed = false;
     private Coroutine skipHintFadeCo;
     public event System.Action OnUserSkipRequested;
+    Action videoEndEvent = null;
 
     private void Start()
     {
+        replayButton.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(false);
         if (videoPlayer != null)
         {
             videoPlayer.playOnAwake = false;
@@ -118,9 +127,12 @@ public class MainVideo : MonoBehaviour
         videoPlayer.seekCompleted += OnSeekCompleted;
     }
 
-    public void PlayVideo()
+    public void PlayVideo(Action videoEndEvent = null)
     {
+        this.videoEndEvent = videoEndEvent;
         Debug.Log("Video start");
+        replayButton.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(false);
         StartCoroutine(FadeInAndPlay());
     }
 
@@ -186,8 +198,66 @@ public class MainVideo : MonoBehaviour
     private void OnVideoEnd(VideoPlayer vp)
     {
         isVideoPlaying = false;
+        replayButton.gameObject.SetActive(true);
+        nextButton.gameObject.SetActive(true);
+        
+    }
+
+    public void OnReplay()
+    {
+        Debug.Log("[MainVideo] Replay requested");
+
+        StopAllCoroutines();
+
+        // 스킵, 상태 초기화
+        isVideoPlaying = false;
+        waitingToPlay = false;
         HideSkipHintImmediate();
-        StartCoroutine(FadeOutAndEnd(vp));
+
+        // 비디오 완전 리셋
+        ResetVideoInternalForReplay();
+
+        // 다시 재생
+        PlayVideo(videoEndEvent);
+    }
+
+    private void ResetVideoInternalForReplay()
+    {
+        lastIndex = -1;
+        startsCache = null;
+
+        if (subtitleText != null)
+            subtitleText.text = "";
+
+        if (videoPlayer != null)
+        {
+            videoPlayer.Stop();
+            videoPlayer.time = 0;
+            videoPlayer.frame = 0;
+            videoPlayer.SetDirectAudioMute(0, true);
+
+            // Prepare 다시 호출 (Seek 안정성)
+            videoPlayer.Prepare();
+        }
+
+        Rawimage.SetActive(false);
+        text.SetActive(false);
+
+        if (background != null)
+        {
+            var cg = background.GetComponent<CanvasGroup>();
+            if (cg != null) cg.alpha = 0f;
+            background.SetActive(false);
+        }
+    }
+
+    public void OnNext()
+    {
+        HideSkipHintImmediate();
+        StartCoroutine(FadeOutAndEnd(videoPlayer));
+        replayButton.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(false);
+        videoEndEvent?.Invoke();
     }
 
     private IEnumerator FadeOutAndEnd(VideoPlayer vp)
@@ -284,6 +354,7 @@ public class MainVideo : MonoBehaviour
                 }
                 else
                 {
+                    videoEndEvent?.Invoke();
                     isVideoPlaying = false;
                     HideSkipHintImmediate();
                     OnUserSkipRequested?.Invoke();
