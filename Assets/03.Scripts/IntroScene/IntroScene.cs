@@ -24,6 +24,7 @@ public class IntroScene : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.PlayBGM(FMODEvents.Instance.bgm_intro);
         playerInfo = new PlayerInfo("Default", 1, GamePatternState.Watching);
         data = RecentManager.Load();
         //1.스플래시 재생

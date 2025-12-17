@@ -46,6 +46,7 @@ public class FMODEvents : Singleton<FMODEvents>
     [field: SerializeField] public EventReference bgmmain_3_ver2 { get; private set; }
     [field: SerializeField] public EventReference bgmmain_4 { get; private set; }
     [field: SerializeField] public EventReference bgmmain_death { get; private set; }
+    [field: SerializeField] public EventReference bgm_intro { get; private set; }
 
     // --- Ãß°¡: AMB ---
     [field: Header("AMB")]
