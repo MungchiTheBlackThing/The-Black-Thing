@@ -11,6 +11,7 @@ using UnityEngine.Video;
 
 public class MainVideo : MonoBehaviour
 {
+    private GameManager gm;
     public VideoPlayer videoPlayer;
     [SerializeField] public GameObject Rawimage;
 
@@ -50,6 +51,8 @@ public class MainVideo : MonoBehaviour
 
     private void Start()
     {
+        gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+
         replayButton.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
         if (videoPlayer != null)
@@ -279,7 +282,7 @@ public class MainVideo : MonoBehaviour
         yield return StartCoroutine(FadeCanvasGroup(bgCg, 1f, 0f, 1f));
         background.SetActive(false);
 
-        if (AudioManager.Instance != null) AudioManager.Instance.UpdateBGMByChapter(chapter);
+        if (AudioManager.Instance != null) AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
         else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
     }
 

@@ -17,10 +17,12 @@ public enum LANGUAGE
 
 public class PlayerController : MonoBehaviour, IPlayerInterface
 {
+    
     const string playerInfoDataFileName = "PlayerData.json";
     //실제 플레이어
     private PlayerInfo player;
     //player 접속 경과 시간
+    private GameManager gm;
     float elapsedTime;
     //임시 저장을 위한 serialize..
     [SerializeField]
@@ -53,6 +55,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     SubDialogue subDialogue;
     private void Awake()
     {
+        gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+
         //앞으로 player을 동적으로 생성해서 관리할 예정.. 아직은 미리 초기화해서 사용한다.
         Debug.Log("시작");
         gobackPage = new Stack<int>();
@@ -65,7 +69,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         currentChapter = GetChapter();
         currentChapter = player.CurrentChapter;
         nickname = player.Nickname;
-        AudioManager.Instance.UpdateBGMByChapter(currentChapter);
+        AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
         AudioManager.Instance.SetBGMVolume(player.BgmVolume);
         AudioManager.Instance.SetSFXVolume(player.AcousticVolume);
     }
@@ -109,6 +113,10 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void NextPhase()
     {
+        foreach (var door in FindObjectsOfType<DoorController>()) //페이즈 넘어갈 때 (메인 끝나면 페이즈 넘어가니까 + 나머지 페이즈 전환은 상관 없으니까) 문 켜기
+        {
+            door.SetDoorForDialogue(true);
+        }
         Debug.Log("NextPhase");
         if (gamemanger.GetComponent<GameManager>())
             gamemanger.GetComponent<GameManager>().StopSubDial();
@@ -204,7 +212,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         LoadSceneManager.Instance.LoadChapterImage(currentChapter); 
         player.subseq = 1;
         ClearWatchedSubseq(); // 봤던 서브 리스트도 초기화
-        AudioManager.Instance.UpdateBGMByChapter(player.CurrentChapter);
+        AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
         WritePlayerFile();
     }
     public void SetLanguage(LANGUAGE language)

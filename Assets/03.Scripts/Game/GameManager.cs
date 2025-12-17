@@ -187,6 +187,7 @@ public class GameManager : MonoBehaviour
     public void SetPhase(GamePatternState newPhase)
     {
         currentPattern = newPhase;
+        AudioManager.Instance.UpdateBGMByChapter(Chapter, currentPattern);
         Debug.Log($"[SetPhase] Phase 설정됨: {newPhase}");
 
         if (phaseToSubseqs.TryGetValue(currentPattern, out var subs) && subs.Count > 0)
@@ -256,6 +257,7 @@ public class GameManager : MonoBehaviour
 
     public void StartMain()
     {
+
         MainDialogue mainState = (MainDialogue)activeState;
         subDialogue.gameObject.SetActive(false);
         string fileName = "main_ch" + Chapter;
@@ -263,7 +265,13 @@ public class GameManager : MonoBehaviour
         {
             if (mainDialoguePanel != null)
             {
-                mainDialoguePanel.SetActive(true);
+                mainDialoguePanel.SetActive(true); // 메인 패널 켜지면
+
+                DoorController door = FindObjectOfType<DoorController>(); // 문 렌더링 끄기
+                if (door != null)
+                {
+                    door.SetDoorForDialogue(false);
+                }
             }
             mainState.StartMain(this, fileName);
         }

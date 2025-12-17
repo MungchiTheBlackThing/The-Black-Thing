@@ -65,7 +65,7 @@ public class DoorController : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            // ¸¶¿ì½º°¡ UI À§¿¡ ÀÖÀ» ¶§´Â ÀÌ ÇÔ¼ö°¡ µ¿ÀÛÇÏÁö ¾Êµµ·Ï ÇÔ
+            // ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½ï¿½
             return;
         }
 
@@ -73,12 +73,12 @@ public class DoorController : MonoBehaviour
         {
             if (isDoorOpen)
             {
-                //¿­·ÁÀÖÀ» °æ¿ì, ´İ¾Æ¾ßÇÔ
+                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½İ¾Æ¾ï¿½ï¿½ï¿½
                 close();
             }
             else
             {
-                //´İ¾ÆÀÖ´Â °æ¿ì, ¿­¾î¾ßÇÔ
+                //ï¿½İ¾ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 open();
             }
         }
@@ -107,12 +107,12 @@ public class DoorController : MonoBehaviour
     {
         if (isDoorOpen)
         {
-            //¿­·ÁÀÖÀ» °æ¿ì, ´İ¾Æ¾ßÇÔ
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½İ¾Æ¾ï¿½ï¿½ï¿½
             close();
         }
         else
         {
-            //´İ¾ÆÀÖ´Â °æ¿ì, ¿­¾î¾ßÇÔ
+            //ï¿½İ¾ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             open();
         }
     }
@@ -121,7 +121,7 @@ public class DoorController : MonoBehaviour
     {
         if (doorCollider != null)
         {
-            doorCollider.enabled = false; // ¹®¿¡ ´ëÇÑ ÅÍÄ¡/Å¬¸¯ ºñÈ°¼ºÈ­
+            doorCollider.enabled = false; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡/Å¬ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         }
     }
 
@@ -129,8 +129,28 @@ public class DoorController : MonoBehaviour
     {
         if (doorCollider != null)
         {
-            doorCollider.enabled = true; // ¹®¿¡ ´ëÇÑ ÅÍÄ¡/Å¬¸¯ È°¼ºÈ­
+            doorCollider.enabled = true; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡/Å¬ï¿½ï¿½ È°ï¿½ï¿½È­
         }
     }
+
+    public void SetDoorForDialogue(bool enable)
+    {
+        // í„°ì¹˜ ë¹„í™œì„±í™”
+        if (doorCollider != null)
+            doorCollider.enabled = enable;
+
+        // ë Œë” ë„ê¸° (ë¬¸ì´ ì‹œê°ì ìœ¼ë¡œë§Œ! ì‚¬ë¼ì§€ê²Œ í•´ì•¼ í•¨)
+        var renderers = GetComponentsInChildren<SpriteRenderer>();
+        foreach (var r in renderers)
+            r.enabled = enable;
+
+        // Dot ì¶©ëŒ ì²´í¬ ê°•ì œ í•´ì œí•´ì„œ ë­‰ì¹˜ê°€ ë©”ì¸í•  ë•Œ ë³´ì´ë„ë¡ í•´ì•¼ í•¨
+        if (!enable)
+        {
+            if (dot != null)
+                dot.GetComponent<DotController>()?.dotvicheck(false);
+        }
+    }
+
 
 }
