@@ -14,6 +14,12 @@ public class PlayAnswerController : MonoBehaviour
     GameObject playDot;
     [SerializeField]
     Button yesPoemBubble;
+    [SerializeField] GameObject questionBubble;
+    [SerializeField] GameObject afterYesBubble;
+    [SerializeField] GameObject afterNoBubble;
+    [SerializeField] TMP_Text questionText; // Txt
+
+
     [SerializeField]
     Button noPoemBubble;
     [SerializeField]
@@ -28,7 +34,6 @@ public class PlayAnswerController : MonoBehaviour
     GameObject poem;
 
     DotController dot;
-    public TMP_Text dotText;
     Utility u = Utility.Instance;
     bool waitSleepTap = false;
     private bool diaryActivatedForTutorial = false;
@@ -36,9 +41,12 @@ public class PlayAnswerController : MonoBehaviour
     private void Start()
     {
         dot = playDot.transform.parent.GetComponent<DotController>();
-        StringTable stringTable = LocalizationSettings.StringDatabase.GetTable("PoetryUIText");
-        dotText.text = stringTable.GetEntry("poem_start").GetLocalizedString();
+
+        if (afterYesBubble != null) afterYesBubble.SetActive(false);
+        if (afterNoBubble != null) afterNoBubble.SetActive(false);
+
     }
+
 
     private void OnEnable()
     {
@@ -57,6 +65,18 @@ public class PlayAnswerController : MonoBehaviour
             }
             diaryActivatedForTutorial = true;
         }
+        
+    }
+
+    public void EnterPoemQuestion()
+    {
+        if (questionBubble != null) questionBubble.SetActive(true);
+        if (afterYesBubble != null) afterYesBubble.SetActive(false);
+        if (afterNoBubble != null) afterNoBubble.SetActive(false);
+
+        playDot.SetActive(true);
+        playPlayer.SetActive(true);
+        waitSleepTap = false;
     }
 
     public void OnDisable()
@@ -70,19 +90,27 @@ public class PlayAnswerController : MonoBehaviour
     //yes버블 눌렀을 때
     private void YesPoemBubbleClicked()
     {
-        if (poem)
-        {
-            Instantiate(poem, GameObject.Find("Canvas").transform);
-        }
+        var poemObj = Instantiate(poem, GameObject.Find("Canvas").transform);
+
+        
+        var poemController = poemObj.GetComponentInChildren<PoemController>(true);
+        if (poemController != null)
+            poemController.playAnswerController = this;
         HideBubble();
     }
     //시 읽은 후 처리
     public void AfterReadingPoem()
     {
         //자러가야지 대사 출력
-        Debug.Log("시 읽은 후 처리 실행");
-        StringTable stringTable = LocalizationSettings.StringDatabase.GetTable("PoetryUIText");
-        dotText.text = stringTable.GetEntry("poem_end").GetLocalizedString();
+        SetAfterYesState();
+    }
+
+    private void SetAfterYesState()
+    {
+        if (questionBubble != null) questionBubble.SetActive(false);
+        if (afterYesBubble != null) afterYesBubble.SetActive(true);
+        if (afterNoBubble != null) afterNoBubble.SetActive(false);
+
         playDot.SetActive(true);
         playPlayer.SetActive(false);
         waitSleepTap = true;
@@ -91,12 +119,21 @@ public class PlayAnswerController : MonoBehaviour
     //no버블 눌렀을 때
     private void NoPoemBubbleClicked()
     {
-        //응 알겠어 자러갈게 대사 출력
-        StringTable stringTable = LocalizationSettings.StringDatabase.GetTable("PoetryUIText");
-        dotText.text = stringTable.GetEntry("poem_n").GetLocalizedString();
+        SetAfterNoState();
+    }
+
+    private void SetAfterNoState()
+    {
+        if (questionBubble != null) questionBubble.SetActive(false);
+        if (afterYesBubble != null) afterYesBubble.SetActive(false);
+        if (afterNoBubble != null) afterNoBubble.SetActive(true);
+
+        playDot.SetActive(true);
         playPlayer.SetActive(false);
         waitSleepTap = true;
     }
+
+
 
     private void OnPlayDotClicked()
     {   //닷 말풍선 클릭시 자러 감
@@ -112,11 +149,6 @@ public class PlayAnswerController : MonoBehaviour
         playDot.SetActive(false);
         playPlayer.SetActive(false);
     }
-
-
-
-
-
 
     
 }
