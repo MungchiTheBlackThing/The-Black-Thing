@@ -15,11 +15,12 @@ public class BinocularController : BaseObject , IWatchingInterface
     [SerializeField]
     List<GameObject> watching;
     
-    int chapterIdx; //-1·Î ¹Ù²ãÁà¾ßÇÔ.
+    int chapterIdx; //-1ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 
     GameObject watchingBackground;
     GameObject phase;
-
+    PlayerController pc;
+    DoorController door;
     Dictionary<int,int> Idx = new Dictionary<int,int>();
     public bool IsCurrentPattern(EWatching curPattern)
     {
@@ -28,7 +29,11 @@ public class BinocularController : BaseObject , IWatchingInterface
 
     private void Start()
     {
+        door = FindObjectOfType<DoorController>();
         watchingBackground = GameObject.Find("Phase").gameObject;
+            GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+            pc = playerObj.GetComponent<PlayerController>();
         Init();
     }
 
@@ -61,17 +66,32 @@ public class BinocularController : BaseObject , IWatchingInterface
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            // ¸¶¿ì½º°¡ UI À§¿¡ ÀÖÀ» ¶§´Â ÀÌ ÇÔ¼ö°¡ µ¿ÀÛÇÏÁö ¾Êµµ·Ï ÇÔ
+            // ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½ï¿½
             return;
         }
 
-        if (alert.activeSelf)
+        if (pc == null) return;
+
+        GamePatternState curPhase = (GamePatternState)pc.GetCurrentPhase();
+
+        if (curPhase != GamePatternState.Watching)
+        
+            return;
+
+        if (phase != null)
+            return;
+
+        alert.SetActive(false);
+            //Å¬ï¿½ï¿½ï¿½ï¿½~
+            // ë¬¸ ë Œë”ë§ ë„ê¸°
+        if (door != null)
         {
-            alert.SetActive(false);
-            //Å¬·ÎÁî~
-            phase = Instantiate(watching[Idx[chapterIdx]], watchingBackground.transform);
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.binocular, this.transform.position);
-        }
+            door.SetDoorForDialogue(false);
+        }   
+
+        phase = Instantiate(watching[Idx[chapterIdx]], watchingBackground.transform);       
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.binocular, this.transform.position);
+        
     }
 
     public void CloseWatching()

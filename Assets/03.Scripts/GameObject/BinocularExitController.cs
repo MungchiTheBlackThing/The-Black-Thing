@@ -10,7 +10,12 @@ public class BinocularExitController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        //screenÀ» Å°°í parent¸¦ destroy 
+        DoorController door = FindObjectOfType<DoorController>();
+        if (door != null)
+        {
+            door.SetDoorForDialogue(true);
+        }
+        //screenï¿½ï¿½ Å°ï¿½ï¿½ parentï¿½ï¿½ destroy 
         Destroy(this.transform.parent.gameObject);
         camera = GameObject.FindWithTag("MainCamera");
 

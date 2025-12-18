@@ -351,6 +351,11 @@ public class GameManager : MonoBehaviour
         {
             dot.UpdateIdleAnimation();
         }
+        DoorController door = FindObjectOfType<DoorController>();
+        if (door != null)
+        {
+            door.SetDoorForDialogue(true);
+        }
     }
     IEnumerator TrackObjectLoadProgress(string path, int chapter, float weight)
     {

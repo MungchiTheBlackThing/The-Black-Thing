@@ -11,10 +11,11 @@ public class DotTextReview : MonoBehaviour
     [SerializeField] private PlayerController PlayerController;
     [SerializeField] private TMP_Text displayText;
     [SerializeField] private Button inputBlockerButton; // 전체화면 버튼
-    [SerializeField] private float fadeDuration = 1.0f;
+    [SerializeField] private float fadeInDuration = 0.3f;
+    [SerializeField] private float fadeOutDuration = 0f;
     [SerializeField] private int currentChapter = 1;
     [SerializeField] private GameObject speechBubble;
-
+    public System.Action onReviewFinished;
     private CanvasGroup speechBubbleGroup;
     private bool userClicked = false;
 
@@ -120,6 +121,9 @@ public class DotTextReview : MonoBehaviour
                 // 마지막 줄이면 유지하고 버튼 비활성화
                 inputBlockerButton.onClick.RemoveListener(OnUserClick);
                 inputBlockerButton.gameObject.SetActive(false);
+
+                onReviewFinished?.Invoke();
+
                 yield break;
             }
         }
@@ -151,10 +155,10 @@ public class DotTextReview : MonoBehaviour
         speechBubbleGroup.blocksRaycasts = true;
         speechBubbleGroup.interactable = true;
 
-        while (time < fadeDuration)
+        while (time < fadeInDuration)
         {
             time += Time.deltaTime;
-            speechBubbleGroup.alpha = Mathf.Lerp(0f, 1f, time / fadeDuration);
+            speechBubbleGroup.alpha = Mathf.Lerp(0f, 1f, time / fadeInDuration);
             yield return null;
         }
 
@@ -169,10 +173,10 @@ public class DotTextReview : MonoBehaviour
         speechBubbleGroup.blocksRaycasts = false;
         speechBubbleGroup.interactable = false;
 
-        while (time < fadeDuration)
+        while (time < fadeOutDuration)
         {
             time += Time.deltaTime;
-            speechBubbleGroup.alpha = Mathf.Lerp(1f, 0f, time / fadeDuration);
+            speechBubbleGroup.alpha = Mathf.Lerp(1f, 0f, time / fadeOutDuration);
             yield return null;
         }
 
