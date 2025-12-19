@@ -20,7 +20,7 @@ MonoBehaviour:
     - rid: 3674199740306685954
   m_TableData:
   - m_Id: 134245019648
-    m_Localized: "\uC77C\uAE30 \uB2E4 \uC37C\uC5B4. \uC790\uAE30 \uC804\uC5D0 \uAC19\uC774
+    m_Localized: "\uC77C\uAE30 \uB2E4 \uC37C\uC5B4.\n\uC790\uAE30 \uC804\uC5D0 \uAC19\uC774
       \uC2DC \uC77D\uC744\uB798?"
     m_Metadata:
       m_Items:
@@ -36,21 +36,25 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199740306685954
   - m_Id: 134354071553
-    m_Localized: "\uB098... \uB208\uC774 \uBB34\uAC70\uC6CC\uC9C0\uACE0 \uC788\uC5B4.\\n\uC774\uC81C
+    m_Localized: "\uB098... \uB208\uC774 \uBB34\uAC70\uC6CC\uC9C0\uACE0 \uC788\uC5B4.\n\uC774\uC81C
       \uAC70\uBBF8\uC904\uC5D0 \uC548\uACA8\uB4E4 \uC2DC\uAC04\uC774\uC57C."
     m_Metadata:
       m_Items:
       - rid: 3674199740306685954
-  - m_Id: 1056470710829056
-    m_Localized: "\uC751... \uC54C\uACA0\uC5B4. \uB098\uB294 \uC790\uB7EC \uAC08\uAC8C.\\n\uC808\uB300
-      \uC544\uC27D\uC9C0 \uC54A\uC544! \uAD1C\uCC2E\uC544!"
+  - m_Id: 25873339628077056
+    m_Localized: "\uC751... \uC54C\uACA0\uC5B4. \uB098\uB294... \uC790\uB7EC \uAC08\uAC8C.\n\uC808\uB300
+      \uC544\uC27D\uC9C0 \uC54A\uC544. \uAD1C\uCC2E\uC544!"
     m_Metadata:
-      m_Items:
-      - rid: 3674199740306685954
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 3674199740306685954
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0070a0411f0000000070e0471f000000007020481f000000017020481f00000000406fc1dac00300
+        m_Entries: 
+        m_SharedEntries:
+        - id: 134245019648
+        - id: 134349877248
+        - id: 134354071552
+        - id: 134354071553

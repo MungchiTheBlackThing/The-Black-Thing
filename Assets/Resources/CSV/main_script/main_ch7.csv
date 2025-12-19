@@ -1,4 +1,4 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,37,1,main_door_open,Player,Main,body_dust,face_blink,text,"...! 뭉치, 무슨 일 있었어?","...! Dot, what happened?",2,,,,Main_Ch7,M7_L0001
 1,37,2,main_door_open,Dot,Main,body_dust,,text,"신경 쓰지 마, <nickname>. 낮에 배운 것을\n성공적으로 실천하는 중이야.","Don’t mind me, <nickname>. I’m putting\ninto motion what I’ve learned today.",3,,,,Main_Ch7,M7_L0002
 1,37,3,main_door_open,Dot,Main,body_dust,,text,‘기분이 좋다’고 생각하면\n‘기분이 좋아’진다는 사실 말이야!,That thinking that I feel good\ncan make me feel good!,4,,,,Main_Ch7,M7_L0003
@@ -61,9 +61,9 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,38,60,main_door_close,Dot,Main,body_null,face_null,text,...(미동이 없다. 진심으로 사과하자.),...,61,,,,Main_Ch7,M7_L0060
 3,38,61,main_door_close,Player,Main,body_null,face_null,text,... 장난쳐서 미안. 아까도 정말\n미안했어. 너랑 대화 나누고 싶어.,"... Sorry about that. And I’m sorry\nfor earlier, too. I’d like to talk it out.",62,,,,Main_Ch7,M7_L0061
 3,38,62,main_door_open,Dot,Main,body_default1,face_blink,text,...,...,63,,,,Main_Ch7,M7_L0062
-3,38,63,main_door_open,Dot,Main,,,text,... 나도 멋대로 굴어서 미안.,... I’m sorry I was stubborn.,64,,,,Main_Ch7,M7_L0063
-3,38,64,main_door_open,Dot,Main,,,text,"나를 괴롭힌 건 <nickname>, 네가 아니었는데.",It’s not like you were\nthe one causing me pain.,65,,,,Main_Ch7,M7_L0064
-3,38,65,main_door_open,Player,Main,,,text,"...! 뭉치, 네 몸에 박혀 있던\n먼지들이 없어졌네?","...! Dot, the dust is gone!",66,,,,Main_Ch7,M7_L0065
+3,38,63,main_door_open,Dot,Main,body_default1,face_eyeroll3,text,... 나도 멋대로 굴어서 미안.,... I’m sorry I was stubborn.,64,,,,Main_Ch7,M7_L0063
+3,38,64,main_door_open,Dot,Main,body_default1,face_blink,text,"나를 괴롭힌 건 <nickname>, 네가 아니었는데.",It’s not like you were\nthe one causing me pain.,65,,,,Main_Ch7,M7_L0064
+3,38,65,main_door_open,Player,Main,body_default1,,text,"...! 뭉치, 네 몸에 박혀 있던\n먼지들이 없어졌네?","...! Dot, the dust is gone!",66,,,,Main_Ch7,M7_L0065
 3,38,66,main_door_open,Player,Main,,,text,"너 조금 작아진 것 같기도 한데, 설마...",You seem smaller too. Don’t tell me...,67,,,,Main_Ch7,M7_L0066
 3,38,67,main_door_open,Dot,Main,,face_eyeroll3,text,"그래. 난 구르고, 토하고, 긁으며 먼지를\n모두 뽑아 냈어. 거친 승부였지.","Yes. I rolled, heaved, scratched, and tore the\ndust away from me. It was a fearsome fight.",68,,,,Main_Ch7,M7_L0067
 3,38,68,main_door_open,Dot,Main,,face_eyeroll3_stay,text,"그 과정에서 내 몸의 일부가 조금\n딸려 나갔지만, 그건 중요하지 않아.","And in the process a part of me was\ntorn off, but that doesn’t matter.",69,,,,Main_Ch7,M7_L0068

@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using UnityEngine;
-using UnityEngine.Video;
 using TMPro;
-using UnityEngine.Localization.Settings;
+using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class MainVideo : MonoBehaviour
 {
+    private GameManager gm;
     public VideoPlayer videoPlayer;
     [SerializeField] public GameObject Rawimage;
 
@@ -35,13 +38,23 @@ public class MainVideo : MonoBehaviour
     [SerializeField] private TMP_Text skipHintText;
     [SerializeField] private float skipHintFadeDuration = 2f;
 
+    [Header("Replay")]
+    [SerializeField] Button replayButton;
+    [SerializeField] Button nextButton;
+
     private bool isVideoPlaying = false;
     private bool skipArmed = false;
+    private bool allowSkip = false;
     private Coroutine skipHintFadeCo;
     public event System.Action OnUserSkipRequested;
+    Action videoEndEvent = null;
 
     private void Start()
     {
+        gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+
+        replayButton.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(false);
         if (videoPlayer != null)
         {
             videoPlayer.playOnAwake = false;
@@ -118,9 +131,13 @@ public class MainVideo : MonoBehaviour
         videoPlayer.seekCompleted += OnSeekCompleted;
     }
 
-    public void PlayVideo()
+    public void PlayVideo(Action videoEndEvent = null)
     {
+        this.videoEndEvent = videoEndEvent;
+        allowSkip = false;
         Debug.Log("Video start");
+        replayButton.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(false);
         StartCoroutine(FadeInAndPlay());
     }
 
@@ -140,7 +157,7 @@ public class MainVideo : MonoBehaviour
 
         if (videoPlayer.isPrepared)
         {
-            if (AudioManager.instance != null) AudioManager.instance.StopBGM();
+            if (AudioManager.Instance != null) AudioManager.Instance.StopBGM();
             else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
             videoPlayer.SetDirectAudioMute(0, false);
             isVideoPlaying = true;
@@ -163,7 +180,7 @@ public class MainVideo : MonoBehaviour
         if (waitingToPlay)
         {
             waitingToPlay = false;
-            if (AudioManager.instance != null) AudioManager.instance.StopBGM();
+            if (AudioManager.Instance != null) AudioManager.Instance.StopBGM();
             else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
             videoPlayer.SetDirectAudioMute(0, false);
             isVideoPlaying = true;
@@ -186,8 +203,68 @@ public class MainVideo : MonoBehaviour
     private void OnVideoEnd(VideoPlayer vp)
     {
         isVideoPlaying = false;
+        replayButton.gameObject.SetActive(true);
+        nextButton.gameObject.SetActive(true);
+        
+    }
+
+    public void OnReplay()
+    {
+        Debug.Log("[MainVideo] Replay requested");
+
+        StopAllCoroutines();
+
+        // 스킵, 상태 초기화
+        isVideoPlaying = false;
+        waitingToPlay = false;
         HideSkipHintImmediate();
-        StartCoroutine(FadeOutAndEnd(vp));
+
+        // 비디오 완전 리셋
+        ResetVideoInternalForReplay();
+
+        // 다시 재생
+        PlayVideo(videoEndEvent);
+        allowSkip = true;
+    }
+
+    private void ResetVideoInternalForReplay()
+    {
+        lastIndex = -1;
+        startsCache = null;
+
+        if (subtitleText != null)
+            subtitleText.text = "";
+
+        if (videoPlayer != null)
+        {
+            videoPlayer.Stop();
+            videoPlayer.time = 0;
+            videoPlayer.frame = 0;
+            videoPlayer.SetDirectAudioMute(0, true);
+
+            // Prepare 다시 호출 (Seek 안정성)
+            videoPlayer.Prepare();
+        }
+
+        Rawimage.SetActive(false);
+        text.SetActive(false);
+
+        if (background != null)
+        {
+            var cg = background.GetComponent<CanvasGroup>();
+            if (cg != null) cg.alpha = 0f;
+            background.SetActive(false);
+        }
+    }
+
+    public void OnNext()
+    {
+        isVideoPlaying = false;
+        HideSkipHintImmediate();
+        StartCoroutine(FadeOutAndEnd(videoPlayer));
+        replayButton.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(false);
+        videoEndEvent?.Invoke();
     }
 
     private IEnumerator FadeOutAndEnd(VideoPlayer vp)
@@ -205,7 +282,7 @@ public class MainVideo : MonoBehaviour
         yield return StartCoroutine(FadeCanvasGroup(bgCg, 1f, 0f, 1f));
         background.SetActive(false);
 
-        if (AudioManager.instance != null) AudioManager.instance.UpdateBGMByChapter(chapter);
+        if (AudioManager.Instance != null) AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
         else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
     }
 
@@ -274,7 +351,7 @@ public class MainVideo : MonoBehaviour
             }
         }
         //스킵 입력처리
-        if (isVideoPlaying)
+        if (isVideoPlaying && allowSkip)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -284,9 +361,8 @@ public class MainVideo : MonoBehaviour
                 }
                 else
                 {
-                    isVideoPlaying = false;
-                    HideSkipHintImmediate();
                     OnUserSkipRequested?.Invoke();
+                    OnNext();
                 }
             }
         }

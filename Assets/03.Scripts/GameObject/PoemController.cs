@@ -24,6 +24,7 @@ public class PoemController : MonoBehaviour
 
     [SerializeField]
     GameObject DotText;
+    [SerializeField] GameObject exitButton;
     const string path = "Background/PoemBackground/";
 
     //현재 타임이 밤인지, 낮인지는 GameManager가 가지고있음
@@ -50,6 +51,10 @@ public class PoemController : MonoBehaviour
         }
         prevPage.gameObject.SetActive(false);
         currentPage = 0; //뜰 때 마다 첫번째 페이지로
+        
+        hasShownDotText = false;
+        if (exitButton != null) exitButton.SetActive(false); // 뭉치 닷 리뷰 안 봤으면 엑스 숨김
+
         StartCoroutine(LoadPoem());
     }
 
@@ -177,7 +182,15 @@ public class PoemController : MonoBehaviour
     private void DotTextOn()
     {
         DotText.SetActive(true);
-        DotText.GetComponent<DotTextReview>().StartReview();
+        var review = DotText.GetComponent<DotTextReview>();
+
+        review.onReviewFinished = OnDotReviewFinished;
+        review.StartReview();
+    }
+
+    public void OnDotReviewFinished()
+    {
+        exitButton.SetActive(true); // X 버튼 표시
     }
 
     public void Exit()

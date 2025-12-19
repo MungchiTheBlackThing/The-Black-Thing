@@ -17,6 +17,9 @@ public class IntroScene : MonoBehaviour
     [SerializeField] GameObject SettingPopup;
     [SerializeField] GameObject StartPopup;
 
+    [SerializeField] AudioSource soundEffect;
+    [SerializeField] AudioSource popupButtonSound;
+
     const string playerInfoDataFileName = "PlayerData.json";
     RecentData data;
     public PlayerInfo playerInfo;
@@ -24,6 +27,7 @@ public class IntroScene : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.PlayBGM(FMODEvents.Instance.bgm_intro);
         playerInfo = new PlayerInfo("Default", 1, GamePatternState.Watching);
         data = RecentManager.Load();
         //1.스플래시 재생
@@ -35,7 +39,8 @@ public class IntroScene : MonoBehaviour
         introGroup.gameObject.SetActive(false);
         splashAnimator.gameObject.SetActive(true);
         loadingAnimator.gameObject.SetActive(false);
-        
+
+        soundEffect.Play();
         StartCoroutine(Wait_Animation(splashAnimator, "SplashAnimation", () =>
         {
             splashAnimator.gameObject.SetActive(false);
@@ -52,12 +57,14 @@ public class IntroScene : MonoBehaviour
 
     public void OnContinue()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, Vector3.zero);
         btnContinue.interactable = false; 
         Play();
     }
 
     public void OnStart()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, Vector3.zero);
         Debug.Log("OnStart");
         btnStart.interactable = false;
         data = RecentManager.Load();
@@ -83,8 +90,14 @@ public class IntroScene : MonoBehaviour
         Play();
     }
 
+    public void PlayPopupButtonSound()
+    {
+        popupButtonSound.Play();
+    }
+
     public void OnSetting()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, Vector3.zero);
         SettingPopup.SetActive(true);
     }
 

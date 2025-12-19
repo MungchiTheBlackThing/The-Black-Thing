@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 
-public class FMODEvents : MonoBehaviour
+public class FMODEvents : Singleton<FMODEvents>
 {
     [field: Header("Diary")]
     [field: SerializeField] public EventReference Pagesound { get; private set; }
@@ -46,21 +46,9 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference bgmmain_3_ver2 { get; private set; }
     [field: SerializeField] public EventReference bgmmain_4 { get; private set; }
     [field: SerializeField] public EventReference bgmmain_death { get; private set; }
+    [field: SerializeField] public EventReference bgm_intro { get; private set; }
 
     // --- 추가: AMB ---
     [field: Header("AMB")]
     [field: SerializeField] public EventReference ambRoom { get; private set; }   // event:/AMB/AMB_Room (파라미터 전환용)
-
-    public static FMODEvents instance { get; private set; }
-
-    private void Awake()
-    {
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
 }

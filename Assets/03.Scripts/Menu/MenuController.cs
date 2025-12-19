@@ -196,7 +196,7 @@ public class MenuController : MonoBehaviour
             MenuDefault.SetActive(true);
             MenuButAnim.SetBool("isDowning", true);
             ExitBut.GetComponent<Button>().enabled = true;
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.MenuOn, this.transform.position);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.MenuOn, this.transform.position);
         }
         else
         {

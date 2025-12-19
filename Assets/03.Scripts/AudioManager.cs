@@ -5,37 +5,25 @@ using FMODUnity;
 using FMOD.Studio;
 using Assets.Script.TimeEnum;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
-    public static AudioManager instance { get; private set; }
-
-    private EventInstance bgmInstance; // ÇöÀç BGM ÀÎ½ºÅÏ½º
+    private EventReference currentBGM;
+    private EventInstance bgmInstance; // ï¿½ï¿½ï¿½ï¿½ BGM ï¿½Î½ï¿½ï¿½Ï½ï¿½
     private EventInstance ambInstance;
+    float sfxVolume = 1f;
+    float bgmVolume = 1f;
     const string EVENT_PATH = "event:/AMB/AMB_Room";
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // ¾À ÀüÈ¯ ½Ã¿¡µµ À¯Áö
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     /// <summary>
-    /// È¿°úÀ½ Àç»ý
+    /// È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     /// </summary>
     public void PlayOneShot(EventReference sound, Vector3 worldPosition)
     {
-        RuntimeManager.PlayOneShot(sound, worldPosition);
+        RuntimeManager.PlayOneShot(sound, worldPosition, sfxVolume);
     }
 
     /// <summary>
-    /// BGM ½ÃÀÛ
+    /// BGM ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     public void PlayBGM(EventReference bgmEvent)
     {
@@ -46,11 +34,12 @@ public class AudioManager : MonoBehaviour
         }
 
         bgmInstance = RuntimeManager.CreateInstance(bgmEvent);
+        bgmInstance.setVolume(bgmVolume);
         bgmInstance.start();
     }
 
     /// <summary>
-    /// BGM Á¤Áö
+    /// BGM ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     public void StopBGM(bool fadeOut = true)
     {
@@ -63,56 +52,67 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
-    /// BGM ±³Ã¼ (±âÁ¸ BGMÀ» ÆäÀÌµå¾Æ¿ôÇÏ°í »õ·Î¿î BGM Àç»ý)
+    /// BGM ï¿½ï¿½Ã¼ (ï¿½ï¿½ï¿½ï¿½ BGMï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½Æ¿ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ BGM ï¿½ï¿½ï¿½)
     /// </summary>
     public void ChangeBGM(EventReference newBGM)
     {
+        if (currentBGM.Equals(newBGM)) return;
+
         StopBGM(true);
         PlayBGM(newBGM);
+        
+        currentBGM = newBGM;
     }
 
-    public void UpdateBGMByChapter(int chapter)
+    public void UpdateBGMByChapter(int chapter, GamePatternState phase)
     {
         EventReference bgmToPlay = default;
 
-        switch (chapter)
+        if (chapter == 12 && IsThinkingOrLater(phase))
         {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-                bgmToPlay = FMODEvents.instance.bgmmain_1;
-                break;
+            bgmToPlay = FMODEvents.Instance.bgmmain_3_ver2;
+        }
+        else
+        {
+            switch (chapter)
+            {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    bgmToPlay = FMODEvents.Instance.bgmmain_1;
+                    break;
 
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-                bgmToPlay = FMODEvents.instance.bgmmain_2;
-                break;
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                    bgmToPlay = FMODEvents.Instance.bgmmain_2;
+                    break;
 
-            case 9:
-            case 10:
-            case 11:
-            case 12:
-                bgmToPlay = FMODEvents.instance.bgmmain_3;
-                break;
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                    bgmToPlay = FMODEvents.Instance.bgmmain_3;
+                    break;
 
-            case 13: // ¿¹½Ã - 12 ÀÌÈÄ¿¡ Ver2 Àû¿ë
-                bgmToPlay = FMODEvents.instance.bgmmain_3_ver2;
-                break;
+                case 13: 
+                    bgmToPlay = FMODEvents.Instance.bgmmain_3_ver2;
+                    break;
 
-            case 14:
-            case 15:
-                bgmToPlay = FMODEvents.instance.bgmmain_4;
-                break;
+                case 14:
+                case 15:
+                    bgmToPlay = FMODEvents.Instance.bgmmain_4;
+                    break;
 
-            default:
-                Debug.LogWarning($"Chapter {chapter}¿¡ ¸Â´Â BGMÀÌ ¼³Á¤µÇ¾î ÀÖÁö ¾Ê½À´Ï´Ù.");
-                return;
+                default:
+                    Debug.LogWarning($"Chapter {chapter}ï¿½ï¿½ ï¿½Â´ï¿½ BGMï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
+                    return;
+            }
         }
 
-        AudioManager.instance.ChangeBGM(bgmToPlay);
+        AudioManager.Instance.ChangeBGM(bgmToPlay);
     }
 
     public void EnsureAMB(EventReference ambEvent, string label = null)
@@ -121,13 +121,35 @@ public class AudioManager : MonoBehaviour
         if (!ambInstance.isValid())
         {
             ambInstance = RuntimeManager.CreateInstance(ambEvent);
-            ambInstance.start(); // Ç×»ó ·çÇÁ À¯Áö
+            ambInstance.start(); // ï¿½×»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
 
         if (!string.IsNullOrEmpty(label))
         {
-            // ÆÄ¶ó¹ÌÅÍ ÀÌ¸§: AMB_Room
+            // ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½: AMB_Room
             ambInstance.setParameterByNameWithLabel("AMB_Room", label);
         }
     }
+
+    public void SetSFXVolume(float f)
+    {
+        sfxVolume = f;
+    }
+
+    public void SetBGMVolume(float f)
+    {
+        bgmInstance.setVolume(f);
+        bgmVolume = f;
+    }
+
+    private bool IsThinkingOrLater(GamePatternState phase)
+    {
+        return phase == GamePatternState.Thinking
+            || phase == GamePatternState.MainB
+            || phase == GamePatternState.Writing
+            || phase == GamePatternState.Play            
+            || phase == GamePatternState.Sleeping
+            || phase == GamePatternState.NextChapter;
+    }
+
 }

@@ -168,18 +168,21 @@ MonoBehaviour:
       - rid: 5827832305795465234
   - m_Id: 52964753426
     m_Localized: "<size=90>CREDIT</size>\n\nCreated and Directed by Andiemae Lee\r\n\r\nArt
-      Direction & Animation by Yoonsun Lee\r\nGame Design by Andiemae Lee\r\n\r\nNarrative
-      Design & Scriptwriting by\r\nAndiemae Lee, Sieun Lee and Eunseo Go\r\n\r\nProgramming
-      by \r\nJunhyun Sim, Heejin Jang and Sooyoung Song\r\nProgramming Advisory by
-      Jiwon Choi\r\n\r\nEnglish Localization by Hansol Jang and Hae Seung Kie\r\nSystem
-      Design by Yuri Choi\r\n\r\nSound Design by Wooyeol Choi, Andiemae Lee and Yoonsun
-      Lee\r\nBackground Music by Wooyeol Choi\r\n\r\nAnimation BGM\r\nChapters 1,
-      2, 4 by Wooyeol Choi\r\nChapters 5, 6, 9, 11, 13 by Woochan Kim\r\nChapter
+      Direction & Animation by Yoonsun Lee\r\n\nNarrative Design & Scriptwriting
+      by\r\nAndiemae Lee, Sieun Lee and Eunseo Go\r\n\r\nGame Design & PM by Andiemae
+      Lee\r\nProgramming by \r\nJunhyun Sim, Suyoung Song and Heejin Jang and \n\r\nEnglish
+      Localization by Hansol Jang and Hae Seung Kie\n\rProduction & Playtest Support
+      by Yuri Choi\r\n\nDevelopment & Player Experience Support by Yuri Choi\r\nExternal
+      Programming Advisory by Jiwon Choi\r\n\nBackground Music\n\"Monster and Human\"
+      by Haksil\n\"Intro Theme Song\" by Wooyeol Choi\n\r\nAnimation BGM\r\nChapters
+      1, 2, 4 by Wooyeol Choi\r\nChapters 5, 6, 9, 11, 13 by Woochan Kim\r\nChapter
       14 by Sam Shandley\r\nChapters 3, 7, 8, 10, 12 - using free assets from nojisuma\r\n\r\nExternal
-      QA Testing by Kihyun Lee\r\n\r\n\r\nSpecial Thanks to our loved ones,\r\nfriends
-      and family, \r\nand our backers from all over the world.\r\n\r\n(\uB4A4\uC5D0
-      \uD6C4\uC6D0\uC790 \uC774\uB984 \uD45C\uAE30)\r\n\r\n<color=#696969>\xA9 2025
-      moonstew games All rights reserved.</color>"
+      QA and Play Testing by Kihyun Lee and JaeYeong Kim\r\n\nBeta Testing for Google
+      Playstore by\n(\uBCA0\uD0C0 \uD14C\uC2A4\uD130 \uCC38\uC5EC\uC790 \uC774\uB984
+      \uD45C\uAE30)\n\n\nSpecial Thanks to our loved ones,\r\nfriends and family,
+      \r\nand our backers from all over the world.\r\n\r\n(\uB4A4\uC5D0 \uD6C4\uC6D0\uC790
+      \uC774\uB984 \uD45C\uAE30)\r\n\r\n<color=#696969>\xA9 2025 moonstew games All
+      rights reserved.</color>\n"
     m_Metadata:
       m_Items:
       - rid: 5827832305795465234
@@ -559,4 +562,91 @@ MonoBehaviour:
     - rid: 5827832305795465234
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0000f2540c0000000000724e0c000000000072540c000000010072540c000000020072540c000000030072540c000000040072540c000000050072540c000000060072540c000000070072540c0000000100f2540c0000000200f2540c0000000300f2540c0000000400f2540c0000000500f2540c0000000600f2540c0000000700f2540c0000000800f2540c0000000900f2540c0000000a00f2540c0000000b00f2540c0000000c00f2540c0000000d00f2540c0000000e00f2540c0000000f00f2540c0000001000f2540c0000001100f2540c0000001200f2540c0000001300f2540c0000001400f2540c0000001500f2540c0000001600f2540c0000001700f2540c0000001800f2540c0000001900f2540c0000001a00f2540c0000001b00f2540c0000001c00f2540c0000001d00f2540c0000001e00f2540c0000001f00f2540c0000002000f2540c0000002100f2540c0000002200f2540c0000002300f2540c0000002400f2540c0000002500f2540c0000002600f2540c0000002700f2540c0000002800f2540c0000002900f2540c0000002a00f2540c0000002b00f2540c0000002c00f2540c0000002d00f2540c0000002e00f2540c0000002f00f2540c0000003000f2540c0000003100f2540c0000003200f2540c0000003300f2540c0000003400f2540c0000003500f2540c0000003600f2540c0000003700f2540c0000003800f2540c0000003900f2540c0000003a00f2540c0000003b00f2540c0000003c00f2540c0000003d00f2540c0000003e00f2540c0000003f00f2540c0000004000f2540c0000004100f2540c0000004200f2540c0000004300f2540c0000004400f2540c0000004500f2540c0000004600f2540c0000004700f2540c0000000000728a5b2c000000406f676f53280000406fffb155280000402f23c25e28000040afa6d85e2800
+        m_Entries: 
+        m_SharedEntries:
+        - id: 52964753408
+        - id: 52855701504
+        - id: 52956364800
+        - id: 52956364801
+        - id: 52956364802
+        - id: 52956364803
+        - id: 52956364804
+        - id: 52956364805
+        - id: 52956364806
+        - id: 52956364807
+        - id: 52964753409
+        - id: 52964753410
+        - id: 52964753411
+        - id: 52964753412
+        - id: 52964753413
+        - id: 52964753414
+        - id: 52964753415
+        - id: 52964753416
+        - id: 52964753417
+        - id: 52964753418
+        - id: 52964753419
+        - id: 52964753420
+        - id: 52964753421
+        - id: 52964753422
+        - id: 52964753423
+        - id: 52964753424
+        - id: 52964753425
+        - id: 52964753426
+        - id: 52964753427
+        - id: 52964753428
+        - id: 52964753429
+        - id: 52964753430
+        - id: 52964753431
+        - id: 52964753432
+        - id: 52964753433
+        - id: 52964753434
+        - id: 52964753435
+        - id: 52964753436
+        - id: 52964753437
+        - id: 52964753438
+        - id: 52964753439
+        - id: 52964753440
+        - id: 52964753441
+        - id: 52964753442
+        - id: 52964753443
+        - id: 52964753444
+        - id: 52964753445
+        - id: 52964753446
+        - id: 52964753447
+        - id: 52964753448
+        - id: 52964753449
+        - id: 52964753450
+        - id: 52964753451
+        - id: 52964753452
+        - id: 52964753453
+        - id: 52964753454
+        - id: 52964753455
+        - id: 52964753456
+        - id: 52964753457
+        - id: 52964753458
+        - id: 52964753459
+        - id: 52964753460
+        - id: 52964753461
+        - id: 52964753462
+        - id: 52964753463
+        - id: 52964753464
+        - id: 52964753465
+        - id: 52964753466
+        - id: 52964753467
+        - id: 52964753468
+        - id: 52964753469
+        - id: 52964753470
+        - id: 52964753471
+        - id: 52964753472
+        - id: 52964753473
+        - id: 52964753474
+        - id: 52964753475
+        - id: 52964753476
+        - id: 52964753477
+        - id: 52964753478
+        - id: 52964753479
+        - id: 48771676372992
+        - id: 11350737010245632
+        - id: 11353222051479552
+        - id: 11363186975391744
+        - id: 11363283670876160

@@ -37,40 +37,23 @@ public class PrologueVideoManager : MonoBehaviour
         }
     }
 
+
+    string currentSceneName;
+    string targetSceneName;
     private IEnumerator RunPrologueFlow(string currentSceneName, string targetSceneName)
     {
         yield return loadSceneManager.StartCoroutine(loadSceneManager.ShowDefaultOverlayOnce(firstOverlaySeconds));
 
-        mainVideo.OnUserSkipRequested += HandleUserSkip;
+        this.currentSceneName = currentSceneName;
+        this.targetSceneName = targetSceneName;
 
         mainVideo.Setting(PROLOGUE_DAY, language);
+        mainVideo.PlayVideo(VideoEnd);
 
-        bool done = false;
-
-        void OnVideoEnd(VideoPlayer vp)
-        {
-            mainVideo.videoPlayer.loopPointReached -= OnVideoEnd;
-            done = true;
-        }
-        mainVideo.videoPlayer.loopPointReached += OnVideoEnd;
-
-        mainVideo.PlayVideo();
-
-        yield return new WaitUntil(() => done || _skipTriggered);
-
-        mainVideo.OnUserSkipRequested -= HandleUserSkip;
-
-        if (_skipTriggered)
-        {
-            mainVideo.EndGameNow();
-        }
-
-        loadSceneManager.LoadScene(currentSceneName, targetSceneName, 0);
     }
 
-    private void HandleUserSkip()
+    void VideoEnd()
     {
-        if (_skipTriggered) return; 
-        _skipTriggered = true;
+        loadSceneManager.LoadScene(currentSceneName, targetSceneName, 0);
     }
 }

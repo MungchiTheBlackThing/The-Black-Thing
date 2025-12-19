@@ -152,12 +152,14 @@ public class MypageUIController : MonoBehaviour
     public void OnValueChangedBGM(float value)
     {
         musicVolume = value;
+        AudioManager.Instance.SetBGMVolume(value);
         //델리게이트 float 값 주어서 값이 변경될 때 음악도 변경
     }
 
     public void OnValueChangeSE(float value)
     {
         seVolume = value;
+        AudioManager.Instance.SetSFXVolume(value);
         //델리게이트 float 값을 주어서 값이 변경될 때 음악도 변경
     }
 

@@ -448,7 +448,7 @@ public class MainPanel : MonoBehaviour
         }
         else { Debug.Log("7"); DialEnd(); return; }
 
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.dialougueDefault, this.transform.position);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialougueDefault, this.transform.position);
         ShowNextDialogue();
     }
 

@@ -121,7 +121,7 @@ public class DotController : MonoBehaviour
     private bool isAfterScriptPlaying = false;
     private bool isSubDialogueAnimPlaying = false;
     private float _idleAnimationTimer;
-    private const float IDLE_ANIMATION_DURATION = 10f; //(단위: 초) 애니메이션 재생 시간 제한 (7분) //[디버깅] 7분 -> 10초
+    private const float IDLE_ANIMATION_DURATION = 3f; //(단위: 초) 애니메이션 재생 시간 제한 (7분) //[디버깅] 7분 -> 10초
 
     GamePatternState tmpState;
 
@@ -213,6 +213,11 @@ public class DotController : MonoBehaviour
         // 단, AfterScript가 재생 중일 때는 예외적으로 타이머가 돌아야 함 (시간 경과 후 종료를 위해)
         bool isBlockedByDialogue = isSubDialogueAnimPlaying || manager.CurrentState is MainDialogue;
         
+        if (subDialogue.activeSelf)
+        {
+            isBlockedByDialogue = true;
+        }
+
         if (isBlockedByDialogue && !isAfterScriptPlaying)
         {
             _idleAnimationTimer = 0f;
@@ -487,10 +492,14 @@ public class DotController : MonoBehaviour
         }
     }
 
-    public void TriggerSub(bool isActive)
+    public void TriggerSub(bool isActive, string animKey = "", float position = -1)
     {
         alertOff();
         subAlert.SetActive(isActive);
+        if (isActive && !string.IsNullOrEmpty(animKey))
+        {
+            ChangeState(DotPatternState.Default, animKey, position, "", true);
+        }
     }
 
     public void TriggerMain(bool isActive)
@@ -728,7 +737,7 @@ public class DotController : MonoBehaviour
     }
     public IEnumerator DotvisibleCheck(bool setoff)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.01f);
         if (setoff)
         {
             Invisible();
@@ -856,7 +865,7 @@ public class DotController : MonoBehaviour
     {
         List<string> animList = new List<string>();
         List<string> defaultSet =   new List<string> { 
-            "anim_default", "anim_reading", "anim_bed", "anim_mold", 
+            "anim_reading", "anim_bed", "anim_mold", 
             "anim_laptop", "anim_walking", "anim_mold2", "anim_spiderweb1", 
             "anim_spiderweb2", "anim_eyesclosed", "anim_eyescorner", "anim_eyesdown", 
             "anim_eyesside", "anim_eyesup", "anim_sleepy_bed", "anim_sleepy_spiderweb" };

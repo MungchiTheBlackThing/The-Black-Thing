@@ -22,13 +22,13 @@ public class SelectionController : MonoBehaviour
         {
             option.transform.GetChild(0).gameObject.SetActive(false);
             selectedCount--;
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.dialouguecheckbox, this.transform.position);
+            //AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialouguecheckbox, this.transform.position);    //엠비언트 효과 빠짐 -> 추후에 추가
         }
         else
         {
             option.transform.GetChild(0).gameObject.SetActive(true);
             selectedCount++;
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.dialougeSelect, this.transform.position);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialougeSelect, this.transform.position);
         }
 
         actionButton.SetActive(selectedCount > 0);

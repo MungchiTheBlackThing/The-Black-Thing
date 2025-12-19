@@ -187,6 +187,7 @@ public class GameManager : MonoBehaviour
     public void SetPhase(GamePatternState newPhase)
     {
         currentPattern = newPhase;
+        AudioManager.Instance.UpdateBGMByChapter(Chapter, currentPattern);
         Debug.Log($"[SetPhase] Phase 설정됨: {newPhase}");
 
         if (phaseToSubseqs.TryGetValue(currentPattern, out var subs) && subs.Count > 0)
@@ -256,6 +257,7 @@ public class GameManager : MonoBehaviour
 
     public void StartMain()
     {
+
         MainDialogue mainState = (MainDialogue)activeState;
         subDialogue.gameObject.SetActive(false);
         string fileName = "main_ch" + Chapter;
@@ -263,7 +265,13 @@ public class GameManager : MonoBehaviour
         {
             if (mainDialoguePanel != null)
             {
-                mainDialoguePanel.SetActive(true);
+                mainDialoguePanel.SetActive(true); // 메인 패널 켜지면
+
+                DoorController door = FindObjectOfType<DoorController>(); // 문 렌더링 끄기
+                if (door != null)
+                {
+                    door.SetDoorForDialogue(false);
+                }
             }
             mainState.StartMain(this, fileName);
         }
@@ -331,6 +339,23 @@ public class GameManager : MonoBehaviour
         activeState = states[patternState];
         activeState.Enter(this, dot);
         subDialogue.gameObject.SetActive(false);
+        dot.alertOff(); // 초기화 시 알림이 켜져있으면 타이머가 돌지 않음.
+
+        if (dot.GetSubScriptListCount(patternState) != 0)
+        {
+            Debug.Log("LoadDataAsync: Starting SubDial");
+            ShowSubDial();
+        }
+
+        if (patternState == GamePatternState.Thinking)
+        {
+            dot.UpdateIdleAnimation();
+        }
+        DoorController door = FindObjectOfType<DoorController>();
+        if (door != null)
+        {
+            door.SetDoorForDialogue(true);
+        }
     }
     IEnumerator TrackObjectLoadProgress(string path, int chapter, float weight)
     {
@@ -428,34 +453,81 @@ public class GameManager : MonoBehaviour
         {
             isready = false;
             nxscript = dot.GetnxSubScriptList(Pattern);
-
-            Debug.Log("다음 스크립트 시간: " + nxscript.Delay);
-            float startTime = UnityEngine.Time.time;
-            targetTime = startTime + nxscript.Delay*60;
-
-            Debug.Log("현재 스크립트 시간: " + script.Delay);
-
-            float elapsed = 0f;
-            while (elapsed < script.Delay*60)
+            if (nxscript != null)
             {
-                if (isSkipping) yield break;
-                yield return null;
-                elapsed += UnityEngine.Time.deltaTime;
+                // nxscript.Delay는 분 단위로 추정됩니다.
+                DateTime triggerTimeForSub2 = DateTime.Now.AddSeconds(nxscript.Delay * 60);
+                PlayerPrefs.SetString("Sub2TriggerTimestamp", triggerTimeForSub2.ToBinary().ToString());
+                PlayerPrefs.Save();
+                Debug.Log($"[저장] Sub2 트리거 시간 저장됨: {triggerTimeForSub2}");
+            }
+            else
+            {
+                Debug.Log("다음 스크립트(nxscript)가 없습니다.");
+            }
+
+            //챕터 1일 때 SubSeq 1 즉시 실행
+            if (Chapter != 1)
+            {
+                Debug.Log("현재 스크립트 시간: " + script.Delay);
+                float elapsed = 0f;
+                //[디버그] 테스트용으로 서브1 진입 대기시간 script.Delay*60 -> 10초로 변경
+                while (elapsed < 10f)
+                {
+                    if (isSkipping) yield break;
+                    yield return null;
+                    elapsed += UnityEngine.Time.deltaTime;
+                }
+            }
+            else
+            {
+                Debug.Log("[예외] 챕터 1이므로 SubSeq 1 대기 시간 없음.");
             }
 
             if (!isSkipping)
             {
                 Debug.Log("현재 스크립트 키: " + script.ScriptKey);
-                dot.TriggerSub(true);
+                dot.TriggerSub(true, script.DotAnim, script.DotPosition);
                 pc.ProgressSubDial(script.ScriptKey);
             }
         }
         else if (pc.GetSubseq() == 2)
         {
-            Debug.Log("현재 스크립트 키: " + script.ScriptKey);
-            float waitTime = targetTime - UnityEngine.Time.time;
-            Debug.Log("기다려야 하는 시간: " + waitTime);
+            //저장된 SubSeq 2 트리거 시간을 불러와 대기 시간 계산
+            float waitTime = 10f; //[디버그 ]기본 대기 시간
+            string timestampStr = PlayerPrefs.GetString("Sub2TriggerTimestamp", "");
 
+            if (!string.IsNullOrEmpty(timestampStr))
+            {
+                try
+                {
+                    long temp = Convert.ToInt64(timestampStr);
+                    DateTime triggerTime = DateTime.FromBinary(temp);
+
+                    if (triggerTime > DateTime.Now)
+                    {
+                        waitTime = (float)(triggerTime - DateTime.Now).TotalSeconds;
+                    }
+                    else
+                    {
+                        waitTime = 0; // 이미 시간이 지났으면 바로 실행
+                    }
+                    Debug.Log($"[로드] Sub2 트리거 시간 로드: {triggerTime}, 남은 시간: {waitTime}초");
+                    PlayerPrefs.DeleteKey("Sub2TriggerTimestamp"); // 사용한 키는 삭제
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Sub2 트리거 시간 변환 오류: {e.Message}. 기본 대기 시간을 사용합니다.");
+                }
+            }
+            else
+            {
+                // 기존 targetTime 로직은 세션 간 지속성이 없으므로, 타임스탬프가 없는 경우 fallback 처리
+                Debug.LogWarning("Sub2 트리거 시간을 찾을 수 없습니다. 디버그 값(10초)을 사용합니다.");
+            }
+
+            Debug.Log("기다려야 하는 시간: " + waitTime);
+            
             if (waitTime > 0f)
             {
                 float elapsed = 0f;
@@ -470,16 +542,17 @@ public class GameManager : MonoBehaviour
             if (!isSkipping)
             {
                 Debug.Log("서브 2 실행");
-                dot.TriggerSub(true);
+                dot.TriggerSub(true, script.DotAnim, script.DotPosition);
                 pc.ProgressSubDial(script.ScriptKey);
             }
         }
-        else
+        else //subseq 3,4
         {
             Debug.Log("현재 스크립트 시간: " + script.Delay);
 
             float elapsed = 0f;
-            while (elapsed < script.Delay*60)
+            //[디버그] 테스트용으로 서브3,4 진입 대기시간 script.Delay*60 -> 10초로 변경  
+            while (elapsed < 10f)
             {
                 if (isSkipping) yield break;
                 yield return null;
@@ -489,7 +562,7 @@ public class GameManager : MonoBehaviour
             if (!isSkipping)
             {
                 Debug.Log("현재 스크립트 키: " + script.ScriptKey);
-                dot.TriggerSub(true);
+                dot.TriggerSub(true, script.DotAnim, script.DotPosition);
                 pc.ProgressSubDial(script.ScriptKey);
             }
         }
