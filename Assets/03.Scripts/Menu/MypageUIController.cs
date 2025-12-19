@@ -27,6 +27,12 @@ public class MypageUIController : MonoBehaviour
     [SerializeField] string navStringTable = "SystemUIText";
     [SerializeField] List<string> popupPageLocalizationKeys;
 
+    [SerializeField] GameObject TimeSetPopup;
+    [SerializeField] private TMP_Text timeLabel;
+
+
+
+
 
     string userID = "";
     string userName = "";
@@ -43,6 +49,9 @@ public class MypageUIController : MonoBehaviour
     TMP_Text nicknameTxt;
     [SerializeField]
     TMP_Text closeTxt;
+
+    private int _uiHour24 = 11;
+    private int _uiMinute = 0;
     #endregion
 
 
@@ -82,6 +91,7 @@ public class MypageUIController : MonoBehaviour
         }
         prevBut.SetActive(false);
         popupPage[pageIdx].SetActive(true);
+        RefreshTimeUI();
 
         UpdateNavButtonsVisibility();
         UpdateNavButtonText();
@@ -407,6 +417,35 @@ public class MypageUIController : MonoBehaviour
         }
 
         return string.Empty;
+    }
+
+    public void OpenTimeSettingPopup()
+    {
+        if (TimeSetPopup == null) return;
+
+        var popup = TimeSetPopup.GetComponent<TimeSettingPopupController>();
+        if (popup == null) return;
+
+        popup.Open(_uiHour24, _uiMinute, ApplyTime);
+    }
+
+    private void ApplyTime(int hour24, int minute)
+    {
+        _uiHour24 = hour24;
+        _uiMinute = minute;
+
+        RefreshTimeUI();
+    }
+
+    private void RefreshTimeUI()
+    {
+        bool isPM = _uiHour24 >= 12;
+
+        int hour12 = _uiHour24 % 12;
+        if (hour12 == 0) hour12 = 12;
+
+        if (timeLabel != null)
+            timeLabel.text = $"{(isPM ? "PM" : "AM")} {hour12:00}:{_uiMinute:00}";
     }
 
 
