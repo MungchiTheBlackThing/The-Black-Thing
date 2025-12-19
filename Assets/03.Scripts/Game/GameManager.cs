@@ -399,7 +399,6 @@ public class GameManager : MonoBehaviour
         loadingProgressBar.value = 1; //모든 작업이 끝났음.
         //GamePatternState patternState = (GamePatternState)pc.GetAlreadyEndedPhase();
         GamePatternState patternState = (GamePatternState)pc.GetCurrentPhase();
-        dot.alertOff(); // 초기화 시 알림이 켜져있으면 타이머가 돌지 않으므로, 상태 진입 전에 강제로 끈다
         currentPattern = patternState;
         Debug.Log($"[디버깅]초기 스테이트 설정: {patternState}");
         activeState = states[patternState];
@@ -490,9 +489,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SubDialog(DotController dot = null)
     {
-        dot.TriggerSub(false);
         subDialogue.gameObject.SetActive(true);
-
         subDialogue.gameObject.SetActive(false);
 
         ScriptList script = dot.GetSubScriptList(Pattern);
@@ -506,48 +503,32 @@ public class GameManager : MonoBehaviour
             yield break;
         }
 
-        //ScriptList nxscript = null;
         Debug.Log($"SubDialog 진입 - Phase: {Pattern}, Subseq: {pc.GetSubseq()}");
 
         // 각 이벤트에 대한 고유 키를 사용하여 타이머가 겹치지 않도록
         string timestampKey = "PendingEventTimestamp_" + Chapter + "_" + Pattern.ToString() + "_" + pc.GetSubseq();
         string timestampStr = PlayerPrefs.GetString(timestampKey, "");
-        DateTime triggerTime = DateTime.Now;
-        bool hasTimer = false;
+        DateTime triggerTime;
 
-        if (!string.IsNullOrEmpty(timestampStr))
+        if (string.IsNullOrEmpty(timestampStr))
         {
-            try
-            {
-                long temp = Convert.ToInt64(timestampStr);
-                triggerTime = DateTime.FromBinary(temp);
-                hasTimer = true;
-                Debug.Log($"[로드] 이벤트 트리거 시간 로드: {triggerTime}");
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"이벤트 트리거 시간 변환 오류: {e.Message}. 스크립트 Delay 값을 사용합니다.");
-                float delay = script.Delay * 0.5f; // 문제가 생기면 스크립트의 Delay 값(분)으로 복구 [디버그] script.Delay * 60f -> script.Delay * 0.5f
-                triggerTime = DateTime.Now.AddSeconds(delay);
-                PlayerPrefs.SetString(timestampKey, triggerTime.ToBinary().ToString());
-                PlayerPrefs.Save();
-                hasTimer = true;
-            }
+            // 타이머가 존재하지 않으면 새로 설정
+            dot.TriggerSub(false); // 새 타이머 시작 시에만 알림을 끈다.
+            float delay = script.Delay * 0.5f;  //[디버그] script.Delay * 60f -> script.Delay * 0.5f
+            triggerTime = DateTime.Now.AddSeconds(delay);
+            PlayerPrefs.SetString(timestampKey, triggerTime.ToBinary().ToString());
+            PlayerPrefs.Save();
+            Debug.Log($"[저장] 새 이벤트 타이머 저장됨: {triggerTime}, 대기 시간: {delay}초");
         }
         else
         {
-            float delay = script.Delay * 0.5f;  //[디버그] script.Delay * 60f -> script.Delay * 0.5f
-            if (delay > 0) // Delay가 0초 이상일 때만 타이머 저장
-            {
-                triggerTime = DateTime.Now.AddSeconds(delay);
-                PlayerPrefs.SetString(timestampKey, triggerTime.ToBinary().ToString());
-                PlayerPrefs.Save();
-                hasTimer = true;
-                Debug.Log($"[저장] 이벤트 트리거 시간 저장됨: {triggerTime}, 대기 시간: {delay}초");
-            }
+            //타이머가 존재하면 
+            triggerTime = DateTime.FromBinary(Convert.ToInt64(timestampStr));
+            Debug.Log($"[로드] 이벤트 트리거 시간 로드: {triggerTime}");
         }
 
-        if (hasTimer)
+        // 타이머가 아직 끝나지 않았으면 남은 시간 동안 대기
+        if (DateTime.Now < triggerTime)
         {
             while (DateTime.Now < triggerTime)
             {

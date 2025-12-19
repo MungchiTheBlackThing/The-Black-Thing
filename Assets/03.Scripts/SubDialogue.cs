@@ -287,6 +287,17 @@ public class SubDialogue : MonoBehaviour
 
     public void Subexit()
     {
+        //이벤트가 완전히 종료되는 시점에 타이머 키를 삭제
+        if (manager != null && playerController != null)
+        {
+            // MarkSubWatched/plusSubseq가 호출되기 전의 subseq 번호 사용
+            int completedSubseq = playerController.GetSubseq();
+            string timestampKey = "PendingEventTimestamp_" + manager.Chapter + "_" + manager.Pattern.ToString() + "_" + completedSubseq;
+            PlayerPrefs.DeleteKey(timestampKey);
+            PlayerPrefs.Save();
+            Debug.Log($"[삭제] 서브 이벤트 타이머 키 삭제 (종료 시점): {timestampKey}");
+        }
+
         if (dialogueData != null && dialogueData.name == "tutorial_sub")
         {
             Debug.Log(dialogueData.name);
