@@ -51,7 +51,11 @@ public class MainVideo : MonoBehaviour
 
     private void Start()
     {
-        gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        GameObject gc = GameObject.FindWithTag("GameController");
+        if (gc != null)
+        {
+            gm = gc.GetComponent<GameManager>();
+        }
 
         replayButton.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
@@ -282,7 +286,10 @@ public class MainVideo : MonoBehaviour
         yield return StartCoroutine(FadeCanvasGroup(bgCg, 1f, 0f, 1f));
         background.SetActive(false);
 
-        if (AudioManager.Instance != null) AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
+        if (AudioManager.Instance != null)
+        {
+            if (gm != null) AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
+        }
         else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
     }
 

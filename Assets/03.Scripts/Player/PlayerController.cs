@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         if (Chapter <= 0 || Chapter > 15) return null;
 
-        return player.GetSubPhase(Chapter - 1);
+        return player.GetSubPhase(Chapter);
     }
 
 

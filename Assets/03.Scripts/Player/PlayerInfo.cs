@@ -100,14 +100,13 @@ public class PlayerInfo
     public List<bool> GetSubPhase(int Chapter)
     {
         List<bool> subPhase = new List<bool>();
+        int chapterIndex = Chapter - 1;
 
         //4개씩 끊어서 전달한다.
         for (int i = 0; i < 4; i++)
         {
-            //0 1 2 3
-            //chapter 1, 4 5 6 7
-            //c2, 8 9 10 11
-            subPhase.Add(subSuccessOrNot[Chapter * 4 + i]);
+            // 서브챕터 성공유무 반환
+            subPhase.Add(subSuccessOrNot[chapterIndex * 4 + i]);
         }
 
         return subPhase;

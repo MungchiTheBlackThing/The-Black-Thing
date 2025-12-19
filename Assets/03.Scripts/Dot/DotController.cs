@@ -225,7 +225,7 @@ public class DotController : MonoBehaviour
         }
 
         // 3. 타이머 로직 실행 조건: AfterScript 재생 중이거나, Thinking 페이즈(랜덤 애니메이션)인 경우
-        bool shouldRunTimer = isAfterScriptPlaying || manager.Pattern == GamePatternState.Thinking;
+        bool shouldRunTimer = isAfterScriptPlaying || (manager.Pattern == GamePatternState.Thinking) || (manager.Pattern == GamePatternState.Watching);
 
         if (shouldRunTimer)
         {
@@ -398,6 +398,28 @@ public class DotController : MonoBehaviour
         //}
 
         //return scripts[subseq - 1];
+    }
+
+    // [추가] 페이즈별 스크립트 가져오기 (MainA, MainB 등 subseq와 무관한 경우 처리)
+    public ScriptList GetScriptForPhase(GamePatternState state)
+    {
+        if (manager != null) chapter = manager.Chapter;
+
+        // MainA, MainB는 subseq와 상관없이 첫 번째 스크립트를 가져옴
+        // ScriptListParser에서 MainA, MainB는 mainScriptLists에 저장됨
+        if (state == GamePatternState.MainA || state == GamePatternState.MainB)
+        {
+            if (mainScriptLists != null && chapter > 0 && chapter <= mainScriptLists.Count)
+            {
+                var list = mainScriptLists[chapter - 1];
+                foreach (var s in list)
+                {
+                    if (s.GameState == state) return s;
+                }
+            }
+            return null;
+        }
+        return GetSubScriptList(state);
     }
 
     public ScriptList GetnxSubScriptList(GamePatternState State)
@@ -853,18 +875,24 @@ public class DotController : MonoBehaviour
                 ChangeState(DotPatternState.Default, randomAnim, -1);
                 break;
             case GamePatternState.Watching:
-                // Watching 페이즈 때 dot이 외출하지 않았을 때 anim_mud 재생
+                // Watching: States.cs에서 외출 시 SetActive(false) 처리함.
+                // 따라서 여기 들어왔다는 것은 외출하지 않았다는 뜻이므로 anim_mud 재생 (상태 유지)
                 PlayMudAnimation(manager.Chapter);
                 break;
             case GamePatternState.Sleeping:
                 // Sleeping 페이즈의 기본 애니메이션 복구
+                // Sleeping: 기본 애니메이션 anim_sleep 고정 (랜덤 X)
                 Debug.Log($"[DotController] Playing default animation for Sleeping phase: anim_sleep");
                 ChangeState(DotPatternState.Trigger, "anim_sleep", 10);
+                // Trigger 타입으로 재생하여 우선순위 확보
+                ChangeState(DotPatternState.Trigger, "anim_sleep", 10, "", true);
                 break;
             case GamePatternState.Writing:
                 // Writing 페이즈의 기본 애니메이션 복구
+                // Writing: 기본 애니메이션 anim_diary 고정 (랜덤 X)
                 Debug.Log($"[DotController] Playing default animation for Writing phase: anim_diary");
                 ChangeState(DotPatternState.Phase, "anim_diary");
+                ChangeState(DotPatternState.Phase, "anim_diary", -1, "", true);
                 break;
             default:
                 Debug.Log($"[DotController] No specific idle animation for phase '{manager.Pattern}'.");

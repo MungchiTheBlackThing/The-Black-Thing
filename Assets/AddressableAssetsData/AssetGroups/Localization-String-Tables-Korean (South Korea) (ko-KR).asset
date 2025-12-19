@@ -17,344 +17,401 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: dbe7970027709da4f9db404867667f0c
   m_SerializeEntries:
-  - m_GUID: 4e842b81e532b3e478730d3be4455713
-    m_Address: IntroUIText_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-  - m_GUID: 70a36aadb71424f4fb3cae2abe65ec44
-    m_Address: ChapterLoadingUIText_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-  - m_GUID: 204ab3940e9ef8b43afd2137afcc96b0
-    m_Address: Tuto_Main_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 8db252152f685a744a69a3b4faca3d62
-    m_Address: Tuto_Sub_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 9ad38997d3737ef448b281e5e3206921
-    m_Address: Main_Ch1_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 26df44aa8458c794c93a103c73a60c05
-    m_Address: TutorialUIText_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-  - m_GUID: d5f34a3dfaf429e4884e6848f4e1f596
-    m_Address: Main_Ch2_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: f59979ac6bd1d744b86ae638f026f86a
-    m_Address: Main_Ch3_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 2ff44b5fe6989c140af9b04885f6ffb1
-    m_Address: Main_Ch4_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: b4606be5b0b67fa4fb5b26ba201e55e9
-    m_Address: Main_Ch5_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: fd86f24c04901ab41a1dcac3e5305827
-    m_Address: Main_Ch6_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: e1132826347524e4490361d4d90eb578
-    m_Address: Main_Ch7_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: b9d8dfdc2a8f4294793681185a9b07d4
-    m_Address: Main_Ch8_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 35bf3be66fc7c384bbf18f231bf6b0de
-    m_Address: Main_Ch9_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 43fcb0984d7bf1a4eb0895df3faad93a
-    m_Address: Main_Ch10_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 723d4d6d12e078a4cac253dd00b043c6
-    m_Address: Main_Ch11_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 7c925aa606e89bf479106a0ea33e882f
-    m_Address: Main_Ch12_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: f8920a463715148479c728e20129e3d9
-    m_Address: Main_Ch13_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: bf419a40919e40844a5a3c56d0499b00
-    m_Address: Main_Ch14_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 9a57248d8f9f9af4eb4d40263beff90d
-    m_Address: Sub_Ch1_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 5597aec030fead443b6ab15c308f9031
-    m_Address: Sub_Ch2_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: a28976f9d6e271344bf15db25be77fb4
-    m_Address: Sub_Ch3_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: db6fd86e5902f134283188ba2a50f6f7
-    m_Address: Sub_Ch4_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 074f78e1befbc2b40a1ec16b6860f4e6
-    m_Address: Sub_Ch5_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
   - m_GUID: 028107e008401e44cbd0b69a8be35971
     m_Address: Sub_Ch6_ko-KR
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ko-KR
     - Preload
-  - m_GUID: 3a1b2a276c893d044bec6453586b0075
-    m_Address: Sub_Ch7_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: b45a045ca07a96d4c8165c379c411c31
-    m_Address: Sub_Ch8_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 86f5e74e6d643c94799199f3737dd32d
-    m_Address: Sub_Ch9_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: c6d910faf33f67344b39fc04c9b3b420
-    m_Address: Sub_Ch10_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 442d1a9567b1d024d8bd7f781fc383f2
-    m_Address: Sub_Ch11_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 60cd5d9691de0134ca663a5faca599d8
-    m_Address: Sub_Ch12_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 7f2c63656f39c74459a2e5c6c842900b
-    m_Address: Sub_Ch13_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 8ec6914c1919eac4da643223f8b30e27
-    m_Address: Sub_Ch14_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: ef9f8b53f7ad4654a827765fa9cfbeec
-    m_Address: SystemUIText_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: fd2a69aadaf309f4e8105f4d6c03b744
-    m_Address: SrcDay1_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 1ec5f4987fd569f4a9e08324f901001d
-    m_Address: SrcDay2_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: ef25ca1e289cc884691feb25a676584c
-    m_Address: SrcDay3_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 2b3494dd8bd897e45bbd41bf1362fc1b
-    m_Address: SrcDay4_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 068d1dc9407e1e7449baa9e6a259d438
     m_Address: SrcDay5_ko-KR
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ko-KR
     - Preload
-  - m_GUID: b1b6c49a744d4794d92f4fdffd8c640f
-    m_Address: SrcDay6_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 1c5377b8fe78d144481c6683a1c260c4
-    m_Address: SrcDay7_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 28b46e44bc89df24a9e88847dd6a220b
-    m_Address: SrcDay8_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 8a28b772f9545d24682727918708d9b8
-    m_Address: SrcDay9_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 891101e42c911c5479b9fdca8756fe3c
-    m_Address: SrcDay10_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 9682573687546cb4c81a1bc4931fbc40
-    m_Address: SrcDay11_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 321749d47a471fb4d8607312dd4d3d56
-    m_Address: SrcDay12_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 794ba58e951b43143927f31e8c767112
-    m_Address: SrcDay13_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 4d34087fa07faed4fb3991a9ffedb6b6
-    m_Address: SrcDay14_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 2b875e0932354b544bc83fb925254c3b
-    m_Address: WatchingNoteUI_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: ebb03f4e220659c4a8b94d718b58acef
-    m_Address: PoetryUIText_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 992cd26bfbe09254797ef4df39236040
-    m_Address: MoonRadioUIText_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 1f45d3a9065c94040ad38e576e42a872
-    m_Address: DiaryUIText_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 2764d7488693b2944915f5bb0c86a65e
-    m_Address: SrcDay100_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-  - m_GUID: 31ea79b3d080443418e9e3b109e069e3
-    m_Address: PoemText_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: 4e870dc993e180e4298b44c3e38163d2
-    m_Address: PoemReview_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
-  - m_GUID: c29e56b3acf4dcc4ab797ceb469ff98c
-    m_Address: MoonRadioText_ko-KR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ko-KR
-    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 06c0e58ebef30984894b9ac65eee5184
     m_Address: SkipSleeping_ko-KR
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ko-KR
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 074f78e1befbc2b40a1ec16b6860f4e6
+    m_Address: Sub_Ch5_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c5377b8fe78d144481c6683a1c260c4
+    m_Address: SrcDay7_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ec5f4987fd569f4a9e08324f901001d
+    m_Address: SrcDay2_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f45d3a9065c94040ad38e576e42a872
+    m_Address: DiaryUIText_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 204ab3940e9ef8b43afd2137afcc96b0
+    m_Address: Tuto_Main_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26df44aa8458c794c93a103c73a60c05
+    m_Address: TutorialUIText_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2764d7488693b2944915f5bb0c86a65e
+    m_Address: SrcDay100_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28b46e44bc89df24a9e88847dd6a220b
+    m_Address: SrcDay8_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b3494dd8bd897e45bbd41bf1362fc1b
+    m_Address: SrcDay4_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b875e0932354b544bc83fb925254c3b
+    m_Address: WatchingNoteUI_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ff44b5fe6989c140af9b04885f6ffb1
+    m_Address: Main_Ch4_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 31ea79b3d080443418e9e3b109e069e3
+    m_Address: PoemText_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 321749d47a471fb4d8607312dd4d3d56
+    m_Address: SrcDay12_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35bf3be66fc7c384bbf18f231bf6b0de
+    m_Address: Main_Ch9_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a1b2a276c893d044bec6453586b0075
+    m_Address: Sub_Ch7_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43fcb0984d7bf1a4eb0895df3faad93a
+    m_Address: Main_Ch10_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 442d1a9567b1d024d8bd7f781fc383f2
+    m_Address: Sub_Ch11_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d34087fa07faed4fb3991a9ffedb6b6
+    m_Address: SrcDay14_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e842b81e532b3e478730d3be4455713
+    m_Address: IntroUIText_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e870dc993e180e4298b44c3e38163d2
+    m_Address: PoemReview_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5597aec030fead443b6ab15c308f9031
+    m_Address: Sub_Ch2_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60cd5d9691de0134ca663a5faca599d8
+    m_Address: Sub_Ch12_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70a36aadb71424f4fb3cae2abe65ec44
+    m_Address: ChapterLoadingUIText_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 723d4d6d12e078a4cac253dd00b043c6
+    m_Address: Main_Ch11_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 794ba58e951b43143927f31e8c767112
+    m_Address: SrcDay13_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c925aa606e89bf479106a0ea33e882f
+    m_Address: Main_Ch12_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f2c63656f39c74459a2e5c6c842900b
+    m_Address: Sub_Ch13_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 86f5e74e6d643c94799199f3737dd32d
+    m_Address: Sub_Ch9_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 891101e42c911c5479b9fdca8756fe3c
+    m_Address: SrcDay10_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a28b772f9545d24682727918708d9b8
+    m_Address: SrcDay9_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8db252152f685a744a69a3b4faca3d62
+    m_Address: Tuto_Sub_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ec6914c1919eac4da643223f8b30e27
+    m_Address: Sub_Ch14_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9682573687546cb4c81a1bc4931fbc40
+    m_Address: SrcDay11_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 992cd26bfbe09254797ef4df39236040
+    m_Address: MoonRadioUIText_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a57248d8f9f9af4eb4d40263beff90d
+    m_Address: Sub_Ch1_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ad38997d3737ef448b281e5e3206921
+    m_Address: Main_Ch1_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a28976f9d6e271344bf15db25be77fb4
+    m_Address: Sub_Ch3_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1b6c49a744d4794d92f4fdffd8c640f
+    m_Address: SrcDay6_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b45a045ca07a96d4c8165c379c411c31
+    m_Address: Sub_Ch8_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4606be5b0b67fa4fb5b26ba201e55e9
+    m_Address: Main_Ch5_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9d8dfdc2a8f4294793681185a9b07d4
+    m_Address: Main_Ch8_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf419a40919e40844a5a3c56d0499b00
+    m_Address: Main_Ch14_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c29e56b3acf4dcc4ab797ceb469ff98c
+    m_Address: MoonRadioText_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6d910faf33f67344b39fc04c9b3b420
+    m_Address: Sub_Ch10_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5f34a3dfaf429e4884e6848f4e1f596
+    m_Address: Main_Ch2_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db6fd86e5902f134283188ba2a50f6f7
+    m_Address: Sub_Ch4_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1132826347524e4490361d4d90eb578
+    m_Address: Main_Ch7_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ebb03f4e220659c4a8b94d718b58acef
+    m_Address: PoetryUIText_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef25ca1e289cc884691feb25a676584c
+    m_Address: SrcDay3_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef9f8b53f7ad4654a827765fa9cfbeec
+    m_Address: SystemUIText_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f59979ac6bd1d744b86ae638f026f86a
+    m_Address: Main_Ch3_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8920a463715148479c728e20129e3d9
+    m_Address: Main_Ch13_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd2a69aadaf309f4e8105f4d6c03b744
+    m_Address: SrcDay1_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd86f24c04901ab41a1dcac3e5305827
+    m_Address: Main_Ch6_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: ccf0751a4aca0824caf678229173be50, type: 2}
   m_SchemaSet:
