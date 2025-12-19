@@ -14,8 +14,6 @@ public class TimeSettingPopupController : MonoBehaviour
     [SerializeField] private ScrollRect hourScroll;
     [SerializeField] private ScrollRect minuteScroll;
 
-    // 선택값 표시(선택: 선택된 항목 자체에 표시가 있으니 없어도 됨)
-    // [SerializeField] private TMP_Text hourText;
 
     private int _originalHour24;
     private int _originalMinute;
@@ -27,7 +25,7 @@ public class TimeSettingPopupController : MonoBehaviour
     [Header("Scroll Snap")]
     [SerializeField] private bool enableSnap = true;
     [SerializeField] private float snapSpeed = 18f;
-    [SerializeField] private float stopVelocityThreshold = 80f; // 40~150 사이에서 취향 튜닝
+    [SerializeField] private float stopVelocityThreshold = 80f;
 
 
     private System.Action<int,int> _onApplyTime;
@@ -215,14 +213,12 @@ public class TimeSettingPopupController : MonoBehaviour
 
     private void JumpToHour(int hour12)
     {
-        // Hour 콘텐츠가 "01~12" 순서로 되어 있다고 가정
         int index = Mathf.Clamp(hour12, 1, 12) - 1;
         SetScrollToIndex(hourScroll, index);
     }
 
     private void JumpToMinute(int minute)
     {
-        // Minute 콘텐츠가 "00,10,20,30,40,50" (6개) 라고 가정
         int idx = Mathf.RoundToInt(minute / 10f);
         idx = Mathf.Clamp(idx, 0, 5);
         SetScrollToIndex(minuteScroll, idx);
