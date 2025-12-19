@@ -1,9 +1,9 @@
-﻿Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
+Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
 1,3,1,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 이게 뭐야?","<nickname>, what’s this?",2,,,,Sub_Ch1,S1_L0001
 1,3,2,1,Dot,Sub,,text,빵 위에 피어난 거뭇거뭇한 거.,This black smudge on\nthe piece of bread.,3,,,,Sub_Ch1,S1_L0002
 1,3,3,1,Player,Default,anim_eyescorner,selection,"으악, 곰팡이다!|저런, 곰팡이네.","Gah, mold!|Huh. Mold.",4|4,sun|moon,,,Sub_Ch1,S1_L0003
 1,3,4,1,Player,Default,,text,먹다 만 빵이 있었다는 걸\n까먹었어... 버려야겠다.,I forgot I had some left-over\nbread. I’d better throw it away.,5,,,,Sub_Ch1,S1_L0004
-1,3,5,1,Dot,Sub,anim_eyesblink,text,‘곰팡이’가 뭐야? 네가\n이걸 싫어하는 게 느껴져.,What’s “mold”? I get the sense\nit’s something you don’t like.,6,,,,Sub_Ch1,S1_L0005
+1,3,5,1,Dot,Sub,anim_eyesblink,text,‘곰팡이’가 뭐야? 네가\n이걸 싫어하는 게 느껴져.,What’s ‘mold’? I get the sense\nit’s something you don’t like.,6,,,,Sub_Ch1,S1_L0005
 1,3,6,1,Player,Sub,,text,"곰팡이는 습하거나 어두운 곳, 상하거나\n썩은 음식 등에서 피어나는 생물이야.","It’s what grows in damp or\ndark places. Or on spoiled, rotten food.",7,,,,Sub_Ch1,S1_L0006
 1,3,7,1,Player,Sub,,text,"으, 미안해.",Sorry about that.,8,,,,Sub_Ch1,S1_L0007
 1,3,8,1,Player,Sub,,text,지구에 온 첫날부터\n이런 걸 보게 하다니.,I hope it doesn’t give you the wrong idea\nabout Earth on your first day here.,9,,,,Sub_Ch1,S1_L0008
@@ -90,7 +90,7 @@
 3,5,89,1,Player,Sub,,text,"맞아, ‘의미와 뜻’이 하나의 맛이고, 단어는\n그것을 가둬 둔 구슬이라 생각해 보자.","Let’s say each meaning is a flavor,\nand a word the marble that encases it.",90,,,,Sub_Ch1,S1_L0089
 3,5,90,1,Player,Sub,,text,"세상에는, 그리고 마음 안에는\n수많은 비정형의 ‘맛’들이 존재해.","There are numerous intangible\n‘flavors’ in the world, and within us.",91,,,,Sub_Ch1,S1_L0090
 3,5,91,1,Player,Sub,anim_eyesside_turn,text,"그걸 전달하고자 단어라는 구슬을 만들었는\n데, 때로는 그 개수가 부족할 때도 있었지.","To deliver them we made marbles, or words,\nbut sometimes there weren’t enough.",92,,,,Sub_Ch1,S1_L0091
-3,5,92,1,Player,Sub,anim_eyesblink,text,그래서 하나의 구슬 안에 몇 가지\n맛들을 더 넣어야 했던 거야!,So we had to add a few more\nflavors to a single marble!,99,,,,Sub_Ch1,S1_L0092
+3,5,92,1,Player,Sub,anim_eyesblink,text,그래서 하나의 구슬 안에 몇 가지\n맛들을 더 넣어야 했던 거야!,So we had to add a few more\nflavors to a single marble!,98,,,,Sub_Ch1,S1_L0092
 3,5,93,1,Player,Sub,,text,인간의 언어 체계에서는 빈번한 현상이야.,It’s quite common\nin the human language.,94,,,,Sub_Ch1,S1_L0093
 3,5,94,1,Player,Sub,,text,"하나의 단어가 하나의 틀이라면, 그 ‘틀’ 안\n엔 여러 의미가 공존하며 살아 있을 수 있지.","If a single word is a single box, different\nmeanings can coexist in that ‘box’.",95,,,,Sub_Ch1,S1_L0094
 3,5,95,1,Player,Sub,,text,"“실례지만 당신과 같은 틀을 좀 사용하겠습\n니다”, 한 의미가 다른 의미에게 말을 걸어.","“Pardon, I would like to use the same box,”\none meaning might say to another.",96,,,,Sub_Ch1,S1_L0095
