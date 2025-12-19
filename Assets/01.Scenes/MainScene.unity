@@ -4244,6 +4244,7 @@ MonoBehaviour:
   videoController: {fileID: 866035066}
   subDialoguePanel: {fileID: 1720718688}
   loadingProgressBar: {fileID: 1760591409901623052}
+  dayStartHour: 11
 --- !u!4 &199268582
 Transform:
   m_ObjectHideFlags: 0
@@ -48475,7 +48476,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094932322279389483}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
   m_Name: 
