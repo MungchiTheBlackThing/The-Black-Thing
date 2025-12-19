@@ -300,17 +300,6 @@ public class MainPanel : MonoBehaviour
             backindex = dialogueIndex;
         }
 
-        if (background == "main_door_close")
-        {
-            mainDialogue.SetBackground(gameManager.ObjectManager.SetMain(background));
-            DotController.Spriteoff();
-        }
-        else if (background == "main_door_open")
-        {
-            mainDialogue.SetBackground(gameManager.ObjectManager.SetMain(background));
-            DotController.Spriteon();
-        }
-
         switch (textType)
         {
             case "text":

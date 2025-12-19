@@ -9005,7 +9005,7 @@ MonoBehaviour:
   - {fileID: 968173784}
   - {fileID: 1139226965}
   objectManager: {fileID: 606963712}
-  PlayerController: {fileID: 0}
+  PlayerController: {fileID: 2022455605}
   UItutoEnd: 0
 --- !u!95 &619721726
 Animator:
@@ -23643,7 +23643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   page: {fileID: 0}
-  gameManger: {fileID: 0}
+  gameManager: {fileID: 0}
   turnCooldown: 0.2
 --- !u!1 &1404235216
 GameObject:

@@ -163,6 +163,8 @@ public class SubDialogue : MonoBehaviour
             playerController.SetSubseq(4);
         }
 
+        bool needWait = false;
+
         if (manager != null && manager.GetType() == typeof(GameManager))
         {
             ScriptList sclist = dot.GetSubScriptList(manager.Pattern);
@@ -172,6 +174,7 @@ public class SubDialogue : MonoBehaviour
             float camx = SclistGetCameraX(dPosition);
             scroll.MoveCamera(new Vector3(camx, 0, -10), 1f);
             scroll.stopscroll();
+            needWait = true;
         }
         else
         {
@@ -183,19 +186,31 @@ public class SubDialogue : MonoBehaviour
 
         if (index == 0)
         {
-            subPanel.ShowNextDialogue();
+            if (needWait)
+                StartCoroutine(_ShowNextAfterSeconds(subPanel, 1f));
+            else
+                subPanel.ShowNextDialogue();
         }
         else
         {
             subPanel.dialogueIndex = index;
-            subPanel.ShowNextDialogue();
+            if (needWait)
+                StartCoroutine(_ShowNextAfterSeconds(subPanel, 1f));
+            else
+                subPanel.ShowNextDialogue();
         }
-            
+
         //manager.ScrollManager.StopCamera(true); -> 자꾸 오류 발생함
         if (menuController)
             menuController.alloff();
-        
     }
+
+    private IEnumerator _ShowNextAfterSeconds(SubPanel subPanel, float seconds)
+    {
+        yield return new UnityEngine.WaitForSeconds(seconds);
+        subPanel.ShowNextDialogue();
+    }
+
 
     public sub GetData(int idx)
     {
