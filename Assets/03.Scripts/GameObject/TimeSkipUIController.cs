@@ -58,8 +58,6 @@ public class TimeSkipUIController : MonoBehaviour
 
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
 
-<<<<<<< Updated upstream
-        playerController.nextPhaseDelegate += NextPhase;
 
         timeIdx = playerController.GetCurrentPhase();
 
@@ -67,10 +65,6 @@ public class TimeSkipUIController : MonoBehaviour
         {
             time = timeStamp[timeIdx];
         }
-=======
-        // playerController.nextPhaseDelegate += NextPhase; // 타이머를 GameManager에서 관리하므로 더 이상 필요 없음
->>>>>>> Stashed changes
-
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
 
         translator.translatorDel += Translate;

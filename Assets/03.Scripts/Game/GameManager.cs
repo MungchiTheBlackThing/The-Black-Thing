@@ -53,6 +53,8 @@ public class GameManager : MonoBehaviour
 
     private Coroutine subDialogCoroutine;
     private bool isSkipping = false;
+    private Coroutine phaseTimerCoroutine;
+    private string currentPhaseTimerKey;
 
     public ObjectManager ObjectManager
     {
@@ -228,11 +230,30 @@ public class GameManager : MonoBehaviour
             dot.StopSubDialogueAnimation();
             activeState.Exit(this); //미리 정리한다.
         }
+
+        // 페이즈 변경 시 이전 페이즈의 서브 다이얼로그 타이머가 돌고 있다면 정지
+        if (subDialogCoroutine != null)
+        {
+            StopCoroutine(subDialogCoroutine);
+            subDialogCoroutine = null;
+        }
+
         currentPattern = patternState;
+
+        if (phaseTimerCoroutine != null)
+        {
+            StopCoroutine(phaseTimerCoroutine);
+        }
+        if (!string.IsNullOrEmpty(currentPhaseTimerKey))
+        {
+            PlayerPrefs.DeleteKey(currentPhaseTimerKey);
+            PlayerPrefs.Save();
+        }
 
         if (phaseToSubseqs.TryGetValue(currentPattern, out var subs) && subs.Count > 0)
         {
             pc.SetSubseq(subs[0]);
+            
             // 새로운 페이즈 진입 시 이전 타이머가 남아있다면 제거하여 즉시 실행되는 문제 방지
             string timestampKey = "PendingEventTimestamp_" + Chapter + "_" + currentPattern.ToString() + "_" + subs[0];
             if (PlayerPrefs.HasKey(timestampKey))
@@ -245,6 +266,8 @@ public class GameManager : MonoBehaviour
         activeState = states[patternState];
         Debug.Log("[디버깅]스테이트 변경: " + patternState);
         activeState.Enter(this, dot);
+
+        phaseTimerCoroutine = StartCoroutine(PhaseTimer());
 
         // 1일차 MainA 종료 후 Thinking 페이즈에 진입하면 UI 튜토리얼을 켭니다.
         if (patternState == GamePatternState.Thinking && Chapter == 1 && pc.GetSubseq() == 1)
@@ -379,6 +402,10 @@ public class GameManager : MonoBehaviour
         activeState.Enter(this, dot);
         subDialogue.gameObject.SetActive(false);
 
+        if (phaseTimerCoroutine != null) StopCoroutine(phaseTimerCoroutine);
+        phaseTimerCoroutine = StartCoroutine(PhaseTimer());
+
+
         if (dot.GetSubScriptListCount(patternState) != 0)
         {
             Debug.Log("LoadDataAsync: Starting SubDial");
@@ -506,7 +533,7 @@ public class GameManager : MonoBehaviour
             catch (Exception e)
             {
                 Debug.LogError($"이벤트 트리거 시간 변환 오류: {e.Message}. 스크립트 Delay 값을 사용합니다.");
-                waitTime = script.Delay * 60f; // 문제가 생기면 스크립트의 Delay 값(분)으로 복구
+                waitTime = script.Delay * 0.5f; // 문제가 생기면 스크립트의 Delay 값(분)으로 복구 [디버그] script.Delay * 60f -> script.Delay * 0.5f
                 DateTime newTriggerTime = DateTime.Now.AddSeconds(waitTime);
                 PlayerPrefs.SetString(timestampKey, newTriggerTime.ToBinary().ToString());
                 PlayerPrefs.Save();
@@ -514,7 +541,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            waitTime = script.Delay * 60f; 
+            waitTime = script.Delay * 0.5f;  //[디버그] script.Delay * 60f -> script.Delay * 0.5f
             if (waitTime > 0) // Delay가 0초 이상일 때만 타이머 저장
             {
                 DateTime triggerTime = DateTime.Now.AddSeconds(waitTime);
@@ -534,7 +561,6 @@ public class GameManager : MonoBehaviour
                     PlayerPrefs.Save();
                     yield break;
                 }
-                if (timeSkipUIController != null) timeSkipUIController.SetTime(waitTime - elapsed);
                 yield return null;
                 elapsed += UnityEngine.Time.deltaTime;
             }
@@ -550,6 +576,57 @@ public class GameManager : MonoBehaviour
             Debug.Log("시간 경과! 현재 스크립트 키: " + script.ScriptKey);
             dot.TriggerSub(true, script.DotAnim, script.DotPosition);
             pc.ProgressSubDial(script.ScriptKey);
+        }
+    }
+
+    IEnumerator PhaseTimer()
+    {
+        float duration = GetPhaseDuration(currentPattern);
+        if (duration <= 0)
+        {
+            if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
+            yield break;
+        }
+
+        currentPhaseTimerKey = $"PhaseTimer_{Chapter}_{currentPattern}";
+        float remainingTime = duration;
+
+        if (PlayerPrefs.HasKey(currentPhaseTimerKey))
+        {
+            long binaryTime = Convert.ToInt64(PlayerPrefs.GetString(currentPhaseTimerKey));
+            DateTime endTime = DateTime.FromBinary(binaryTime);
+            remainingTime = (float)(endTime - DateTime.Now).TotalSeconds;
+        }
+        else
+        {
+            DateTime endTime = DateTime.Now.AddSeconds(duration);
+            PlayerPrefs.SetString(currentPhaseTimerKey, endTime.ToBinary().ToString());
+            PlayerPrefs.Save();
+        }
+
+        while (remainingTime > 0)
+        {
+            if (timeSkipUIController != null) timeSkipUIController.SetTime(remainingTime);
+            yield return null;
+            remainingTime -= UnityEngine.Time.deltaTime;
+        }
+
+        if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
+        
+        NextPhase();
+    }
+
+
+// [디버그] 각 페이즈 당 시간
+    private float GetPhaseDuration(GamePatternState phase)
+    {
+        switch (phase)
+        {
+            case GamePatternState.Watching: return 2 * 3600f; // 2시간
+            case GamePatternState.Thinking: return 3 * 3600f; // 3시간
+            case GamePatternState.Writing: return 1 * 3600f; // 1시간
+            case GamePatternState.Sleeping: return 1 * 3600f; // 1시간
+            default: return 0f;
         }
     }
     public void PlayAllSubDialogs()
