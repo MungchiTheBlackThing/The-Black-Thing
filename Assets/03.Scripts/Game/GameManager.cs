@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         get { return pc.GetChapter(); }
     }
 
-    // [디버깅]하루 시작 시각 설정 
+    // [DEBUG] 하루 시작 시각 설정 
     public int dayStartHour = 11;
 
     protected GameManager()
@@ -262,25 +262,27 @@ public class GameManager : MonoBehaviour
         }
 
         activeState = states[patternState];
-        Debug.Log("[디버깅]스테이트 변경: " + patternState);
+        Debug.Log("스테이트 변경: " + patternState);
         activeState.Enter(this, dot);
 
         phaseTimerCoroutine = StartCoroutine(PhaseTimer());
 
-        // 1일차 MainA 종료 후 Thinking 페이즈에 진입하면 UI 튜토리얼을 켭니다.
+        // 1일차 MainA 종료 후 Thinking 페이즈에 진입하면 UI 튜토리얼 켜기
         if (patternState == GamePatternState.Thinking && Chapter == 1 && pc.GetSubseq() == 1)
         {
             var uiTuto = FindObjectOfType<UITutorial>(true);
             if (uiTuto) uiTuto.gameObject.SetActive(true);
         }
 
-        // [수정] 대화 페이즈가 아닐 때 TimeSkipUI가 꺼져있다면 켜줍니다. (1일차 튜토리얼 직후 등 대비)
+        //대화 페이즈가 아닐 때 TimeSkipUI가 꺼져있다면 켜주기
+        //TimeSkipUI 꺼줘야 하는 페이즈 여기서 설정
         if (timeSkipUIController != null)
         {
             bool shouldShowTimeSkip = (patternState != GamePatternState.MainA && 
                                        patternState != GamePatternState.MainB && 
                                        patternState != GamePatternState.NextChapter &&
-                                       patternState != GamePatternState.End);
+                                       patternState != GamePatternState.End &&
+                                       patternState != GamePatternState.Play);
             
             if (timeSkipUIController.gameObject.activeSelf != shouldShowTimeSkip)
                 timeSkipUIController.gameObject.SetActive(shouldShowTimeSkip);
@@ -400,7 +402,7 @@ public class GameManager : MonoBehaviour
         //GamePatternState patternState = (GamePatternState)pc.GetAlreadyEndedPhase();
         GamePatternState patternState = (GamePatternState)pc.GetCurrentPhase();
         currentPattern = patternState;
-        Debug.Log($"[디버깅]초기 스테이트 설정: {patternState}");
+        Debug.Log($"초기 스테이트 설정: {patternState}");
         activeState = states[patternState];
         activeState.Enter(this, dot);
         subDialogue.gameObject.SetActive(false);
@@ -514,7 +516,7 @@ public class GameManager : MonoBehaviour
         {
             // 타이머가 존재하지 않으면 새로 설정
             dot.TriggerSub(false); // 새 타이머 시작 시에만 알림을 끈다.
-            float delay = script.Delay * 0.5f;  //[디버그] script.Delay * 60f -> script.Delay * 0.5f
+            float delay = script.Delay * 0.5f;  //[DEBUG] 서브 타이머 단축 script.Delay * 60f -> script.Delay * 0.5f
             triggerTime = DateTime.Now.AddSeconds(delay);
             PlayerPrefs.SetString(timestampKey, triggerTime.ToBinary().ToString());
             PlayerPrefs.Save();
@@ -594,7 +596,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-// [디버그] 각 페이즈 당 시간
+    // [DEBUG] 각 페이즈 당 시간
     private float GetPhaseDuration(GamePatternState phase)
     {
         switch (phase)

@@ -68,7 +68,7 @@ public class TimeSkipUIController : MonoBehaviour
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
 
         translator.translatorDel += Translate;
-        if (objectManager != null) objectManager.activeSystemUIDelegate += ControllActiveState;
+        if (objectManager != null) objectManager.activeSystemUIDelegate += SetSkipButtonActiveState;
     }
 
     private void Update()
@@ -76,10 +76,6 @@ public class TimeSkipUIController : MonoBehaviour
         // 타이머 로직을 GameManager로 이전했으므로 Update 내용은 제거합니다.
     }
 
-    void NextPhase(GamePatternState gameState)
-    {
-        // 타이머 로직을 GameManager에서 관리하므로 이 함수는 더 이상 필요하지 않습니다.
-    }
 
     /// <summary>
     /// GameManager에서 호출하여 남은 시간을 UI에 표시합니다.
@@ -94,7 +90,7 @@ public class TimeSkipUIController : MonoBehaviour
             timeText.text = (hour).ToString() + "h " + (min).ToString() + "m";
     }
 
-    public void ControllActiveState(bool InActive)
+    public void SetSkipButtonActiveState(bool InActive)
     {
         this.gameObject.SetActive(InActive);
     }

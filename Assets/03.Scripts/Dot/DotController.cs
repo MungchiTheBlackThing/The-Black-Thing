@@ -121,7 +121,7 @@ public class DotController : MonoBehaviour
     private bool isAfterScriptPlaying = false;
     private bool isSubDialogueAnimPlaying = false;
     private float _idleAnimationTimer;
-    private const float IDLE_ANIMATION_DURATION = 3f; //(단위: 초) 애니메이션 재생 시간 제한 (7분) //[디버깅] 7분 -> 10초
+    private const float IDLE_ANIMATION_DURATION = 3f; //(단위: 초) 랜덤 재생 애니메이션 재생 시간 제한 (7분) //[DEBUG] 7분 -> 10초
 
     GamePatternState tmpState;
 
