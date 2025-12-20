@@ -353,7 +353,7 @@ public class DotController : MonoBehaviour
 
         Debug.Log("스테이트:" + State);
         Debug.Log("GetSubSCript");
-        if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play || manager.Pattern == GamePatternState.Sleeping || manager.Pattern == GamePatternState.NextChapter)
+        if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play || manager.Pattern == GamePatternState.NextChapter)
         {
             return 0;
         }
