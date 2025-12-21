@@ -562,20 +562,15 @@ public class GameManager : MonoBehaviour
 
         if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
 
-        //PlayerPrefs.DeleteKey(timestampKey);
-        //PlayerPrefs.Save();
+        //PlayerPrefs.DeleteKey(timestampKey); 
+        //PlayerPrefs.Save(); 
 
         if (!isSkipping)
         {
             Debug.Log("시간 경과! 현재 스크립트 키: " + script.ScriptKey);
             dot.TriggerSub(true, script.DotAnim, script.DotPosition);
-            //pc.ProgressSubDial(script.ScriptKey);
+            pc.ProgressSubDial(script.ScriptKey);
         }
-    }
-
-    public void FinishSubEvent(string scriptKey)
-    {
-        pc.ProgressSubDial(scriptKey);
     }
 
     protected IEnumerator PhaseTimer()
