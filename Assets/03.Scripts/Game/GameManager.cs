@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     private Coroutine subDialogCoroutine;
     private bool isSkipping = false;
-    private Coroutine phaseTimerCoroutine;
+    protected Coroutine phaseTimerCoroutine;
     private string currentPhaseTimerKey;
 
     public ObjectManager ObjectManager
@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
 
     // [DEBUG] 하루 시작 시각 설정 
     public int dayStartHour = 11;
+    public int dayStartMinute = 0;
 
     protected GameManager()
     {
@@ -338,6 +339,17 @@ public class GameManager : MonoBehaviour
     }
     private void InitGame()
     {
+        // 새 게임 시 이전 타이머 기록이 남아있다면 삭제
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            string key = $"PhaseTimer_1_{GamePatternState.Watching}";
+            if (PlayerPrefs.HasKey(key))
+            {
+                PlayerPrefs.DeleteKey(key);
+                PlayerPrefs.Save();
+            }
+        }
+
         //배경을 업로드한다.
         Int32 hh = Int32.Parse(DateTime.Now.ToString(("HH"))); //현재 시간을 가져온다
         if (hh >= (int)STime.T_DAWN && hh < (int)STime.T_MORNING) //현재시간 >= 3 && 현재시간 <7
@@ -363,6 +375,10 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("DayStartHour"))
         {
             dayStartHour = PlayerPrefs.GetInt("DayStartHour");
+        }
+        if (PlayerPrefs.HasKey("DayStartMinute"))
+        {
+            dayStartMinute = PlayerPrefs.GetInt("DayStartMinute");
         }
         //AudioManager.instance.EnsureAMB(FMODEvents.instance.ambRoom, sltime.ToString());
     }
@@ -491,6 +507,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SubDialog(DotController dot = null)
     {
+        yield return null;
         subDialogue.gameObject.SetActive(true);
         subDialogue.gameObject.SetActive(false);
 
@@ -545,18 +562,23 @@ public class GameManager : MonoBehaviour
 
         if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
 
-        PlayerPrefs.DeleteKey(timestampKey); // 타이머 만료 후 정보 삭제
-        PlayerPrefs.Save();
+        //PlayerPrefs.DeleteKey(timestampKey);
+        //PlayerPrefs.Save();
 
         if (!isSkipping)
         {
             Debug.Log("시간 경과! 현재 스크립트 키: " + script.ScriptKey);
             dot.TriggerSub(true, script.DotAnim, script.DotPosition);
-            pc.ProgressSubDial(script.ScriptKey);
+            //pc.ProgressSubDial(script.ScriptKey);
         }
     }
 
-    IEnumerator PhaseTimer()
+    public void FinishSubEvent(string scriptKey)
+    {
+        pc.ProgressSubDial(scriptKey);
+    }
+
+    protected IEnumerator PhaseTimer()
     {
         float duration = GetPhaseDuration(currentPattern);
         // duration이 0 이하라면(MainA, MainB 등 멈춰야 하는 구간) 타이머를 돌리지 않고 코루틴 종료
@@ -607,7 +629,7 @@ public class GameManager : MonoBehaviour
             case GamePatternState.Sleeping:
                 //하루 시작 시각 설정에 따른 Sleeping 시간 계산
                 DateTime now = DateTime.Now;
-                DateTime target = new DateTime(now.Year, now.Month, now.Day, dayStartHour, 0, 0);
+                DateTime target = new DateTime(now.Year, now.Month, now.Day, dayStartHour, dayStartMinute, 0);
 
                 //현재 시각이 설정된 시작 시각보다 지났다면, 다음 날 시작 시각을 목표로
                 if (now >= target)
@@ -649,10 +671,12 @@ public class GameManager : MonoBehaviour
     }
 
     // 하루 시작 시각 설정 및 저장 (UI에서 호출)
-    public void SetDayStartHour(int hour)
+    public void SetDayStartTime(int hour, int minute)
     {
         dayStartHour = Mathf.Clamp(hour, 0, 23);
+        dayStartMinute = Mathf.Clamp(minute, 0, 59);
         PlayerPrefs.SetInt("DayStartHour", dayStartHour);
+        PlayerPrefs.SetInt("DayStartMinute", dayStartMinute);
         PlayerPrefs.Save();
     }
 

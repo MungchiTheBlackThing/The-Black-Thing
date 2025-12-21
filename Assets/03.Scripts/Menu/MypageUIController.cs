@@ -30,6 +30,8 @@ public class MypageUIController : MonoBehaviour
     [SerializeField] GameObject TimeSetPopup;
     [SerializeField] private TMP_Text timeLabel;
 
+    [SerializeField] GameManager gameManager;
+
 
 
 
@@ -91,6 +93,13 @@ public class MypageUIController : MonoBehaviour
         }
         prevBut.SetActive(false);
         popupPage[pageIdx].SetActive(true);
+
+        // UI가 켜질 때 GameManager에 저장된 현재 시작 시간 설정값을 가져와 동기화
+        if (gameManager != null)
+        {
+            _uiHour24 = gameManager.dayStartHour;
+            _uiMinute = gameManager.dayStartMinute;
+        }
         RefreshTimeUI();
 
         UpdateNavButtonsVisibility();
@@ -434,6 +443,8 @@ public class MypageUIController : MonoBehaviour
         _uiHour24 = hour24;
         _uiMinute = minute;
 
+        gameManager.SetDayStartTime(_uiHour24, _uiMinute);
+        
         RefreshTimeUI();
     }
 

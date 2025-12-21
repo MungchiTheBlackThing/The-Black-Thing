@@ -316,6 +316,12 @@ public class SubDialogue : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name != "Tutorial")
         {
+            //보상/진행도 처리 함수 호출
+            if (_lastDisplayedEntry != null)
+            {
+                manager.FinishSubEvent(_lastDisplayedEntry.ScriptNumber);
+            }
+
             playerController.MarkSubWatched(playerController.GetSubseq());
             Debug.Log("이미 본 서브로 저장" + playerController.GetSubseq());
             playerController.plusSubseq();
@@ -372,6 +378,8 @@ public class SubDialogue : MonoBehaviour
         // 다음 서브 이벤트 타이머 시작
         manager.ShowSubDial();
         this.gameObject.SetActive(false);
+
+        
     }
 
     public void TutoExit()
