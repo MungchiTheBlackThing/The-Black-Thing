@@ -83,16 +83,7 @@ public class MainVideo : MonoBehaviour
             return;
         }
 
-        // load subtitles for this chapter
-        entries = MainVideoCsvLoader.Load(chapter);
-        lastIndex = -1;
-        startsCache = null;
-        EnsureSubtitleText();
-        if (subtitleText != null) subtitleText.text = "";
-
         subtitleTableName = $"SrcDay{Day}";
-        entryKeys = (entries != null) ? BuildEntryKeys(Day, entries.Count) : null;
-        RebuildLocalizedCache();
         LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged_Subtitle;
         LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged_Subtitle;
 
@@ -106,6 +97,19 @@ public class MainVideo : MonoBehaviour
             Debug.LogError($"VideoClip not found at Resources/{path}");
             return;
         }
+
+        // load subtitles for this chapter (use clip FPS, not videoPlayer FPS)
+        double fps = (clip.frameRate > 0) ? clip.frameRate : 30.0;
+        entries = MainVideoCsvLoader.Load(chapter, fps);
+
+        entryKeys = (entries != null) ? BuildEntryKeys(Day, entries.Count) : null;
+        RebuildLocalizedCache();
+
+        lastIndex = -1;
+        startsCache = null;
+        EnsureSubtitleText();
+        if (subtitleText != null) subtitleText.text = "";
+
 
         videoPlayer.Stop();
         videoPlayer.time = 0;
@@ -645,7 +649,7 @@ public class VideoSubtitleEntry
 
 public static class MainVideoCsvLoader
 {
-    public static List<VideoSubtitleEntry> Load(int day)
+    public static List<VideoSubtitleEntry> Load(int day, double fps)
     {
         string path = $"CSV/main_video_csv/SrcDay{day}";
         TextAsset csv = Resources.Load<TextAsset>(path);
@@ -659,6 +663,7 @@ public static class MainVideoCsvLoader
         var result = new List<VideoSubtitleEntry>();
 
         bool headerSkipped = false;
+        
         foreach (var raw in lines)
         {
             if (string.IsNullOrWhiteSpace(raw)) continue;
@@ -681,8 +686,8 @@ public static class MainVideoCsvLoader
             string korText = cols[2];
             string engText = cols[3];
 
-            double start = ParseTimecodeToSeconds(startStr); 
-            double end = ParseTimecodeToSeconds(endStr);
+            double start = ParseTimecodeToSeconds(startStr, fps); 
+            double end   = ParseTimecodeToSeconds(endStr, fps);
             if (end < start)
             {
                 Debug.LogWarning($"End < Start: {raw}");
@@ -703,9 +708,15 @@ public static class MainVideoCsvLoader
         return result;
     }
 
-    private static double ParseTimecodeToSeconds(string tc)
+    private static double ParseTimecodeToSeconds(string tc, double fps)
     {
-        var parts = tc.Split(':');
+        if (fps <= 0) fps = 30; // fallback
+
+        // 29.97 → 30 정규화
+        fps = Math.Round(fps);
+
+        var parts = tc.Replace(';', ':').Split(':'); // ;도 파싱되도록 수정
+
         if (parts.Length != 4)
         {
             Debug.LogWarning($"Bad timecode: {tc} (expected hh:mm:ss:cc)");
@@ -715,13 +726,11 @@ public static class MainVideoCsvLoader
         int hh = SafeInt(parts[0]);
         int mm = SafeInt(parts[1]);
         int ss = SafeInt(parts[2]);
-        int cc = SafeInt(parts[3]);
+        int ff = SafeInt(parts[3]);
 
-        if (cc < 0) cc = 0;
-        if (cc > 99) cc = 99;
+        if (ff < 0) ff = 0;
 
-        double seconds = hh * 3600 + mm * 60 + ss + (cc * 0.01);
-        return seconds;
+        return hh * 3600 + mm * 60 + ss + (ff / fps);
     }
 
     private static int SafeInt(string s)
