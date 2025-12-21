@@ -72,6 +72,7 @@ public class MypageUIController : MonoBehaviour
 
     void Awake()
     {
+        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         _nextButText = nextBut.GetComponent<TMP_Text>();
         _prevButText = prevBut.GetComponent<TMP_Text>();
