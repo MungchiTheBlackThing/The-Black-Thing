@@ -118,7 +118,7 @@ public class ProgressUIController : MonoBehaviour
         int unlockedCount = 0;
         foreach (var progress in dragIconList)
         {
-            if (progress.Key <= chapter && !dotController.tutorial)
+            if (progress.Key <= chapter)
             {
                 progress.Value.GetComponent<DragIcon>().DestoryLock();
                 unlockedCount++;

@@ -95,6 +95,9 @@ public class TutorialManager : GameManager
         dot = GameObject.FindWithTag("DotController").GetComponent<DotController>();
         if (dot == null) Debug.LogError("DotController를 찾을 수 없습니다!");
 
+        timeSkipUIController = FindObjectOfType<TimeSkipUIController>(true);
+        if (timeSkipUIController == null) Debug.LogError("TimeSkipUIController를 찾을 수 없습니다!");
+        
         InitGame();
     }
 
@@ -120,11 +123,24 @@ public class TutorialManager : GameManager
         tutostate = patternState;
         activeState = states[patternState];
         activeState.Enter(this, dot, this);
+
+        // 튜토리얼 상태 변경 시 타이머 재설정 (GameManager의 PhaseTimer 활용)
+        if (phaseTimerCoroutine != null) StopCoroutine(phaseTimerCoroutine);
+        currentPattern = (GamePatternState)patternState; // PhaseTimer가 currentPattern을 참조하므로 동기화
+        phaseTimerCoroutine = StartCoroutine(PhaseTimer());
         
     }
 
     private void InitGame()
     {
+        //튜토리얼 시작 시(새 게임) Watching 단계의 타이머 기록 초기화
+        string key = $"PhaseTimer_1_{GamePatternState.Watching}";
+        if (PlayerPrefs.HasKey(key))
+        {
+            PlayerPrefs.DeleteKey(key);
+            PlayerPrefs.Save();
+        }
+
         int hh = DateTime.Now.Hour; // 현재 시간 가져오기
 
         if (hh >= (int)STime.T_DAWN && hh < (int)STime.T_MORNING)
@@ -178,6 +194,11 @@ public class TutorialManager : GameManager
         tutostate = patternState;
         activeState = states[patternState];
         activeState.Enter(this, dot, this);
+
+        // 초기 로딩 후 타이머 시작
+        if (phaseTimerCoroutine != null) StopCoroutine(phaseTimerCoroutine);
+        currentPattern = (GamePatternState)patternState;
+        phaseTimerCoroutine = StartCoroutine(PhaseTimer());
     }
 
     private IEnumerator TrackObjectLoadProgress(float weight)

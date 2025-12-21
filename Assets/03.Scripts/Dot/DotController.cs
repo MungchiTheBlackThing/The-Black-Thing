@@ -758,7 +758,10 @@ public class DotController : MonoBehaviour
     }
     public void dotvicheck(bool set)
     {
-        StartCoroutine(DotvisibleCheck(set));
+        //inactive 상태일때 오류 방지
+        if (gameObject.activeInHierarchy)
+            StartCoroutine(DotvisibleCheck(set));
+
     }
     public IEnumerator DotvisibleCheck(bool setoff)
     {
