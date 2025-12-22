@@ -53,6 +53,8 @@ public class GameManager : MonoBehaviour
 
     private Coroutine subDialogCoroutine;
     private bool isSkipping = false;
+    protected Coroutine phaseTimerCoroutine;
+    private string currentPhaseTimerKey;
 
     public ObjectManager ObjectManager
     {
@@ -102,12 +104,9 @@ public class GameManager : MonoBehaviour
         get { return pc.GetChapter(); }
     }
 
-    Dictionary<GamePatternState, List<int>> phaseToSubseqs = new Dictionary<GamePatternState, List<int>>()
-    {
-    { GamePatternState.Thinking, new List<int>{1, 2} },
-    { GamePatternState.Writing,  new List<int>{3} },
-    { GamePatternState.Sleeping, new List<int>{4} }
-    };
+    // [DEBUG] 하루 시작 시각 설정 
+    public int dayStartHour = 11;
+    public int dayStartMinute = 0;
 
     protected GameManager()
     {
@@ -155,6 +154,11 @@ public class GameManager : MonoBehaviour
         scrollManager = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<ScrollManager>();
         cameraZoom = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<CameraZoom>();
         subDialogue = subDialoguePanel.GetComponent<SubDialogue>();
+        
+        if (timeSkipUIController == null)
+        {
+            timeSkipUIController = GameObject.FindObjectOfType<TimeSkipUIController>();
+        }
 
         InitGame();
     }
@@ -190,7 +194,8 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.UpdateBGMByChapter(Chapter, currentPattern);
         Debug.Log($"[SetPhase] Phase 설정됨: {newPhase}");
 
-        if (phaseToSubseqs.TryGetValue(currentPattern, out var subs) && subs.Count > 0)
+        var subs = GetSubseqsForPhase(currentPattern);
+        if (subs != null && subs.Count > 0)
         {
             Debug.Log($"[SetPhase] Subseq 초기화됨: {subs[0]}");
             pc.SetSubseq(subs[0]);
@@ -223,10 +228,66 @@ public class GameManager : MonoBehaviour
             dot.StopSubDialogueAnimation();
             activeState.Exit(this); //미리 정리한다.
         }
+
+        // 페이즈 변경 시 이전 페이즈의 서브 다이얼로그 타이머가 돌고 있다면 정지
+        if (subDialogCoroutine != null)
+        {
+            StopCoroutine(subDialogCoroutine);
+            subDialogCoroutine = null;
+        }
+
         currentPattern = patternState;
+
+        if (phaseTimerCoroutine != null)
+        {
+            StopCoroutine(phaseTimerCoroutine);
+        }
+        if (!string.IsNullOrEmpty(currentPhaseTimerKey))
+        {
+            PlayerPrefs.DeleteKey(currentPhaseTimerKey);
+            PlayerPrefs.Save();
+        }
+
+        var subs = GetSubseqsForPhase(currentPattern);
+        if (subs != null && subs.Count > 0)
+        {
+            pc.SetSubseq(subs[0]);
+            
+            // 새로운 페이즈 진입 시 이전 타이머가 남아있다면 제거하여 즉시 실행되는 문제 방지
+            string timestampKey = "PendingEventTimestamp_" + Chapter + "_" + currentPattern.ToString() + "_" + subs[0];
+            if (PlayerPrefs.HasKey(timestampKey))
+            {
+                PlayerPrefs.DeleteKey(timestampKey);
+                PlayerPrefs.Save();
+            }
+        }
+
         activeState = states[patternState];
-        Debug.Log("[디버깅]스테이트 변경: " + patternState);
+        Debug.Log("스테이트 변경: " + patternState);
         activeState.Enter(this, dot);
+
+        phaseTimerCoroutine = StartCoroutine(PhaseTimer());
+
+        // 1일차 MainA 종료 후 Thinking 페이즈에 진입하면 UI 튜토리얼 켜기
+        if (patternState == GamePatternState.Thinking && Chapter == 1 && pc.GetSubseq() == 1)
+        {
+            var uiTuto = FindObjectOfType<UITutorial>(true);
+            if (uiTuto) uiTuto.gameObject.SetActive(true);
+        }
+
+        //대화 페이즈가 아닐 때 TimeSkipUI가 꺼져있다면 켜주기
+        //TimeSkipUI 꺼줘야 하는 페이즈 여기서 설정
+        if (timeSkipUIController != null)
+        {
+            bool shouldShowTimeSkip = (patternState != GamePatternState.MainA && 
+                                       patternState != GamePatternState.MainB && 
+                                       patternState != GamePatternState.NextChapter &&
+                                       patternState != GamePatternState.End &&
+                                       patternState != GamePatternState.Play);
+            
+            if (timeSkipUIController.gameObject.activeSelf != shouldShowTimeSkip)
+                timeSkipUIController.gameObject.SetActive(shouldShowTimeSkip);
+        }
 
         if (dot.GetSubScriptListCount(patternState) != 0)
         {
@@ -278,6 +339,17 @@ public class GameManager : MonoBehaviour
     }
     private void InitGame()
     {
+        // 새 게임 시 이전 타이머 기록이 남아있다면 삭제
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            string key = $"PhaseTimer_1_{GamePatternState.Watching}";
+            if (PlayerPrefs.HasKey(key))
+            {
+                PlayerPrefs.DeleteKey(key);
+                PlayerPrefs.Save();
+            }
+        }
+
         //배경을 업로드한다.
         Int32 hh = Int32.Parse(DateTime.Now.ToString(("HH"))); //현재 시간을 가져온다
         if (hh >= (int)STime.T_DAWN && hh < (int)STime.T_MORNING) //현재시간 >= 3 && 현재시간 <7
@@ -298,6 +370,16 @@ public class GameManager : MonoBehaviour
         }
         StartCoroutine(LoadDataAsync());
         Debug.Log("시간: " + sltime.ToString());
+
+        // 하루 시작 시각 로드
+        if (PlayerPrefs.HasKey("DayStartHour"))
+        {
+            dayStartHour = PlayerPrefs.GetInt("DayStartHour");
+        }
+        if (PlayerPrefs.HasKey("DayStartMinute"))
+        {
+            dayStartMinute = PlayerPrefs.GetInt("DayStartMinute");
+        }
         //AudioManager.instance.EnsureAMB(FMODEvents.instance.ambRoom, sltime.ToString());
     }
     IEnumerator LoadDataAsync()
@@ -333,13 +415,17 @@ public class GameManager : MonoBehaviour
         //코루틴이 끝날때까지 대기
         yield return objectLoadCoroutine;
         loadingProgressBar.value = 1; //모든 작업이 끝났음.
+        //GamePatternState patternState = (GamePatternState)pc.GetAlreadyEndedPhase();
         GamePatternState patternState = (GamePatternState)pc.GetCurrentPhase();
         currentPattern = patternState;
-        Debug.Log($"[디버깅]초기 스테이트 설정: {patternState}");
+        Debug.Log($"초기 스테이트 설정: {patternState}");
         activeState = states[patternState];
         activeState.Enter(this, dot);
         subDialogue.gameObject.SetActive(false);
-        dot.alertOff(); // 초기화 시 알림이 켜져있으면 타이머가 돌지 않음.
+
+        if (phaseTimerCoroutine != null) StopCoroutine(phaseTimerCoroutine);
+        phaseTimerCoroutine = StartCoroutine(PhaseTimer());
+
 
         if (dot.GetSubScriptListCount(patternState) != 0)
         {
@@ -399,10 +485,8 @@ public class GameManager : MonoBehaviour
     }
     bool ShouldShowSub(GamePatternState phase, int subseq)
     {
-        if (!phaseToSubseqs.ContainsKey(phase))
-            return false;
-
-        if (!phaseToSubseqs[phase].Contains(subseq))
+        var subs = GetSubseqsForPhase(phase);
+        if (subs == null || !subs.Contains(subseq))
             return false;
 
         return !pc.IsSubWatched(subseq); // 저장된 subseq 리스트에 없는지 확인
@@ -423,17 +507,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SubDialog(DotController dot = null)
     {
-        dot.TriggerSub(false);
+        yield return null;
         subDialogue.gameObject.SetActive(true);
-
-        if (Pattern == GamePatternState.Writing)
-        {
-            pc.SetSubseq(3);
-        }
-        if (Pattern == GamePatternState.Sleeping)
-        {
-            pc.SetSubseq(4);
-        }
         subDialogue.gameObject.SetActive(false);
 
         ScriptList script = dot.GetSubScriptList(Pattern);
@@ -447,130 +522,162 @@ public class GameManager : MonoBehaviour
             yield break;
         }
 
-        ScriptList nxscript = null;
         Debug.Log($"SubDialog 진입 - Phase: {Pattern}, Subseq: {pc.GetSubseq()}");
-        if (pc.GetSubseq() == 1)
+
+        // 각 이벤트에 대한 고유 키를 사용하여 타이머가 겹치지 않도록
+        string timestampKey = "PendingEventTimestamp_" + Chapter + "_" + Pattern.ToString() + "_" + pc.GetSubseq();
+        string timestampStr = PlayerPrefs.GetString(timestampKey, "");
+        DateTime triggerTime;
+
+        if (string.IsNullOrEmpty(timestampStr))
         {
-            isready = false;
-            nxscript = dot.GetnxSubScriptList(Pattern);
-            if (nxscript != null)
-            {
-                // nxscript.Delay는 분 단위로 추정됩니다.
-                DateTime triggerTimeForSub2 = DateTime.Now.AddSeconds(nxscript.Delay * 60);
-                PlayerPrefs.SetString("Sub2TriggerTimestamp", triggerTimeForSub2.ToBinary().ToString());
-                PlayerPrefs.Save();
-                Debug.Log($"[저장] Sub2 트리거 시간 저장됨: {triggerTimeForSub2}");
-            }
-            else
-            {
-                Debug.Log("다음 스크립트(nxscript)가 없습니다.");
-            }
-
-            //챕터 1일 때 SubSeq 1 즉시 실행
-            if (Chapter != 1)
-            {
-                Debug.Log("현재 스크립트 시간: " + script.Delay);
-                float elapsed = 0f;
-                //[디버그] 테스트용으로 서브1 진입 대기시간 script.Delay*60 -> 10초로 변경
-                while (elapsed < 10f)
-                {
-                    if (isSkipping) yield break;
-                    yield return null;
-                    elapsed += UnityEngine.Time.deltaTime;
-                }
-            }
-            else
-            {
-                Debug.Log("[예외] 챕터 1이므로 SubSeq 1 대기 시간 없음.");
-            }
-
-            if (!isSkipping)
-            {
-                Debug.Log("현재 스크립트 키: " + script.ScriptKey);
-                dot.TriggerSub(true, script.DotAnim, script.DotPosition);
-                pc.ProgressSubDial(script.ScriptKey);
-            }
+            // 타이머가 존재하지 않으면 새로 설정
+            dot.TriggerSub(false); // 새 타이머 시작 시에만 알림을 끈다.
+            float delay = script.Delay * 0.5f;  //[DEBUG] 서브 타이머 단축 script.Delay * 60f -> script.Delay * 0.5f
+            triggerTime = DateTime.Now.AddSeconds(delay);
+            PlayerPrefs.SetString(timestampKey, triggerTime.ToBinary().ToString());
+            PlayerPrefs.Save();
+            Debug.Log($"[저장] 새 이벤트 타이머 저장됨: {triggerTime}, 대기 시간: {delay}초");
         }
-        else if (pc.GetSubseq() == 2)
+        else
         {
-            //저장된 SubSeq 2 트리거 시간을 불러와 대기 시간 계산
-            float waitTime = 10f; //[디버그 ]기본 대기 시간
-            string timestampStr = PlayerPrefs.GetString("Sub2TriggerTimestamp", "");
-
-            if (!string.IsNullOrEmpty(timestampStr))
-            {
-                try
-                {
-                    long temp = Convert.ToInt64(timestampStr);
-                    DateTime triggerTime = DateTime.FromBinary(temp);
-
-                    if (triggerTime > DateTime.Now)
-                    {
-                        waitTime = (float)(triggerTime - DateTime.Now).TotalSeconds;
-                    }
-                    else
-                    {
-                        waitTime = 0; // 이미 시간이 지났으면 바로 실행
-                    }
-                    Debug.Log($"[로드] Sub2 트리거 시간 로드: {triggerTime}, 남은 시간: {waitTime}초");
-                    PlayerPrefs.DeleteKey("Sub2TriggerTimestamp"); // 사용한 키는 삭제
-                }
-                catch (Exception e)
-                {
-                    Debug.LogError($"Sub2 트리거 시간 변환 오류: {e.Message}. 기본 대기 시간을 사용합니다.");
-                }
-            }
-            else
-            {
-                // 기존 targetTime 로직은 세션 간 지속성이 없으므로, 타임스탬프가 없는 경우 fallback 처리
-                Debug.LogWarning("Sub2 트리거 시간을 찾을 수 없습니다. 디버그 값(10초)을 사용합니다.");
-            }
-
-            Debug.Log("기다려야 하는 시간: " + waitTime);
-            
-            if (waitTime > 0f)
-            {
-                float elapsed = 0f;
-                while (elapsed < waitTime)
-                {
-                    if (isSkipping) yield break;
-                    yield return null;
-                    elapsed += UnityEngine.Time.deltaTime;
-                }
-            }
-
-            if (!isSkipping)
-            {
-                Debug.Log("서브 2 실행");
-                dot.TriggerSub(true, script.DotAnim, script.DotPosition);
-                pc.ProgressSubDial(script.ScriptKey);
-            }
+            //타이머가 존재하면 
+            triggerTime = DateTime.FromBinary(Convert.ToInt64(timestampStr));
+            Debug.Log($"[로드] 이벤트 트리거 시간 로드: {triggerTime}");
         }
-        else //subseq 3,4
-        {
-            Debug.Log("현재 스크립트 시간: " + script.Delay);
 
-            float elapsed = 0f;
-            //[디버그] 테스트용으로 서브3,4 진입 대기시간 script.Delay*60 -> 10초로 변경  
-            while (elapsed < 10f)
+        // 타이머가 아직 끝나지 않았으면 남은 시간 동안 대기
+        if (DateTime.Now < triggerTime)
+        {
+            while (DateTime.Now < triggerTime)
             {
-                if (isSkipping) yield break;
+                if (isSkipping) {
+                    PlayerPrefs.DeleteKey(timestampKey); // 스킵 시 타이머 정보 삭제
+                    PlayerPrefs.Save();
+                    yield break;
+                }
                 yield return null;
-                elapsed += UnityEngine.Time.deltaTime;
-            }
-
-            if (!isSkipping)
-            {
-                Debug.Log("현재 스크립트 키: " + script.ScriptKey);
-                dot.TriggerSub(true, script.DotAnim, script.DotPosition);
-                pc.ProgressSubDial(script.ScriptKey);
             }
         }
-        //pc.MarkSubWatched(pc.GetSubseq()); // 본 걸 기록
+
+        if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
+
+        //PlayerPrefs.DeleteKey(timestampKey); 
+        //PlayerPrefs.Save(); 
+
+        if (!isSkipping)
+        {
+            Debug.Log("시간 경과! 현재 스크립트 키: " + script.ScriptKey);
+            dot.TriggerSub(true, script.DotAnim, script.DotPosition);
+            pc.ProgressSubDial(script.ScriptKey);
+        }
     }
+
+    protected IEnumerator PhaseTimer()
+    {
+        float duration = GetPhaseDuration(currentPattern);
+        // duration이 0 이하라면(MainA, MainB 등 멈춰야 하는 구간) 타이머를 돌리지 않고 코루틴 종료
+        if (duration <= 0)
+        {
+            if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
+            yield break;
+        }
+
+        currentPhaseTimerKey = $"PhaseTimer_{Chapter}_{currentPattern}";
+        DateTime endTime;
+
+        if (PlayerPrefs.HasKey(currentPhaseTimerKey))
+        {
+            long binaryTime = Convert.ToInt64(PlayerPrefs.GetString(currentPhaseTimerKey));
+            endTime = DateTime.FromBinary(binaryTime);
+        }
+        else
+        {
+            endTime = DateTime.Now.AddSeconds(duration);
+            PlayerPrefs.SetString(currentPhaseTimerKey, endTime.ToBinary().ToString());
+            PlayerPrefs.Save();
+        }
+
+        while (DateTime.Now < endTime)
+        {
+            float remainingTime = (float)(endTime - DateTime.Now).TotalSeconds;
+            if (remainingTime < 0) remainingTime = 0;
+
+            if (timeSkipUIController != null) timeSkipUIController.SetTime(remainingTime);
+            yield return null;
+        }
+
+        if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
+        
+        NextPhase();
+    }
+
+
+    // [DEBUG] 각 페이즈 당 시간
+    private float GetPhaseDuration(GamePatternState phase)
+    {
+        switch (phase)
+        {
+            case GamePatternState.Watching: return 2 * 3600f; // 2시간
+            case GamePatternState.Thinking: return 3 * 3600f; // 3시간
+            case GamePatternState.Writing: return 1 * 3600f; // 1시간
+            case GamePatternState.Sleeping:
+                //하루 시작 시각 설정에 따른 Sleeping 시간 계산
+                DateTime now = DateTime.Now;
+                DateTime target = new DateTime(now.Year, now.Month, now.Day, dayStartHour, dayStartMinute, 0);
+
+                //현재 시각이 설정된 시작 시각보다 지났다면, 다음 날 시작 시각을 목표로
+                if (now >= target)
+                {
+                    target = target.AddDays(1);
+                }
+                return (float)(target - now).TotalSeconds;
+
+            // MainA, MainB, EventPoem 등 타이머 멈춰야할 때 (수정해야 함)
+            case GamePatternState.MainA:
+            case GamePatternState.MainB:
+            case GamePatternState.NextChapter:
+            case GamePatternState.End:
+                return 0f;
+
+            default: return 0f;
+        }
+    }
+
+    //챕터별/페이즈별 Subseq 리스트 반환
+    private List<int> GetSubseqsForPhase(GamePatternState phase)
+    {
+        //예외: 14챕터
+        if (Chapter == 14)
+        {
+            if (phase == GamePatternState.Watching) return new List<int> { 1, 2 };
+            if (phase == GamePatternState.Thinking) return new List<int> { 3, 4 };
+            return new List<int>();
+        }
+
+        // 기본 패턴
+        switch (phase)
+        {
+            case GamePatternState.Thinking: return new List<int> { 1, 2 };
+            case GamePatternState.Writing: return new List<int> { 3 };
+            case GamePatternState.Sleeping: return new List<int> { 4 };
+            default: return new List<int>();
+        }
+    }
+
+    // 하루 시작 시각 설정 및 저장 (UI에서 호출)
+    public void SetDayStartTime(int hour, int minute)
+    {
+        dayStartHour = Mathf.Clamp(hour, 0, 23);
+        dayStartMinute = Mathf.Clamp(minute, 0, 59);
+        PlayerPrefs.SetInt("DayStartHour", dayStartHour);
+        PlayerPrefs.SetInt("DayStartMinute", dayStartMinute);
+        PlayerPrefs.Save();
+    }
+
     public void PlayAllSubDialogs()
     {
-        List<int> phaseSubs = phaseToSubseqs.ContainsKey(Pattern) ? phaseToSubseqs[Pattern] : null;
+        List<int> phaseSubs = GetSubseqsForPhase(Pattern);
         if (phaseSubs != null && phaseSubs.Count > 0)
         {
             int currentIdx = phaseSubs.IndexOf(pc.GetSubseq());

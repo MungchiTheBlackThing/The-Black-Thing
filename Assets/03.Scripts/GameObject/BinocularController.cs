@@ -30,10 +30,35 @@ public class BinocularController : BaseObject , IWatchingInterface
     private void Start()
     {
         door = FindObjectOfType<DoorController>();
-        watchingBackground = GameObject.Find("Phase").gameObject;
-            GameObject playerObj = GameObject.FindWithTag("Player");
-        if (playerObj != null)
-            pc = playerObj.GetComponent<PlayerController>();
+        var phaseObj = GameObject.Find("Phase");
+        if (phaseObj != null) watchingBackground = phaseObj;
+
+        var playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null) pc = playerObj.GetComponent<PlayerController>();
+
+        StartCoroutine(InitWhenReady());
+    }
+
+    private IEnumerator InitWhenReady()
+    {
+        // DataManager 준비될 때까지 대기 (최대 2초 정도)
+        float timeout = 2f;
+        while (timeout > 0f &&
+            (DataManager.Instance == null ||
+                DataManager.Instance.Watchinginfo == null ||
+                DataManager.Instance.Watchinginfo.pattern == null))
+        {
+            timeout -= Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        if (DataManager.Instance == null ||
+            DataManager.Instance.Watchinginfo?.pattern == null)
+        {
+            Debug.LogError("BinocularController: Watchinginfo/pattern not ready.", this);
+            yield break;
+        }
+
         Init();
     }
 

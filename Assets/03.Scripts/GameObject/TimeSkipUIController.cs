@@ -58,7 +58,6 @@ public class TimeSkipUIController : MonoBehaviour
 
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
 
-        playerController.nextPhaseDelegate += NextPhase;
 
         timeIdx = playerController.GetCurrentPhase();
 
@@ -66,43 +65,32 @@ public class TimeSkipUIController : MonoBehaviour
         {
             time = timeStamp[timeIdx];
         }
-
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
 
         translator.translatorDel += Translate;
-        objectManager.activeSystemUIDelegate += ControllActiveState;
+        if (objectManager != null) objectManager.activeSystemUIDelegate += SetSkipButtonActiveState;
     }
 
     private void Update()
     {
-        if(timeIdx != -1 && time >= 0)
-        {
-            int hour = (int)time / HOUR; 
-            int min = ((int)time % HOUR) / MIN;
-            timeText.text = (hour).ToString() + "h " + (min).ToString() + "m";
-            time -= Time.deltaTime;
-
-            if(time < 0)
-            {
-                //다음 챕터로 넘어간다.
-                Debug.Log("2");
-                playerController.NextPhase();
-                time = timeStamp[timeIdx]; //리셋
-                return;
-            }
-        }
+        // 타이머 로직을 GameManager로 이전했으므로 Update 내용은 제거합니다.
     }
 
-    void NextPhase(GamePatternState gameState)
+
+    /// <summary>
+    /// GameManager에서 호출하여 남은 시간을 UI에 표시합니다.
+    /// </summary>
+    /// <param name="remainingSeconds">남은 시간(초)</param>
+    public void SetTime(float remainingSeconds)
     {
-        timeIdx = (int)gameState;
-        if(timeIdx < timeStamp.Length)
-        {
-            time = timeStamp[timeIdx];
-        }
+        if (remainingSeconds < 0) remainingSeconds = 0;
+        int hour = (int)remainingSeconds / HOUR;
+        int min = ((int)remainingSeconds % HOUR) / MIN;
+        if (timeText != null)
+            timeText.text = (hour).ToString() + "h " + (min).ToString() + "m";
     }
 
-    public void ControllActiveState(bool InActive)
+    public void SetSkipButtonActiveState(bool InActive)
     {
         this.gameObject.SetActive(InActive);
     }
@@ -145,6 +133,9 @@ public class TimeSkipUIController : MonoBehaviour
         Destroy(GameObject.FindWithTag("TouchGuide"));
         gameManager.ScrollManager.scrollable();
         popup.SetActive(false);
+
+        var menu = FindObjectOfType<MenuController>();
+        menu?.SetMenuButtonInteractable(true);
     }
     public void TutoYesClick()
     {

@@ -121,7 +121,7 @@ public class DotController : MonoBehaviour
     private bool isAfterScriptPlaying = false;
     private bool isSubDialogueAnimPlaying = false;
     private float _idleAnimationTimer;
-    private const float IDLE_ANIMATION_DURATION = 3f; //(단위: 초) 애니메이션 재생 시간 제한 (7분) //[디버깅] 7분 -> 10초
+    private const float IDLE_ANIMATION_DURATION = 3f; //(단위: 초) 랜덤 재생 애니메이션 재생 시간 제한 (7분) //[DEBUG] 7분 -> 10초
 
     GamePatternState tmpState;
 
@@ -225,7 +225,7 @@ public class DotController : MonoBehaviour
         }
 
         // 3. 타이머 로직 실행 조건: AfterScript 재생 중이거나, Thinking 페이즈(랜덤 애니메이션)인 경우
-        bool shouldRunTimer = isAfterScriptPlaying || manager.Pattern == GamePatternState.Thinking;
+        bool shouldRunTimer = isAfterScriptPlaying || (manager.Pattern == GamePatternState.Thinking) || (manager.Pattern == GamePatternState.Watching);
 
         if (shouldRunTimer)
         {
@@ -353,7 +353,7 @@ public class DotController : MonoBehaviour
 
         Debug.Log("스테이트:" + State);
         Debug.Log("GetSubSCript");
-        if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play || manager.Pattern == GamePatternState.Sleeping || manager.Pattern == GamePatternState.NextChapter)
+        if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play || manager.Pattern == GamePatternState.NextChapter)
         {
             return 0;
         }
@@ -398,6 +398,28 @@ public class DotController : MonoBehaviour
         //}
 
         //return scripts[subseq - 1];
+    }
+
+    // [추가] 페이즈별 스크립트 가져오기 (MainA, MainB 등 subseq와 무관한 경우 처리)
+    public ScriptList GetScriptForPhase(GamePatternState state)
+    {
+        if (manager != null) chapter = manager.Chapter;
+
+        // MainA, MainB는 subseq와 상관없이 첫 번째 스크립트를 가져옴
+        // ScriptListParser에서 MainA, MainB는 mainScriptLists에 저장됨
+        if (state == GamePatternState.MainA || state == GamePatternState.MainB)
+        {
+            if (mainScriptLists != null && chapter > 0 && chapter <= mainScriptLists.Count)
+            {
+                var list = mainScriptLists[chapter - 1];
+                foreach (var s in list)
+                {
+                    if (s.GameState == state) return s;
+                }
+            }
+            return null;
+        }
+        return GetSubScriptList(state);
     }
 
     public ScriptList GetnxSubScriptList(GamePatternState State)
@@ -496,6 +518,7 @@ public class DotController : MonoBehaviour
     {
         alertOff();
         subAlert.SetActive(isActive);
+        if (isActive) ForceStopAfterScript(); // 진입 시 AfterScript 강제 종료
         if (isActive && !string.IsNullOrEmpty(animKey))
         {
             ChangeState(DotPatternState.Default, animKey, position, "", true);
@@ -505,6 +528,7 @@ public class DotController : MonoBehaviour
     public void TriggerMain(bool isActive)
     {
         alertOff();
+        if (isActive) ForceStopAfterScript(); // 진입 시 AfterScript 강제 종료
         mainAlert.SetActive(isActive);
         /*여기서 OnClick 함수도 연결해준다.*/
         //OutPos 가 있다면 해당 Position으로 바껴야함.
@@ -512,6 +536,7 @@ public class DotController : MonoBehaviour
     public void TriggerPlay(bool isActive)
     {
         alertOff();
+        if (isActive) ForceStopAfterScript(); // 진입 시 AfterScript 강제 종료
         playAlert.SetActive(isActive);
         /*여기서 OnClick 함수도 연결해준다.*/
         //OutPos 가 있다면 해당 Position으로 바껴야함.
@@ -733,7 +758,10 @@ public class DotController : MonoBehaviour
     }
     public void dotvicheck(bool set)
     {
-        StartCoroutine(DotvisibleCheck(set));
+        //inactive 상태일때 오류 방지
+        if (gameObject.activeInHierarchy)
+            StartCoroutine(DotvisibleCheck(set));
+
     }
     public IEnumerator DotvisibleCheck(bool setoff)
     {
@@ -810,6 +838,20 @@ public class DotController : MonoBehaviour
         UpdateIdleAnimation();
     }
 
+    // Trigger 함수들에서 호출할 강제 종료 헬퍼 (UpdateIdleAnimation 호출 안 함)
+    private void ForceStopAfterScript()
+    {
+        if (isAfterScriptPlaying)
+        {
+            Debug.Log("[DotController] Force stopping AfterScript for Event Trigger.");
+            isAfterScriptPlaying = false;
+            PlayerPrefs.DeleteKey("AS_AnimKey");
+            PlayerPrefs.DeleteKey("AS_Pos");
+            PlayerPrefs.DeleteKey("AS_IsPlaying");
+            PlayerPrefs.Save();
+        }
+    }
+
     // 기본 랜덤 애니메이션 재생
     // 애니메이션 우선순위 로직
     public void UpdateIdleAnimation()
@@ -836,18 +878,24 @@ public class DotController : MonoBehaviour
                 ChangeState(DotPatternState.Default, randomAnim, -1);
                 break;
             case GamePatternState.Watching:
-                // Watching 페이즈 때 dot이 외출하지 않았을 때 anim_mud 재생
+                // Watching: States.cs에서 외출 시 SetActive(false) 처리함.
+                // 따라서 여기 들어왔다는 것은 외출하지 않았다는 뜻이므로 anim_mud 재생 (상태 유지)
                 PlayMudAnimation(manager.Chapter);
                 break;
             case GamePatternState.Sleeping:
                 // Sleeping 페이즈의 기본 애니메이션 복구
+                // Sleeping: 기본 애니메이션 anim_sleep 고정 (랜덤 X)
                 Debug.Log($"[DotController] Playing default animation for Sleeping phase: anim_sleep");
                 ChangeState(DotPatternState.Trigger, "anim_sleep", 10);
+                // Trigger 타입으로 재생하여 우선순위 확보
+                ChangeState(DotPatternState.Trigger, "anim_sleep", 10, "", true);
                 break;
             case GamePatternState.Writing:
                 // Writing 페이즈의 기본 애니메이션 복구
+                // Writing: 기본 애니메이션 anim_diary 고정 (랜덤 X)
                 Debug.Log($"[DotController] Playing default animation for Writing phase: anim_diary");
                 ChangeState(DotPatternState.Phase, "anim_diary");
+                ChangeState(DotPatternState.Phase, "anim_diary", -1, "", true);
                 break;
             default:
                 Debug.Log($"[DotController] No specific idle animation for phase '{manager.Pattern}'.");

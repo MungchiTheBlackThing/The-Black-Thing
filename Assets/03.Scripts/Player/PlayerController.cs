@@ -148,6 +148,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
                 return; // 더 이상 아래 로직 실행하지 않음
             }
         }
+        WritePlayerFile(); //페이즈 변경 사항 저장
 
         // 순서: 먼저 currentPhase 적용 → SetPhase로 subseq 설정 → delegate 호출
         gamemanger.GetComponent<GameManager>().SetPhase(player.currentPhase);
@@ -175,7 +176,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         if (Chapter <= 0 || Chapter > 15) return null;
 
-        return player.GetSubPhase(Chapter - 1);
+        return player.GetSubPhase(Chapter);
     }
 
 

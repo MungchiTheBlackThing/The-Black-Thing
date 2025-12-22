@@ -217,8 +217,7 @@ public class MenuController : MonoBehaviour
     {
         //if (!SkipController.is_end)
         //    TimeUI.SetActive(true);
-        checkList.transform.parent.gameObject.SetActive(true);
-        Icon.transform.parent.gameObject.SetActive(false);
+        MenuAniExit();
     }
     public void MenuAniExit()
     {
@@ -229,7 +228,7 @@ public class MenuController : MonoBehaviour
         }
         else
         {
-            if ((phase != 1 || phase != 3) && !UItutoEnd)
+            if (phase == 1 || phase == 3 || phase == 5)
             {
                 checkList.SetActive(true);
                 MenuDefault.SetActive(false);
@@ -342,12 +341,26 @@ public class MenuController : MonoBehaviour
         DayProgressUI.GetComponent<ProgressUIController>().exit();
         DayProgressUI.GetComponent<ProgressUIController>().exit();
         offMenu();
-        PlayerController.NextPhase();
+        //PlayerController.NextPhase();
     }
     IEnumerator later()
     {
         yield return new WaitForSeconds(2.5f);
         skipon();
         GameObject.FindWithTag("GameController").GetComponent<SubTuto>().skiptouchGuide();
+    }
+
+    // 보이게 하는 단계 (종이 날아갈 때)
+    public void SetMenuButtonVisible(bool visible)
+    {
+        if (MenuBut != null)
+            MenuBut.SetActive(visible);
+    }
+
+    // 클릭 가능 여부 전용 (tuto-watching 진입 이후)
+    public void SetMenuButtonInteractable(bool canClick)
+    {
+        if (MenuBut != null)
+            MenuBut.GetComponent<Button>().interactable = canClick;
     }
 }

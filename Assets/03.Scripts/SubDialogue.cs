@@ -246,7 +246,7 @@ public class SubDialogue : MonoBehaviour
         subdata.Color = SubDialogueEntries[idx].Color;
         subdata.DotAnim = SubDialogueEntries[idx].DotAnim;
         //여기서 dot 값을 변경할 예정
-        Debug.Log("SubDialogueEntries[idx].DotAnim 여기 변경변경");
+        Debug.Log("DotAnim 값: " + subdata.DotAnim);
         //이 Text안에서 <name>이 있을 경우 변경
         subdata.NextLineKey = SubDialogueEntries[idx].NextLineKey;
         //subdata.LocTable = SubDialogueEntries[idx].LocTable;
@@ -287,6 +287,17 @@ public class SubDialogue : MonoBehaviour
 
     public void Subexit()
     {
+        //이벤트가 완전히 종료되는 시점에 타이머 키를 삭제
+        if (manager != null && playerController != null)
+        {
+            // MarkSubWatched/plusSubseq가 호출되기 전의 subseq 번호 사용
+            int completedSubseq = playerController.GetSubseq();
+            string timestampKey = "PendingEventTimestamp_" + manager.Chapter + "_" + manager.Pattern.ToString() + "_" + completedSubseq;
+            PlayerPrefs.DeleteKey(timestampKey);
+            PlayerPrefs.Save();
+            Debug.Log($"[삭제] 서브 이벤트 타이머 키 삭제 (종료 시점): {timestampKey}");
+        }
+
         if (dialogueData != null && dialogueData.name == "tutorial_sub")
         {
             Debug.Log(dialogueData.name);
@@ -305,6 +316,7 @@ public class SubDialogue : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name != "Tutorial")
         {
+
             playerController.MarkSubWatched(playerController.GetSubseq());
             Debug.Log("이미 본 서브로 저장" + playerController.GetSubseq());
             playerController.plusSubseq();
@@ -361,6 +373,8 @@ public class SubDialogue : MonoBehaviour
         // 다음 서브 이벤트 타이머 시작
         manager.ShowSubDial();
         this.gameObject.SetActive(false);
+
+        
     }
 
     public void TutoExit()

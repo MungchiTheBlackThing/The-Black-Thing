@@ -212,6 +212,9 @@ public class SubTuto : MonoBehaviour
         UIBalloon.SetActive(true);
         moonnote.anion(UIBalloon);
         SystemUI.SetActive(true);
+        var menu = FindObjectOfType<MenuController>();
+        menu?.SetMenuButtonVisible(true);
+        menu?.SetMenuButtonInteractable(false); // 튜토 씬에서 꺼 둔 메뉴 여기서 다시 켜기 (보이게만), 여기서 처음으로 메뉴 버튼 노출!
     }
 
     public void skiptouchGuide()

@@ -309,7 +309,7 @@ public class MainPanel : MonoBehaviour
                     if (korText.Contains("<nickname>") && pc)
                         korText = korText.Replace("<nickname>", pc.GetNickName());
 
-                    //[디버깅]0.5f -> 0.01f
+                    //[DEBUG]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         DotPanel,
                         DotPanel.GetComponent<CanvasGroup>(),
@@ -322,7 +322,7 @@ public class MainPanel : MonoBehaviour
                 else if (actor == "Player")
                 {
                     if (MainClick) MainClick.SetActive(true);
-                    //[디버깅]0.5f -> 0.01f
+                    //[DEBUG]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         PlayPanel,
                         PlayPanel.GetComponent<CanvasGroup>(),

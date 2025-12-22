@@ -19,7 +19,7 @@ public class PrologueVideoManager : MonoBehaviour
     // 프롤로그 영상 재생, 튜토리얼로 이동
     public void TryRunPrologueThenGo(string nextSceneIfNotTutorial, bool goingTutorial, string currentSceneName = "IntroScene")
     {
-        //PlayerPrefs.DeleteKey("PROLOGUE_PLAYED"); //[디버깅] 매번 프롤로그 재생하도록
+        //PlayerPrefs.DeleteKey("PROLOGUE_PLAYED"); //[DEBUG] 매번 프롤로그 재생하도록 설정하는 코드
         //PlayerPrefs.Save();
 
         int flag = PlayerPrefs.GetInt(ProloguePlayedKey, 0);

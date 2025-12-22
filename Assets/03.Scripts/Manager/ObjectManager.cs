@@ -155,7 +155,6 @@ public class ObjectManager : MonoBehaviour
         {
             if (googlePath[idx].Time.ToString() == path)
             {
-                //[디버깅]tmpPath = googlePath[idx].path;
                 tmpPath = googlePath[idx].path;
                 break;
             }
