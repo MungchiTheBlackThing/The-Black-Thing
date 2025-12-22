@@ -133,6 +133,9 @@ public class TimeSkipUIController : MonoBehaviour
         Destroy(GameObject.FindWithTag("TouchGuide"));
         gameManager.ScrollManager.scrollable();
         popup.SetActive(false);
+
+        var menu = FindObjectOfType<MenuController>();
+        menu?.SetMenuButtonInteractable(true);
     }
     public void TutoYesClick()
     {

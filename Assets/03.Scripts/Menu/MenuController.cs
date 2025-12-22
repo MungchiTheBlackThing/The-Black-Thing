@@ -349,4 +349,18 @@ public class MenuController : MonoBehaviour
         skipon();
         GameObject.FindWithTag("GameController").GetComponent<SubTuto>().skiptouchGuide();
     }
+
+    // 보이게 하는 단계 (종이 날아갈 때)
+    public void SetMenuButtonVisible(bool visible)
+    {
+        if (MenuBut != null)
+            MenuBut.SetActive(visible);
+    }
+
+    // 클릭 가능 여부 전용 (tuto-watching 진입 이후)
+    public void SetMenuButtonInteractable(bool canClick)
+    {
+        if (MenuBut != null)
+            MenuBut.GetComponent<Button>().interactable = canClick;
+    }
 }
