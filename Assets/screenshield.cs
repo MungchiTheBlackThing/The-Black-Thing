@@ -1,12 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class screenshield : MonoBehaviour
+public class ScreenShield : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void OnEnable()
+    private static ScreenShield _instance;
+
+    private void Awake()
     {
-        this.transform.SetAsLastSibling();
+        _instance = this;
+
+        gameObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        transform.SetAsLastSibling();
+    }
+
+    public static void Set(bool on)
+    {
+        if (_instance == null)
+        {
+            return;
+        }
+
+        _instance.gameObject.SetActive(on);
+
+        if (on)
+        {
+            _instance.transform.SetAsLastSibling();
+        }
+    }
+
+    public static void On()
+    {
+        Set(true);
+    }
+
+    public static void Off()
+    {
+        Set(false);
     }
 }

@@ -279,6 +279,7 @@ public class SubPanel : MonoBehaviour
     public void DialEnd()
     {
         Debug.Log("서브 대화 끝");
+        ScreenShield.Off();
         PanelOff();
         sub.currentDialogueList.Clear();
         dialogueIndex = 0;
@@ -313,7 +314,7 @@ public class SubPanel : MonoBehaviour
             DialEnd();
             return;
         }
-
+        ScreenShield.On();
         var nextDial = sub.GetData(dialogueIndex);
         string scriptnumber = nextDial.ScriptNumber;
         string textType = nextDial.TextType;

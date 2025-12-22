@@ -43,6 +43,11 @@ public class MainPanel : MonoBehaviour
 
     private const string PH_KO = "당신의 생각을 입력해 주세요.";
     private const string PH_EN = "Please enter your thoughts.";
+
+
+    private List<string> selection13 = new List<string> {
+        "찰나의 미소띤 잔상","파도 속 낯선 안식처","비좁고 다정한 암흑","미약한 용기의 불씨","a","b","c","d" //<multiple(2)>
+    };
     void OnEnable()
     {
         mainDialogue = (MainDialogue)gameManager.CurrentState;
@@ -224,6 +229,7 @@ public class MainPanel : MonoBehaviour
         mainDialogue.DialogueEntries.Clear();
         dialogueIndex = 0;
         backindex = -1;
+        ScreenShield.Off();
 
         if (gameManager.GetComponent<TutorialManager>() != null)
         {
@@ -285,7 +291,9 @@ public class MainPanel : MonoBehaviour
             DialEnd();
             return;
         }
-
+        ScreenShield.On();
+        int deathnotesel = pc.GetArcheType().deathnote;
+        deathnotesel = (LANGUAGE == 0) ? deathnotesel : deathnotesel + 4;
         main mainDial = mainDialogue.GetData(dialogueIndex);
 
         string textType = mainDial.TextType;
@@ -294,6 +302,8 @@ public class MainPanel : MonoBehaviour
         string animScene = mainDial.AnimScene;
         string background = mainDial.Background;
         bool waitVideo = animScene == "1";
+
+        
 
         if (waitVideo) //메인 비디오도 뒤로 가지 못하게
         {
@@ -308,7 +318,8 @@ public class MainPanel : MonoBehaviour
                     if (MainClick) MainClick.SetActive(true);
                     if (korText.Contains("<nickname>") && pc)
                         korText = korText.Replace("<nickname>", pc.GetNickName());
-
+                    if (korText.Contains("<13th selection>") && pc)
+                        korText = korText.Replace("<13th selection>", selection13[deathnotesel]);
                     //[DEBUG]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         DotPanel,

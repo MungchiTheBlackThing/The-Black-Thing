@@ -12865,7 +12865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &634939025
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34023,7 +34023,6 @@ MonoBehaviour:
   DayProgress: {fileID: 1651024148}
   Subicon: {fileID: 1827726167}
   gameManager: {fileID: 199268581}
-  Screentouch: {fileID: 634939024}
 --- !u!114 &1467358322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34628,7 +34627,6 @@ MonoBehaviour:
   screen: {fileID: 606963710}
   popupUI: {fileID: 1337521961}
   menu: {fileID: 619721723}
-  screenshield: {fileID: 634939024}
 --- !u!1 &1503305164
 GameObject:
   m_ObjectHideFlags: 0
@@ -48970,7 +48968,6 @@ MonoBehaviour:
   Ch1: {fileID: 0}
   DayProgress: {fileID: 1651024148}
   Subicon: {fileID: 1827726167}
-  Screentouch: {fileID: 634939024}
   player: {fileID: 2022455605}
 --- !u!222 &728480254008036783
 CanvasRenderer:

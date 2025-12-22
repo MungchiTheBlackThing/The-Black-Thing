@@ -2698,6 +2698,7 @@ MonoBehaviour:
   subDialoguePanel: {fileID: 1418538260}
   loadingProgressBar: {fileID: 1760591409901623052}
   dayStartHour: 11
+  dayStartMinute: 0
 --- !u!114 &199268584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13342,7 +13343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &886942852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20666,7 +20667,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &1193627962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28081,7 +28082,6 @@ MonoBehaviour:
   screen: {fileID: 606963710}
   popupUI: {fileID: 1337521961}
   menu: {fileID: 0}
-  screenshield: {fileID: 886942851}
 --- !u!1 &1516907233
 GameObject:
   m_ObjectHideFlags: 0
@@ -30809,6 +30809,7 @@ MonoBehaviour:
   - credit_title
   TimeSetPopup: {fileID: 897398175}
   timeLabel: {fileID: 1811941792}
+  gameManager: {fileID: 0}
   nicknameTxt: {fileID: 2079580656}
   closeTxt: {fileID: 1869457502}
   popupPage:

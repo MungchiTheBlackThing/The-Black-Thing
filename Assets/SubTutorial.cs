@@ -18,7 +18,6 @@ public class SubTutorial : MonoBehaviour
     [SerializeField] GameObject DayProgress;
     [SerializeField] GameObject Subicon;
     [SerializeField] GameManager gameManager;
-    [SerializeField] GameObject Screentouch;
     CanvasGroup tutorialMaskGroup;
     CanvasGroup Spider;
     CanvasGroup Progress;
@@ -38,7 +37,7 @@ public class SubTutorial : MonoBehaviour
         MenuController.isprogress = false;
         progressUIController.guide1 = false;
         progressUIController.guide2 = false;
-        Screentouch.SetActive(true);
+        ScreenShield.On();
         subtutoinit();
         index = 0;
 
@@ -191,7 +190,7 @@ public class SubTutorial : MonoBehaviour
             {
                 Subicon.transform.SetParent(preparent.transform);
                 Subicon.transform.SetSiblingIndex(3);
-                Screentouch.SetActive(false);
+                ScreenShield.Off();
                 this.gameObject.SetActive(false);
                 return;
             }

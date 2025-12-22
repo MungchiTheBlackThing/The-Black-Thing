@@ -46,7 +46,7 @@ public class DiaryUIController : MonoBehaviour
     {
         popupUI.SetActive(false);
         openDiaryUI.SetActive(true);
-
+        ScreenShield.Off();
         //가이드 UI 활성화 조건
         //일기장 페이지가 2장 이상일 때
         //첫 1회만 활성화
@@ -71,5 +71,6 @@ public class DiaryUIController : MonoBehaviour
         {
             openDiaryUI.SetActive(false);
         }
+        ScreenShield.Off();
     }
 }

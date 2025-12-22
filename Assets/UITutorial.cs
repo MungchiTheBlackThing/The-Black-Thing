@@ -14,7 +14,6 @@ public class UITutorial : MonoBehaviour
     [SerializeField] GameObject Ch1;
     [SerializeField] GameObject DayProgress;
     [SerializeField] GameObject Subicon;
-    [SerializeField] GameObject Screentouch;
     [SerializeField] PlayerController player;
     CanvasGroup tutorialMaskGroup;
     CanvasGroup Spider;
@@ -44,7 +43,7 @@ public class UITutorial : MonoBehaviour
     void OnEnable()
     {
         ResetState();
-        Screentouch.SetActive(true);
+        ScreenShield.Off();
         StartCoroutine(guide());
     }
 
@@ -184,7 +183,7 @@ public class UITutorial : MonoBehaviour
             index++;
             if (index >= transform.childCount)
             {
-                Screentouch.SetActive(false);
+                ScreenShield.Off();
                 MenuController.allon();
                 MenuController.nextandoff();
                 this.gameObject.SetActive(false);
@@ -199,6 +198,6 @@ public class UITutorial : MonoBehaviour
     }
     public void OnDisable()
     {
-        Screentouch.SetActive(false);
+        ScreenShield.Off();
     }
 }
