@@ -100,22 +100,31 @@ public class SubTutorial : MonoBehaviour
     public void Guide0()
     {
         Guideline[0].SetActive(true);
+
+        this.GetComponent<Image>().enabled = false;
+        this.GetComponent<Button>().interactable = false;
+
         Guideline[0].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = dial;
         Guideline[0].GetComponent<Button>().onClick.AddListener(() => Guide1());
-       
     }
+
     public void Guide1()
     {
+        this.GetComponent<Image>().enabled = true;
+        this.GetComponent<Button>().interactable = true;
+
         index = 0;
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
+
         preparent = menuBut.transform.parent.gameObject;
         presibling = 1;
         Debug.Log("Guide1");
         menuBut.transform.SetParent(this.transform);
         menuBut.transform.SetAsLastSibling();
     }
+
 
     public void Guide2()
     {
