@@ -217,8 +217,7 @@ public class MenuController : MonoBehaviour
     {
         //if (!SkipController.is_end)
         //    TimeUI.SetActive(true);
-        checkList.transform.parent.gameObject.SetActive(true);
-        Icon.transform.parent.gameObject.SetActive(false);
+        MenuAniExit();
     }
     public void MenuAniExit()
     {
@@ -229,7 +228,7 @@ public class MenuController : MonoBehaviour
         }
         else
         {
-            if ((phase != 1 || phase != 3) && !UItutoEnd)
+            if (phase == 1 || phase == 3 || phase == 5)
             {
                 checkList.SetActive(true);
                 MenuDefault.SetActive(false);
