@@ -1,79 +1,79 @@
 Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,43,1,main_web,Dot,Main,body_spiderweb,face_blink,text,<nickname>.,<nickname>.,2,,,,Main_Ch8,M8_L0001
-1,43,2,main_web,Player,Main,,,text,"뭉치, 왔구나!","Dot, you’re here!",3,,,,Main_Ch8,M8_L0002
-1,43,3,main_web,Dot,Main,,,text,"응, <nickname>, 어젯밤엔 우리가\n약속했던 악몽을 꾸었니?","I am, <nickname>. Did you have a nightmare\nlike we agreed on yesterday?",4,,,,Main_Ch8,M8_L0003
-1,43,4,main_web,Dot,Main,,,text,"너의 낯선 슬픔을 발견하고, 깨어났을\n때 마음껏 눈물 흘릴 수 있었어?","Did you discover an unfamiliar sorrow within,\nand shed tears with abandon once you woke?",5,,,,Main_Ch8,M8_L0004
-1,43,5,main_web,Player,Main,,,selection,응. 불행을 불행 그대로 만끽할 수 있었어.|아쉽지만... 달나라 꿈 직원이 어제는 악몽을 보내 주지 않았어.,Yes. I was able to appreciate despair for what it is.|Sadly... the factory didn’t send me one yesterday.,6|8,,,active|passive,Main_Ch8,M8_L0005
-1,43,6,main_web,Dot,Main,,,text,다행이야. 다행이야. 축축한 식은땀 속에서\n깨어나는 게 나쁜 경험만은 아니었길 바라.,Good. I’m glad. I hope waking up in a\ncold sweat wasn’t just a bad experience.,7,,,,Main_Ch8,M8_L0006
-1,43,7,main_web,Dot,Main,,,text,밤새 후벼진 <nickname>의 상처 위에는 어느새 불룩한\n흉이 자라날 거야! 네 미소보다 환한 흉이. 장담해.,Your wound will now leave a raised scar.\nOne that shines brighter than your smile!,11,,,,Main_Ch8,M8_L0007
-1,43,8,main_web,Dot,Main,,,text,너를 따스히 아끼는 직원이었나 봐. 하지만 축축한 식은\n땀 속에서 깨어나는 게 나쁜 것만은 아닌데 말이야.,The worker must care for you greatly. Not\nthat waking up in a cold sweat is always bad.,9,,,,Main_Ch8,M8_L0008
-1,43,9,main_web,Dot,Main,,,text,"언젠가는 너의 악몽이 네 해묵은 상처를 후벼\n파기를, 그 위에 단단한 흉이 돋아나기를 바랄게.","I hope someday your nightmare will dig into your\nold wounds, so that tough scars grow over them.",10,,,,Main_Ch8,M8_L0009
-1,43,10,main_web,Dot,Main,,,text,그날 너와 이야기 나눌 수 있다면 참 좋겠다.,I hope I’ll be able to\ntalk about it with you then.,11,,,,Main_Ch8,M8_L0010
-1,43,11,main_web,Player,Main,,,text,"뭉치, 너의 하루도 궁금해져.","Dot, I want to know\nabout your day too.",12,,,,Main_Ch8,M8_L0011
-1,43,12,main_web,Player,Main,,,text,너는 오늘 산책하는 동안 어떤 인간을 관찰하고 왔어?,Who did you study while on your walk?,13,,,,Main_Ch8,M8_L0012
-1,43,13,main_web,Dot,Main,,face_eyeroll3,text,"... 아주, 아주 불운한 인간이었어.","... A very, very unfortunate human.",14,,,,Main_Ch8,M8_L0013
-1,43,14,main_web,Dot,Main,,face_omg,text,하지만 불운하기에는 너무 작고 어린 인간이었어.,But one too little and\nyoung for such misfortune.,15,,,,Main_Ch8,M8_L0014
-1,43,15,main_web,Player,Main,,face_blink,text,.....,.....,16,1,,,Main_Ch8,M8_L0015
-1,43,16,main_web,Player,Main,,,text,"저런, 쌍둥이 형이 죽어서 태어난\n비극은 그 아이의 탓이 아닌걸.",Oh dear. But it wasn’t the child’s fault\nthat his twin brother was stillborn.,17,,,,Main_Ch8,M8_L0016
-1,43,17,main_web,Player,Main,,,text,그 아이가 감당할 몫이 아니었는데...,It shouldn’t be his burden to bear...,18,,,,Main_Ch8,M8_L0017
-1,43,18,main_web,Player,Main,,,text,가족의 말로 인해 생겨 난 죄책감 때문이었을까?,Maybe he felt guilt over\nwhat his family told him?,19,,,,Main_Ch8,M8_L0018
-1,43,19,main_web,Dot,Main,,face_eyeroll2,text,가족이란 든든하고 포근한 요람인 게 아니야?,"But isn’t family supposed\nto be a firm, gentle cradle?",20,,,,Main_Ch8,M8_L0019
-1,43,20,main_web,Dot,Main,,face_blink,text,가족이어도 서로를 상처 줄 수 있는 거야?,Can family hurt each other?,21,,,,Main_Ch8,M8_L0020
-1,43,21,main_web,Player,Main,,,selection,... 잘 모르겠어. ‘가족’이란 아주 복잡한 주제거든.|가족들도 타인이니까. 상처를 주고받을 수 있지.,"... I’m not sure. Family can be complicated.|They can, at times. Family isn’t everything.",22|22,,,sun|moon,Main_Ch8,M8_L0021
-1,43,22,main_web,Dot,Main,,face_eyeroll3,text,인간의 다채로움 속에는... 때때로 아주\n고약하고 악취 나는 색깔도 있는 듯해.,Humans are colorful... yet there is the\noccasional foul and pungent hue.,23,,,,Main_Ch8,M8_L0022
-1,43,23,main_web,Dot,Main,,face_eyeroll3_stay,text,조금 더 생각해 봐야겠지만.,Though I’ll have to think more on this.,24,,,,Main_Ch8,M8_L0023
-1,43,24,main_web,Dot,Main,,face_blink,text,당장은 지체할 시간이 없어. 무력한\n아이를 혼자 내버려 둘 수 없거든.,But right now I don’t have time to lose.\nI can’t leave a helpless child on his own.,25,,,,Main_Ch8,M8_L0024
-1,43,25,main_web,Dot,Main,,,text,"나, 다시 밖으로 나가서 아이의 어깨 위로 올라타야겠어.","I’ll go back out there,\nclimb onto his shoulder,",26,,,,Main_Ch8,M8_L0025
-1,43,26,main_web,Dot,Main,,,text,"그리고 목덜미에 매달려 틈을 노리다가,","and latch on the nape of his\neck. So when the time comes,",27,,,,Main_Ch8,M8_L0026
-1,43,27,main_web,Dot,Main,,,text,"아이가 한숨을 쉬려 입을 벌리는 순간,","just when he opens his\nmouth to let out a sigh,",28,,,,Main_Ch8,M8_L0027
-1,43,28,main_web,Dot,Main,,,text,"내 기이다란 손을 집어넣고, 숨어\n있을 형의 배아를 찾아 낸 다음","I’ll plunge my loooong arm inside,\nfeel around for the brother in hiding,",29,,,,Main_Ch8,M8_L0028
-1,43,29,main_web,Dot,Main,,,text,그를 똑 떼어 내야겠어.,and pluck him out.,30,,,,Main_Ch8,M8_L0029
-1,43,30,main_web,Dot,Main,,face_close_turn,text,"멀리멀리 던지거나, 깊이깊이 묻어서","I’ll throw him far far far away, or\nbury him deep deep deep down,",31,,,,Main_Ch8,M8_L0030
-1,43,31,main_web,Dot,Main,,face_open,text,다시는 아이 속에 숨지 못하게 만들어야겠어.,so that he’ll never crawl\nback inside the child again.,32,,,,Main_Ch8,M8_L0031
-1,43,32,main_web,Dot,Main,,face_omg,text,아이를 해방시켜 주고 싶어.,I want to set the child free.,33,,,,Main_Ch8,M8_L0032
-1,43,33,main_web,Player,Main,,,text,(만난 지 두 번째 되는 날이었던가?\n동그라미에 집착하던 자를 보며),"(Was it the second day we met? I remember\nDot speaking of the man fixated on circles,)",34,,,,Main_Ch8,M8_L0033
-1,43,34,main_web,Player,Main,,,text,(그를 필사적으로 채워 주고 싶어 하던 뭉치가 떠올라.),(and so desperately\nwanting to fill him.),35,,,,Main_Ch8,M8_L0034
-1,43,35,main_web,Player,Main,,face_blink,text,"뭉치, 얼굴에 구멍이 뻥 뚫려 있던 사람 기억하지.","Dot, remember the man\nwith a hole in his face?",36,,,,Main_Ch8,M8_L0035
-1,43,36,main_web,Dot,Main,,face_eyeroll2,text,"응, 자신의 공백에 고통스러워했지만,\n결국은 비어 있는 자체로도 충분했던 사람.","Yes, the one that suffered from his emptiness,\nbut whose emptiness was enough as it is.",37,,,,Main_Ch8,M8_L0036
-1,43,37,main_web,Player,Main,,face_blink,text,아이 역시 아이 자체로 충분할 수 있지 않을까?,Don’t you think the same\ngoes for the child?,38,,,,Main_Ch8,M8_L0037
-1,43,38,main_web,Dot,Main,,,text,.... 그럴 수도 있겠지.,.... Perhaps.,39,,,,Main_Ch8,M8_L0038
-1,43,39,main_web,Dot,Main,,face_eyeroll3,text,하지만 혼자서 공백을 감당하기엔...\n아이가 너무나도 어리잖아.,But to bear that emptiness\nalone... he’s just so young.,40,,,,Main_Ch8,M8_L0039
-1,43,40,main_web,Dot,Main,,face_blink,text,나는 뱉지 않고 사는 법을 모르겠어. 그 자유로운\n기쁨과 쾌락을 아이에게도 알려 주고 싶어.,"I don’t know how <i>not</i> to let things out. I\nwant to teach him of that freeing joy, that ecstasy.",41,,,,Main_Ch8,M8_L0040
-1,43,41,main_web,Player,Main,,,text,저렇게 억눌린 채 살 나이가 아닌 것은 공감해.,You’re right. He is too\nyoung to be so oppressed.,42,,,,Main_Ch8,M8_L0041
-1,43,42,main_web,Player,Main,,,text,어쩌면 아이도 변화를 절실히\n원하고 있을지도 몰라...,Maybe he longs for change too...,43,,,,Main_Ch8,M8_L0042
-1,43,43,main_web,Player,Main,,,text,하지만 뭉치... 궁금한 게 있어.,But Dot... I’d like to\nask you something.,44,,,,Main_Ch8,M8_L0043
-1,43,44,main_web,Player,Main,,,text,양지에서 온 행복한 애벌레가\n그림자 속에서 쉬고 있던 너를 보고,If a happy caterpillar from a sunlit\npasture saw you resting in the shade,45,,,,Main_Ch8,M8_L0044
-1,43,45,main_web,Player,Main,,,text,햇살의 소중함을 알려 주고 싶어! 하며,"and, in an attempt to teach\nyou about the sunshine,",46,,,,Main_Ch8,M8_L0045
-1,43,46,main_web,Player,Main,,,text,그물 안에 너를 포획한 뒤 타오르는\n햇볕 아래로 끌어당겼다면,"captured you in a net and pulled\nyou into the blazing heat,",47,,,,Main_Ch8,M8_L0046
-1,43,47,main_web,Player,Main,,,text,뭉치는 어떻게 했을 것 같아?,what would happen to you?,48,,,,Main_Ch8,M8_L0047
+1,43,2,main_web,Player,Main,body_spiderweb,,text,"뭉치, 왔구나!","Dot, you’re here!",3,,,,Main_Ch8,M8_L0002
+1,43,3,main_web,Dot,Main,body_spiderweb,,text,"응, <nickname>, 어젯밤엔 우리가\n약속했던 악몽을 꾸었니?","I am, <nickname>. Did you have a nightmare\nlike we agreed on yesterday?",4,,,,Main_Ch8,M8_L0003
+1,43,4,main_web,Dot,Main,body_spiderweb,,text,"너의 낯선 슬픔을 발견하고, 깨어났을\n때 마음껏 눈물 흘릴 수 있었어?","Did you discover an unfamiliar sorrow within,\nand shed tears with abandon once you woke?",5,,,,Main_Ch8,M8_L0004
+1,43,5,main_web,Player,Main,body_spiderweb,,selection,응. 불행을 불행 그대로 만끽할 수 있었어.|아쉽지만... 달나라 꿈 직원이 어제는 악몽을 보내 주지 않았어.,Yes. I was able to appreciate despair for what it is.|Sadly... the factory didn’t send me one yesterday.,6|8,,,active|passive,Main_Ch8,M8_L0005
+1,43,6,main_web,Dot,Main,body_spiderweb,,text,다행이야. 다행이야. 축축한 식은땀 속에서\n깨어나는 게 나쁜 경험만은 아니었길 바라.,Good. I’m glad. I hope waking up in a\ncold sweat wasn’t just a bad experience.,7,,,,Main_Ch8,M8_L0006
+1,43,7,main_web,Dot,Main,body_spiderweb,,text,밤새 후벼진 <nickname>의 상처 위에는 어느새 불룩한\n흉이 자라날 거야! 네 미소보다 환한 흉이. 장담해.,Your wound will now leave a raised scar.\nOne that shines brighter than your smile!,11,,,,Main_Ch8,M8_L0007
+1,43,8,main_web,Dot,Main,body_spiderweb,,text,너를 따스히 아끼는 직원이었나 봐. 하지만 축축한 식은\n땀 속에서 깨어나는 게 나쁜 것만은 아닌데 말이야.,The worker must care for you greatly. Not\nthat waking up in a cold sweat is always bad.,9,,,,Main_Ch8,M8_L0008
+1,43,9,main_web,Dot,Main,body_spiderweb,,text,"언젠가는 너의 악몽이 네 해묵은 상처를 후벼\n파기를, 그 위에 단단한 흉이 돋아나기를 바랄게.","I hope someday your nightmare will dig into your\nold wounds, so that tough scars grow over them.",10,,,,Main_Ch8,M8_L0009
+1,43,10,main_web,Dot,Main,body_spiderweb,,text,그날 너와 이야기 나눌 수 있다면 참 좋겠다.,I hope I’ll be able to\ntalk about it with you then.,11,,,,Main_Ch8,M8_L0010
+1,43,11,main_web,Player,Main,body_spiderweb,,text,"뭉치, 너의 하루도 궁금해져.","Dot, I want to know\nabout your day too.",12,,,,Main_Ch8,M8_L0011
+1,43,12,main_web,Player,Main,body_spiderweb,,text,너는 오늘 산책하는 동안 어떤 인간을 관찰하고 왔어?,Who did you study while on your walk?,13,,,,Main_Ch8,M8_L0012
+1,43,13,main_web,Dot,Main,body_spiderweb,face_eyeroll3,text,"... 아주, 아주 불운한 인간이었어.","... A very, very unfortunate human.",14,,,,Main_Ch8,M8_L0013
+1,43,14,main_web,Dot,Main,body_spiderweb,face_omg,text,하지만 불운하기에는 너무 작고 어린 인간이었어.,But one too little and\nyoung for such misfortune.,15,,,,Main_Ch8,M8_L0014
+1,43,15,main_web,Player,Main,body_spiderweb,face_blink,text,.....,.....,16,1,,,Main_Ch8,M8_L0015
+1,43,16,main_web,Player,Main,body_spiderweb,,text,"저런, 쌍둥이 형이 죽어서 태어난\n비극은 그 아이의 탓이 아닌걸.",Oh dear. But it wasn’t the child’s fault\nthat his twin brother was stillborn.,17,,,,Main_Ch8,M8_L0016
+1,43,17,main_web,Player,Main,body_spiderweb,,text,그 아이가 감당할 몫이 아니었는데...,It shouldn’t be his burden to bear...,18,,,,Main_Ch8,M8_L0017
+1,43,18,main_web,Player,Main,body_spiderweb,,text,가족의 말로 인해 생겨 난 죄책감 때문이었을까?,Maybe he felt guilt over\nwhat his family told him?,19,,,,Main_Ch8,M8_L0018
+1,43,19,main_web,Dot,Main,body_spiderweb,face_eyeroll2,text,가족이란 든든하고 포근한 요람인 게 아니야?,"But isn’t family supposed\nto be a firm, gentle cradle?",20,,,,Main_Ch8,M8_L0019
+1,43,20,main_web,Dot,Main,body_spiderweb,face_blink,text,가족이어도 서로를 상처 줄 수 있는 거야?,Can family hurt each other?,21,,,,Main_Ch8,M8_L0020
+1,43,21,main_web,Player,Main,body_spiderweb,,selection,... 잘 모르겠어. ‘가족’이란 아주 복잡한 주제거든.|가족들도 타인이니까. 상처를 주고받을 수 있지.,"... I’m not sure. Family can be complicated.|They can, at times. Family isn’t everything.",22|22,,,sun|moon,Main_Ch8,M8_L0021
+1,43,22,main_web,Dot,Main,body_spiderweb,face_eyeroll3,text,인간의 다채로움 속에는... 때때로 아주\n고약하고 악취 나는 색깔도 있는 듯해.,Humans are colorful... yet there is the\noccasional foul and pungent hue.,23,,,,Main_Ch8,M8_L0022
+1,43,23,main_web,Dot,Main,body_spiderweb,face_eyeroll3_stay,text,조금 더 생각해 봐야겠지만.,Though I’ll have to think more on this.,24,,,,Main_Ch8,M8_L0023
+1,43,24,main_web,Dot,Main,body_spiderweb,face_blink,text,당장은 지체할 시간이 없어. 무력한\n아이를 혼자 내버려 둘 수 없거든.,But right now I don’t have time to lose.\nI can’t leave a helpless child on his own.,25,,,,Main_Ch8,M8_L0024
+1,43,25,main_web,Dot,Main,body_spiderweb,,text,"나, 다시 밖으로 나가서 아이의 어깨 위로 올라타야겠어.","I’ll go back out there,\nclimb onto his shoulder,",26,,,,Main_Ch8,M8_L0025
+1,43,26,main_web,Dot,Main,body_spiderweb,,text,"그리고 목덜미에 매달려 틈을 노리다가,","and latch on the nape of his\neck. So when the time comes,",27,,,,Main_Ch8,M8_L0026
+1,43,27,main_web,Dot,Main,body_spiderweb,,text,"아이가 한숨을 쉬려 입을 벌리는 순간,","just when he opens his\nmouth to let out a sigh,",28,,,,Main_Ch8,M8_L0027
+1,43,28,main_web,Dot,Main,body_spiderweb,,text,"내 기이다란 손을 집어넣고, 숨어\n있을 형의 배아를 찾아 낸 다음","I’ll plunge my loooong arm inside,\nfeel around for the brother in hiding,",29,,,,Main_Ch8,M8_L0028
+1,43,29,main_web,Dot,Main,body_spiderweb,,text,그를 똑 떼어 내야겠어.,and pluck him out.,30,,,,Main_Ch8,M8_L0029
+1,43,30,main_web,Dot,Main,body_spiderweb,face_close_turn,text,"멀리멀리 던지거나, 깊이깊이 묻어서","I’ll throw him far far far away, or\nbury him deep deep deep down,",31,,,,Main_Ch8,M8_L0030
+1,43,31,main_web,Dot,Main,body_spiderweb,face_open,text,다시는 아이 속에 숨지 못하게 만들어야겠어.,so that he’ll never crawl\nback inside the child again.,32,,,,Main_Ch8,M8_L0031
+1,43,32,main_web,Dot,Main,body_spiderweb,face_omg,text,아이를 해방시켜 주고 싶어.,I want to set the child free.,33,,,,Main_Ch8,M8_L0032
+1,43,33,main_web,Player,Main,body_spiderweb,,text,(만난 지 두 번째 되는 날이었던가?\n동그라미에 집착하던 자를 보며),"(Was it the second day we met? I remember\nDot speaking of the man fixated on circles,)",34,,,,Main_Ch8,M8_L0033
+1,43,34,main_web,Player,Main,body_spiderweb,,text,(그를 필사적으로 채워 주고 싶어 하던 뭉치가 떠올라.),(and so desperately\nwanting to fill him.),35,,,,Main_Ch8,M8_L0034
+1,43,35,main_web,Player,Main,body_spiderweb,face_blink,text,"뭉치, 얼굴에 구멍이 뻥 뚫려 있던 사람 기억하지.","Dot, remember the man\nwith a hole in his face?",36,,,,Main_Ch8,M8_L0035
+1,43,36,main_web,Dot,Main,body_spiderweb,face_eyeroll2,text,"응, 자신의 공백에 고통스러워했지만,\n결국은 비어 있는 자체로도 충분했던 사람.","Yes, the one that suffered from his emptiness,\nbut whose emptiness was enough as it is.",37,,,,Main_Ch8,M8_L0036
+1,43,37,main_web,Player,Main,body_spiderweb,face_blink,text,아이 역시 아이 자체로 충분할 수 있지 않을까?,Don’t you think the same\ngoes for the child?,38,,,,Main_Ch8,M8_L0037
+1,43,38,main_web,Dot,Main,body_spiderweb,,text,.... 그럴 수도 있겠지.,.... Perhaps.,39,,,,Main_Ch8,M8_L0038
+1,43,39,main_web,Dot,Main,body_spiderweb,face_eyeroll3,text,하지만 혼자서 공백을 감당하기엔...\n아이가 너무나도 어리잖아.,But to bear that emptiness\nalone... he’s just so young.,40,,,,Main_Ch8,M8_L0039
+1,43,40,main_web,Dot,Main,body_spiderweb,face_blink,text,나는 뱉지 않고 사는 법을 모르겠어. 그 자유로운\n기쁨과 쾌락을 아이에게도 알려 주고 싶어.,"I don’t know how <i>not</i> to let things out. I\nwant to teach him of that freeing joy, that ecstasy.",41,,,,Main_Ch8,M8_L0040
+1,43,41,main_web,Player,Main,body_spiderweb,,text,저렇게 억눌린 채 살 나이가 아닌 것은 공감해.,You’re right. He is too\nyoung to be so oppressed.,42,,,,Main_Ch8,M8_L0041
+1,43,42,main_web,Player,Main,body_spiderweb,,text,어쩌면 아이도 변화를 절실히\n원하고 있을지도 몰라...,Maybe he longs for change too...,43,,,,Main_Ch8,M8_L0042
+1,43,43,main_web,Player,Main,body_spiderweb,,text,하지만 뭉치... 궁금한 게 있어.,But Dot... I’d like to\nask you something.,44,,,,Main_Ch8,M8_L0043
+1,43,44,main_web,Player,Main,body_spiderweb,,text,양지에서 온 행복한 애벌레가\n그림자 속에서 쉬고 있던 너를 보고,If a happy caterpillar from a sunlit\npasture saw you resting in the shade,45,,,,Main_Ch8,M8_L0044
+1,43,45,main_web,Player,Main,body_spiderweb,,text,햇살의 소중함을 알려 주고 싶어! 하며,"and, in an attempt to teach\nyou about the sunshine,",46,,,,Main_Ch8,M8_L0045
+1,43,46,main_web,Player,Main,body_spiderweb,,text,그물 안에 너를 포획한 뒤 타오르는\n햇볕 아래로 끌어당겼다면,"captured you in a net and pulled\nyou into the blazing heat,",47,,,,Main_Ch8,M8_L0046
+1,43,47,main_web,Player,Main,body_spiderweb,,text,뭉치는 어떻게 했을 것 같아?,what would happen to you?,48,,,,Main_Ch8,M8_L0047
 1,43,48,main_web,Dot,Main,body_spiderweb_move,face_omg,text,......!!!,......!!!,49,,,,Main_Ch8,M8_L0048
 1,43,49,main_web,Dot,Main,body_spiderweb,,text,아마 터져 버렸을 거야.\n자폭하는 폭탄의 껍데기처럼.,I would have exploded. Like the\nshell of a self-detonating bomb.,50,,,,Main_Ch8,M8_L0049
-1,43,50,main_web,Dot,Main,,face_squeeze,text,"아, 아, 아. 축축한 하수구를 찾아\n둘러보지만 주위엔 맹렬한 볕과 평야뿐.","Oh, oh, oh. I would search for a damp drain\nand be overwhelmed with fierce light and fields.",51,,,,Main_Ch8,M8_L0050
-1,43,51,main_web,Dot,Main,,,text,그렇게 나는 저항 없이 녹아내리며...\n기도했을 거야. 혹은 기절했을 거야.,And so I would melt away... and\npray. And lose consciousness.,52,,,,Main_Ch8,M8_L0051
-1,43,52,main_web,Dot,Main,,face_omg,text,너에게 살려 달라고 절규하며\n뾰족한 비명을 질렀을 거야!,"I would let out pointy screams,\nbegging you to save me!",53,,,,Main_Ch8,M8_L0052
-1,43,53,main_web,Player,Main,,face_blink,selection,(조심스럽게 제안한다.)|(뭉치의 생각을 기다린다.),(Make a cautious suggestion.)|(Wait for Dot to collect their thoughts.),54|60,,,active|passive,Main_Ch8,M8_L0053
-1,43,54,main_web,Player,Main,,,text,.... 맞아. 그랬을 거야. 그런데 아이도\n뭉치의 일방적인 도움에 비슷한 마음을 느낀다면?,.... You’re right. You would have. And what if\nthe child feels the same way toward your help?,55,,,,Main_Ch8,M8_L0054
-1,43,55,main_web,Player,Main,,,text,아이는 아직 어리지. 하지만\n어려도 최선을 다하는 중일 거야.,He’s still young. But nonetheless\nhe’s trying his best.,56,,,,Main_Ch8,M8_L0055
-1,43,56,main_web,Player,Main,,,text,감정을 표현하는 정석적인\n방법을 모를 수는 있겠지.,Maybe he doesn’t know the\nright way to express emotions.,57,,,,Main_Ch8,M8_L0056
-1,43,57,main_web,Player,Main,,,text,하지만 정석적인 방법이라는 게 존재할까?,But what right way\nis there to being with?,58,,,,Main_Ch8,M8_L0057
+1,43,50,main_web,Dot,Main,body_spiderweb,face_squeeze,text,"아, 아, 아. 축축한 하수구를 찾아\n둘러보지만 주위엔 맹렬한 볕과 평야뿐.","Oh, oh, oh. I would search for a damp drain\nand be overwhelmed with fierce light and fields.",51,,,,Main_Ch8,M8_L0050
+1,43,51,main_web,Dot,Main,body_spiderweb,,text,그렇게 나는 저항 없이 녹아내리며...\n기도했을 거야. 혹은 기절했을 거야.,And so I would melt away... and\npray. And lose consciousness.,52,,,,Main_Ch8,M8_L0051
+1,43,52,main_web,Dot,Main,body_spiderweb,face_omg,text,너에게 살려 달라고 절규하며\n뾰족한 비명을 질렀을 거야!,"I would let out pointy screams,\nbegging you to save me!",53,,,,Main_Ch8,M8_L0052
+1,43,53,main_web,Player,Main,body_spiderweb,face_blink,selection,(조심스럽게 제안한다.)|(뭉치의 생각을 기다린다.),(Make a cautious suggestion.)|(Wait for Dot to collect their thoughts.),54|60,,,active|passive,Main_Ch8,M8_L0053
+1,43,54,main_web,Player,Main,body_spiderweb,,text,.... 맞아. 그랬을 거야. 그런데 아이도\n뭉치의 일방적인 도움에 비슷한 마음을 느낀다면?,.... You’re right. You would have. And what if\nthe child feels the same way toward your help?,55,,,,Main_Ch8,M8_L0054
+1,43,55,main_web,Player,Main,body_spiderweb,,text,아이는 아직 어리지. 하지만\n어려도 최선을 다하는 중일 거야.,He’s still young. But nonetheless\nhe’s trying his best.,56,,,,Main_Ch8,M8_L0055
+1,43,56,main_web,Player,Main,body_spiderweb,,text,감정을 표현하는 정석적인\n방법을 모를 수는 있겠지.,Maybe he doesn’t know the\nright way to express emotions.,57,,,,Main_Ch8,M8_L0056
+1,43,57,main_web,Player,Main,body_spiderweb,,text,하지만 정석적인 방법이라는 게 존재할까?,But what right way\nis there to being with?,58,,,,Main_Ch8,M8_L0057
 1,43,58,main_web,Dot,Main,body_spiderweb_move,face_eyeroll3,text,..... ..... 어? ..... 어. 어어...,..... ..... What? ..... Well. I...,59,,,,Main_Ch8,M8_L0058
 1,43,59,main_web,Player,Main,body_spiderweb,face_blink,text,뭉치의 기준과 어긋난다고 해서 그 아이가\n반드시 궤적을 틀어야만 하는 것은 아닐지 몰라.,Just because it doesn’t match up with yours\ndoesn’t mean the child has to change courses.,60,,,,Main_Ch8,M8_L0059
-1,43,60,main_web,Dot,Main,,face_eyeroll2,text,.....,.....,61,,,,Main_Ch8,M8_L0060
-1,43,61,main_web,Dot,Main,,face_eyeroll3,text,.....,.....,62,,,,Main_Ch8,M8_L0061
-1,43,62,main_web,Dot,Main,,face_close_turn,text,응...,Okay...,63,,,,Main_Ch8,M8_L0062
-1,43,63,main_web,Dot,Main,,face_open,text,이제야 알겠어.,Now I see.,64,,,,Main_Ch8,M8_L0063
-1,43,64,main_web,Dot,Main,,face_blink,text,"햇살이 궁금해서 혼자 구경을 갔다가,\n점차 자주 놀러 나가게 되는 것과는 달라.",It’s different from taking a peek at the\nsunlight and gradually venturing outside.,65,,,,Main_Ch8,M8_L0064
-1,43,65,main_web,Dot,Main,,,text,"내 안에서 일어나지 않은, 외부로부터의\n강제된 변화는 역시, 또 다른 억압이 될 거야.","Changes from the outside, ones that hadn’t\noccur within me, could be yet more chains.",66,,,,Main_Ch8,M8_L0065
-1,43,66,main_web,Dot,Main,,,text,그것을 구원이라 부르는 건...\n오만한 자들의 희망 사항이겠지.,Calling it salvation...\nwould be arrogant.,67,,,,Main_Ch8,M8_L0066
-1,43,67,main_web,Dot,Main,,,text,나 역시 오만함으로 아이에게 더 큰 부담을 줄 뻔했어.,My arrogance almost put the child\nunder even greater pressure.,68,,,,Main_Ch8,M8_L0067
-1,43,68,main_web,Player,Main,,,selection,오만이었음에 동의해.|오만까지는 아닐 거야.,It was arrogance. I agree.|Silly. I wouldn’t call it arrogance.,69|71,,,moon|sun,Main_Ch8,M8_L0068
-1,43,69,main_web,Player,Main,,,text,뭉치는 그 아이의 상황이 되어\n본 적이 한 번도 없을 테니까.,You’ve never been in the child’s shoes.,70,,,,Main_Ch8,M8_L0069
-1,43,70,main_web,Player,Main,,,text,그 아이의 삶이나 정확한 감정을 잘 알지 못하잖아.,You can’t be sure of what they’ve\nlived through or how they feel.,73,,,,Main_Ch8,M8_L0070
-1,43,71,main_web,Player,Main,,,text,뭉치는 그 아이를 돕고 싶은 마음이었던 거니까.,You wanted to help the child.,72,,,,Main_Ch8,M8_L0071
-1,43,72,main_web,Player,Main,,face_eyeroll3,text,하지만 역시 그 아이가 되어 본 적 없다면...\n뭉치의 조언이 잘 통할지는 알 수 없겠지.,But if you’ve never been in their shoes...\nthere’s no telling whether your advice will work.,73,,,,Main_Ch8,M8_L0072
-1,43,73,main_web,Player,Main,,,text,뭉치가 아이의 입장이 되었다고 상상해 보는 건 어때?,How about you picture\nyourself in the child’s shoes?,74,,,,Main_Ch8,M8_L0073
+1,43,60,main_web,Dot,Main,body_spiderweb,face_eyeroll2,text,.....,.....,61,,,,Main_Ch8,M8_L0060
+1,43,61,main_web,Dot,Main,body_spiderweb,face_eyeroll3,text,.....,.....,62,,,,Main_Ch8,M8_L0061
+1,43,62,main_web,Dot,Main,body_spiderweb,face_close_turn,text,응...,Okay...,63,,,,Main_Ch8,M8_L0062
+1,43,63,main_web,Dot,Main,body_spiderweb,face_open,text,이제야 알겠어.,Now I see.,64,,,,Main_Ch8,M8_L0063
+1,43,64,main_web,Dot,Main,body_spiderweb,face_blink,text,"햇살이 궁금해서 혼자 구경을 갔다가,\n점차 자주 놀러 나가게 되는 것과는 달라.",It’s different from taking a peek at the\nsunlight and gradually venturing outside.,65,,,,Main_Ch8,M8_L0064
+1,43,65,main_web,Dot,Main,body_spiderweb,,text,"내 안에서 일어나지 않은, 외부로부터의\n강제된 변화는 역시, 또 다른 억압이 될 거야.","Changes from the outside, ones that hadn’t\noccur within me, could be yet more chains.",66,,,,Main_Ch8,M8_L0065
+1,43,66,main_web,Dot,Main,body_spiderweb,,text,그것을 구원이라 부르는 건...\n오만한 자들의 희망 사항이겠지.,Calling it salvation...\nwould be arrogant.,67,,,,Main_Ch8,M8_L0066
+1,43,67,main_web,Dot,Main,body_spiderweb,,text,나 역시 오만함으로 아이에게 더 큰 부담을 줄 뻔했어.,My arrogance almost put the child\nunder even greater pressure.,68,,,,Main_Ch8,M8_L0067
+1,43,68,main_web,Player,Main,body_spiderweb,,selection,오만이었음에 동의해.|오만까지는 아닐 거야.,It was arrogance. I agree.|Silly. I wouldn’t call it arrogance.,69|71,,,moon|sun,Main_Ch8,M8_L0068
+1,43,69,main_web,Player,Main,body_spiderweb,,text,뭉치는 그 아이의 상황이 되어\n본 적이 한 번도 없을 테니까.,You’ve never been in the child’s shoes.,70,,,,Main_Ch8,M8_L0069
+1,43,70,main_web,Player,Main,body_spiderweb,,text,그 아이의 삶이나 정확한 감정을 잘 알지 못하잖아.,You can’t be sure of what they’ve\nlived through or how they feel.,73,,,,Main_Ch8,M8_L0070
+1,43,71,main_web,Player,Main,body_spiderweb,,text,뭉치는 그 아이를 돕고 싶은 마음이었던 거니까.,You wanted to help the child.,72,,,,Main_Ch8,M8_L0071
+1,43,72,main_web,Player,Main,body_spiderweb,face_eyeroll3,text,하지만 역시 그 아이가 되어 본 적 없다면...\n뭉치의 조언이 잘 통할지는 알 수 없겠지.,But if you’ve never been in their shoes...\nthere’s no telling whether your advice will work.,73,,,,Main_Ch8,M8_L0072
+1,43,73,main_web,Player,Main,body_spiderweb,,text,뭉치가 아이의 입장이 되었다고 상상해 보는 건 어때?,How about you picture\nyourself in the child’s shoes?,74,,,,Main_Ch8,M8_L0073
 1,43,74,main_web,Player,Main,body_spiderweb,,text,뭉치는 잘 뱉어 내는 친구이니 그\n부분에선 공감을 해 줄 수 없더라도,"You voice your thoughts aloud with ease, so\nyou may not be able to sympathize completely,",75,,,,Main_Ch8,M8_L0074
-1,43,75,main_web,Player,Main,,,text,아이에게 대입해 볼 수 있는 방법이 분명 있을 거야.,but there must be a way\nfor you to relate to him.,76,,,,Main_Ch8,M8_L0075
+1,43,75,main_web,Player,Main,body_spiderweb,,text,아이에게 대입해 볼 수 있는 방법이 분명 있을 거야.,but there must be a way\nfor you to relate to him.,76,,,,Main_Ch8,M8_L0075
 1,43,76,main_web,Dot,Main,body_spiderweb_move,,text,"응, 알았어. 세심하게\n고뇌해 볼래. 기다려 줘.","Alright. I’ll think it over\nthoroughly. Wait for me, please.",,,anim_reading,,Main_Ch8,M8_L0076
 3,44,77,main_door_open,Dot,Main,body_default1,face_blink,text,"<nickname>,","<nickname>,",78,,,,Main_Ch8,M8_L0077
 3,44,78,main_door_open,Dot,Main,body_default1,face_eyeroll,text,"책에서, ’먹을 때는 꼭꼭 씹고\n삼켜야지’라고 핀잔하던 어머니를 봤어.","I read about a mother that nagged to\n“Chew before swallowing”, in a book.",79,,,,Main_Ch8,M8_L0078
@@ -121,8 +121,7 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,44,120,main_door_open,Dot,Main,,face_blink,text,하지만 살아 있다는 건 곧 견디고 있다는 거니까.,But to live is to endure.,122,,,,Main_Ch8,M8_L0120
 3,44,121,main_door_open,Dot,Main,,face_close_turn,text,"네가 살아 있는 한, 너는 호흡하듯 씹는 연습을 할 테고,","As long as you’re alive, you’ll learn\nto chew as well as you breathe,",123,,,,Main_Ch8,M8_L0121
 3,44,122,main_door_open,Dot,Main,,face_open,text,언젠가는 모서리부터 차차\n소화해 낼 힘이 생기리라 믿어.,"and someday you’ll find it in you to\ndigest things, starting with their corners.",123,,,,Main_Ch8,M8_L0122
-3,44,123,main_door_open,Dot,Main,,face_blink,text,"아, 음. 그렇다면 두 번째 질문이 있어. 그때의
-\n경험이 너에게 어떠한... 흔적을 남기기도 했어?","Oh, I see. Here’s a follow-up question.\nHave those experiences left an imprint on you?",128,,,,Main_Ch8,M8_L0123
+3,44,123,main_door_open,Dot,Main,,face_blink,text,"아, 음. 그렇다면 두 번째 질문이 있어. 그때의\n경험이 너에게 어떠한... 흔적을 남기기도 했어?","Oh, I see. Here’s a follow-up question.\nHave those experiences left an imprint on you?",128,,,,Main_Ch8,M8_L0123
 3,44,124,main_door_open,Dot,Main,,face_blink,text,"아, 음... 음. 그렇다면 두 번째 질문이 있어. 그때의\n경험 때문에 지금의 네가 변화되기도 했어?","Oh, well... Well. Here’s a follow-up question.\nHave those experiences ever changed you now?",125,,,,Main_Ch8,M8_L0124
 3,44,125,main_door_open,Player,Main,,face_blink,text,"응, 원치 않게 나의 일부에 뿌리 내린 습관들도 있지만","Yes, and some of them have\nlain roots in me as habits,",126,,,,Main_Ch8,M8_L0125
 3,44,126,main_door_open,Player,Main,body_move,face_blink,text,그것들 역시 결국은 나의\n고유한 특성으로 새겨지더라고.,but they all ended up\nas my own unique traits.,127,,,,Main_Ch8,M8_L0126
