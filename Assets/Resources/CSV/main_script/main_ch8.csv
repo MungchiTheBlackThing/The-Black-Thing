@@ -1,4 +1,4 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,43,1,main_web,Dot,Main,body_spiderweb,face_blink,text,<nickname>.,<nickname>.,2,,,,Main_Ch8,M8_L0001
 1,43,2,main_web,Player,Main,body_spiderweb,,text,"뭉치, 왔구나!","Dot, you’re here!",3,,,,Main_Ch8,M8_L0002
 1,43,3,main_web,Dot,Main,body_spiderweb,,text,"응, <nickname>, 어젯밤엔 우리가\n약속했던 악몽을 꾸었니?","I am, <nickname>. Did you have a nightmare\nlike we agreed on yesterday?",4,,,,Main_Ch8,M8_L0003
@@ -182,8 +182,8 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,44,181,main_door_open,Dot,Main,body_default1,face_close_turn,text,좋아! 그렇다면 잠시만...,Alright! If you’ll give me a moment...,182,,,,Main_Ch8,M8_L0181
 3,44,182,main_door_open,Dot,Main,,face_close,text,.....,.....,183,,,,Main_Ch8,M8_L0182
 3,44,183,main_door_open,Dot,Main,,face_close,text,......,......,184,,,,Main_Ch8,M8_L0183
-3,44,184,main_door_open,Player,Main,,face_open,text,<nickname>! 다 적었어.,<nickname>! I finished the letter.,185,,,,Main_Ch8,M8_L0184
-3,44,185,main_door_open,Dot,Main,,face_blink,text,머릿속으로?,In your head?,186,,,,Main_Ch8,M8_L0185
+3,44,184,main_door_open,Dot,Main,,face_open,text,<nickname>! 다 적었어.,<nickname>! I finished the letter.,185,,,,Main_Ch8,M8_L0184
+3,44,185,main_door_open,Player,Main,,face_blink,text,머릿속으로?,In your head?,186,,,,Main_Ch8,M8_L0185
 3,44,186,main_door_open,Dot,Main,,face_blink,text,응! 그런데 고민이 있어.,Yes! But... I have a problem.,187,,,,Main_Ch8,M8_L0186
 3,44,187,main_door_open,Dot,Main,,face_blink,text,"‘나는 미래에서 온 너야.’로\n시작할까 하는데, 어떻게 생각해?",I’m thinking of starting off with\n“I’m you from the future.” Thoughts?,188,,,,Main_Ch8,M8_L0187
 3,44,188,main_door_open,Player,Main,,face_blink,selection,그건 거짓말이잖아!|좋은 아이디어야!,That would be lying!|That’s a good idea!,189|197,,,moon|sun,Main_Ch8,M8_L0188
