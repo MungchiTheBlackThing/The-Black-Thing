@@ -306,8 +306,14 @@ public class MainVideo : MonoBehaviour
             videoPlayer.Stop();
             videoPlayer.time = 0;
         }
+
         if (subtitleText != null) subtitleText.text = "";
         text.SetActive(false);
+        
+        if (gm != null && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
+        }
         EndGameNow();
         LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged_Subtitle;
     }

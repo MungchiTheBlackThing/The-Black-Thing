@@ -56,11 +56,11 @@ public class AudioManager : Singleton<AudioManager>
     /// </summary>
     public void ChangeBGM(EventReference newBGM)
     {
-        if (currentBGM.Equals(newBGM)) return;
+        if (currentBGM.Equals(newBGM) && bgmInstance.isValid())
+            return;
 
         StopBGM(true);
         PlayBGM(newBGM);
-        
         currentBGM = newBGM;
     }
 
