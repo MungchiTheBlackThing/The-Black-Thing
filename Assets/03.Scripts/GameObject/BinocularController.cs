@@ -109,10 +109,11 @@ public class BinocularController : BaseObject , IWatchingInterface
         alert.SetActive(false);
             //Ŭ����~
             // 문 렌더링 끄기
+        DoorController door = FindObjectOfType<DoorController>(); // 문 렌더링 끄기
         if (door != null)
         {
             door.SetDoorForDialogue(false);
-        }   
+        }
 
         phase = Instantiate(watching[Idx[chapterIdx]], watchingBackground.transform);       
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.binocular, this.transform.position);
@@ -122,5 +123,20 @@ public class BinocularController : BaseObject , IWatchingInterface
     public void CloseWatching()
     {
         alert.SetActive(false);
+        DoorController door = FindObjectOfType<DoorController>();
+        if (door != null)
+        {
+            door.SetDoorForDialogue(true);
+        }
     }
+
+    private void OnDisable()
+    {
+        DoorController door = FindObjectOfType<DoorController>();
+        if (door != null)
+        {
+            door.SetDoorForDialogue(true);
+        }
+    }
+
 }
