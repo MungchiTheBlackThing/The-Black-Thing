@@ -94,12 +94,7 @@ public class BinocularController : BaseObject , IWatchingInterface
 
     private void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            // ���콺�� UI ���� ���� ���� �� �Լ��� �������� �ʵ��� ��
-            return;
-        }
-
+        if (InputGuard.BlockWorldInput()) return;
         if (pc == null) return;
 
         GamePatternState curPhase = (GamePatternState)pc.GetCurrentPhase();

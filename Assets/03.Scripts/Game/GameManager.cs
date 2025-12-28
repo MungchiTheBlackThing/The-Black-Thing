@@ -342,7 +342,7 @@ public class GameManager : MonoBehaviour
             if (mainDialoguePanel != null)
             {
                 mainDialoguePanel.SetActive(true); // 메인 패널 켜지면
-
+                InputGuard.WorldInputLocked = true;
                 DoorController door = FindObjectOfType<DoorController>(); // 문 렌더링 끄기
                 if (door != null)
                 {

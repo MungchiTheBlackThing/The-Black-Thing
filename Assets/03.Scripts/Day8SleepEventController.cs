@@ -114,6 +114,7 @@ public class Day8SleepEventController : MonoBehaviour
     {
 
         DeactivateAll();
+        InputGuard.WorldInputLocked = true;
 
         LockMapInput(true);
         HideUI(true);
@@ -613,6 +614,7 @@ public class Day8SleepEventController : MonoBehaviour
         HideUI(false);
         LockMapInput(false);
         RestoreBgm();
+        InputGuard.WorldInputLocked = false;
 
         // ✅ 타이머 복구 (Day8가 멈췄을 때 게임이 스턱되는 것 방지)
         if (gm != null)

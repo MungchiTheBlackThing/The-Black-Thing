@@ -148,6 +148,7 @@ public class SubDialogue : MonoBehaviour
 
     public void StartSub(string fileName, int index = 0)
     {
+        InputGuard.WorldInputLocked = true;
         dialogueData = null;
         SubPanel subPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
         if (!SystemUI)
@@ -287,6 +288,8 @@ public class SubDialogue : MonoBehaviour
 
     public void Subexit()
     {
+        InputGuard.WorldInputLocked = false;
+
         //이벤트가 완전히 종료되는 시점에 타이머 키를 삭제
         if (manager != null && playerController != null)
         {
@@ -313,6 +316,7 @@ public class SubDialogue : MonoBehaviour
             menuController.allon();
 
         scroll.scrollable();
+        
 
         if (SceneManager.GetActiveScene().name != "Tutorial")
         {

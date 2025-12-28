@@ -488,6 +488,7 @@ public class DotController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (InputGuard.BlockWorldInput()) return;
         if (mainAlert.activeSelf)
         {
             mainAlert.SetActive(false);

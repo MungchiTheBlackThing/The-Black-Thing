@@ -63,11 +63,8 @@ public class DoorController : MonoBehaviour
     //}
     private void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            // ���콺�� UI ���� ���� ���� �� �Լ��� �������� �ʵ��� ��
-            return;
-        }
+        if (InputGuard.BlockWorldInput()) return;
+
 
         if (!dot.GetComponent<DotController>().tutorial)
         {

@@ -117,6 +117,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         {
             door.SetDoorForDialogue(true);
         }
+        InputGuard.WorldInputLocked = false;
         Debug.Log("NextPhase");
         if (gamemanger.GetComponent<GameManager>())
             gamemanger.GetComponent<GameManager>().StopSubDial();

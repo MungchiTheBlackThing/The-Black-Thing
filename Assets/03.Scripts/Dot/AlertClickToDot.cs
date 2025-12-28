@@ -9,6 +9,8 @@ public class AlertClickToDot : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (InputGuard.BlockWorldInput()) return;
+
         if (dot == null) return;
         dot.OnAlertClicked(type);
     }

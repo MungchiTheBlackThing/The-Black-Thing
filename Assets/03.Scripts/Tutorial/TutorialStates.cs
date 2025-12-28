@@ -161,7 +161,7 @@ namespace Tutorial
             }
             RecentManager.TutoNumChange();
 
-            PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1); //프롤로그 재생 완료 플래그 설정
+            PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1); //프롤로그 재생 완료 플래그 설정 - (주희) 여기 프롤로그 완료인 게 맞나요??
             PlayerPrefs.Save();
 
             //manager.ObjectManager.activeSystemUIDelegate(true);

@@ -163,7 +163,7 @@ public class ChecklistController : MonoBehaviour
 
     IEnumerator CloseAlter(GameObject checkList)
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         checkList.SetActive(false);
     }
 
