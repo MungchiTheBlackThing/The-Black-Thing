@@ -27,6 +27,11 @@ public class BinocularController : BaseObject , IWatchingInterface
         return curPattern == type;
     }
 
+    private bool IsValidBinoDay(int chapter)
+    {
+        return chapter == 2 || chapter == 5 || chapter == 8 || chapter == 10 || chapter == 13;
+    }
+
     private void Start()
     {
         door = FindObjectOfType<DoorController>();
@@ -99,7 +104,7 @@ public class BinocularController : BaseObject , IWatchingInterface
 
         GamePatternState curPhase = (GamePatternState)pc.GetCurrentPhase();
 
-        if (curPhase != GamePatternState.Watching)
+        if (curPhase != GamePatternState.Watching || !IsValidBinoDay(chapterIdx))
         
             return;
 
