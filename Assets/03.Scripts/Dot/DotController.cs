@@ -109,6 +109,13 @@ public class DotController : MonoBehaviour
         set { dotExpression = value; }
     }
 
+    public enum AlertType
+    {
+        Main,
+        Sub,
+        Play
+    }
+
     Dictionary<float, Vector2> DotPositionDic = new Dictionary<float, Vector2>();
     Dictionary<DotPatternState, Dictionary<string, List<float>>> DotPositionKeyDic = new Dictionary<DotPatternState, Dictionary<string, List<float>>>();
 
@@ -513,6 +520,34 @@ public class DotController : MonoBehaviour
             TriggerSub(false);
         }
     }
+
+    public void OnAlertClicked(AlertType type)
+    {
+        switch(type)
+        {
+            case AlertType.Main:
+                // 기존 OnMouseDown에서 mainAlert 눌렀을 때 하던 코드 그대로 붙여넣기
+                mainAlert.SetActive(false);
+                manager.StartMain();
+                break;
+
+            case AlertType.Play:
+                playAlert.SetActive(false);
+                for (int i = 0; i < play.Length; i++) play[i].SetActive(true);
+                break;
+
+            case AlertType.Sub:
+                // 기존 subAlert 분기 코드 그대로
+                subDialogue.SetActive(true);
+                string fileName = "sub_ch" + Chapter;
+                subDialogue.GetComponent<SubDialogue>().StartSub(fileName);
+            
+                ScriptList tmp = GetSubScriptList(tmpState);
+                TriggerSub(false);
+                break;
+        }
+    }
+
 
     public void TriggerSub(bool isActive, string animKey = "", float position = -1)
     {
