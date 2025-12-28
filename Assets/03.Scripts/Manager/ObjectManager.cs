@@ -179,6 +179,9 @@ public class ObjectManager : MonoBehaviour
         currentTime = path;
         int i = 0;
 
+        
+        bool isCompleted = pc.GetPlayerInfo().isDay8SleepEventCompleted;
+
         foreach (GameObject obj in allObjects)
         {
             // 각 오브젝트를 비동기적으로 로드
@@ -204,14 +207,17 @@ public class ObjectManager : MonoBehaviour
                 // InsertMemory 내 삽입
                 pool.InsertMemory(newObj);
 
-                if (newObj.GetComponent<BaseObject>().IsCurrentChapter(chapter))
+                var baseObj = newObj.GetComponent<BaseObject>();
+                bool active = baseObj != null && baseObj.IsCurrentChapter(chapter);
+
+                // Day8 곰팡이 예외 처리
+                var ch_bread = newObj.GetComponent<ChBreadObject>();
+                if (ch_bread != null)
                 {
-                    newObj.SetActive(true);
+                    active = active && ch_bread.ShouldBeActive(isCompleted);
                 }
-                else
-                {
-                    newObj.SetActive(false);
-                }
+
+                newObj.SetActive(active);
             }
             
             i++;
@@ -285,20 +291,24 @@ public class ObjectManager : MonoBehaviour
     //한 챕터를 넘겼을 때 호출되는 함수, 즉 Phase Watching일 때 호출한다. 
     public void SettingChapter(int chapter)
     {
-
-        //모든 Obj를 가져와서 검사해야한다.
         List<GameObject> values = pool.GetValues();
+
+        // 루프 밖에서 1회만 조회
+        bool isCompleted = pc.GetPlayerInfo().isDay8SleepEventCompleted;
 
         foreach (GameObject value in values)
         {
-            if (value.GetComponent<BaseObject>().IsCurrentChapter(chapter))
+            var baseObj = value.GetComponent<BaseObject>();
+            bool active = baseObj != null && baseObj.IsCurrentChapter(chapter);
+
+            // 빵 곰팡이 예외 처리
+            var ch_bread = value.GetComponent<ChBreadObject>();
+            if (ch_bread != null)
             {
-                value.SetActive(true);
+                active = active && ch_bread.ShouldBeActive(isCompleted);
             }
-            else
-            {
-                value.SetActive(false);
-            }
+
+            value.SetActive(active);
         }
     }
 

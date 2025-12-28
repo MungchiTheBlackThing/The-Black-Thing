@@ -51,6 +51,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public TimeSkipUIController timeSkipUIController;
 
+    [SerializeField] private Day8SleepEventController day8;
+
+
     private Coroutine subDialogCoroutine;
     private bool isSkipping = false;
     protected Coroutine phaseTimerCoroutine;
@@ -265,6 +268,18 @@ public class GameManager : MonoBehaviour
         activeState = states[patternState];
         Debug.Log("스테이트 변경: " + patternState);
         activeState.Enter(this, dot);
+
+        // Day8: Sleeping 진입에서만 이벤트 실행
+        if (patternState == GamePatternState.Sleeping
+            && Chapter == 8
+            && day8 != null
+            && day8.ShouldRun())
+        {
+            Debug.Log("DAY8 TRIGGERED");
+            day8.TryStart();   // 내부에서 PausePhaseTimer() 처리
+            return;            // 아래 PhaseTimer/ShowSubDial이 동시에 돌지 않게 차단
+        }
+
 
         phaseTimerCoroutine = StartCoroutine(PhaseTimer());
 
@@ -612,6 +627,21 @@ public class GameManager : MonoBehaviour
         NextPhase();
     }
 
+    public void PausePhaseTimer()
+    {
+        if (phaseTimerCoroutine != null)
+        {
+            StopCoroutine(phaseTimerCoroutine);
+            phaseTimerCoroutine = null;
+        }
+    }
+
+    public void ResumePhaseTimer()
+    {
+        if (phaseTimerCoroutine == null)
+            phaseTimerCoroutine = StartCoroutine(PhaseTimer());
+    }
+
 
     // [DEBUG] 각 페이즈 당 시간
     private float GetPhaseDuration(GamePatternState phase)
@@ -687,6 +717,28 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void RestartSleepingTimer()
+    {
+        // Sleeping 타이머 키 강제 리셋
+        string key = $"PhaseTimer_{Chapter}_{GamePatternState.Sleeping}";
+        if (PlayerPrefs.HasKey(key))
+        {
+            PlayerPrefs.DeleteKey(key);
+            PlayerPrefs.Save();
+        }
+
+        // 기존 코루틴 정리 후 다시 시작
+        if (phaseTimerCoroutine != null)
+        {
+            StopCoroutine(phaseTimerCoroutine);
+            phaseTimerCoroutine = null;
+        }
+
+        currentPattern = GamePatternState.Sleeping; // 안전
+        phaseTimerCoroutine = StartCoroutine(PhaseTimer());
+    }
+
 
 
     public void StartTutoMain()

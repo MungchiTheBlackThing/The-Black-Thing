@@ -232,6 +232,7 @@ public class MenuController : MonoBehaviour
             {
                 checkList.SetActive(true);
                 MenuDefault.SetActive(false);
+                TimeUI.SetActive(false);
             }
             else
             {
@@ -262,11 +263,13 @@ public class MenuController : MonoBehaviour
 
     public void onClickHelper()
     {
+        alloff();
         Helper.SetActive(true);
     }
 
     public void onClickMypage()
     {
+        alloff();
         MyPageUI.SetActive(true);
     }
 

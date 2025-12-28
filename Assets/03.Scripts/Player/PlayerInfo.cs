@@ -48,6 +48,7 @@ public class PlayerInfo
     public int subseq; //서브 본 횟수
     public List<int> watchedSubseq = new List<int>();
 
+    public bool isDay8SleepEventCompleted;
     public PlayerInfo()
     {
         nickname = "default";
@@ -90,6 +91,7 @@ public class PlayerInfo
             rewardList = new List<EReward>();
         }
         watchedSubseq.Clear();
+        isDay8SleepEventCompleted = false;
     }
 
     public void SetSubPhase(int phaseIdx)
@@ -138,6 +140,7 @@ public class PlayerInfo
         watchedSubseq.Clear();
 
         language = previousLanguage; // 백업한 언어를 다시 복구
+        isDay8SleepEventCompleted = false;
     }
     public bool IsDiaryCheck { get => isDiaryCheck; set=>isDiaryCheck = value;}
     public float BgmVolume{ get=>bgmVolume; set=>bgmVolume = value; }

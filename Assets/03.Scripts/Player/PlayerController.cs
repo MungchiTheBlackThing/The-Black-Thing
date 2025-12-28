@@ -185,6 +185,16 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         return elapsedTime;
     }
 
+    public PlayerInfo GetPlayerInfo()
+    {
+        return player;
+    }
+    public void SavePlayerInfo()
+    {
+        WritePlayerFile();
+    }
+
+
     public bool GetisPushNotificationEnabled()
     {
         return player.isPushNotificationEnabled;
