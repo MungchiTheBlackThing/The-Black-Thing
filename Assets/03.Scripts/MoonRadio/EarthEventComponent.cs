@@ -4,13 +4,5 @@ using UnityEngine;
 
 public class EarthEventComponent : MonoBehaviour
 {
-    [SerializeField]
-    MoonRadioEarthController earthController;
-
-    void ExitEvents(){
-        earthController.Send2MoonButEventExit();
-        this.GetComponent<Animator>().SetBool("isGoing",false);
-        this.transform.parent.GetComponent<Animator>().SetBool("isGoing",true);
-        //textbox isSetActive(true)s
-    }
+    // 직선 플로우(코루틴)로 대체됨.
 }

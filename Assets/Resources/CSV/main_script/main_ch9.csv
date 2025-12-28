@@ -1,4 +1,4 @@
-﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,49,1,main_table,Dot,Main,body_default2,face_squeeze,text,책장 안. 침대 위. 포스터 뒤쪽.,In the bookcase. On the bed.\nBehind the poster.,2,,,,Main_Ch9,M9_L0001
 1,49,2,main_table,Dot,Main,body_default2,face_squeeze,text,보이지 않아. 보이지 않아.\n어디에도 보이지 않아.,It’s not here. It’s not there.\nIt’s not anywhere.,3,,,,Main_Ch9,M9_L0002
 1,49,3,main_table,Dot,Main,body_default2,face_omg,text,"<nickname>. 너, 너, 너.\n혹시 ‘청소’라는 걸 했어?","<nickname>. You, you, you.\nDon’t tell me you cleaned?",4,,,,Main_Ch9,M9_L0003
@@ -77,103 +77,103 @@
 1,49,76,main_table,Dot,Main,,,text,"깬 후에 잔열이 남지만,\n시간이 지날수록 점점 잊...","Remnants, that are forgotten as time...",77,,,,Main_Ch9,M9_L0076
 1,49,77,main_table,Dot,Main,,face_omg,text,...,...,78,,,,Main_Ch9,M9_L0077
 1,49,78,main_table,Dot,Main,,face_blink,text,...,...,79,,,,Main_Ch9,M9_L0078
-1,49,79,main_table,Dot,Main,,,text,...,...,80,,,,Main_Ch9,M9_L0079
-1,49,80,main_table,Dot,Main,,face_omg,text,...,...,81,,,,Main_Ch9,M9_L0080
-1,49,81,main_table,Player,Main,,face_blink,text,뭉치야?,Dot?,82,,,,Main_Ch9,M9_L0081
+1,49,79,main_table,Dot,Main,body_trembling,,text,......,......,80,,,,Main_Ch9,M9_L0079
+1,49,80,main_table,Dot,Main,body_trembling,face_omg,text,......,......,81,,,,Main_Ch9,M9_L0080
+1,49,81,main_table,Player,Main,body_default1,face_blink,text,뭉치야?,Dot?,82,,,,Main_Ch9,M9_L0081
 1,49,82,main_table,Player,Main,,face_omg,text,(뭉치가 각오한 것보다도 충격을 세게 받은 것 같아.),(Dot is taking it harder\nthan expected.),83,,,,Main_Ch9,M9_L0082
-1,49,83,main_table,Dot,Main,,face_squeeze,text,...,...,84,,,,Main_Ch9,M9_L0083
-1,49,84,main_table,Dot,Main,,face_blink,text,...,...,85,,,,Main_Ch9,M9_L0084
-1,49,85,main_table,Dot,Main,,,text,...,...,86,,,,Main_Ch9,M9_L0085
-1,49,86,main_table,Dot,Main,,,text,...,...,87,,,,Main_Ch9,M9_L0086
+1,49,83,main_table,Dot,Main,,face_squeeze,text,......,......,84,,,,Main_Ch9,M9_L0083
+1,49,84,main_table,Dot,Main,,face_blink,text,......,......,85,,,,Main_Ch9,M9_L0084
+1,49,85,main_table,Dot,Main,,,text,......,......,86,,,,Main_Ch9,M9_L0085
+1,49,86,main_table,Dot,Main,,,text,......,......,87,,,,Main_Ch9,M9_L0086
 1,49,87,main_table,Player,Main,,,text,뭉치야... 뭉치야?,Dot... Dot?,88,,,,Main_Ch9,M9_L0087
 1,49,88,main_table,Dot,Main,,face_omg,text,그러니까 내 곰팡이처럼 말이지?,You mean like my mold?,89,,,,Main_Ch9,M9_L0088
 1,49,89,main_table,Player,Main,,,text,곰팡이와는 다르지. 뭐가 다르냐면...,That’s different. It’s...,90,,,,Main_Ch9,M9_L0089
-1,49,90,main_table,Player,Main,,,text,....,....,91,,,,Main_Ch9,M9_L0090
+1,49,90,main_table,Player,Main,,,text,......,......,91,,,,Main_Ch9,M9_L0090
 1,49,91,main_table,Player,Main,,,text,(어떤 이야기도 할 수 없어.),(I don’t know what to say.),92,,,,Main_Ch9,M9_L0091
-1,49,92,main_table,Dot,Main,,,text,....,....,93,,,,Main_Ch9,M9_L0092
-1,49,93,main_table,Dot,Main,,,text,나. 조금 쉬어도 될까?,I. Think I need some time?,,,anim_mud_day8,,Main_Ch9,M9_L0094
-3,50,94,main_door_open,Dot,Main,body_default1,face_blink,text,아무리 생각해도 말이 안 되는 것 같아.,I still can’t wrap my head around it.,95,,,,Main_Ch9,M9_L0095
-3,50,95,main_door_open,Dot,Main,,,text,인간들이 꿈의 실체에 대해\n모르고 있는 것은 아닐까?,Could it be possible that humans are\nunaware of what dreams really are?,96,,,,Main_Ch9,M9_L0096
-3,50,96,main_door_open,Dot,Main,,,text,"달나라에서, 인간들은 생각보다\n꿈의 중요성을 모른다고 했어.",On the Moon they said humans don’t\nrealize just how important dreams are.,97,,,,Main_Ch9,M9_L0097
-3,50,97,main_door_open,Dot,Main,,,text,꿈은 사라지는 것도 잊히는 것도 아니야.,"Dreams don’t go away,\nnor are they forgotten.",98,,,,Main_Ch9,M9_L0098
-3,50,98,main_door_open,Dot,Main,,,text,상영된 후에 망각한다고 생각하지만\n실은 네 머릿속에서 살아가는 거야.,"One may think they’re buried when the credits\nroll, but really they live on in your mind.",99,,,,Main_Ch9,M9_L0099
-3,50,99,main_door_open,Dot,Main,,face_thinking,text,어쩌면 너의 꿈들은 모두 소심해서... \n말을 안 걸 뿐 아니었을까?,Maybe your dreams... are\njust too shy to talk to you?,100,,,sun|moon,Main_Ch9,M9_L0100
-3,50,100,main_door_open,Player,Main,,face_blink,selection,(... 정말 내 꿈이 소심할 뿐인가?)|(그러면 결국 잊히는 게 되는 거 아닌가?),(... Are my dreams shy?)|(But won’t they be forgotten eventually?),101|102,,,,Main_Ch9,M9_L0101
-3,50,101,main_door_open,Player,Main,,,text,(하지만 내가 평생 알던 꿈은 그런 존재가 아닌데...),(It’s nothing like the concept of\na dream I’ve known my whole life...),103,,,,Main_Ch9,M9_L0102
-3,50,102,main_door_open,Dot,Main,,,text,...,...,103,,,,Main_Ch9,M9_L0103
-3,50,103,main_door_open,Dot,Main,,face_eyeroll3,text,"네 마음을 지금 맞혀 봐도 될까, <nickname>?","Can I guess what you’re\nthinking, <nickname>?",104,,,,Main_Ch9,M9_L0104
-3,50,104,main_door_open,Dot,Main,,face_blink,text,‘정말로 아닐 거야. 꿈이란 사라지는 것이야.’,‘It can’t be. Dreams do go away.’,105,,,,Main_Ch9,M9_L0105
-3,50,105,main_door_open,Player,Main,,,selection,"(침묵으로 답을 대신했다.)|그래, 살아남는대도 기억 속에 남는 게 맞아.","(Silence.)|Yes. Even if they live on, it’s as a memory.",106|106,,,passive|active,Main_Ch9,M9_L0106
-3,50,106,main_door_open,Dot,Main,,,text,응. 응. 알고 있었어. 알고 있었어. 나는.,Yes. Yes. I knew it. I knew it. I.,107|107,,,,Main_Ch9,M9_L0107
-3,50,107,main_door_open,Dot,Main,,face_squeeze,text,하지만... 선명하게 받아들이지 못한 채\n외면하고 있었지. 추악하기 짝이 없게도.,But... I looked away and refused\nto accept it. How awful of me.,108,,,,Main_Ch9,M9_L0108
-3,50,108,main_door_open,Player,Main,,face_blink,selection,"껌딱지 검정 괴물, 너의 추악함은 이미 받아들였어.|추악하지 않아. 누구나 외면하고 싶을 수 있어.","Clingy critter, your awfulness is welcome.|You’re not awful. We all want to look away.",109,,,moon|sun,Main_Ch9,M9_L0109
-3,50,109,main_door_open,Dot,Main,,,text,그러면 곧대로 받아들이는 여정을 나와 함께해 줘.,Then accompany me on a journey of\naccepting things the way they are.,110|110,,,,Main_Ch9,M9_L0110
-3,50,110,main_door_open,Player,Main,,,text,"얼마든지, 뭉치야.","With pleasure, Dot.",111,,,,Main_Ch9,M9_L0111
-3,50,111,main_door_open,Dot,Main,,,text,...,...,112,,,,Main_Ch9,M9_L0112
-3,50,112,main_door_open,Dot,Main,,,text,...,...,113,,,,Main_Ch9,M9_L0113
-3,50,113,main_door_open,Dot,Main,,,text,나는 크레이터에서 지구로 송출되는\n구슬들을 올려다 보며 생각했었어.,I gazed up at the marbles being sent from\nthe crater to Earth and thought to myself.,114,,,,Main_Ch9,M9_L0114
-3,50,114,main_door_open,Dot,Main,,,text,찬란하게 빛나는 구가 되어 영원할 거라 믿었지.,I believed those glowing spheres\nwould be iridescent and eternal.,115,,,,Main_Ch9,M9_L0115
-3,50,115,main_door_open,Dot,Main,,,text,막연한 바람이라고는 생각하지 말아줘.\n나에겐 간절한 믿음이었어.,Don’t think of it as wishful\nthinking. I was desperate.,116,,,,Main_Ch9,M9_L0116
-3,50,116,main_door_open,Player,Main,,,selection,(그저 조용히 들어준다.)|안심해 줘. 너의 꿈을 우습게 여긴 적 없으니까.,(Listen quietly.)|Have no fear. Your thoughts are never wishful to me.,117,,,passive|active,Main_Ch9,M9_L0117
-3,50,117,main_door_open,Dot,Main,,face_sad,text,"운명이 비정하고 참담해, <nickname>.","Fate is cruel and wretched,\n<nickname>.",118|118,,,,Main_Ch9,M9_L0118
-3,50,118,main_door_open,Dot,Main,,,text,사라진다는 건 내 의지로 선택할 수 없는 수순이지.,To vanish isn’t something\nI willingly choose.,119,,,,Main_Ch9,M9_L0119
-3,50,119,main_door_open,Dot,Main,,face_eyeroll3,text,짓밟혀 꿈틀이는 포자처럼\n난 그 어떤 것도 바꿀 수 없어.,"Like the spores, trampled and\ntwitching, I can’t change anything.",120,,,,Main_Ch9,M9_L0120
-3,50,120,main_door_open,Dot,Main,,face_eyeroll3_stay,text,어떤 수식이 정확한 표현인지조차 모르겠어.,I don’t even know\nhow to describe it.,121,,,,Main_Ch9,M9_L0121
-3,50,121,main_door_open,Player,Main,,face_blink,selection,... 그런 마음은 나도 어느 정도 알고 있어.|나도 거스를 수 없는 운명이 비정하게 느껴져.,... I think I know how you feel.|Some fates are cruel in their inevitability.,122,,,moon|sun,Main_Ch9,M9_L0122
-3,50,122,main_door_open,Player,Main,,,text,대부분의 인간이 그럴 거야.,As do most humans.,123|124,,,,Main_Ch9,M9_L0123
-3,50,123,main_door_open,Player,Main,,,text,가끔 참을 수 없을 정도야.,And sometimes intolerable.,125,,,,Main_Ch9,M9_L0124
-3,50,124,main_door_open,Player,Main,,,text,"알아, 나도 알고 있으니까,\n차분하게 마음을 가라앉혀 봐.","I know, I know, so\ntry to calm down.",125,,,,Main_Ch9,M9_L0125
-3,50,125,main_door_open,Player,Main,,,text,"(그리고 이런 상황에서 뭉치가 나에게,\n내가 뭉치에게 바라는 것은...)","(And what Dot would want for me, and\nwhat I want for Dot in this situation...)",126,,,,Main_Ch9,M9_L0126
-3,50,126,main_door_open,Player,Main,,,text,신중하게 골라도 좋아. 네 마음과\n가장 맞닿은 언어로 표현해 주면 좋겠어.,Take as much time as you need. To express\nyourself with words closest to your heart.,127,,,,Main_Ch9,M9_L0127
-3,50,127,main_door_open,Player,Main,,,text,늘 하던 대로...,As you always have...,128,,,,Main_Ch9,M9_L0128
-3,50,128,main_door_open,Dot,Main,,,text,...,...,129,,,,Main_Ch9,M9_L0129
-3,50,129,main_door_open,Dot,Main,,,text,두려워. 종말에 대한 원초적인 공포감이야.,I’m afraid. It’s a primal fear\ntoward endings.,130,,,,Main_Ch9,M9_L0130
-3,50,130,main_door_open,Dot,Main,,face_squeeze,text,야속해. 바꿀 수 없는 무정한 섭리가.,I’m bitter. Of what can’t be changed.,131,,,,Main_Ch9,M9_L0131
-3,50,131,main_door_open,Dot,Main,,face_sad,text,배신감이 들어. 쉬운 마음으로 믿은 것도\n아닌데 파편이 되어 깨져 버린 느낌.,I feel betrayed. That something I willed myself\nto believe in just shattered into pieces.,132,,,,Main_Ch9,M9_L0132
-3,50,132,main_door_open,Player,Main,,face_eyeroll3,text,음.,Oh.,133,,,,Main_Ch9,M9_L0133
-3,50,133,main_door_open,Dot,Main,,face_eyeroll3_stay,text,<nickname>. 하지만 방법이 정말 없는 걸까?,<nickname>. But is\nthere truly no way?,134,,,,Main_Ch9,M9_L0134
-3,50,134,main_door_open,Dot,Main,,face_blink,text,꿈이 된 후에도 내가 널 떠나지 않을 수 있는.,No way for me not to leave you\neven after I become a dream.,135,,,,Main_Ch9,M9_L0135
-3,50,135,main_door_open,Dot,Main,,,text,어떠한 형태로 존재하게 만들 수 있는\n방법이 세상에 단 하나도 없을까?,Not a single way in this world for\nme to exist in whatever form?,136,,,,Main_Ch9,M9_L0136
-3,50,136,main_door_open,Dot,Main,body_move,,text,"약물, 공식, 혹은 그래, 어떠한\n기계를 발명해 보는 건?","A remedy, an equation, or\nperhaps a machine of sorts?",137,,,,Main_Ch9,M9_L0137
-3,50,137,main_door_open,Player,Main,body_default1,,text,으음.,Well.,138,,,,Main_Ch9,M9_L0138
-3,50,138,main_door_open,Dot,Main,body_bounce,face_sad,text,"그래, 그래. 애초에 날 깨운 이들,\n달의 이들에게 이야기해 보는 건?","Yes, that’s it. How about talking it over with the\nones that woke me in the first place, on the Moon?",139,,,,Main_Ch9,M9_L0139
-3,50,139,main_door_open,Player,Main,body_default1,face_blink,selection,(절박하게 방법을 강구하는 뭉치가... 가여워.)|(그들이라고 알 것 같지는 않은데...),(Dot is desperate... it’s hard to watch.)|(It isn’t likely that they’d know something...),140,,,sun|moon,Main_Ch9,M9_L0140
-3,50,140,main_door_open,Dot,Main,,face_eyeroll2,text,어떻게 달에서는 물질이었던 게\n지구에서는 현상이 되는 거지?,How can a substance on the Moon\nbecome a phenomenon on Earth?,141|141,,,,Main_Ch9,M9_L0141
-3,50,141,main_door_open,Dot,Main,,face_blink,text,영롱한 구슬이었던 게 한낱 허상으로...,"A glowing marble, reduced\nto a mere illusion...",142,,,,Main_Ch9,M9_L0142
-3,50,142,main_door_open,Dot,Main,,,text,"그렇다면 그 현상의 관측이 끝난 이후에, 그것을\n다시 물질로 바꿀 수 있는 방법은 전혀 없는 걸까?","Then is there no way to change it back into a\nsolid substance, after one is done observing it?",143,,,,Main_Ch9,M9_L0143
-3,50,143,main_door_open,Player,Main,,,selection,"섣불리 확답할 순 없는 이야기를 꺼내네, 뭉치...|가능할지도 모르는 얘기네. 계속해 봐, 뭉치.","I can’t say for certain, Dot...|It might be possible. Go on, Dot.",144,,,moon|sun,Main_Ch9,M9_L0144
-3,50,144,main_door_open,Dot,Main,,,text,"응, 난 가능성을 마구잡이로 나열하고 있는 거야.","Well, all I’m doing is listing possibilities.",145|145,,,,Main_Ch9,M9_L0145
-3,50,145,main_door_open,Dot,Main,,face_omg,text,잡아채고 싶은 게 있기에\n추악하게 쏟아내고 있는 거야.,Spouting repulsively as a\nmeans to grasp what I want.,146,,,,Main_Ch9,M9_L0146
-3,50,146,main_door_open,Dot,Main,body_bounce,face_blink,text,"아, 그렇지. 죽은 꿈들의 영혼이 가는 곳은 없나?","Oh, right. Where do the\nsouls of dead dreams go?",147,,,,Main_Ch9,M9_L0147
-3,50,147,main_door_open,Dot,Main,body_bounce,face_staryeyes,text,"거기에서 내가 영원히 행복하게, 나의 친구들과 함께\n너를 추억하며 사는 엔딩이 있을 수 있지 않을까?","Is there somewhere I can live happily forever\nwith my friends, remembering you fondly?",148,,,,Main_Ch9,M9_L0148
-3,50,148,main_door_open,Player,Main,body_default1,face_blink,text,그럴 수 있다면 좋을 것 같지만...,I wish there was...,149,,,,Main_Ch9,M9_L0149
-3,50,149,main_door_open,Player,Main,,,selection,너를 보니 꿈에도 영혼이 있을지 모른다는 생각이 들어.|인간들에게도 사후 세계는 논쟁이 되는 주제야.,You make me think dreams might have souls.|The afterlife is controversial for humans too.,150,,,sun|moon,Main_Ch9,M9_L0150
-3,50,150,main_door_open,Player,Main,,,text,네가 꿈이 된 이후에도 또 다른 형태의\n뭉치로 남을 방법이 있다면 나도 기쁠 거야.,I’d be happy if there was some way for you\nto remain as Dot after you become a dream.,151|155,,,,Main_Ch9,M9_L0151
-3,50,151,main_door_open,Player,Main,,,text,"이 마음만은 믿어 줘, 뭉치야.","Trust me on this, Dot.",152,,,,Main_Ch9,M9_L0152
-3,50,152,main_door_open,Player,Main,,face_sad,text,"하지만 너도, 나도, 아직 모르는 게 많아.\n지금 더 이상의 확신을 줄 순 없겠네...",But there’s so much that you and I don’t know.\nI can’t say anything for certain just now...,153,,,,Main_Ch9,M9_L0153
-3,50,153,main_door_open,Player,Main,,face_blink,text,"모른다는 건 아직 가능성이 열려\n있다는 것, 그뿐인 거야.","Uncertainty means possibility, that’s all.",154,,,,Main_Ch9,M9_L0154
-3,50,154,main_door_open,Player,Main,,,text,"죽음에 대한 두려움을 피하기 위한 근거\n없는 믿음 혹은 상상력의 산물이라고 여기거나,","Some believe the afterlife to be unfounded belief or\na figment of imagination, to escape the terror of death.",158,,,,Main_Ch9,M9_L0155
-3,50,155,main_door_open,Player,Main,,face_eyeroll3,text,"수명이 다하고 신체를 떠난 영혼들이 신적인 공간에서\n안식을 취하는 곳, 즉 영혼들의 거처라고 믿는 이들도 있어.",While others believe it to be a spiritual place for\nsouls that no longer have bodies to find solace in.,156,,,,Main_Ch9,M9_L0156
-3,50,156,main_door_open,Player,Main,,face_blink,text,꿈들의 사후세계라는 것도 이 정도 수준에서\n나아갈 수 없는 이야기인 것 같아.,"There’s no more to say on the subject\nbeyond this, on the afterlife of dreams.",157,,,,Main_Ch9,M9_L0157
-3,50,157,main_door_open,Dot,Main,,,text,"아, 그래, 그래, 이해했어.","Alright, alright. I understand.",158,,,,Main_Ch9,M9_L0158
-3,50,158,main_door_open,Dot,Main,,,text,모든 건\n의문으로 남아 있구나.,Everything is a mystery.,159,,,,Main_Ch9,M9_L0159
-3,50,159,main_door_open,Dot,Main,,,text,... ...,... ...,160,,,,Main_Ch9,M9_L0160
-3,50,160,main_door_open,Dot,Main,,,text,확실한 건 단 하나뿐이구나.,And only one thing is for certain.,161,,,,Main_Ch9,M9_L0161
-3,50,161,main_door_open,Dot,Main,,face_mad,text,내가 죽는다는 것.,That I will die.,162,,,,Main_Ch9,M9_L0162
-3,50,162,main_door_open,Dot,Main,,face_omg,text,나도 죽는다는 것.,"I too, will die.",163,,,,Main_Ch9,M9_L0163
-3,50,163,main_door_open,Dot,Main,,face_blink,text,... ...,... ...,164,,,,Main_Ch9,M9_L0164
-3,50,164,main_door_open,Dot,Main,,,text,나는 죽을 거야.,I will die.,165,,,,Main_Ch9,M9_L0165
-3,50,165,main_door_open,Dot,Main,,,text,"바라던 꿈이 되어서, 죽을 거야.","I’ll be a dream, at last, then I’ll be gone.",166,,,,Main_Ch9,M9_L0166
-3,50,166,main_door_open,Dot,Main,,,text,"아 그런데, 색색깔의 꿈이 되어\n몸에서 해방될 수도 있는데.","Oh but, if I am freed from this\nbody as a multicolored dream,",167,,,,Main_Ch9,M9_L0167
-3,50,167,main_door_open,Dot,Main,,,text,그럼 난 아주 기쁠 수도 있지 않을까?,won’t I be happier than ever?,168,,,,Main_Ch9,M9_L0168
-3,50,168,main_door_open,Player,Main,body_default1,,selection,...|뭉치야.,...|Dot.,169,,,,Main_Ch9,M9_L0169
-3,50,169,main_door_open,Dot,Main,,face_omg,text,그치만 기쁨을 느낄 수 있는\n나는 사라지고 없겠지.,But I won’t be there to\nbask in that happiness.,170|170,,,,Main_Ch9,M9_L0170
-3,50,170,main_door_open,Dot,Main,,,text,죽음이 소멸이라면. 모든 게\n포자와의 추억처럼 흩어진다면?,What if death means termination. If everything\nscatters like my memories with the spores?,171,,,,Main_Ch9,M9_L0171
-3,50,171,main_door_open,Player,Main,,,text,...,...,172,,,,Main_Ch9,M9_L0172
-3,50,172,main_door_open,Dot,Main,body_bounce,face_blink,text,"아? 음? 다시, 다시. 다 카포! 난\n태초부터 꿈이 되고 싶었던 거잖아.","Oh? Hmm? Again, again. Da capo!\nI wanted to be a dream from the very start.",173,,,,Main_Ch9,M9_L0173
-3,50,173,main_door_open,Dot,Main,body_default1,,text,"나의 단 하나뿐인 목표야. 레드, 에디슨, 첼로 경,\n듣고 있어요? 그 누구도 부정할 수가 없어.","It was my sole goal. Red, Edison, Sir Cello,\nare you listening? No one can deny it.",174,,,,Main_Ch9,M9_L0174
-3,50,174,main_door_open,Dot,Main,,,text,난 오직\n그걸 위해 존재했다는 것을.,It’s everything I have stood for.,175,,,,Main_Ch9,M9_L0175
-3,50,175,main_door_open,Player,Main,body_ch9_heartup,face_omg,text,하지만... 무엇을?,But... for what?,176,,,,Main_Ch9,M9_L0176
-3,50,176,main_door_open,Dot,Main,body_ch9_heart,,text,... ...,... ...,177,,,,Main_Ch9,M9_L0177
-3,50,177,main_door_open,Dot,Main,body_ch9_heart,,text,확실한 건 하나가 더 있지.,One other thing is for certain.,178,,,,Main_Ch9,M9_L0178
-3,50,178,main_door_open,Dot,Main,body_ch9_heartdown,,text,나는... 꿈이 뭔지도 모르고\n꿈을 꾸고 있었던 것.,That I... have been dreaming\nwithout knowing what a dream is.,,,,,Main_Ch9,M9_L0179
+1,49,92,main_table,Dot,Main,,,text,......,......,93,,,,Main_Ch9,M9_L0092
+1,49,93,main_table,Dot,Main,,,text,나. 조금 쉬어도 될까?,I. Think I need some time?,,,anim_mud_day8,,Main_Ch9,M9_L0093
+3,50,94,main_door_open,Dot,Main,body_default1,face_blink,text,아무리 생각해도 말이 안 되는 것 같아.,I still can’t wrap my head around it.,95,,,,Main_Ch9,M9_L0094
+3,50,95,main_door_open,Dot,Main,,,text,인간들이 꿈의 실체에 대해\n모르고 있는 것은 아닐까?,Could it be possible that humans are\nunaware of what dreams really are?,96,,,,Main_Ch9,M9_L0095
+3,50,96,main_door_open,Dot,Main,,,text,"달나라에서, 인간들은 생각보다\n꿈의 중요성을 모른다고 했어.",On the Moon they said humans don’t\nrealize just how important dreams are.,97,,,,Main_Ch9,M9_L0096
+3,50,97,main_door_open,Dot,Main,,,text,꿈은 사라지는 것도 잊히는 것도 아니야.,"Dreams don’t go away,\nnor are they forgotten.",98,,,,Main_Ch9,M9_L0097
+3,50,98,main_door_open,Dot,Main,,,text,상영된 후에 망각한다고 생각하지만\n실은 네 머릿속에서 살아가는 거야.,"One may think they’re buried when the credits\nroll, but really they live on in your mind.",99,,,,Main_Ch9,M9_L0098
+3,50,99,main_door_open,Dot,Main,,face_thinking,text,어쩌면 너의 꿈들은 모두 소심해서... \n말을 안 걸 뿐 아니었을까?,Maybe your dreams... are\njust too shy to talk to you?,100,,,sun|moon,Main_Ch9,M9_L0099
+3,50,100,main_door_open,Player,Main,,face_blink,selection,(... 정말 내 꿈이 소심할 뿐인가?)|(그러면 결국 잊히는 게 되는 거 아닌가?),(... Are my dreams shy?)|(But won’t they be forgotten eventually?),101|102,,,,Main_Ch9,M9_L0100
+3,50,101,main_door_open,Player,Main,,,text,(하지만 내가 평생 알던 꿈은 그런 존재가 아닌데...),(It’s nothing like the concept of\na dream I’ve known my whole life...),103,,,,Main_Ch9,M9_L0101
+3,50,102,main_door_open,Dot,Main,,,text,...,...,103,,,,Main_Ch9,M9_L0102
+3,50,103,main_door_open,Dot,Main,,face_eyeroll3,text,"네 마음을 지금 맞혀 봐도 될까, <nickname>?","Can I guess what you’re\nthinking, <nickname>?",104,,,,Main_Ch9,M9_L0103
+3,50,104,main_door_open,Dot,Main,,face_blink,text,‘정말로 아닐 거야. 꿈이란 사라지는 것이야.’,‘It can’t be. Dreams do go away.’,105,,,,Main_Ch9,M9_L0104
+3,50,105,main_door_open,Player,Main,,,selection,"(침묵으로 답을 대신했다.)|그래, 살아남는대도 기억 속에 남는 게 맞아.","(Silence.)|Yes. Even if they live on, it’s as a memory.",106|106,,,passive|active,Main_Ch9,M9_L0105
+3,50,106,main_door_open,Dot,Main,,,text,응. 응. 알고 있었어. 알고 있었어. 나는.,Yes. Yes. I knew it. I knew it. I.,107,,,,Main_Ch9,M9_L0106
+3,50,107,main_door_open,Dot,Main,,face_squeeze,text,하지만... 선명하게 받아들이지 못한 채\n외면하고 있었지. 추악하기 짝이 없게도.,But... I looked away and refused\nto accept it. How awful of me.,108,,,,Main_Ch9,M9_L0107
+3,50,108,main_door_open,Player,Main,,face_blink,selection,"껌딱지 검정 괴물, 너의 추악함은 이미 받아들였어.|추악하지 않아. 누구나 외면하고 싶을 수 있어.","Clingy critter, your awfulness is welcome.|You’re not awful. We all want to look away.",109|109,,,moon|sun,Main_Ch9,M9_L0108
+3,50,109,main_door_open,Dot,Main,,,text,그러면 곧대로 받아들이는 여정을 나와 함께해 줘.,Then accompany me on a journey of\naccepting things the way they are.,110|110,,,,Main_Ch9,M9_L0109
+3,50,110,main_door_open,Player,Main,,,text,"얼마든지, 뭉치야.","With pleasure, Dot.",111,,,,Main_Ch9,M9_L0110
+3,50,111,main_door_open,Dot,Main,,,text,...,...,112,,,,Main_Ch9,M9_L0111
+3,50,112,main_door_open,Dot,Main,,,text,...,...,113,,,,Main_Ch9,M9_L0112
+3,50,113,main_door_open,Dot,Main,,,text,나는 크레이터에서 지구로 송출되는\n구슬들을 올려다 보며 생각했었어.,I gazed up at the marbles being sent from\nthe crater to Earth and thought to myself.,114,,,,Main_Ch9,M9_L0113
+3,50,114,main_door_open,Dot,Main,,,text,찬란하게 빛나는 구가 되어 영원할 거라 믿었지.,I believed those glowing spheres\nwould be iridescent and eternal.,115,,,,Main_Ch9,M9_L0114
+3,50,115,main_door_open,Dot,Main,,,text,막연한 바람이라고는 생각하지 말아줘.\n나에겐 간절한 믿음이었어.,Don’t think of it as wishful\nthinking. I was desperate.,116,,,,Main_Ch9,M9_L0115
+3,50,116,main_door_open,Player,Main,,,selection,(그저 조용히 들어준다.)|안심해 줘. 너의 꿈을 우습게 여긴 적 없으니까.,(Listen quietly.)|Have no fear. Your thoughts are never wishful to me.,117,,,passive|active,Main_Ch9,M9_L0116
+3,50,117,main_door_open,Dot,Main,,face_sad,text,"운명이 비정하고 참담해, <nickname>.","Fate is cruel and wretched,\n<nickname>.",118|118,,,,Main_Ch9,M9_L0117
+3,50,118,main_door_open,Dot,Main,,,text,사라진다는 건 내 의지로 선택할 수 없는 수순이지.,To vanish isn’t something\nI willingly choose.,119,,,,Main_Ch9,M9_L0118
+3,50,119,main_door_open,Dot,Main,,face_eyeroll3,text,짓밟혀 꿈틀이는 포자처럼\n난 그 어떤 것도 바꿀 수 없어.,"Like the spores, trampled and\ntwitching, I can’t change anything.",120,,,,Main_Ch9,M9_L0119
+3,50,120,main_door_open,Dot,Main,,face_eyeroll3_stay,text,어떤 수식이 정확한 표현인지조차 모르겠어.,I don’t even know\nhow to describe it.,121,,,,Main_Ch9,M9_L0120
+3,50,121,main_door_open,Player,Main,,face_blink,selection,... 그런 마음은 나도 어느 정도 알고 있어.|나도 거스를 수 없는 운명이 비정하게 느껴져.,... I think I know how you feel.|Some fates are cruel in their inevitability.,122,,,moon|sun,Main_Ch9,M9_L0121
+3,50,122,main_door_open,Player,Main,,,text,대부분의 인간이 그럴 거야.,As do most humans.,123|124,,,,Main_Ch9,M9_L0122
+3,50,123,main_door_open,Player,Main,,,text,가끔 참을 수 없을 정도야.,And sometimes intolerable.,125,,,,Main_Ch9,M9_L0123
+3,50,124,main_door_open,Player,Main,,,text,"알아, 나도 알고 있으니까,\n차분하게 마음을 가라앉혀 봐.","I know, I know, so\ntry to calm down.",125,,,,Main_Ch9,M9_L0124
+3,50,125,main_door_open,Player,Main,,,text,"(그리고 이런 상황에서 뭉치가 나에게,\n내가 뭉치에게 바라는 것은...)","(And what Dot would want for me, and\nwhat I want for Dot in this situation...)",126,,,,Main_Ch9,M9_L0125
+3,50,126,main_door_open,Player,Main,,,text,신중하게 골라도 좋아. 네 마음과\n가장 맞닿은 언어로 표현해 주면 좋겠어.,Take as much time as you need. To express\nyourself with words closest to your heart.,127,,,,Main_Ch9,M9_L0126
+3,50,127,main_door_open,Player,Main,,,text,늘 하던 대로...,As you always have...,128,,,,Main_Ch9,M9_L0127
+3,50,128,main_door_open,Dot,Main,,,text,...,...,129,,,,Main_Ch9,M9_L0128
+3,50,129,main_door_open,Dot,Main,,,text,두려워. 종말에 대한 원초적인 공포감이야.,I’m afraid. It’s a primal fear\ntoward endings.,130,,,,Main_Ch9,M9_L0129
+3,50,130,main_door_open,Dot,Main,,face_squeeze,text,야속해. 바꿀 수 없는 무정한 섭리가.,I’m bitter. Of what can’t be changed.,131,,,,Main_Ch9,M9_L0130
+3,50,131,main_door_open,Dot,Main,,face_sad,text,배신감이 들어. 쉬운 마음으로 믿은 것도\n아닌데 파편이 되어 깨져 버린 느낌.,I feel betrayed. That something I willed myself\nto believe in just shattered into pieces.,132,,,,Main_Ch9,M9_L0131
+3,50,132,main_door_open,Player,Main,,face_eyeroll3,text,음.,Oh.,133,,,,Main_Ch9,M9_L0132
+3,50,133,main_door_open,Dot,Main,,face_eyeroll3_stay,text,<nickname>. 하지만 방법이 정말 없는 걸까?,<nickname>. But is\nthere truly no way?,134,,,,Main_Ch9,M9_L0133
+3,50,134,main_door_open,Dot,Main,,face_blink,text,꿈이 된 후에도 내가 널 떠나지 않을 수 있는.,No way for me not to leave you\neven after I become a dream.,135,,,,Main_Ch9,M9_L0134
+3,50,135,main_door_open,Dot,Main,,,text,어떠한 형태로 존재하게 만들 수 있는\n방법이 세상에 단 하나도 없을까?,Not a single way in this world for\nme to exist in whatever form?,136,,,,Main_Ch9,M9_L0135
+3,50,136,main_door_open,Dot,Main,body_move,,text,"약물, 공식, 혹은 그래, 어떠한\n기계를 발명해 보는 건?","A remedy, an equation, or\nperhaps a machine of sorts?",137,,,,Main_Ch9,M9_L0136
+3,50,137,main_door_open,Player,Main,body_default1,,text,으음.,Well.,138,,,,Main_Ch9,M9_L0137
+3,50,138,main_door_open,Dot,Main,body_bounce,face_sad,text,"그래, 그래. 애초에 날 깨운 이들,\n달의 이들에게 이야기해 보는 건?","Yes, that’s it. How about talking it over with the\nones that woke me in the first place, on the Moon?",139,,,,Main_Ch9,M9_L0138
+3,50,139,main_door_open,Player,Main,body_default1,face_blink,selection,(절박하게 방법을 강구하는 뭉치가... 가여워.)|(그들이라고 알 것 같지는 않은데...),(Dot is desperate... it’s hard to watch.)|(It isn’t likely that they’d know something...),140,,,sun|moon,Main_Ch9,M9_L0139
+3,50,140,main_door_open,Dot,Main,,face_eyeroll2,text,어떻게 달에서는 물질이었던 게\n지구에서는 현상이 되는 거지?,How can a substance on the Moon\nbecome a phenomenon on Earth?,141|141,,,,Main_Ch9,M9_L0140
+3,50,141,main_door_open,Dot,Main,,face_blink,text,영롱한 구슬이었던 게 한낱 허상으로...,"A glowing marble, reduced\nto a mere illusion...",142,,,,Main_Ch9,M9_L0141
+3,50,142,main_door_open,Dot,Main,,,text,"그렇다면 그 현상의 관측이 끝난 이후에, 그것을\n다시 물질로 바꿀 수 있는 방법은 전혀 없는 걸까?","Then is there no way to change it back into a\nsolid substance, after one is done observing it?",143,,,,Main_Ch9,M9_L0142
+3,50,143,main_door_open,Player,Main,,,selection,"섣불리 확답할 순 없는 이야기를 꺼내네, 뭉치...|가능할지도 모르는 얘기네. 계속해 봐, 뭉치.","I can’t say for certain, Dot...|It might be possible. Go on, Dot.",144,,,moon|sun,Main_Ch9,M9_L0143
+3,50,144,main_door_open,Dot,Main,,,text,"응, 난 가능성을 마구잡이로 나열하고 있는 거야.","Well, all I’m doing is listing possibilities.",145|145,,,,Main_Ch9,M9_L0144
+3,50,145,main_door_open,Dot,Main,,face_omg,text,잡아채고 싶은 게 있기에\n추악하게 쏟아내고 있는 거야.,Spouting repulsively as a\nmeans to grasp what I want.,146,,,,Main_Ch9,M9_L0145
+3,50,146,main_door_open,Dot,Main,body_bounce,face_blink,text,"아, 그렇지. 죽은 꿈들의 영혼이 가는 곳은 없나?","Oh, right. Where do the\nsouls of dead dreams go?",147,,,,Main_Ch9,M9_L0146
+3,50,147,main_door_open,Dot,Main,body_bounce,face_staryeyes,text,"거기에서 내가 영원히 행복하게, 나의 친구들과 함께\n너를 추억하며 사는 엔딩이 있을 수 있지 않을까?","Is there somewhere I can live happily forever\nwith my friends, remembering you fondly?",148,,,,Main_Ch9,M9_L0147
+3,50,148,main_door_open,Player,Main,body_default1,face_blink,text,그럴 수 있다면 좋을 것 같지만...,I wish there was...,149,,,,Main_Ch9,M9_L0148
+3,50,149,main_door_open,Player,Main,,,selection,너를 보니 꿈에도 영혼이 있을지 모른다는 생각이 들어.|인간들에게도 사후 세계는 논쟁이 되는 주제야.,You make me think dreams might have souls.|The afterlife is controversial for humans too.,150,,,sun|moon,Main_Ch9,M9_L0149
+3,50,150,main_door_open,Player,Main,,,text,네가 꿈이 된 이후에도 또 다른 형태의\n뭉치로 남을 방법이 있다면 나도 기쁠 거야.,I’d be happy if there was some way for you\nto remain as Dot after you become a dream.,151|155,,,,Main_Ch9,M9_L0150
+3,50,151,main_door_open,Player,Main,,,text,"이 마음만은 믿어 줘, 뭉치야.","Trust me on this, Dot.",152,,,,Main_Ch9,M9_L0151
+3,50,152,main_door_open,Player,Main,,face_sad,text,"하지만 너도, 나도, 아직 모르는 게 많아.\n지금 더 이상의 확신을 줄 순 없겠네...",But there’s so much that you and I don’t know.\nI can’t say anything for certain just now...,153,,,,Main_Ch9,M9_L0152
+3,50,153,main_door_open,Player,Main,,face_blink,text,"모른다는 건 아직 가능성이 열려\n있다는 것, 그뿐인 거야.","Uncertainty means possibility, that’s all.",154,,,,Main_Ch9,M9_L0153
+3,50,154,main_door_open,Player,Main,,,text,"죽음에 대한 두려움을 피하기 위한 근거\n없는 믿음 혹은 상상력의 산물이라고 여기거나,","Some believe the afterlife to be unfounded belief or\na figment of imagination, to escape the terror of death.",158,,,,Main_Ch9,M9_L0154
+3,50,155,main_door_open,Player,Main,,face_eyeroll3,text,"수명이 다하고 신체를 떠난 영혼들이 신적인 공간에서\n안식을 취하는 곳, 즉 영혼들의 거처라고 믿는 이들도 있어.",While others believe it to be a spiritual place for\nsouls that no longer have bodies to find solace in.,156,,,,Main_Ch9,M9_L0155
+3,50,156,main_door_open,Player,Main,,face_blink,text,꿈들의 사후세계라는 것도 이 정도 수준에서\n나아갈 수 없는 이야기인 것 같아.,"There’s no more to say on the subject\nbeyond this, on the afterlife of dreams.",157,,,,Main_Ch9,M9_L0156
+3,50,157,main_door_open,Dot,Main,,,text,"아, 그래, 그래, 이해했어.","Alright, alright. I understand.",158,,,,Main_Ch9,M9_L0157
+3,50,158,main_door_open,Dot,Main,,,text,모든 건\n의문으로 남아 있구나.,Everything is a mystery.,159,,,,Main_Ch9,M9_L0158
+3,50,159,main_door_open,Dot,Main,,,text,......,......,160,,,,Main_Ch9,M9_L0159
+3,50,160,main_door_open,Dot,Main,,,text,확실한 건 단 하나뿐이구나.,And only one thing is for certain.,161,,,,Main_Ch9,M9_L0160
+3,50,161,main_door_open,Dot,Main,,face_mad,text,내가 죽는다는 것.,That I will die.,162,,,,Main_Ch9,M9_L0161
+3,50,162,main_door_open,Dot,Main,,face_omg,text,나도 죽는다는 것.,"I too, will die.",163,,,,Main_Ch9,M9_L0162
+3,50,163,main_door_open,Dot,Main,,face_blink,text,......,......,164,,,,Main_Ch9,M9_L0163
+3,50,164,main_door_open,Dot,Main,,,text,나는 죽을 거야.,I will die.,165,,,,Main_Ch9,M9_L0164
+3,50,165,main_door_open,Dot,Main,,,text,"바라던 꿈이 되어서, 죽을 거야.","I’ll be a dream, at last, then I’ll be gone.",166,,,,Main_Ch9,M9_L0165
+3,50,166,main_door_open,Dot,Main,,,text,"아 그런데, 색색깔의 꿈이 되어\n몸에서 해방될 수도 있는데.","Oh but, if I am freed from this\nbody as a multicolored dream,",167,,,,Main_Ch9,M9_L0166
+3,50,167,main_door_open,Dot,Main,,,text,그럼 난 아주 기쁠 수도 있지 않을까?,won’t I be happier than ever?,168,,,,Main_Ch9,M9_L0167
+3,50,168,main_door_open,Player,Main,body_default1,,selection,...|뭉치야.,...|Dot.,169,,,,Main_Ch9,M9_L0168
+3,50,169,main_door_open,Dot,Main,,face_omg,text,그치만 기쁨을 느낄 수 있는\n나는 사라지고 없겠지.,But I won’t be there to\nbask in that happiness.,170|170,,,,Main_Ch9,M9_L0169
+3,50,170,main_door_open,Dot,Main,,,text,죽음이 소멸이라면. 모든 게\n포자와의 추억처럼 흩어진다면?,What if death means termination. If everything\nscatters like my memories with the spores?,171,,,,Main_Ch9,M9_L0170
+3,50,171,main_door_open,Player,Main,,,text,...,...,172,,,,Main_Ch9,M9_L0171
+3,50,172,main_door_open,Dot,Main,body_bounce,face_blink,text,"아? 음? 다시, 다시. 다 카포! 난\n태초부터 꿈이 되고 싶었던 거잖아.","Oh? Hmm? Again, again. Da capo!\nI wanted to be a dream from the very start.",173,,,,Main_Ch9,M9_L0172
+3,50,173,main_door_open,Dot,Main,body_default1,,text,"나의 단 하나뿐인 목표야. 레드, 에디슨, 첼로 경,\n듣고 있어요? 그 누구도 부정할 수가 없어.","It was my sole goal. Red, Edison, Sir Cello,\nare you listening? No one can deny it.",174,,,,Main_Ch9,M9_L0173
+3,50,174,main_door_open,Dot,Main,,,text,난 오직\n그걸 위해 존재했다는 것을.,It’s everything I have stood for.,175,,,,Main_Ch9,M9_L0174
+3,50,175,main_door_open,Player,Main,body_ch9_heartup,face_omg,text,하지만... 무엇을?,But... for what?,176,,,,Main_Ch9,M9_L0175
+3,50,176,main_door_open,Dot,Main,body_ch9_heart,,text,......,......,177,,,,Main_Ch9,M9_L0176
+3,50,177,main_door_open,Dot,Main,body_ch9_heart,,text,확실한 건 하나가 더 있지.,One other thing is for certain.,178,,,,Main_Ch9,M9_L0177
+3,50,178,main_door_open,Dot,Main,body_ch9_heartdown,,text,나는... 꿈이 뭔지도 모르고\n꿈을 꾸고 있었던 것.,That I... have been dreaming\nwithout knowing what a dream is.,,,,,Main_Ch9,M9_L0178

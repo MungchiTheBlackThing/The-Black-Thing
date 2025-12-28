@@ -141,6 +141,12 @@ public class DotTextReview : MonoBehaviour
         userClicked = false;
     }
 
+    public void OnScreenClick()
+    {
+        userClicked = true;
+    }
+
+
     private void OnUserClick()
     {
         userClicked = true;

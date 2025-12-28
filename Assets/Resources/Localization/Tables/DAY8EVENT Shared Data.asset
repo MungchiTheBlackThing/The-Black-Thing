@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: DAY8EVENT Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: DAY8EVENT
+  m_TableCollectionNameGuidString: 202a62bf45dedc04f8d1bb61438b4371
+  m_Entries:
+  - m_Id: 9146679296
+    m_Key: DAY8_ALERT_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12908969984
+    m_Key: DAY8_ALERT_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15660433408
+    m_Key: DAY8_ALERT_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63609716736
+    m_Key: DIAL0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 111013740544
+    m_Key: DIAL1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138666786816
+    m_Key: DIAL2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151023206400
+    m_Key: DIAL3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163572563968
+    m_Key: DIAL4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 173915717632
+    m_Key: DIAL5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 183906549760
+    m_Key: DIAL6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 194706882560
+    m_Key: DIAL7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 207944105984
+    m_Key: DIAL8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1395510567976960
+    m_Key: popup1_t
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1395544260820992
+    m_Key: popup1_r
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1395570261311488
+    m_Key: popup1_l
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1395671092379648
+    m_Key: popup2_t
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1395673516687360
+    m_Key: popup2_r
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1395675584479232
+    m_Key: popup2_l
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1397436869197824
+    m_Key: popup3_t
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1397438895046656
+    m_Key: popup3_y
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7322220208810622978
+  references:
+    version: 2
+    RefIds:
+    - rid: 7322220208810622978
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1766501066880

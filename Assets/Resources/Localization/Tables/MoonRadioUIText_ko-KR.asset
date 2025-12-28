@@ -66,9 +66,9 @@ MonoBehaviour:
       m_Items:
       - rid: 7826956241281482752
   - m_Id: 496214425600
-    m_Localized: "\uB2EC\uAE4C\uC9C0 \uB0A0\uAE30\uC5D4 \uD3B8\uC9C0\uAC00 \uBB34\uAC70\uC6CC\uC694!\\n<b>500\uC790
-      \uC774\uB0B4</b>\uB85C \uC904\uC774\uAC70\uB098,\\n\uC5EC\uB7EC \uC7A5\uC73C\uB85C
-      \uB098\uB220 \uBCF4\uB0B4 \uC8FC\uC138\uC694!"
+    m_Localized: "\uC774 \uC1A1\uC2E0\uAE30\uB294 \uC5D0\uB514\uC2A8\uC758 \uD504\uB85C\uD1A0\uD0C0\uC785!\n<b>500\uC790
+      \uC774\uC0C1</b>\uC758 \uBB34\uAC8C\uB97C \uB2F4\uC740 \uD3B8\uC9C0\uB294\n\uB2EC\uAE4C\uC9C0
+      \uB0A0\uB824 \uBCF4\uB0BC \uC218 \uC5C6\uC5B4\uC694."
     m_Metadata:
       m_Items:
       - rid: 7826956241281482752
@@ -142,10 +142,38 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 7826956241281482752
+  - m_Id: 28381834441080832
+    m_Localized: "\uC544\uBB34\uAC83\uB3C4 \uC801\uD788\uC9C0 \uC54A\uC740 \uD3B8\uC9C0\uB294\n\uB2EC\uB098\uB77C
+      \uC0BC\uCD1D\uC0AC\uB4E4\uC744 \n\uD63C\uB780\uC5D0 \uBE60\uB728\uB9B4 \uC218
+      \uC788\uC5B4\uC694!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 7826956241281482752
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0040efc60f0000000040af554800000000406fdd5000000000406f1a5600000000402f795b00000000402fd15c00000000406f065e0000000040ef5f5e0000000040af887300000000402ff6730000000040ef1e740000000040ef57740000000040efa57400000000402fd07400000000406faa8d0300000040ef798f0300000040ef23570400000040af5d580400000040afbf9b05000000402f229c05000000402fc258040000
+        m_Entries: 
+        m_SharedEntries:
+        - id: 67762077696
+        - id: 310675193856
+        - id: 347312439296
+        - id: 369810685952
+        - id: 392875163648
+        - id: 398646525952
+        - id: 403834880000
+        - id: 405336440832
+        - id: 496214425600
+        - id: 498051530752
+        - id: 498735202304
+        - id: 499691503616
+        - id: 501000126464
+        - id: 501708963840
+        - id: 3906984689664
+        - id: 3914760929280
+        - id: 4772311547904
+        - id: 4777575399424
+        - id: 6166494003200
+        - id: 6168146558976
+        - id: 4779261509632

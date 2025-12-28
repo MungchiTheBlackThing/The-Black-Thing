@@ -31,8 +31,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 2,16,30,1,Dot,Default,anim_bounce,text,"아, 얼마나 황홀할까, <nickname>!","Oh, how splendid it\nmust be, <nickname>",31,,,,Sub_Ch3,S3_L0030
 2,16,31,1,Dot,Default,anim_sub_light,text,푸르른 하늘을 가로지르며\n구름 너머로 내달리는 삶이란!,To soar across the blue sky and\nrace far beyond the clouds!,32,,,,Sub_Ch3,S3_L0031
 2,16,32,1,Dot,Default,,text,"날 묶어 두는 어떠한 족쇄도 없이,\n그저 나로서 자유롭게 영원한 아이가 되어","To be a child forever,\nfree and whole and unchained,",33,,,,Sub_Ch3,S3_L0032
-2,16,33,1,Dot,Default,,text,"매일 매일을 행복하게 모험하고\n
-탐구하고 탐닉하기만 하며 살 수 있다면!",and spend each day adventuring\nand exploring life itself!,34,,,,Sub_Ch3,S3_L0033
+2,16,33,1,Dot,Default,,text,"매일 매일을 행복하게 모험하고\n탐구하고 탐닉하기만 하며 살 수 있다면!",and spend each day adventuring\nand exploring life itself!,34,,,,Sub_Ch3,S3_L0033
 2,16,34,1,Player,Sub,,selection,(어디에서 들어 본 이야기다.)|(이게 대체 무슨 소리일까.),(This sounds familiar.)|(Where is this coming from?),35|36,sun|moon,,,Sub_Ch3,S3_L0034
 2,16,35,1,Player,Sub,anim_eyesblink,text,"혹시 뭉치, 어떠한 책을 읽은 거야?","Have you been reading\nwhat I think you have, Dot?",37,,,,Sub_Ch3,S3_L0035
 2,16,36,1,Player,Sub,anim_eyesblink,text,"혹시 뭉치, 지금 어떤 이야기를 하는 거야?","Do you mind me asking\nwhat this is about, Dot?",37,,,,Sub_Ch3,S3_L0036
