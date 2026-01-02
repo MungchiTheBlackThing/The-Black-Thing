@@ -314,6 +314,7 @@ public class SubPanel : MonoBehaviour
             DialEnd();
             return;
         }
+        clickon();
         ScreenShield.On();
         var nextDial = sub.GetData(dialogueIndex);
         string scriptnumber = nextDial.ScriptNumber;
@@ -380,11 +381,11 @@ public class SubPanel : MonoBehaviour
                         PlayTextUI = selectedDot.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
                         PlayTextUI.text = korText;
                         Resetinputfield(selectedDot);
-
+                        if (subClick) subClick.SetActive(false);
                         if (scriptnumber.Contains("tutorial"))
                             TutoConditon(selectedDot, scriptnumber, determine, dialogueIndex);
                         else
-                            playerballoon(selectedDot);
+                            playerballoon(selectedDot, true);
                     }
                     break;
                 }
@@ -520,11 +521,16 @@ public class SubPanel : MonoBehaviour
         if (btn) RegisterNextButton(btn);
     }
 
-    public void playerballoon(GameObject selectedDot)
+    public void playerballoon(GameObject selectedDot, bool textbox = false)
     {
         if (subClick) subClick.SetActive(true);
         PlayerLocationSet(selectedDot);
         var btn = subClick ? subClick.GetComponent<Button>() : null;
+        if (textbox)
+        {
+            subClick.SetActive(false);
+            btn = selectedDot.transform.GetChild(0).GetChild(1).GetComponent<Button>();
+        }
         //[DEBUG] 0.5f -> 0.01f
         StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.01f, btn));
         if (btn) RegisterNextButton(btn);

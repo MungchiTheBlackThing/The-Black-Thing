@@ -49,9 +49,8 @@ public class SelectManager : MonoBehaviour
         for (int i = 0; i < options.Count; i++)
         {
             options[i].transform.GetChild(0).gameObject.SetActive(false);
-            selectedCount = 0;
-            //AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialouguecheckbox, this.transform.position);        //엠비언트 효과 빠짐 -> 추후에 추가
         }
+        selectedCount = 0;
 
         // 새로운 선택된 체크박스를 활성화
         if (newSelectedIndex != -1)
@@ -65,11 +64,21 @@ public class SelectManager : MonoBehaviour
         actionButton.SetActive(selectedCount > 0);
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(() => nextbutton(newSelectedIndex));
-
     }
 
     public void nextbutton(int index)
     {
         mainPanel.OnSelectionClicked(index);
+    }
+
+    public void OnDisable()
+    {
+        for (int i = 0; i < options.Count; i++)
+        {
+            options[i].transform.GetChild(0).gameObject.SetActive(false);
+        }
+        selectedCount = 0;
+        selectedIndex = -1;
+        actionButton.SetActive(false);
     }
 }

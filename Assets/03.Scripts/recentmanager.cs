@@ -10,6 +10,7 @@ public class RecentData
     public int index;
     public int tutonum = 0;
     public bool tutoend = false;
+    public bool watching = false;
 }
 
 public static class RecentManager
@@ -43,7 +44,8 @@ public static class RecentManager
                 value = 0,
                 index = 0,
                 tutonum = 0, // tutonum 필드 추가되었다고 가정
-                tutoend = false
+                tutoend = false,
+                watching = false
             };
 
             string json = JsonUtility.ToJson(defaultData);
@@ -66,6 +68,7 @@ public static class RecentManager
         data.tutonum = 0;
         data.index = 0;
         data.tutoend = false;
+        data.watching = false;
         File.WriteAllText(FilePath, JsonUtility.ToJson(data));
     }
 

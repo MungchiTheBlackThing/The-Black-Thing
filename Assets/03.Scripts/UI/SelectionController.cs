@@ -33,4 +33,22 @@ public class SelectionController : MonoBehaviour
 
         actionButton.SetActive(selectedCount > 0);
     }
+
+    public void OnDisable()
+    {
+        // 자식 옵션들 전부 체크 끄기
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Transform option = transform.GetChild(i);
+            if (option.childCount > 0)
+            {
+                GameObject mark = option.GetChild(0).gameObject;
+                if (mark.activeSelf)
+                    mark.SetActive(false);
+            }
+        }
+
+        selectedCount = 0;
+        actionButton.SetActive(false);
+    }
 }

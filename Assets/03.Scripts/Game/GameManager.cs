@@ -60,6 +60,11 @@ public class GameManager : MonoBehaviour
     {
         get { return objectManager; }
     }
+
+    public MenuController Menu
+    {
+        get { return menu; }
+    }
     public ScrollManager ScrollManager
     {
         get { return scrollManager; }

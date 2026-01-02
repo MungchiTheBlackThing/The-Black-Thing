@@ -11,22 +11,32 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
     public int currentPageIndex = 0; // 현재 페이지의 인덱스
     private Vector2 dragStartPosition; // 드래그 시작 위치
     private PlayerController playerController;
+    private LANGUAGE LANGUAGE;
 
     private string activeTexts = "너는 기꺼이 너의 바다로 나를 이끌었고,"; //<multiple(0)>
-
     private string passiveTexts = "너는 기꺼이 너의 바다에 나를 초대했고,";
-
     private string lowTexts = "난 그 드넓은 수면에 몸을 띄운 채 잔잔히 파도를 거슬러 보았어."; //<multiple(1)>
-
     private string highTexts = "난 마음껏 그 수면을 뛰놀며 자잘한 파도를 일렁여 보았어."; //<multiple(1)>
 
     private List<string> abcd = new List<string> {
         "찰나의 미소띤 잔상","파도 속 낯선 안식처","비좁고 다정한 암흑","미약한 용기의 불씨" //<multiple(2)>
     };
+
+    //--EN---------
+    private string activeTextsen = "pulled me into your sea,"; //<multiple(0)>
+    private string passiveTextsen = "called me into your sea,";
+    private string lowTextsen = "and I would run about its vast surface and create small ripples all around."; //<multiple(1)>
+    private string highTextsen = "and I would drift upon its vast surface and gently paddle against the waves."; //<multiple(1)>
+
+    private List<string> abcden = new List<string> {
+        "an afterimage of a pleasant daydream","a glimpse of an unlit haven","a moment of loving darkness","an ember of faint courage" //<multiple(2)>
+    };
+
     void OnEnable()
     {
         playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
         pageCount = pagesContainer.childCount - 1; // 페이지의 총 갯수 (-1은 닫기 버튼을 제외하기 위함)
+        LANGUAGE = playerController.GetLanguage();
 
         // 초기화: 첫 번째 페이지를 활성화하고, 나머지는 비활성화
         for (int i = 0; i < pageCount; i++)
@@ -44,11 +54,30 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
         int count = playerController.GetRewards().Count;
         string name = playerController.GetNickName();
 
-        // passive, active에 따라 선택할 텍스트 결정
-        string selectedTexts = (passive > active) ? passiveTexts : activeTexts;
-        string multiple0 = selectedTexts;
-        string multiple1 = (count >= 28) ? highTexts : lowTexts;
-        string multiple2 = abcd[deathnote];
+        bool isEnglish = LANGUAGE == LANGUAGE.ENGLISH;
+
+        // passive, active에 따라 선택할 텍스트 결정 (언어 반영)
+        string multiple0;
+        if (passive > active)
+        {
+            multiple0 = isEnglish ? passiveTextsen : passiveTexts;
+        }
+        else
+        {
+            multiple0 = isEnglish ? activeTextsen : activeTexts;
+        }
+
+        string multiple1;
+        if (count >= 28)
+        {
+            multiple1 = isEnglish ? highTextsen : highTexts;
+        }
+        else
+        {
+            multiple1 = isEnglish ? lowTextsen : lowTexts;
+        }
+
+        string multiple2 = (isEnglish ? abcden : abcd)[deathnote];
 
         for (int i = 0; i < pageCount; i++)
         {
@@ -98,7 +127,6 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
             pagesContainer.GetChild(pageCount).gameObject.SetActive(true); //exit 버튼 활성화
         }
     }
-
 
     void OnDisable()
     {

@@ -349,6 +349,16 @@ public class MenuController : MonoBehaviour
         skipon();
         GameObject.FindWithTag("GameController").GetComponent<SubTuto>().skiptouchGuide();
     }
+    IEnumerator later2()
+    {
+        ScrollManager camera = GameObject.FindWithTag("MainCamera").GetComponent<ScrollManager>();
+        camera.stopscroll();
+        camera.MoveCamera(new UnityEngine.Vector3(-5.5f, 0, -10), 2.5f);
+        tuto();
+        yield return new WaitForSeconds(2.5f);
+        skipon();
+        GameObject.FindWithTag("GameController").GetComponent<SubTuto>().skiptouchGuide();
+    }
 
     // 보이게 하는 단계 (종이 날아갈 때)
     public void SetMenuButtonVisible(bool visible)
@@ -362,5 +372,10 @@ public class MenuController : MonoBehaviour
     {
         if (MenuBut != null)
             MenuBut.GetComponent<Button>().interactable = canClick;
+    }
+
+    public void tutonum2laterON()
+    {
+        StartCoroutine(later2());
     }
 }

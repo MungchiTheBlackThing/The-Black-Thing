@@ -93,23 +93,28 @@ namespace Tutorial
             }
             else if (data.tutonum == 1)
             {
-                if (data.index == 69)
+                if (data.index == 69 && !data.watching)
                 {
-                        manager.ScrollManager.stopscroll();
-                        Debug.Log("두번째 튜토리얼 서브");
-                        manager.CameraZoom.ZoomOut();
-                        //InvokeHelper.Instance.InvokeAfterDelay(subcontinue, 4.0f);
-                        GameObject fix_moonradio = GameObject.Find("fix_moonradio");
-                        GameObject moonote = Resources.Load<GameObject>("moonnote");
-                        Utility.InstantiatePrefab(moonote, fix_moonradio.transform);
-                        subdial = manager.subDialoguePanel;
+                    manager.ScrollManager.stopscroll();
+                    Debug.Log("두번째 튜토리얼 서브");
+                    manager.CameraZoom.ZoomOut();
+                    //InvokeHelper.Instance.InvokeAfterDelay(subcontinue, 4.0f);
+                    GameObject fix_moonradio = GameObject.Find("fix_moonradio");
+                    GameObject moonote = Resources.Load<GameObject>("moonnote");
+                    Utility.InstantiatePrefab(moonote, fix_moonradio.transform);
+                    subdial = manager.subDialoguePanel;
+                }
+                else if (data.index == 69 && data.watching)
+                {
+                    Debug.Log("sd");
+                    manager.Menu.tutonum2laterON();
                 }
                 else
                 {
-                        manager.ScrollManager.stopscroll();
-                        manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                        Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
-                        subdial = manager.subDialoguePanel;
+                    manager.ScrollManager.stopscroll();
+                    manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
+                    Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
+                    subdial = manager.subDialoguePanel;
                 }
             }
             _initEnterCalled = false;

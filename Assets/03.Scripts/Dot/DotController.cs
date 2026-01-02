@@ -640,27 +640,25 @@ public class DotController : MonoBehaviour
         boxcollider.size = spriteSize;
         boxcollider.offset = spriteRenderer.sprite.bounds.center;
 
+        checksleep(OutAnimKey);
+    }
+    public void checksleep(string OutAnimKey)
+    {
+        if (Dust == null)
+            return;
 
-        if (Dust != null)
+        var spawner = Dust.GetComponent<DustSpawner>();
+        if (spawner == null)
+            return;
+
+        // anim_sleep만 예외로 유지, 나머지는 전부 정지
+        if (OutAnimKey == "anim_sleep")
         {
-            var spawner = Dust.GetComponent<DustSpawner>();
-            string prevAnimKey = animator.GetCurrentAnimatorClipInfo(0).Length > 0 ? animator.GetCurrentAnimatorClipInfo(0)[0].clip.name : "";
-            if (spawner != null)
-            {
-                bool wasSleep = prevAnimKey == "anim_sleep";
-                bool nowSleep = OutAnimKey == "anim_sleep";
-
-                // anim_sleep → 다른 애니 : 스폰 정지
-                if (wasSleep && !nowSleep)
-                {
-                    spawner.PauseSpawner();
-                }
-                // 다른 애니 → anim_sleep : 스폰 재개
-                else if (!wasSleep && nowSleep)
-                {
-                    spawner.ResumeSpawner();
-                }
-            }
+            spawner.ResumeSpawner();
+        }
+        else
+        {
+            spawner.PauseSpawner();
         }
     }
 
