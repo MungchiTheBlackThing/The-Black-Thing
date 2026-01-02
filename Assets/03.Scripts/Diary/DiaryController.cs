@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
 
 public class DiaryController : BaseObject, ISleepingInterface
 {
@@ -86,6 +87,7 @@ public class DiaryController : BaseObject, ISleepingInterface
 
     public void OnMouseUp()
     {
+        if (InputGuard.IsPointerOverUI()) return;
         RecentData data = RecentManager.Load();
         if (!data.tutoend)
         {

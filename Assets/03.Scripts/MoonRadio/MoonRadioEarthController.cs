@@ -1,135 +1,239 @@
-using Assets.Script.DialClass;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MoonRadioEarthController : MonoBehaviour
 {
-    [SerializeField]
-    GameObject sendEarth;
-    [SerializeField]
-    GameObject sendAlert;
-    [SerializeField]
-    GameObject closePopup;
-    [SerializeField]
-    GameObject exceedAlert;
+    [Header("Input")]
+    [SerializeField] private TMP_InputField inputField;
 
-    [SerializeField]
-    GameObject textLength;
+    [Header("UI")]
+    [SerializeField] private GameObject sendAlert;      // "보내졌습니다" 알럿
+    [SerializeField] private GameObject closePopup;
+    [SerializeField] private GameObject exceedAlert;    // 500자 초과 알럿
+    [SerializeField] private TMP_Text textLength;       // N/500
+    [SerializeField] private GameObject answerTextBox;  // 상태 UI(placeholder)
 
-    [SerializeField]
-    GameObject answerTextBox;
+    [SerializeField] private GameObject emptyAlert;
+    [SerializeField] private float NullAlertDuration = 1.2f;
 
-    bool isCheckingWithin500;
-    int textlineCnt;
+    [Header("Animators (2)")]
+    [SerializeField] private Animator sendUIAnimator;     // SendUI(페이드/전송 연출)
+    [SerializeField] private Animator airplaneAnimator;   // 종이비행기 버튼
+
+    [Header("Animator Triggers")]
+    [SerializeField] private string sendTrigger = "Send";
+    [SerializeField] private string resetTrigger = "Reset";
+
+    [Header("Timing (seconds)")]
+    [Tooltip("전송 애니가 끝나고 알럿이 떠야 하므로, SendUI/비행기 중 더 긴 전송 애니 길이로.")]
+    [SerializeField] private float sendAnimationDuration = 0.6f;
+
+    [Tooltip("알럿 표시 시간")]
+    [SerializeField] private float alertDuration = 2.0f;
+    [SerializeField] private float alertFadeIn = 1.5f;
+    [SerializeField] private float alertFadeOut = 0.2f;
+
+
+    private const int MAX_LEN = 500;
+
+    private bool isWithin500 = true;
+    private bool isTransmitting = false;
+    private bool exceedAlertCoolingDown = false;
+
+
+
     private void OnEnable()
     {
-        textlineCnt = 0; 
-        isCheckingWithin500 = true;
+        // 리스너 중복 방지
+        if (inputField != null)
+        {
+            inputField.onValueChanged.RemoveListener(OnInputValueChanged);
+            inputField.onValueChanged.AddListener(OnInputValueChanged);
+
+            // 입력 검증 콜백 연결 (추가 입력 시도 감지)
+            inputField.onValidateInput = ValidateInput;
+
+
+            // 현재 텍스트로 UI 동기화
+            OnInputValueChanged(inputField.text);
+        }
+
+        if (sendAlert != null) sendAlert.SetActive(false);
+        if (exceedAlert != null) exceedAlert.SetActive(false);
+        if (emptyAlert != null) emptyAlert.SetActive(false);
+
+
+        isTransmitting = false;
     }
-    public void Write2Moon(TMP_Text text)
+
+    private void OnDisable()
     {
-        //누르면, 박스는 사라진다.
-
-        if (text.text.Length >= 1)
+        if (inputField != null)
         {
-            answerTextBox.SetActive(false);
+            inputField.onValueChanged.RemoveListener(OnInputValueChanged);
+            inputField.onValidateInput = null;
         }
-        else
-        {
-            answerTextBox.SetActive(true);
-        }
-        
-        textlineCnt = text.text.Length;
-        textLength.GetComponent<TMP_Text>().text = textlineCnt.ToString() + "/500";
-
-        if (textlineCnt > 500)
-        {
-            isCheckingWithin500 = false;
-            exceedAlert.SetActive(true);
-        }
-        else
-        {
-            exceedAlert.SetActive(false);
-            isCheckingWithin500 = true;
-        }
-        //한글자라도 있으면 없애고, 한글자 존재하면 생김.
-        //글씨 처리..
-        //text.text는 moonbut누를시 전달될 string
     }
 
-    public void OnEndEdit(TMP_Text text)
+    // AnswerTextbox는 입력 길이 상태 UI (onValueChanged로만 제어) 
+    private void OnInputValueChanged(string s)
     {
-        Debug.Log(text.text.Length);
+        int len = string.IsNullOrEmpty(s) ? 0 : s.Length;
+
+        if (answerTextBox != null)
+            answerTextBox.SetActive(len == 0);
+
+        if (textLength != null)
+            textLength.text = $"{len}/{MAX_LEN}";
+
+        isWithin500 = (len <= MAX_LEN);
     }
 
+    // ===== 보내기 버튼 클릭 =====
     public void Send2MoonBut()
     {
-        //textfield가 사라진다.
-        //현재 누른 오브젝트 실행 후 애니메이션 끝나면 함수 실행
-        //Debug.Log(inputText);
-        if (isCheckingWithin500 == false) //500글자 이내
+        if (isTransmitting) return;
+
+        string s = inputField != null
+        ? inputField.text.TrimEnd('\n', '\r')
+        : "";
+
+        if (string.IsNullOrWhiteSpace(s))
         {
-            exceedAlert.SetActive(true);
-            //전송 불가능함.
+            StartCoroutine(CoShowEmptyAlert());
             return;
         }
-        exceedAlert.SetActive(false);
-        GameObject currObj = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
-        currObj.GetComponent<Animator>().SetBool("isGoing", true);
-        sendEarth.GetComponent<Animator>().SetBool("isGoing", true);
-    }
-    void Reset()
-    {
-        //돌아오는 애니메이터 
-        //animator.ResetTrigger("YourTrigger");
-        answerTextBox.SetActive(true); //다시 쓸수 있기 때문에 게임오브젝트를 켜준다s
-    }
-    public void WaitAlert()
-    {
-        StartCoroutine("waitForTransmission");
-    }
-    //waitForTransmission
-    public IEnumerator waitForTransmission()
-    {
 
-        yield return new WaitForSeconds(2.0f);
-        sendAlert.SetActive(false);
-        sendEarth.SetActive(true);
-        Reset();
-        yield return null;
+        isTransmitting = true;
 
-        //main.SetActive(true);
-        //Destroy(this.gameObject);
+        // 전송 시작: 두 애니메이터에 Send 트리거
+        FireTrigger(sendUIAnimator, sendTrigger);
+        FireTrigger(airplaneAnimator, sendTrigger);
+
+        // 직선 플로우 시작
+        StartCoroutine(CoTransmissionFlow());
     }
 
-    public void Send2MoonButEventExit()
+    private IEnumerator CoShowEmptyAlert()
     {
-        sendEarth.SetActive(false);
-        sendAlert.SetActive(true);
-        Invoke("WaitAlert", .5f);
+        if (emptyAlert != null) emptyAlert.SetActive(true);
+        yield return new WaitForSeconds(NullAlertDuration);
+        if (emptyAlert != null) emptyAlert.SetActive(false);
+    }
+    private IEnumerator CoFadeCanvasGroup(
+    CanvasGroup cg,
+    float from,
+    float to,
+    float duration)
+    {
+        if (cg == null) yield break;
+
+        cg.alpha = from;
+        float t = 0f;
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            cg.alpha = Mathf.Lerp(from, to, t / duration);
+            yield return null;
+        }
+
+        cg.alpha = to;
     }
 
-    //channel exit but 누른다.
+
+    private IEnumerator CoTransmissionFlow()
+    {
+        // 전송 애니 끝날 때까지 대기
+        yield return new WaitForSeconds(sendAnimationDuration);
+
+        // 알럿 ON + 페이드 인
+        CanvasGroup alertCG = null;
+        if (sendAlert != null)
+        {
+            sendAlert.SetActive(true);
+            alertCG = sendAlert.GetComponent<CanvasGroup>();
+            if (alertCG != null)
+                yield return StartCoroutine(CoFadeCanvasGroup(alertCG, 0f, 1f, alertFadeIn));
+        }
+
+        // 완전히 보이는 유지 시간 (기존 alertDuration)
+        yield return new WaitForSeconds(alertDuration);
+
+        // 페이드 아웃
+        if (sendAlert != null && alertCG != null)
+            yield return StartCoroutine(CoFadeCanvasGroup(alertCG, 1f, 0f, alertFadeOut));
+
+        if (sendAlert != null) sendAlert.SetActive(false);
+
+        // 여기서 동시에 복귀시키기
+        FireTrigger(sendUIAnimator, resetTrigger);
+        FireTrigger(airplaneAnimator, resetTrigger);
+
+        // 입력 초기화
+        if (inputField != null)
+        {
+            inputField.text = string.Empty;
+            OnInputValueChanged(inputField.text);
+            inputField.ActivateInputField();
+        }
+
+        isTransmitting = false;
+    }
+
+
+    private char ValidateInput(string text, int charIndex, char addedChar)
+    {
+        // 이미 500자에 도달했고, 더 입력하려는 시도라면
+        if (text != null && text.Length >= MAX_LEN)
+        {
+            // 알럿 연타 방지(쿨다운)
+            if (!exceedAlertCoolingDown)
+                StartCoroutine(CoShowExceedAlertOnce());
+
+            // 이 문자를 거부해서 입력이 더 늘지 않게 함
+            return '\0';
+        }
+
+        // 정상 입력 허용
+        return addedChar;
+    }
+
+    private IEnumerator CoShowExceedAlertOnce()
+    {
+        exceedAlertCoolingDown = true;
+
+        if (exceedAlert != null) exceedAlert.SetActive(true);
+        yield return new WaitForSeconds(alertDuration);
+        if (exceedAlert != null) exceedAlert.SetActive(false);
+
+        exceedAlertCoolingDown = false;
+    }
+
+
+    // ===== 채널 종료 =====
     public void ExitChannelBut()
     {
-        //close_Alter이 뜬다.
-        closePopup.SetActive(true);
-    }
-    //채널 종료
-    public void YesBut()
-    {
-        //yes를 누르면 send_Alert 뜸.. 화면 클릭시 메인 화면으로 이동
-        closePopup.SetActive(false);
-        this.gameObject.SetActive(false);
+        if (closePopup != null) closePopup.SetActive(true);
     }
 
-    //채널 종료 안함
+    public void YesBut()
+    {
+        if (closePopup != null) closePopup.SetActive(false);
+        gameObject.SetActive(false);
+    }
+
     public void NoBut()
     {
-        //no일시... 물어봐야할듯 뭔데..? 
-        closePopup.SetActive(false);
+        if (closePopup != null) closePopup.SetActive(false);
+    }
+
+    // ===== Animator helper =====
+    private void FireTrigger(Animator anim, string trig)
+    {
+        if (anim == null) return;
+        anim.ResetTrigger(trig);  // 안전장치
+        anim.SetTrigger(trig);
     }
 }

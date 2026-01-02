@@ -54,6 +54,7 @@ public class LetterController : BaseObject, IWatchingInterface
 
     private void OnMouseDown()
     {
+        if (InputGuard.BlockWorldInput()) return;
         if (alert.activeSelf)
             alert.SetActive(false);
 

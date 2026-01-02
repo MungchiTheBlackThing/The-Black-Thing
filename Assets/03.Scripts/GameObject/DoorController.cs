@@ -63,11 +63,8 @@ public class DoorController : MonoBehaviour
     //}
     private void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            // ���콺�� UI ���� ���� ���� �� �Լ��� �������� �ʵ��� ��
-            return;
-        }
+        if (InputGuard.BlockWorldInput()) return;
+
 
         if (!dot.GetComponent<DotController>().tutorial)
         {
@@ -140,7 +137,7 @@ public class DoorController : MonoBehaviour
             doorCollider.enabled = enable;
 
         // 렌더 끄기 (문이 시각적으로만! 사라지게 해야 함)
-        var renderers = GetComponentsInChildren<SpriteRenderer>();
+        var renderers = GetComponentsInChildren<Renderer>();
         foreach (var r in renderers)
             r.enabled = enable;
 

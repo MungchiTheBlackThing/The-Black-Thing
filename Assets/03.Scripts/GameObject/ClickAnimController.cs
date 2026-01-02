@@ -16,7 +16,7 @@ public class ClickAnimController : BaseObject
     Animator animator;
 
     [SerializeField]
-    [Tooltip("Àç»ç¿ëÀ» À§ÇÑ ClickObject Type")]
+    [Tooltip("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ClickObject Type")]
     ClickType Type;
     void Start()
     {
@@ -26,11 +26,7 @@ public class ClickAnimController : BaseObject
     private void OnMouseDown()
     {
 
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            // ¸¶¿ì½º°¡ UI À§¿¡ ÀÖÀ» ¶§´Â ÀÌ ÇÔ¼ö°¡ µ¿ÀÛÇÏÁö ¾Êµµ·Ï ÇÔ
-            return;
-        }
+        if (InputGuard.BlockWorldInput()) return;
         switch ((int)Type)
         {
             case 0:

@@ -185,6 +185,7 @@ public class MenuController : MonoBehaviour
 
     public void onMenu()
     {
+        InputGuard.WorldInputLocked = true;
         phase = PlayerController.GetCurrentPhase();
         MenuBut.GetComponent<Button>().enabled = false;
         isOpening = !isOpening;
@@ -221,6 +222,7 @@ public class MenuController : MonoBehaviour
     }
     public void MenuAniExit()
     {
+        InputGuard.WorldInputLocked = false;
         MenuBut.GetComponent<Button>().enabled = true;
         if (isOpening)
         {
@@ -232,6 +234,7 @@ public class MenuController : MonoBehaviour
             {
                 checkList.SetActive(true);
                 MenuDefault.SetActive(false);
+                TimeUI.SetActive(false);
             }
             else
             {

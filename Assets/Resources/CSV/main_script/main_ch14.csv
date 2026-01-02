@@ -1,4 +1,4 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,79,1,main_door_open,Dot,Main,body_default1,face_blink,text,<nickname>! 새로운 하루야!,<nickname>! It’s a new day!,2,,,,Main_Ch14,M14_L0001
 1,79,2,main_door_open,Player,Main,,,text,"뭉치, 오늘따라 인사가 당차네!",Look who’s sounding lively today!,3,,,,Main_Ch14,M14_L0002
 1,79,3,main_door_open,Dot,Main,,,text,"응, 당차게 보내기로 마음 먹은 하루거든. 오늘만큼은. 그래야만 해.","Yes, I’ve decided to be\nlively for today. I have to.",4,,,,Main_Ch14,M14_L0003
@@ -294,7 +294,7 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,80,293,main_door_open,Dot,Main,,,text,그치만 넌 그 추억 속에서 실낱 같은 힘을 되찾을 거야.,But you’ll find the smallest sliver of strength\nin the times we spent together.,294,,,,Main_Ch14,M14_L0293
 3,80,294,main_door_open,Player,Main,,,text,"... 응, 너를 만났기에 더욱 선명해졌을 힘을.",... Yes. A strength only made\nstronger because I met you.,295,,,,Main_Ch14,M14_L0294
 3,80,295,main_door_open,Player,Main,,,text,그렇게 두려워하면서도 멈추지 않을게.,"I’ll be afraid, but I won’t stop.",296,,,,Main_Ch14,M14_L0295
-3,80,296,,Player,,,,text,네가 암흑 속에서 몸소 그러했듯이.,Just like you in the pitch black.,297,,,,Main_Ch14,M14_L0296
+3,80,296,main_door_open,Player,,,,text,네가 암흑 속에서 몸소 그러했듯이.,Just like you in the pitch black.,297,,,,Main_Ch14,M14_L0296
 3,80,297,main_door_open,Dot,Main,,,text,...,... Yes. Thank you for everything.,298,,,,Main_Ch14,M14_L0297
 3,80,298,main_door_open,Dot,Main,body_move,,text,그때의 네가 뒤돌아본 우리의\n우정은 어떤 모습을 하고 있을까?,I wonder what our friendship will\nlook like when you look back?,299,,,,Main_Ch14,M14_L0298
 3,80,299,main_door_open,Player,Main,body_default1,,text,나중에 만나게 되면 다 이야기해 줄게. 전부.,I’ll tell you all about it.\nWhen we see each other again.,300,,,,Main_Ch14,M14_L0299

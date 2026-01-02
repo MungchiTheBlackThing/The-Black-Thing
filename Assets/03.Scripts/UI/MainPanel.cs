@@ -230,6 +230,7 @@ public class MainPanel : MonoBehaviour
         dialogueIndex = 0;
         backindex = -1;
         ScreenShield.Off();
+        InputGuard.WorldInputLocked = false;
 
         if (gameManager.GetComponent<TutorialManager>() != null)
         {

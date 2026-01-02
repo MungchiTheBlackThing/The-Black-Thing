@@ -27,6 +27,11 @@ public class BinocularController : BaseObject , IWatchingInterface
         return curPattern == type;
     }
 
+    private bool IsValidBinoDay(int chapter)
+    {
+        return chapter == 2 || chapter == 5 || chapter == 8 || chapter == 10 || chapter == 13;
+    }
+
     private void Start()
     {
         door = FindObjectOfType<DoorController>();
@@ -89,17 +94,12 @@ public class BinocularController : BaseObject , IWatchingInterface
 
     private void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            // ���콺�� UI ���� ���� ���� �� �Լ��� �������� �ʵ��� ��
-            return;
-        }
-
+        if (InputGuard.BlockWorldInput()) return;
         if (pc == null) return;
 
         GamePatternState curPhase = (GamePatternState)pc.GetCurrentPhase();
 
-        if (curPhase != GamePatternState.Watching)
+        if (curPhase != GamePatternState.Watching || !IsValidBinoDay(chapterIdx))
         
             return;
 
@@ -109,10 +109,11 @@ public class BinocularController : BaseObject , IWatchingInterface
         alert.SetActive(false);
             //Ŭ����~
             // 문 렌더링 끄기
+        DoorController door = FindObjectOfType<DoorController>(); // 문 렌더링 끄기
         if (door != null)
         {
             door.SetDoorForDialogue(false);
-        }   
+        }
 
         phase = Instantiate(watching[Idx[chapterIdx]], watchingBackground.transform);       
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.binocular, this.transform.position);
@@ -122,5 +123,20 @@ public class BinocularController : BaseObject , IWatchingInterface
     public void CloseWatching()
     {
         alert.SetActive(false);
+        DoorController door = FindObjectOfType<DoorController>();
+        if (door != null)
+        {
+            door.SetDoorForDialogue(true);
+        }
     }
+
+    private void OnDisable()
+    {
+        DoorController door = FindObjectOfType<DoorController>();
+        if (door != null)
+        {
+            door.SetDoorForDialogue(true);
+        }
+    }
+
 }
