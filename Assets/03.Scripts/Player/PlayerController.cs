@@ -496,12 +496,9 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     public void Replay()
     {
-        player.Replay();
-        GameManager.isend = false;
-        DeathNoteClick.readDeathnote = false;
-        RecentManager.ResetFlagOnly();
-        WritePlayerFile();
-        SceneManager.LoadScene("Tutorial"); // 주희 수정 필요, 튜토리얼이 아니라 프롤로그부터 시작해야 함
+        PlayerPrefs.SetInt("FORCE_NEW_GAME", 1);
+        PlayerPrefs.Save();
+        LoadSceneManager.Instance.LoadScene("MainScene", "IntroScene", 0);
     }
 
     public bool IsSubWatched(int id)
