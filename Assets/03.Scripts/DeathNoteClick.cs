@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DeathNoteClick : MonoBehaviour
 { 
-    public static bool checkdeath = false;
     [SerializeField]
     PlayerController player;
     [SerializeField]
@@ -15,6 +14,7 @@ public class DeathNoteClick : MonoBehaviour
 
     [SerializeField]
     MenuController menu;
+    public static bool readDeathnote = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,6 @@ public class DeathNoteClick : MonoBehaviour
     // Update is called once per frame
     public void Onclick()
     {
-        if (checkdeath) return; // ÀÌ¹Ì ½ÇÇàµÇ¾úÀ¸¸é Áßº¹ ½ÇÇà ¹æÁö
 
         string resourcePath = (player.GetSunMoon().sun >= player.GetSunMoon().moon)
             ? "Ending/Sun_deathnote"
@@ -40,19 +39,17 @@ public class DeathNoteClick : MonoBehaviour
 
         if (_deathnote == null)
         {
-            Debug.LogError($"Error: {resourcePath} ¸®¼Ò½º¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù!");
+            Debug.LogError($"Error: {resourcePath} ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½!");
             return;
         }
 
-        // ÀÚ½Ä ¿ÀºêÁ§Æ®°¡ ÀÖÀ» °æ¿ì¿¡¸¸ »èÁ¦
+        // ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (this.transform.childCount > 0)
         {
             Destroy(this.transform.GetChild(0).gameObject);
         }
 
-        checkdeath = true;
         _deathnote.SetActive(true);
-        menu.replayON();
     }
 
 }

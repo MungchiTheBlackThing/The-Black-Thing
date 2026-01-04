@@ -243,6 +243,7 @@ public class MenuController : MonoBehaviour
                 MenuDefault.SetActive(false);
             }
         }
+        ApplyEndingOverride();
     }
     public void onDayProgressUI()
     {
@@ -308,6 +309,9 @@ public class MenuController : MonoBehaviour
     public void replayON()
     {
         TimeUI.SetActive(false);
+        MenuBut.GetComponent<Button>().enabled = true;
+        if (checkList) checkList.SetActive(false);
+        if (Default) Default.SetActive(true);
         Replay.SetActive(true);
     }
     public void tuto()
@@ -328,6 +332,7 @@ public class MenuController : MonoBehaviour
         TimeUI.SetActive(false);
         Default.SetActive(false);
         checkList.SetActive(false);
+        ApplyEndingOverride();
     }
 
     public void allon()
@@ -336,6 +341,7 @@ public class MenuController : MonoBehaviour
         Default.SetActive(true);
         checkList.SetActive(true);
         tuto();
+        ApplyEndingOverride();
     }
     
     public void nextandoff()
@@ -381,4 +387,37 @@ public class MenuController : MonoBehaviour
     {
         StartCoroutine(later2());
     }
+
+    public void ApplyEndingOverride()
+    {
+        if (!GameManager.isend) return;
+
+        bool post = DeathNoteClick.readDeathnote;
+
+        // 공통: 엔딩에서는 필요없는 UI는 항상 off
+        if (TimeUI) TimeUI.SetActive(false);
+        if (checkList) checkList.SetActive(false);
+
+        if (!post)
+        {
+            // Pre: 유서 전 → 아무 버튼도 안 보이게
+            if (MenuBut) MenuBut.SetActive(false);
+            if (Replay) Replay.SetActive(false);
+            if (Default) Default.SetActive(false);
+            isOpening = false;
+            return;
+        }
+
+        // Post: 유서 후 → 메뉴/리플레이 유지
+        if (Default) Default.SetActive(true);
+        if (MenuBut) MenuBut.SetActive(true);
+        if (Replay) Replay.SetActive(true);
+    }
+
+
+
+
+
+
+
 }

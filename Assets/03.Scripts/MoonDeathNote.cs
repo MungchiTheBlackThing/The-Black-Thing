@@ -6,20 +6,20 @@ using TMPro;
 
 public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 {
-    public Transform pagesContainer; // ÆäÀÌÁöµéÀ» ´ã°í ÀÖ´Â ºÎ¸ð Transform
-    public int pageCount; // ÆäÀÌÁöÀÇ ÃÑ °¹¼ö
-    public int currentPageIndex = 0; // ÇöÀç ÆäÀÌÁöÀÇ ÀÎµ¦½º
-    private Vector2 dragStartPosition; // µå·¡±× ½ÃÀÛ À§Ä¡
+    public Transform pagesContainer; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Î¸ï¿½ Transform
+    public int pageCount; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public int currentPageIndex = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
+    private Vector2 dragStartPosition; // ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
     private PlayerController playerController;
     private LANGUAGE LANGUAGE;
 
-    private string activeTexts = "³Ê´Â ±â²¨ÀÌ ³ÊÀÇ ¹Ù´Ù·Î ³ª¸¦ ÀÌ²ø¾ú°í,"; //<multiple(0)>
-    private string passiveTexts = "³Ê´Â ±â²¨ÀÌ ³ÊÀÇ ¹Ù´Ù¿¡ ³ª¸¦ ÃÊ´ëÇß°í,";
-    private string lowTexts = "³­ ±× µå³ÐÀº ¼ö¸é¿¡ ¸öÀ» ¶ç¿î Ã¤ ÀÜÀÜÈ÷ ÆÄµµ¸¦ °Å½½·¯ º¸¾Ò¾î."; //<multiple(1)>
-    private string highTexts = "³­ ¸¶À½²¯ ±× ¼ö¸éÀ» ¶Ù³î¸ç ÀÚÀßÇÑ ÆÄµµ¸¦ ÀÏ··¿© º¸¾Ò¾î."; //<multiple(1)>
+    private string activeTexts = "ï¿½Ê´ï¿½ ï¿½â²¨ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù´Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì²ï¿½ï¿½ï¿½ï¿½ï¿½,"; //<multiple(0)>
+    private string passiveTexts = "ï¿½Ê´ï¿½ ï¿½â²¨ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù´Ù¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ï¿½ß°ï¿½,";
+    private string lowTexts = "ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½é¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Ã¤ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Äµï¿½ï¿½ï¿½ ï¿½Å½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ò¾ï¿½."; //<multiple(1)>
+    private string highTexts = "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Äµï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ò¾ï¿½."; //<multiple(1)>
 
     private List<string> abcd = new List<string> {
-        "Âû³ªÀÇ ¹Ì¼Ò¶í ÀÜ»ó","ÆÄµµ ¼Ó ³¸¼± ¾È½ÄÃ³","ºñÁ¼°í ´ÙÁ¤ÇÑ ¾ÏÈæ","¹Ì¾àÇÑ ¿ë±âÀÇ ºÒ¾¾" //<multiple(2)>
+        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¼Ò¶ï¿½ ï¿½Ü»ï¿½","ï¿½Äµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½È½ï¿½Ã³","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½","ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¾ï¿½" //<multiple(2)>
     };
 
     //--EN---------
@@ -35,15 +35,17 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
     void OnEnable()
     {
         playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
-        pageCount = pagesContainer.childCount - 1; // ÆäÀÌÁöÀÇ ÃÑ °¹¼ö (-1Àº ´Ý±â ¹öÆ°À» Á¦¿ÜÇÏ±â À§ÇÔ)
+        pageCount = pagesContainer.childCount - 1; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (-1ï¿½ï¿½ ï¿½Ý±ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½)
         LANGUAGE = playerController.GetLanguage();
 
-        // ÃÊ±âÈ­: Ã¹ ¹øÂ° ÆäÀÌÁö¸¦ È°¼ºÈ­ÇÏ°í, ³ª¸ÓÁö´Â ºñÈ°¼ºÈ­
+        // ï¿½Ê±ï¿½È­: Ã¹ ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½Ï°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         for (int i = 0; i < pageCount; i++)
         {
             pagesContainer.GetChild(i).gameObject.SetActive(i == 0);
         }
         UpdateAllText();
+        // ë‘ ë²ˆì§¸(ì´í›„) ì½ê¸°ë©´ X(ë‹«ê¸°) ë²„íŠ¼ì„ ì¦‰ì‹œ ë³´ì—¬ì£¼ê¸°
+        pagesContainer.GetChild(pageCount).gameObject.SetActive(DeathNoteClick.readDeathnote);
     }
 
     private void UpdateAllText()
@@ -56,7 +58,7 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 
         bool isEnglish = LANGUAGE == LANGUAGE.ENGLISH;
 
-        // passive, active¿¡ µû¶ó ¼±ÅÃÇÒ ÅØ½ºÆ® °áÁ¤ (¾ð¾î ¹Ý¿µ)
+        // passive, activeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ ï¿½Ý¿ï¿½)
         string multiple0;
         if (passive > active)
         {
@@ -90,7 +92,7 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
                 modifiedText = modifiedText.Replace("<multiple0>", multiple0)
                                            .Replace("<multiple1>", multiple1)
                                            .Replace("<multiple2>", multiple2)
-                                           .Replace("<name>", name);
+                                           .Replace("<nickname>", name);
                 textMesh.text = modifiedText;
             }
         }
@@ -98,48 +100,64 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        // µå·¡±× ½ÃÀÛ ÁöÁ¡ ÀúÀå
+        // ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         dragStartPosition = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        // µå·¡±×°¡ ³¡³µÀ» ¶§ÀÇ À§Ä¡ ÀúÀå
+        // ï¿½å·¡ï¿½×°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
         Vector2 dragEndPosition = eventData.position;
         float differenceX = dragEndPosition.x - dragStartPosition.x;
 
-        // ¿À¸¥ÂÊÀ¸·Î ½º¿ÍÀÌÇÁÇÏ¿© ´ÙÀ½ ÆäÀÌÁö·Î ³Ñ¾î°¥ ¶§
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¥ ï¿½ï¿½
         if (differenceX < 0 && currentPageIndex < pageCount - 1)
         {
-            pagesContainer.GetChild(currentPageIndex).gameObject.SetActive(false); // ÇöÀç ÆäÀÌÁö ºñÈ°¼ºÈ­
-            currentPageIndex++; // ´ÙÀ½ ÆäÀÌÁö ÀÎµ¦½º·Î ÀÌµ¿
-            pagesContainer.GetChild(currentPageIndex).gameObject.SetActive(true); // ´ÙÀ½ ÆäÀÌÁö È°¼ºÈ­
+            SetPage(currentPageIndex + 1);
         }
-        // ¿ÞÂÊÀ¸·Î ½º¿ÍÀÌÇÁÇÏ¿© ÀÌÀü ÆäÀÌÁö·Î ³Ñ¾î°¥ ¶§
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¥ ï¿½ï¿½
         else if (differenceX > 0 && currentPageIndex > 0)
         {
-            pagesContainer.GetChild(currentPageIndex).gameObject.SetActive(false); // ÇöÀç ÆäÀÌÁö ºñÈ°¼ºÈ­
-            currentPageIndex--; // ÀÌÀü ÆäÀÌÁö ÀÎµ¦½º·Î ÀÌµ¿
-            pagesContainer.GetChild(currentPageIndex).gameObject.SetActive(true); // ÀÌÀü ÆäÀÌÁö È°¼ºÈ­
+            SetPage(currentPageIndex - 1);
         }
         if (currentPageIndex == pageCount - 1)
         {
-            pagesContainer.GetChild(pageCount).gameObject.SetActive(true); //exit ¹öÆ° È°¼ºÈ­
+            pagesContainer.GetChild(pageCount).gameObject.SetActive(true); //exit ï¿½ï¿½Æ° È°ï¿½ï¿½È­
         }
     }
+
+    public void NextPage()
+    {
+        if (currentPageIndex >= pageCount - 1) return;
+        SetPage(currentPageIndex + 1);
+    }
+
+    public void PrevPage()
+    {
+        if (currentPageIndex <= 0) return;
+        SetPage(currentPageIndex - 1);
+    }
+
+    private void SetPage(int newIndex)
+    {
+        pagesContainer.GetChild(currentPageIndex).gameObject.SetActive(false);
+        currentPageIndex = newIndex;
+        pagesContainer.GetChild(currentPageIndex).gameObject.SetActive(true);
+
+        // exit ë²„íŠ¼ í† ê¸€ ê·œì¹™
+        bool showExit = DeathNoteClick.readDeathnote || currentPageIndex == pageCount - 1;
+        pagesContainer.GetChild(pageCount).gameObject.SetActive(showExit);
+    }
+
 
     void OnDisable()
     {
         currentPageIndex = 0;
         pagesContainer.GetChild(pageCount).gameObject.SetActive(false);
-        if (DeathNoteClick.checkdeath)
+        if (DeathNoteClick.readDeathnote)
         {
-            pagesContainer.GetChild(pageCount).gameObject.SetActive(true); //exit ¹öÆ° È°¼ºÈ­
+            pagesContainer.GetChild(pageCount).gameObject.SetActive(true); //exit ï¿½ï¿½Æ° È°ï¿½ï¿½È­
         }
     }
 
-    public void Onexitclick()
-    {
-        this.gameObject.SetActive(false);
-    }
 }

@@ -2,7 +2,7 @@
 1,79,1,main_door_open,Dot,Main,body_default1,face_blink,text,<nickname>! 새로운 하루야!,<nickname>! It’s a new day!,2,,,,Main_Ch14,M14_L0001
 1,79,2,main_door_open,Player,Main,,,text,"뭉치, 오늘따라 인사가 당차네!",Look who’s sounding lively today!,3,,,,Main_Ch14,M14_L0002
 1,79,3,main_door_open,Dot,Main,,,text,"응, 당차게 보내기로 마음 먹은 하루거든. 오늘만큼은. 그래야만 해.","Yes, I’ve decided to be\nlively for today. I have to.",4,,,,Main_Ch14,M14_L0003
-1,79,4,main_door_open,Player,Main,,,selection,"(뭉치, 무서운 걸까...)|(다행이라면 다행인 걸까...)",(I wonder if Dot’s scared...)|(Maybe this is good...),5,,,active|passive,Main_Ch14,M14_L0004
+1,79,4,main_door_open,Player,Main,,,selection,"(뭉치, 무서운 걸까...)|(다행이라면 다행인 걸까...)",(I wonder if Dot’s scared...)|(Maybe this is good...),5|5,,,active|passive,Main_Ch14,M14_L0004
 1,79,5,main_door_open,Player,Main,,,text,뭉치... 당연하겠지만 여전히 무서운 거구나.,Dot... You sound scared.\nI guess it’s only natural.,6,,,,Main_Ch14,M14_L0005
 1,79,6,main_door_open,Dot,Main,,face_eyeroll3,text,응... 무서워. 어젯밤 내내 죽음에 대해 생각했을 만큼.,Yes... I am scared. Death has\nbeen on my mind all night long.,7,,,,Main_Ch14,M14_L0006
 1,79,7,main_door_open,Dot,Main,,,text,"그치만 <nickname>,",... <nickname>.,8,,,,Main_Ch14,M14_L0007
@@ -84,7 +84,7 @@
 1,79,83,main_door_open,Dot,Main,,,text,그 신기루로 향하는 길 자체를 사랑할 줄 안다는 것.,As is loving the path to that mirage.,84,,,,Main_Ch14,M14_L0083
 1,79,84,main_door_open,Dot,Main,,,text,그러니 나는 내 운명 역시 사랑하겠다고 선택할래.,So I choose to love my fate.,85,,,,Main_Ch14,M14_L0084
 1,79,85,main_door_open,Dot,Main,,,text,‘아무것도 아닌’ 동시에,I was fated to be ‘nothing’,86,,,,Main_Ch14,M14_L0085
-1,79,86,main_door_open,Dot,Main,,,text,"너의 <13th selection>, 그리고 너의\n유일무이한 괴물 친구였던 나의 운명을.","yet became your <13th selection>,\nand your only monster friend.",87,,,,Main_Ch14,M14_L0086
+1,79,86,main_door_open,Dot,Main,,,text,"너의 <selection13>, 그리고 너의\n유일무이한 괴물 친구였던 나의 운명을.","yet became your <13th selection>,\nand your only monster friend.",87,,,,Main_Ch14,M14_L0086
 1,79,87,main_door_open,Dot,Main,,,text,그러니 낭떠러지에 가까워지며 체념에 잡아먹히려는\n순간마다 나는 반항으로 몸을 뒤틀 거야.,So I will rebel against the tide of resignation\nthat tries to swallow me as I reach the edge.,88,,,,Main_Ch14,M14_L0087
 1,79,88,main_door_open,Dot,,,,text,"나의 산책길을 걸으며 매일마다 사소하게 달라지는 풍경을 관찰했고,",How I took my walks and observed\nthe little changes around me.,89,,,,Main_Ch14,M14_L0088
 1,79,89,main_door_open,Dot,Main,,,text,다시는 돌아오지 않을 빵 곰팡이와의 우정을 회상했듯이.,"How I reminisced the bond I shared\nwith my mold friend, now no more.",90,,,,Main_Ch14,M14_L0089
@@ -111,7 +111,7 @@
 1,79,110,main_door_open,Player,Main,,,text,끝나면 나를 불러 줄 거지?,You’ll call me when you’re done?,111,,,,Main_Ch14,M14_L0110
 1,79,111,main_door_open,Dot,Main,body_default1,face_blink,text,"당연하지! 나의 소중한 인간 친구, <nickname>.","Of course! My dearest human\nfriend, <nickname>.",,,anim_reading,,Main_Ch14,M14_L0111
 3,80,112,main_door_open,Dot,Main,,face_blink,text,나의 지극히 중대하고 비밀스러운 고민은 바로....,"And that very private thing on\nmy mind was... drumroll, please.",113,,,,Main_Ch14,M14_L0112
-3,80,113,main_door_open,Dot,Main,,,text,어떤 색의 꿈이 될 것인가!,What color I would be as a dream!,114,,,,Main_Ch14,M14_L0113
+3,80,113,main_door_open,Dot,Main,,,text,어떤 색의 꿈이 될 것인가!,What color I would be as a dream!,,,,,Main_Ch14,M14_L0113
 3,80,114,main_door_open,Dot,Main,,,text,"파랑, 빨강, 노랑, 보오라.\n혹은 초록? 주황? 분홍?","Blue, red, yellow, purple...\nGreen? Orange? Pink?",115,,,,Main_Ch14,M14_L0114
 3,80,115,main_door_open,Dot,Main,,,text,각자만의 매력이 확고해\n감히 정할 수가 없었어.,They’re each such a character\nthat I simply can’t decide.,116,,,,Main_Ch14,M14_L0115
 3,80,116,main_door_open,Dot,Main,,face_staryeyes,text,너에게 조언을 구해 보고 싶은데.....,I’d like to hear what you think.....,117,,,,Main_Ch14,M14_L0116
@@ -156,12 +156,12 @@
 3,80,155,main_door_open,Player,Main,,,text,"나에겐 그렇게 밉게 느껴지지 않아.\n아니, 오히려 애틋한 마음이 들기도 해.",I can’t bring myself to hate it.\nI can’t help but feel... tender.,156,,,,Main_Ch14,M14_L0155
 3,80,156,main_door_open,Player,Main,,,text,그 폐기물의 암흑에는 ‘너’라는 존재의\n가능성이 내포되어 있었으니까.,Because in that darkness\nlay the possibility of you.,157,,,,Main_Ch14,M14_L0156
 3,80,157,main_door_open,Dot,Main,,,text,나라는 존재의 가능성?,The possibility of me?,158,,,,Main_Ch14,M14_L0157
-3,80,158,main_door_open,Player,Main,,face_eyeroll3,text,나라는 존재.,Me.,159,,,,Main_Ch14,M14_L0158
+3,80,158,main_door_open,Dot,Main,,face_eyeroll3,text,나라는 존재.,Me.,159,,,,Main_Ch14,M14_L0158
 3,80,159,main_door_open,Dot,Main,,face_eyeroll3_stay,text,"나라는 아주 작고, 못나고, 무가치한 존재.","A tiny, ugly, worthless being.",160,,,,Main_Ch14,M14_L0159
 3,80,160,main_door_open,Player,Main,,face_eyeroll3_stay,text,그치만 나의 소중한 괴물 친구.,And my special monster friend.,161,,,,Main_Ch14,M14_L0160
 3,80,161,main_door_open,Dot,Main,,face_blink,text,하지만 나의 검정은 악한 폐기물의 검정...,But my black is the black of foul filth...,162,,,,Main_Ch14,M14_L0161
 3,80,162,main_door_open,Dot,Main,body_default1,,text,고작 나를 틔워 냈다는 사실만으로는\n그 거대한 불결을 지워 낼 수가 없는걸.,I can’t erase its vast impurity\njust because it birthed me.,163,,,,Main_Ch14,M14_L0162
-3,80,163,main_door_open,Player,Main,,,text,그치만 그 안에서 태어나자마자 인간을 행복하게 해 주는\n꿈이 되고 싶다는 꿈을 꾸었던 뭉치잖아. 아주 사려깊은 꿈을.,But you dreamed of becoming a dream\nand making humans happy. A caring dream.,164,,,,Main_Ch14,M14_L0163
+3,80,163,main_door_open,Player,Main,,,text,그치만 그 안에서 태어나자마자 인간을\n행복하게 해 주고 싶다는 꿈을 꾸었던 뭉치잖아.,But you dreamed of becoming a dream\nand making humans happy. A caring dream.,164,,,,Main_Ch14,M14_L0163
 3,80,164,main_door_open,Player,Main,,,text,"그러니 나는 아무것도 모르는 인간일 뿐이지만,\n너를 보며 이렇게 생각하게 되는 거야.","I’m human so I only know as much,\nbut looking at you makes me think.",165,,,,Main_Ch14,M14_L0164
 3,80,165,main_door_open,Player,Main,,,text,"꿈 폐기물이, 검은 호수가... 절망과\n악의로 가득찬 곳이 아니었을지도 모른다고.","Maybe the dream filth, and the lake...\nweren’t filled with despair and malice.",166,,,,Main_Ch14,M14_L0165
 3,80,166,main_door_open,Player,Main,,,text,"오히려 소망과 희망, 그리고 깊은\n슬픔과 의문이 잠재된 곳이었으리라고.","Maybe wishes, hopes, and\nsorrows lay undisturbed.",167,,,,Main_Ch14,M14_L0166
@@ -183,17 +183,17 @@
 3,80,182,main_door_open,Player,Main,,,text,파쇄된 꿈들 역시... 인간의 꿈이 되고\n싶었던 불쌍한 꿈들일 뿐이라고.,"Maybe discarded dreams... once\nlonged to be a human’s dream, too.",183,,,,Main_Ch14,M14_L0182
 3,80,183,main_door_open,Dot,Main,body_default1,face_blink,text,"꿈 폐기물이, 검은 호수가... 절망과 악의로\n가득찬 곳이 아니었을지도 모른다는 말이야?","You mean the dream filth, and the lake...\nmight not be filled with despair and malice?",184,,,,Main_Ch14,M14_L0183
 3,80,184,main_door_open,Player,Main,,,text,내 생각은 그래.,It’s what I think.,185,,,,Main_Ch14,M14_L0184
-3,80,185,main_door_open,Dot,Main,,,text,"오히려 소망과 희망, 그리고\n깊은 슬픔이 잠재된 곳이었으리라고","Maybe wishes, hopes, and\nsorrows lay undisturbed.",186,,,,Main_Ch14,M14_L0185
+3,80,185,main_door_open,Player,Main,,,text,"오히려 소망과 희망, 그리고\n깊은 슬픔이 잠재된 곳이었으리라고","Maybe wishes, hopes, and\nsorrows lay undisturbed.",186,,,,Main_Ch14,M14_L0185
 3,80,186,main_door_open,Dot,Main,,,text,"나를 닮은, 나와 같은 꿈을 꾸는,","So there might have been\nslime, not yet monsters,",187,,,,Main_Ch14,M14_L0186
 3,80,187,main_door_open,Dot,Main,,,text,예비-괴물 점액들이 꿈틀거리고 있을지도 모르는 걸까?,that looked like me\nand dreamed like me?,188,,,,Main_Ch14,M14_L0187
-3,80,188,main_door_open,Dot,Main,,,text,그럼. 네모난 뭉치나 세모난 뭉치를 상상해 볼 수도 있겠어.,Sure. Picture a squarish or\ntriangular version of you.,189,,,,Main_Ch14,M14_L0188
+3,80,188,main_door_open,Player,Main,,,text,그럼. 네모난 뭉치나 세모난 뭉치를 상상해 볼 수도 있겠어.,Sure. Picture a squarish or\ntriangular version of you.,189,,,,Main_Ch14,M14_L0188
 3,80,189,main_door_open,Dot,Main,,,text,".... 그치만 그들은 아름다운 지구를 볼 수 있는 분필 눈도,\n레드와 달 삼총사를 만날 기회도 가지지 못하잖아.",".... But without chalk eyes to gaze at the\nbeauty of Earth, or memories of the Moon Trio.",190,,,,Main_Ch14,M14_L0189
 3,80,190,main_door_open,Dot,Main,,face_eyeroll3,text,그저 파쇄되었단 고통과 슬픔에 잠겨\n몸을 뒤척일 수밖에 없는 거야.,All they can do is writhe in the\nmisery of having been discarded.,191,,,,Main_Ch14,M14_L0190
 3,80,191,main_door_open,Dot,Main,,face_eyeroll3_stay,text,애처러움이 들어.\n차마 미워할 수 없을 정도로.,I pity them. So much that I can’t hate them.,192,,,,Main_Ch14,M14_L0191
-3,80,192,main_door_open,Dot,Main,,face_squeeze,text,하지만 이런 감정을 느껴선 안 되는 거잖아.,But I’m not supposed to pity them.,193,,,,Main_Ch14,M14_L0192
-3,80,193,main_door_open,Dot,Main,,face_squeeze,text,그 악몽들이 앗아간 소중한\n인간들의 목숨을 생각하면...,Not when I think of all the lives\nthose nightmares took...,194,,,,Main_Ch14,M14_L0193
+3,80,192,main_door_open,Dot,Main,body_trembling,face_squeeze,text,하지만 이런 감정을 느껴선 안 되는 거잖아.,But I’m not supposed to pity them.,193,,,,Main_Ch14,M14_L0192
+3,80,193,main_door_open,Dot,Main,body_trembling,face_squeeze,text,그 악몽들이 앗아간 소중한\n인간들의 목숨을 생각하면...,Not when I think of all the lives\nthose nightmares took...,194,,,,Main_Ch14,M14_L0193
 3,80,194,main_door_open,Player,Main,,face_squeeze,text,.....,.....,195,,,,Main_Ch14,M14_L0194
-3,80,195,main_door_open,Player,Main,,face_blink,text,"있지, 꿈 폐기물과 악몽들에게 모든\n책임을 전가하려 하지 않아도 괜찮아.","The dream filth and nightmares\nshouldn’t take all the blame, you know.",196,,,,Main_Ch14,M14_L0195
+3,80,195,main_door_open,Player,Main,body_default,face_blink,text,"있지, 꿈 폐기물과 악몽들에게 모든\n책임을 전가하려 하지 않아도 괜찮아.","The dream filth and nightmares\nshouldn’t take all the blame, you know.",196,,,,Main_Ch14,M14_L0195
 3,80,196,main_door_open,Player,Main,,,text,인간이 스스로의 목숨을 끊어 내게 만드는 건...\n애석하지만 꿈 하나가 아니기도 하니까.,Dreams aren’t all that compel\na human to take their own life.,197,,,,Main_Ch14,M14_L0196
 3,80,197,main_door_open,Player,Main,,,text,"그리고 설령 달나라의 오해가 진실로 밝혀진다 할지라도\n결코 바뀌지 않을 나의 생각이 하나 있는데, 들어 볼래?","And even if they are, I’ll still be certain\nof one thing. Wanna know what that is?",198,,,,Main_Ch14,M14_L0197
 3,80,198,main_door_open,Dot,Main,,,text,나의 검정에 대한 이야기를 나누는 건\n언제나 마음을 까끌거리게 하지만...,Talking about my black always\nmakes my heart prickle...,199,,,,Main_Ch14,M14_L0198
@@ -209,21 +209,21 @@
 3,80,208,main_door_open,Dot,Main,body_blackheart_1,face_thinking,text,.....,.....,209,,,,Main_Ch14,M14_L0208
 3,80,209,main_door_open,Dot,Main,body_blackheart_2,face_thinking_stay,text,!,!,210,,,,Main_Ch14,M14_L0209
 3,80,210,main_door_open,Player,Main,body_blackheart_3,face_blink,text,"너에게 너의 검정은 끔찍한 결함,\n태어날 때부터 널 옭아매던 결핍이었지.","To you, your black is a terrible imperfection.\nOne that trapped you since you were born.",211,,,,Main_Ch14,M14_L0210
-3,80,211,main_door_open,Player,Main,body_blackheart_3,,text,그 고통을 난 짐작조차 할 수 없을 거야.,I can’t begin to imagine the pain.,212,,,,Main_Ch14,M14_L0211
-3,80,212,main_door_open,Player,Main,body_blackheart_3,,text,"다만, 내가 바라본 뭉치의\n검정은 이런 존재였어.","But, your black as I understood\nit in my world was this.",213,,,,Main_Ch14,M14_L0212
-3,80,213,main_door_open,Player,Main,body_blackheart_3,,text,모든 색이 켜켜이 혼합되어...\n새까맣게 깊어진 검정.,"It’s who you are, made all the more\ndeeper with each lovable color.",214,,,,Main_Ch14,M14_L0213
-3,80,214,main_door_open,Player,Main,body_blackheart_3,,text,어떤 색이든 피워 낼 수 있는 가능성의 검정.,A black of possibility that\ncan bloom any color.,215,,,,Main_Ch14,M14_L0214
-3,80,215,main_door_open,Dot,Main,body_blackheart_3,,text,어떤 색이든 피워 낼 수 있는 가능성의 검정?,A black of possibility that\ncan bloom any color?,216,,,,Main_Ch14,M14_L0215
-3,80,216,main_door_open,Dot,Main,body_blackheart_3,,text,...,...,217,,,,Main_Ch14,M14_L0216
-3,80,217,main_door_open,Dot,Main,body_blackheart_3,,text,...,...,218,,,,Main_Ch14,M14_L0217
-3,80,218,main_door_open,Player,Main,body_blackheart_3,,text,"응, 그리고 너의 사랑스러운 정체성.","Yes, black that can bloom any color.",219,,,,Main_Ch14,M14_L0218
-3,80,219,main_door_open,Dot,Main,body_blackheart_3,,text,... 그렇지만.,... But.,220,,,,Main_Ch14,M14_L0219
-3,80,220,main_door_open,Dot,Main,body_blackheart_3,,text,가능성으로만 머무른다면 무슨\n소용이야? 그저 검정일 뿐이잖아.,What use is possibility on\nits own? It’s only black.,221,,,,Main_Ch14,M14_L0220
-3,80,221,main_door_open,Player,Main,body_blackheart_3,,selection,"아니, ‘무려’ 검정인 거지!|검정은 아무것도 아니지 않아.","No, it’s black and that’s great!|Well, black is more than nothing.",222|225,,,,Main_Ch14,M14_L0221
-3,80,222,main_door_open,Player,Main,body_blackheart_3,,text,검정은 역설적으로 색들이\n그의 물밑에서만 머물러 있기에,"Because colors stay under\nthe surface of black,",223,,,,Main_Ch14,M14_L0222
-3,80,223,main_door_open,Player,Main,body_blackheart_3,,text,"타협 없이, 틀 없이, 멋대로\n자유롭게 시커먼 암흑일 수 있어.","it ironically is free to be black with\nno compromise, boundaries or rules.",224,,,,Main_Ch14,M14_L0223
-3,80,224,main_door_open,Player,Main,body_blackheart_3,face_thinking,text,무엇이든 숨겨 줄 수 있는 색.\n넓고 고요한 품의 색.,A shade that can hide anything.\nA vast and silent embrace.,228,,,,Main_Ch14,M14_L0224
-3,80,225,main_door_open,Player,Main,body_blackheart_3,,text,"검정은 역설적으로, 색들이\n그의 물밑에서만 머물러 있기에","Because black exists in its virtual state,",226,,,,Main_Ch14,M14_L0225
+3,80,211,main_door_open,Player,Main,body_ch14_heart,,text,그 고통을 난 짐작조차 할 수 없을 거야.,I can’t begin to imagine the pain.,212,,,,Main_Ch14,M14_L0211
+3,80,212,main_door_open,Player,Main,body_ch14_heart,,text,"다만, 내가 바라본 뭉치의\n검정은 이런 존재였어.","But, your black as I understood\nit in my world was this.",213,,,,Main_Ch14,M14_L0212
+3,80,213,main_door_open,Player,Main,body_ch14_heart,,text,모든 색이 켜켜이 혼합되어...\n새까맣게 깊어진 검정.,"It’s who you are, made all the more\ndeeper with each lovable color.",214,,,,Main_Ch14,M14_L0213
+3,80,214,main_door_open,Player,Main,body_ch14_heart,,text,어떤 색이든 피워 낼 수 있는 가능성의 검정.,A black of possibility that\ncan bloom any color.,215,,,,Main_Ch14,M14_L0214
+3,80,215,main_door_open,Dot,Main,body_ch14_heart,,text,어떤 색이든 피워 낼 수 있는 가능성의 검정?,A black of possibility that\ncan bloom any color?,216,,,,Main_Ch14,M14_L0215
+3,80,216,main_door_open,Dot,Main,body_ch14_heart,,text,...,...,217,,,,Main_Ch14,M14_L0216
+3,80,217,main_door_open,Dot,Main,body_ch14_heart,,text,...,...,218,,,,Main_Ch14,M14_L0217
+3,80,218,main_door_open,Player,Main,body_ch14_heart,,text,"응, 그리고 너의 사랑스러운 정체성.","Yes, black that can bloom any color.",219,,,,Main_Ch14,M14_L0218
+3,80,219,main_door_open,Dot,Main,body_ch14_heart,,text,... 그렇지만.,... But.,220,,,,Main_Ch14,M14_L0219
+3,80,220,main_door_open,Dot,Main,body_ch14_heart,,text,가능성으로만 머무른다면 무슨\n소용이야? 그저 검정일 뿐이잖아.,What use is possibility on\nits own? It’s only black.,221,,,,Main_Ch14,M14_L0220
+3,80,221,main_door_open,Player,Main,body_ch14_heart,,selection,"아니, ‘무려’ 검정인 거지!|검정은 아무것도 아니지 않아.","No, it’s black and that’s great!|Well, black is more than nothing.",222|225,,,,Main_Ch14,M14_L0221
+3,80,222,main_door_open,Player,Main,body_ch14_heart,,text,검정은 역설적으로 색들이\n그의 물밑에서만 머물러 있기에,"Because colors stay under\nthe surface of black,",223,,,,Main_Ch14,M14_L0222
+3,80,223,main_door_open,Player,Main,body_ch14_heart,,text,"타협 없이, 틀 없이, 멋대로\n자유롭게 시커먼 암흑일 수 있어.","it ironically is free to be black with\nno compromise, boundaries or rules.",224,,,,Main_Ch14,M14_L0223
+3,80,224,main_door_open,Player,Main,body_ch14_heart,face_thinking,text,무엇이든 숨겨 줄 수 있는 색.\n넓고 고요한 품의 색.,A shade that can hide anything.\nA vast and silent embrace.,228,,,,Main_Ch14,M14_L0224
+3,80,225,main_door_open,Player,Main,body_ch14_heart,,text,"검정은 역설적으로, 색들이\n그의 물밑에서만 머물러 있기에","Because black exists in its virtual state,",226,,,,Main_Ch14,M14_L0225
 3,80,226,main_door_open,Player,Main,body_ch14_heartdown,,text,"타협 없이, 틀 없이, 멋대로\n자유롭게 시커먼 암흑일 수 있어.","it ironically is free to be itself with\nno compromise, boundaries or rules.",227,,,,Main_Ch14,M14_L0226
 3,80,227,main_door_open,Player,Main,body_default1,face_thinking,text,"아무것도 없기에, 모든 걸 담을 수 있는 색.","A shade that contains nothing,\nand so can welcome everything.",228,,,,Main_Ch14,M14_L0227
 3,80,228,main_door_open,Player,Main,,face_blink,text,"그래서 난 색채에게, 너의\n검정만큼은 빼앗기고 싶지 않아.",So I don’t want to lose\nyour black to colors.,229,,,,Main_Ch14,M14_L0228
@@ -307,4 +307,4 @@
 3,80,306,main_door_open,Dot,Main,,face_close,text,가장 안전하고 자유롭게\n휘몰아치는 암흑으로 물들일게.,with the safest swirling darkness.,307,,,,Main_Ch14,M14_L0306
 3,80,307,main_door_open,Dot,Main,,,text,검은 꿈이 될게.,I’ll become a black dream!,308,,,,Main_Ch14,M14_L0307
 3,80,308,main_door_open,Dot,Main,,,text,너의 검고 검은 꿈이...,Your black black dream...,309,,,,Main_Ch14,M14_L0308
-3,80,309,main_door_open,Dot,Main,,face_blink,text,"이제 눈을 감아, <nickname>.\n어둠이 완전히 젖어들 때까지.","Now close your eyes, <nickname>.\nUntil the darkness settles for good.",,,,,Main_Ch14,M14_L0309
+3,80,309,main_door_open,Dot,Main,,face_blink,text,"이제 눈을 감아, <nickname>.","Now close your eyes, <nickname>.",,,,,Main_Ch14,M14_L0309

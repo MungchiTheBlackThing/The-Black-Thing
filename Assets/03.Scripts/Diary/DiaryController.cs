@@ -14,6 +14,7 @@ public class DiaryController : BaseObject, ISleepingInterface
     bool isDiaryUpdated = false;
     [SerializeField]
     GameObject light;
+
     [SerializeField]
     GameObject alert;
     [SerializeField]
@@ -87,7 +88,23 @@ public class DiaryController : BaseObject, ISleepingInterface
 
     public void OnMouseUp()
     {
-        if (InputGuard.IsPointerOverUI()) return;
+        if (InputGuard.BlockWorldInput()) return;
+        if (GameManager.isend) // static 접근
+        {
+            if (diaryUI == null)
+                diaryUI = GameObject.Find("Diary").GetComponent<DiaryUIController>();
+
+            if (light != null) light.SetActive(false);
+
+            if (playerController == null)
+                playerController = GameObject.Find("PlayerController")?.GetComponent<PlayerController>();
+
+            if (playerController != null)
+                playerController.SetIsDiaryCheck(true);
+
+            diaryUI.SetActiveCloseDiary();
+            return;
+        }
         RecentData data = RecentManager.Load();
         if (!data.tutoend)
         {

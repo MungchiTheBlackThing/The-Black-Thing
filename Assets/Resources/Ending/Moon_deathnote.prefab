@@ -70,7 +70,7 @@ MonoBehaviour:
   m_text: "\uC2DC\uCD08\uC9C0, \uC778\uAC04\uB4E4\uC774 \u2018\uACE0\uD5A5\u2019\uC774\uB77C
     \uCE6D\uD558\uB294 \uAC83. \uB0B4 \uC2DC\uCD08\uC9C0\uB294 \uB2EC\uC774\uC57C.
     \n\uC9C0\uAD6C\uC758 \uD478\uB974\uB984\uC5D0 \uB9E4\uC5EC, \uC911\uB825\uB9CC
-    \uD55C \uC560\uC815\uC744 \uB3D9\uB825 \uC0BC\uC544 \uACF5\uC804\uD558\uB294
+    \uD55C \uC560\uC815\uC744 \n\uB3D9\uB825 \uC0BC\uC544 \uACF5\uC804\uD558\uB294
     \uBABB\uB098\uACE0 \uC791\uC740 \uB3CC\uB369\uC774.\n\n\uB2EC \uC0AC\uB78C\uB4E4\uC740
     \uC9C0\uAD6C\uC758 \uC778\uAC04\uC744 \uC0AC\uB791\uD574. \n\uD574\uBC14\uB77C\uAE30\uAC00
     \uD574\uB97C \uD5A5\uD558\uB4EF, \uD559\uC790\uAC00 \uC9C4\uB9AC\uB97C \uC887\uB4EF,
@@ -82,8 +82,8 @@ MonoBehaviour:
     \uC9C0\uCF1C \uC8FC\uACE0\uC790 \uD558\uC9C0. \n\uC560\uB2EC\uD508 \uC0AC\uB791\uC774\uC57C.
     \uB3D9\uACBD\uC744 \uB118\uC5B4 \uB9F9\uBAA9 \uAC19\uC740 \uC0AC\uB791\uC774\uC9C0."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
-  m_sharedMaterial: {fileID: 1188920287867902073, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
+  m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -113,13 +113,13 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: -8
+  m_lineSpacing: 30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 8237966371428947422}
   - component: {fileID: 8237966371428947423}
   - component: {fileID: 8869985717766809703}
+  - component: {fileID: 7898500674382474217}
   m_Layer: 0
   m_Name: Moon_deathnote
   m_TagString: Untagged
@@ -380,9 +381,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1398, y: 647}
-  m_SizeDelta: {x: 2796, y: 1290.1465}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 2796, y: 1290}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8237966371428947409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +450,18 @@ MonoBehaviour:
   pagesContainer: {fileID: 8237966371428947420}
   pageCount: 0
   currentPageIndex: 0
+--- !u!114 &7898500674382474217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237966371428947421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465832f03d929104f9fb6f7886759402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8237966371506372921
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 207, y: -135.8919}
+  m_AnchoredPosition: {x: 207, y: -180.50006}
   m_SizeDelta: {x: 2207, y: 928}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8237966371506372922
@@ -521,7 +534,7 @@ MonoBehaviour:
     \uB09C \uC774\uC81C \uAE30\uAEBC\uC774 \uB108\uC758 \uD30C\uB3C4, \uADF8 \uD478\uB974\uB978
     \uC7A0\uACB0\uB85C \uB6F0\uC5B4\uB4E4 \uAC70\uC57C. \n\uADF8\uAC74 \uC18D\uBC15\uC774
     \uC544\uB2C8\uC57C. \uB9C9\uB2E4\uB978 \uAE38\uC5D0\uC11C \uD5DB\uB514\uB38C
-    \uCD94\uB77D\uD558\uB294 \uAC83\uB3C4 \uC544\uB2C8\uC57C.\n\uADF8\uAC74 \uB0B4
+    \uCD94\uB77D\uD558\uB294 \uAC83\uB3C4 \uC544\uB2C8\uC57C.\n\n\uADF8\uAC74 \uB0B4
     \uC120\uD0DD\uC774\uC57C. \uB124 \uC548\uC73C\uB85C \uAE30\uAEBC\uC774 \uD22C\uC2E0\uD574
     \uC548\uACA8\uB4E4\uACE0, \n<multiple2>\uC73C\uB85C \uB2E4\uC2DC \uD0DC\uC5B4\uB098\uAC8C
     \uD560 \uC120\uD0DD.\n\n\uB110 \uC54C\uAC8C \uB418\uC5B4 \uAE30\uBEE4\uC5B4.
@@ -529,8 +542,8 @@ MonoBehaviour:
     \uC5B4\uB290 \uBC24\uC5D0- \n\uB098\uC640 \uB108\uB97C \uB2EE\uC544 \uC788\uC744
     \uC5B8\uC820\uAC00\uC758 \uAFC8\uC5D0\uC11C, \uAF2D \uB2E4\uC2DC \uB9CC\uB098\uC790!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
-  m_sharedMaterial: {fileID: -5985080876634333599, guid: 6aedf712f452c4494b30405bb4c3828d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
+  m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -560,13 +573,13 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: -8
+  m_lineSpacing: 30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -593,7 +606,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &11438070411213445
@@ -863,8 +876,8 @@ MonoBehaviour:
     \uB54C\uBB38\uC774\uC57C. \n\uC0AC\uC2E4\uC774\uB4E0 \uC544\uB2C8\uB4E0 \uC801\uC5B4\uB3C4
     \uC6B0\uB9AC\uB294 \uADF8\uB807\uAC8C \uBD88\uB800\uC73C\uB2C8\uAE4C."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
-  m_sharedMaterial: {fileID: -5985080876634333599, guid: 6aedf712f452c4494b30405bb4c3828d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
+  m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -894,13 +907,13 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: -8
+  m_lineSpacing: 30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -927,7 +940,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &5344504632880764008
@@ -1006,7 +1019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 207, y: -168.89194}
+  m_AnchoredPosition: {x: 207, y: -202.07}
   m_SizeDelta: {x: 2347, y: 886}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8237966372746784772
@@ -1038,24 +1051,24 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uADF8\uB798\uC11C \uB098\uB3C4 \uADF8\uB798\uC57C\uB9CC \uD560\uAE4C,
-    \uC778\uAC04\uC758 \uC911\uB825\uC5D0 \uB9E4\uC778 \uCC44 \uB2E8\uC77C\uD55C
+    \n\uC778\uAC04\uC758 \uC911\uB825\uC5D0 \uB9E4\uC778 \uCC44 \uB2E8\uC77C\uD55C
     \uADA4\uB3C4\uB85C\uB9CC \uB3CC\uC544\uC57C \uD558\uB294 \uAC78\uAE4C, \n\uC774\uB7F0
     \uBD88\uC548\uACFC \uC758\uBB38\uC5D0 \uB05D\uC5C6\uC774 \uC0AC\uB85C\uC7A1\uD788\uACE0\uB294
     \uD588\uC5B4. \uB0B4 \uC2DC\uCD08\uC9C0\uB294 \uC9C0\uAD6C\uC758 \uB2EC\uC774\uB2C8\uAE4C.
-    \n\uADF8\uB807\uC9C0\uB9CC <name>, \uB10C \uB2EC\uB790\uC5B4. \uB0B4\uAC00 \uC5B8\uC820\uAC00
-    \uC778\uAC04\u2018\uC758\u2019 \uAFC8\uC774 \uB420 \n\uBBF8\uC644\uC758 \uC874\uC7AC\uC784\uC744
-    \uC54C\uBA74\uC11C\uB3C4 \uB0A0 \uB108\uC5D0\uAC8C \uC18D\uBC15\uB41C \uC874\uC7AC\uB85C
-    \uC5EC\uAE30\uC9C0 \uC54A\uC558\uC5B4. \n\uB098\uC5D0\uAC8C \uB3D9\uACBD\uC774\uB098
-    \uB9F9\uBAA9\uC744 \uC694\uAD6C\uD558\uC9C0\uB3C4 \uC54A\uC558\uC5B4. \uB10C
-    \uB0A0 \u2018\uCE5C\uAD6C\u2019\uB77C\uACE0 \uBD88\uB800\uC5B4. \n\n\uC6B0\uB9AC\uB294
+    \n\n\uADF8\uB807\uC9C0\uB9CC <name>, \uB10C \uB2EC\uB790\uC5B4. \uB0B4\uAC00
+    \uC5B8\uC820\uAC00 \uC778\uAC04\u2018\uC758\u2019 \uAFC8\uC774 \uB420 \n\uBBF8\uC644\uC758
+    \uC874\uC7AC\uC784\uC744 \uC54C\uBA74\uC11C\uB3C4 \uB0A0 \uB108\uC5D0\uAC8C \uC18D\uBC15\uB41C
+    \uC874\uC7AC\uB85C \uC5EC\uAE30\uC9C0 \uC54A\uC558\uC5B4. \n\uB098\uC5D0\uAC8C
+    \uB3D9\uACBD\uC774\uB098 \uB9F9\uBAA9\uC744 \uC694\uAD6C\uD558\uC9C0\uB3C4 \uC54A\uC558\uC5B4.
+    \uB10C \uB0A0 \u2018\uCE5C\uAD6C\u2019\uB77C\uACE0 \uBD88\uB800\uC5B4. \n\n\uC6B0\uB9AC\uB294
     \uB2EC\uACFC \uC9C0\uAD6C \uAC19\uC740 \uC9DD\uC0AC\uB791\uC774 \uC544\uB2C8\uC5C8\uC5B4.
     \n\uBCC4\uACFC \uBCC4, \uD574\uBC14\uB77C\uAE30\uC640 \uD559\uC790, \uD30C\uB3C4\uC640
     \uC9C4\uB9AC\uCC98\uB7FC \uC0C1\uAD00 \uC5C6\uAE30\uC5D0 \uB300\uB4F1\uD55C,
     \n\uADF8\uB9AC\uD558\uC5EC \uC11C\uB85C\uB97C \uC560\uC815 \uC5B4\uB9B0 \uD638\uAE30\uC2EC\uC73C\uB85C
     \uB9C8\uC8FC \uBCFC \uC218 \uC788\uB294 \uC591\uBC29\uD5A5\uC758 \uAD00\uACC4\uC600\uC9C0."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
-  m_sharedMaterial: {fileID: 1188920287867902073, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
+  m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1085,13 +1098,13 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: -8
+  m_lineSpacing: 30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1118,7 +1131,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &7732967585537187870
@@ -1281,9 +1294,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8869985717766809703}
-        m_TargetAssemblyTypeName: MoonDeathNote, Assembly-CSharp
-        m_MethodName: Onexitclick
+      - m_Target: {fileID: 7898500674382474217}
+        m_TargetAssemblyTypeName: DeathNoteClose, Assembly-CSharp
+        m_MethodName: OnClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1400,10 +1400,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 30176390299992145
-    m_Localized: "\uC544\uBB34\uB9AC \uB054\uCC0D\uD558\uACE0, \uCD95\uCD95\uD558\uACE0,
-      \uC12C\uB729\uD560\uC9C0\uC5B8\uC815, \uB098\uB294 \uADF8\\n\uC545\uBABD\uC744
-      \uBCF8\uAC70\uC9C0 \uC0BC\uACE0 \uD150\uD2B8\uB97C \uCE5C \uB2E4\uC74C \uCD1B\uBD88\uC744
-      \uCF24 \uAC70\uC57C."
+    m_Localized: "\uC544\uBB34\uB9AC \uC5B4\uB461\uACE0 \uBB34\uC11C\uC6B4 \uAFC8\uC77C\uC9C0\uC5B8\uC815,
+      \uB098\uB294 \uADF8\\n\uC545\uBABD \uC18D\uC5D0\uC11C \uC544\uB291\uD55C \uD150\uD2B8\uB97C
+      \uCE5C \uB2E4\uC74C \uCD1B\uBD88\uC744 \uCF24 \uAC70\uC57C."
     m_Metadata:
       m_Items: []
   - m_Id: 30176390299992146
@@ -1417,10 +1416,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 30176390299992148
-    m_Localized: "\uC124\uB839 \uB054\uCC0D\uD558\uACE0, \uCD95\uCD95\uD558\uACE0,
-      \uC12C\uB729\uD560\uC9C0\uC5B8\uC815, \uB098\uB294 \uADF8\\n\uC545\uBABD\uC744
-      \uBCF8\uAC70\uC9C0 \uC0BC\uACE0 \uD150\uD2B8\uB97C \uCE5C \uB2E4\uC74C \uCD1B\uBD88\uC744
-      \uCF24 \uAC70\uC57C."
+    m_Localized: "\uC124\uB839 \uC5B4\uB461\uACE0 \uBB34\uC11C\uC6B4 \uAFC8\uC77C\uC9C0\uC5B8\uC815,
+      \uB098\uB294 \uADF8\\n\uC545\uBABD \uC18D\uC5D0\uC11C \uC544\uB291\uD55C \uD150\uD2B8\uB97C
+      \uCE5C \uB2E4\uC74C \uCD1B\uBD88\uC744 \uCF24 \uAC70\uC57C."
     m_Metadata:
       m_Items: []
   - m_Id: 30176390299992149
@@ -1555,8 +1553,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 30176390299992176
-    m_Localized: "\uC774\uC81C \uB208\uC744 \uAC10\uC544, <nickname>.\\n\uC5B4\uB460\uC774
-      \uC644\uC804\uD788 \uC816\uC5B4\uB4E4 \uB54C\uAE4C\uC9C0."
+    m_Localized: "\uC774\uC81C \uB208\uC744 \uAC10\uC544, <nickname>."
     m_Metadata:
       m_Items: []
   references:
@@ -1565,4 +1562,13 @@ MonoBehaviour:
     - rid: 3674199710174543979
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 00007234060000000000b23a060000000100b23a060000000200b23a060000000300b23a060000000400b23a060000000500b23a060000000600b23a06000000
+        m_Entries: 
+        m_SharedEntries:
+        - id: 26649690112
+        - id: 26754547712
+        - id: 26754547713
+        - id: 26754547714
+        - id: 26754547715
+        - id: 26754547716
+        - id: 26754547717
+        - id: 26754547718
