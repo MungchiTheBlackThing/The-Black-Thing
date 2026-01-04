@@ -82,6 +82,11 @@ public class MenuController : MonoBehaviour
     }
     public void CallbackActiveSystemUI(bool InActive)
     {
+        if (GameManager.isend)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
         this.gameObject.SetActive(InActive);
     }
 

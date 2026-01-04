@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public TimeSkipUIController timeSkipUIController;
 
+
+
     [SerializeField] private Day8SleepEventController day8;
 
 
@@ -63,7 +65,6 @@ public class GameManager : MonoBehaviour
     {
         get { return objectManager; }
     }
-
     public MenuController Menu
     {
         get { return menu; }
@@ -111,11 +112,12 @@ public class GameManager : MonoBehaviour
     {
         get { return pc.GetChapter(); }
     }
+    private static bool endingInitialized = false;
 
     // [DEBUG] 하루 시작 시각 설정 
     public int dayStartHour = 11;
     public int dayStartMinute = 0;
-
+    private bool _nextPhaseRequested = false;
     protected GameManager()
     {
         states = new Dictionary<GamePatternState, GameState>();
@@ -153,7 +155,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         pc = GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerController>();
-        pc.nextPhaseDelegate += ChangeGameState;
+        pc.nextPhaseDelegate -= ChangeGameState; // 혹시 이미 있으면 제거
+        pc.nextPhaseDelegate += ChangeGameState; // 정확히 한 번만 다시 추가
         if (mainDialoguePanel)
         {
             mainDialoguePanel.GetComponent<MainPanel>().InitializePanels();
@@ -215,8 +218,16 @@ public class GameManager : MonoBehaviour
     }
     public void NextPhase()
     {
-        Debug.Log("NextPhase 호출됨");
+        if (_nextPhaseRequested) return;
+        _nextPhaseRequested = true;
         pc.NextPhase();
+        StartCoroutine(ReleaseNextPhaseRequested());
+    }
+
+    private IEnumerator ReleaseNextPhaseRequested()
+    {
+        yield return null;
+        _nextPhaseRequested = false;
     }
 
 
@@ -299,11 +310,12 @@ public class GameManager : MonoBehaviour
         //TimeSkipUI 꺼줘야 하는 페이즈 여기서 설정
         if (timeSkipUIController != null)
         {
-            bool shouldShowTimeSkip = (patternState != GamePatternState.MainA && 
-                                       patternState != GamePatternState.MainB && 
-                                       patternState != GamePatternState.NextChapter &&
-                                       patternState != GamePatternState.End &&
-                                       patternState != GamePatternState.Play);
+            bool shouldShowTimeSkip = 
+                (patternState != GamePatternState.MainA && 
+                patternState != GamePatternState.MainB && 
+                patternState != GamePatternState.NextChapter &&
+                patternState != GamePatternState.End &&
+                patternState != GamePatternState.Play);
             
             if (timeSkipUIController.gameObject.activeSelf != shouldShowTimeSkip)
                 timeSkipUIController.gameObject.SetActive(shouldShowTimeSkip);
@@ -404,6 +416,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator LoadDataAsync()
     {
+        Debug.Log("[LoadDataAsync] CALLED");
         float totalProgress = 0f;
         float backgroundLoadWeight = 0.5f;  // 배경 로드가 전체 작업의 50% 차지
         float objectLoadWeight = 0.5f;      // 오브젝트 로드가 나머지 50% 차지
@@ -671,6 +684,7 @@ public class GameManager : MonoBehaviour
             // MainA, MainB, EventPoem 등 타이머 멈춰야할 때 (수정해야 함)
             case GamePatternState.MainA:
             case GamePatternState.MainB:
+            case GamePatternState.Play:
             case GamePatternState.NextChapter:
             case GamePatternState.End:
                 return 0f;
@@ -770,11 +784,24 @@ public class GameManager : MonoBehaviour
     }
     public void Ending()
     {
-        isend = true;
-        string resourcePath = "Ending/end_animation";
-        GameObject endani = Instantiate(Resources.Load<GameObject>(resourcePath), canvas.transform);
-        endani.transform.SetAsLastSibling();
+        GameManager.isend = true;
+        if (!endingInitialized)
+        {
+            DeathNoteClick.readDeathnote = false;
+            endingInitialized = true;
+        }
+        var menu = GameObject.Find("Menu")?.GetComponent<MenuController>();
+        if (menu != null)
+            menu.ApplyEndingOverride();
         dot.gameObject.SetActive(false);
         GameObject deathnote = Instantiate(Resources.Load<GameObject>((SITime)GetSITime + "/deathnote"));
+        foreach (var door in FindObjectsOfType<DoorController>()) //문 꺼지는 오류 가끔 있어서 확실히 켜 주기
+        {
+            door.SetDoorForDialogue(true);
+        }
+    }
+    private void OnDestroy()
+    {
+        if (pc != null) pc.nextPhaseDelegate -= ChangeGameState;
     }
 }

@@ -113,6 +113,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void NextPhase()
     {
+        Debug.Log($"[NextPhase CALLER]\n{Environment.StackTrace}");
         if (GameManager.isend) return;
         foreach (var door in FindObjectsOfType<DoorController>()) //페이즈 넘어갈 때 (메인 끝나면 페이즈 넘어가니까 + 나머지 페이즈 전환은 상관 없으니까) 문 켜기
         {

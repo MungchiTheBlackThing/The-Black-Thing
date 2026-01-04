@@ -49,6 +49,7 @@ public class ChecklistController : MonoBehaviour
     void Start()
     {
         pc = GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerController>();
+        pc.nextPhaseDelegate -= NextPhase;
         pc.nextPhaseDelegate += NextPhase;
 
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
@@ -59,6 +60,11 @@ public class ChecklistController : MonoBehaviour
     }
     public void CallbackActiveSystemUI(bool InActive)
     {
+        if (GameManager.isend)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
         this.gameObject.SetActive(InActive);
     }
     void Translate(LANGUAGE language, TMP_FontAsset font)
@@ -102,15 +108,19 @@ public class ChecklistController : MonoBehaviour
         }
     }
 
+    private Coroutine changeStateCo;
+
     public void NextPhase(GamePatternState state)
     {
-        StartCoroutine(ChangeState(state));
+        if (changeStateCo != null) StopCoroutine(changeStateCo);
+        changeStateCo = StartCoroutine(ChangeState(state));
     }
 
     //�ڷ�ƾ���� �Ѵ�.
     IEnumerator ChangeState(GamePatternState state)
     {
         yield return new WaitForSeconds(2.5f);
+        if (GameManager.isend) yield break;
 
         int Idx = (int)state;
 
@@ -151,6 +161,11 @@ public class ChecklistController : MonoBehaviour
 
     public void OnClickCheckListIcon()
     {
+        if (GameManager.isend)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
         if (checkList.activeSelf == false)
         {
             checkList.SetActive(true);
