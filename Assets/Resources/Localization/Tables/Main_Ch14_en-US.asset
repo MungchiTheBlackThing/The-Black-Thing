@@ -1332,8 +1332,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 30176390299992176
-    m_Localized: Now close your eyes, <nickname>.\nUntil the darkness settles for
-      good.
+    m_Localized: Now close your eyes, <nickname>.
     m_Metadata:
       m_Items: []
   references:
@@ -1342,4 +1341,13 @@ MonoBehaviour:
     - rid: 3674199710174543950
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 00007234060000000000b23a060000000100b23a060000000200b23a060000000300b23a060000000400b23a060000000500b23a060000000600b23a06000000
+        m_Entries: 
+        m_SharedEntries:
+        - id: 26649690112
+        - id: 26754547712
+        - id: 26754547713
+        - id: 26754547714
+        - id: 26754547715
+        - id: 26754547716
+        - id: 26754547717
+        - id: 26754547718
