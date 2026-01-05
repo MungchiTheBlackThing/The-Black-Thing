@@ -27,12 +27,8 @@ public class Moonnote : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            // 마우스가 UI 위에 있을 때는 이 함수가 동작하지 않도록 함
-            return;
-        }
-        Debug.Log("문노트 클릭");
+        if (InputGuard.BlockWorldInput()) return;
+        Debug.Log("占쏙옙占쏙옙트 클占쏙옙");
         if (MoonnoteLight.activeSelf == true)
         {
             Instantiate(MoonnoteUI, canvasTransform);

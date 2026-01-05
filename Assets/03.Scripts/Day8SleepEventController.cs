@@ -435,6 +435,7 @@ public class Day8SleepEventController : MonoBehaviour
         LockMapInput(false);
 
         DeactivateAll();
+        InputGuard.WorldInputLocked = false;
         isRunning = false;
         StartCoroutine(ResumeTimerNextFrame());
 

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: DAY8EVENT
+  m_Name: DAY8EVENT1
   m_EditorClassIdentifier: 
-  m_SharedTableData: {fileID: 11400000, guid: 202a62bf45dedc04f8d1bb61438b4371, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: 53f24263995e7814999c61a5c76e8b28, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: 9fc459a70da95fe4eb7c9476b39e656b, type: 2}
-  - {fileID: 11400000, guid: eb7a287a3e63c144b9d33bf32cd3491c, type: 2}
+  - {fileID: 11400000, guid: 44e921b32f726d44888fd5af84e2d50c, type: 2}
+  - {fileID: 11400000, guid: 159a3ebbccb80c9468a7daad6af8e150, type: 2}
   m_Extensions: []
   m_Group: String Table
   references:

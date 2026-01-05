@@ -383,6 +383,7 @@ public class SubDialogue : MonoBehaviour
 
     public void TutoExit()
     {
+        InputGuard.WorldInputLocked = false;
         if (menuController)
         {
             menuController.allon();

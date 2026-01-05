@@ -27,6 +27,14 @@ public class IntroScene : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("FORCE_NEW_GAME", 0) == 1)
+        {
+            PlayerPrefs.DeleteKey("FORCE_NEW_GAME");
+            PlayerPrefs.Save();
+
+            InitStart(); // "새로시작하기 누르는 것처럼 InitPlay()" 루트
+            return;      // InitStart 안에서 씬 넘기는 흐름이면 여기서 끊기
+        }
         AudioManager.Instance.PlayBGM(FMODEvents.Instance.bgm_intro);
         playerInfo = new PlayerInfo("Default", 1, GamePatternState.Watching);
         data = RecentManager.Load();
@@ -101,7 +109,7 @@ public class IntroScene : MonoBehaviour
         SettingPopup.SetActive(true);
     }
 
-    void Play()
+    public void Play()
     {
         string nextScene;
         bool goingTutorial;

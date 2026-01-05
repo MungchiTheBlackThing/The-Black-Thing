@@ -10,99 +10,99 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: DAY8EVENT Shared Data
+  m_Name: DAY8EVENT1 Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: DAY8EVENT
-  m_TableCollectionNameGuidString: 202a62bf45dedc04f8d1bb61438b4371
+  m_TableCollectionName: DAY8EVENT1
+  m_TableCollectionNameGuidString: 53f24263995e7814999c61a5c76e8b28
   m_Entries:
-  - m_Id: 9146679296
+  - m_Id: 13127073792
     m_Key: DAY8_ALERT_01
     m_Metadata:
       m_Items: []
-  - m_Id: 12908969984
+  - m_Id: 19032653824
     m_Key: DAY8_ALERT_02
     m_Metadata:
       m_Items: []
-  - m_Id: 15660433408
+  - m_Id: 22526509056
     m_Key: DAY8_ALERT_03
     m_Metadata:
       m_Items: []
-  - m_Id: 63609716736
+  - m_Id: 25953255424
     m_Key: DIAL0
     m_Metadata:
       m_Items: []
-  - m_Id: 111013740544
+  - m_Id: 347773812736
     m_Key: DIAL1
     m_Metadata:
       m_Items: []
-  - m_Id: 138666786816
+  - m_Id: 353989771264
     m_Key: DIAL2
     m_Metadata:
       m_Items: []
-  - m_Id: 151023206400
+  - m_Id: 358490259456
     m_Key: DIAL3
     m_Metadata:
       m_Items: []
-  - m_Id: 163572563968
+  - m_Id: 366736261120
     m_Key: DIAL4
     m_Metadata:
       m_Items: []
-  - m_Id: 173915717632
+  - m_Id: 368762109952
     m_Key: DIAL5
     m_Metadata:
       m_Items: []
-  - m_Id: 183906549760
+  - m_Id: 370183979008
     m_Key: DIAL6
     m_Metadata:
       m_Items: []
-  - m_Id: 194706882560
+  - m_Id: 381701537792
     m_Key: DIAL7
     m_Metadata:
       m_Items: []
-  - m_Id: 207944105984
+  - m_Id: 385409302528
     m_Key: DIAL8
     m_Metadata:
       m_Items: []
-  - m_Id: 1395510567976960
-    m_Key: popup1_t
+  - m_Id: 414731681792
+    m_Key: POPUP_T1
     m_Metadata:
       m_Items: []
-  - m_Id: 1395544260820992
-    m_Key: popup1_r
+  - m_Id: 416656867328
+    m_Key: POPUP_T2
     m_Metadata:
       m_Items: []
-  - m_Id: 1395570261311488
-    m_Key: popup1_l
+  - m_Id: 419257335808
+    m_Key: POPUP_T3
     m_Metadata:
       m_Items: []
-  - m_Id: 1395671092379648
-    m_Key: popup2_t
+  - m_Id: 423099318272
+    m_Key: POPUP_L1
     m_Metadata:
       m_Items: []
-  - m_Id: 1395673516687360
-    m_Key: popup2_r
+  - m_Id: 424219197440
+    m_Key: POPUP_L2
     m_Metadata:
       m_Items: []
-  - m_Id: 1395675584479232
-    m_Key: popup2_l
+  - m_Id: 429759873024
+    m_Key: POPUP_L3
     m_Metadata:
       m_Items: []
-  - m_Id: 1397436869197824
-    m_Key: popup3_t
+  - m_Id: 430821031936
+    m_Key: POPUP_R1
     m_Metadata:
       m_Items: []
-  - m_Id: 1397438895046656
-    m_Key: popup3_y
+  - m_Id: 433664770048
+    m_Key: POPUP_R2
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 7322220208810622978
+    rid: 2358913191261765638
   references:
     version: 2
     RefIds:
-    - rid: 7322220208810622978
+    - rid: 2358913191261765638
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1766501066880
+        m_CustomEpoch: 1767447061305

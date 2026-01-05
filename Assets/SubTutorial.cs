@@ -7,8 +7,7 @@ using TMPro;
 public class SubTutorial : MonoBehaviour
 {
     public List<GameObject> Guideline = new List<GameObject>();
-    public List<GameObject> zero = new List<GameObject>();
-    [SerializeField] string dial = "¾ÓÁõ¸ÂÀº Æú¶ó·ÎÀÌµå. ¹¶Ä¡¿Í ´ëÈ­¸¦ ³ª´©°í\n³ª´Ï ¹æÀÌ °¡µæ Â÷ º¸ÀÌ³×. ±âºĞ Å¿ÀÏ±î?";
+
     [SerializeField] MenuController MenuController;
     [SerializeField] GameObject menuBut;
     [SerializeField] GameObject progressBut;
@@ -18,13 +17,19 @@ public class SubTutorial : MonoBehaviour
     [SerializeField] GameObject DayProgress;
     [SerializeField] GameObject Subicon;
     [SerializeField] GameManager gameManager;
+
+    [SerializeField] private GameObject guide0BubbleRoot;
+    [SerializeField] private Button guide0Button;
+    [SerializeField] private TextMeshProUGUI guide0Text;
     CanvasGroup tutorialMaskGroup;
     CanvasGroup Spider;
     CanvasGroup Progress;
     GameObject preparent;
     Vector3 originalPosition;
 
+
     int presibling;
+    private Coroutine guide0UnlockRoutine;
     private bool G2 = false;
     private bool G3 = false;
     private bool G4 = false;
@@ -41,15 +46,10 @@ public class SubTutorial : MonoBehaviour
         subtutoinit();
         index = 0;
 
-        GameObject go;
-        go = Instantiate(zero[gameManager.GetSITime], this.transform);
-        go.transform.SetAsFirstSibling();
-        go.name = "0";
-        go.GetComponent<RectTransform>().anchoredPosition = new Vector3(1138, -453, 0);
+        Guideline.RemoveAll(g => g == null);
 
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < Guideline.Count; i++)
         {
-            Guideline.Add(transform.GetChild(i).gameObject);
             Guideline[i].SetActive(false);
         }
         tutorialMaskGroup = this.GetComponent<CanvasGroup>();
@@ -61,7 +61,7 @@ public class SubTutorial : MonoBehaviour
         if (!G2 && MenuController.isOpening)
         {
             Guide2();
-            G2 = true;  // ÇÑ ¹ø ½ÇÇàµÈ ÈÄ¿¡´Â ¸ØÃã
+            G2 = true;  // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
 
         if (!G3 && MenuController.isprogress)
@@ -89,33 +89,73 @@ public class SubTutorial : MonoBehaviour
 
     public void guidestart()
     {
-        StartCoroutine(guide());
+        this.GetComponent<Image>().enabled = false;
+        Guide0();
     }
     public IEnumerator guide()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         Guide0();
     }
-    public void Guide0()
+    public void Guide0() // ì•™ì¦ë§ì€ í´ë¼ë¡œì´ë“œë„¤
     {
-        Guideline[0].SetActive(true);
+        index = 0;
+        InputGuard.WorldInputLocked = true; 
+        
+        GameObject step0 = Guideline[0];
+        step0.SetActive(true);
 
-        this.GetComponent<Image>().enabled = false;
-        this.GetComponent<Button>().interactable = false;
+        // CanvasGroup í™•ë³´
+        CanvasGroup cg = step0.GetComponent<CanvasGroup>();
+        if (cg == null) cg = step0.AddComponent<CanvasGroup>();
 
-        Guideline[0].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = dial;
-        Guideline[0].GetComponent<Button>().onClick.AddListener(() => Guide1());
+        // Button í™•ë³´
+        Button b = step0.GetComponent<Button>();
+        b.onClick.RemoveAllListeners();
+        b.onClick.AddListener(Guide1);
+
+        // ì—°ì¶œ - ë”œë ˆì´ í›„ í´ë¦­ ê°€ëŠ¥
+        cg.alpha = 0f;
+        cg.interactable = false;
+        cg.blocksRaycasts = false;
+        b.interactable = false;
+
+        if (guide0UnlockRoutine != null)
+            StopCoroutine(guide0UnlockRoutine);
+
+        StartCoroutine(FadeInGuide0(cg, b, 0.6f));
+    }
+    private IEnumerator FadeInGuide0(CanvasGroup cg, Button b, float duration)
+    {
+        float t = 0f;
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            cg.alpha = Mathf.Clamp01(t / duration);
+            yield return null;
+        }
+
+        // ì™„ì „íˆ ë³´ì¸ ë’¤ì—ë§Œ í´ë¦­ ê°€ëŠ¥
+        cg.alpha = 1f;
+        cg.interactable = true;
+        cg.blocksRaycasts = true;
+        b.interactable = true;
     }
 
-    public void Guide1()
-    {
-        this.GetComponent<Image>().enabled = true;
-        this.GetComponent<Button>().interactable = true;
 
-        index = 0;
+    public void Guide1() // ë‹¤ì‹œ ì´ìª½ìœ¼ë¡œ ì´ìª½ìœ¼ë¡œ
+    {
+        var btn = menuBut.GetComponent<Button>();
+        if (btn != null)
+            btn.interactable = true;
+        // Guide0(í´ë¼ë¡œì´ë“œ) ë„ê³  ë‹¤ìŒ ë‹¨ê³„ë¡œ
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
+
+        this.GetComponent<Image>().enabled = true;
+        this.GetComponent<Button>().interactable = true;
 
         preparent = menuBut.transform.parent.gameObject;
         presibling = 1;
@@ -125,9 +165,8 @@ public class SubTutorial : MonoBehaviour
     }
 
 
-    public void Guide2()
+    public void Guide2() // ì—¬ê¸°ë‹¤ ì—¬ê¸°
     {
-        index = 1;
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
@@ -140,9 +179,8 @@ public class SubTutorial : MonoBehaviour
         Debug.Log("Guide2");
     }
 
-    public IEnumerator Guide3()
-    {
-        index = 2;
+    public IEnumerator Guide3() // í´ë¦­ í´ë¦­ í´ë¦­
+    { 
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
@@ -159,7 +197,6 @@ public class SubTutorial : MonoBehaviour
     }
     public void Guide5()
     {
-        index = 3;
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
@@ -191,6 +228,7 @@ public class SubTutorial : MonoBehaviour
                 Subicon.transform.SetParent(preparent.transform);
                 Subicon.transform.SetSiblingIndex(3);
                 ScreenShield.Off();
+                InputGuard.WorldInputLocked = false; 
                 this.gameObject.SetActive(false);
                 return;
             }

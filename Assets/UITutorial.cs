@@ -90,7 +90,7 @@ public class UITutorial : MonoBehaviour
     }
     IEnumerator guide()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Guideline[0].SetActive(true);
         Guide1();
     }

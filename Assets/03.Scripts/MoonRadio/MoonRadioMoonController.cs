@@ -23,6 +23,16 @@ public class MoonRadioMoonController : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<IPlayerInterface>();
         popupIdx = player.GetMoonRadioIdx() - 1;
     }
+    private void OnEnable()
+    {
+        // 매번 재진입할 때 UI/인덱스 초기화
+        for (int i = 0; i < popupUI.Length; i++)
+            popupUI[i].SetActive(false);
+
+        int saved = (player != null) ? player.GetMoonRadioIdx() : 1; // 기본 1
+        // saved가 1이면 첫 팝업(0)을 띄우고 싶다는 뜻으로 처리
+        popupIdx = Mathf.Clamp(saved - 1, 0, popupUI.Length); 
+    }
     public void OnPopup()
     {
         if(popupIdx>=popupUI.Length)

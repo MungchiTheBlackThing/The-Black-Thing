@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 6761397221263703198}
   - component: {fileID: 6761397221263703199}
   - component: {fileID: 2149749802083664258}
+  - component: {fileID: 4911886787457385692}
   m_Layer: 0
   m_Name: Sun_deathnote
   m_TagString: Untagged
@@ -185,6 +186,18 @@ MonoBehaviour:
   pagesContainer: {fileID: 6761397221263703196}
   pageCount: 0
   currentPageIndex: 0
+--- !u!114 &4911886787457385692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6761397221263703197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465832f03d929104f9fb6f7886759402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6761397221627393604
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,8 +352,8 @@ MonoBehaviour:
     \uC788\uC744 \uC5B8\uC820\uAC00\uC758 \uAFC8\uC5D0\uC11C, \n\uAF2D \uB2E4\uC2DC
     \uB9CC\uB098\uC790!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
-  m_sharedMaterial: {fileID: 1188920287867902073, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
+  m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -370,13 +383,13 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: -8
+  m_lineSpacing: 30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -523,8 +536,8 @@ MonoBehaviour:
     \uC5C6\uC5B4\uC838\uB3C4, \uADF8\uB7F0 \uB300\uB85C \uAD1C\uCC2E\uACE0 \uC544\uB984\uB2E4\uC6B8
     \uAC83 \uAC19\uC558\uC5B4."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
-  m_sharedMaterial: {fileID: 1188920287867902073, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
+  m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -554,13 +567,13 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: -8
+  m_lineSpacing: 30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -701,7 +714,7 @@ MonoBehaviour:
     \uCE6D\uD558\uB294 \uAC83. \uB0B4 \uC2DC\uCD08\uC9C0\uB294 \uB2EC\uC774\uC57C.
     \n\uC9C0\uAD6C\uC758 \uD478\uB974\uB984\uC5D0 \uB9E4\uC5EC, \uC911\uB825\uB9CC
     \uD55C \uC560\uC815\uC744 \uB3D9\uB825 \uC0BC\uC544 \uACF5\uC804\uD558\uB294
-    \uBABB\uB098\uACE0 \uC791\uC740 \uB3CC\uB369\uC774.\n\n\uADF8\uB798\uC11C \uD587\uC0B4\uC774
+    \n\uBABB\uB098\uACE0 \uC791\uC740 \uB3CC\uB369\uC774.\n\n\uADF8\uB798\uC11C \uD587\uC0B4\uC774
     \uBB34\uC11C\uC6E0\uC5B4. \n\uB0B4 \uADFC\uC6D0\uACFC\uB294 \uC0C1\uBC18\uB41C
     \uADF8 \uBC1D\uC74C\uC774 \uB0A0 \uD0DC\uC6CC \uC7AC\uB85C \uB9CC\uB4E4\uC5B4
     \uBC84\uB9B4 \uAC83 \uAC19\uC558\uAC70\uB4E0. \n\uD587\uC0B4\uC758 \uC2DC\uCD08\uC9C0\uB294
@@ -711,8 +724,8 @@ MonoBehaviour:
     \uACF5\uD3EC\uC600\uC5B4. \n\uB0A0 \uBB34\uAC00\uCE58\uC758 \uCC28\uC6D0\uC73C\uB85C
     \uC804\uB77D\uC2DC\uD0AC \uD798\uC774\uC5C8\uC5B4. "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
-  m_sharedMaterial: {fileID: 1188920287867902073, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
+  m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -742,13 +755,13 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: -8
+  m_lineSpacing: 30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1013,9 +1026,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2149749802083664258}
-        m_TargetAssemblyTypeName: DeathNote, Assembly-CSharp
-        m_MethodName: Onexitclick
+      - m_Target: {fileID: 4911886787457385692}
+        m_TargetAssemblyTypeName: DeathNoteClose, Assembly-CSharp
+        m_MethodName: OnClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1181,7 +1194,7 @@ MonoBehaviour:
     \uBD80\uC720\uD558\uB294 \uB180\uC774\uD130\uB85C \n\uC774\uB04C\uACE0 \uC788\uB2E4\uB294
     \uCC29\uAC01\uC744."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_sharedMaterial: {fileID: 1188920287867902073, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1212,13 +1225,13 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: -8
+  m_lineSpacing: 30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1245,7 +1258,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &5193594968548141301

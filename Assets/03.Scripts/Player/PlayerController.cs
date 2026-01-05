@@ -113,11 +113,12 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void NextPhase()
     {
+        Debug.Log($"[NextPhase CALLER]\n{Environment.StackTrace}");
+        if (GameManager.isend) return;
         foreach (var door in FindObjectsOfType<DoorController>()) //페이즈 넘어갈 때 (메인 끝나면 페이즈 넘어가니까 + 나머지 페이즈 전환은 상관 없으니까) 문 켜기
         {
             door.SetDoorForDialogue(true);
         }
-        InputGuard.WorldInputLocked = false;
         Debug.Log("NextPhase");
         if (gamemanger.GetComponent<GameManager>())
             gamemanger.GetComponent<GameManager>().StopSubDial();
@@ -126,6 +127,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         if (phase == (int)GamePatternState.MainB && player.chapter == 14)
         {
             Debug.Log("Ending");
+            if (GameManager.isend) return;   // 이미 엔딩이면 중복 실행 방지
             gamemanger.GetComponent<GameManager>().Ending();
             return;
         }
@@ -494,12 +496,9 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     public void Replay()
     {
-        player.Replay();
-        GameManager.isend = false;
-        DeathNoteClick.checkdeath = false;
-        RecentManager.ResetFlagOnly();
-        WritePlayerFile();
-        SceneManager.LoadScene("Tutorial");
+        PlayerPrefs.SetInt("FORCE_NEW_GAME", 1);
+        PlayerPrefs.Save();
+        LoadSceneManager.Instance.LoadScene("MainScene", "IntroScene", 0);
     }
 
     public bool IsSubWatched(int id)

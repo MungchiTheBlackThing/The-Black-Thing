@@ -92,10 +92,18 @@ public class TimeSkipUIController : MonoBehaviour
 
     public void SetSkipButtonActiveState(bool InActive)
     {
+        if (GameManager.isend)
+        {
+            // 엔딩에서는 스킵 버튼 자체를 절대 노출하지 않음
+            if (popup) popup.SetActive(false);
+            gameObject.SetActive(false);
+            return;
+        }
         this.gameObject.SetActive(InActive);
     }
     public void Translate(LANGUAGE language, TMP_FontAsset font)
     {
+
         int Idx = (int)language;
 
         text[0].text = DataManager.Instance.Settings.timeSkip.title[Idx];
@@ -110,6 +118,7 @@ public class TimeSkipUIController : MonoBehaviour
     }
     public void OnClick()
     {
+        if (GameManager.isend) return;
         if (popup.activeSelf == false)
         {
             popup.SetActive(true);

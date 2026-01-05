@@ -10,12 +10,15 @@ public class MainPanel : MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
     [SerializeField] PlayerController pc;
+    private CanvasGroup mainCg;
+
 
     MainDialogue mainDialogue;
 
     [SerializeField] TextMeshProUGUI DotTextUI;
     [SerializeField] TextMeshProUGUI PlayTextUI;
     [SerializeField] TextMeshProUGUI InputTextUI;
+    [SerializeField] private Canvas canvas;
 
     [SerializeField] GameObject DotPanel;
     [SerializeField] GameObject PlayPanel;
@@ -40,14 +43,24 @@ public class MainPanel : MonoBehaviour
     public int dialogueIndex = 0;
     public int Day = 0;
     public int LANGUAGE;
-
+    private bool dialEnding = false;
+    private static GameObject endingAnimInstance;
     private const string PH_KO = "당신의 생각을 입력해 주세요.";
     private const string PH_EN = "Please enter your thoughts.";
 
 
+
     private List<string> selection13 = new List<string> {
-        "찰나의 미소띤 잔상","파도 속 낯선 안식처","비좁고 다정한 암흑","미약한 용기의 불씨","a","b","c","d" //<multiple(2)>
+        "찰나의 미소띤 잔상","파도 속 낯선 안식처","비좁고 다정한 암흑","미약한 용기의 불씨","A passing afterimage of a smile","An unlikely haven below waves","A small and caring darkness","A tiny ember of courage" //<multiple(2)>
     };
+
+    void Awake()
+    {
+        mainCg = GetComponent<CanvasGroup>();
+        if (mainCg == null)
+            mainCg = gameObject.AddComponent<CanvasGroup>();
+    }
+
     void OnEnable()
     {
         mainDialogue = (MainDialogue)gameManager.CurrentState;
@@ -224,26 +237,80 @@ public class MainPanel : MonoBehaviour
 
     public void DialEnd()
     {
-        Debug.Log("메인 끝");
+        if (dialEnding) return;
+        dialEnding = true;
+
+        Debug.Log("메인 끝, 페이드아웃 시작");
+        StartCoroutine(DialEndSequence());
+    }
+
+
+    private IEnumerator DialEndSequence()
+    {
+        // 데이터/상태 정리
         mainDialogue.currentDialogueList.Clear();
         mainDialogue.DialogueEntries.Clear();
         dialogueIndex = 0;
         backindex = -1;
+
         ScreenShield.Off();
         InputGuard.WorldInputLocked = false;
 
-        if (gameManager.GetComponent<TutorialManager>() != null)
+        // 말풍선/선택 UI 끄기
+        PanelOff();
+        if (BackBut) BackBut.SetActive(false);
+
+        bool isEnding = (gameManager.Chapter == 14 && mainDialogue.phase == 3);
+
+        if (isEnding)
         {
-            PanelOff();
-            if (BackBut) BackBut.SetActive(false);
-            TutorialManager.Instance.ChangeGameState(TutorialState.Sub);
+            // 1) 엔딩 애니 인스턴스는 단 한 번만 생성
+            if (endingAnimInstance == null)
+            {
+                endingAnimInstance = Instantiate(
+                    Resources.Load<GameObject>("Ending/end_animation"),
+                    canvas.transform
+                );
+                endingAnimInstance.transform.SetAsLastSibling();
+
+                // 생성 직후에는 안 보이게
+                endingAnimInstance.SetActive(false);
+            }
+            else // 이미 있으면 위로만 올리기
+            {
+                endingAnimInstance.transform.SetAsLastSibling();
+            }
+
+            // 2) 배경 유지 시간
+            yield return new WaitForSeconds(1f);
+
+            // 3) 한 번에: 켜고 + 재생
+            endingAnimInstance.SetActive(true);
+
+            var animator = endingAnimInstance.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.Play(0, 0, 0f);
+            }
+
+            // 4) 애니 재생 시간(임시)
+            yield return new WaitForSeconds(5f);
+
+            // 5) 엔딩 처리
+            mainDialogue.CleanupAtEnding();
+            foreach (var door in FindObjectsOfType<DoorController>())
+                door.SetDoorForDialogue(true);
+            gameManager.Ending();
         }
         else
         {
-            PanelOff();
-            if (BackBut) BackBut.SetActive(false);
-            mainDialogue.MainEnd();
+            if (gameManager.GetComponent<TutorialManager>() != null)
+                TutorialManager.Instance.ChangeGameState(TutorialState.Sub);
+            else
+                mainDialogue.MainEnd();
         }
+
+        dialEnding = false;
     }
 
     void PanelOff()
@@ -319,13 +386,13 @@ public class MainPanel : MonoBehaviour
                     if (MainClick) MainClick.SetActive(true);
                     if (korText.Contains("<nickname>") && pc)
                         korText = korText.Replace("<nickname>", pc.GetNickName());
-                    if (korText.Contains("<13th selection>") && pc)
-                        korText = korText.Replace("<13th selection>", selection13[deathnotesel]);
+                    if (korText.Contains("<selection13>") && pc)
+                        korText = korText.Replace("<selection13>", selection13[deathnotesel]);
                     //[DEBUG]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         DotPanel,
                         DotPanel.GetComponent<CanvasGroup>(),
-                        0.01f,
+                        0.5f,
                         new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null }, 
                         () => { DotTextUI.text = korText; },
                         waitVideo
@@ -338,7 +405,7 @@ public class MainPanel : MonoBehaviour
                     StartCoroutine(ShowPanelWithDelay(
                         PlayPanel,
                         PlayPanel.GetComponent<CanvasGroup>(),
-                        0.01f,
+                        0.5f,
                         new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null },
                         () => { PlayTextUI.text = korText; },
                         waitVideo
@@ -437,6 +504,8 @@ public class MainPanel : MonoBehaviour
         if (buttons != null)
             foreach (var b in buttons) if (b) b.interactable = true;
     }
+
+
 
     void RegisterNextButton(Button button)
     {

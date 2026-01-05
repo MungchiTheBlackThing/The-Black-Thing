@@ -344,16 +344,24 @@ public abstract class MainDialogue : GameState, ILoadingInterface
             subdial.SetActive(true);
             subdial.GetComponent<SubDialogue>().Tuto_start(106, 2.0f);
         }
-        else if (phase == 3 && manager.Chapter == 14)
-        {
-            manager.Ending();
-        }
         else
         {
             playerController.NextPhase();
             time.gameObject.SetActive(true);
         }
         listclear();
+    }
+
+    public void CleanupAtEnding()
+    {
+        dot.TriggerMain(false);
+        manager.ScrollManager.StopCamera(false);
+
+        if (background)
+            background.SetActive(false);
+
+        manager.ObjectManager.activeSystemUIDelegate(true);
+
     }
 
 

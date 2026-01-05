@@ -141,6 +141,8 @@ public class PlayerInfo
 
         language = previousLanguage; // 백업한 언어를 다시 복구
         isDay8SleepEventCompleted = false;
+        GameManager.isend = false;
+        DeathNoteClick.readDeathnote = false;
     }
     public bool IsDiaryCheck { get => isDiaryCheck; set=>isDiaryCheck = value;}
     public float BgmVolume{ get=>bgmVolume; set=>bgmVolume = value; }
