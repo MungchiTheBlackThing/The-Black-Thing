@@ -337,6 +337,14 @@ public class MenuController : MonoBehaviour
         checkList.SetActive(true);
         tuto();
     }
+
+    public void moldOn()
+    {
+        TimeUI.SetActive(false);
+        Default.SetActive(true);
+        checkList.SetActive(true);
+        tuto();
+    }
     
     public void nextandoff()
     {

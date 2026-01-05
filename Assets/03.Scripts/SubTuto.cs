@@ -144,14 +144,22 @@ public class SubTuto : MonoBehaviour
     public void tutorial_11(GameObject selectedDot, int determine, int index)
     {
         //RecentManager.Save(selectedDot, determine, index); // 저장
-        dotController.GoSleep();
-        StartCoroutine(subcon(selectedDot, determine, index));
+        if (!dotController.isEndPlay)
+        {
+            dotController.GoSleep();
+            StartCoroutine(subcon());
+        }
+        else
+        {
+            subPanel.dotballoon(selectedDot);
+        }
     }
 
-    private IEnumerator subcon(GameObject selectedDot, int determine, int index)
+    private IEnumerator subcon()
     {
         yield return new WaitForSeconds(4f);
-        subPanel.dotballoon(selectedDot);
+        subPanel.dialogueIndex = 130;
+        subPanel.ShowNextDialogue();
     }
 
     private IEnumerator LoadSceneCoroutine(string sceneName)

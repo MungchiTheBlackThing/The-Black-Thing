@@ -184,7 +184,7 @@ public class UITutorial : MonoBehaviour
             if (index >= transform.childCount)
             {
                 ScreenShield.Off();
-                MenuController.allon();
+                MenuController.moldOn();
                 MenuController.nextandoff();
                 this.gameObject.SetActive(false);
                 // player.NextPhase();

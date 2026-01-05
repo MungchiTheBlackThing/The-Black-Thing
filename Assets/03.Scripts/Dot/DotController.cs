@@ -70,6 +70,7 @@ public class DotController : MonoBehaviour
     [SerializeField]
     private bool visible = true;
     public bool tutorial = false; //DoorController에 쓰임
+    public bool isEndPlay = false;
     public GameObject Dust
     {
         get { return dust; }
@@ -598,6 +599,7 @@ public class DotController : MonoBehaviour
         if (pc.GetChapter() == 1)
         {
             ChangeState(DotPatternState.Phase, "anim_spiderweb1", 10);
+            isEndPlay = true;
             return;
         }
         alertOff();
