@@ -16,56 +16,86 @@ MonoBehaviour:
     m_Code: en-US
   m_SharedData: {fileID: 11400000, guid: 202a62bf45dedc04f8d1bb61438b4371, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 1040230458494025747
   m_TableData:
   - m_Id: 9146679296
     m_Localized: "I can\u2019t... not anymore."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   - m_Id: 12908969984
     m_Localized: Disgusting.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   - m_Id: 15660433408
     m_Localized: I feel like throwing up.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   - m_Id: 63609716736
     m_Localized: 1
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   - m_Id: 111013740544
     m_Localized: 1
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   - m_Id: 138666786816
     m_Localized: 1
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   - m_Id: 151023206400
     m_Localized: 1
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   - m_Id: 163572563968
     m_Localized: 1
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   - m_Id: 173915717632
     m_Localized: 1
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   - m_Id: 183906549760
     m_Localized: 1
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   - m_Id: 194706882560
     m_Localized: 1
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   - m_Id: 207944105984
     m_Localized: 1
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025747
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1040230458494025747
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 9146679296
+        - id: 12908969984
+        - id: 15660433408
+        - id: 63609716736
+        - id: 111013740544
+        - id: 138666786816
+        - id: 151023206400
+        - id: 163572563968
+        - id: 173915717632
+        - id: 183906549760
+        - id: 194706882560
+        - id: 207944105984
