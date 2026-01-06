@@ -366,6 +366,13 @@ public class SubDialogue : MonoBehaviour
                 if (dot != null)
                     dot.ChangeState(DotPatternState.Phase, "anim_diary");
             }
+            else if (manager.Pattern == GamePatternState.Watching && manager.Chapter == 14)
+            {
+                // 14일차 Watching: AfterScript 없을 때 anim_mud로 복귀
+                Debug.Log("[SubDialogue] 14일차 Watching 페이즈, anim_mud_day13으로 복귀");
+                if (dot != null)
+                    dot.PlayMudAnimation(14);
+            }
             else
             {
                 Debug.Log("[SubDialogue] AfterScript가 재생 X, 이전 애니메이션으로 돌아감");

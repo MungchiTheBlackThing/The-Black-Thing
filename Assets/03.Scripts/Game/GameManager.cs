@@ -703,6 +703,12 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("DayStartHour", dayStartHour);
         PlayerPrefs.SetInt("DayStartMinute", dayStartMinute);
         PlayerPrefs.Save();
+
+        // Sleeping 페이즈일 때 실시간으로 타이머 재계산
+        if (currentPattern == GamePatternState.Sleeping)
+        {
+            RestartSleepingTimer();
+        }
     }
 
     public void PlayAllSubDialogs()

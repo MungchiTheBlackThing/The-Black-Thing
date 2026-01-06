@@ -36,7 +36,6 @@ public class PlayAnswerController : MonoBehaviour
     DotController dot;
     Utility u = Utility.Instance;
     bool waitSleepTap = false;
-    private bool diaryActivatedForTutorial = false;
 
     private void Start()
     {
@@ -54,18 +53,12 @@ public class PlayAnswerController : MonoBehaviour
         noPoemBubble.onClick.AddListener(NoPoemBubbleClicked);
         playDotButton.onClick.AddListener(OnPlayDotClicked);
 
-        //다이어리 처음 활성화
-        if (!diaryActivatedForTutorial && gameManager != null && gameManager.Chapter == 1)
+        // 1일차 다이어리 잠금 해제
+        if (gameManager != null && gameManager.Chapter == 1 && !gameManager.pc.IsDiaryUnlockedForChapter1())
         {
-            DiaryController[] diaries = Resources.FindObjectsOfTypeAll<DiaryController>();
-            if (diaries.Length > 0)
-            {
-                Debug.Log("튜토리얼 다이어리 활성화");
-                diaries[0].gameObject.SetActive(true);
-            }
-            diaryActivatedForTutorial = true;
+            Debug.Log("1일차 다이어리 잠금 해제");
+            gameManager.pc.UnlockDiaryForChapter1();
         }
-        
     }
 
     public void EnterPoemQuestion()

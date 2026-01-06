@@ -49,6 +49,8 @@ public class PlayerInfo
     public List<int> watchedSubseq = new List<int>();
 
     public bool isDay8SleepEventCompleted;
+    // 1일차 다이어리 잠금 해제 여부
+    public bool diaryUnlockedInChapter1;
     public PlayerInfo()
     {
         nickname = "default";
@@ -92,6 +94,7 @@ public class PlayerInfo
         }
         watchedSubseq.Clear();
         isDay8SleepEventCompleted = false;
+        diaryUnlockedInChapter1 = false;
     }
 
     public void SetSubPhase(int phaseIdx)
@@ -141,6 +144,7 @@ public class PlayerInfo
 
         language = previousLanguage; // 백업한 언어를 다시 복구
         isDay8SleepEventCompleted = false;
+        diaryUnlockedInChapter1 = false;
     }
     public bool IsDiaryCheck { get => isDiaryCheck; set=>isDiaryCheck = value;}
     public float BgmVolume{ get=>bgmVolume; set=>bgmVolume = value; }

@@ -16,12 +16,18 @@ public class DiaryPageController : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log($"[DiaryPageController] OnEnable. GM Chapter: {gameManager.Chapter}, Pattern: {gameManager.Pattern}");
         maxChapterIdx = gameManager.Chapter - 1;
         if (gameManager.Pattern <= GamePatternState.Writing)
         {
             maxChapterIdx--;
         }
+        Debug.Log($"[DiaryPageController] Calculated maxChapterIdx (before clamp): {maxChapterIdx}");
+
+        if (maxChapterIdx < 0) maxChapterIdx = 0;
         currentPageIndex = maxChapterIdx;
+
+        Debug.Log($"[DiaryPageController] Final maxChapterIdx: {maxChapterIdx}, currentPageIndex: {currentPageIndex}");
 
         isTurning = false;
         UpdatePageVisibility(); 
@@ -49,6 +55,7 @@ public class DiaryPageController : MonoBehaviour
 
         currentPageIndex += dir;
         currentPageIndex = Mathf.Clamp(currentPageIndex, 0, maxChapterIdx);
+        Debug.Log($"[DiaryPageController] TurnPage. New Index: {currentPageIndex}");
 
         UpdatePageVisibility(); 
 
@@ -57,13 +64,29 @@ public class DiaryPageController : MonoBehaviour
 
     private void UpdatePageVisibility()
     {
+        if (DataManager.Instance.DiaryData == null || DataManager.Instance.DiaryData.DiaryEntry == null)
+        {
+            Debug.LogError("[DiaryPageController] DiaryData is null or empty.");
+            return;
+        }
+
+        if (currentPageIndex >= DataManager.Instance.DiaryData.DiaryEntry.Count)
+        {
+            Debug.LogError($"[DiaryPageController] currentPageIndex {currentPageIndex} exceeds DiaryEntry count {DataManager.Instance.DiaryData.DiaryEntry.Count}");
+            return;
+        }
+
         DiaryEntry entry = DataManager.Instance.DiaryData.DiaryEntry[currentPageIndex];
-        int language = (int)gameManager.pc.GetLanguage();
+        Debug.Log($"[DiaryPageController] UpdatePageVisibility. Entry ID: {entry.id}, TitleKey: {entry.titleKey}");
+        //int language = (int)gameManager.pc.GetLanguage(); 패키지 교체
 
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Pagesound, this.transform.position);
 
-        // 서브 성공 여부 확인을 위한 부울 리스트
-        List<bool> sub_success = gameManager.pc.GetSubPhase(gameManager.Chapter);
-        page.UpdateDiaryPage(entry.title, entry.leftPage, entry.rightPage, entry.imagePath, language, sub_success);
+        // 현재 보고 있는 페이지(entry.id)의 챕터에 맞는 성공 여부를 가져오도록 수정
+        List<bool> sub_success = gameManager.pc.GetSubPhase(entry.id);
+        Debug.Log($"[DiaryPageController] SubPhase success list count: {(sub_success != null ? sub_success.Count : 0)}");
+
+        // 변경된 UpdateDiaryPage 메서드 호출
+        page.UpdateDiaryPage(entry.titleKey, entry.leftPageKey, entry.rightPage, entry.imagePath, sub_success);
     }
 }

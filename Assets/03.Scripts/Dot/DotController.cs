@@ -871,7 +871,16 @@ public class DotController : MonoBehaviour
         PlayerPrefs.DeleteKey("AS_IsPlaying");
         PlayerPrefs.Save();
 
-        UpdateIdleAnimation();
+        // 14일차 Watching: AfterScript 종료 후 anim_mud로 복귀
+        if (manager.Pattern == GamePatternState.Watching && chapter == 14)
+        {
+            Debug.Log("[DotController] 14일차 Watching: AfterScript 종료 후 anim_mud_day13으로 복귀");
+            PlayMudAnimation(14);
+        }
+        else
+        {
+            UpdateIdleAnimation();
+        }
     }
 
     // Trigger 함수들에서 호출할 강제 종료 헬퍼 (UpdateIdleAnimation 호출 안 함)
@@ -939,10 +948,25 @@ public class DotController : MonoBehaviour
         }
     }
 
+    //예외처리
     private bool _TryPlayPhaseExceptionAnimation()
     {
-        //페이즈 별 예외처리 추가 필요
-        return false; // 예외 애니메이션을 재생했다면 true를 반환
+        // 7일차 phase_thinking 예외처리
+        if (manager.Pattern == GamePatternState.Thinking && chapter == 7)
+        {
+            // subseq 1 (sub_feelings)을 아직 보지 않았다면 예외 애니메이션 재생
+            if (pc != null && !pc.IsSubWatched(1))
+            {
+                string[] ch7Animations = { "anim_sub_ch7_1", "anim_sub_ch7_2" };
+                string randomAnim = ch7Animations[UnityEngine.Random.Range(0, ch7Animations.Length)];
+                Debug.Log($"[DotController] 7일차 Thinking 예외 애니메이션 재생: {randomAnim}");
+                ChangeState(DotPatternState.Default, randomAnim, -1);
+                return true;
+            }
+        }
+
+        //14일차 phase_watching 예외처리는 SubDialogue의 Subexit()에서 처리
+        return false;
     }
 
     private string GetRandomAnimationForChapter(int chapter)

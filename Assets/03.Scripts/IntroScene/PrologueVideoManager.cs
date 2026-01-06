@@ -14,6 +14,7 @@ public class PrologueVideoManager : MonoBehaviour
     public float firstOverlaySeconds = 2.0f;     //프롤로그 전 로딩 시간
 
     private const string ProloguePlayedKey = "PROLOGUE_PLAYED";
+    private const string PrologueSkipEnabledKey = "PROLOGUE_SKIP_ENABLED";
     private bool _skipTriggered = false;
 
     // 프롤로그 영상 재생, 튜토리얼로 이동
@@ -48,7 +49,18 @@ public class PrologueVideoManager : MonoBehaviour
         this.targetSceneName = targetSceneName;
 
         mainVideo.Setting(PROLOGUE_DAY, language);
+        
+        // 스킵 활성화 여부 확인 (Replay 버튼을 눌렀는지)
+        int skipEnabled = PlayerPrefs.GetInt(PrologueSkipEnabledKey, 0);
+        bool shouldAllowSkip = (skipEnabled == 1);
+        Debug.Log($"[Prologue] Skip enabled from PlayerPrefs: {shouldAllowSkip}");
+        
         mainVideo.PlayVideo(VideoEnd);
+        // PlayVideo() 내부에서 allowSkip이 false로 초기화되므로 호출 후에 스킵 활성화 상태를 설정
+        if (shouldAllowSkip)
+        {
+            mainVideo.SetAllowSkipForPrologue(true);
+        }
 
     }
 

@@ -237,10 +237,9 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
-    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8e200ccfe8dd64e4d9098cb4696ce7c0
-    m_Address: Sub_Ch4_en-US
+    m_Address: DiaryUIText_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
@@ -267,6 +266,12 @@ MonoBehaviour:
     - Locale-en-US
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9fc459a70da95fe4eb7c9476b39e656b
+    m_Address: DAY8EVENT_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a13cc8fcae96c2e42afa108f192fa3ba
     m_Address: SrcDay12_en-US
     m_ReadOnly: 1
@@ -286,6 +291,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b35e396f4cfe16441b0a02065b1b2b40
+    m_Address: DiaryText_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bb5a9f18a9fec8148a1cd6660531e510
     m_Address: WatchingNoteUI_en-US

@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 
 public class DiaryController : BaseObject, ISleepingInterface
 {
-
     
     bool isClicked = true;
     bool isDiaryUpdated = false;
@@ -28,8 +27,11 @@ public class DiaryController : BaseObject, ISleepingInterface
     {
         Init();
 
-        if (playerController != null && playerController.GetChapter() == 1)
+        // 1챕터이고, 다이어리가 아직 잠금 해제되지 않았을 때만 비활성화
+        if (playerController.GetChapter() == 1 && !playerController.IsDiaryUnlockedForChapter1())
         {
+            Debug.Log("GetChapter(): " + playerController.GetChapter());
+            Debug.Log("1챕터 다이어리 잠금 상태로 비활성화");
             gameObject.SetActive(false);
             return;
         }
