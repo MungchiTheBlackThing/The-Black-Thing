@@ -65,6 +65,22 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         gobackPage = new Stack<int>();
         player = new PlayerInfo(nickname, 1, GamePatternState.Watching);
         readStringFromPlayerFile();
+        
+        // 파일에서 읽은 언어와 PlayerPrefs 동기화
+        if (PlayerPrefs.HasKey("Locale"))
+        {
+            string savedLocaleCode = PlayerPrefs.GetString("Locale");
+            LANGUAGE savedLanguage = savedLocaleCode.StartsWith("ko", StringComparison.OrdinalIgnoreCase) 
+                ? LANGUAGE.KOREAN 
+                : LANGUAGE.ENGLISH;
+            
+            if (player.language != savedLanguage)
+            {
+                player.language = savedLanguage;
+                WritePlayerFile(); 
+            }
+        }
+        
         translateManager = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
         Debug.Log("번역시작");
         translateManager.Translate(GetLanguage());
@@ -557,6 +573,9 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         if (locale != null)
         {
             LocalizationSettings.SelectedLocale = locale;
+            // PlayerPrefs에도 저장하여 LocalizationBoot와 동기화
+            PlayerPrefs.SetString("Locale", locale.Identifier.Code);
+            PlayerPrefs.Save();
             Debug.Log($"[PlayerController] Locale Changed. Language: {language}, Target Code: {code}, Selected Locale: {locale.Identifier.Code}");
         }
         else

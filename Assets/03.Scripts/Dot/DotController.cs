@@ -877,6 +877,12 @@ public class DotController : MonoBehaviour
             Debug.Log("[DotController] 14일차 Watching: AfterScript 종료 후 anim_mud_day13으로 복귀");
             PlayMudAnimation(14);
         }
+        else if (manager.Pattern == GamePatternState.Writing)
+        {
+            // Writing 페이즈: AfterScript 종료 후 anim_diary로 복귀
+            Debug.Log("[DotController] Writing 페이즈: AfterScript 종료 후 anim_diary로 복귀");
+            ChangeState(DotPatternState.Phase, "anim_diary", -1, "", true);
+        }
         else
         {
             UpdateIdleAnimation();
@@ -939,7 +945,6 @@ public class DotController : MonoBehaviour
                 // Writing 페이즈의 기본 애니메이션 복구
                 // Writing: 기본 애니메이션 anim_diary 고정 (랜덤 X)
                 Debug.Log($"[DotController] Playing default animation for Writing phase: anim_diary");
-                ChangeState(DotPatternState.Phase, "anim_diary");
                 ChangeState(DotPatternState.Phase, "anim_diary", -1, "", true);
                 break;
             default:

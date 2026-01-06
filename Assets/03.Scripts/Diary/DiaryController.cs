@@ -5,6 +5,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Tables;
 
 public class DiaryController : BaseObject, ISleepingInterface
 {
@@ -39,15 +42,52 @@ public class DiaryController : BaseObject, ISleepingInterface
 
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
         translator.translatorDel += Translate;
+        
+        // 초기 로컬라이제이션 적용 (동적으로 생성되는 오브젝트는 Translate가 자동 호출되지 않을 수 있음)
+        if (playerController != null)
+        {
+            LANGUAGE currentLang = playerController.GetLanguage();
+            Translate(currentLang, null);
+        }
+        
+        // 로컬라이제이션 설정 변경 감지 (언어 변경 시 자동 업데이트)
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+    }
+    
+    void OnDestroy()
+    {
+        // 이벤트 구독 해제
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+    }
+    
+    void OnLocaleChanged(Locale locale)
+    {
+        // 언어 변경 시 텍스트 업데이트
+        if (playerController != null)
+        {
+            LANGUAGE currentLang = playerController.GetLanguage();
+            Translate(currentLang, null);
+        }
     }
 
     void Translate(LANGUAGE language, TMP_FontAsset font)
     {
-        if(alert != null)
+        if(alert != null && text != null)
         {
+            // 로컬라이제이션 패키지 사용
+            StringTable table = LocalizationSettings.StringDatabase.GetTable("SystemUIText");
+            if (table != null)
+            {
+                var entry = table.GetEntry("mapalert_diary");
+                if (entry != null)
+                {
+                    text.text = entry.GetLocalizedString();
+                    return;
+                }
+            }
+            
             int Idx = (int)language;
             text.text = DataManager.Instance.Settings.alert.diary[Idx];
-            //text.font = font;
         }
     }
     public void Init()
