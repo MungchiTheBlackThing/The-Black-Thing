@@ -7,6 +7,8 @@ using System.IO;
 using UnityEngine.Android;
 using Assets.Script.Reward;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 
 [Serializable]
 public enum LANGUAGE
@@ -53,6 +55,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     [SerializeField]
     SubDialogue subDialogue;
+
     private void Awake()
     {
         gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
@@ -72,10 +75,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
         AudioManager.Instance.SetBGMVolume(player.BgmVolume);
         AudioManager.Instance.SetSFXVolume(player.AcousticVolume);
-    }
-    private void Start()
-    {
-
+        ChangeLocalizationLocale(GetLanguage());
     }
     // Update is called once per frame
     //1시간이 되었는지 체크하기 위해서 저정용도
@@ -235,6 +235,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         player.language = language;
 
         translateManager.Translate(player.language);
+        ChangeLocalizationLocale(language);
     }
 
     public void SetLanguage(string language)
@@ -518,4 +519,49 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         WritePlayerFile();
     }
 
+    /// 1일차 다이어리 잠금 해제
+    public void UnlockDiaryForChapter1()
+    {
+        if (!player.diaryUnlockedInChapter1)
+        {
+            player.diaryUnlockedInChapter1 = true;
+            WritePlayerFile();
+        }
+    }
+
+    public bool IsDiaryUnlockedForChapter1()
+    {
+        return player.diaryUnlockedInChapter1;
+    }
+
+    private void ChangeLocalizationLocale(LANGUAGE language)
+    {
+        StartCoroutine(SetLocaleCoroutine(language));
+    }
+
+    private IEnumerator SetLocaleCoroutine(LANGUAGE language)
+    {
+        yield return LocalizationSettings.InitializationOperation;
+        
+        // LANGUAGE enum을 locale 코드로 매핑
+        string code = language == LANGUAGE.KOREAN ? "ko-KR" : "en-US";
+
+        var locale = LocalizationSettings.AvailableLocales.GetLocale(new LocaleIdentifier(code));
+        //실패하면 기본 코드로 폴백
+        if (locale == null)
+        {
+            string baseCode = language == LANGUAGE.KOREAN ? "ko" : "en";
+            locale = LocalizationSettings.AvailableLocales.GetLocale(new LocaleIdentifier(baseCode));
+        }
+
+        if (locale != null)
+        {
+            LocalizationSettings.SelectedLocale = locale;
+            Debug.Log($"[PlayerController] Locale Changed. Language: {language}, Target Code: {code}, Selected Locale: {locale.Identifier.Code}");
+        }
+        else
+        {
+            Debug.LogWarning($"[PlayerController] Failed to find locale for code: {code}");
+        }
+    }
 }

@@ -11,8 +11,8 @@ public class Diary
 public class DiaryEntry
 {
     public int id;                        // DiaryEntry의 ID
-    public List<string> title;            // 제목 리스트
-    public List<string> leftPage;         // 텍스트 리스트
+    public string titleKey;               // 제목 키
+    public string leftPageKey;            // 텍스트 키
     public RightPage rightPage;           // DiarySubEntry 객체
     public List<string> imagePath;        // 이미지 경로 리스트
 }
@@ -27,6 +27,6 @@ public class RightPage
 [Serializable]
 public class SubEntry
 {
-    public string[] success; // 성공 텍스트 그룹 (0: 한글, 1: 영어)
-    public string[] fail;    // 실패 텍스트 그룹 (0: 한글, 1: 영어)
+    public string successKey; // 성공 텍스트 키
+    public string failKey;    // 실패 텍스트 키
 }

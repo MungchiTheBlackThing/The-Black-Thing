@@ -1,15 +1,19 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.Localization.Components;
+using UnityEngine.Localization;
 
 [Serializable]
 class DiarySub
 {
     [SerializeField]
     public TMP_Text text;
+    [SerializeField]
+    public LocalizeStringEvent textLocalize;
     [SerializeField]
     public Image image;
 }
@@ -22,49 +26,69 @@ public class DiaryPage : MonoBehaviour
     [SerializeField]
     TMP_Text title;
     [SerializeField]
+    private LocalizeStringEvent titleLocalize;
+    [SerializeField]
     TMP_Text text;
+    [SerializeField]
+    private LocalizeStringEvent textLocalize;
 
     [SerializeField]
-    DiarySub[]sub_diary;
+    DiarySub[] sub_diary;
 
-    public void UpdateDiaryPage(List<string> title, List<string> text, RightPage subs, List<string> imagePath, int languageIdx, List<bool> isSuccess)
+    private const string DIARY_TABLE = "DiaryText";
+
+    public void UpdateDiaryPage(string titleKey, string leftPageKey, RightPage subs, List<string> imagePath, List<bool> isSuccess)
     {
-        this.title.text = GetTokenString(title[languageIdx]);
-        this.text.text = GetTokenString(text[languageIdx]);
+        Debug.Log($"[DiaryPage] UpdateDiaryPage received. titleKey: {titleKey}, leftPageKey: {leftPageKey}");
+        SetLocalization(titleLocalize, titleKey);
+        SetLocalization(textLocalize, leftPageKey);
 
-        for(int i=0; i<sub_diary.Length; i++)
+        for (int i = 0; i < sub_diary.Length; i++)
         {
-            string target = "";
-            if (isSuccess[i])
-            {
-                target = subs.sub[i].success[languageIdx];
+            if (i >= imagePath.Count || i >= isSuccess.Count) {
+                Debug.LogWarning($"[DiaryPage] Skipping sub-diary {i} due to index out of bounds (image/success).");
+                continue;
             }
-            else
-            {
-                target = subs.sub[i].fail[languageIdx];
+            if (subs == null || subs.sub == null || i >= subs.sub.Count) {
+                Debug.LogWarning($"[DiaryPage] Skipping sub-diary {i} because subs data is null or index is out of bounds.");
+                continue;
             }
 
-            sub_diary[i].text.text = GetTokenString(target);
+            string targetKey = isSuccess[i] ? subs.sub[i].successKey : subs.sub[i].failKey;
+            Debug.Log($"[DiaryPage] Sub-diary {i}: isSuccess={isSuccess[i]}, targetKey={targetKey}");
+            SetLocalization(sub_diary[i].textLocalize, targetKey);
 
             Sprite sprite = Resources.Load<Sprite>(imagePath[i]);
             if (sprite != null)
             {
-                sub_diary[i].image.sprite = sprite; // Imageø° Sprite «“¥Á
+                sub_diary[i].image.sprite = sprite;
             }
             else
             {
-                Debug.LogError($"¿ÃπÃ¡ˆ ∑ŒµÂ Ω«∆–: {imagePath[i]}");
+                Debug.LogError($"Ïù¥ÎØ∏ÏßÄ Î°úÎìú Ïã§Ìå®: {imagePath[i]}");
             }
         }
     }
 
-    /// <summary>
-    /// <> ≈‰≈´¿ª µ•¿Ã≈Õ∑Œ ∫Ø»Ø
-    /// </summary>
-    string GetTokenString(string target)
+    private void SetLocalization(LocalizeStringEvent localizeEvent, string key)
     {
-        target = target.Replace("<nickname>", playerController.GetNickName());
+        if (localizeEvent == null) {
+            Debug.LogError($"[DiaryPage] SetLocalization failed: LocalizeStringEvent is null. Key was '{key}'. Check Inspector assignments.");
+            return;
+        }
+        if (string.IsNullOrEmpty(key)) {
+            Debug.LogWarning($"[DiaryPage] SetLocalization: Key is null or empty for {localizeEvent.gameObject.name}. Clearing text.");
+            // ÌÇ§Í∞Ä ÎπÑÏñ¥ÏûàÏùÑ Í≤ΩÏö∞ ÌÖçÏä§Ìä∏Î•º ÎπÑÏö∞Îäî Ï≤òÎ¶¨ Ï∂îÍ∞Ä
+            localizeEvent.StringReference.SetReference(null, null);
+            localizeEvent.RefreshString();
+            return;
+        }
 
-        return target;
+        localizeEvent.StringReference.SetReference(DIARY_TABLE, key);
+        var args = new Dictionary<string, object> { { "nickname", playerController.GetNickName() } };
+        localizeEvent.StringReference.Arguments = new object[] { args };
+
+        localizeEvent.RefreshString();
+        Debug.Log($"[DiaryPage] SetLocalization on '{localizeEvent.gameObject.name}' with Table: '{DIARY_TABLE}', Key: '{key}'.");
     }
 }

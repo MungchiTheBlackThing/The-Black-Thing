@@ -1,0 +1,544 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: DiaryText Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: DiaryText
+  m_TableCollectionNameGuidString: b1c039adb5d0a904986767a71e958c63
+  m_Entries:
+  - m_Id: 33696313344
+    m_Key: Diary_1_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113984
+    m_Key: Diary_1_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113985
+    m_Key: Diary_1_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113986
+    m_Key: Diary_1_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113987
+    m_Key: Diary_1_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113988
+    m_Key: Diary_1_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113989
+    m_Key: Diary_1_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113990
+    m_Key: Diary_1_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113991
+    m_Key: Diary_1_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113992
+    m_Key: Diary_1_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113993
+    m_Key: Diary_2_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113994
+    m_Key: Diary_2_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113995
+    m_Key: Diary_2_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113996
+    m_Key: Diary_2_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113997
+    m_Key: Diary_2_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113998
+    m_Key: Diary_2_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843113999
+    m_Key: Diary_2_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114000
+    m_Key: Diary_2_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114001
+    m_Key: Diary_2_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114002
+    m_Key: Diary_2_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114003
+    m_Key: Diary_3_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114004
+    m_Key: Diary_3_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114005
+    m_Key: Diary_3_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114006
+    m_Key: Diary_3_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114007
+    m_Key: Diary_3_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114008
+    m_Key: Diary_3_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114009
+    m_Key: Diary_3_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114010
+    m_Key: Diary_3_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114011
+    m_Key: Diary_3_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114012
+    m_Key: Diary_3_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114013
+    m_Key: Diary_4_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114014
+    m_Key: Diary_4_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114015
+    m_Key: Diary_4_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114016
+    m_Key: Diary_4_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114017
+    m_Key: Diary_4_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114018
+    m_Key: Diary_4_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114019
+    m_Key: Diary_4_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114020
+    m_Key: Diary_4_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33843114021
+    m_Key: Diary_4_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308288
+    m_Key: Diary_4_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308289
+    m_Key: Diary_5_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308290
+    m_Key: Diary_5_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308291
+    m_Key: Diary_5_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308292
+    m_Key: Diary_5_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308293
+    m_Key: Diary_5_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308294
+    m_Key: Diary_5_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308295
+    m_Key: Diary_5_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308296
+    m_Key: Diary_5_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308297
+    m_Key: Diary_5_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308298
+    m_Key: Diary_5_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308299
+    m_Key: Diary_6_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308300
+    m_Key: Diary_6_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308301
+    m_Key: Diary_6_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308302
+    m_Key: Diary_6_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308303
+    m_Key: Diary_6_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308304
+    m_Key: Diary_6_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308305
+    m_Key: Diary_6_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308306
+    m_Key: Diary_6_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308307
+    m_Key: Diary_6_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308308
+    m_Key: Diary_6_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308309
+    m_Key: Diary_7_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308310
+    m_Key: Diary_7_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308311
+    m_Key: Diary_7_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308312
+    m_Key: Diary_7_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308313
+    m_Key: Diary_7_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308314
+    m_Key: Diary_7_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308315
+    m_Key: Diary_7_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308316
+    m_Key: Diary_7_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308317
+    m_Key: Diary_7_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308318
+    m_Key: Diary_7_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308319
+    m_Key: Diary_8_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308320
+    m_Key: Diary_8_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308321
+    m_Key: Diary_8_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308322
+    m_Key: Diary_8_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308323
+    m_Key: Diary_8_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308324
+    m_Key: Diary_8_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308325
+    m_Key: Diary_8_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308326
+    m_Key: Diary_8_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308327
+    m_Key: Diary_8_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308328
+    m_Key: Diary_8_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308329
+    m_Key: Diary_9_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308330
+    m_Key: Diary_9_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308331
+    m_Key: Diary_9_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308332
+    m_Key: Diary_9_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308333
+    m_Key: Diary_9_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308334
+    m_Key: Diary_9_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308335
+    m_Key: Diary_9_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308336
+    m_Key: Diary_9_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308337
+    m_Key: Diary_9_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308338
+    m_Key: Diary_10_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308339
+    m_Key: Diary_10_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308340
+    m_Key: Diary_10_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308341
+    m_Key: Diary_10_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308342
+    m_Key: Diary_10_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308343
+    m_Key: Diary_10_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308344
+    m_Key: Diary_10_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308345
+    m_Key: Diary_10_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308346
+    m_Key: Diary_10_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308347
+    m_Key: Diary_10_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308348
+    m_Key: Diary_11_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308349
+    m_Key: Diary_11_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308350
+    m_Key: Diary_11_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308351
+    m_Key: Diary_11_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308352
+    m_Key: Diary_11_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308353
+    m_Key: Diary_11_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308354
+    m_Key: Diary_11_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308355
+    m_Key: Diary_11_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308356
+    m_Key: Diary_11_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308357
+    m_Key: Diary_11_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308358
+    m_Key: Diary_12_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308359
+    m_Key: Diary_12_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308360
+    m_Key: Diary_12_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308361
+    m_Key: Diary_12_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308362
+    m_Key: Diary_12_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308363
+    m_Key: Diary_12_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308364
+    m_Key: Diary_12_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308365
+    m_Key: Diary_12_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308366
+    m_Key: Diary_12_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308367
+    m_Key: Diary_12_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308368
+    m_Key: Diary_13_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308369
+    m_Key: Diary_13_Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308370
+    m_Key: Diary_13_Sub_0_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308371
+    m_Key: Diary_13_Sub_0_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308372
+    m_Key: Diary_13_Sub_1_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308373
+    m_Key: Diary_13_Sub_1_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308374
+    m_Key: Diary_13_Sub_2_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308375
+    m_Key: Diary_13_Sub_2_Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308376
+    m_Key: Diary_13_Sub_3_Success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33847308377
+    m_Key: Diary_13_Sub_3_Fail
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1040230458494025732
+  references:
+    version: 2
+    RefIds:
+    - rid: 1040230458494025732
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1767522787228
