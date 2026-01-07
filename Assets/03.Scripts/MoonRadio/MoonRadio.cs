@@ -5,6 +5,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Device;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Tables;
 
 public class MoonRadio : MonoBehaviour
 {
@@ -40,15 +43,35 @@ public class MoonRadio : MonoBehaviour
         moonRadioController = GameObject.Find("MoonRadio").transform.GetChild(0).gameObject;
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
         translator.translatorDel += Translate;
+        
+        // 로컬라이제이션 설정 변경 감지
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+        
         if (GameManager.isend && blinkMoonRadioAnim != null)
             blinkMoonRadioAnim.SetFloat("speed", 0f);
     }
+    
+    void OnDestroy()
+    {
+        // 이벤트 구독 해제
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+    }
+    
+    void OnLocaleChanged(Locale locale)
+    {
+        // 언어 변경 시 alert가 활성화되어 있으면 텍스트 업데이트
+        if (alert != null && text != null && alert.activeSelf)
+        {
+            // OpenAlert를 다시 호출하여 로컬라이제이션된 텍스트로 업데이트
+            OpenAlert();
+        }
+    }
+    
     void Translate(LANGUAGE language, TMP_FontAsset font)
     {
-        if (alert != null)
+        // Translate는 폰트만 변경하고, 텍스트는 OpenAlert에서 로컬라이제이션 적용
+        if (text != null && font != null)
         {
-            int Idx = (int)language;
-            text.text = DataManager.Instance.Settings.alert.diary[Idx];
             text.font = font;
         }
     }
@@ -96,8 +119,29 @@ public class MoonRadio : MonoBehaviour
 
     public void OpenAlert()
     {
+        if (alert == null || text == null)
+            return;
 
-        text.text = GameManager.isend ? checktext : originaltext;
+        // 로컬라이제이션 패키지 사용
+        StringTable table = LocalizationSettings.StringDatabase.GetTable("SystemUIText");
+        if (table != null)
+        {
+            // 엔딩일 때는 checktext, 아니면 originaltext
+            string key = GameManager.isend ? "mapalert_moonRadio_check" : "mapalert_moonRadio";
+            var entry = table.GetEntry(key);
+            if (entry != null)
+            {
+                text.text = entry.GetLocalizedString();
+            }
+            else
+            {
+                text.text = GameManager.isend ? checktext : originaltext;
+            }
+        }
+        else
+        {
+            text.text = GameManager.isend ? checktext : originaltext;
+        }
 
         if (!alert.activeSelf)
         {
