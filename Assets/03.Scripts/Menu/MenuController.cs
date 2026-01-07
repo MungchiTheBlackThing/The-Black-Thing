@@ -351,6 +351,7 @@ public class MenuController : MonoBehaviour
 
     public void moldOn()
     {
+        Debug.Log("스킵버튼");
         TimeUI.SetActive(false);
         Default.SetActive(true);
         checkList.SetActive(true);

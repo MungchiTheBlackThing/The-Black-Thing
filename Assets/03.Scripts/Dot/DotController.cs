@@ -358,7 +358,11 @@ public class DotController : MonoBehaviour
         {
             chapter = manager.Chapter;
         }
-
+        int subseq = playerController.GetSubseq();
+        if (State == GamePatternState.Thinking && chapter==1 && subseq == 1)
+        {
+            manager.Menu.moldOn();
+        }
         Debug.Log("스테이트:" + State);
         Debug.Log("GetSubSCript");
         if (manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB || manager.Pattern == GamePatternState.Play || manager.Pattern == GamePatternState.NextChapter)
