@@ -149,6 +149,14 @@ public class MainVideo : MonoBehaviour
         StartCoroutine(FadeInAndPlay());
     }
 
+    // 프롤로그 영상 재생 시 스킵 활성화 여부를 설정
+
+    public void SetAllowSkipForPrologue(bool enable)
+    {
+        allowSkip = enable;
+        Debug.Log($"[MainVideo] Prologue skip enabled: {enable}");
+    }
+
     private IEnumerator FadeInAndPlay()
     {
         CanvasGroup bgCg = background.GetComponent<CanvasGroup>() ?? background.AddComponent<CanvasGroup>();
@@ -230,7 +238,11 @@ public class MainVideo : MonoBehaviour
         // 비디오 완전 리셋
         ResetVideoInternalForReplay();
 
-        // 다시 재생
+        // 스킵 활성화 상태를 영구적으로 저장
+        PlayerPrefs.SetInt("PROLOGUE_SKIP_ENABLED", 1);
+        PlayerPrefs.Save();
+
+        // 다시 재생 (스킵 활성화 상태로)
         PlayVideo(videoEndEvent);
         allowSkip = true;
     }
@@ -267,6 +279,9 @@ public class MainVideo : MonoBehaviour
 
     public void OnNext()
     {
+        PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1); //프롤로그 재생 완료 플래그 설정
+        PlayerPrefs.Save();
+        
         isVideoPlaying = false;
         HideSkipHintImmediate();
         StartCoroutine(FadeOutAndEnd(videoPlayer));

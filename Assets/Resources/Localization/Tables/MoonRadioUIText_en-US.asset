@@ -134,7 +134,8 @@ MonoBehaviour:
   - m_Id: 28381834441080832
     m_Localized: "An empty letter \nmay cause confusion \non the Moon!"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 7826956241281482753
   references:
     version: 2
     RefIds:
@@ -164,3 +165,4 @@ MonoBehaviour:
         - id: 4779261509632
         - id: 6166494003200
         - id: 6168146558976
+        - id: 28381834441080832

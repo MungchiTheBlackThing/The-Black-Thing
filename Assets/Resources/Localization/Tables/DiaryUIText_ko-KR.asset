@@ -38,10 +38,18 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 7826956241281482755
+  - m_Id: 32643399646769152
+    m_Localized: "\uBA54\uBAA8\uC7A5"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 7826956241281482755
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 00402ff0030000000040ef9c040000000040af5405000000
+        m_Entries: 
+        m_SharedEntries:
+        - id: 16914530304
+        - id: 19812794368
+        - id: 22895607808

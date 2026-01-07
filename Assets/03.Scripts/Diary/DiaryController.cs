@@ -5,10 +5,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Tables;
 
 public class DiaryController : BaseObject, ISleepingInterface
 {
-
     
     bool isClicked = true;
     bool isDiaryUpdated = false;
@@ -24,35 +26,114 @@ public class DiaryController : BaseObject, ISleepingInterface
 
     TranslateManager translator;
     PlayerController playerController;
+    DotController dotController;
 
     void Start()
     {
+        //Debug.Log($"[DiaryController.Start] 시작 - GameObject: {gameObject.name}, 현재 활성화 상태: {gameObject.activeSelf}");
         Init();
 
-        if (playerController != null && playerController.GetChapter() == 1)
+        int currentChapter = playerController.GetChapter();
+        bool isUnlocked = playerController.IsDiaryUnlockedForChapter1();
+        //Debug.Log($"[DiaryController.Start] Chapter: {currentChapter}, IsDiaryUnlockedForChapter1: {isUnlocked}, 현재 활성화 상태: {gameObject.activeSelf}");
+
+        // 1챕터이고, 다이어리가 아직 잠금 해제되지 않았을 때만 비활성화
+        // 이미 잠금 해제된 경우에는 활성화 상태 유지 (게임 재시작 시에도 유지)
+        if (currentChapter == 1)
         {
-            gameObject.SetActive(false);
-            return;
+            if (!isUnlocked)
+            {
+                //Debug.Log($"[DiaryController.Start] 1일차 다이어리 잠금 상태 - 비활성화");
+                gameObject.SetActive(false);
+                //Debug.Log($"[DiaryController.Start] 비활성화 후 상태: {gameObject.activeSelf}");
+                return;
+            }
+            else
+            {
+                //Debug.Log($"[DiaryController.Start] 1일차 다이어리 이미 잠금 해제됨 - 활성화 확인");
+                if (!gameObject.activeSelf)
+                {
+                    //Debug.Log($"[DiaryController.Start] 비활성화 상태 감지 - 활성화 시도");
+                    gameObject.SetActive(true);
+                    //Debug.Log($"[DiaryController.Start] 활성화 후 상태: {gameObject.activeSelf}");
+                }
+                else
+                {
+                    //Debug.Log($"[DiaryController.Start] 이미 활성화 상태 유지");
+                }
+            }
+        }
+        else
+        {
+            //Debug.Log($"[DiaryController.Start] 1일차가 아님 (Chapter: {currentChapter}) - 정상 처리 계속");
         }
 
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
         translator.translatorDel += Translate;
+        
+        // 초기 로컬라이제이션 적용 (동적으로 생성되는 오브젝트는 Translate가 자동 호출되지 않을 수 있음)
+        if (playerController != null)
+        {
+            LANGUAGE currentLang = playerController.GetLanguage();
+            Translate(currentLang, null);
+        }
+        
+        // 로컬라이제이션 설정 변경 감지 (언어 변경 시 자동 업데이트)
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+    }
+    
+    void OnDestroy()
+    {
+        // 이벤트 구독 해제
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+    }
+    
+    void OnLocaleChanged(Locale locale)
+    {
+        // 언어 변경 시 텍스트 업데이트
+        if (playerController != null)
+        {
+            LANGUAGE currentLang = playerController.GetLanguage();
+            Translate(currentLang, null);
+        }
     }
 
     void Translate(LANGUAGE language, TMP_FontAsset font)
     {
-        if(alert != null)
+        if(alert != null && text != null)
         {
+            // 로컬라이제이션 패키지 사용
+            StringTable table = LocalizationSettings.StringDatabase.GetTable("SystemUIText");
+            if (table != null)
+            {
+                var entry = table.GetEntry("mapalert_diary");
+                if (entry != null)
+                {
+                    text.text = entry.GetLocalizedString();
+                    return;
+                }
+            }
+            
             int Idx = (int)language;
             text.text = DataManager.Instance.Settings.alert.diary[Idx];
-            //text.font = font;
         }
     }
     public void Init()
     {
         if(playerController == null)
         {
-            playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
+            GameObject playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null)
+            {
+                playerController = playerObj.GetComponent<PlayerController>();
+
+
+
+            }
+        }
+        if(dotController == null)
+        {
+            dotController = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
         }
         isClicked = playerController.GetIsDiaryCheck(); //다이어리를 읽었는지 가져온다.
         isDiaryUpdated = playerController.GetIsUpdatedDiary();
@@ -123,6 +204,30 @@ public class DiaryController : BaseObject, ISleepingInterface
         {
             OpenAlert();
             return;
+        }
+
+        // Sleeping 페이즈에서 subseq 진입 애니메이션이나 AfterScript 애니메이션이 재생 중이면 diary 열람 막기
+        if (CurrentPhase == GamePatternState.Sleeping)
+        {
+            if (dotController == null)
+            {
+                dotController = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
+            }
+            
+            GameObject subDialogueObj = GameObject.Find("SubDialogue");
+            bool isSubDialogueActive = subDialogueObj != null && subDialogueObj.activeSelf;
+            
+            if (dotController != null)
+            {
+                if (dotController.IsSubDialogueAnimPlaying || dotController.IsAfterScriptPlaying || isSubDialogueActive)
+                {
+                    return;
+                }
+            }
+            else if (isSubDialogueActive)
+            {
+                return;
+            }
         }
 
         if (CurrentPhase == GamePatternState.Watching)

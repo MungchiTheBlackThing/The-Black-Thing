@@ -7,6 +7,7 @@ using TMPro;
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Tables;
 
 public class SubDialogue : MonoBehaviour
 {
@@ -160,6 +161,12 @@ public class SubDialogue : MonoBehaviour
             return;
         }
 
+        // 새로운 subseq 시작 시 이전 reward 초기화
+        if (playerController != null)
+        {
+            playerController.currentReward = "";
+        }
+
         if (dot != null)
         {
             prePos = dot.Position;
@@ -267,11 +274,10 @@ public class SubDialogue : MonoBehaviour
             }
             else
             {
-                string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString(entry.LocTable, entry.LocKey);
+                StringTable stringTable = LocalizationSettings.StringDatabase.GetTable(entry.LocTable);
+                string localizedText = stringTable.GetEntry(entry.LocKey)?.GetLocalizedString();
                 if (!string.IsNullOrEmpty(localizedText))
-                {
-                    return ApplyLineBreaks(localizedText);
-                }
+                    return ApplyLineBreaks(localizedText);  
             }
 
             text = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
@@ -365,6 +371,13 @@ public class SubDialogue : MonoBehaviour
                 Debug.Log("[SubDialogue] Writing 페이즈, anim_diary로 복귀");
                 if (dot != null)
                     dot.ChangeState(DotPatternState.Phase, "anim_diary");
+            }
+            else if (manager.Pattern == GamePatternState.Watching && manager.Chapter == 14)
+            {
+                // 14일차 Watching: AfterScript 없을 때 anim_mud로 복귀
+                Debug.Log("[SubDialogue] 14일차 Watching 페이즈, anim_mud_day13으로 복귀");
+                if (dot != null)
+                    dot.PlayMudAnimation(14);
             }
             else
             {

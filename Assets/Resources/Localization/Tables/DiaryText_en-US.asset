@@ -1,0 +1,955 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: DiaryText_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: b1c039adb5d0a904986767a71e958c63, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 1040230458494025749
+  m_TableData:
+  - m_Id: 33696313344
+    m_Localized: First Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113984
+    m_Localized: 'I looked for love everywhere and could not find it. Not even in
+      the word love itself. It can be everything, ergo it can be nothing!
+
+      When
+      I become a dream, I wished the world within me to be one so transparent, it
+      won''t need words to love. A place where all emotions can unravel their tentacles,
+      messy and chaotic.
+
+      Will we then converse through light? Or yawns, or
+      the shade of our pupils?
+
+      And so, I wish to hold this nameless river
+      of a world in my arms. A flowing, safe world.'
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113985
+    m_Localized: My first encounter with some mold just like me. But a quiet fellow.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113986
+    m_Localized: Aw, I wanted to tell {nickname} about the mold friend I met!
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113987
+    m_Localized: "I\u2019ll practice knocking on {nickname}\u2019s book cover with
+      decorum. I hope we can read one another."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113988
+    m_Localized: To read is to swim in the seas of thought by oneself, in a silent
+      empty room.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113989
+    m_Localized: "Words are candy-marbles with colorful flavors. Let\u2019em roll!"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113990
+    m_Localized: "The sweet, chaotic secrets of candy-marbles\u2026 will forever
+      remain a mystery."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113991
+    m_Localized: "Here\u2019s a six-word novel. 'Dusty ol' me, under the bed!"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113992
+    m_Localized: "One day I\u2019ll tell {nickname} the amazing six-word novel I
+      wrote!"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113993
+    m_Localized: Second Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113994
+    m_Localized: "To lack something. Is it going back? Or moving forth? If I feel
+      like a pillow that has lost all its fluff, to what am I comparing myself? Where
+      did the illusion of the \u2018perfect pillow\u2019 begin? Faded glory, or faraway
+      wishes?\\n\\nBut what does it matter if I were to sleep with just a pillowcase.
+      A magazine said that less fluffy pillows are better for the \u2018joints\u2019!
+      My, the human body is truly amazing.\\nWhat\u2019s more, the moon beings will
+      always send sweet dreams for their humans, no matter what pillow they use!"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113995
+    m_Localized: "Won\u2019t tell {nickname}, but I would have gone down all the
+      paths. Like this!"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113996
+    m_Localized: "Turn right? Or turn left? I would have liked to hear an answer\u2026"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113997
+    m_Localized: Human eyes, once pried, cannot grow back. Not made for collecting.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113998
+    m_Localized: Something small, round, beautiful and uniquely human. Failed to
+      collect.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843113999
+    m_Localized: Maybe I was the most untainted... gazing into the vast black universe.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114000
+    m_Localized: "What does it mean to be whole? I would\u2019ve liked to have heard
+      {nickname}\u2019s thoughts."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114001
+    m_Localized: May all mold gone missing rest in peace.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114002
+    m_Localized: Did no human care about the tragic fate of mold?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114003
+    m_Localized: Third Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114004
+    m_Localized: "Blurring the line between true and false may free me, but also
+      confuse me. Like the human I saw today...\\nStill, it\u2019s wonderful not
+      to be chained to a single form. To {nickname} I can be as darling as I like!
+      Probably? Don't tell anyone, but I wonder what {nickname} is like prickly and
+      cold. Would an army of mold do the trick? Hmm. I don't want to trouble them
+      though.\\nThe Earth sees a different moon everyday, but it\u2019s the same
+      old moon. The moon that cast me out, and remade me. I would now like to observe
+      it get rounder."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114005
+    m_Localized: "{nickname} also seemed impressed by Mr. Spider\u2019s artistic
+      expertise!"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114006
+    m_Localized: Will Mr. Spider like my present? Oh if only {nickname} was here
+      to advise me!
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114007
+    m_Localized: What kind of world will kids grown-up create outside Neverland?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114008
+    m_Localized: "Read <i>Peter Pan</i>, slung on the hammock. I wonder what it\u2019s
+      like to be forever free."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114009
+    m_Localized: "Red\u2019s warmth, that breathed into me my first breath. I won\u2019t
+      ever forget it."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114010
+    m_Localized: "I wanted to talk about how Red\u2019s warmth enveloped me whole
+      as I was born..."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114011
+    m_Localized: ... I also fell in a lake of thoughts, too horrible to put into
+      words.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114012
+    m_Localized: ... I also fell in a lake of thoughts, too horrible to put into
+      words.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114013
+    m_Localized: Fourth Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114014
+    m_Localized: "Red always wondered about outer space. Tonight, I hope to dream
+      of Red, Sir Cello, Edison, and I floating through the universe. As Red\u2019s
+      fire warms its cold corners, my memory of them will warm my present, little
+      by little.\\nWhere does my past head, where does it gather? Does it float away
+      to a planet out of reach? Or does it fall deep within me?\\nWhere my past gathers...
+      Will such a place resemble me? I think of poring over it, until my eyes remember
+      every detail. Even if it may be burdening... especially then."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114015
+    m_Localized: "Is the sea\u2019s love for the Moon one-sided, the way the Moon\u2019s
+      is for Earth?"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114016
+    m_Localized: tide - the rising and falling of the sea, due to the pull of the
+      Moon
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114017
+    m_Localized: "How I miss Sir Cello's singing. I\u2019m too small to make the
+      trip to the Moon..."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114018
+    m_Localized: Thought about Sir Cello. Failed to share it with anyone.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114019
+    m_Localized: "The light from the Radio looks like the glow from Edison\u2019s
+      filament!"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114020
+    m_Localized: Pictured Edison creating devices on the Moon, each greater than
+      the next.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33843114021
+    m_Localized: "All humans have a \u2018childhood\u2019. How long does it last
+      for something like me?"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308288
+    m_Localized: Peeked under the bed out of sheer boredom! If only I had a doll
+      for company.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308289
+    m_Localized: Fifth Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308290
+    m_Localized: "Candy soldiers, forks at the ready, closing in. Prickly menace
+      aside, I find my heart captured by their glossy splendor and their sweet, steady
+      march.\\nNow they crawl under the fruit hammer. Fragile sculptures, bound by
+      thin thread. There\u2019s no time to waste. Marching on and on. Feet dragging
+      in rhythm.\\nAlways on the verge of death. How can they forget this and live
+      on?\\nBut I recall the colors that vibrate whenever and wherever, before and
+      after. Saturated with sunlight, reflecting erratically. How strange yet beautiful
+      humans are."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308291
+    m_Localized: "If my legs were as long as a flamingo\u2019s, human-watching would
+      be so much easier!"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308292
+    m_Localized: Pretended to be a certain magnificent animal while alone at home.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308293
+    m_Localized: "<i>\u266B I wonder how, I wonder why \u266B</i> This tastes like
+      a fresh depressed lemon."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308294
+    m_Localized: Learned a song about lemons. Though my friend seemed too busy for
+      it...
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308295
+    m_Localized: "The jam-dollop world I glimpsed dripped of blood. I don\u2019t
+      want to be a red dream any more."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308296
+    m_Localized: "Glimpsed into a jam-dollop world of nightmares. Oh, I can\u2019t
+      bear to dwell on it."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308297
+    m_Localized: May the kind glow of this lamp cast light on our Moon.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308298
+    m_Localized: The night passed in solitude. Moonlight, like light from a lamp,
+      crossing the dark to visit me.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308299
+    m_Localized: Sixth Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308300
+    m_Localized: "An empty room is a fortress of broodings. I did two wrongs here
+      today. First, I tried to find {nickname}'s diary, hoping to fully understand
+      each other. All when they respect my secrets... How shameful to have given
+      into such a temptation.\\nNext, I looked for monster friends, hoping a fellow
+      creature might resonate better with me. Frankenstein\u2019s creature, the Loch
+      Ness Monster... others that can never be me. Foolish.\\n{nickname}, always
+      warm and kind to this stupid monster. Tomorrow I must be a better Dot."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308301
+    m_Localized: "I lashed out at {nickname}. I\u2019m a mean, terrible friend. With
+      a monsterous mind."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308302
+    m_Localized: Daytime melancholy made me miss my friend. The endless wait only
+      made me sadder.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308303
+    m_Localized: A peculiar black dot on the corner of Earth.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308304
+    m_Localized: There are days when you feel more alone then ever. A lonely black
+      dot.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308305
+    m_Localized: Eachother. Us. Understand. Separate. Sole. Empty. Determination.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308306
+    m_Localized: Monster... friend. Would things be different if {nickname} were
+      a monster too?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308307
+    m_Localized: A secret idea - What if we had the caterpillar and mold meet each
+      other?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308308
+    m_Localized: I really wanted to ask {nickname} for advice on friendships.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308309
+    m_Localized: Seventh Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308310
+    m_Localized: "When the human body is cut, the cut bleeds and scabs. Such visible
+      cuts are usually better tended to. But what about cuts to the heart, no, the
+      soul?\\nThe human I met today just laughed, \u201CHaha!\u201D, and used a fancy
+      sticker instead of a band-aid. It concealed, but could not heal. Those who
+      neglect their wounds break easily.\\nAm I brave enough to hurt? Even after
+      conversations with {nickname}, seeing my body reflected in the window is misery
+      itself. Still... to one day be as free as a bird."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308311
+    m_Localized: "Bracing for cuts and coping with scars. It hurt, but I didn\u2019t
+      burst!"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308312
+    m_Localized: Bracing for cuts and coping with scars. Was {nickname} watching
+      my struggle?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308313
+    m_Localized: All they did was hurt. And yet they walked, and yet they endured.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308314
+    m_Localized: At the end of my contemplation on growth, a moonlit memory surfaced.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308315
+    m_Localized: I know at least one kind of non-melting ice cream. It goes by...
+      {nickname}.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308316
+    m_Localized: "Didn\u2019t get to tell {nickname} about the lovely child with
+      an ice cream. A shame!"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308317
+    m_Localized: "Dreamcatchers\u2026! Maybe humans subconsciously know about the
+      Moon Beings?"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308318
+    m_Localized: Ah. Ah. Why do I scare myself with thoughts of being tangled in
+      a net?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308319
+    m_Localized: Eighth Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308320
+    m_Localized: "I couldn\u2019t tell anyone, but I too have a twin inside me. Black
+      doubt reeks from its whispers. \u2018Struggle all you want. You will end up
+      a black dream that hurts humans.' It looks like me but we are not the same.
+      I pray we are not.\\nWill I ever be able to throw it up and out? Or has it
+      already lain roots in my real self? Or will I be forever locked in battle with
+      this thing squirming within? If rage and worn-out exhaustion from that fight
+      were to end up a part of m.......\\nWill I coexist with it, or be possessed
+      by it. The not knowing scares me."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308321
+    m_Localized: '{nickname}, we are unarmed knights that relinquished our shields.'
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308322
+    m_Localized: The one who can hurt me deeply, just a breath away. Shields are
+      useless.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308323
+    m_Localized: May I be born again under the crashing waves as a glorious dream.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308324
+    m_Localized: My plans for the ocean waves sunk below the surface, unbeknownst
+      to anyone.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308325
+    m_Localized: That shade of black and mine are as far apart as two galaxies.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308326
+    m_Localized: The black and beautiful movie. And me, black and homely as ever.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308327
+    m_Localized: "Being with people who don\u2019t listen is lonelier than being
+      alone."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308328
+    m_Localized: "Being with people who don\u2019t listen is lonelier than being
+      alone."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308329
+    m_Localized: Ninth Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308330
+    m_Localized: "Dreams. Round, beautiful. But formless.\\nCommanding the night.
+      Buried come morning.\\nThe world. Glimpses. Stories. Fantasy. Dreams. Illusion.
+      Dizzy. Hehe.\\nIt\u2019ll be alright?\\nIf I could throw up this anxiety\\nand
+      hide within. It\u2019ll be alright.\\nDeath. Frozen forever in the silent chill
+      of space. The dark. A corpse\u2019s last breath echoes in the void. Stranded
+      in nothingness, drenched in solitude. Will it vanish in a slow, tragic descent?\\nI
+      don't want to know. Yet hideous terror peeks into the abyss."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308331
+    m_Localized: Deep, dark, dire shadows circle me.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308332
+    m_Localized: "Found a fruit fly swaying in a spider\u2019s web. It was alive,
+      I know it was. I swear it."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308333
+    m_Localized: The way {nickname} dared to dream smelled of soft grass.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308334
+    m_Localized: "Tomorrow, I\u2019ll ask {nickname} what they dare to dream about.
+      Tomorrow."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308335
+    m_Localized: "Year 3025\u2014an unidentified round alien fossil is discovered."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308336
+    m_Localized: "Year 3025\u2014an unidentified round alien fossil is discovered."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308337
+    m_Localized: "Learnt how to make wishes. If I can\u2019t sleep I\u2019ll close
+      my eyes and wish all night."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308338
+    m_Localized: Tenth Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308339
+    m_Localized: 'He comes to my mind. An afterimage, a vision. Who knows. If I cut
+      open my body, peel back my skin, smash into a wall like him, I might find the
+      hidden watercolors within, dying my heart!\nBut the large eyeball approaches
+      the keyhole. Iris dripping red. Thump. Thump. Splat. It asks: \"Afterimages,
+      visions. Not enough, is it? You want something more, right?\"\nNo. No. No?
+      It''s only an afterimage. A vision. It rakes and slices my nerves. But never
+      soars. Only approaches. So I''ll be safe. I won''t think scary thoughts. I''ll
+      block the crack. I''ll be safe.'
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308340
+    m_Localized: "I want to be the only monster friend in {nickname}\u2019s pile
+      of lasting memories."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308341
+    m_Localized: An afternoon for treasuring snapshots of humans. Will I linger,
+      or will I last?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308342
+    m_Localized: A lifeline, not like the sun or the moon, but the warmth of a soft
+      palm.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308343
+    m_Localized: "Burning in the sun. Hot. Too hot. I couldn\u2019t help but melt."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308344
+    m_Localized: "The object of my yearning doesn\u2019t make me less lonely."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308345
+    m_Localized: "The object of my yearning doesn\u2019t make me less lonely."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308346
+    m_Localized: A nail digging in. Thunder raging without warning. A bed that drips
+      when wrung.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308347
+    m_Localized: A nail digging in. Thunder raging without warning. A bed that drips
+      when wrung.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308348
+    m_Localized: Eleventh Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308349
+    m_Localized: Lucid dreams are a wonder. Sweet, light, and freeing! The human
+      smiled like a child as she waltzed across a place where nothing hurt. Never
+      did I know, quite literally, that it was an escape.\nIf I too could dream,
+      my multicolored world would have {nickname} and the three moon beings. How
+      delighted they would be to meet {nickname}! They might have danced together.
+      The spider and the mold would be there too, of course. Forever together...\nBut
+      morning comes. Where will I be scattered to, when the curtain closes on this
+      fragile dream?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308350
+    m_Localized: "Black smudges on the wall... how gruesome. I\u2019ll swallow them
+      whole."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308351
+    m_Localized: Something that was hurled, stuck, and has now slid down. Gruesome.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308352
+    m_Localized: My letter, cradling moonlight, briefly shone like a tear. A reply?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308353
+    m_Localized: My letter, cradling moonlight, briefly shone like a tear. A reply?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308354
+    m_Localized: "Baby bird, you sang graciously at the only cozy swamp on Earth!
+      I\u2019ll never forget you."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308355
+    m_Localized: A baby bird flailed in my sticky body before flying away. Was she
+      screaming? Or singing?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308356
+    m_Localized: "It\u2019s okay. It\u2019s okay. It\u2019s okay. It\u2019ll be okay.
+      It always has been."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308357
+    m_Localized: "It\u2019s okay to fall apart in solitude. It\u2019ll be okay. It
+      always has been."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308358
+    m_Localized: Twelveth Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308359
+    m_Localized: "A crisp feeling. The tidal wave has swept over and my vision is
+      clearer than ever. I thought the fog was an impure shroud hiding what lay beyond
+      when in reality the fog was all there was. I observe the fog. Born to be so
+      indistinct, it floats ambiguously.\\nSome struggles are still not cleared away.
+      But accepting this unclear, ugly part of myself feels more like me. An endearing
+      realization. Perhaps being born as a writhing mess of black is also\u2026 Ah,
+      ah, aah. Not yet.\\nI hope dear {nickname}\u2019s Dark was touched by a gentle
+      ripple too\u2014albeit not as a fright."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308360
+    m_Localized: "I think I was looking out the window. It\u2019s hard to recall."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308361
+    m_Localized: "It\u2019s like someone chopped off a block of my time. It\u2019s
+      hard to recall."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308362
+    m_Localized: Clinging to the ring made of time sewn together, an endless dance.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308363
+    m_Localized: Unable to rewind or fast forward, but merely trapped in time.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308364
+    m_Localized: If jellyfish gain hearts they just might sink from the weight.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308365
+    m_Localized: Will {nickname} also know of the secret behind jellyfish hearts?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308366
+    m_Localized: Where do we go to rest when summer is unforgivingly bright?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308367
+    m_Localized: May this summer be kind to my human friend.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308368
+    m_Localized: Thirteenth Day on Earth
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308369
+    m_Localized: "The universe is mean, fickle, and at times cruel. Yet the 'us'
+      within the glass sphere of time gone by is ours alone, something that can never
+      be taken from us. That transparent place will always greet us, unchanged and
+      fond, as we knock with a heart full of longing. Knowing this, fear then subsides
+      into a gentle hum.\\nNow I tenderly trace where we once stood, where farewell
+      will sweep through like a sandstorm. What will shine in the quiet aftermath
+      aren\u2019t just tears. Look closely: it's the golden dust we left behind."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308370
+    m_Localized: "Perhaps it wasn\u2019t a dying message... but a goodbye to Earth."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308371
+    m_Localized: The night sky reminds of the robot who became a star.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308372
+    m_Localized: "I can conjure hands anywhere. So \u2018holding hands with Dot\u2019
+      should be a breeze!"
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308373
+    m_Localized: Discovered two passersby interlinked by their hands. Does it mean
+      something?
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308374
+    m_Localized: "Red\u2014a sun shedding light on his side of the Moon. His warmth
+      remains within me."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308375
+    m_Localized: "Red\u2014a sun shedding light on his side of the Moon. His warmth
+      remains within me."
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308376
+    m_Localized: Sleep well, {nickname}. May dreams soft as a cloud perch on your
+      eyelids.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  - m_Id: 33847308377
+    m_Localized: Sleep well. Even on the roughest of nights will dreams visit to
+      look after you.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230458494025749
+  references:
+    version: 2
+    RefIds:
+    - rid: 1040230458494025749
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 33696313344
+        - id: 33843113984
+        - id: 33843113985
+        - id: 33843113986
+        - id: 33843113987
+        - id: 33843113988
+        - id: 33843113989
+        - id: 33843113990
+        - id: 33843113991
+        - id: 33843113992
+        - id: 33843113993
+        - id: 33843113994
+        - id: 33843113995
+        - id: 33843113996
+        - id: 33843113997
+        - id: 33843113998
+        - id: 33843113999
+        - id: 33843114000
+        - id: 33843114001
+        - id: 33843114002
+        - id: 33843114003
+        - id: 33843114004
+        - id: 33843114005
+        - id: 33843114006
+        - id: 33843114007
+        - id: 33843114008
+        - id: 33843114009
+        - id: 33843114010
+        - id: 33843114011
+        - id: 33843114012
+        - id: 33843114013
+        - id: 33843114014
+        - id: 33843114015
+        - id: 33843114016
+        - id: 33843114017
+        - id: 33843114018
+        - id: 33843114019
+        - id: 33843114020
+        - id: 33843114021
+        - id: 33847308288
+        - id: 33847308289
+        - id: 33847308290
+        - id: 33847308291
+        - id: 33847308292
+        - id: 33847308293
+        - id: 33847308294
+        - id: 33847308295
+        - id: 33847308296
+        - id: 33847308297
+        - id: 33847308298
+        - id: 33847308299
+        - id: 33847308300
+        - id: 33847308301
+        - id: 33847308302
+        - id: 33847308303
+        - id: 33847308304
+        - id: 33847308305
+        - id: 33847308306
+        - id: 33847308307
+        - id: 33847308308
+        - id: 33847308309
+        - id: 33847308310
+        - id: 33847308311
+        - id: 33847308312
+        - id: 33847308313
+        - id: 33847308314
+        - id: 33847308315
+        - id: 33847308316
+        - id: 33847308317
+        - id: 33847308318
+        - id: 33847308319
+        - id: 33847308320
+        - id: 33847308321
+        - id: 33847308322
+        - id: 33847308323
+        - id: 33847308324
+        - id: 33847308325
+        - id: 33847308326
+        - id: 33847308327
+        - id: 33847308328
+        - id: 33847308329
+        - id: 33847308330
+        - id: 33847308331
+        - id: 33847308332
+        - id: 33847308333
+        - id: 33847308334
+        - id: 33847308335
+        - id: 33847308336
+        - id: 33847308337
+        - id: 33847308338
+        - id: 33847308339
+        - id: 33847308340
+        - id: 33847308341
+        - id: 33847308342
+        - id: 33847308343
+        - id: 33847308344
+        - id: 33847308345
+        - id: 33847308346
+        - id: 33847308347
+        - id: 33847308348
+        - id: 33847308349
+        - id: 33847308350
+        - id: 33847308351
+        - id: 33847308352
+        - id: 33847308353
+        - id: 33847308354
+        - id: 33847308355
+        - id: 33847308356
+        - id: 33847308357
+        - id: 33847308358
+        - id: 33847308359
+        - id: 33847308360
+        - id: 33847308361
+        - id: 33847308362
+        - id: 33847308363
+        - id: 33847308364
+        - id: 33847308365
+        - id: 33847308366
+        - id: 33847308367
+        - id: 33847308368
+        - id: 33847308369
+        - id: 33847308370
+        - id: 33847308371
+        - id: 33847308372
+        - id: 33847308373
+        - id: 33847308374
+        - id: 33847308375
+        - id: 33847308376
+        - id: 33847308377

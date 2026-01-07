@@ -500,49 +500,54 @@ MonoBehaviour:
   - m_Id: 22964806309855232
     m_Localized: Write what you think.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827832305795465233
   - m_Id: 25431153644093440
     m_Localized: 'A new object has been
 
       placed in Dot and your room.'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827832305795465233
   - m_Id: 25432610883715072
     m_Localized: Chat with Dot
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827832305795465233
   - m_Id: 25432680089731072
     m_Localized: Dot has <int> more chats to share before moving on.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827832305795465233
   - m_Id: 27661208789139456
     m_Localized: Start of the Day
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827832305795465233
   - m_Id: 29546466912452608
     m_Localized: 'Dot''s day begins at the time you set.
 
       Choose when Dot wakes
       up and goes for a walk.'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827832305795465233
   - m_Id: 30853825756610560
     m_Localized: "Your memories of Dot are a moment in time \nyou can always revisit.
       Return to the beginning?"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827832305795465233
   - m_Id: 30853858484764672
     m_Localized: Yes. Turn back time.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827832305795465233
   - m_Id: 30853875295535104
     m_Localized: No. I'll face the farewell.
     m_Metadata:
-      m_Items: []
-  - m_Id: 34578065316069376
-    m_Localized: Until the darkness settles for good.
-    m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5827832305795465233
   references:
     version: 2
     RefIds:
@@ -637,3 +642,12 @@ MonoBehaviour:
         - id: 11353222051479552
         - id: 11363186975391744
         - id: 11363283670876160
+        - id: 22964806309855232
+        - id: 25431153644093440
+        - id: 25432610883715072
+        - id: 25432680089731072
+        - id: 27661208789139456
+        - id: 29546466912452608
+        - id: 30853825756610560
+        - id: 30853858484764672
+        - id: 30853875295535104

@@ -36,7 +36,6 @@ public class PlayAnswerController : MonoBehaviour
     DotController dot;
     Utility u = Utility.Instance;
     bool waitSleepTap = false;
-    private bool diaryActivatedForTutorial = false;
 
     private void Start()
     {
@@ -54,18 +53,39 @@ public class PlayAnswerController : MonoBehaviour
         noPoemBubble.onClick.AddListener(NoPoemBubbleClicked);
         playDotButton.onClick.AddListener(OnPlayDotClicked);
 
-        //다이어리 처음 활성화
-        if (!diaryActivatedForTutorial && gameManager != null && gameManager.Chapter == 1)
+        // 1일차 다이어리 잠금 해제
+        if (gameManager != null && gameManager.Chapter == 1 && !gameManager.pc.IsDiaryUnlockedForChapter1())
         {
-            DiaryController[] diaries = Resources.FindObjectsOfTypeAll<DiaryController>();
-            if (diaries.Length > 0)
+            Debug.Log($"[PlayAnswerController.OnEnable] 1일차 다이어리 잠금 해제 - Chapter: {gameManager.Chapter}, 현재 잠금 상태: {gameManager.pc.IsDiaryUnlockedForChapter1()}");
+            gameManager.pc.UnlockDiaryForChapter1();
+            Debug.Log($"[PlayAnswerController.OnEnable] 잠금 해제 후 상태: {gameManager.pc.IsDiaryUnlockedForChapter1()}");
+            
+            // 잠금 해제 후 diary 오브젝트 활성화 시도
+            GameObject diaryObj = GameObject.Find("diary");
+            if (diaryObj == null)
             {
-                Debug.Log("튜토리얼 다이어리 활성화");
-                diaries[0].gameObject.SetActive(true);
+                // 다른 이름으로 찾기 시도
+                var diaryController = FindObjectOfType<DiaryController>();
+                if (diaryController != null)
+                {
+                    diaryObj = diaryController.gameObject;
+                }
             }
-            diaryActivatedForTutorial = true;
+            
+            if (diaryObj != null)
+            {
+                Debug.Log($"[PlayAnswerController.OnEnable] Diary 오브젝트 발견 - 현재 활성화 상태: {diaryObj.activeSelf}");
+                if (!diaryObj.activeSelf)
+                {
+                    diaryObj.SetActive(true);
+                    Debug.Log($"[PlayAnswerController.OnEnable] Diary 오브젝트 활성화 완료 - 새 상태: {diaryObj.activeSelf}");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("[PlayAnswerController.OnEnable] Diary 오브젝트를 찾을 수 없음");
+            }
         }
-        
     }
 
     public void EnterPoemQuestion()

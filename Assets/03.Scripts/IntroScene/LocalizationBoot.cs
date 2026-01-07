@@ -17,8 +17,16 @@ public class LocalizationBoot : MonoBehaviour
         if (dontDestroyOnLoad) DontDestroyOnLoad(gameObject);
     }
 
+    private static bool hasInitialized = false;
+
     IEnumerator Start()
     {
+        // 이미 초기화되었으면 스킵
+        if (hasInitialized)
+        {
+            yield break;
+        }
+
         // Localization 시스템 초기화 대기
         var init = LocalizationSettings.InitializationOperation;
         if (!init.IsDone) yield return init;
@@ -46,11 +54,12 @@ public class LocalizationBoot : MonoBehaviour
             PlayerPrefs.SetString(PrefKey, chosen.Identifier.Code);
             PlayerPrefs.Save();
 
-            Debug.Log($"적용 언어: {chosen.Identifier.Code} ({chosen.LocaleName})");
+            hasInitialized = true;
+            Debug.Log($"[LocalizationBoot] 적용 언어: {chosen.Identifier.Code} ({chosen.LocaleName})");
         }
         else
         {
-            Debug.LogWarning("적용 언어 없음");
+            Debug.LogWarning("[LocalizationBoot] 적용 언어 없음");
         }
     }
 
