@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class ObjectPool
 {
-    //¸Ş¸ğ¸® È°¼ºÈ­ ºñÈ°¼ºÈ­¸¦ ÀÇ¹ÌÇÏ´Â ÀÇ¹ÌÇÏ´Â Å¬·¡½º »ı¼º
+    //ë©”ëª¨ë¦¬ í™œì„±í™” ë¹„í™œì„±í™”ë¥¼ ì˜ë¯¸í•˜ëŠ” ì˜ë¯¸í•˜ëŠ” í´ë˜ìŠ¤ ìƒì„±
     public class PoolItem
     {
         public PoolItem() { }
@@ -32,10 +32,10 @@ public class ObjectPool
         }
         else
         {
-            // AssetBundleÀ» ´Ù¿î·ÎµåÇÑ ÈÄ °¡Á®¿À±â
+            // AssetBundleì„ ë‹¤ìš´ë¡œë“œí•œ í›„ ê°€ì ¸ì˜¤ê¸°
             AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(www);
 
-            // Äİ¹é È£Ãâ
+            // ì½œë°± í˜¸ì¶œ
             if (bundle != null)
             {
                 Debug.Log("AssetBundle successfully downloaded and loaded!");
@@ -49,7 +49,7 @@ public class ObjectPool
         }
     }
     
-    //°Ë»ö ±â´É
+    //ê²€ìƒ‰ ê¸°ëŠ¥
     public GameObject SearchMemory(string objectName)
     {
         if (_memory.ContainsKey(objectName))
@@ -57,7 +57,7 @@ public class ObjectPool
             return _memory[objectName]._gameObject;
         }
 
-        return null; //¾øÀ½ 
+        return null; //ì—†ìŒ 
     }
 
     public Dictionary<string, PoolItem> GetMemory()
@@ -80,7 +80,7 @@ public class ObjectPool
     {
         if (_memory.ContainsKey(gameObject.name))
         {
-            return false; //³»¿ë¹°ÀÌ ÀÖ¾î¼­ ½ÇÆĞ
+            return false; //ë‚´ìš©ë¬¼ì´ ìˆì–´ì„œ ì‹¤íŒ¨
         }
 
         _memory.Add(gameObject.name, new PoolItem(gameObject.activeSelf, gameObject));
@@ -103,7 +103,7 @@ public class ObjectPool
             _memory[objectName]._gameObject.SetActive(_memory[objectName]._isActive);
         }
     }
-    //Àç»ç¿ë ¸ğµç µñ¼Å³Ê¸® »èÁ¦ µÉ ¶§
+    //ì¬ì‚¬ìš© ëª¨ë“  ë”•ì…”ë„ˆë¦¬ ì‚­ì œ ë  ë•Œ
     public void DestroyObjects()
     {
         foreach (KeyValuePair<string, PoolItem> item in _memory)

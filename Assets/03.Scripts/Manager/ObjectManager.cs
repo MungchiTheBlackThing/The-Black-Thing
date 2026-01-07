@@ -217,7 +217,22 @@ public class ObjectManager : MonoBehaviour
                     active = active && ch_bread.ShouldBeActive(isCompleted);
                 }
 
+                // 1일차 diary 잠금 해제 예외 처리 (LoadObjectAsync에서도)
+                var diary = newObj.GetComponent<DiaryController>();
+                if (diary != null && chapter == 1)
+                {
+                    bool isUnlocked = pc.IsDiaryUnlockedForChapter1();
+                    Debug.Log($"[ObjectManager.LoadObjectAsync] Diary 발견 - Chapter: {chapter}, IsDiaryUnlockedForChapter1: {isUnlocked}, IsCurrentChapter 결과: {active}");
+                    if (isUnlocked)
+                    {
+                        Debug.Log($"[ObjectManager.LoadObjectAsync] 1일차 diary 잠금 해제됨 - 강제 활성화");
+                        active = true;
+                    }
+                }
+
+                Debug.Log($"[ObjectManager.LoadObjectAsync] {newObj.name} - 최종 active: {active}, SetActive 호출");
                 newObj.SetActive(active);
+                Debug.Log($"[ObjectManager.LoadObjectAsync] {newObj.name} - SetActive 후 상태: {newObj.activeSelf}");
             }
             
             i++;
@@ -308,7 +323,35 @@ public class ObjectManager : MonoBehaviour
                 active = active && ch_bread.ShouldBeActive(isCompleted);
             }
 
+            // 1일차 diary 잠금 해제 예외 처리
+            var diary = value.GetComponent<DiaryController>();
+            if (diary != null)
+            {
+                bool isUnlocked = pc.IsDiaryUnlockedForChapter1();
+                Debug.Log($"[ObjectManager.SettingChapter] Diary 발견 - Chapter: {chapter}, IsDiaryUnlockedForChapter1: {isUnlocked}, IsCurrentChapter 결과: {active}, 현재 활성화 상태: {value.activeSelf}");
+                
+                if (chapter == 1)
+                {
+                    // 1일차이고 이미 잠금 해제된 경우 활성화 상태 유지
+                    if (isUnlocked)
+                    {
+                        Debug.Log($"[ObjectManager.SettingChapter] 1일차 diary 잠금 해제됨 - 강제 활성화");
+                        active = true;
+                    }
+                    else
+                    {
+                        Debug.Log($"[ObjectManager.SettingChapter] 1일차 diary 잠금 상태 - IsCurrentChapter 결과 사용: {active}");
+                    }
+                }
+                else
+                {
+                    Debug.Log($"[ObjectManager.SettingChapter] 1일차가 아님 - IsCurrentChapter 결과 사용: {active}");
+                }
+            }
+
+            Debug.Log($"[ObjectManager.SettingChapter] 최종 active 값: {active}, SetActive 호출 전 상태: {value.activeSelf}");
             value.SetActive(active);
+            Debug.Log($"[ObjectManager.SettingChapter] SetActive({active}) 호출 후 상태: {value.activeSelf}");
         }
     }
 

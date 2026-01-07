@@ -109,11 +109,13 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     void SuccessSubDial(int phase, string subTitle)
     {
-        Debug.Log("SuccessSubDial" + subTitle);
+        Debug.Log($"[SuccessSubDial] phase: {phase}, subTitle: {subTitle}, 현재 subseq: {GetSubseq()}");
         string reward = "reward" + subTitle.Substring(subTitle.IndexOf('_'));
 
         EReward eReward;
 
+        int currentSubseq = GetSubseq();
+        
         if (gamemanger.GetComponent<Alertmanager>() != null)
             gamemanger.GetComponent<Alertmanager>().Alerton();
         //배열 변수에 넣는다.
@@ -121,11 +123,13 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         {
             //플레이어 컨트롤러에 어떤 보상을 받았는지 리스트 추가.
             AddReward(eReward);
-            Debug.Log(eReward);
+            Debug.Log($"[SuccessSubDial] Reward 추가: {eReward}");
             RewardPopup.SetActive(true);
             objectManager.RewardGlow(eReward);
         }
-        SetSubPhase(GetSubseq() - 1);
+        
+        Debug.Log($"[SuccessSubDial] SetSubPhase 호출: subseq={currentSubseq}, phaseIdx={currentSubseq - 1}");
+        SetSubPhase(currentSubseq - 1);
     }
     public void NextPhase()
     {

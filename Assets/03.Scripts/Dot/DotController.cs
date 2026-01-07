@@ -128,6 +128,17 @@ public class DotController : MonoBehaviour
 
     private bool isAfterScriptPlaying = false;
     private bool isSubDialogueAnimPlaying = false;
+    
+    // Diary 열람 제어
+    public bool IsSubDialogueAnimPlaying
+    {
+        get { return isSubDialogueAnimPlaying; }
+    }
+    
+    public bool IsAfterScriptPlaying
+    {
+        get { return isAfterScriptPlaying; }
+    }
     private float _idleAnimationTimer;
     private const float IDLE_ANIMATION_DURATION = 3f; //(단위: 초) 랜덤 재생 애니메이션 재생 시간 제한 (7분) //[DEBUG] 7분 -> 10초
 

@@ -284,8 +284,14 @@ public class SubPanel : MonoBehaviour
         sub.currentDialogueList.Clear();
         dialogueIndex = 0;
 
+        // currentReward가 있고, 실제로 현재 subseq에 대한 reward인지 확인
+        int currentSubseq = pc.GetSubseq();
         if (!string.IsNullOrEmpty(pc.currentReward))
+        {
+            Debug.Log($"[DialEnd] currentReward 발견: {pc.currentReward}, 현재 subseq: {currentSubseq}");
             pc.successSubDialDelegate(pc.GetCurrentPhase(), pc.currentReward);
+            pc.currentReward = "";
+        }
 
         if (pc.GetCurrentPhase() != 5)
             dotcontroller.EndSubScriptList(gameManager.Pattern);

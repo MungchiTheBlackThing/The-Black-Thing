@@ -7,6 +7,7 @@ using TMPro;
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Tables;
 
 public class SubDialogue : MonoBehaviour
 {
@@ -160,6 +161,12 @@ public class SubDialogue : MonoBehaviour
             return;
         }
 
+        // 새로운 subseq 시작 시 이전 reward 초기화
+        if (playerController != null)
+        {
+            playerController.currentReward = "";
+        }
+
         if (dot != null)
         {
             prePos = dot.Position;
@@ -267,11 +274,10 @@ public class SubDialogue : MonoBehaviour
             }
             else
             {
-                string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString(entry.LocTable, entry.LocKey);
+                StringTable stringTable = LocalizationSettings.StringDatabase.GetTable(entry.LocTable);
+                string localizedText = stringTable.GetEntry(entry.LocKey)?.GetLocalizedString();
                 if (!string.IsNullOrEmpty(localizedText))
-                {
-                    return ApplyLineBreaks(localizedText);
-                }
+                    return ApplyLineBreaks(localizedText);  
             }
 
             text = CurrentLanguage == LANGUAGE.KOREAN ? entry.KorText : entry.EngText;
