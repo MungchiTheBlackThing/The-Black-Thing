@@ -241,6 +241,12 @@ public class MenuController : MonoBehaviour
                 MenuDefault.SetActive(false);
                 TimeUI.SetActive(false);
             }
+            else if(PlayerController.currentReward == "sub_mold")
+            {
+                moldOn();
+                checkList.SetActive(true);
+                MenuDefault.SetActive(false);
+            }
             else
             {
                 TimeUI.SetActive(true);
@@ -400,6 +406,11 @@ public class MenuController : MonoBehaviour
     public void tutonum2laterON()
     {
         StartCoroutine(later2());
+    }
+
+    public void testskipoff()
+    {
+        TimeUI.SetActive(false);
     }
 
     public void ApplyEndingOverride()
