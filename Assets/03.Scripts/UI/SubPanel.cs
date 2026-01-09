@@ -290,7 +290,7 @@ public class SubPanel : MonoBehaviour
         {
             Debug.Log($"[DialEnd] currentReward 발견: {pc.currentReward}, 현재 subseq: {currentSubseq}");
             pc.successSubDialDelegate(pc.GetCurrentPhase(), pc.currentReward);
-            pc.currentReward = "";
+            //pc.currentReward = "";
         }
 
         if (pc.GetCurrentPhase() != 5)

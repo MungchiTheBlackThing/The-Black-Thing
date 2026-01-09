@@ -184,8 +184,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public void SetSubPhase(int phaseIdx)
     {
         if (phaseIdx < 0 || phaseIdx >= 4) return;
-        Debug.Log("페이즈 인덱스" + phaseIdx);
-        Debug.Log("이거 체크: " + GetChapter() * 4 + phaseIdx);
+        Debug.Log($"[SetSubPhase] phaseIdx: {phaseIdx}, Chapter: {GetChapter()}, 계산된 인덱스: {(GetChapter() - 1) * 4 + phaseIdx}");
         if (gamemanger.GetComponent<Alertmanager>() != null)
         {
             gamemanger.GetComponent<Alertmanager>().isAlert = true;
@@ -193,6 +192,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         }
 
         player.SetSubPhase(phaseIdx);
+        WritePlayerFile(); // 저장
+        Debug.Log($"[SetSubPhase] 저장 완료, GetSubPhase 결과: {string.Join(", ", player.GetSubPhase(GetChapter()))}");
     }
 
     public List<bool> GetSubPhase(int Chapter)

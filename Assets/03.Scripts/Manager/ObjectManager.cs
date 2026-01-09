@@ -217,22 +217,14 @@ public class ObjectManager : MonoBehaviour
                     active = active && ch_bread.ShouldBeActive(isCompleted);
                 }
 
-                // 1일차 diary 잠금 해제 예외 처리 (LoadObjectAsync에서도)
+                // Diary 활성화 로직 처리
                 var diary = newObj.GetComponent<DiaryController>();
-                if (diary != null && chapter == 1)
+                if (diary != null)
                 {
-                    bool isUnlocked = pc.IsDiaryUnlockedForChapter1();
-                    Debug.Log($"[ObjectManager.LoadObjectAsync] Diary 발견 - Chapter: {chapter}, IsDiaryUnlockedForChapter1: {isUnlocked}, IsCurrentChapter 결과: {active}");
-                    if (isUnlocked)
-                    {
-                        Debug.Log($"[ObjectManager.LoadObjectAsync] 1일차 diary 잠금 해제됨 - 강제 활성화");
-                        active = true;
-                    }
+                    active = ShouldDiaryBeActive(chapter, active, pc);
                 }
 
-                Debug.Log($"[ObjectManager.LoadObjectAsync] {newObj.name} - 최종 active: {active}, SetActive 호출");
                 newObj.SetActive(active);
-                Debug.Log($"[ObjectManager.LoadObjectAsync] {newObj.name} - SetActive 후 상태: {newObj.activeSelf}");
             }
             
             i++;
@@ -303,6 +295,22 @@ public class ObjectManager : MonoBehaviour
         }
     }
 
+    private bool ShouldDiaryBeActive(int chapter, bool baseActive, PlayerController playerController)
+    {
+        // 튜토리얼 씬에서는 항상 비활성화
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            return false;
+        }
+
+        // 1일차이고 잠금 해제되지 않았으면 비활성화
+        if (chapter == 1 && !playerController.IsDiaryUnlockedForChapter1())
+        {
+            return false;
+        }
+        return baseActive;
+    }
+
     //한 챕터를 넘겼을 때 호출되는 함수, 즉 Phase Watching일 때 호출한다. 
     public void SettingChapter(int chapter)
     {
@@ -323,35 +331,14 @@ public class ObjectManager : MonoBehaviour
                 active = active && ch_bread.ShouldBeActive(isCompleted);
             }
 
-            // 1일차 diary 잠금 해제 예외 처리
+            // Diary 활성화 로직 처리
             var diary = value.GetComponent<DiaryController>();
             if (diary != null)
             {
-                bool isUnlocked = pc.IsDiaryUnlockedForChapter1();
-                Debug.Log($"[ObjectManager.SettingChapter] Diary 발견 - Chapter: {chapter}, IsDiaryUnlockedForChapter1: {isUnlocked}, IsCurrentChapter 결과: {active}, 현재 활성화 상태: {value.activeSelf}");
-                
-                if (chapter == 1)
-                {
-                    // 1일차이고 이미 잠금 해제된 경우 활성화 상태 유지
-                    if (isUnlocked)
-                    {
-                        Debug.Log($"[ObjectManager.SettingChapter] 1일차 diary 잠금 해제됨 - 강제 활성화");
-                        active = true;
-                    }
-                    else
-                    {
-                        Debug.Log($"[ObjectManager.SettingChapter] 1일차 diary 잠금 상태 - IsCurrentChapter 결과 사용: {active}");
-                    }
-                }
-                else
-                {
-                    Debug.Log($"[ObjectManager.SettingChapter] 1일차가 아님 - IsCurrentChapter 결과 사용: {active}");
-                }
+                active = ShouldDiaryBeActive(chapter, active, pc);
             }
 
-            Debug.Log($"[ObjectManager.SettingChapter] 최종 active 값: {active}, SetActive 호출 전 상태: {value.activeSelf}");
             value.SetActive(active);
-            Debug.Log($"[ObjectManager.SettingChapter] SetActive({active}) 호출 후 상태: {value.activeSelf}");
         }
     }
 
