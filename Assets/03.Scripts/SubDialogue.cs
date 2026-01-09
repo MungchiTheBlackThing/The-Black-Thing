@@ -164,10 +164,10 @@ public class SubDialogue : MonoBehaviour
         }
 
         // 새로운 subseq 시작 시 이전 reward 초기화
-        if (playerController != null)
-        {
-            playerController.currentReward = "";
-        }
+        //if (playerController != null)
+        //{
+            //playerController.currentReward = "";
+        //}
 
         if (dot != null)
         {
@@ -328,9 +328,21 @@ public class SubDialogue : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name != "Tutorial")
         {
-
-            playerController.MarkSubWatched(playerController.GetSubseq());
-            Debug.Log("이미 본 서브로 저장" + playerController.GetSubseq());
+            int completedSubseq = playerController.GetSubseq();
+            
+            // 서브를 본 것으로 표시
+            playerController.MarkSubWatched(completedSubseq);
+            Debug.Log("이미 본 서브로 저장" + completedSubseq);
+            
+            // SetSubPhase 호출하여 ProgressUI에 반영
+            // phaseIdx는 0-based (0, 1, 2, 3), subseq는 1-based (1, 2, 3, 4)
+            int phaseIdx = completedSubseq - 1;
+            if (phaseIdx >= 0 && phaseIdx < 4)
+            {
+                Debug.Log($"[SubDialogue.Subexit] SetSubPhase 호출: subseq={completedSubseq}, phaseIdx={phaseIdx}");
+                playerController.SetSubPhase(phaseIdx);
+            }
+            
             playerController.plusSubseq();
             if (playerController.GetSubseq() > 4)
                 playerController.SetSubseq(1);

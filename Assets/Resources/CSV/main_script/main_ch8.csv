@@ -92,18 +92,18 @@
 3,44,91,main_door_open,Player,Main,,,selection,원없이 행복할 수 있던 시절이었어.|마냥 행복할 수는 없던 시절이었어.,I was as happy as could be.|I wasn’t always happy.,92|100,,,active|passive,Main_Ch8,M8_L0091
 3,44,92,main_door_open,Player,Main,,,checkbox4,천방지축 함박웃음을 달고 살던 아이였어.|내면의 호수를 가꾸던 아이였어.|꿈과 희망으로 무장된 아이였어.|사랑을 먹고 힘차게 자라던 아이였어.,I had a smile like a peeled banana.|I tended to the lake within me.|I was armed with hopes and dreams.|I fed on love and grew like a beanstalk.,93|93|93|93,,,,Main_Ch8,M8_L0092
 3,44,93,main_door_open,Dot,Main,,,text,"어리거나 힘이 없어서 감당해야만 했던 너만의\n짐, 혹은 자유를 틀어 막던 강박은 없었어?","And was there any weight you had to helplessly\nbear, or force tha you were bound to?",94,,,,Main_Ch8,M8_L0093
-3,44,94,main_door_open,Player,Main,,,selection,"응, 있었지. 또렷하게 기억나.|글쎄… 없었던 것 같아.","Yes, there was. I remember clearly.|Well… No, I don’t think so.",95,,,active|passive,Main_Ch8,M8_L0094
+3,44,94,main_door_open,Player,Main,,,selection,"응, 있었지. 또렷하게 기억나.|글쎄… 없었던 것 같아.","Yes, there was. I remember clearly.|Well… No, I don’t think so.",103|95,,,active|passive,Main_Ch8,M8_L0094
 3,44,95,main_door_open,Dot,Main,,face_eyeroll2,text,그렇구나. 그럼 자라나면서는?,I see. And as you grew older?,96,,,,Main_Ch8,M8_L0095
 3,44,96,main_door_open,Dot,Main,,face_blink,text,<nickname>은 언제나 행복하고\n자유로운 인간이었던 거야?,"Were you always happy\nand free, <nickname>?",97,,,,Main_Ch8,M8_L0096
-3,44,97,main_door_open,Player,Main,,,selection,"응, 나는 인간의 몸을 한 자유로운 새야.|자라나며 억압의 무게도 자라났어.","Yes, I’m a free bird in a human’s body.|My chains grew with me.",98,,,active|passive,Main_Ch8,M8_L0097
+3,44,97,main_door_open,Player,Main,,,selection,"응, 나는 인간의 몸을 한 자유로운 새야.|자라나며 억압의 무게도 자라났어.","Yes, I’m a free bird in a human’s body.|My chains grew with me.",98|106,,,active|passive,Main_Ch8,M8_L0097
 3,44,98,main_door_open,Dot,Main,,,text,그렇구나. 아쉽게도 이번에는\n나에게 도움이 되지 못할 것 같아...,I see. I’m sorry to say you won’t\nbe of much help to me this time...,99,,,,Main_Ch8,M8_L0098
-3,44,99,main_door_open,Player,Main,,face_blink,selection,사실... 떠오르는 게 있어. 말하기 어색하지만.|일단 이야기해 볼래? 무슨 일인데?,Well... there was something. I don’t like talking about it.|Won’t you tell me what’s going on first?,100|113,,,passive|active,Main_Ch8,M8_L0099
+3,44,99,main_door_open,Player,Main,,face_blink,selection,사실... 떠오르는 게 있어. 말하기 어색하지만.|일단 이야기해 볼래? 무슨 일인데?,Well... there was something. I don’t like talking about it.|Won’t you tell me what’s going on first?,106|113,,,passive|active,Main_Ch8,M8_L0099
 3,44,100,main_door_open,Player,Main,,,selection4,불안해도 안길 곳 없는 아이였어.|무심하고 세상이 지루한 아이였어.|눈물을 위한 여유조차 없던 아이였어.|숨을 곳을 찾아 헤매이던 아이였어.,I had no arms to run into.|I found the world uninteresting.|I had little time for tears.|I always needed a place to hide.,101|101|101|101,,,,Main_Ch8,M8_L0100
 3,44,101,main_door_open,Dot,Main,,,text,"어리거나 힘이 없어서 감당해야만 했던 너만의\n짐, 혹은 자유를 틀어 막던 강박도 있었어?","And was there any weight you had to helplessly\nbear, or force that bound your freedom?",102,,,,Main_Ch8,M8_L0101
 3,44,102,main_door_open,Player,Main,,,selection,"응, 있었지. 또렷하게 기억나.|글쎄… 없었던 것 같아.","Yes, there was. I remember clearly.|Well… No, I don’t think so.",103|104,,,active|passive,Main_Ch8,M8_L0102
 3,44,103,main_door_open,Player,Main,,,textbox,"나를 억누르거나 옭아매던 것은,","What repressed and bound\nme as a child was,",107,,,,Main_Ch8,M8_L0103
 3,44,104,main_door_open,Dot,Main,,,text,그렇구나. 그럼 자라나면서는?,I see. And as you grew older?,105,,,,Main_Ch8,M8_L0104
-3,44,105,main_door_open,Player,Main,,,selection,자라나며 억압의 무게도 자라났어.|역시 떠오르는 건 없는데... 왜?,It became heavier.|Nothing comes to mind... why?,106|107,,,,Main_Ch8,M8_L0105
+3,44,105,main_door_open,Player,Main,,,selection,자라나며 억압의 무게도 자라났어.|역시 떠오르는 건 없는데... 왜?,It became heavier.|Nothing comes to mind... why?,106|113,,,,Main_Ch8,M8_L0105
 3,44,106,main_door_open,Player,Main,,face_blink,textbox,"나를 억누르거나 옭아매게 된 것은,","What repressed and bound\nme later in life was,",107,,,,Main_Ch8,M8_L0106
 3,44,107,main_door_open,Dot,Main,,face_blink,text,<nickname>의 고통이 시간이 지나며 완화되었거나,"When your pain eased\nas time passed,",108,,,,Main_Ch8,M8_L0107
 3,44,108,main_door_open,Dot,Main,,face_blink,text,"작은 턱을 가진 <nickname>, 네가\n큰 턱을 가지게 되었을 때,","or when your jaw grew with you,",109,,,,Main_Ch8,M8_L0108
@@ -111,18 +111,18 @@
 3,44,110,main_door_open,Dot,Main,,face_blink,selection,"응, 전보다는 강해졌음을 느껴.|아직까지는 처절하게 저작 운동 중인 것 같아.",Yes. I know I’m stronger.|I’m still struggling with mastication.,111|120,,,passive|active,Main_Ch8,M8_L0110
 3,44,111,main_door_open,Player,Main,,face_blink,text,어릴 때의 갑갑한 악몽들은,"Well, the nightmares I had as a\nchild no longer tormented me ",112,,,,Main_Ch8,M8_L0111
 3,44,112,main_door_open,Player,Main,,face_blink,text,"자라나며 내 환경이 변화거나, 내가 성숙해진\n덕분에 더 이상 나를 괴롭히지 못하게 됐어.","because my circumstances\nchanged, or I grew out of them.",123,,,,Main_Ch8,M8_L0112
-3,44,113,main_door_open,Dot,Main,,,text,<nickname>의 고민들이 시간이 지나며 완화되었거나,"When your pain eased\nas time passed,",114,,,,,M8_L0113
-3,44,114,main_door_open,Dot,Main,,,text,"작은 턱을 가진 <nickname>, 네가\n큰 턱을 가지게 되었을 때,","or when your jaw grew with you,",115,,,,,M8_L0114
-3,44,115,main_door_open,Dot,Main,,,text,너를 고단하게 하던 것들을 더욱 원활히\n소화할 수 있게 되었는지 궁금해.,I want to know if you were more capable\nof digesting what used to chain you.,116,,,,,M8_L0115
+3,44,113,main_door_open,Dot,Main,,,text,<nickname>의 고민들이 시간이 지나며 완화되었거나,"When your pain eased\nas time passed,",114,,,,Main_Ch8,M8_L0113
+3,44,114,main_door_open,Dot,Main,,,text,"작은 턱을 가진 <nickname>, 네가\n큰 턱을 가지게 되었을 때,","or when your jaw grew with you,",115,,,,Main_Ch8,M8_L0114
+3,44,115,main_door_open,Dot,Main,,,text,너를 고단하게 하던 것들을 더욱 원활히\n소화할 수 있게 되었는지 궁금해.,I want to know if you were more capable\nof digesting what used to chain you.,116,,,,Main_Ch8,M8_L0115
 3,44,116,main_door_open,Player,Main,,face_blink,text,"음, 어릴 때의 크고 작은 고민들은","Well, the worries I had as a child",117,,,,Main_Ch8,M8_L0116
 3,44,117,main_door_open,Player,Main,,face_blink,text,"자라나며 내 환경이 변화거나, 내가 성숙해진\n덕분에 더 이상 고민이 아니게 되었었어.","no longer tormented me because my\ncircumstances changed, or I grew out of them.",118,,,,Main_Ch8,M8_L0117
 3,44,118,main_door_open,Player,Main,,face_blink,textbox,"가령,","For example,",124,,,,Main_Ch8,M8_L0118
 3,44,119,main_door_open,Dot,Main,,face_eyeroll3,text,그렇구나... 내가 힘이 될 수 있다면 좋을 텐데.,I see... I wish I could help.,121,,,,Main_Ch8,M8_L0119
 3,44,120,main_door_open,Dot,Main,,face_blink,text,하지만 살아 있다는 건 곧 견디고 있다는 거니까.,But to live is to endure.,122,,,,Main_Ch8,M8_L0120
-3,44,121,main_door_open,Dot,Main,,face_close_turn,text,"네가 살아 있는 한, 너는 호흡하듯 씹는 연습을 할 테고,","As long as you’re alive, you’ll learn\nto chew as well as you breathe,",123,,,,Main_Ch8,M8_L0121
+3,44,121,main_door_open,Dot,Main,,face_close_turn,text,"네가 살아 있는 한, 너는 호흡하듯 씹는 연습을 할 테고,","As long as you’re alive, you’ll learn\nto chew as well as you breathe,",122,,,,Main_Ch8,M8_L0121
 3,44,122,main_door_open,Dot,Main,,face_open,text,언젠가는 모서리부터 차차\n소화해 낼 힘이 생기리라 믿어.,"and someday you’ll find it in you to\ndigest things, starting with their corners.",123,,,,Main_Ch8,M8_L0122
-3,44,123,main_door_open,Dot,Main,,face_blink,text,"아, 음. 그렇다면 두 번째 질문이 있어. 그때의\n경험이 너에게 어떠한... 흔적을 남기기도 했어?","Oh, I see. Here’s a follow-up question.\nHave those experiences left an imprint on you?",128,,,,Main_Ch8,M8_L0123
-3,44,124,main_door_open,Dot,Main,,face_blink,text,"아, 음... 음. 그렇다면 두 번째 질문이 있어. 그때의\n경험 때문에 지금의 네가 변화되기도 했어?","Oh, well... Well. Here’s a follow-up question.\nHave those experiences ever changed you now?",125,,,,Main_Ch8,M8_L0124
+3,44,123,main_door_open,Dot,Main,,face_blink,text,"그럼... 이제 두 번째 질문을 해 보고 싶어. 그때의\n경험이 너에게 어떠한... 흔적을 남기기도 했어?","Now... here’s a follow-up question.\nHave those experiences left an imprint on you?",128,,,,Main_Ch8,M8_L0123
+3,44,124,main_door_open,Dot,Main,,face_blink,text,"그랬구나... 그렇다면 두 번째 질문이 있어. 그때의\n경험 때문에 지금의 네가 변화되기도 했어?","Oh, well... I see. Here’s a follow-up question.\nHave those experiences ever changed you now?",125,,,,Main_Ch8,M8_L0124
 3,44,125,main_door_open,Player,Main,,face_blink,text,"응, 원치 않게 나의 일부에 뿌리 내린 습관들도 있지만","Yes, and some of them have\nlain roots in me as habits,",126,,,,Main_Ch8,M8_L0125
 3,44,126,main_door_open,Player,Main,body_move,face_blink,text,그것들 역시 결국은 나의\n고유한 특성으로 새겨지더라고.,but they all ended up\nas my own unique traits.,127,,,,Main_Ch8,M8_L0126
 3,44,127,main_door_open,Player,Main,body_default1,face_blink,text,"뭐... 역시, 원한 적이 있든 없든 간에 말이야.",Albeit... some more\nwelcome than others.,131,,,,Main_Ch8,M8_L0127

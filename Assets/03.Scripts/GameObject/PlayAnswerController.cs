@@ -58,13 +58,10 @@ public class PlayAnswerController : MonoBehaviour
         {
             Debug.Log($"[PlayAnswerController.OnEnable] 1일차 다이어리 잠금 해제 - Chapter: {gameManager.Chapter}, 현재 잠금 상태: {gameManager.pc.IsDiaryUnlockedForChapter1()}");
             gameManager.pc.UnlockDiaryForChapter1();
-            Debug.Log($"[PlayAnswerController.OnEnable] 잠금 해제 후 상태: {gameManager.pc.IsDiaryUnlockedForChapter1()}");
             
-            // 잠금 해제 후 diary 오브젝트 활성화 시도
             GameObject diaryObj = GameObject.Find("diary");
             if (diaryObj == null)
             {
-                // 다른 이름으로 찾기 시도
                 var diaryController = FindObjectOfType<DiaryController>();
                 if (diaryController != null)
                 {

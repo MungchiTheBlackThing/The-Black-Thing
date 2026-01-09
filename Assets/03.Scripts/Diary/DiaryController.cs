@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using UnityEngine.Localization.Tables;
+using UnityEngine.SceneManagement;
 
 public class DiaryController : BaseObject, ISleepingInterface
 {
@@ -30,42 +31,21 @@ public class DiaryController : BaseObject, ISleepingInterface
 
     void Start()
     {
-        //Debug.Log($"[DiaryController.Start] 시작 - GameObject: {gameObject.name}, 현재 활성화 상태: {gameObject.activeSelf}");
         Init();
 
-        int currentChapter = playerController.GetChapter();
-        bool isUnlocked = playerController.IsDiaryUnlockedForChapter1();
-        //Debug.Log($"[DiaryController.Start] Chapter: {currentChapter}, IsDiaryUnlockedForChapter1: {isUnlocked}, 현재 활성화 상태: {gameObject.activeSelf}");
-
-        // 1챕터이고, 다이어리가 아직 잠금 해제되지 않았을 때만 비활성화
-        // 이미 잠금 해제된 경우에는 활성화 상태 유지 (게임 재시작 시에도 유지)
-        if (currentChapter == 1)
+        // 튜토리얼 씬에서는 항상 비활성화
+        if (SceneManager.GetActiveScene().name == "Tutorial")
         {
-            if (!isUnlocked)
-            {
-                //Debug.Log($"[DiaryController.Start] 1일차 다이어리 잠금 상태 - 비활성화");
-                gameObject.SetActive(false);
-                //Debug.Log($"[DiaryController.Start] 비활성화 후 상태: {gameObject.activeSelf}");
-                return;
-            }
-            else
-            {
-                //Debug.Log($"[DiaryController.Start] 1일차 다이어리 이미 잠금 해제됨 - 활성화 확인");
-                if (!gameObject.activeSelf)
-                {
-                    //Debug.Log($"[DiaryController.Start] 비활성화 상태 감지 - 활성화 시도");
-                    gameObject.SetActive(true);
-                    //Debug.Log($"[DiaryController.Start] 활성화 후 상태: {gameObject.activeSelf}");
-                }
-                else
-                {
-                    //Debug.Log($"[DiaryController.Start] 이미 활성화 상태 유지");
-                }
-            }
+            gameObject.SetActive(false);
+            return;
         }
-        else
+
+        // 1일차이고 잠금 해제되지 않았으면 비활성화
+        int currentChapter = playerController.GetChapter();
+        if (currentChapter == 1 && !playerController.IsDiaryUnlockedForChapter1())
         {
-            //Debug.Log($"[DiaryController.Start] 1일차가 아님 (Chapter: {currentChapter}) - 정상 처리 계속");
+            gameObject.SetActive(false);
+            return;
         }
 
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
