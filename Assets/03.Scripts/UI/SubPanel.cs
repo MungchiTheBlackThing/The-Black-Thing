@@ -523,7 +523,7 @@ public class SubPanel : MonoBehaviour
         // 단일 버튼(넘김 버튼)만 페이드할 때는 button 전달
         var btn = subClick ? subClick.GetComponent<Button>() : null;
         //[DEBUG] 0.5f -> 0.01f
-        StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.01f, btn));
+        StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.5f, btn));
         if (btn) RegisterNextButton(btn);
     }
 
@@ -538,7 +538,7 @@ public class SubPanel : MonoBehaviour
             btn = selectedDot.transform.GetChild(0).GetChild(1).GetComponent<Button>();
         }
         //[DEBUG] 0.5f -> 0.01f
-        StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.01f, btn));
+        StartCoroutine(FadeIn(selectedDot.GetComponent<CanvasGroup>(), 0.5f, btn));
         if (btn) RegisterNextButton(btn);
     }
 
