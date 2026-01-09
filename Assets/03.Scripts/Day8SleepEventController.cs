@@ -617,7 +617,6 @@ public class Day8SleepEventController : MonoBehaviour
         RestoreBgm();
         InputGuard.WorldInputLocked = false;
 
-        // ✅ 타이머 복구 (Day8가 멈췄을 때 게임이 스턱되는 것 방지)
         if (gm != null)
             gm.RestartSleepingTimer();
 
