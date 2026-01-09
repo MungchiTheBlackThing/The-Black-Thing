@@ -285,6 +285,17 @@ public class GameManager : MonoBehaviour
         Debug.Log("스테이트 변경: " + patternState);
         activeState.Enter(this, dot);
 
+        // 1일차 시 페이즈로 처음 진입할 때 다이어리 활성화
+        if (patternState == GamePatternState.Play && Chapter == 1 && !pc.IsDiaryUnlockedForChapter1())
+        {
+            Debug.Log($"[GameManager.ChangeGameState] 1일차 Writing 페이즈 진입 - 다이어리 잠금 해제 및 활성화");
+            pc.UnlockDiaryForChapter1();
+            if (ObjectManager != null)
+            {
+                ObjectManager.SettingChapter(Chapter);
+            }
+        }
+
         // Day8: Sleeping 진입에서만 이벤트 실행
         if (patternState == GamePatternState.Sleeping
             && Chapter == 8

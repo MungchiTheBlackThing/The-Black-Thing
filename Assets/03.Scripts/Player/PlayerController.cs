@@ -543,11 +543,9 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     /// 1일차 다이어리 잠금 해제
     public void UnlockDiaryForChapter1()
     {
-        if (!player.diaryUnlockedInChapter1)
-        {
-            player.diaryUnlockedInChapter1 = true;
-            WritePlayerFile();
-        }
+        player.diaryUnlockedInChapter1 = true;
+        WritePlayerFile();
+        
     }
 
     public bool IsDiaryUnlockedForChapter1()
