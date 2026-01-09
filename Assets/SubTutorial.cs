@@ -228,6 +228,7 @@ public class SubTutorial : MonoBehaviour
                 Subicon.transform.SetParent(preparent.transform);
                 Subicon.transform.SetSiblingIndex(3);
                 ScreenShield.Off();
+                SubDialogue.isSubmoldtutoend = true;
                 InputGuard.WorldInputLocked = false; 
                 this.gameObject.SetActive(false);
                 return;

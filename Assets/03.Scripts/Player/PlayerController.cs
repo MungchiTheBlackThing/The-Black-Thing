@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
     public void ProgressSubDial(string title)
     {
+        Debug.Log("보상 확인");
         currentReward = title;
     }
 

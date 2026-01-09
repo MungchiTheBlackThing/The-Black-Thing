@@ -194,6 +194,7 @@ public class UITutorial : MonoBehaviour
                 Guideline[index].SetActive(true);
             }
             Debug.Log(index);
+            MenuController.testskipoff();
         }
     }
     public void OnDisable()

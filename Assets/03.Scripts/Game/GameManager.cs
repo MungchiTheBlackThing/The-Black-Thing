@@ -568,16 +568,14 @@ public class GameManager : MonoBehaviour
 
         Debug.Log($"SubDialog 진입 - Phase: {Pattern}, Subseq: {pc.GetSubseq()}");
 
-        // 각 이벤트에 대한 고유 키를 사용하여 타이머가 겹치지 않도록
         string timestampKey = "PendingEventTimestamp_" + Chapter + "_" + Pattern.ToString() + "_" + pc.GetSubseq();
         string timestampStr = PlayerPrefs.GetString(timestampKey, "");
         DateTime triggerTime;
 
         if (string.IsNullOrEmpty(timestampStr))
         {
-            // 타이머가 존재하지 않으면 새로 설정
-            dot.TriggerSub(false); // 새 타이머 시작 시에만 알림을 끈다.
-            float delay = script.Delay * 0.5f;  //[DEBUG] 서브 타이머 단축 script.Delay * 60f -> script.Delay * 0.5f
+            dot.TriggerSub(false);
+            float delay = script.Delay * 0.5f;
             triggerTime = DateTime.Now.AddSeconds(delay);
             PlayerPrefs.SetString(timestampKey, triggerTime.ToBinary().ToString());
             PlayerPrefs.Save();
@@ -585,29 +583,31 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //타이머가 존재하면 
             triggerTime = DateTime.FromBinary(Convert.ToInt64(timestampStr));
             Debug.Log($"[로드] 이벤트 트리거 시간 로드: {triggerTime}");
         }
 
-        // 타이머가 아직 끝나지 않았으면 남은 시간 동안 대기
-        if (DateTime.Now < triggerTime)
+        while (true)
         {
-            while (DateTime.Now < triggerTime)
+            if (isSkipping)
             {
-                if (isSkipping) {
-                    PlayerPrefs.DeleteKey(timestampKey); // 스킵 시 타이머 정보 삭제
-                    PlayerPrefs.Save();
-                    yield break;
-                }
-                yield return null;
+                PlayerPrefs.DeleteKey(timestampKey);
+                PlayerPrefs.Save();
+                yield break;
             }
+
+            bool timeDone = DateTime.Now >= triggerTime;
+            bool tutoDone = SubDialogue.isSubmoldtutoend;
+
+            if (timeDone && tutoDone)
+            {
+                break;
+            }
+
+            yield return null;
         }
 
         if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
-
-        //PlayerPrefs.DeleteKey(timestampKey); 
-        //PlayerPrefs.Save(); 
 
         if (!isSkipping)
         {
@@ -617,10 +617,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     protected IEnumerator PhaseTimer()
     {
         float duration = GetPhaseDuration(currentPattern);
-        // duration이 0 이하라면(MainA, MainB 등 멈춰야 하는 구간) 타이머를 돌리지 않고 코루틴 종료
+
         if (duration <= 0)
         {
             if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
@@ -634,6 +635,13 @@ public class GameManager : MonoBehaviour
         {
             long binaryTime = Convert.ToInt64(PlayerPrefs.GetString(currentPhaseTimerKey));
             endTime = DateTime.FromBinary(binaryTime);
+
+            if (endTime <= DateTime.Now)
+            {
+                endTime = DateTime.Now.AddSeconds(duration);
+                PlayerPrefs.SetString(currentPhaseTimerKey, endTime.ToBinary().ToString());
+                PlayerPrefs.Save();
+            }
         }
         else
         {
@@ -652,9 +660,10 @@ public class GameManager : MonoBehaviour
         }
 
         if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
-        
+        Debug.Log("시간떔에 다음 페이즈 넘어감");
         NextPhase();
     }
+
 
     public void PausePhaseTimer()
     {

@@ -38,6 +38,8 @@ public class SubDialogue : MonoBehaviour
     private float prePos;
     private string preanimkey;
 
+    public static bool isSubmoldtutoend = true;
+
     static readonly Dictionary<float, float> CameraXByDotPos = new Dictionary<float, float>
     {
         { 0f,  -2.6f },
@@ -348,6 +350,7 @@ public class SubDialogue : MonoBehaviour
 
         if (playerController.GetSubseq() == 2 && manager.Chapter == 1)
         {
+            isSubmoldtutoend = false;
             menuController.onlyskipoff();
             subTutorial.gameObject.SetActive(true);
         }
