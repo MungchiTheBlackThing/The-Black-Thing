@@ -509,16 +509,13 @@ public class GameManager : MonoBehaviour
         if (menuCtrl != null)
             menuCtrl.ApplyEndingOverride();
 
-        // 4) 유서 전(pre)이라면: 유서 화면은 "현재 화면"이므로 복원해줘야 함
-        if (!DeathNoteClick.readDeathnote)
-        {
-            // 중복 생성 방지 
-            if (GameObject.Find("deathnote") == null) 
+        
+        if (GameObject.Find("deathnote") == null) 
             {
                 GameObject deathnote = Instantiate(Resources.Load<GameObject>(((SITime)GetSITime) + "/deathnote"));
                 deathnote.name = "deathnote"; // Find용
             }
-        }
+        
     }
     IEnumerator TrackObjectLoadProgress(string path, int chapter, float weight)
     {
