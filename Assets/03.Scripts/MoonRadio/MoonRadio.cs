@@ -34,6 +34,8 @@ public class MoonRadio : MonoBehaviour
     [SerializeField]
     string checktext = "작동하지 않는다.\n송신기가 고장난 듯하다.";
 
+    [SerializeField] private GameObject light_moonradio;
+
 
     private void Start()
     {
@@ -77,14 +79,17 @@ public class MoonRadio : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        // ✅ 엔딩이면 알럿은 예외로 허용(유서 후에만 허용하고 싶으면 조건 바꿔)
-        if (InputGuard.BlockWorldInput() && !(GameManager.isend && DeathNoteClick.readDeathnote))
+        Debug.Log("[MoonRadio] OnMouseDown CALLED");
+        Debug.Log($"[MoonRadio] isend={GameManager.isend}, alertNull={alert==null}, textNull={text==null}");
+
+        // 엔딩이면 알럿은 예외로 허용
+        if (InputGuard.BlockWorldInput() && !GameManager.isend)
             return;
 
         RecentData data = RecentManager.Load();
         if (!data.tutoend) return;
 
-        // ✅ 엔딩이면 밤/낮 무관하게 무조건 checktext 알럿만
+        // 엔딩이면 밤/낮 무관하게 무조건 checktext 알럿만
         if (GameManager.isend)
         {
             OpenAlert();
@@ -92,7 +97,7 @@ public class MoonRadio : MonoBehaviour
         }
 
         // (이하 기존 로직)
-        if (alert != null)
+        if (alert != null && alert.activeSelf)
         {
             OpenAlert();
             return;
@@ -109,12 +114,19 @@ public class MoonRadio : MonoBehaviour
         Debug.Log("문라디오 클릭");
     }
 
+    private bool _endingApplied;
+
     private void Update()
     {
-        if (GameManager.isend && blinkMoonRadioAnim != null)
+        if (GameManager.isend && !_endingApplied)
         {
-            blinkMoonRadioAnim.enabled = false;
+            ApplyEndingMoonRadioLock();
+            _endingApplied = true;
         }
+
+        if (GameManager.isend) return;
+
+        // 기존 밤/낮 로직
     }
 
     public void OpenAlert()
@@ -154,5 +166,28 @@ public class MoonRadio : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         alert.SetActive(false);
+    }
+
+    public void ApplyEndingMoonRadioLock()
+    {
+        // 깜빡이 애니메이션 완전 정지
+        if (blinkMoonRadioAnim != null)
+        {
+            blinkMoonRadioAnim.enabled = false;      // Animator 자체 OFF (가장 확실)
+        }
+
+        if (light_moonradio != null)
+        {
+            var r = light_moonradio.GetComponentInChildren<Renderer>(true);
+            if (r != null) r.enabled = false;
+
+            var sr = light_moonradio.GetComponentInChildren<SpriteRenderer>(true);
+            if (sr != null) sr.enabled = false;
+        }
+
+        // 3) 송신기 UI/클릭도 막기
+        if (moonRadioController != null)
+            moonRadioController.SetActive(false);
+
     }
 }

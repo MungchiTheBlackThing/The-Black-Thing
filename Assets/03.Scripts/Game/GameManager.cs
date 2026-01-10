@@ -505,16 +505,18 @@ public class GameManager : MonoBehaviour
         if (dot != null) dot.gameObject.SetActive(false);
 
         // 3) UI 오버라이드
-        var menuCtrl = GameObject.Find("Menu")?.GetComponent<MenuController>();
-        if (menuCtrl != null)
-            menuCtrl.ApplyEndingOverride();
+        var menu = GameObject.Find("Menu")?.GetComponent<MenuController>();
+        if (menu != null)
+            menu.ApplyEndingOverride();
 
         
         if (GameObject.Find("deathnote") == null) 
             {
                 GameObject deathnote = Instantiate(Resources.Load<GameObject>(((SITime)GetSITime) + "/deathnote"));
-                deathnote.name = "deathnote"; // Find용
+                deathnote.name = "deathnote"; 
             }
+        var moonRadio = FindObjectOfType<MoonRadio>(true);
+        if (moonRadio != null) moonRadio.ApplyEndingMoonRadioLock();
         
     }
     IEnumerator TrackObjectLoadProgress(string path, int chapter, float weight)
@@ -861,6 +863,9 @@ public class GameManager : MonoBehaviour
         {
             door.SetDoorForDialogue(true);
         }
+        var moonRadio = FindObjectOfType<MoonRadio>(true);
+        if (moonRadio != null)
+            moonRadio.ApplyEndingMoonRadioLock();
     }
     private void OnDestroy()
     {
