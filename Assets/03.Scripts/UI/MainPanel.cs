@@ -300,6 +300,7 @@ public class MainPanel : MonoBehaviour
             mainDialogue.CleanupAtEnding();
             foreach (var door in FindObjectsOfType<DoorController>())
                 door.SetDoorForDialogue(true);
+            Debug.Log("[MainPanel] Calling gameManager.Ending()");
             gameManager.Ending();
         }
         else

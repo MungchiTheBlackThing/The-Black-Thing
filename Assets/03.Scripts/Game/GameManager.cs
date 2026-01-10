@@ -462,6 +462,13 @@ public class GameManager : MonoBehaviour
         //GamePatternState patternState = (GamePatternState)pc.GetAlreadyEndedPhase();
         GamePatternState patternState = (GamePatternState)pc.GetCurrentPhase();
         currentPattern = patternState;
+
+        var info = pc.GetPlayerInfo();
+        if (info != null && info.endingReached)
+        {
+            RestoreEndingFromSave(info);
+            yield break; // 엔딩이면 여기서 끝. 아래 Enter/Timer/Sub 절대 돌리면 안 됨!!
+        }
         Debug.Log($"초기 스테이트 설정: {patternState}");
         activeState = states[patternState];
         activeState.Enter(this, dot);
@@ -485,6 +492,32 @@ public class GameManager : MonoBehaviour
         if (door != null)
         {
             door.SetDoorForDialogue(true);
+        }
+    }
+
+    private void RestoreEndingFromSave(PlayerInfo info)
+    {
+        // 1) 플래그 동기화
+        GameManager.isend = true;
+        DeathNoteClick.readDeathnote = (info.deathnoteState == 1);
+
+        // 2) 엔딩에선 뭉치 숨김
+        if (dot != null) dot.gameObject.SetActive(false);
+
+        // 3) UI 오버라이드
+        var menuCtrl = GameObject.Find("Menu")?.GetComponent<MenuController>();
+        if (menuCtrl != null)
+            menuCtrl.ApplyEndingOverride();
+
+        // 4) 유서 전(pre)이라면: 유서 화면은 "현재 화면"이므로 복원해줘야 함
+        if (!DeathNoteClick.readDeathnote)
+        {
+            // 중복 생성 방지 
+            if (GameObject.Find("deathnote") == null) 
+            {
+                GameObject deathnote = Instantiate(Resources.Load<GameObject>(((SITime)GetSITime) + "/deathnote"));
+                deathnote.name = "deathnote"; // Find용
+            }
         }
     }
     IEnumerator TrackObjectLoadProgress(string path, int chapter, float weight)
@@ -811,6 +844,12 @@ public class GameManager : MonoBehaviour
     public void Ending()
     {
         GameManager.isend = true;
+        if (pc != null)
+        {
+            var info = pc.GetPlayerInfo();
+            info.endingReached = true;
+            pc.SavePlayerInfo();
+        }
         if (!endingInitialized)
         {
             DeathNoteClick.readDeathnote = false;

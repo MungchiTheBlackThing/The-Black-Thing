@@ -49,22 +49,27 @@ public class SunDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 	private string highTextsen = "and relaxed in it, picturing the dark side of the moon."; //<multiple(2)>
 	private string lowTextsen = "and fell into step with me, humming melodies from bygone days."; //<multiple(2)>
 
+
 	void OnEnable()
-	{
-		playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
-		pageCount = pagesContainer.childCount - 1; // �������� �� ���� (-1�� �ݱ� ��ư�� �����ϱ� ����)
-		LANGUAGE = playerController.GetLanguage();
+    {
+        playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
+        pageCount = pagesContainer.childCount - 1; 
+        LANGUAGE = playerController.GetLanguage();
 
-		// �ʱ�ȭ: ù ��° �������� Ȱ��ȭ�ϰ�, �������� ��Ȱ��ȭ
-		for (int i = 0; i < pageCount; i++)
-		{
-			pagesContainer.GetChild(i).gameObject.SetActive(i == 0);
-		}
+        // 초기화: 첫 페이지만 켜기
+        for (int i = 0; i < pageCount; i++)
+        {
+            pagesContainer.GetChild(i).gameObject.SetActive(i == 0);
+        }
 
-		UpdateAllText();
-		// 두 번째(이후) 읽기면 X(닫기) 버튼을 즉시 보여주기
-		pagesContainer.GetChild(pageCount).gameObject.SetActive(DeathNoteClick.readDeathnote);
-	}
+        UpdateAllText();
+
+        // 저장된 유서 읽음 상태를 런타임 플래그에 동기화
+        DeathNoteClick.readDeathnote = (playerController.GetPlayerInfo().deathnoteState == 1);
+
+        // 두 번째(이후) 읽기면 X(닫기) 버튼을 즉시 보여주기
+        pagesContainer.GetChild(pageCount).gameObject.SetActive(DeathNoteClick.readDeathnote);
+    }
 
 	private void UpdateAllText()
 	{

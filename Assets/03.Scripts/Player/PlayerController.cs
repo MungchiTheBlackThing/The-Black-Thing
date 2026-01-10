@@ -147,8 +147,10 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         int phase = GetCurrentPhase();
         if (phase == (int)GamePatternState.MainB && player.chapter == 14)
         {
-            Debug.Log("Ending");
-            if (GameManager.isend) return;   // 이미 엔딩이면 중복 실행 방지
+            if (player.endingReached) return; // 이미 엔딩 봤으면 아무 것도 안 함(또는 엔딩 UI로 라우팅)
+            player.endingReached = true;
+            WritePlayerFile();
+
             gamemanger.GetComponent<GameManager>().Ending();
             return;
         }
@@ -439,6 +441,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void WritePlayerFile()
     {
+        if (GameManager.isend) player.endingReached = true;
         //PlayerInfo 클래스 내에 플레이어 정보를 Json 형태로 포멧팅 된 문자열 생성
         //만약 player nextchapter라면, 변경
         player.currentPhase = player.currentPhase == GamePatternState.NextChapter ? GamePatternState.Watching : player.currentPhase;
