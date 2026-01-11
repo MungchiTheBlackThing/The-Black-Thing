@@ -46,9 +46,10 @@ MonoBehaviour:
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 159a3ebbccb80c9468a7daad6af8e150
-    m_Address: Assets/Resources/Localization/Tables/DAY8EVENT1_ko-KR.asset
+    m_Address: DAY8EVENT1_ko-KR
     m_ReadOnly: 1
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Locale-ko-KR
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1c5377b8fe78d144481c6683a1c260c4
     m_Address: SrcDay7_ko-KR
