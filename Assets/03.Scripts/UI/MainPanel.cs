@@ -39,6 +39,8 @@ public class MainPanel : MonoBehaviour
 
     [SerializeField] int backindex = -1;
     [SerializeField] string backtag = "";
+    int backChoiceIndex = -1;       // 선택지 있던 라인(1)
+    int backBranchStartIndex = -1;  // 내가 선택해서 들어간 브랜치 시작 라인(2/3/4 중 하나)
 
     public int dialogueIndex = 0;
     public int Day = 0;
@@ -220,10 +222,13 @@ public class MainPanel : MonoBehaviour
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
                 if (nextIndex != -1)
                 {
-                    backindex = dialogueIndex;
+                    backChoiceIndex = dialogueIndex;     // 선택지 라인 저장(1)
+                    backBranchStartIndex = nextIndex;    // 내가 선택한 브랜치 시작 라인 저장(2/3/4 중 하나)
+
+                    backindex = dialogueIndex;           // 기존 변수 유지 (다른 곳에서 쓰는 경우 대비)
                     dialogueIndex = nextIndex;
                 }
-                else { Debug.Log("1");  DialEnd(); return; }
+                else { Debug.Log("1"); DialEnd(); return; }
             }
             else { Debug.Log("2"); DialEnd(); return; }
         }
@@ -545,20 +550,25 @@ public class MainPanel : MonoBehaviour
 
     public void Maincontinue()
     {
-        if (true)
+        if (dialogueIndex > backBranchStartIndex)
         {
-            if (dialogueIndex > backindex + 1)
-            {
-                Debug.Log("뒤로가기");
-                dialogueIndex--;
-                ShowNextDialogue();
-            }
-            else if (dialogueIndex <= backindex + 1) 
-            {
-                if (!string.IsNullOrEmpty(backtag)) pc.DownArcheType(backtag);
-                ShowNextDialogue();
-                StartCoroutine(backmessage());
-            }
+            Debug.Log("뒤로가기");
+            dialogueIndex--;
+            ShowNextDialogue();
+            return;
+        }
+
+        // 내가 선택해서 들어간 브랜치 시작(예: 4)에서는 더 뒤로 안 감 (2/3을 보지 않게)
+        if (dialogueIndex == backBranchStartIndex)
+        {
+            return;
+        }
+
+        if (dialogueIndex <= backindex + 1)
+        {
+            if (!string.IsNullOrEmpty(backtag)) pc.DownArcheType(backtag);
+            ShowNextDialogue();
+            StartCoroutine(backmessage());
         }
     }
 

@@ -33,6 +33,8 @@ public class ChecklistController : MonoBehaviour
     [SerializeField]
     GameObject checkList;
     [SerializeField]
+    GameObject subcheck;
+    [SerializeField]
     GameObject skipBut;
     [SerializeField]
     checklist[] checklists;
@@ -168,7 +170,12 @@ public class ChecklistController : MonoBehaviour
         }
         if (checkList.activeSelf == false)
         {
+            int ph = pc.GetCurrentPhase();
             checkList.SetActive(true);
+            if (ph == 0 || ph == 2 || ph == 4 || ph == 6)
+            {
+                subcheck.SetActive(true);
+            }
             StartCoroutine(CloseAlter(checkList));
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.checklistOn, this.transform.position);
         }
@@ -179,6 +186,8 @@ public class ChecklistController : MonoBehaviour
     IEnumerator CloseAlter(GameObject checkList)
     {
         yield return new WaitForSeconds(5f);
+        if(subcheck)
+            subcheck.SetActive(false);
         checkList.SetActive(false);
     }
 
