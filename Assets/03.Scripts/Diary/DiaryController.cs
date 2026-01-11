@@ -103,18 +103,14 @@ public class DiaryController : BaseObject, ISleepingInterface
         if(playerController == null)
         {
             GameObject playerObj = GameObject.FindWithTag("Player");
-            if (playerObj != null)
-            {
-                playerController = playerObj.GetComponent<PlayerController>();
-
-
-
-            }
+            playerController = playerObj.GetComponent<PlayerController>();
+            
         }
         if(dotController == null)
         {
             dotController = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
         }
+
         isClicked = playerController.GetIsDiaryCheck(); //다이어리를 읽었는지 가져온다.
         isDiaryUpdated = playerController.GetIsUpdatedDiary();
         //다이어리가 업데이트 되어있지만, 클릭하지 않았을 경우 다이어리는 지속적으로 불빛이 들어온다.
@@ -189,25 +185,25 @@ public class DiaryController : BaseObject, ISleepingInterface
         // Sleeping 페이즈에서 subseq 진입 애니메이션이나 AfterScript 애니메이션이 재생 중이면 diary 열람 막기
         if (CurrentPhase == GamePatternState.Sleeping)
         {
-            if (dotController == null)
-            {
-                dotController = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
-            }
+            // if (dotController == null)
+            // {
+            //     dotController = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
+            // }
             
-            GameObject subDialogueObj = GameObject.Find("SubDialogue");
-            bool isSubDialogueActive = subDialogueObj != null && subDialogueObj.activeSelf;
+            // GameObject subDialogueObj = GameObject.Find("SubDialogue");
+            // bool isSubDialogueActive = subDialogueObj != null && subDialogueObj.activeSelf;
             
-            if (dotController != null)
-            {
-                if (dotController.IsSubDialogueAnimPlaying || dotController.IsAfterScriptPlaying || isSubDialogueActive)
-                {
-                    return;
-                }
-            }
-            else if (isSubDialogueActive)
-            {
-                return;
-            }
+            // if (dotController != null)
+            // {
+            //     if (dotController.IsSubDialogueAnimPlaying || dotController.IsAfterScriptPlaying || isSubDialogueActive)
+            //     {
+            //         return;
+            //     }
+            // }
+            // else if (isSubDialogueActive)
+            // {
+            //     return;
+            // }
         }
 
         if (CurrentPhase == GamePatternState.Watching)

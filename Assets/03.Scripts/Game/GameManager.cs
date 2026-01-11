@@ -285,6 +285,17 @@ public class GameManager : MonoBehaviour
         Debug.Log("스테이트 변경: " + patternState);
         activeState.Enter(this, dot);
 
+        // 1일차 시 페이즈로 처음 진입할 때 다이어리 활성화
+        if (patternState == GamePatternState.Play && Chapter == 1 && !pc.IsDiaryUnlockedForChapter1())
+        {
+            Debug.Log($"[GameManager.ChangeGameState] 1일차 Writing 페이즈 진입 - 다이어리 잠금 해제 및 활성화");
+            pc.UnlockDiaryForChapter1();
+            if (ObjectManager != null)
+            {
+                ObjectManager.SettingChapter(Chapter);
+            }
+        }
+
         // Day8: Sleeping 진입에서만 이벤트 실행
         if (patternState == GamePatternState.Sleeping
             && Chapter == 8
@@ -451,6 +462,13 @@ public class GameManager : MonoBehaviour
         //GamePatternState patternState = (GamePatternState)pc.GetAlreadyEndedPhase();
         GamePatternState patternState = (GamePatternState)pc.GetCurrentPhase();
         currentPattern = patternState;
+
+        var info = pc.GetPlayerInfo();
+        if (info != null && info.endingReached)
+        {
+            RestoreEndingFromSave(info);
+            yield break; // 엔딩이면 여기서 끝. 아래 Enter/Timer/Sub 절대 돌리면 안 됨!!
+        }
         Debug.Log($"초기 스테이트 설정: {patternState}");
         activeState = states[patternState];
         activeState.Enter(this, dot);
@@ -475,6 +493,31 @@ public class GameManager : MonoBehaviour
         {
             door.SetDoorForDialogue(true);
         }
+    }
+
+    private void RestoreEndingFromSave(PlayerInfo info)
+    {
+        // 1) 플래그 동기화
+        GameManager.isend = true;
+        DeathNoteClick.readDeathnote = (info.deathnoteState == 1);
+
+        // 2) 엔딩에선 뭉치 숨김
+        if (dot != null) dot.gameObject.SetActive(false);
+
+        // 3) UI 오버라이드
+        var menu = GameObject.Find("Menu")?.GetComponent<MenuController>();
+        if (menu != null)
+            menu.ApplyEndingOverride();
+
+        
+        if (GameObject.Find("deathnote") == null) 
+            {
+                GameObject deathnote = Instantiate(Resources.Load<GameObject>(((SITime)GetSITime) + "/deathnote"));
+                deathnote.name = "deathnote"; 
+            }
+        var moonRadio = FindObjectOfType<MoonRadio>(true);
+        if (moonRadio != null) moonRadio.ApplyEndingMoonRadioLock();
+        
     }
     IEnumerator TrackObjectLoadProgress(string path, int chapter, float weight)
     {
@@ -800,6 +843,12 @@ public class GameManager : MonoBehaviour
     public void Ending()
     {
         GameManager.isend = true;
+        if (pc != null)
+        {
+            var info = pc.GetPlayerInfo();
+            info.endingReached = true;
+            pc.SavePlayerInfo();
+        }
         if (!endingInitialized)
         {
             DeathNoteClick.readDeathnote = false;
@@ -814,6 +863,9 @@ public class GameManager : MonoBehaviour
         {
             door.SetDoorForDialogue(true);
         }
+        var moonRadio = FindObjectOfType<MoonRadio>(true);
+        if (moonRadio != null)
+            moonRadio.ApplyEndingMoonRadioLock();
     }
     private void OnDestroy()
     {

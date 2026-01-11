@@ -51,6 +51,9 @@ public class PlayerInfo
     public bool isDay8SleepEventCompleted;
     // 1일차 다이어리 잠금 해제 여부
     public bool diaryUnlockedInChapter1;
+    public bool endingReached;          // 엔딩 트리거를 이미 탔는지
+    public int deathnoteState;          // 0: 유서 보기 전, 1: 유서 본 후
+
     public PlayerInfo()
     {
         nickname = "default";
@@ -95,6 +98,8 @@ public class PlayerInfo
         watchedSubseq.Clear();
         isDay8SleepEventCompleted = false;
         diaryUnlockedInChapter1 = false;
+        endingReached = false;
+        deathnoteState = 0;
     }
 
     public void SetSubPhase(int phaseIdx)
@@ -147,6 +152,8 @@ public class PlayerInfo
         GameManager.isend = false;
         DeathNoteClick.readDeathnote = false;
         diaryUnlockedInChapter1 = false;
+        endingReached = false;
+        deathnoteState = 0;
     }
     public bool IsDiaryCheck { get => isDiaryCheck; set=>isDiaryCheck = value;}
     public float BgmVolume{ get=>bgmVolume; set=>bgmVolume = value; }

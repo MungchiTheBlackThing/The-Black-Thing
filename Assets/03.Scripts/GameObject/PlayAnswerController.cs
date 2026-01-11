@@ -52,37 +52,6 @@ public class PlayAnswerController : MonoBehaviour
         yesPoemBubble.onClick.AddListener(YesPoemBubbleClicked);
         noPoemBubble.onClick.AddListener(NoPoemBubbleClicked);
         playDotButton.onClick.AddListener(OnPlayDotClicked);
-
-        // 1일차 다이어리 잠금 해제
-        if (gameManager != null && gameManager.Chapter == 1 && !gameManager.pc.IsDiaryUnlockedForChapter1())
-        {
-            Debug.Log($"[PlayAnswerController.OnEnable] 1일차 다이어리 잠금 해제 - Chapter: {gameManager.Chapter}, 현재 잠금 상태: {gameManager.pc.IsDiaryUnlockedForChapter1()}");
-            gameManager.pc.UnlockDiaryForChapter1();
-            
-            GameObject diaryObj = GameObject.Find("diary");
-            if (diaryObj == null)
-            {
-                var diaryController = FindObjectOfType<DiaryController>();
-                if (diaryController != null)
-                {
-                    diaryObj = diaryController.gameObject;
-                }
-            }
-            
-            if (diaryObj != null)
-            {
-                Debug.Log($"[PlayAnswerController.OnEnable] Diary 오브젝트 발견 - 현재 활성화 상태: {diaryObj.activeSelf}");
-                if (!diaryObj.activeSelf)
-                {
-                    diaryObj.SetActive(true);
-                    Debug.Log($"[PlayAnswerController.OnEnable] Diary 오브젝트 활성화 완료 - 새 상태: {diaryObj.activeSelf}");
-                }
-            }
-            else
-            {
-                Debug.LogWarning("[PlayAnswerController.OnEnable] Diary 오브젝트를 찾을 수 없음");
-            }
-        }
     }
 
     public void EnterPoemQuestion()

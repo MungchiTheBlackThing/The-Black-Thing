@@ -6,7 +6,16 @@ public class DeathNoteClose : MonoBehaviour
 {
     public void OnClose()
     {
+        // 1) 런타임 플래그
         DeathNoteClick.readDeathnote = true;
+
+        // 2) 영구 저장 (PlayerInfo)
+        var pc = GameObject.Find("PlayerController")?.GetComponent<PlayerController>();
+        if (pc != null)
+        {
+            pc.GetPlayerInfo().deathnoteState = 1;
+            pc.SavePlayerInfo();
+        }
 
         var menu = GameObject.Find("Menu")?.GetComponent<MenuController>();
         if (menu != null)

@@ -100,6 +100,7 @@ SpriteAtlas:
     - 094c1d5e74c3ef84d80f1272330ddd04: 21300000
     - 71dbab1f44331e442bec7cd2b22d9506: 21300000
     - e9c7252f69648ee4a834ea74765c8973: 21300000
+    - 59aa868f8446a4343aeb88307327196d: 21300000
     - fff827bfedb9d9740a6f2d0f969e6e45: 21300000
     - a959bfef0d77d8543b9964a6a27e45d1: 21300000
   m_MasterAtlas: {fileID: 0}
@@ -167,6 +168,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 094c1d5e74c3ef84d80f1272330ddd04, type: 3}
   - {fileID: 21300000, guid: 71dbab1f44331e442bec7cd2b22d9506, type: 3}
   - {fileID: 21300000, guid: e9c7252f69648ee4a834ea74765c8973, type: 3}
+  - {fileID: 21300000, guid: 59aa868f8446a4343aeb88307327196d, type: 3}
   - {fileID: 21300000, guid: fff827bfedb9d9740a6f2d0f969e6e45, type: 3}
   - {fileID: 21300000, guid: a959bfef0d77d8543b9964a6a27e45d1, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -233,6 +235,7 @@ SpriteAtlas:
   - checklist_box
   - lightbox
   - howto5_eng
+  - Vector
   - loading_background
   - Popup_input
   m_RenderDataMap: {}
