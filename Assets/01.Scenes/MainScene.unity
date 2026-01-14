@@ -4473,7 +4473,6 @@ GameObject:
   - component: {fileID: 178607445}
   - component: {fileID: 178607447}
   - component: {fileID: 178607446}
-  - component: {fileID: 178607448}
   m_Layer: 5
   m_Name: dial2
   m_TagString: Untagged
@@ -4520,8 +4519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB2E4\uC74C \uD560 \uC77C\uAE4C\uC9C0 \uC774\uC57C\uAE30\\n<int>\uAC1C\uAC00
-    \uB0A8\uC544 \uC788\uC5B4\uC694."
+  m_text: default text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
   m_sharedMaterial: {fileID: 1188920287867902073, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
@@ -4598,46 +4596,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178607444}
   m_CullTransparentMesh: 1
---- !u!114 &178607448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178607444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:da3ace5be7811444ba98c75a009f3c97
-    m_TableEntryReference:
-      m_KeyId: 25432680089731072
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 178607446}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-  references:
-    version: 2
-    RefIds: []
 --- !u!1 &179907801
 GameObject:
   m_ObjectHideFlags: 0
@@ -12655,6 +12613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkList: {fileID: 372046260}
+  subcheck: {fileID: 178607444}
   skipBut: {fileID: 1007219007}
   checklists:
   - patternState: 0
@@ -12712,6 +12671,8 @@ MonoBehaviour:
   - {fileID: 2004755608}
   - {fileID: 2114862771}
   objectManager: {fileID: 606963712}
+  iconCheckListNoteObj: {fileID: 372046260}
+  dial2Text: {fileID: 178607446}
 --- !u!1 &579859726
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: en-US
   m_SharedData: {fileID: 11400000, guid: 4d65cffdc4d8b3247941c0da4952cd51, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 1040230686251548688
   m_TableData:
   - m_Id: 9005461504
     m_Localized: "We all begin somewhere. Humans like to call it \u2018home\u2019.\nMy
@@ -28,7 +29,8 @@ MonoBehaviour:
       fade away.\nIt's a lonely kind of love. Not just a longing, but a blind kind
       of love."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548688
   - m_Id: 10750291968
     m_Localized: "And so I would be seized with fear and doubt if I should do the
       same.\r\nWhether I was destined to a single orbit, tied to humans by gravity.
@@ -40,7 +42,8 @@ MonoBehaviour:
       the truth\u2014we were unrelated. Thus we were equals, our curiosity and fondness
       flowing back and forth."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548688
   - m_Id: 12776140800
     m_Localized: "So I no longer fear being your moon.\r\nYou never tried to tie
       me to a single orbit.\r\n\r\nYou willingly led me far away from your orbit
@@ -48,7 +51,8 @@ MonoBehaviour:
       the most. Because at times it would be ours. True or not, that\u2019s what
       we called it."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548688
   - m_Id: 14462251008
     m_Localized: "Those unique moments, our short encounter. It meant something to
       me.\r\nAnd so I now dive into your waves, that blue slumber. It won\u2019t
@@ -58,7 +62,67 @@ MonoBehaviour:
       a night with the moon overhead\u2014in a dreamscape that resembles you and
       I. Until then, <nickname>!"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548688
+  - m_Id: 4431901774639104
+    m_Localized: pulled me into your sea,
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548688
+  - m_Id: 4432105877860352
+    m_Localized: called me into your sea,
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548688
+  - m_Id: 4432186630795264
+    m_Localized: and I would drift upon its vast surface and gently paddle against
+      the waves.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548688
+  - m_Id: 4432342335942656
+    m_Localized: and I would run about its vast surface and create small ripples
+      all around.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548688
+  - m_Id: 4432497399361536
+    m_Localized: an afterimage of a pleasant daydream
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548688
+  - m_Id: 4432504932331520
+    m_Localized: a glimpse of an unlit haven
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548688
+  - m_Id: 4432527388635136
+    m_Localized: a moment of loving darkness
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548688
+  - m_Id: 4432552546070528
+    m_Localized: an ember of faint courage
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548688
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1040230686251548688
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 9005461504
+        - id: 10750291968
+        - id: 12776140800
+        - id: 14462251008
+        - id: 4431901774639104
+        - id: 4432105877860352
+        - id: 4432186630795264
+        - id: 4432342335942656
+        - id: 4432497399361536
+        - id: 4432504932331520
+        - id: 4432527388635136
+        - id: 4432552546070528
