@@ -137,15 +137,6 @@ public class TimeSkipUIController : MonoBehaviour
         playerController.NextPhase();
         Debug.Log("스킵 클릭");
     }
-    public void TutoNoClick()
-    {
-        Destroy(GameObject.FindWithTag("TouchGuide"));
-        gameManager.ScrollManager.scrollable();
-        popup.SetActive(false);
-
-        var menu = FindObjectOfType<MenuController>();
-        menu?.SetMenuButtonInteractable(true);
-    }
     public void TutoYesClick()
     {
         const string anim = "anim_default";

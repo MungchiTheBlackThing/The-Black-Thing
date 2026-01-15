@@ -8,9 +8,15 @@ using UnityEngine.EventSystems;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using UnityEngine.Localization.Tables;
+using Assets.Script.TimeEnum;
+using UnityEngine.SceneManagement;
+
+
 
 public class MoonRadio : MonoBehaviour
 {
+    private GameManager gm;
+
     [SerializeField]
     GameObject moonRadioController;
     [SerializeField]
@@ -51,12 +57,16 @@ public class MoonRadio : MonoBehaviour
         
         if (GameManager.isend && blinkMoonRadioAnim != null)
             blinkMoonRadioAnim.SetFloat("speed", 0f);
+        
+        gm = FindObjectOfType<GameManager>(true);
     }
     
     void OnDestroy()
     {
         // 이벤트 구독 해제
         LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+        if (translator != null)
+            translator.translatorDel -= Translate;
     }
     
     void OnLocaleChanged(Locale locale)
@@ -79,39 +89,38 @@ public class MoonRadio : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        Debug.Log("[MoonRadio] OnMouseDown CALLED");
-        Debug.Log($"[MoonRadio] isend={GameManager.isend}, alertNull={alert==null}, textNull={text==null}");
+        // 0) 튜토리얼 씬이면 무조건 입력 차단
+        if (IsTutorialScene()) return;
 
-        // 엔딩이면 알럿은 예외로 허용
-        if (InputGuard.BlockWorldInput() && !GameManager.isend)
-            return;
-
-        RecentData data = RecentManager.Load();
-        if (!data.tutoend) return;
-
-        // 엔딩이면 밤/낮 무관하게 무조건 checktext 알럿만
+        // 1) 엔딩이면 시간대 무관: 엔딩 알럿
         if (GameManager.isend)
         {
             OpenAlert();
             return;
         }
 
-        // (이하 기존 로직)
-        if (alert != null && alert.activeSelf)
+        // 2) 일반 입력 가드
+        if (InputGuard.BlockWorldInput()) return;
+
+        // 3) 시간대 체크
+        bool isNight = (gm != null && gm.CurrentSITime == SITime.Night);
+
+        // 4) 밤이 아니면: 알럿
+        if (!isNight)
         {
             OpenAlert();
             return;
         }
 
-        //시간대가 밤이 아닐 경우에는 아래는 작동하지 않는다.
-        if (moonRadioController.activeSelf == false && !Dot.tutorial && !GameManager.isend)
-        {
-            //밤일 때 speed 1, 밤이 아니면 0
-            blinkMoonRadioAnim.SetFloat("speed", 0f);
-            moonRadioController.SetActive(true);
-            screen.SetActive(false);
-        }
-        Debug.Log("문라디오 클릭");
+        // 4) 밤이면: 송신기 컨트롤러 열기
+        if (blinkMoonRadioAnim != null) blinkMoonRadioAnim.SetFloat("speed", 1f);
+        if (moonRadioController != null) moonRadioController.SetActive(true);
+        if (screen != null) screen.SetActive(false);
+    }
+
+    private bool IsTutorialScene()
+    {
+        return SceneManager.GetActiveScene().name == "Tutorial";
     }
 
     private bool _endingApplied;
@@ -126,7 +135,17 @@ public class MoonRadio : MonoBehaviour
 
         if (GameManager.isend) return;
 
-        // 기존 밤/낮 로직
+        bool isNight = (gm != null && gm.CurrentSITime == SITime.Night);
+
+        if (blinkMoonRadioAnim != null)
+            blinkMoonRadioAnim.SetFloat("speed", isNight ? 1f : 0f);
+
+        if (light_moonradio != null)
+            light_moonradio.SetActive(isNight);
+
+        // 낮이면 혹시 열려있던 컨트롤러 닫기(원하면)
+        if (!isNight && moonRadioController != null && moonRadioController.activeSelf)
+            moonRadioController.SetActive(false);
     }
 
     public void OpenAlert()

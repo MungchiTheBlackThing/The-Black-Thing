@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     protected GamePatternState currentPattern;
     public int TutoNum = 0;
+    public SITime CurrentSITime => sltime;
+
     bool isready = false;
     public float targetTime;
     public SubDialogue subDialogue;
