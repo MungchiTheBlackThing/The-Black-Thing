@@ -4,6 +4,9 @@ using System.Runtime.Serialization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.Localization.Components;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Tables;
 
 public enum EChecklist
 {
@@ -29,6 +32,7 @@ public struct checklist
 public class ChecklistController : MonoBehaviour
 {
     private PlayerController pc;
+    private GameManager gameManager;
 
     [SerializeField]
     GameObject checkList;
@@ -47,6 +51,9 @@ public class ChecklistController : MonoBehaviour
     ObjectManager objectManager;
 
     GameObject activeIcon;
+    public GameObject iconCheckListNoteObj;
+    public TMP_Text dial2Text;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +65,11 @@ public class ChecklistController : MonoBehaviour
         translator.translatorDel += Translate;
 
         objectManager.activeSystemUIDelegate += CallbackActiveSystemUI;
+        
+        gameManager = FindObjectOfType<GameManager>();
+        
         InitPhase((GamePatternState)pc.GetCurrentPhase());
+        UpdateSubcheckText();
     }
     public void CallbackActiveSystemUI(bool InActive)
     {
@@ -71,8 +82,6 @@ public class ChecklistController : MonoBehaviour
     }
     void Translate(LANGUAGE language, TMP_FontAsset font)
     {
-        //�����Ѵ�.
-        Debug.Log("Checklist �����մϴ�.\n");
 
         int Idx = (int)language;
 
@@ -118,7 +127,7 @@ public class ChecklistController : MonoBehaviour
         changeStateCo = StartCoroutine(ChangeState(state));
     }
 
-    //�ڷ�ƾ���� �Ѵ�.
+
     IEnumerator ChangeState(GamePatternState state)
     {
         yield return new WaitForSeconds(2.5f);
@@ -158,6 +167,7 @@ public class ChecklistController : MonoBehaviour
             OnClickCheckListIcon();
         }
 
+        UpdateSubcheckText();
         yield return null;
     }
 
@@ -176,11 +186,59 @@ public class ChecklistController : MonoBehaviour
             {
                 subcheck.SetActive(true);
             }
+            UpdateSubcheckText();
             StartCoroutine(CloseAlter(checkList));
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.checklistOn, this.transform.position);
         }
         else
             checkList.SetActive(false);
+    }
+    
+    private bool wasIconCheckListNoteObjActive = false;
+    
+    void Update()
+    {
+        if (iconCheckListNoteObj != null)
+        {
+            bool isActive = iconCheckListNoteObj.activeSelf;
+            if (isActive && !wasIconCheckListNoteObjActive)
+            {
+                UpdateSubcheckText();
+            }
+            wasIconCheckListNoteObjActive = isActive;
+        }
+    }
+    
+    private void UpdateSubcheckText()
+    {
+        GamePatternState currentPhase = (GamePatternState)pc.GetCurrentPhase();
+        List<int> availableSubseqs = gameManager.GetSubseqsForPhase(currentPhase);
+
+        // 남은 subseq 개수 계산
+        int remainingCount = 0;
+        if (availableSubseqs != null && availableSubseqs.Count > 0)
+        {
+            foreach (int subseq in availableSubseqs)
+            {
+                if (!pc.IsSubWatched(subseq))
+                {
+                    remainingCount++;
+                }
+            }
+        }
+
+        Debug.Log($"[ChecklistController] remainingCount: {remainingCount}, currentPhase: {currentPhase}");
+
+        string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("SystemUIText", "subcheck_text");
+        
+        if (string.IsNullOrEmpty(localizedText))
+        {
+            Debug.LogError("[ChecklistController] 로컬라이징된 텍스트를 가져올 수 없음");
+            return;
+        }
+
+        localizedText = localizedText.Replace("<subcount>", remainingCount.ToString());
+        dial2Text.text = localizedText;
     }
 
     IEnumerator CloseAlter(GameObject checkList)

@@ -245,7 +245,7 @@ MonoBehaviour:
     - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8e200ccfe8dd64e4d9098cb4696ce7c0
-    m_Address: DiaryUIText_en-US
+    m_Address: Sub_Ch4_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
@@ -297,6 +297,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1553ca8dcaa40a41babe2413b82f0b7
+    m_Address: SunDeath_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b35e396f4cfe16441b0a02065b1b2b40
     m_Address: DiaryText_en-US
@@ -397,6 +403,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ee25084e7f58f8646bec922b43934f56
     m_Address: SrcDay10_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eeab849cba447ce489ee1b7617dede8b
+    m_Address: MoonDeath_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US

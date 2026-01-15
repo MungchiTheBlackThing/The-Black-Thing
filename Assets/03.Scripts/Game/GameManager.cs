@@ -746,7 +746,7 @@ public class GameManager : MonoBehaviour
     }
 
     //챕터별/페이즈별 Subseq 리스트 반환
-    private List<int> GetSubseqsForPhase(GamePatternState phase)
+    public List<int> GetSubseqsForPhase(GamePatternState phase)
     {
         //예외: 14챕터
         if (Chapter == 14)

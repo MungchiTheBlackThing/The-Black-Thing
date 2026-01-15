@@ -16,99 +16,145 @@ MonoBehaviour:
     m_Code: en-US
   m_SharedData: {fileID: 11400000, guid: 53f24263995e7814999c61a5c76e8b28, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 1040230686251548687
   m_TableData:
   - m_Id: 414731681792
     m_Localized: "You really can't take it anymore. Dot's asleep.\n ... Get rid of
       the bread mold? \r"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 13127073792
     m_Localized: I can't take it anymore.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 19032653824
     m_Localized: It's horrible.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 22526509056
     m_Localized: I might throw up.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 25953255424
     m_Localized: The mold on that bread is getting worse.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 347773812736
     m_Localized: I know Dot said that's their good friend...
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 353989771264
     m_Localized: But...
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 358490259456
     m_Localized: 'Fine. It may be hard to look at,
 
       but it''s a dear friend
       to Dot. '
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 366736261120
     m_Localized: 'But... won''t Dot understand?
 
       If I said it was giving me
       a hard time.'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 368762109952
     m_Localized: It's just so...
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 370183979008
     m_Localized: The desk is clean now. Phew.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 381701537792
     m_Localized: ......
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 385409302528
     m_Localized: I'll break the news to Dot.. tomorrow.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 416656867328
     m_Localized: "You really can't take it anymore. Dot's asleep. \n... Get rid of
       the bread mold?"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 419257335808
     m_Localized: 'You really can''t take it anymore. Dot''s asleep.
 
       Get rid
       of the bread mold before they wake up?'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 423099318272
     m_Localized: Toss it away.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 424219197440
     m_Localized: You can't bear to.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 429759873024
     m_Localized: Yes, but hesitantly.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 430821031936
     m_Localized: How could I?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   - m_Id: 433664770048
     m_Localized: "You know what to do. \r"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548687
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1040230686251548687
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 414731681792
+        - id: 13127073792
+        - id: 19032653824
+        - id: 22526509056
+        - id: 25953255424
+        - id: 347773812736
+        - id: 353989771264
+        - id: 358490259456
+        - id: 366736261120
+        - id: 368762109952
+        - id: 370183979008
+        - id: 381701537792
+        - id: 385409302528
+        - id: 416656867328
+        - id: 419257335808
+        - id: 423099318272
+        - id: 424219197440
+        - id: 429759873024
+        - id: 430821031936
+        - id: 433664770048

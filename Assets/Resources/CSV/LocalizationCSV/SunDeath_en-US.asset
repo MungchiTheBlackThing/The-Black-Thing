@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: en-US
   m_SharedData: {fileID: 11400000, guid: ce59eb877c945754fa1d78f168d92c9f, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 1040230686251548685
   m_TableData:
   - m_Id: 120099991552
     m_Localized: "We all begin somewhere. Humans like to call it \u2018home\u2019.
@@ -28,7 +29,8 @@ MonoBehaviour:
       A force that would crush me into waste. Merciful to all, yet cruel to me and
       me alone."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548685
   - m_Id: 564075458560
     m_Localized: "\u201CNo matter how you struggle, child, my blessing could never
       be yours,\" the Sun whispers. The heartless declaration of a gentle tyrant.
@@ -39,7 +41,8 @@ MonoBehaviour:
       was leading me to a playground \nwhere serene waves of heat shimmered along
       the breeze."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548685
   - m_Id: 2588124934144
     m_Localized: "So I no longer fear sunlight, not as long as it resembles you.
       \nYou never tried to scare away my shade.\n<multiple1>\n<multiple2>\n\nSo who
@@ -47,7 +50,8 @@ MonoBehaviour:
       soaked the ground and I was embraced by the warm darkness of its shadow,\nI
       could dare to be insignificant. Dare to be worthless."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548685
   - m_Id: 2632387424256
     m_Localized: "And it felt alright\u2014somehow even beautiful.\r\nI know I\u2019ll
       treasure those unique moments, and our short encounter. \r\nAnd so I now dive
@@ -58,7 +62,77 @@ MonoBehaviour:
       the sun brushes past\u2014in a dreamscape that resembles you and I.\nUntil
       then, <nickname>!"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230686251548685
+  - m_Id: 4452462600974336
+    m_Localized: held me in your palm
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548685
+  - m_Id: 4452487619997696
+    m_Localized: No, you dove into my pitch black
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548685
+  - m_Id: 4452471706808320
+    m_Localized: fondly called my name
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548685
+  - m_Id: 4452522638241792
+    m_Localized: No, you strode into my pitch black
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548685
+  - m_Id: 4452539197353984
+    m_Localized: and relaxed in it, picturing the dark side of the moon.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548685
+  - m_Id: 4452552916922368
+    m_Localized: and fell into step with me, humming melodies from bygone days.
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548685
+  - m_Id: 4452574580502528
+    m_Localized: an afterimage of a pleasant daydream
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548685
+  - m_Id: 4452588056801280
+    m_Localized: a glimpse of an unlit haven
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548685
+  - m_Id: 4452593438093312
+    m_Localized: a moment of loving darkness
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548685
+  - m_Id: 4452619426000896
+    m_Localized: an ember of faint courage
+    m_Metadata:
+      m_Items:
+      - rid: 1040230686251548685
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1040230686251548685
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 120099991552
+        - id: 564075458560
+        - id: 2588124934144
+        - id: 2632387424256
+        - id: 4452462600974336
+        - id: 4452487619997696
+        - id: 4452471706808320
+        - id: 4452522638241792
+        - id: 4452539197353984
+        - id: 4452552916922368
+        - id: 4452574580502528
+        - id: 4452588056801280
+        - id: 4452593438093312
+        - id: 4452619426000896
