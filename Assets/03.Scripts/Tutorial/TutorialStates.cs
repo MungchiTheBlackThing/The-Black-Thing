@@ -60,8 +60,36 @@ namespace Tutorial
 
         public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
         {
+            var door = GameObject.Find("fix_door");
+            var scroll = manager != null ? manager.ScrollManager : null;
+            var subPanel = manager != null ? manager.subDialoguePanel : null;
 
-            GameObject door = GameObject.Find("fix_door");
+            Debug.Log($"[Tuto.Sub.Enter] manager={(manager!=null)} dot={(dot!=null)} door={(door!=null)} scroll={(scroll!=null)} subPanel={(subPanel!=null)}");
+
+            if (manager == null || dot == null)
+            {
+                Debug.LogError("[Tuto.Sub.Enter] manager/dot null. Abort Enter.");
+                return;
+            }
+
+            if (door == null)
+            {
+                Debug.LogError("[Tuto.Sub.Enter] fix_door not found. Abort Enter.");
+                return;
+            }
+
+            if (door.transform.childCount <= 1 || door.transform.GetChild(1).GetComponent<DoorController>() == null)
+            {
+                Debug.LogError("[Tuto.Sub.Enter] fix_door child(1) DoorController missing. Abort Enter.");
+                return;
+            }
+
+            if (scroll == null || subPanel == null)
+            {
+                Debug.LogError("[Tuto.Sub.Enter] ScrollManager/subDialoguePanel missing. Abort Enter.");
+                return;
+            }
+
             RecentData data = RecentManager.Load();
 
             Debug.Log("데이터 튜토리얼 번호: " + data.tutonum + "인덱스" + data.index);
