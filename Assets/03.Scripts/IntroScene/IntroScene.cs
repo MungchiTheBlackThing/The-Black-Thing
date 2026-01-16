@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.IO;
 using UnityEngine.UI;
 
 public class IntroScene : MonoBehaviour
@@ -20,13 +19,18 @@ public class IntroScene : MonoBehaviour
     [SerializeField] AudioSource soundEffect;
     [SerializeField] AudioSource popupButtonSound;
 
-    const string playerInfoDataFileName = "PlayerData.json";
     RecentData data;
     public PlayerInfo playerInfo;
     GameManager gameManager;
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("MIGRATED_PLAYERDATA_V1", 0) == 0)
+        {
+            SavePaths.MigrateLegacyPlayerDataIfNeeded();
+            PlayerPrefs.SetInt("MIGRATED_PLAYERDATA_V1", 1);
+            PlayerPrefs.Save();
+        }
         if (PlayerPrefs.GetInt("FORCE_NEW_GAME", 0) == 1)
         {
             PlayerPrefs.DeleteKey("FORCE_NEW_GAME");
@@ -118,7 +122,7 @@ public class IntroScene : MonoBehaviour
         {
             nextScene = "Tutorial";
             goingTutorial = true;
-            playerInfo.currentPhase = 0;
+            playerInfo.currentPhase = GamePatternState.Watching; // (enum 0)
             //WritePlayerFile();
         }
         else
@@ -156,34 +160,15 @@ public class IntroScene : MonoBehaviour
 
     public void WritePlayerFile()
     {
-        //PlayerInfo 클래스 내에 플레이어 정보를 Json 형태로 포멧팅 된 문자열 생성
-        //만약 player nextchapter라면, 변경
-        playerInfo.currentPhase = playerInfo.currentPhase == GamePatternState.NextChapter ? GamePatternState.Watching : playerInfo.currentPhase;
+        playerInfo.currentPhase =
+            playerInfo.currentPhase == GamePatternState.NextChapter
+                ? GamePatternState.Watching
+                : playerInfo.currentPhase;
+
         string jsonData = JsonUtility.ToJson(playerInfo);
-        string path = pathForDocumentsFile(playerInfoDataFileName);
-        File.WriteAllText(path, jsonData);
+
+        // SavePaths로 통일 + atomic write
+        SavePaths.WriteAllTextAtomic(SavePaths.PlayerDataPath, jsonData);
     }
 
-    string pathForDocumentsFile(string filename)
-    {
-        if (Application.platform == RuntimePlatform.IPhonePlayer)
-        {
-            string path = Application.dataPath.Substring(0, Application.dataPath.Length - 5);
-            path = path.Substring(0, path.LastIndexOf('/'));
-            return Path.Combine(Path.Combine(path, "Documents"), filename);
-
-        }
-        else if (Application.platform == RuntimePlatform.Android)
-        {
-            string path = Application.persistentDataPath;
-            path = path.Substring(0, path.LastIndexOf('/'));
-            return Path.Combine(path, filename);
-        }
-        else
-        {
-            string path = Application.dataPath;
-            path = path.Substring(0, path.LastIndexOf('/'));
-            return Path.Combine(Application.dataPath, filename);
-        }
-    }
 }

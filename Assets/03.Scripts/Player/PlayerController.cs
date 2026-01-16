@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Text;
-using System.IO;
 using UnityEngine.Android;
 using Assets.Script.Reward;
 using UnityEngine.SceneManagement;
@@ -19,8 +17,6 @@ public enum LANGUAGE
 
 public class PlayerController : MonoBehaviour, IPlayerInterface
 {
-    
-    const string playerInfoDataFileName = "PlayerData.json";
     //실제 플레이어
     private PlayerInfo player;
     //player 접속 경과 시간
@@ -442,57 +438,37 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public void WritePlayerFile()
     {
         if (GameManager.isend) player.endingReached = true;
-        //PlayerInfo 클래스 내에 플레이어 정보를 Json 형태로 포멧팅 된 문자열 생성
-        //만약 player nextchapter라면, 변경
-        player.currentPhase = player.currentPhase == GamePatternState.NextChapter ? GamePatternState.Watching : player.currentPhase;
+
+        player.currentPhase =
+            player.currentPhase == GamePatternState.NextChapter
+                ? GamePatternState.Watching
+                : player.currentPhase;
+
         string jsonData = JsonUtility.ToJson(player);
-        string path = pathForDocumentsFile(playerInfoDataFileName);
-        File.WriteAllText(path, jsonData);
+
+        SavePaths.WriteAllTextAtomic(SavePaths.PlayerDataPath, jsonData);
     }
 
     void readStringFromPlayerFile()
     {
-        string path = pathForDocumentsFile(playerInfoDataFileName);
+        string path = SavePaths.PlayerDataPath;
 
-        if (File.Exists(path))
+        if (SavePaths.TryReadAllText(path, out var json) && !string.IsNullOrEmpty(json))
         {
-            FileStream fileStream = new FileStream(path, FileMode.Open);
-            byte[] data = new byte[fileStream.Length];
-            fileStream.Read(data, 0, data.Length);
-            fileStream.Close();
-            string json = Encoding.UTF8.GetString(data);
-
-            if (player != null)
+            try
             {
-                player = JsonUtility.FromJson<PlayerInfo>(json);
+                var loaded = JsonUtility.FromJson<PlayerInfo>(json);
+                if (loaded != null) player = loaded;
+            }
+            catch
+            {
+                // 깨졌으면 기본값으로 다시 저장
+                WritePlayerFile();
             }
         }
         else
         {
             WritePlayerFile();
-        }
-    }
-
-    string pathForDocumentsFile(string filename)
-    {
-        if (Application.platform == RuntimePlatform.IPhonePlayer)
-        {
-            string path = Application.dataPath.Substring(0, Application.dataPath.Length - 5);
-            path = path.Substring(0, path.LastIndexOf('/'));
-            return Path.Combine(Path.Combine(path, "Documents"), filename);
-
-        }
-        else if (Application.platform == RuntimePlatform.Android)
-        {
-            string path = Application.persistentDataPath;
-            path = path.Substring(0, path.LastIndexOf('/'));
-            return Path.Combine(path, filename);
-        }
-        else
-        {
-            string path = Application.dataPath;
-            path = path.Substring(0, path.LastIndexOf('/'));
-            return Path.Combine(Application.dataPath, filename);
         }
     }
 
