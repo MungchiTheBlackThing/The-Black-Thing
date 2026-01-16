@@ -16,39 +16,45 @@ public class SelectionController : MonoBehaviour
     //선택지는 나중에 저장한다.
     public void Choose()
     {
-        GameObject option = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
-        Debug.Log(option);
-        if (option.transform.GetChild(0).gameObject.activeSelf)
+        GameObject option = EventSystem.current.currentSelectedGameObject;
+        if (option == null) return;
+
+        // ✅ "Checking"만 토글
+        Transform checkingTr = option.transform.Find("Checking");
+        if (checkingTr == null)
         {
-            option.transform.GetChild(0).gameObject.SetActive(false);
+            Debug.LogError($"[SelectionController] 'Checking' not found under {option.name}");
+            return;
+        }
+
+        GameObject checking = checkingTr.gameObject;
+
+        if (checking.activeSelf)
+        {
+            checking.SetActive(false);
             selectedCount--;
-            //AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialouguecheckbox, this.transform.position);    //엠비언트 효과 빠짐 -> 추후에 추가
         }
         else
         {
-            option.transform.GetChild(0).gameObject.SetActive(true);
+            checking.SetActive(true);
             selectedCount++;
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialougeSelect, this.transform.position);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialougeSelect, transform.position);
         }
 
-        actionButton.SetActive(selectedCount > 0);
+        if (selectedCount < 0) selectedCount = 0;
+        if (actionButton != null) actionButton.SetActive(selectedCount > 0);
     }
 
     public void OnDisable()
     {
-        // 자식 옵션들 전부 체크 끄기
-        for (int i = 0; i < transform.childCount; i++)
+        // ✅ 하위 전체에서 "Checking"만 끄기 (구조가 Options/Select... 여도 안전)
+        foreach (Transform t in GetComponentsInChildren<Transform>(true))
         {
-            Transform option = transform.GetChild(i);
-            if (option.childCount > 0)
-            {
-                GameObject mark = option.GetChild(0).gameObject;
-                if (mark.activeSelf)
-                    mark.SetActive(false);
-            }
+            if (t.name == "Checking")
+                t.gameObject.SetActive(false);
         }
 
         selectedCount = 0;
-        actionButton.SetActive(false);
+        if (actionButton != null) actionButton.SetActive(false);
     }
 }
