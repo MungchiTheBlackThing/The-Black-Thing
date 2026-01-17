@@ -651,6 +651,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SkipSubDialWaitAndShowNow()
+    {
+        int currentSubseq = pc.GetSubseq();
+        if (!ShouldShowSub(Pattern, currentSubseq))
+        {
+            return;
+        }
+
+        // 대기 시간 스킵: 트리거 시간을 지금으로 당김
+        string timestampKey = "PendingEventTimestamp_" + Chapter + "_" + Pattern.ToString() + "_" + currentSubseq;
+        PlayerPrefs.SetString(timestampKey, DateTime.Now.ToBinary().ToString());
+        PlayerPrefs.Save();
+
+        // 이미 서브 대기 코루틴이 돌고 있으면 재시작
+        if (subDialogCoroutine != null)
+        {
+            StopCoroutine(subDialogCoroutine);
+            subDialogCoroutine = null;
+        }
+
+        isSkipping = false;
+        subDialogCoroutine = StartCoroutine(SubDialog(dot));
+    }
+
 
     protected IEnumerator PhaseTimer()
     {

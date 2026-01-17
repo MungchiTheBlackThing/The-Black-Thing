@@ -12,6 +12,8 @@ public class SubDialAlert : MonoBehaviour
 
     [SerializeField] private List<Image> images;
 
+    [SerializeField] private GameManager gameManager;
+
     private int lastvalue = 0;
     void OnEnable()
     {
@@ -70,6 +72,11 @@ public class SubDialAlert : MonoBehaviour
             }
 
         }
+    }
+
+    public void subtimeskip()
+    {
+        gameManager.SkipSubDialWaitAndShowNow();
     }
 
 

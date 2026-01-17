@@ -12,7 +12,6 @@ public class MainPanel : MonoBehaviour
     [SerializeField] PlayerController pc;
     private CanvasGroup mainCg;
 
-
     MainDialogue mainDialogue;
 
     [SerializeField] TextMeshProUGUI DotTextUI;
@@ -39,8 +38,8 @@ public class MainPanel : MonoBehaviour
 
     [SerializeField] int backindex = -1;
     [SerializeField] string backtag = "";
-    int backChoiceIndex = -1;       // 선택지 있던 라인(1)
-    int backBranchStartIndex = -1;  // 내가 선택해서 들어간 브랜치 시작 라인(2/3/4 중 하나)
+    int backChoiceIndex = -1;
+    int backBranchStartIndex = -1;
 
     public int dialogueIndex = 0;
     public int Day = 0;
@@ -50,10 +49,8 @@ public class MainPanel : MonoBehaviour
     private const string PH_KO = "당신의 생각을 입력해 주세요.";
     private const string PH_EN = "Please enter your thoughts.";
 
-
-
     private List<string> selection13 = new List<string> {
-        "찰나의 미소띤 잔상","파도 속 낯선 안식처","비좁고 다정한 암흑","미약한 용기의 불씨","A passing afterimage of a smile","An unlikely haven below waves","A small and caring darkness","A tiny ember of courage" //<multiple(2)>
+        "찰나의 미소띤 잔상","파도 속 낯선 안식처","비좁고 다정한 암흑","미약한 용기의 불씨","A passing afterimage of a smile","An unlikely haven below waves","A small and caring darkness","A tiny ember of courage"
     };
 
     void Awake()
@@ -222,10 +219,10 @@ public class MainPanel : MonoBehaviour
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
                 if (nextIndex != -1)
                 {
-                    backChoiceIndex = dialogueIndex;     // 선택지 라인 저장(1)
-                    backBranchStartIndex = nextIndex;    // 내가 선택한 브랜치 시작 라인 저장(2/3/4 중 하나)
+                    backChoiceIndex = dialogueIndex;
+                    backBranchStartIndex = nextIndex;
 
-                    backindex = dialogueIndex;           // 기존 변수 유지 (다른 곳에서 쓰는 경우 대비)
+                    backindex = dialogueIndex;
                     dialogueIndex = nextIndex;
                 }
                 else { Debug.Log("1"); DialEnd(); return; }
@@ -249,10 +246,8 @@ public class MainPanel : MonoBehaviour
         StartCoroutine(DialEndSequence());
     }
 
-
     private IEnumerator DialEndSequence()
     {
-        // 데이터/상태 정리
         mainDialogue.currentDialogueList.Clear();
         mainDialogue.DialogueEntries.Clear();
         dialogueIndex = 0;
@@ -261,7 +256,6 @@ public class MainPanel : MonoBehaviour
         ScreenShield.Off();
         InputGuard.WorldInputLocked = false;
 
-        // 말풍선/선택 UI 끄기
         PanelOff();
         if (BackBut) BackBut.SetActive(false);
 
@@ -269,7 +263,6 @@ public class MainPanel : MonoBehaviour
 
         if (isEnding)
         {
-            // 1) 엔딩 애니 인스턴스는 단 한 번만 생성
             if (endingAnimInstance == null)
             {
                 endingAnimInstance = Instantiate(
@@ -277,19 +270,15 @@ public class MainPanel : MonoBehaviour
                     canvas.transform
                 );
                 endingAnimInstance.transform.SetAsLastSibling();
-
-                // 생성 직후에는 안 보이게
                 endingAnimInstance.SetActive(false);
             }
-            else // 이미 있으면 위로만 올리기
+            else
             {
                 endingAnimInstance.transform.SetAsLastSibling();
             }
 
-            // 2) 배경 유지 시간
             yield return new WaitForSeconds(1f);
 
-            // 3) 한 번에: 켜고 + 재생
             endingAnimInstance.SetActive(true);
 
             var animator = endingAnimInstance.GetComponent<Animator>();
@@ -298,10 +287,8 @@ public class MainPanel : MonoBehaviour
                 animator.Play(0, 0, 0f);
             }
 
-            // 4) 애니 재생 시간(임시)
             yield return new WaitForSeconds(5f);
 
-            // 5) 엔딩 처리
             mainDialogue.CleanupAtEnding();
             foreach (var door in FindObjectsOfType<DoorController>())
                 door.SetDoorForDialogue(true);
@@ -332,7 +319,7 @@ public class MainPanel : MonoBehaviour
         GameObject panel,
         CanvasGroup cg,
         float fadeSeconds,
-        IList<Button> focusButtons,         
+        IList<Button> focusButtons,
         System.Action beforeActivate,
         bool waitForVideo)
     {
@@ -347,7 +334,6 @@ public class MainPanel : MonoBehaviour
 
         yield return StartCoroutine(FadeIn(cg, fadeSeconds, focusButtons));
 
-        // selection 류는 Next 등록 안 함
         if (focusButtons != null && panel != SelectionPanel)
         {
             foreach (var b in focusButtons)
@@ -377,9 +363,7 @@ public class MainPanel : MonoBehaviour
         string background = mainDial.Background;
         bool waitVideo = animScene == "1";
 
-        
-
-        if (waitVideo) //메인 비디오도 뒤로 가지 못하게
+        if (waitVideo)
         {
             backindex = dialogueIndex;
         }
@@ -394,12 +378,11 @@ public class MainPanel : MonoBehaviour
                         korText = korText.Replace("<nickname>", pc.GetNickName());
                     if (korText.Contains("<selection13>") && pc)
                         korText = korText.Replace("<selection13>", selection13[deathnotesel]);
-                    //[DEBUG]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         DotPanel,
                         DotPanel.GetComponent<CanvasGroup>(),
                         0.01f,
-                        new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null }, 
+                        new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null },
                         () => { DotTextUI.text = korText; },
                         waitVideo
                     ));
@@ -407,7 +390,6 @@ public class MainPanel : MonoBehaviour
                 else if (actor == "Player")
                 {
                     if (MainClick) MainClick.SetActive(true);
-                    //[DEBUG]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         PlayPanel,
                         PlayPanel.GetComponent<CanvasGroup>(),
@@ -511,8 +493,6 @@ public class MainPanel : MonoBehaviour
             foreach (var b in buttons) if (b) b.interactable = true;
     }
 
-
-
     void RegisterNextButton(Button button)
     {
         if (!button) return;
@@ -550,6 +530,11 @@ public class MainPanel : MonoBehaviour
 
     public void Maincontinue()
     {
+        if (dialogueIndex <= 0)
+        {
+            return;
+        }
+
         if (dialogueIndex > backBranchStartIndex)
         {
             Debug.Log("뒤로가기");
@@ -558,7 +543,6 @@ public class MainPanel : MonoBehaviour
             return;
         }
 
-        // 내가 선택해서 들어간 브랜치 시작(예: 4)에서는 더 뒤로 안 감 (2/3을 보지 않게)
         if (dialogueIndex == backBranchStartIndex)
         {
             return;
@@ -580,5 +564,4 @@ public class MainPanel : MonoBehaviour
         yield return new WaitForSeconds(2f);
         child.gameObject.SetActive(false);
     }
-
 }
