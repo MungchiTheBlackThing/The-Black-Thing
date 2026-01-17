@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
@@ -14,6 +15,7 @@ public class MainVideo : MonoBehaviour
     private GameManager gm;
     public VideoPlayer videoPlayer;
     [SerializeField] public GameObject Rawimage;
+    [SerializeField] public RawImage videoDisplayImage;
 
     private bool waitingToPlay = false;
 
@@ -21,7 +23,6 @@ public class MainVideo : MonoBehaviour
     [SerializeField] int chapter;
     [SerializeField] GameObject background;
 
-    // subtitle fields
     private TMP_Text subtitleText;
     private LANGUAGE currentLanguage = LANGUAGE.KOREAN;
     private List<VideoSubtitleEntry> entries;
@@ -42,12 +43,37 @@ public class MainVideo : MonoBehaviour
     [SerializeField] Button replayButton;
     [SerializeField] Button nextButton;
 
+    [Header("Cloudinary Settings")]
+    [SerializeField] private bool useCloudinary = true;
+    [SerializeField] private float videoLoadTimeout = 30f;
+    [SerializeField] private GameObject loadingIndicator;
+    
     private bool isVideoPlaying = false;
     private bool skipArmed = false;
     private bool allowSkip = false;
     private Coroutine skipHintFadeCo;
+    private Coroutine videoLoadCoroutine;
     public event System.Action OnUserSkipRequested;
     Action videoEndEvent = null;
+
+    private readonly Dictionary<int, string> cloudinaryVideoUrls = new Dictionary<int, string>
+    {
+        {1, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654151/AnimDay1_u5nemw.mp4"},
+        {2, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654173/AnimDay2_ds8ep8.mp4"},
+        {3, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654141/AnimDay3_gzvoz3.mp4"},
+        {4, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654182/AnimDay4_sz8lxm.mp4"},
+        {5, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654182/AnimDay5_ur14px.mp4"},
+        {6, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654133/AnimDay6_hpnl7n.mp4"},
+        {7, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654131/AnimDay7_kn8pzm.mp4"},
+        {8, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654170/AnimDay8_kl1rbk.mp4"},
+        {9, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654114/AnimDay9_obplkk.mp4"},
+        {10, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654119/AnimDay10_uuyc2t.mp4"},
+        {11, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654126/AnimDay11_ram7bo.mp4"},
+        {12, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654192/AnimDay12_wvopoz.mp4"},
+        {13, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654151/AnimDay13_pqxqhe.mp4"},
+        {14, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654133/AnimDay14_rcznx2.mp4"},
+        {100, "https://res.cloudinary.com/dfcadcwpk/video/upload/v1768654159/AnimDay100_vskqat.mp4"}
+    };
 
     private void Start()
     {
@@ -65,11 +91,20 @@ public class MainVideo : MonoBehaviour
             videoPlayer.skipOnDrop = true;
             videoPlayer.isLooping = false;
         }
-        Rawimage.SetActive(false);
+        
+        if (Rawimage != null)
+            Rawimage.SetActive(false);
+            
         if (text != null)
             subtitleText = text.GetComponentInChildren<TMP_Text>(true);
 
+        if (videoDisplayImage == null && Rawimage != null)
+            videoDisplayImage = Rawimage.GetComponent<RawImage>();
+
         HideSkipHintImmediate();
+        
+        if (loadingIndicator != null)
+            loadingIndicator.SetActive(false);
     }
 
     public void Setting(int Day, LANGUAGE language)
@@ -87,21 +122,23 @@ public class MainVideo : MonoBehaviour
         LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged_Subtitle;
         LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged_Subtitle;
 
-        Rawimage.SetActive(false);
+        if (Rawimage != null)
+            Rawimage.SetActive(false);
 
-        string path = $"StoryAnimation/AnimDay{Day}";
-        VideoClip clip = Resources.Load<VideoClip>(path);
-
-        if (clip == null)
+        if (videoLoadCoroutine != null)
         {
-            Debug.LogError($"VideoClip not found at Resources/{path}");
-            return;
+            StopCoroutine(videoLoadCoroutine);
+            videoLoadCoroutine = null;
         }
 
-        // load subtitles for this chapter (use clip FPS, not videoPlayer FPS)
-        double fps = (clip.frameRate > 0) ? clip.frameRate : 30.0;
-        entries = MainVideoCsvLoader.Load(chapter, fps);
+        videoPlayer.Stop();
+        videoPlayer.clip = null;
+        videoPlayer.source = VideoSource.Url;
+        videoPlayer.url = string.Empty;
 
+        ConfigureVideoPlayerForFullScreen();
+
+        entries = MainVideoCsvLoader.Load(chapter, 30.0);
         entryKeys = (entries != null) ? BuildEntryKeys(Day, entries.Count) : null;
         RebuildLocalizedCache();
 
@@ -110,21 +147,7 @@ public class MainVideo : MonoBehaviour
         EnsureSubtitleText();
         if (subtitleText != null) subtitleText.text = "";
 
-
-        videoPlayer.Stop();
-        videoPlayer.time = 0;
-        videoPlayer.frame = 0;
-        videoPlayer.playOnAwake = false;
-        videoPlayer.playbackSpeed = 1f;
-
-        videoPlayer.audioOutputMode = VideoAudioOutputMode.Direct;
-        videoPlayer.EnableAudioTrack(0, true);
-        videoPlayer.SetDirectAudioMute(0, true);
-        videoPlayer.SetDirectAudioVolume(0, 1.0f);
-
-        videoPlayer.clip = clip;
         videoPlayer.gameObject.SetActive(true);
-        videoPlayer.Prepare();
 
         videoPlayer.prepareCompleted -= OnPrepared;
         videoPlayer.prepareCompleted += OnPrepared;
@@ -139,6 +162,35 @@ public class MainVideo : MonoBehaviour
         videoPlayer.seekCompleted += OnSeekCompleted;
     }
 
+    private void ConfigureVideoPlayerForFullScreen()
+    {
+        videoPlayer.playOnAwake = false;
+        videoPlayer.playbackSpeed = 1f;
+        videoPlayer.audioOutputMode = VideoAudioOutputMode.Direct;
+        videoPlayer.EnableAudioTrack(0, true);
+        videoPlayer.SetDirectAudioMute(0, true);
+        videoPlayer.SetDirectAudioVolume(0, 1.0f);
+        
+        videoPlayer.aspectRatio = VideoAspectRatio.Stretch;
+        
+        if (videoDisplayImage != null)
+        {
+            videoPlayer.renderMode = VideoRenderMode.RenderTexture;
+            if (videoPlayer.targetTexture == null)
+            {
+                videoPlayer.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+            }
+            videoDisplayImage.texture = videoPlayer.targetTexture;
+            videoDisplayImage.color = Color.white;
+        }
+        else
+        {
+            videoPlayer.renderMode = VideoRenderMode.CameraFarPlane;
+            videoPlayer.targetCamera = Camera.main;
+            videoPlayer.targetCameraAlpha = 1f;
+        }
+    }
+
     public void PlayVideo(Action videoEndEvent = null)
     {
         this.videoEndEvent = videoEndEvent;
@@ -146,69 +198,108 @@ public class MainVideo : MonoBehaviour
         Debug.Log("Video start");
         replayButton.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
-        StartCoroutine(FadeInAndPlay());
+        
+        StartCoroutine(LoadAndPlayVideo());
     }
 
-    // 프롤로그 영상 재생 시 스킵 활성화 여부를 설정
-
-    public void SetAllowSkipForPrologue(bool enable)
+    private IEnumerator LoadAndPlayVideo()
     {
-        allowSkip = enable;
-        Debug.Log($"[MainVideo] Prologue skip enabled: {enable}");
-    }
+        if (loadingIndicator != null)
+            loadingIndicator.SetActive(true);
 
-    private IEnumerator FadeInAndPlay()
-    {
         CanvasGroup bgCg = background.GetComponent<CanvasGroup>() ?? background.AddComponent<CanvasGroup>();
         bgCg.alpha = 0f;
         background.SetActive(true);
+        
         yield return StartCoroutine(FadeCanvasGroup(bgCg, 0f, 1f, 1f));
 
-        Rawimage.SetActive(true);
-        text.SetActive(true);
+        string videoUrl = GetVideoUrlForChapter(chapter);
+        
+        if (string.IsNullOrEmpty(videoUrl))
+        {
+            Debug.LogError($"No video URL found for chapter {chapter}");
+            if (loadingIndicator != null)
+                loadingIndicator.SetActive(false);
+            yield break;
+        }
+
+        Debug.Log($"Loading video from: {videoUrl}");
+        
+        videoPlayer.source = VideoSource.Url;
+        videoPlayer.url = videoUrl;
+        
+        videoPlayer.Prepare();
+        
+        float prepareStartTime = Time.time;
+        while (!videoPlayer.isPrepared)
+        {
+            if (Time.time - prepareStartTime > videoLoadTimeout)
+            {
+                Debug.LogError($"Video preparation timeout after {videoLoadTimeout} seconds");
+                if (loadingIndicator != null)
+                    loadingIndicator.SetActive(false);
+                yield break;
+            }
+            yield return null;
+        }
+        
+        if (loadingIndicator != null)
+            loadingIndicator.SetActive(false);
+        
+        if (Rawimage != null)
+            Rawimage.SetActive(true);
+            
+        if (text != null)
+            text.SetActive(true);
+            
         HideSkipHintImmediate();
 
-        yield return null; // or: yield return new WaitForEndOfFrame();
-        //Rawimage.transform.SetAsLastSibling();//
-
-        if (videoPlayer.isPrepared)
+        if (videoDisplayImage != null)
         {
-            if (AudioManager.Instance != null) AudioManager.Instance.StopBGM();
-            else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
-            videoPlayer.SetDirectAudioMute(0, false);
-            isVideoPlaying = true;
-            videoPlayer.Play();
+            videoDisplayImage.texture = videoPlayer.targetTexture;
+        }
+
+        if (AudioManager.Instance != null) 
+            AudioManager.Instance.StopBGM();
+        else 
+            Debug.LogWarning("[MainVideo] AudioManager.instance is null");
+            
+        videoPlayer.SetDirectAudioMute(0, false);
+        isVideoPlaying = true;
+        videoPlayer.Play();
+    }
+
+    private string GetVideoUrlForChapter(int chapter)
+    {
+        if (useCloudinary && cloudinaryVideoUrls.ContainsKey(chapter))
+        {
+            return cloudinaryVideoUrls[chapter];
         }
         else
         {
-            waitingToPlay = true;
-            StartCoroutine(WaitForVideoToPrepare());
-        }
-    }
-
-    private IEnumerator WaitForVideoToPrepare()
-    {
-        while (!videoPlayer.isPrepared)
-        {
-            yield return null;
-        }
-
-        if (waitingToPlay)
-        {
-            waitingToPlay = false;
-            if (AudioManager.Instance != null) AudioManager.Instance.StopBGM();
-            else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
-            videoPlayer.SetDirectAudioMute(0, false);
-            isVideoPlaying = true;
-            videoPlayer.Play();
+            Debug.LogWarning($"Using local resource fallback for chapter {chapter}");
+            string path = $"StoryAnimation/AnimDay{chapter}";
+            VideoClip clip = Resources.Load<VideoClip>(path);
+            if (clip != null)
+            {
+                videoPlayer.source = VideoSource.VideoClip;
+                videoPlayer.clip = clip;
+                return null;
+            }
+            else
+            {
+                Debug.LogError($"No video found for chapter {chapter} in resources or Cloudinary");
+                return null;
+            }
         }
     }
 
     private void OnPrepared(VideoPlayer vp)
     {
-        Debug.Log("Video prepared.");
+        Debug.Log("Video prepared successfully.");
         lastIndex = -1;
         if (subtitleText != null) subtitleText.text = "";
+        waitingToPlay = false;
     }
 
     private void OnSeekCompleted(VideoPlayer vp)
@@ -221,7 +312,6 @@ public class MainVideo : MonoBehaviour
         isVideoPlaying = false;
         replayButton.gameObject.SetActive(true);
         nextButton.gameObject.SetActive(true);
-        
     }
 
     public void OnReplay()
@@ -230,30 +320,9 @@ public class MainVideo : MonoBehaviour
 
         StopAllCoroutines();
 
-        // 스킵, 상태 초기화
         isVideoPlaying = false;
         waitingToPlay = false;
         HideSkipHintImmediate();
-
-        // 비디오 완전 리셋
-        ResetVideoInternalForReplay();
-
-        // 스킵 활성화 상태를 영구적으로 저장
-        PlayerPrefs.SetInt("PROLOGUE_SKIP_ENABLED", 1);
-        PlayerPrefs.Save();
-
-        // 다시 재생 (스킵 활성화 상태로)
-        PlayVideo(videoEndEvent);
-        allowSkip = true;
-    }
-
-    private void ResetVideoInternalForReplay()
-    {
-        lastIndex = -1;
-        startsCache = null;
-
-        if (subtitleText != null)
-            subtitleText.text = "";
 
         if (videoPlayer != null)
         {
@@ -261,25 +330,18 @@ public class MainVideo : MonoBehaviour
             videoPlayer.time = 0;
             videoPlayer.frame = 0;
             videoPlayer.SetDirectAudioMute(0, true);
-
-            // Prepare 다시 호출 (Seek 안정성)
-            videoPlayer.Prepare();
         }
 
-        Rawimage.SetActive(false);
-        text.SetActive(false);
+        PlayerPrefs.SetInt("PROLOGUE_SKIP_ENABLED", 1);
+        PlayerPrefs.Save();
 
-        if (background != null)
-        {
-            var cg = background.GetComponent<CanvasGroup>();
-            if (cg != null) cg.alpha = 0f;
-            background.SetActive(false);
-        }
+        PlayVideo(videoEndEvent);
+        allowSkip = true;
     }
 
     public void OnNext()
     {
-        PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1); //프롤로그 재생 완료 플래그 설정
+        PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1);
         PlayerPrefs.Save();
         
         isVideoPlaying = false;
@@ -294,28 +356,41 @@ public class MainVideo : MonoBehaviour
     {
         vp.Stop();
         vp.time = 0;
-        text.SetActive(false);
-
-        Rawimage.SetActive(false);
-
-        yield return null;
-        //Rawimage.transform.SetAsFirstSibling();//
+        
+        if (text != null)
+            text.SetActive(false);
+            
+        if (Rawimage != null)
+            Rawimage.SetActive(false);
 
         var bgCg = background.GetComponent<CanvasGroup>() ?? background.AddComponent<CanvasGroup>();
         yield return StartCoroutine(FadeCanvasGroup(bgCg, 1f, 0f, 1f));
         background.SetActive(false);
 
-        if (AudioManager.Instance != null)
+        if (AudioManager.Instance != null && gm != null)
         {
-            if (gm != null) AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
+            AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
         }
-        else Debug.LogWarning("[MainVideo] AudioManager.instance is null");
+        else 
+        {
+            Debug.LogWarning("[MainVideo] AudioManager.instance is null or GameManager not found");
+        }
+        
+        vp.url = string.Empty;
+        vp.clip = null;
     }
 
     private void OnDisable()
     {
         isVideoPlaying = false;
         HideSkipHintImmediate();
+        
+        if (videoLoadCoroutine != null)
+        {
+            StopCoroutine(videoLoadCoroutine);
+            videoLoadCoroutine = null;
+        }
+        
         if (videoPlayer != null)
         {
             videoPlayer.Stop();
@@ -323,21 +398,29 @@ public class MainVideo : MonoBehaviour
         }
 
         if (subtitleText != null) subtitleText.text = "";
-        text.SetActive(false);
+        
+        if (text != null)
+            text.SetActive(false);
         
         if (gm != null && AudioManager.Instance != null)
         {
             AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
         }
-        EndGameNow();
+        
         LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged_Subtitle;
     }
 
     private void OnVideoError(VideoPlayer vp, string message)
     {
         Debug.LogError("VideoPlayer Error: " + message);
-        Rawimage.SetActive(false);
+        
+        if (Rawimage != null)
+            Rawimage.SetActive(false);
+            
         if (subtitleText != null) subtitleText.text = "";
+        
+        if (loadingIndicator != null)
+            loadingIndicator.SetActive(false);
     }
 
     private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float duration)
@@ -354,7 +437,6 @@ public class MainVideo : MonoBehaviour
 
     private void Update()
     {
-        // subtitle sync
         if (videoPlayer == null || entries == null || entries.Count == 0 || !videoPlayer.isPlaying) return;
         if (subtitleText == null) return;
 
@@ -382,7 +464,7 @@ public class MainVideo : MonoBehaviour
                 subtitleText.text = "";
             }
         }
-        //스킵 입력처리
+        
         if (isVideoPlaying && allowSkip)
         {
             if (Input.GetMouseButtonDown(0))
@@ -402,7 +484,6 @@ public class MainVideo : MonoBehaviour
 
     private int FindIndexAtTime(double t)
     {
-        // quick check around lastIndex
         if (lastIndex >= 0 && lastIndex < entries.Count)
         {
             var cur = entries[lastIndex];
@@ -428,7 +509,6 @@ public class MainVideo : MonoBehaviour
             }
         }
 
-        // binary search on starts
         if (startsCache == null || startsCache.Length != entries.Count)
         {
             startsCache = new double[entries.Count];
@@ -464,58 +544,20 @@ public class MainVideo : MonoBehaviour
             subtitleText = text.GetComponentInChildren<TMP_Text>(true);
     }
 
-    public void EndGameNow()
-    {
-        ResetVideoToStart();
-    }
-
-    private void ResetVideoToStart()
-    {
-        StopAllCoroutines();
-        waitingToPlay = false;
-
-        // 비디오 정리
-        if (videoPlayer != null)
-        {
-            try
-            {
-                videoPlayer.prepareCompleted -= OnPrepared;
-                videoPlayer.loopPointReached -= OnVideoEnd;
-                videoPlayer.errorReceived -= OnVideoError;
-                videoPlayer.seekCompleted -= OnSeekCompleted;
-
-                videoPlayer.Stop();
-                videoPlayer.time = 0;
-                videoPlayer.frame = 0;
-                videoPlayer.SetDirectAudioMute(0, true);
-
-                if (videoPlayer.clip != null)
-                {
-                    videoPlayer.Prepare();
-                }
-            }
-            catch { }
-        }
-
-        if (text != null) text.SetActive(false);
-
-        if (Rawimage != null)
-        {
-            //Rawimage.transform.SetAsFirstSibling();
-            Rawimage.SetActive(false);
-        }
-
-        if (background != null)
-        {
-            var cg = background.GetComponent<CanvasGroup>();
-            if (cg != null) cg.alpha = 0f;
-            background.SetActive(false);
-        }
-    }
-
     private void OnDestroy()
     {
-        EndGameNow();
+        if (videoLoadCoroutine != null)
+        {
+            StopCoroutine(videoLoadCoroutine);
+        }
+        
+        if (videoPlayer != null)
+        {
+            videoPlayer.Stop();
+            videoPlayer.url = string.Empty;
+            videoPlayer.clip = null;
+        }
+        
         LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged_Subtitle;
     }
 
@@ -652,18 +694,19 @@ public class MainVideo : MonoBehaviour
         skipArmed = false;
     }
 
+    public void SetAllowSkipForPrologue(bool enable)
+    {
+        allowSkip = enable;
+        Debug.Log($"[MainVideo] Prologue skip enabled: {enable}");
+    }
 }
-
-
-
-/*--------------------------------------------CSV 파싱 부분----------------------------------------------------*/
 
 [System.Serializable]
 public class VideoSubtitleEntry
 {
-    public double Start;     // seconds
-    public double End;       // seconds
-    public double Duration;  // End - Start
+    public double Start;
+    public double End;
+    public double Duration;
     public string KorText;
     public string EngText;
 }
@@ -692,7 +735,7 @@ public static class MainVideoCsvLoader
             if (!headerSkipped)
             {
                 headerSkipped = true;
-                continue; // skip header
+                continue;
             }
 
             var cols = ParseCsvLine(raw);
@@ -731,12 +774,11 @@ public static class MainVideoCsvLoader
 
     private static double ParseTimecodeToSeconds(string tc, double fps)
     {
-        if (fps <= 0) fps = 30; // fallback
+        if (fps <= 0) fps = 30;
 
-        // 29.97 → 30 정규화
         fps = Math.Round(fps);
 
-        var parts = tc.Replace(';', ':').Split(':'); // ;도 파싱되도록 수정
+        var parts = tc.Replace(';', ':').Split(':');
 
         if (parts.Length != 4)
         {
@@ -840,5 +882,4 @@ public static class MainVideoCsvLoader
         if (sb.Length > 0) list.Add(sb.ToString());
         return list;
     }
-
 }
