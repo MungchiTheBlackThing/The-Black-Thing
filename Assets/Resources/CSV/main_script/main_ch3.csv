@@ -1,7 +1,7 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,English (United States)(en-US),NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,13,1,main_web,Dot,Main,body_spiderweb_move,face_blink,text,<nickname>!,<nickname>!,2,,,,Main_Ch3,M3_L0001
-1,13,2,main_web,Dot,Main,body_spiderweb,,text,잘 지냈어? 오늘도 들려줄 이야기가 있어!,How have you been?,3,1,,,Main_Ch3,M3_L0002
-1,13,3,main_web,Dot,Main,,,text,"<nickname>, 비밀을 하나 알려 줄까?","<nickname>, would you\nlike to know a secret?",4,,,,Main_Ch3,M3_L0003
+1,13,2,main_web,Dot,Main,body_spiderweb,,text,잘 지냈어? 오늘도 들려줄 이야기가 있어!,How have you been?,3,,,,Main_Ch3,M3_L0002
+1,13,3,main_web,Dot,Main,,,text,"<nickname>, 비밀을 하나 알려 줄까?","<nickname>, would you\nlike to know a secret?",4,1,,,Main_Ch3,M3_L0003
 1,13,4,main_web,Dot,Main,,,text,그녀는 모자 속을 보여 주기를 두려워하지\n않았어. 오히려 기대하고 있었지.,She wasn’t afraid to show what was under\nher hat. She was looking forward to it.,5,,,,Main_Ch3,M3_L0004
 1,13,5,main_web,Player,Main,,,text,무엇을?,To what?,6,,,,Main_Ch3,M3_L0005
 1,13,6,main_web,Dot,Main,,,text,누군가가 자신의 모든 면들을 알아봐 주길.,To someone seeing her\nand all her faces.,7,,,,Main_Ch3,M3_L0006
@@ -14,7 +14,7 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,13,13,main_web,Dot,Main,,,text,나도 그래. 실은 나도 비슷하거든.,I do too. I know the feeling.,14,,,,Main_Ch3,M3_L0013
 1,13,14,main_web,Dot,Main,,,text,"<nickname>, 너에게 내 추악한 몰골을 들키지 않기를\n바라면서 한편으로는 한없이 가까워지길 원하고 있으니.",I struggle between hoping you won’t discover\nmy vile self and longing for you to draw closer.,15,,,,Main_Ch3,M3_L0014
 1,13,15,main_web,Dot,Main,,,text,네가 보는 지금의 나는 어때?\n어떤 모습에 가장 가까워?,What do I look like to you?\nWhat face do you know me by?,16,,,,Main_Ch3,M3_L0015
-1,13,16,main_web,Player,Main,,,selection4,수다 떨기를 좋아하는 외계 생명체|달에서 떨어진 검은 책벌레|조금 까다롭지만 특별한 친구|아직은 잘 모르겠어,A chatterbox of an alien being|A black bookworm from the moon|A slightly difficult but special friend|I’m not sure just yet.,17|19|21|23,,,,Main_Ch3,M3_L0016
+1,13,16,main_web,Player,Main,,,selection4,수다 떨기를 좋아하는 외계 생명체.|달에서 떨어진 검은 책벌레.|조금 까다롭지만 특별한 친구.|아직은 잘 모르겠어.,A chatterbox of an alien being|A black bookworm from the moon|A slightly difficult but special friend|I’m not sure just yet.,17|19|21|23,,,,Main_Ch3,M3_L0016
 1,13,17,main_web,Dot,Main,,,text,... 정말이야?,... Really?,18,,,,Main_Ch3,M3_L0017
 1,13,18,main_web,Dot,Main,,face_eyeroll2,text,"맞아. 조잘거리는, 인간이 아닌\n 괴물. 내 모습 중 하나지.","You’re right. A chattering blobby creature,\ndistinctly not human. One of my faces.",25,,,,Main_Ch3,M3_L0018
 1,13,19,main_web,Dot,Main,,face_staryeyes,text,다채로운 향을 가진 책을 음미하는\n시간은 정말이지 완벽해!,It truly is exquisite to breathe in\nbooks and their many scents.,20,,,,Main_Ch3,M3_L0019
@@ -44,22 +44,22 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,13,43,main_web,Player,Main,body_spiderweb,,text,‘진짜’ 나...?,The real me...?,44,,,,Main_Ch3,M3_L0043
 1,13,44,main_web,Player,Main,,,text,"아, 뭉치 너는 내 여러 모습들 중에\n‘진짜’가 있다고 생각하는 거야?","Oh, Dot. You think there’s one\nreal face out of all of them?",45,,,,Main_Ch3,M3_L0044
 1,13,45,main_web,Dot,Main,,,text,응. 모든 모습들의 근원이 되는 ‘단 하나’ 말이야.\n그걸 ‘진짜’라고 말하는 거 아니야?,Yes. The one face from which all others come\nfrom. Isn’t that what people mean by real?,46,,,,Main_Ch3,M3_L0045
-1,13,46,main_web,Dot,Main,,,text,"잠깐, 잠깐. ‘진짜’가 뭐지?","Wait, wait. What’s real anyways?",47,,,,Main_Ch3,M3_L0046
+1,13,46,main_web,Dot,Main,,,text,"잠깐, 잠깐... ‘진짜’가 뭐지?","Wait, wait. What does it mean to be ‘real’?",47,,,,Main_Ch3,M3_L0046
 1,13,47,main_web,Dot,Main,,,text,"가지고 태어나는 것? 절대로, 무슨 일이\n있어도 변하지 않는 것인가?","Are you born with it? Does it never,\nunder any circumstances, change?",48,,,,Main_Ch3,M3_L0047
 1,13,48,main_web,Dot,Main,,,text,"나에겐 돌이킬 수 없는, 처절한, 더는 찾을 수\n없는, 심어진 씨앗 같은 것들이 우글거리는데?","Like planted seeds wriggling within myself--\nirrevocable, terrible, yet untraceable?",49,,,,Main_Ch3,M3_L0048
 1,13,49,main_web,Dot,Main,,face_omg,text,"이를 테면 내가 인간을 칼날 같은 충동으로\n들이미는 새빨간 악에서 조야하게 태어났다는 것,",Say I was born from a crimson kind of evil\nthat urges humans. Like a sharp push.,50,,,,Main_Ch3,M3_L0049
 1,13,50,main_web,Dot,Main,,,text,매일 아침 거대한 심연을 닮은\n몸뚱이로 기지개를 켜야 하는 것.,Or that I wake up every morning and\nstretch out my vast void of a body.,51,,,,Main_Ch3,M3_L0050
 1,13,51,main_web,Dot,Main,,,text,이들을 마구 쥐었다 뱉은\n덩어리 따위가 ‘진짜’ 나라고?,"These things, squished and\nspat out, are the real me?",52,,,,Main_Ch3,M3_L0051
-1,13,52,main_web,Player,Main,,,selection,(비약이 있음을 짚어 주며 뭉치를 진정시킨다.)|(감정적으로 위로해 주며 뭉치를 진정시킨다.),(Calm Dot down by pointing out a logical fallacy.)|(Calm Dot down by being soothing.),53|55,,,moon|sun,Main_Ch3,M3_L0052
-1,13,53,main_web,Player,Main,,,text,"아냐, 뭉치. ‘진짜’의 존재 자체가 불확실한걸.","No, Dot. The concept of\nrealness itself is an uncertainty.",54,,,,Main_Ch3,M3_L0053
+1,13,52,main_web,Player,Main,,,selection,(하지만 ‘진짜’ 본모습의 존재 자체가 불확실한걸...)|(내가 보는 뭉치의 모습이 가짜라고 생각하지 않아.),(But who knows if a ‘real’ self even exists?)|(But I don’t think Dot is fake at all.),53|55,,,moon|sun,Main_Ch3,M3_L0052
+1,13,53,main_web,Player,Main,,,text,"아냐, 뭉치. 모든 모습들의 근원이 되는\n‘진짜’라는 것조차 만들어진 허상일 수 있어.","No, Dot. The very concept of something\nbeing real might be made up.",54,,,,Main_Ch3,M3_L0053
 1,13,54,main_web,Player,Main,,,text,그러니 너 자신을 섣불리 단정 짓지 말아 줘.,So please don’t jump to any\nconclusions about yourself.,57,,,,Main_Ch3,M3_L0054
-1,13,55,main_web,Player,Main,,,text,"아냐, 뭉치. 넌 생각이 깊고,\n부드럽고, 따스한 심성을 가졌어.","No, Dot. You’re thoughtful, soft, and warm.",56,,,,Main_Ch3,M3_L0055
-1,13,56,main_web,Player,Main,,,text,내가 보는 너의 모습이 가짜라고 생각하지 않아.,"To me, those parts of you are what’s real.",57,,,,Main_Ch3,M3_L0056
+1,13,55,main_web,Player,Main,,,text,"아냐, 뭉치. 넌 생각이 깊고,\n부드럽고, 따스한 심성을 가졌잖아.","No, Dot. You’re thoughtful, soft, and warm.",56,,,,Main_Ch3,M3_L0055
+1,13,56,main_web,Player,Main,,,text,"너의 검정은, 이러한 다정한 구석들까지\n집어삼킬 정도로 강하지 않아.","To me, those parts of you are what’s real.",57,,,,Main_Ch3,M3_L0056
 1,13,57,main_web,Dot,Main,,,text,...,...,58,,,,Main_Ch3,M3_L0057
 1,13,58,main_web,Dot,Main,,,text,나 혼자 있을 시간이 필요한 것 같아.\n이따 다시 찾아와 줄래?,I think I need to be alone.\nWould you stop by later?,,,anim_mud_day2,,Main_Ch3,M3_L0058
 3,14,59,main_door_open,Dot,Main,body_default1,face_blink,text,...,...,60,,,,Main_Ch3,M3_L0059
 3,14,60,main_door_open,Player,Main,,,text,안녕 뭉치.,Hello Dot.,61,,,,Main_Ch3,M3_L0060
-3,14,61,main_door_open,Dot,Main,body_move,,text,...,...,62,,,,Main_Ch3,M3_L0061
+3,14,61,main_door_open,Dot,Main,body_move,,text,......,......,62,,,,Main_Ch3,M3_L0061
 3,14,62,main_door_open,Player,Main,body_default1,,text,... 혹시 아직 혼자 있고 싶어?,... Do you still want to be alone?,63,,,,Main_Ch3,M3_L0062
 3,14,63,main_door_open,Dot,Main,,face_eyeroll3,text,"편안한 시간을 보내고\n온 것 같아, <nickname>.","It seems like you had\na pleasant time,<nickname>.",64,,,,Main_Ch3,M3_L0063
 3,14,64,main_door_open,Dot,Main,,face_blink,text,미소가 조금 더 짙어졌어.,Your smile is firmer.,65,,,,Main_Ch3,M3_L0064
@@ -68,9 +68,9 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,14,67,main_door_open,Dot,Main,,,text,<nickname> 너는 늘 나를\n따뜻하게 바라봐 주었으니까.,"Because you’ve always looked\nat me warmly, <nickname>.",68,,,,Main_Ch3,M3_L0067
 3,14,68,main_door_open,Dot,Main,,,text,그렇게 생각하지 않으면 견딜 수가 없어.,And I can’t stand to think otherwise.,69,,,,Main_Ch3,M3_L0068
 3,14,69,main_door_open,Dot,Main,,face_squeeze,text,그 모습이 진짜가 아니면... 거짓이라면 난...,"If it wasn’t real... if it was\nall just pretend, I...",70,,,,Main_Ch3,M3_L0069
-3,14,70,main_door_open,Player,Main,,,selection,"뭉치, 걱정하지 않아도 돼.|뭉치, 그건 쓸모 없는 걱정이야.","Dot, you don’t have to worry.|Dot, that’s a needless concern.",71|72,,,sun|moon,Main_Ch3,M3_L0070
-3,14,71,main_door_open,Player,Main,,face_blink,text,너와 함께 할 때의 난 늘 진심이었는걸.,I’ve always been true to you.,73,,,,Main_Ch3,M3_L0071
-3,14,72,main_door_open,Player,Main,,face_blink,text,너와 함께 할 때의 나는 늘 변함없이 나였어.,I’ve always been myself with you.,73,,,,Main_Ch3,M3_L0072
+3,14,70,main_door_open,Player,Main,,,selection,... 어떤 불안함인지 알 것 같아.|그런 거라면 걱정하지 않아도 돼.,"I think I know how you feel.|You don’t have to worry, Dot.",71|72,,,sun|moon,Main_Ch3,M3_L0070
+3,14,71,main_door_open,Player,Main,,face_blink,text,그러니 너와 함께할 때엔 늘 진심이겠다고 약속할게.,So I promise I’ll always be true\nto you when we’re together.,73,,,,Main_Ch3,M3_L0071
+3,14,72,main_door_open,Player,Main,,face_blink,text,너와 함께할 때의 나는 늘 변함없이 나였으니까.,I’ve always been myself with you.,73,,,,Main_Ch3,M3_L0072
 3,14,73,main_door_open,Dot,Main,,face_blink,text,... 정말이야? 인간들의 ‘거짓말 탐지기’를\n사용하지 않아도 되겠지?,...Really? I don’t need to use\nwhat humans call a ‘polygraph’?,74,,,,Main_Ch3,M3_L0073
 3,14,74,main_door_open,Player,Main,,,text,(그런 건 어디서 봤을까?),(Where did Dot learn that from?),75,,,,Main_Ch3,M3_L0074
 3,14,75,main_door_open,Player,Main,,,text,"그럼. 외출 전의 나도,\n지금의 나도 진짜 나야.","Of course. I was the real me before\nI went out, as I still am right now.",76,,,,Main_Ch3,M3_L0075
@@ -86,9 +86,9 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,14,85,main_door_open,Dot,Main,,face_blink,text,진짜와 가짜를 구분하는\n것은 의미가 없어지지.,There’s no use in telling\napart what’s real and fake.,86,,,,Main_Ch3,M3_L0085
 3,14,86,main_door_open,Dot,Main,,,text,"진짜일까 불안해하지도, 가짜라고 슬퍼하지도, 어느\n한 쪽을 탓하며 손가락질하지 않아도 되는 거야.","No need to worry over what’s real, weep over\nwhat’s not, or blame either one of them.",87,,,,Main_Ch3,M3_L0086
 3,14,87,main_door_open,Player,Main,body_move,,text,"네 말대로 내가 가진 모든 모습들이 그저 나라면,","If all my faces are really just who I am,",88,,,,Main_Ch3,M3_L0087
-3,14,88,main_door_open,Player,Main,body_default1,,selection,(안심이 된다.)|(혼란스럽다.),(A soothing thought.)|(A confusing thought.),89|91,,,moon|sun,Main_Ch3,M3_L0088
+3,14,88,main_door_open,Player,Main,body_default1,,selection,(어쩐지 안심이 돼.)|(... 여전히 혼란스러워. 나도 날 모르겠는 기분.),(That’s soothing.)|(I’m still lost. Who am I?),89|91,,,moon|sun,Main_Ch3,M3_L0088
 3,14,89,main_door_open,Player,Main,,,text,여러 개의 모습을 가졌다고 해서 특별히\n모순적이거나 가식적인 사람이 아니라는 거구나.,"then having a number of them\ndoesn’t mean I’m a paradox, or a fraud.",90,,,,Main_Ch3,M3_L0089
-3,14,90,main_door_open,Player,Main,,,text,다행이야. 안심이 돼.,That’s honestly a relief.,93,,,,Main_Ch3,M3_L0090
+3,14,90,main_door_open,Player,Main,,,text,... 다행이야.,... That’s good to know.,93,,,,Main_Ch3,M3_L0090
 3,14,91,main_door_open,Player,Main,,,text,하지만 종종 내 안에서 여러 개의\n내가 충돌하는 건 왜일까?,But then why do my inner selves\nconflict with each other at times?,92,,,,Main_Ch3,M3_L0091
 3,14,92,main_door_open,Player,Main,,,text,... 여전히 혼란스러워.,... I’m still lost.,93,,,,Main_Ch3,M3_L0092
 3,14,93,main_door_open,Dot,Main,,,text,어떤 모습을 보여 줄지\n선택하는 건 <nickname>의 몫이야.,"It’s up to you to decide what face\nyou want to show, <nickname>.",94,,,,Main_Ch3,M3_L0093

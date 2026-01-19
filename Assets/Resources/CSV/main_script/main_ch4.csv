@@ -1,6 +1,6 @@
-﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,19,1,main_door_open,Dot,Main,body_mud,face_null,text,"안녕, <nickname>...","Hello, <nickname>...",2,,,,Main_Ch4,M4_L0001
-1,19,2,main_door_open,Player,Main,body_mud,,selection,(차분하게 물어본다)|(다정하게 걱정한다.),(Calmly question.)|(Gently worry.),3|7,,,moon|sun,Main_Ch4,M4_L0002
+1,19,2,main_door_open,Player,Main,body_mud,,selection,(산책을 안 나간 건 처음이네. 몸이 피곤했나?)|(뭉치가 오늘따라 이상해. 속상한 일이 있는 걸까?),(Calmly question.)|(Gently worry.),3|7,,,moon|sun,Main_Ch4,M4_L0002
 1,19,3,main_door_open,Player,Main,body_mud,,text,"뭉치, 오늘은 안 나갔어?","Dot, did you go out today?",4,,,,Main_Ch4,M4_L0003
 1,19,4,main_door_open,Dot,Main,body_mud,,text,못 나갔어.,I couldn’t.,5,,,,Main_Ch4,M4_L0004
 1,19,5,main_door_open,Dot,Main,body_mud,,text,"난 나의 의지와는 무관하게,\n명백히, 온전히 실패했어.","Despite my will, I failed.\nUtterly and wholly.",6,,,,Main_Ch4,M4_L0005
@@ -8,7 +8,7 @@
 1,19,7,main_door_open,Player,Main,body_mud,,text,"뭉치, 눈이 왜 사라져\n있을까... 무슨 일 있어?","Your eyes are missing, Dot...\nIs something wrong?",8,,,,Main_Ch4,M4_L0007
 1,19,8,main_door_open,Dot,Main,body_mud,,text,무슨 일이 있다? ‘무슨 일’이라\n불릴 만큼 대단한 일은 없어.,Wrong? Nothing so dramatic\nas to be called ‘wrong’.,9,,,,Main_Ch4,M4_L0008
 1,19,9,main_door_open,Dot,Main,body_mud,,text,그러나 동시에 ‘어떠한 일’은\n항상 일어나고 있지.,But ‘something’ is always happening.,10,,,,Main_Ch4,M4_L0009
-1,19,10,main_door_open,Player,Main,body_mud,,text,걱정의 표현이야.,It’s a saying.,11,,,,Main_Ch4,M4_L0010
+1,19,10,main_door_open,Player,Main,body_mud,,text,"아, 이건 걱정의 표현이야.","Oh, it’s only an expression.",11,,,,Main_Ch4,M4_L0010
 1,19,11,main_door_open,Player,Main,body_mud,,text,인간들은 걱정이 될 때면 종종\n‘무슨 일이 있냐’라고 물어보거든.,People ask whether something’s\nwrong when they’re worried.,12,,,,Main_Ch4,M4_L0011
 1,19,12,main_door_open,Dot,Main,body_mud,,text,그렇구나... ‘걱정’은 따뜻하고 애정 어린 것.,I see... ‘worried’ is\na warm and loving state.,13,,,,Main_Ch4,M4_L0012
 1,19,13,main_door_open,Dot,Main,body_mud,,text,"고마워, <nickname>. 미약하게나마 위안이 돼.","Thank you, <nickname>.\nIt’s a small comfort.",14,,,,Main_Ch4,M4_L0013
@@ -27,7 +27,7 @@
 1,19,26,main_door_open,Player,Main,,,text,"그 말, 정말 긍정적이고 희망적인데?","It’s a hopeful message, right?",27,,,,Main_Ch4,M4_L0026
 1,19,27,main_door_open,Player,Main,body_hmm_turn,,text,"그 직원들은 어쩌면 너의 밝은 사고 방식을 보고,","Maybe the workers saw\nyour unending optimism,",28,,,,Main_Ch4,M4_L0027
 1,19,28,main_door_open,Player,Main,body_hmm_stay,,text,"뭉치는 절망 속에서도 꿋꿋하게 ‘희망’을\n좇을 줄 아는 아이구나, 생각했을 수 있겠어!","and thought, here’s someone that can\nseek hope even in the depth of despair!",29,,,,Main_Ch4,M4_L0028
-1,19,29,main_door_open,Player,Main,,,selection,그건 지구에서도 멋진 일이거든.|그건 인간에게조차 어려운 일이야.,It’s a valuable quality on Earth too.|It’s a difficult feat even for humans.,30|30,,,sun|moon,Main_Ch4,M4_L0029
+1,19,29,main_door_open,Player,Main,,,selection,희망은 빠르게 번져나가기도 하니까.|그건 아직 나조차 어려워하는 일인 걸.,"Hope is contagious, you see.|I still have difficulty with it, you see.",30|30,,,sun|moon,Main_Ch4,M4_L0029
 1,19,30,main_door_open,Dot,Main,body_bounce,,text,하지만 나는 ‘희망’을 좇지 않았는걸?,But I never sought hope?,31,,,,Main_Ch4,M4_L0030
 1,19,31,main_door_open,Dot,Main,body_default1,,text,"아니, 아니. 나는 희망 같은 걸 바라보고 있지 않았어.","No, no. it wasn’t hope I was gazing at.",32,,,,Main_Ch4,M4_L0031
 1,19,32,main_door_open,Dot,Main,,face_eyeroll2,text,당시의 나는 차가운 죽음과 그보다\n차가울 우주의 암흑을 바라보며,"At the time I was gazing into cold death and,\ncolder still, the darkness of the universe.",33,,,,Main_Ch4,M4_L0032
@@ -74,15 +74,15 @@
 3,20,73,main_door_open,Dot,Main,,,text,그래야 그 무엇도 잃지 않을 수 있어.,It’s the only way to stop\nme from losing anything.,74,,,,Main_Ch4,M4_L0073
 3,20,74,main_door_open,Dot,Main,,,text,"그래야만 나의 암흑에 대한 기억을 잊고,\n지구에서 값지고 다채로운 시간을 시작할 수 있어.","The only way for me to forget of my darkness\n and start a treasured, vibrant life on earth.",75,,,,Main_Ch4,M4_L0074
 3,20,75,main_door_open,Player,Main,,,text,"진정해 봐, 뭉치.","Calm down, Dot.",76,,,,Main_Ch4,M4_L0075
-3,20,76,main_door_open,Player,Main,,,text,나는 네가 너의 과거를 버리지 않았으면 좋겠어.,I wouldn’t want you\nto throw your past away.,77,,,,Main_Ch4,M4_L0076
+3,20,76,main_door_open,Player,Main,,,text,나는 네가 너의 과거를 버리지 않았으면 좋겠어.,I don’t want you to\nthrow your past away.,77,,,,Main_Ch4,M4_L0076
 3,20,77,main_door_open,Player,Main,,,selection,과거는 너의 영원한 친구 같은 거야.|과거를 떠올리는 행위에는 득과 실이 공존하니까.,The past is like a friend for life.|Recalling the past is a double-edged blade.,78|79,,,sun|moon,Main_Ch4,M4_L0077
-3,20,78,main_door_open,Player,Main,,,text,"과연 지금의 너와 미래의 너,\n과거의 너를 떼어 낼 수 있을까?","Is the Dot of today, the past, and the\nfuture all separate from each other?",80,,,,Main_Ch4,M4_L0078
-3,20,79,main_door_open,Player,Main,,,text,"현재의 시간을 내어 주고 과거를 반추하는\n동안, 너는 더 값진 것들을 얻게 될지도 몰라.","By giving away time now and mulling over what\nonce was, you may gain something more valuable.",80,,,,Main_Ch4,M4_L0079
-3,20,80,main_door_open,Player,Main,,,text,눈을 감아 볼래?,Close your eyes for me?,81,,,,Main_Ch4,M4_L0080
+3,20,78,main_door_open,Player,Main,,,text,"과연 지금의 너와 미래의 너,\n과거의 너를 떼어 낼 수 있을까?","Is the Dot of today, the past, and the\nfuture all separate from one another?",80,,,,Main_Ch4,M4_L0078
+3,20,79,main_door_open,Player,Main,,,text,"현재의 시간을 내어 주고 과거를 회상하는\n동안, 너는 더 값진 것들을 얻게 될지도 몰라.","By giving away time now and mulling over what\nonce was, you may gain something more valuable.",80,,,,Main_Ch4,M4_L0079
+3,20,80,main_door_open,Player,Main,,,text,... 한번 눈을 감아 볼래?,... Close your eyes for me?,81,,,,Main_Ch4,M4_L0080
 3,20,81,main_door_open,Player,Main,,face_close_turn,text,이제 달을 떠올려 봐. 그 위성의 뒤편을.,Now picture the Moon.\nThe dark side of it.,82,,,,Main_Ch4,M4_L0081
 3,20,82,main_door_open,Dot,Main,,face_close,text,"척박하지만 아름다워. 공장이 보이고,","It’s rough but beautiful,\nI see the factory,",83,,,,Main_Ch4,M4_L0082
-3,20,83,main_door_open,Dot,Main,,,text,완성형의 꿈 구체들이 지구로 송출되고 있어.,and completed moon\nspheres being sent to Earth.,84,,,,Main_Ch4,M4_L0083
-3,20,84,main_door_open,Player,Main,,,selection,(환상적인 달의 비밀이었지.)|(아직 조금 믿기지 않지만.),(Wondrous secrets of the Moon.)|(I still can’t quite wrap my head around it.),85|85,,,sun|moon,Main_Ch4,M4_L0084
+3,20,83,main_door_open,Dot,Main,,,text,완성형의 꿈 구체들이 지구로 송출되고 있어.,and completed dream\nspheres being sent to Earth.,84,,,,Main_Ch4,M4_L0083
+3,20,84,main_door_open,Player,Main,,,selection,(환상적인 달의 비밀이었지.)|(아직도 믿기 힘든 이야기네.),(Wondrous secrets of the Moon.)|(I still can’t quite wrap my head around it.),85|85,,,sun|moon,Main_Ch4,M4_L0084
 3,20,85,main_door_open,Player,Main,,,text,또 뭐가 보여? 그 아래에는?,What else do you see?\nDown below?,86,,,,Main_Ch4,M4_L0085
 3,20,86,main_door_open,Dot,Main,,face_squeeze,text,"꿈들의 단두대, 그 섬뜩한\n파쇄 팬과 오물 처리장이 보여.",The guillotine of dreams. The eerie\nfan and the filth disposal site.,87,,,,Main_Ch4,M4_L0086
 3,20,87,main_door_open,Dot,Main,,,text,날카로운 갈퀴로 굳은 꿈 폐기물들을\n긁어 내는 달의 이들도.,Those on the Moon scraping away\nmoon filth with sharp rakes.,88,,,,Main_Ch4,M4_L0087
@@ -117,7 +117,7 @@
 3,20,116,main_door_open,Player,Main,,,text,"내 기억도, 뭉치가 지워 주면 안 돼? 뭉치는 신비한\n달에서 왔으니까 내 기억도 지워 줄 수 있잖아. 그치?","Could you do it for me, Dot? You come from the\nMoon, you must have the power to do so. Right?",117,,,,Main_Ch4,M4_L0116
 3,20,117,main_door_open,Dot,Main,,,text,어... 어?,Wait... huh?,118,,,,Main_Ch4,M4_L0117
 3,20,118,main_door_open,Dot,Main,,,text,잠시만. 무슨 소리야? 왜 너의\n과거까지 지우려고 하는 거야?,Wait. What are you saying? Why would\nyou want to erase your past as well?,119,,,,Main_Ch4,M4_L0118
-3,20,119,main_door_open,Player,Main,,,selection,새로 시작하는 것도 나쁘지 않을 것 같아서!|떠올리려 할 때마다 내 자신이 미워지거든.,A new leaf doesn’t sound so bad!|I can’t stand myself whenever I remember.,120|122,,,active|passive,Main_Ch4,M4_L0119
+3,20,119,main_door_open,Player,Main,,,selection,새로 시작하는 것도 나쁘지 않을 것 같아서!|떠올리려 할 때마다 마음이 고통스러워지거든.,A new leaf doesn’t sound so bad!|I can’t stand myself whenever I remember.,120|122,,,active|passive,Main_Ch4,M4_L0119
 3,20,120,main_door_open,Dot,Main,,,text,하지만 네 자신의 커다란 일부를\n잃어버린 채 시작해야 할지도 몰라...,But you might start over with\na huge part of yourself missing...,121,,,,Main_Ch4,M4_L0120
 3,20,121,main_door_open,Dot,Main,,,text,"과거를 기억하는 일은 마치 지도를 읽어 나가는\n것과 같아서, 미래에서 길을 잃지 않도록 도와줘.","Remembering the past is like tracing\na map, so as not to get lost in the future.",124,,,,Main_Ch4,M4_L0121
 3,20,122,main_door_open,Dot,Main,,,text,하지만 원흉조차 모르는\n어려움을 품고 길을 잃는 것보다,"But it’s better to know where your troubles\ncome from, and why you loathe a part of yourself,",123,,,,Main_Ch4,M4_L0122

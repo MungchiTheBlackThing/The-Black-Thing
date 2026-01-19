@@ -43,7 +43,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 1,,42,0,Dot,sub,anim_eyesup_turn,text,이 목재 조형물의 모퉁이는 정말\n아름답고 안전하고 못난 곳이야.,"This corner of the wooden structure is\na beautiful, safe, and ugly place, truly.",43,,,,Tuto_Sub,TS_L0042
 1,,43,0,Dot,sub,,text,덕분에 지구에 와 처음으로\n온전하게 안락해질 수 있었어.,"Thanks to it, I could rest wholeheartedly\nfor the first time since arriving on Earth.",44,,,,Tuto_Sub,TS_L0043
 1,,44,0,Player,sub,anim_eyesblink,text,책장 구석? 거기가 좋았구나.\n먼지 안 닦았을 텐데....,"The bookshelf corner, you mean? You like it there,\nhuh. I don’t remember dusting it...",45,,,,Tuto_Sub,TS_L0044
-1,,45,0,Player,sub,,selection,모쪼록 칭찬 고마워. 칭찬이... 맞다면?|아무튼 침범한 쪽은 내가 아니라고....,"Well, thanks for the compliment. (If it is one?)|In any case... I wasn't the one intruding here.",46,,,,Tuto_Sub,TS_L0045
+1,,45,0,Player,sub,,selection,모쪼록 칭찬 고마워. 칭찬이... 맞다면?|아무튼 침범한 쪽은 내가 아니라고....,"Well, thanks for the compliment. (If it is one?)|In any case... I wasn't the one intruding here.",46|46,,,,Tuto_Sub,TS_L0045
 1,,46,0,Dot,sub,,text,너는 내가 지구에서 만난\n첫 번째 생명체.,You are the first creature I’ve met on Earth.,47,,,,Tuto_Sub,TS_L0046
 1,,47,0,Dot,sub,,text,기억에 오래 남을 소중한\n상징이 됐어.,You have become a precious symbol\nthat will live on in my memory.,48,,,,Tuto_Sub,TS_L0047
 1,,48,0,Dot,sub,,text,너는 뭐야?,What are you?,49,,,,Tuto_Sub,TS_L0048
@@ -82,7 +82,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 1,,81,0,Dot,sub,,text,응... 산책이란 특색 있고\n새콤한 경험이었어!,"Yes... an extraordinary,\nenthralling exprience!",82,,,,Tuto_Sub,TS_L0081
 1,,82,0,Dot,sub,,text,나의 몸이 꿈처럼 예쁘게 채색된\n모양이었다면 더욱 투명히 기뻐했겠지만....,It would have been more pleasant\nif my body was colored like that of a dream.,83,,,,Tuto_Sub,TS_L0082
 1,,83,0,Dot,sub,,text,이 끔찍한 검정 덩어리. 만물 사이에서 홀로\n새까만 채로 존재하는 게 어찌나 고독한 일이던지.,"But I am instead foul, lumpy, and black...\njust a useless dark spot in the world.",84,,,,Tuto_Sub,TS_L0083
-1,,84,0,Dot,sub,,text,그래도 괜찮아. 길거리를 걸어다니는 수많은 인간들을 소리 없이 구경할 수 있었으니까!,But it was alright. I was able to quietly\nhumans people going their way!,85,,,,Tuto_Sub,TS_L0084
+1,,84,0,Dot,sub,,text,그래도 괜찮아. 길거리를 걸어다니는 수많은\n인간들을 소리 없이 구경할 수 있었으니까!,But it was alright. I was able to quietly\nhumans people going their way!,85,,,,Tuto_Sub,TS_L0084
 1,,85,0,Player,sub,,text,"(문득 궁금해. 뭉치,\n어둠을 좋아하지 않았던가?)",(Curious. I thought Dot liked the dark?),86,,,,Tuto_Sub,TS_L0085
 1,,86,0,Player,sub,,text,(자신의 검은 몸은 왜 싫어하는 거지?),(So why do they dislike their body so?),87,,,,Tuto_Sub,TS_L0086
 1,,87,0,Player,sub,,text,"뭉치, 그런데 뭉치는 어둑한\n장소들과 그림자를 좋아하지 않아?","But Dot, don’t you like\ndark places and shadows?",88,,,,Tuto_Sub,TS_L0087

@@ -1,6 +1,6 @@
 Key,English (United States)(en-US),Korean (South Korea)(ko-KR)
 M4_L0001,"Hello, <nickname>...","안녕, <nickname>..."
-M4_L0002,(Calmly question.)|(Gently worry.),(차분하게 물어본다)|(다정하게 걱정한다.)
+M4_L0002,(Dot hasn’t gone on a walk. Are they tired?.)|(Dot is being strange. Are they upset?),(산책을 안 나간 건 처음이네. 몸이 피곤했나?)|(뭉치가 오늘따라 이상해. 속상한 일이 있는 걸까?)
 M4_L0003,"Dot, did you go out today?","뭉치, 오늘은 안 나갔어?"
 M4_L0004,I couldn’t.,못 나갔어.
 M4_L0005,"Despite my will, I failed.\nUtterly and wholly.","난 나의 의지와는 무관하게,\n명백히, 온전히 실패했어."
@@ -8,7 +8,7 @@ M4_L0006,"So according to the language\nsystem, I ‘couldn’t’ go out.",인�
 M4_L0007,"Your eyes are missing, Dot...\nIs something wrong?","뭉치, 눈이 왜 사라져\n있을까... 무슨 일 있어?"
 M4_L0008,Wrong? Nothing so dramatic\nas to be called ‘wrong’.,무슨 일이 있다? ‘무슨 일’이라\n불릴 만큼 대단한 일은 없어.
 M4_L0009,But ‘something’ is always happening.,그러나 동시에 ‘어떠한 일’은\n항상 일어나고 있지.
-M4_L0010,It’s a saying.,걱정의 표현이야.
+M4_L0010,"Oh, it’s only an expression.","아, 이건 걱정의 표현이야."
 M4_L0011,People ask whether something’s\nwrong when they’re worried.,인간들은 걱정이 될 때면 종종\n‘무슨 일이 있냐’라고 물어보거든.
 M4_L0012,I see... ‘worried’ is\na warm and loving state.,그렇구나... ‘걱정’은 따뜻하고 애정 어린 것.
 M4_L0013,"Thank you, <nickname>.\nIt’s a small comfort.","고마워, <nickname>. 미약하게나마 위안이 돼."
@@ -27,9 +27,9 @@ M4_L0025,“Maybe someone out there wants\nme as a dream of their own.”,“저
 M4_L0026,"It’s a hopeful message, right?","그 말, 정말 긍정적이고 희망적인데?"
 M4_L0027,"Maybe the workers saw\nyour unending optimism,","그 직원들은 어쩌면 너의 밝은 사고 방식을 보고,"
 M4_L0028,"and thought, here’s someone that can\nseek hope even in the depth of despair!","뭉치는 절망 속에서도 꿋꿋하게 ‘희망’을\n좇을 줄 아는 아이구나, 생각했을 수 있겠어!"
-M4_L0029,It’s a valuable quality on Earth too.|It’s a difficult feat even for humans.,그건 지구에서도 멋진 일이거든.|그건 인간에게조차 어려운 일이야.
+M4_L0029,"Hope is contagious, you see.|I still have difficulty with it, you know.",희망은 빠르게 번져나가기도 하니까.|그건 아직 나조차 어려워하는 일인 걸.
 M4_L0030,But I never sought hope?,하지만 나는 ‘희망’을 좇지 않았는걸?
-M4_L0031,"No, no. it wasn’t hope I was gazing at.","아니, 아니. 나는 희망 같은 걸\n바라보고 있지 않았어."
+M4_L0031,"No, no. it wasn’t hope I was gazing at.","아니, 아니. 나는 희망 같은 걸 바라보고 있지 않았어."
 M4_L0032,"At the time I was gazing into cold death and,\ncolder still, the darkness of the universe.",당시의 나는 차가운 죽음과 그보다\n차가울 우주의 암흑을 바라보며
 M4_L0033,"Turbulating fear lodged in my throat,",휘몰아치는 공포를 머금은 채
 M4_L0034,my gaze drifted onto something\nin the far corner of the universe.,우주의 어느 먼 구석을 시선 끝으로\n헤엄치다 무언가를 맞닥뜨렸을 뿐이야.
@@ -53,7 +53,7 @@ M4_L0051,I want to run forever from my past.,과거로부터 영원히 도망치
 M4_L0052,"To think that I’ll never recall Red, Edison,\nand Sir Cello again pains me.","레드, 에디슨, 그리고 첼로 경을 다시는\n떠올리지 못하게 될 거라는 사실은 슬프지만"
 M4_L0053,but memories of the Moon are ones of despair.\nI’m reminded endlessly that I was born in the dark.,달에는 나를 비참하게 하는 기억들이 너무 많아. 내가\n암흑 속에서 태어났다는 사실을 수없이 상기당해야만 하지.
 M4_L0054,If I could rip out those nightmarish times...\nIf I could focus solely on my future on Earth...,그 악몽 같던 시간을 통째로 도려 낼 수만 있다면...\n지구에서의 미래만 보며 살 길이 있다면...
-M4_L0055,......,......
+M4_L0055,......,.....
 M4_L0056,I want to ask you something.,너에게 묻고 싶은 게 있어.
 M4_L0057,... Do you have a past like that too?,... 너에게도 그런 과거가 있어?
 M4_L0058,Remnants from it that you can’t help but stew over.,끈질기게 잘근잘근 곱씹게\n되는 과거의 파편들 말이야.
@@ -77,12 +77,12 @@ M4_L0075,"Calm down, Dot.","진정해 봐, 뭉치."
 M4_L0076,I wouldn’t want you\nto throw your past away.,나는 네가 너의 과거를 버리지 않았으면 좋겠어.
 M4_L0077,The past is like a friend for life.|Recalling the past is a double-edged blade.,과거는 너의 영원한 친구 같은 거야.|과거를 떠올리는 행위에는 득과 실이 공존하니까.
 M4_L0078,"Is the Dot of today, the past, and the\nfuture all separate from each other?","과연 지금의 너와 미래의 너,\n과거의 너를 떼어 낼 수 있을까?"
-M4_L0079,"By giving away time now and mulling over what\nonce was, you may gain something more valuable.","현재의 시간을 내어 주고 과거를 반추하는\n동안, 너는 더 값진 것들을 얻게 될지도 몰라."
-M4_L0080,Close your eyes for me?,눈을 감아 볼래?
+M4_L0079,"By giving away time now and mulling over what\nonce was, you may gain something more valuable.","현재의 시간을 내어 주고 과거를 회상하는\n동안, 너는 더 값진 것들을 얻게 될지도 몰라."
+M4_L0080,Close your eyes for me?,... 한번 눈을 감아 볼래?
 M4_L0081,Now picture the Moon.\nThe dark side of it.,이제 달을 떠올려 봐. 그 위성의 뒤편을.
 M4_L0082,"It’s rough but beautiful,\nI see the factory,","척박하지만 아름다워. 공장이 보이고,"
 M4_L0083,and completed moon\nspheres being sent to Earth.,완성형의 꿈 구체들이 지구로 송출되고 있어.
-M4_L0084,(Wondrous secrets of the Moon.)|(I still can’t quite wrap my head around it.),(환상적인 달의 비밀이었지.)|(아직 조금 믿기지 않지만.)
+M4_L0084,(Wondrous secrets of the Moon.)|(I still can’t quite wrap my head around it.),(환상적인 달의 비밀이었지.)|(아직도 믿기 힘든 이야기네.)
 M4_L0085,What else do you see?\nDown below?,또 뭐가 보여? 그 아래에는?
 M4_L0086,The guillotine of dreams. The eerie\nfan and the filth disposal site.,"꿈들의 단두대, 그 섬뜩한\n파쇄 팬과 오물 처리장이 보여."
 M4_L0087,Those on the Moon scraping away\nmoon filth with sharp rakes.,날카로운 갈퀴로 굳은 꿈 폐기물들을\n긁어 내는 달의 이들도.
@@ -117,7 +117,7 @@ M4_L0115,"Dot, I think you’re right. I want\nto erase all my past memories too
 M4_L0116,"Could you do it for me, Dot? You come from the\nMoon, you must have the power to do so. Right?","내 기억도, 뭉치가 지워 주면 안 돼? 뭉치는 신비한\n달에서 왔으니까 내 기억도 지워 줄 수 있잖아. 그치?"
 M4_L0117,Wait... huh?,어... 어?
 M4_L0118,Wait. What are you saying? Why would\nyou want to erase your past as well?,잠시만. 무슨 소리야? 왜 너의\n과거까지 지우려고 하는 거야?
-M4_L0119,A new leaf doesn’t sound so bad!|I can’t stand myself whenever I remember.,새로 시작하는 것도 나쁘지 않을 것 같아서!|떠올리려 할 때마다 내 자신이 미워지거든.
+M4_L0119,A new leaf doesn’t sound so bad!|I can’t stand myself whenever I remember.,새로 시작하는 것도 나쁘지 않을 것 같아서!|떠올리려 할 때마다 마음이 고통스러워지거든.
 M4_L0120,But you might start over with\na huge part of yourself missing...,하지만 네 자신의 커다란 일부를\n잃어버린 채 시작해야 할지도 몰라...
 M4_L0121,"Remembering the past is like tracing\na map, so as not to get lost in the future.","과거를 기억하는 일은 마치 지도를 읽어 나가는\n것과 같아서, 미래에서 길을 잃지 않도록 도와줘."
 M4_L0122,"But it’s better to know where your troubles\ncome from, and why you loathe a part of yourself,",하지만 원흉조차 모르는\n어려움을 품고 길을 잃는 것보다
@@ -131,7 +131,7 @@ M4_L0129,"Yes, that’s it.","응, 맞아."
 M4_L0130,"Losing a loved one leaves\nbehind a fear of love,","사랑했던 사람을 잃었던\n기억은 사랑에 대한 두려움을,"
 M4_L0131,and a failed relationship leaves behind\na hesitancy for true commitment.,실패한 애착의 경험은 진실된 교류에\n대한 회피를 남겼을 수도 있어.
 M4_L0132,"We look back on those pasts, and\ntrace the patterns left on me now.","우리는 그 과거를 돌아보며, 현재 나에\n새겨진 흔적들을 짐작해 볼 수 있는 거야."
-M4_L0133,"’So this is where I come from,’\nor something like that?","’아, 그때의 내가 있었기에\n지금의 내가 이렇구나’ 하며?"
+M4_L0133,"‘So this is where I come from,’\nor something like that?","‘아, 그때의 내가 있었기에\n지금의 내가 이렇구나’ 하며?"
 M4_L0134,... Right. Not looking back means\nwe can’t tell what’s left from that time.,"... 맞아. 과거를 돌아보지 않을 경우, 나에게\n어떤 흔적이 남아 있는지를 알 수조차 없게 되지."
 M4_L0135,"It’s only when we face them do we decide\nto leave them be, or hide them away.","그걸 바라봐야 흔적을 인정하고 남겨 둘지,\n애써 덮어 볼지를 선택할 수 있는데 말이야."
 M4_L0136,See. You already know.,이것 봐. 뭉치도 잘 알고 있잖아.
