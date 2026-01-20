@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
 public class ObjectPool
 {
@@ -20,34 +19,35 @@ public class ObjectPool
 
     private Dictionary<string, PoolItem> _memory = new Dictionary<string, PoolItem>();
 
-    public IEnumerator LoadFromMemoryAsync(string path, System.Action<AssetBundle> callback)
-    {
-
-        UnityWebRequest www = UnityWebRequestAssetBundle.GetAssetBundle(path);
-        yield return www.SendWebRequest();
-
-        if (www.result != UnityWebRequest.Result.Success)
-        {
-            Debug.LogError($"Failed to download AssetBundle: {www.error}");
-        }
-        else
-        {
-            // AssetBundle을 다운로드한 후 가져오기
-            AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(www);
-
-            // 콜백 호출
-            if (bundle != null)
-            {
-                Debug.Log("AssetBundle successfully downloaded and loaded!");
-                callback?.Invoke(bundle);
-            }
-            else
-            {
-                Debug.LogError("Failed to load AssetBundle.");
-                callback?.Invoke(null);
-            }
-        }
-    }
+    /*
+     *
+     * using UnityEngine.Networking;
+     *
+     * public IEnumerator LoadFromMemoryAsync(string path, System.Action<AssetBundle> callback)
+     * {
+     *     UnityWebRequest www = UnityWebRequestAssetBundle.GetAssetBundle(path);
+     *     yield return www.SendWebRequest();
+     *
+     *     if (www.result != UnityWebRequest.Result.Success)
+     *     {
+     *         Debug.LogError($\"Failed to download AssetBundle: {www.error}\");
+     *     }
+     *     else
+     *     {
+     *         AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(www);
+     *         if (bundle != null)
+     *         {
+     *             Debug.Log(\"AssetBundle successfully downloaded and loaded!\");
+     *             callback?.Invoke(bundle);
+     *         }
+     *         else
+     *         {
+     *             Debug.LogError(\"Failed to load AssetBundle.\");
+     *             callback?.Invoke(null);
+     *         }
+     *     }
+     * }
+     */
     
     //검색 기능
     public GameObject SearchMemory(string objectName)
