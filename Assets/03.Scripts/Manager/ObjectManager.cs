@@ -5,21 +5,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
 using static ObjectPool;
 using Assets.Script.Reward;
 
-[Serializable]
-public class GooglePath
-{
-    [SerializeField]
-    public SITime Time;
-    [SerializeField]
-    public string path;
-}
+/*
+ * [Serializable]
+ * public class GooglePath
+ * {
+ *     [SerializeField] public SITime Time;
+ *     [SerializeField] public string path; // "night", "morning", ...
+ * }
+ */
 
 public class ObjectManager : MonoBehaviour
 {
@@ -45,8 +43,9 @@ public class ObjectManager : MonoBehaviour
 
     PlayerController pc;
 
-    [SerializeField]
-    List<GooglePath> googlePath;
+    /*
+     * [SerializeField] List<GooglePath> googlePath;
+     */
 
     //Dictionary<현재 시간, FileID> FileID; 제공
     public ObjectManager()
@@ -109,7 +108,7 @@ public class ObjectManager : MonoBehaviour
 
             return mains[background];
         }
-
+        Debug.Log("setmain 배경 못찾음: " + background);
         return null;
     }
 
@@ -125,46 +124,82 @@ public class ObjectManager : MonoBehaviour
         return loadProgress;
     }
 
-    private void LoadMainBackground(AssetBundle bundle)
+    /*
+     * [LEGACY] AssetBundle로 MainBackground 로드
+     *
+     * private void LoadMainBackground(AssetBundle bundle)
+     * {
+     *     if (bundle != null)
+     *     {
+     *         GameObject[] prefab = bundle.LoadAllAssets<GameObject>();
+     *         foreach (GameObject pf in prefab)
+     *         {
+     *             GameObject realObj = Instantiate(pf, this.transform);
+     *             string name = realObj.name.Substring(0, realObj.name.IndexOf("("));
+     *             realObj.name = name;
+     *             mains.Add(name, realObj);
+     *             realObj.SetActive(false);
+     *         }
+     *         bundle.Unload(false);
+     *     }
+     * }
+     */
+
+    private void LoadMainBackgroundFromResources(string timeName)
     {
+        // Resources 경로: Assets/Resources/MainBackground/{Time}/...prefab
+        // timeName: "Night", "Morning", "Evening", "Dawn"
+        string resourcesPath = Path.Combine("MainBackground", timeName).Replace("\\", "/");
 
-        if(bundle != null)
+        GameObject[] prefabs = Resources.LoadAll<GameObject>(resourcesPath);
+        if (prefabs == null || prefabs.Length == 0)
         {
-            GameObject[] prefab = bundle.LoadAllAssets<GameObject>();
-            
+            Debug.LogWarning($"[ObjectManager] MainBackground 리소스가 없습니다: Resources/{resourcesPath}");
+            return;
+        }
 
-            foreach(GameObject pf in prefab)
+        foreach (GameObject pf in prefabs)
+        {
+            if (pf == null) continue;
+
+            GameObject realObj = Instantiate(pf, this.transform);
+
+            // "(Clone)" 제거 (안전하게)
+            int idx = realObj.name.IndexOf("(");
+            if (idx > 0) realObj.name = realObj.name.Substring(0, idx);
+
+            if (!mains.ContainsKey(realObj.name))
             {
-                GameObject realObj = Instantiate(pf,this.transform);
-
-                string name = realObj.name.Substring(0, realObj.name.IndexOf("(")); 
-                realObj.name = name; //(clone)을 찾아냄.
-                mains.Add(name,realObj);
-                realObj.SetActive(false);
+                mains.Add(realObj.name, realObj);
+            }
+            else
+            {
+                Debug.LogWarning($"[ObjectManager] 중복 MainBackground 키: {realObj.name} (이미 존재).");
             }
 
-            bundle.Unload(false);
+            realObj.SetActive(false);
         }
     }
 
     // 비동기 로드를 위한 코루틴
     public IEnumerator LoadObjectAsync(string path, int chapter)
     {
-        string tmpPath = "";
-        for (int idx = 0; idx < googlePath.Count; idx++)
-        {
-            if (googlePath[idx].Time.ToString() == path)
-            {
-                tmpPath = googlePath[idx].path;
-                break;
-            }
-        }
+        // MainBackground는 AssetBundle이 아니라 Resources에서 로드
+        LoadMainBackgroundFromResources(path);
 
-        yield return StartCoroutine(LoadAssetBundleFromLocal(tmpPath, LoadMainBackground));
-
-        //string MainPath = "https://drive.google.com/uc?export=download&id="+ tmpPath;
-        //Action<AssetBundle> callback = LoadMainBackground;
-        // yield return StartCoroutine(pool.LoadFromMemoryAsync(MainPath, callback));
+        /*
+         *
+         * string tmpPath = "";
+         * for (int idx = 0; idx < googlePath.Count; idx++)
+         * {
+         *     if (googlePath[idx].Time.ToString() == path)
+         *     {
+         *         tmpPath = googlePath[idx].path;
+         *         break;
+         *     }
+         * }
+         * yield return StartCoroutine(LoadAssetBundleFromLocal(tmpPath, LoadMainBackground));
+         */
 
         isObjectLoadComplete = false;  // 로드가 시작되므로 false로 설정
         loadProgress = 0f;  // 진행 상황 초기화
@@ -234,7 +269,7 @@ public class ObjectManager : MonoBehaviour
         List<EReward> Reward = pc.GetRewards();
         for (int rewardIdx = 0; rewardIdx < Reward.Count; rewardIdx++)
         {
-            tmpPath = "Reward/" + currentTime + "/" + Reward[rewardIdx].ToString();
+            string tmpPath = "Reward/" + currentTime + "/" + Reward[rewardIdx].ToString();
 
             //호출 Resource에서 해당 Time부분에 있는 reward 업로드
             ResourceRequest resourceRequest = Resources.LoadAsync<GameObject>(tmpPath);
@@ -261,25 +296,48 @@ public class ObjectManager : MonoBehaviour
         isObjectLoadComplete = true;
     }
 
-    private IEnumerator LoadAssetBundleFromLocal(string bundleFileName, Action<AssetBundle> onLoaded)
-    {
-        //Assets/StreamingAssets/NewAssetBundles
-        string candidateStreaming = Path.Combine(Application.streamingAssetsPath, "NewAssetBundles", bundleFileName);
-        string fullPath = candidateStreaming;
-
-        // 파일에서 에셋번들 비동기 로드
-        var request = AssetBundle.LoadFromFileAsync(fullPath);
-        yield return request;
-
-        var bundle = request.assetBundle;
-        if (bundle == null)
-        {
-            Debug.LogError($"[ObjectManager] AssetBundle 로드 실패: {fullPath}");
-            yield break;
-        }
-
-        onLoaded?.Invoke(bundle);
-    }
+    /*
+     *
+     * private IEnumerator LoadAssetBundleFromLocal(string bundleFileName, Action<AssetBundle> onLoaded)
+     * {
+     *     string buildTarget = GetBuildTargetName();
+     *     string bundlePath = Path.Combine(Application.streamingAssetsPath, "AssetBundles", buildTarget);
+     *     string fullPath = Path.Combine(bundlePath, bundleFileName);
+     *
+     *     var request = AssetBundle.LoadFromFileAsync(fullPath);
+     *     yield return request;
+     *
+     *     var bundle = request.assetBundle;
+     *     if (bundle == null)
+     *     {
+     *         yield break;
+     *     }
+     *     onLoaded?.Invoke(bundle);
+     * }
+     *
+     * private string GetBuildTargetName()
+     * {
+     *     #if UNITY_ANDROID
+     *     return "Android";
+     *     #elif UNITY_IOS
+     *     return "iOS";
+     *     #elif UNITY_STANDALONE_WIN
+     *     return "StandaloneWindows64";
+     *     #elif UNITY_STANDALONE_OSX
+     *     return "StandaloneOSX";
+     *     #elif UNITY_STANDALONE_LINUX
+     *     return "StandaloneLinux64";
+     *     #elif UNITY_WEBGL
+     *     return "WebGL";
+     *     #else
+     *     #if UNITY_EDITOR
+     *     return UnityEditor.EditorUserBuildSettings.activeBuildTarget.ToString();
+     *     #else
+     *     return Application.platform.ToString();
+     *     #endif
+     *     #endif
+     * }
+     */
 
     public void LoadObject(string path, int chapter)
     {
