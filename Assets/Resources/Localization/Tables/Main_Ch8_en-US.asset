@@ -127,8 +127,8 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42733694995
-    m_Localized: "... I\u2019m not sure. Family can be complicated.|They can, at
-      times. Family isn\u2019t everything."
+    m_Localized: "... I\u2019m not sure. Family can be complicated.|They can. After
+      all, they\u2019re people too."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
@@ -276,13 +276,13 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42733695023
-    m_Localized: I would have exploded. Like the\nshell of a self-detonating bomb.
+    m_Localized: I would explode. Like the shell of\na self-detonating bomb.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889280
-    m_Localized: Oh, oh, oh. I would search for a damp drain\nand be overwhelmed
-      with fierce light and fields.
+    m_Localized: Oh, oh, oh. I would search for a damp drain\nbut be overwhelmed
+      by fierce light and fields.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
@@ -297,28 +297,28 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889283
-    m_Localized: (Make a cautious suggestion.)|(Wait for Dot to collect their thoughts.)
+    m_Localized: "... What if he feels the same about your \u2018help\u2019?|(Wait
+      for Dot to collect their thoughts.)"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889284
-    m_Localized: ".... You\u2019re right. You would have. And what if\\nthe child
-      feels the same way toward your help?"
-    m_Metadata:
-      m_Items:
-      - rid: 3674199710174543925
-  - m_Id: 42737889285
     m_Localized: "He\u2019s still young. But nonetheless\\nhe\u2019s trying his best."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
-  - m_Id: 42737889286
+  - m_Id: 42737889285
     m_Localized: "Maybe he doesn\u2019t know the\\nright way to express emotions."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
+  - m_Id: 42737889286
+    m_Localized: But is there such a thing as the right way?
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543925
   - m_Id: 42737889287
-    m_Localized: But what right way\nis there to being with?
+    m_Localized: 
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
@@ -329,7 +329,7 @@ MonoBehaviour:
       - rid: 3674199710174543925
   - m_Id: 42737889289
     m_Localized: "Just because it doesn\u2019t match up with yours\\ndoesn\u2019t
-      mean the child has to change courses."
+      mean the child has to change course."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
@@ -339,29 +339,29 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889291
-    m_Localized: .....
-    m_Metadata:
-      m_Items:
-      - rid: 3674199710174543925
-  - m_Id: 42737889292
     m_Localized: Okay...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
-  - m_Id: 42737889293
+  - m_Id: 42737889292
     m_Localized: Now I see.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
-  - m_Id: 42737889294
+  - m_Id: 42737889293
     m_Localized: "It\u2019s different from taking a peek at the\\nsunlight and gradually
       venturing outside."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
+  - m_Id: 42737889294
+    m_Localized: "Changes from the outside, ones that didn\u2019t\\nstart from within
+      me, would be yet more chains."
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543925
   - m_Id: 42737889295
-    m_Localized: "Changes from the outside, ones that hadn\u2019t\\noccur within
-      me, could be yet more chains."
+    m_Localized: 
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
@@ -376,7 +376,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889298
-    m_Localized: "It was arrogance. I agree.|Silly. I wouldn\u2019t call it arrogance."
+    m_Localized: "Perhaps it was arrogance.|I wouldn\u2019t call it arrogance."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
@@ -514,8 +514,8 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889324
-    m_Localized: "Yes, there was. I remember clearly.|Well\u2026 No, I don\u2019t
-      think so."
+    m_Localized: "Yes, there was. I remember clearly.|Well... No, I don\u2019t think
+      so."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
@@ -560,8 +560,8 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889332
-    m_Localized: "Yes, there was. I remember clearly.|Well\u2026 No, I don\u2019t
-      think so."
+    m_Localized: "Yes, there was. I remember clearly.|Well... No, I don\u2019t think
+      so."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
@@ -607,7 +607,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889341
-    m_Localized: 'Well, the nightmares I had as a\nchild no longer tormented me '
+    m_Localized: Well, the nightmares I had as a\nchild no longer tormented me
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
@@ -671,13 +671,13 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889353
-    m_Localized: "Oh, I see. Here\u2019s a follow-up question.\\nHave those experiences
+    m_Localized: "Now... here\u2019s a follow-up question.\\nHave those experiences
       left an imprint on you?"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889354
-    m_Localized: "Oh, well... Well. Here\u2019s a follow-up question.\\nHave those
+    m_Localized: "Oh, well... I see. Here\u2019s a follow-up question.\\nHave those
       experiences ever changed you now?"
     m_Metadata:
       m_Items:
@@ -972,7 +972,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889409
-    m_Localized: Alright, <nickname>, I trust your judgement.\nYou, and time, and
+    m_Localized: Alright, <nickname>, I trust your judgment.\nYou, and time, and
       who the child will be.
     m_Metadata:
       m_Items:
@@ -1060,7 +1060,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889426
-    m_Localized: "I\u2019m a pill bug from the future.\u201D"
+    m_Localized: "\u201CI\u2019m a pill bug from the future.\u201D"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
@@ -1107,12 +1107,15 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889435
-    m_Localized: I like it.|(Be judgmental.)
+    m_Localized: "...... Moving. It\u2019s warming my heart.|A little difficult for
+      a child to understand but..."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925
   - m_Id: 42737889436
-    m_Localized: "It\u2019s touching."
+    m_Localized: The phrase that the world expands, and so will he|The consolation
+      that everything will either fade away or become his strength|The remark that
+      nothing was ever his fault|moves me in particular.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543925

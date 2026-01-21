@@ -4,13 +4,13 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,73,3,main_table,Player,Main,,,text,생각이 많아 보여. 무슨 일 있었던 거야?,You seem to have a lot on\nyour mind. What’s going on?,4,,,,Main_Ch13,M13_L0003
 1,73,4,main_table,Dot,Main,,,text,‘무슨 일’은 매일매일 일어나는걸.,A lot goes on every single day.,5,,,,Main_Ch13,M13_L0004
 1,73,5,main_table,Dot,Main,,,text,"오늘은... 아, 오늘은 인간을 만나지는 못했어.","Today... Ah, I didn’t meet\nany humans today.",6,,,,Main_Ch13,M13_L0005
-1,73,6,main_table,Dot,Main,,,text,늘 지나치던 커다란 나무가 내게 말을 걸어 왔거든.,But a great big tree I often\npassed by told me a story.,7,1,,,Main_Ch13,M13_L0006
-1,73,7,main_table,Dot,Main,,,text,인간의 삶은 더 이상 이어지지 않아.\n둘의 인연은 먼 평행을 달리게 될 거야.,The human’s life ends there. Their\nfates run parallel from here on.,8,,,,Main_Ch13,M13_L0007
+1,73,6,main_table,Dot,Main,,,text,늘 지나치던 커다란 나무가 내게 말을 걸어 왔거든.,But a great big tree I often\npassed by told me a story.,7,,,,Main_Ch13,M13_L0006
+1,73,7,main_table,Dot,Main,,,text,인간의 삶은 더 이상 이어지지 않아.\n둘의 인연은 먼 평행을 달리게 될 거야.,The human’s life ends there. Their\nfates run parallel from here on.,8,1,,,Main_Ch13,M13_L0007
 1,73,8,main_table,Dot,Main,,,text,그렇지만 여전히 눈부시게 아름답구나...,"Still, it’s dazzlingly beautiful...",9,,,,Main_Ch13,M13_L0008
 1,73,9,main_table,Dot,Main,,face_eyeroll2,text,"<nickname>, 내 여행이 얼마\n남지 않았다는 걸 알고 있지?","<nickname>, you know\nmy journey is almost over.",10,,,,Main_Ch13,M13_L0009
 1,73,10,main_table,Dot,Main,,face_blink,text,내가 떠나면 너도 나무처럼 홀로 남게 될까?,"When I leave, will you be\nall by yourself like the tree was?",11,,,,Main_Ch13,M13_L0010
 1,73,11,main_table,Player,Main,,,text,"나무만큼 긴 시간은 아니겠지만,\n분명 그렇게 되겠지.","Not for as long as the\ntree endured, but I guess.",12,,,,Main_Ch13,M13_L0011
-1,73,12,main_table,Dot,Main,,,text,예전엔 남겨지는 게 나일까 두려워하며…\n너의 영생을 바라던 적도 있었는데 말야! 헤헤.,Remember how afraid I was of being left behind...\nso much that I hoped you'd live forever! Hehe.,13,,,,Main_Ch13,M13_L0012
+1,73,12,main_table,Dot,Main,,,text,예전엔 남겨지는 게 나일까 두려워하며...\n너의 영생을 바라던 적도 있었는데 말야! 헤헤.,Remember how afraid I was of being left behind...\nso much that I hoped you'd live forever! Hehe.,13,,,,Main_Ch13,M13_L0012
 1,73,13,main_table,Dot,Main,,face_eyeroll3,text,"... 지금은 그저, 네가 오래 슬프지 않았으면 좋겠어.",... Now I only hope you\nwon’t stay sad for long.,14,,,,Main_Ch13,M13_L0013
 1,73,14,main_table,Player,Main,,face_blink,text,"뭉치, 정말 단 한 번의 꿈이 되어 사라지는 거야?","Dot? Will you really disappear after\nbecoming a dream, just once?",15,,,,Main_Ch13,M13_L0014
 1,73,15,main_table,Player,Main,,,text,매일 밤 나타나 줄 수는 없어? 잠깐이라도.,Can’t you come to me every night?\nEven if it’s just for a little while.,16,,,,Main_Ch13,M13_L0015
@@ -18,8 +18,8 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,73,17,main_table,Dot,Main,,,text,다만 꿈이 된 나는 네가 알고 있는\n지금의 내가 아니게 될 거야.,But the dream-me won’t\nbe the me that you know.,18,,,,Main_Ch13,M13_L0017
 1,73,18,main_table,Dot,Main,,,text,"대신 꿈 속의 흐린 그림자, 스쳐가는 잔상,\n깨어나면 잊혀지는 얼굴로 존재할지도 모르지.","Instead, I’ll be a vague shadow, a\npassing image, maybe a blurry face.",19,,,,Main_Ch13,M13_L0018
 1,73,19,main_table,Player,Main,,,text,"그럼, 그럼 네가 들고 온\n달나라 송신기 속으로 들어온다거나...","Then, then you could maybe inhabit the \nmoon transmitter, you like that, right?",20,,,,Main_Ch13,M13_L0019
-1,73,20,main_table,Dot,Main,,face_eyeroll2,text,"음, 꿈은 영혼이 아니라 깃들 수 없을 것 같은데…","Hmm, I’ve never heard of\na dream possessing things...",21,,,,Main_Ch13,M13_L0020
-1,73,21,main_table,Dot,Main,,face_blink,text,가능하다면 시도해 볼게! 라디오가\n말을 걸어와도 놀라면 안 돼.,"If it is, I’ll try! Don’t be scared when\nthe radio starts talking to you.",22,,,,Main_Ch13,M13_L0021
+1,73,20,main_table,Dot,Main,,face_eyeroll2,text,"음, 꿈은 영혼이 아니라 깃들 수 없을 것 같은데...","Hmm, I’ve never heard of\na dream possessing things...",21,,,,Main_Ch13,M13_L0020
+1,73,21,main_table,Dot,Main,,face_blink,text,가능하다면 시도해 볼게! 송신기가\n말을 걸어와도 놀라면 안 돼.,"If it is, I’ll try! Don’t be scared when\nthe transmitter starts talking to you.",22,,,,Main_Ch13,M13_L0021
 1,73,22,main_table,Player,Main,,,text,...,....,23,,,,Main_Ch13,M13_L0022
 1,73,23,main_table,Dot,Main,,face_smile,text,"장난이야, <nickname>. 그러니 이제 웃어 줘.","I’m joking, <nickname>.\nPlease don’t be sad.",24,,,,Main_Ch13,M13_L0023
 1,73,24,main_table,Player,Main,,,selection,(애써 웃는다.)|(웃지 못한다.),(Try to smile.)|(Fail to smile.),25|25,,,passive|active,Main_Ch13,M13_L0024
@@ -85,8 +85,8 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,74,84,main_door_open,Player,Main,,,text,나도 마찬가지야.,Me too.,85,,,,Main_Ch13,M13_L0084
 3,74,85,main_door_open,Player,Main,,,text,"으음, 말하기 조심스럽지만... ‘그 일’도 있었지.","Mm, I want to be careful bringing this\nup but... there was ‘the incident’ as well.",86,,,,Main_Ch13,M13_L0085
 3,74,86,main_door_open,Dot,Main,,,text,어떤 일?,What incident?,87,,,,Main_Ch13,M13_L0086
-3,74,87,main_door_open,Player,Main,,,text,"내가 너의, 비록 퀴퀴하지만\n하나 뿐인 곰팡이 친구를 그만...",What I did to your—albeit\ndusty—only mold friend...,88,,,,Main_Ch13,M13_L0087
-3,74,88,main_door_open,Dot,Main,,face_eyeroll3,text,...거기까지만 말해도 충분해.,...That’s enough for me to understand.,89,,,,Main_Ch13,M13_L0088
+3,74,87,main_door_open,Player,Main,,,text,"내가 너의, 비록 퀴퀴하지만\n하나뿐인 곰팡이 친구를 그만...",What I did to your—albeit\ndusty—only mold friend...,88,,,,Main_Ch13,M13_L0087
+3,74,88,main_door_open,Dot,Main,,face_eyeroll3,text,... 거기까지만 말해도 충분해.,...That’s enough for me to understand.,89,,,,Main_Ch13,M13_L0088
 3,74,89,main_door_open,Player,Main,,face_eyeroll3_stay,text,"응. 어쩔 수 없었다고 해도,\n여전히 미안하게 생각하고 있어.","Yes. Although I didn’t mean to,\nI still feel sorry about that.",90,,,,Main_Ch13,M13_L0089
 3,74,90,main_door_open,Dot,Main,,face_blink,text,"이해해. 우리가 함께하며 서로의\n깊은 부분에 다다르려 애쓸수록,","I understand. The more we try\nto reach each other intimately,",91,,,,Main_Ch13,M13_L0090
 3,74,91,main_door_open,Dot,Main,,,text,필연적으로 서로에게 실수를\n저지르거나 서로를 상처 주게 되니까.,we couldn’t avoid hurting each\nother or making mistakes.,92,,,,Main_Ch13,M13_L0091
@@ -105,7 +105,7 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,74,104,main_door_open,Dot,Main,,face_blink,text,"너의 창가에 머무른 달빛을 쓰다듬는\n방식으로, 의미를 부여해 줘.","Bestow meaning, the way you caress\nmoonlight resting on your windowsill.",105,,,,Main_Ch13,M13_L0104
 3,74,105,main_door_open,Player,Main,,face_blink,text,응. 약속할게.,Yes. I promise.,106,,,,Main_Ch13,M13_L0105
 3,74,106,main_door_open,Dot,Main,,face_blink,text,고마워.,Thank you.,107,,,,Main_Ch13,M13_L0106
-3,74,107,main_door_open,Dot,Main,,face_eyeroll3,text,.... 기억된다는 건 벅찬 일이구나.,……To be remembered is quite emotional.,108,,,,Main_Ch13,M13_L0107
+3,74,107,main_door_open,Dot,Main,,face_eyeroll3,text,... 기억된다는 건 벅찬 일이구나.,...To be remembered is quite emotional.,108,,,,Main_Ch13,M13_L0107
 3,74,108,main_door_open,Dot,Main,,face_eyeroll3_stay,text,내 삶은 찰나였고 오래 슬펐지만\n갖가지 색채로 가득 차 있었어.,My life was momentary and sad for quite\na while. But it was filled with various colors.,109,,,,Main_Ch13,M13_L0108
 3,74,109,main_door_open,Dot,Main,,,text,꿈이 될 결심을 하지 않았더라면 몰랐을 거야.,"If I hadn’t decided to become\na dream, I never would’ve known.",110,,,,Main_Ch13,M13_L0109
 3,74,110,main_door_open,Player,Main,,face_blink,text,그렇게 느꼈다니 다행이야.,I’m glad you feel that way.,111,,,,Main_Ch13,M13_L0110
@@ -115,8 +115,8 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,74,114,main_door_open,Dot,Main,,,text,문득 돌아보면 언제든 어루만질 수 있는 온기가 되어 주길.,"I hope they’ll become embers,\nalways there for you to feel.",115,,,,Main_Ch13,M13_L0114
 3,74,115,main_door_open,Dot,Main,,,text,"한 가지 더, 꿈틀거리는 시선으로 주변의\n인간들을 바라보게 되는 계기가 되었으면 해.",One more thing. I hope it pushes you to view\nother humans with a squirming perspective.,116,,,,Main_Ch13,M13_L0115
 3,74,116,main_door_open,Dot,Main,,,text,그 시선이 너 자신을 달빛처럼\n비추며 나아가게 할 거라 믿어.,I know it will shine upon you like\nmoonlight and nudge you forward.,117,,,,Main_Ch13,M13_L0116
-3,74,117,main_door_open,Player,Main,,,text,.....,.....,118,,,,Main_Ch13,M13_L0117
-3,74,118,main_door_open,Player,Main,,,text,".... 온기, 그리고 시선.","…… Embers, and perspective.",119,,,,Main_Ch13,M13_L0118
+3,74,117,main_door_open,Player,Main,,,text,......,.....,118,,,,Main_Ch13,M13_L0117
+3,74,118,main_door_open,Player,Main,,,text,"... 온기, 그리고 시선.","...... Embers, and perspective.",119,,,,Main_Ch13,M13_L0118
 3,74,119,main_door_open,Player,Main,,,text,"응, 알았어.","Yes, I understand.",120,,,,Main_Ch13,M13_L0119
 3,74,120,main_door_open,Dot,Main,,face_eyeroll3,text,"<nickname>, 물어보고 싶은\n게 있어. 수줍은 질문이야.","<nickname>, there’s something I\nwant to ask you. I feel a bit shy, though.",121,,,,Main_Ch13,M13_L0120
 3,74,121,main_door_open,Dot,Main,,face_blink,text,너는 나를 어떤 의미로 각인하고 싶어?,How do you want me to\nbe imprinted upon you?,122,,,,Main_Ch13,M13_L0121
@@ -124,16 +124,16 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,74,123,main_door_open,Player,Main,,,text,"뭉치, 시간이 흘러 네가 흐릿한\n잔상으로만 남는 순간이 오겠지.",Dot. The time will come when you\nwill only be a faded afterimage.,124,,,,Main_Ch13,M13_L0123
 3,74,124,main_door_open,Player,Main,,,text,하지만 이토록 짧은 순간 너와 주고받은\n기억들은 여전히 남아 나를 지탱해 줄 거야.,But the memories I created with you in\nthis short time will nevertheless sustain me.,125,,,,Main_Ch13,M13_L0124
 3,74,125,main_door_open,Player,Main,body_ch13_heartup,,text,너는 ‘찰나의 미소 띤 잔상’이야.,You are a passing afterimage of a smile.,126,,,,Main_Ch13,M13_L0125
-3,74,126,main_door_open,Player,Main,body_ch13_heartdown,,text,찰나의 미소 띤 잔상.....,A passing afterimage of a smile…,,,,,Main_Ch13,M13_L0126
+3,74,126,main_door_open,Dot,Main,body_ch13_heartdown,face_close,text,찰나의 미소 띤 잔상......,A passing afterimage of a smile...,,,,,Main_Ch13,M13_L0126
 3,74,127,main_door_open,Player,Main,,,text,"뭉치, 네가 떠나간 후에도 파도는\n내게 끊임없이 밀려 들 거야.","Dot. Even after you leave, waves\nwill never stop crashing at me.",128,,,,Main_Ch13,M13_L0127
 3,74,128,main_door_open,Player,Main,,,text,그 힘겨운 파도 속을 헤매더라도 어쩐지 네가\n거기 있을 것 같다는 생각이 들어. 그래서 괜찮아.,"Even if it sweeps me away, you might\nbe there. Then it would be okay.",129,,,,Main_Ch13,M13_L0128
 3,74,129,main_door_open,Player,Main,body_ch13_heartup,,text,너는 ‘파도 속 낯선 안식처’야.,You are an unlikely haven below waves.,130,,,,Main_Ch13,M13_L0129
-3,74,130,main_door_open,Player,Main,body_ch13_heartdown,,text,파도 속 낯선 안식처.....,An unlikely haven below waves……,,,,,Main_Ch13,M13_L0130
+3,74,130,main_door_open,Dot,Main,body_ch13_heartdown,face_close,text,파도 속 낯선 안식처.....,An unlikely haven below waves......,,,,,Main_Ch13,M13_L0130
 3,74,131,main_door_open,Player,Main,,,text,"뭉치, 너는 내가 아는 캄캄한 암흑 중에\n가장 비좁지만 가장 많은 것을 품고 있었어.","Dot. You are the smallest darkness I know\nyet you hold so, so much within you.",132,,,,Main_Ch13,M13_L0131
 3,74,132,main_door_open,Player,Main,,,text,내게 암흑이 찾아오는 순간에도 여전히\n너의 다정함을 느낄 수 있을 거야.,"In the darkest of moments,\nI will still feel your caring touch.",133,,,,Main_Ch13,M13_L0132
 3,74,133,main_door_open,Player,Main,body_ch13_heartup,,text,너는 ‘비좁고 다정한 암흑’이야.,You are a small and caring darkness.,134,,,,Main_Ch13,M13_L0133
-3,74,134,main_door_open,Player,Main,body_ch13_heartdown,,text,비좁고 다정한 암흑.....,A small and caring darkness……,,,,,Main_Ch13,M13_L0134
+3,74,134,main_door_open,Dot,Main,body_ch13_heartdown,face_close,text,비좁고 다정한 암흑......,A small and caring darkness......,,,,,Main_Ch13,M13_L0134
 3,74,135,main_door_open,Player,Main,,,text,"뭉치, 너는 내가 혼자서 나아갈\n수 없었던 곳까지 밝혀 줬어.","Dot, you lit up the paths\nI could not walk alone.",136,,,,Main_Ch13,M13_L0135
 3,74,136,main_door_open,Player,Main,,,text,어둡고 위태로웠던 나의 암흑을 마주하게\n해준 너의 따스함을 오래 간직할게.,Your warmth helped me face my own\ndim and precarious darkness...,137,,,,Main_Ch13,M13_L0136
-3,74,137,main_door_open,Player,Main,body_ch13_heartup,,text,너는 ‘미약한 용기의 불씨’야.,You are a tiny ember of courage……,138,,,,Main_Ch13,M13_L0137
-3,74,138,main_door_open,Player,Main,body_ch13_heartdown,,text,미약한 용기의 불씨.....,A tiny ember of courage……,,,,,Main_Ch13,M13_L0138
+3,74,137,main_door_open,Player,Main,body_ch13_heartup,,text,너는 ‘미약한 용기의 불씨’야.,You are a tiny ember of courage......,138,,,,Main_Ch13,M13_L0137
+3,74,138,main_door_open,Dot,Main,body_ch13_heartdown,face_close,text,미약한 용기의 불씨......,A tiny ember of courage......,,,,,Main_Ch13,M13_L0138

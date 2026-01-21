@@ -40,10 +40,10 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,25,39,main_door_open,Dot,Main,,,text,"<이상한 나라의 앨리스>나 <알프스 산의 하이디>를\n펼쳐 들어야지, 라고 다짐하면서...",like picking up <i>Alice in Wonderland</i> or\n<i>Heidi of the Alps<\i> before going to bed.,40,,,,Main_Ch5,M5_L0039
 1,25,40,main_door_open,Dot,Main,,,text,모든 인간이 그러듯이 당연하게 다음을 기약했겠지.,Because... why wouldn’t life go on?,41,,,,Main_Ch5,M5_L0040
 1,25,41,main_door_open,Player,Main,,,text,......,......,42,,,,Main_Ch5,M5_L0041
-1,25,42,main_door_open,Player,Main,,,selection,그 소녀에 대해 많은 생각을 했구나.|세상에... 아직 어린 소녀에게 그런 비극이...,eng1|eng2,43|43,,,,Main_Ch5,M5_L0042
-1,25,43,main_door_open,Player,Main,,,text,나였어도 얼어붙었을 것 같아. 발랄하게 춤을 추던 소녀가 갑자기 쓰러져 일어나지 않았다면......,eng,44,,,,Main_Ch5,M5_L0043
+1,25,42,main_door_open,Player,Main,,,selection,그 소녀에 대해 많은 생각을 했구나.|세상에... 아직 어린 소녀에게 그런 비극이...,You thought a lot about that girl.|She was so young... how tragic.,43|43,,,,Main_Ch5,M5_L0042
+1,25,43,main_door_open,Player,Main,,,text,나였어도 얼어붙었을 것 같아. 발랄하게 춤을 추던 소녀가 갑자기 쓰러져 일어나지 않았다면......,I would have froze too. To see that girl\nfall to the ground and stay there…,44,,,,Main_Ch5,M5_L0043
 1,25,44,main_door_open,Player,Main,,,text,도움이 될진 모르겠지만...,I don’t know if this helps...,45,,,,Main_Ch5,M5_L0044
-1,25,45,main_door_open,Player,Main,,,selection,실은 나도 죽음의 순간을 목격한 적 있어.|죽음을 처음 접하면 충격을 받는 게 당연해.,But I’ve witnessed death too.|eng,46|60,,,,Main_Ch5,M5_L0045
+1,25,45,main_door_open,Player,Main,,,selection,실은 나도 죽음의 순간을 목격한 적 있어.|죽음을 처음 접하면 충격을 받는 게 당연해.,But I’ve witnessed death too.|It’s only natural. It was your first time.,46|60,,,,Main_Ch5,M5_L0045
 1,25,46,main_door_open,Player,Main,,,text,... 분명 따뜻한 피가 흐르며 생기가 돌던 ‘사람’이었는데.,Warm blood once circulated that body.,47,,,,Main_Ch5,M5_L0046
 1,25,47,main_door_open,Player,Main,,,text,"생명이 빠져 나간 자리는 차게 식어 있었고,\n형용할 수 없는 공허함만이 남아 있었지.","But once life drained away, all that\nwas left was a shapeless, nameless void.",48,,,,Main_Ch5,M5_L0047
 1,25,48,main_door_open,Player,Main,,,text,"아니, 그걸 ‘남았다’고 표현할 수 있었을까?",Was there really anything <i>left</i> in there?,49,,,,Main_Ch5,M5_L0048
@@ -200,7 +200,7 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,26,199,main_door_open,Dot,Main,,face_mad,text,‘너도’ 죽게 될 거란 사실을...\n나는 차마 받아들일 수 없나 봐.,That even you will die...\nI can’t accept it just yet.,200,,,,Main_Ch5,M5_L0199
 3,26,200,main_door_open,Player,Main,,face_mad,selection,"... 그치만, 나는 아직 살아 있는 걸?|... 그치만, 죽음은 한참이나 먼 얘기 같은 걸?",... But I’m still here.|... But that might not happen for a long time.,201|202,,,,Main_Ch5,M5_L0200
 3,26,201,main_door_open,Dot,Main,,face_omg,text,아직은. 살아 있지만.,You are. For now.,203,,,,Main_Ch5,M5_L0201
-3,26,202,main_door_open,Dot,Main,,face_omg,text,당장은. 그렇게 느껴지겠지만.,,203,,,,Main_Ch5,M5_L0202
+3,26,202,main_door_open,Dot,Main,,face_omg,text,당장은. 그렇게 느껴지겠지만.,It is. For now.,203,,,,Main_Ch5,M5_L0202
 3,26,203,main_door_open,Dot,Main,,face_omg,text,<nickname>...,<nickname>...,204,,,,Main_Ch5,M5_L0203
 3,26,204,main_door_open,Dot,Main,,face_omg,text,내가 사랑해 마지않았던 너의 동전 앞면이,"What if your side of the coin that I loved so,",205,,,,Main_Ch5,M5_L0204
 3,26,205,main_door_open,Dot,Main,,face_omg,text,어떠한 예고도 없이 까마득하게 뒤집혀 버린다면?,were to flip without any kind of warning?,206,,,,Main_Ch5,M5_L0205
@@ -282,7 +282,7 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,26,281,main_door_open,Dot,Main,body_ch5_heart,,text,너를 잃은 슬픔이 나의 검정보다도 무겁게 젖어들 때면,"And when your loss weighs\nheavier than my black,",282,,,,Main_Ch5,M5_L0281
 3,26,282,main_door_open,Dot,Main,body_ch5_heart,face_thinking,text,달의 뒤편을 수놓던 그들의 적막한 발걸음을 떠올릴 거야.,I’ll recall the quiet footsteps\nthat crossed the Moon.,283,,,,Main_Ch5,M5_L0282
 3,26,283,main_door_open,Dot,Main,body_ch5_heartdown,face_blink,text,그렇게 나 혼자만으론 낼 수 없었던\n용기를... 낼 수 있을 것만 같아.,And I’ll find courage from them...\nthat I couldn’t have on my own.,284,,,,Main_Ch5,M5_L0283
-3,26,284,main_door_open,Player,Main,,,text,......,......,285,,,,Main_Ch5,M5_L0284
+3,26,284,main_door_open,Player,Main,body_default1,,text,......,......,285,,,,Main_Ch5,M5_L0284
 3,26,285,main_door_open,Dot,Main,,,text,"이제 인사를 하자, <nickname>.","Now let’s say goodbye, <nickname>.",286,,,,Main_Ch5,M5_L0285
 3,26,286,main_door_open,Dot,Main,,,text,"우리는 오늘도, 내일도, 그 모레도\n인사를 나누기로 약속하는 거야.","We’ll say it today, tomorrow, and the day after.",287,,,,Main_Ch5,M5_L0286
 3,26,287,main_door_open,Dot,Main,,,text,"“그럼 다녀와, <nickname>!”","“See you, <nickname>!”",288,,,,Main_Ch5,M5_L0287
@@ -291,4 +291,4 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,26,290,main_door_open,Dot,Main,,,text,"그렇게 함부로 안심하고, 무작정 믿어 보는 거야.","And so we’ll feel relief, and have faith.",291,,,,Main_Ch5,M5_L0290
 3,26,291,main_door_open,Dot,Main,,,text,"그럼... 다녀와, <nickname>. 알았지?","So... see you, <nickname>. Okay?",292,,,,Main_Ch5,M5_L0291
 3,26,292,main_door_open,Player,Main,,,text,"...... 응, 뭉치야. 알았어.","...... Okay, Dot. Yeah.",293,,,,Main_Ch5,M5_L0292
-3,26,293,main_door_open,Player,Main,,,text,금방 다녀올게.,See you soon.,,,,,Main_Ch5,M5_L0293
+3,26,293,main_door_open,Player,Main,body_default1,face_blink,text,금방 다녀올게.,See you soon.,,,,,Main_Ch5,M5_L0293
