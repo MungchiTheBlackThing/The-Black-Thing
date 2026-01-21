@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 207, y: -331.99997}
-  m_SizeDelta: {x: 2156, y: 625}
+  m_SizeDelta: {x: 1851.7146, y: 625}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8237966370785181680
 CanvasRenderer:
@@ -67,20 +67,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2DC\uCD08\uC9C0, \uC778\uAC04\uB4E4\uC774 \u2018\uACE0\uD5A5\u2019\uC774\uB77C
-    \uCE6D\uD558\uB294 \uAC83. \uB0B4 \uC2DC\uCD08\uC9C0\uB294 \uB2EC\uC774\uC57C.
-    \n\uC9C0\uAD6C\uC758 \uD478\uB974\uB984\uC5D0 \uB9E4\uC5EC, \uC911\uB825\uB9CC
-    \uD55C \uC560\uC815\uC744 \n\uB3D9\uB825 \uC0BC\uC544 \uACF5\uC804\uD558\uB294
-    \uBABB\uB098\uACE0 \uC791\uC740 \uB3CC\uB369\uC774.\n\n\uB2EC \uC0AC\uB78C\uB4E4\uC740
-    \uC9C0\uAD6C\uC758 \uC778\uAC04\uC744 \uC0AC\uB791\uD574. \n\uD574\uBC14\uB77C\uAE30\uAC00
-    \uD574\uB97C \uD5A5\uD558\uB4EF, \uD559\uC790\uAC00 \uC9C4\uB9AC\uB97C \uC887\uB4EF,
-    \uD30C\uB3C4\uAC00 \uC911\uB825\uC5D0 \uBAB8\uC744 \uB9E1\uAE30\uB4EF, \n\uB2EC\uC740
-    \uC9C0\uAD6C\uB97C \uB530\uB77C\uAC00\uBA70 \uC8FC\uC704\uB97C \uB9F4\uB3CC\uC544.
-    \n\uC9C0\uAD6C\uC778\uB4E4\uC744 \uC704\uD55C \uAFC8\uC744 \uB9CC\uB4E4\uBA70
-    \uADF8\uB4E4\uC758 \uC548\uC704\uB97C, \uB0AE\uACFC \uBC24\uC744, \n\uACB0\uCF54
-    \uC0AC\uB77C\uC9C0\uC9C0 \uC54A\uC744 \uACE0\uC720\uC758 \uD478\uB974\uB984\uC744
-    \uC9C0\uCF1C \uC8FC\uACE0\uC790 \uD558\uC9C0. \n\uC560\uB2EC\uD508 \uC0AC\uB791\uC774\uC57C.
-    \uB3D9\uACBD\uC744 \uB118\uC5B4 \uB9F9\uBAA9 \uAC19\uC740 \uC0AC\uB791\uC774\uC9C0."
+  m_text: "We all begin somewhere. Humans like to call it \u2018home\u2019.\nMy home
+    was the moon. An ugly little lump of rock \ntied to the green-blue beauty of
+    Earth, \r\n\r\nMoon people love humans. The way a sunflower faces the sun, \na
+    scholar chases the truth, and the tide gives into gravity,\nthey follow the Earth
+    and revolve around it. \nCreating dreams for humans, they try to protect your
+    peace, \nyour days and nights, \nand your vibrant colors that will never fade
+    away.\n\nIt's a lonely kind of love. It's a blind kind of love."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
@@ -499,7 +492,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 207, y: -180.50006}
-  m_SizeDelta: {x: 2207, y: 928}
+  m_SizeDelta: {x: 1876.4282, y: 928}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8237966371506372922
 CanvasRenderer:
@@ -529,18 +522,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uADF8 \uACE0\uC720\uD55C \uC21C\uAC04\uB4E4\uC5D0, \uC6B0\uB9AC\uC758
-    \uC9E7\uC558\uB358 \uB9C8\uC8FC\uCE68\uC5D0 \uC560\uCC29\uC744 \uB290\uAEF4.\n\uADF8\uB798\uC11C
-    \uB09C \uC774\uC81C \uAE30\uAEBC\uC774 \uB108\uC758 \uD30C\uB3C4, \uADF8 \uD478\uB974\uB978
-    \uC7A0\uACB0\uB85C \uB6F0\uC5B4\uB4E4 \uAC70\uC57C. \n\uADF8\uAC74 \uC18D\uBC15\uC774
-    \uC544\uB2C8\uC57C. \uB9C9\uB2E4\uB978 \uAE38\uC5D0\uC11C \uD5DB\uB514\uB38C
-    \uCD94\uB77D\uD558\uB294 \uAC83\uB3C4 \uC544\uB2C8\uC57C.\n\n\uADF8\uAC74 \uB0B4
-    \uC120\uD0DD\uC774\uC57C. \uB124 \uC548\uC73C\uB85C \uAE30\uAEBC\uC774 \uD22C\uC2E0\uD574
-    \uC548\uACA8\uB4E4\uACE0, \n<multiple2>\uC73C\uB85C \uB2E4\uC2DC \uD0DC\uC5B4\uB098\uAC8C
-    \uD560 \uC120\uD0DD.\n\n\uB110 \uC54C\uAC8C \uB418\uC5B4 \uAE30\uBEE4\uC5B4.
-    \uC5B4\uC9C0\uB7FD\uACE0, \uC790\uC720\uB85C\uC6E0\uC5B4.\n\uB2EC\uC774 \uB72C
-    \uC5B4\uB290 \uBC24\uC5D0- \n\uB098\uC640 \uB108\uB97C \uB2EE\uC544 \uC788\uC744
-    \uC5B8\uC820\uAC00\uC758 \uAFC8\uC5D0\uC11C, \uAF2D \uB2E4\uC2DC \uB9CC\uB098\uC790!"
+  m_text: "Those unique moments, our short encounter. It meant something to me.\r\nAnd
+    so I now dive into your waves, that blue slumber. \nIt won\u2019t be confinement.\r\nIt
+    won\u2019t be a fated tragedy to act out.\r\nIt will be a choice. \r\n\nA choice
+    to gladly give in and submerge, and be reborn as\nan afterimage of a pleasant
+    daydream\nI\u2019m glad I met you. It was reeling, and it was freeing.\r\nLet
+    us meet again, on a night with the moon overhead\u2014in a dreamscape that resembles
+    you and I. Until then, <nickname>!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
@@ -836,7 +824,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 207, y: -113.891914}
-  m_SizeDelta: {x: 2286, y: 996}
+  m_SizeDelta: {x: 1656.5718, y: 996}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8237966372295659036
 CanvasRenderer:
@@ -866,15 +854,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB09C \uC774\uC81C \uB108\uC758 \uC704\uC131\uC774 \uB418\uB294 \uAC83\uB9CC\uC740
-    \uB450\uB835\uC9C0 \uC54A\uC544. \n\uB108\uB294 \uB098\uB97C \uB2E8\uC77C\uD55C
-    \uC911\uB825 \uB530\uC704\uC5D0 \uBB36\uC5B4 \uB450\uB824\uACE0 \uB4E4\uC9C0
-    \uC54A\uC558\uC73C\uB2C8\uAE4C.\n<multiple0>\n<multiple1>\n\n<name>, \uC138\uACC4\uC5D0
-    \uB110\uB9B0 \uC218\uB9CE\uC740 \uC778\uAC04\uB4E4\uC758 \uBC14\uB2E4 \uC911
-    \n\uB124 \uBC14\uB2E4\uAC00 \uAC00\uC7A5 \uC88B\uC558\uB358 \uAC74 \n\uADF8\uAC8C
-    \uC774\uB530\uAE08 \u2018\uC6B0\uB9AC\uC758 \uBC14\uB2E4\u2019\uAC00 \uB418\uC5C8\uAE30
-    \uB54C\uBB38\uC774\uC57C. \n\uC0AC\uC2E4\uC774\uB4E0 \uC544\uB2C8\uB4E0 \uC801\uC5B4\uB3C4
-    \uC6B0\uB9AC\uB294 \uADF8\uB807\uAC8C \uBD88\uB800\uC73C\uB2C8\uAE4C."
+  m_text: "So I no longer fear being your moon.\r\nYou never tried to tie me to a
+    single orbit.\r\n\r\nYou willingly led me far away from your orbit and\r\n\r<multiple0>\n<multiple1>\n\n<nickname>,
+    of all the seas I loved yours the most. \nBecause at times it would be ours.
+    \nTrue or not, that\u2019s what we called it."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
@@ -1020,7 +1003,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 207, y: -202.07}
-  m_SizeDelta: {x: 2347, y: 886}
+  m_SizeDelta: {x: 1876.4, y: 886}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8237966372746784772
 CanvasRenderer:
@@ -1050,22 +1033,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uADF8\uB798\uC11C \uB098\uB3C4 \uADF8\uB798\uC57C\uB9CC \uD560\uAE4C,
-    \n\uC778\uAC04\uC758 \uC911\uB825\uC5D0 \uB9E4\uC778 \uCC44 \uB2E8\uC77C\uD55C
-    \uADA4\uB3C4\uB85C\uB9CC \uB3CC\uC544\uC57C \uD558\uB294 \uAC78\uAE4C, \n\uC774\uB7F0
-    \uBD88\uC548\uACFC \uC758\uBB38\uC5D0 \uB05D\uC5C6\uC774 \uC0AC\uB85C\uC7A1\uD788\uACE0\uB294
-    \uD588\uC5B4. \uB0B4 \uC2DC\uCD08\uC9C0\uB294 \uC9C0\uAD6C\uC758 \uB2EC\uC774\uB2C8\uAE4C.
-    \n\n\uADF8\uB807\uC9C0\uB9CC <name>, \uB10C \uB2EC\uB790\uC5B4. \uB0B4\uAC00
-    \uC5B8\uC820\uAC00 \uC778\uAC04\u2018\uC758\u2019 \uAFC8\uC774 \uB420 \n\uBBF8\uC644\uC758
-    \uC874\uC7AC\uC784\uC744 \uC54C\uBA74\uC11C\uB3C4 \uB0A0 \uB108\uC5D0\uAC8C \uC18D\uBC15\uB41C
-    \uC874\uC7AC\uB85C \uC5EC\uAE30\uC9C0 \uC54A\uC558\uC5B4. \n\uB098\uC5D0\uAC8C
-    \uB3D9\uACBD\uC774\uB098 \uB9F9\uBAA9\uC744 \uC694\uAD6C\uD558\uC9C0\uB3C4 \uC54A\uC558\uC5B4.
-    \uB10C \uB0A0 \u2018\uCE5C\uAD6C\u2019\uB77C\uACE0 \uBD88\uB800\uC5B4. \n\n\uC6B0\uB9AC\uB294
-    \uB2EC\uACFC \uC9C0\uAD6C \uAC19\uC740 \uC9DD\uC0AC\uB791\uC774 \uC544\uB2C8\uC5C8\uC5B4.
-    \n\uBCC4\uACFC \uBCC4, \uD574\uBC14\uB77C\uAE30\uC640 \uD559\uC790, \uD30C\uB3C4\uC640
-    \uC9C4\uB9AC\uCC98\uB7FC \uC0C1\uAD00 \uC5C6\uAE30\uC5D0 \uB300\uB4F1\uD55C,
-    \n\uADF8\uB9AC\uD558\uC5EC \uC11C\uB85C\uB97C \uC560\uC815 \uC5B4\uB9B0 \uD638\uAE30\uC2EC\uC73C\uB85C
-    \uB9C8\uC8FC \uBCFC \uC218 \uC788\uB294 \uC591\uBC29\uD5A5\uC758 \uAD00\uACC4\uC600\uC9C0."
+  m_text: "And so I would be seized with fear and doubt \nif I should do the same.
+    Just like the moon... where I began.\r\nWhether I was destined to a single orbit,
+    tied to humans by gravity.\n\rBut <nickname>, you were different.\r\nYou knew
+    I might one day be a dream of yours, \nyet you never left me lonely or blind.
+    You called me a friend. \r\n\rOurs wasn\u2019t a one-sided love, like that of
+    the moon and the Earth. \r\n\rNo, like one star and another, like a sunflower
+    and a scholar, \nlike the tide and the truth\u2014we were unrelated. \nThus we
+    were equals, \nour curiosity and fondness flowing back and forth."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
