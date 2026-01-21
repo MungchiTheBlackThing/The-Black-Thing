@@ -378,6 +378,7 @@ public class MainPanel : MonoBehaviour
                         korText = korText.Replace("<nickname>", pc.GetNickName());
                     if (korText.Contains("<selection13>") && pc)
                         korText = korText.Replace("<selection13>", selection13[deathnotesel]);
+                    //[DEBUG]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         DotPanel,
                         DotPanel.GetComponent<CanvasGroup>(),
@@ -391,6 +392,7 @@ public class MainPanel : MonoBehaviour
                 {
                     if (MainClick) MainClick.SetActive(true);
                     StartCoroutine(ShowPanelWithDelay(
+                        //[DEBUG]0.5f -> 0.01f
                         PlayPanel,
                         PlayPanel.GetComponent<CanvasGroup>(),
                         0.01f,
