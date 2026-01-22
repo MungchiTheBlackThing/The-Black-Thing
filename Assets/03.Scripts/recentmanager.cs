@@ -87,4 +87,11 @@ public static class RecentManager
 
     }
 
+    public static void SetIsContinue(int value)
+    {
+        var data = Load();
+        data.isContinue = value;
+        SavePaths.WriteAllTextAtomic(FilePath, JsonUtility.ToJson(data));
+    }
+
 }

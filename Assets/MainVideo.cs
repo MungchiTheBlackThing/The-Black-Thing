@@ -281,6 +281,7 @@ public class MainVideo : MonoBehaviour
     {
         PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1); //프롤로그 재생 완료 플래그 설정
         PlayerPrefs.Save();
+        RecentManager.SetIsContinue(1);
         
         isVideoPlaying = false;
         HideSkipHintImmediate();
