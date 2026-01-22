@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 
 public class SubDialAlert : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class SubDialAlert : MonoBehaviour
     private int lastvalue = 0;
     void OnEnable()
     {
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            gameObject.SetActive(false); 
+            return;
+        }
         foreach (Image image in images)
         {
             image.gameObject.SetActive(true);

@@ -211,6 +211,9 @@ public class ChecklistController : MonoBehaviour
     
     private void UpdateSubcheckText()
     {
+        // 튜토리얼에선 서브체크 텍스트 갱신 안 함, null 떠서 꺼지는 것 방지
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Tutorial")
+            return;
         GamePatternState currentPhase = (GamePatternState)pc.GetCurrentPhase();
         List<int> availableSubseqs = gameManager.GetSubseqsForPhase(currentPhase);
 
