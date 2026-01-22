@@ -610,7 +610,7 @@ public class GameManager : MonoBehaviour
         {
             dot.TriggerSub(false);
             //[DEBUG] 서브 타이머 단축 script.Delay * 60f -> script.Delay * 0.5f
-            float delay = script.Delay * 0.5f;
+            float delay = script.Delay * 60f;
             triggerTime = DateTime.Now.AddSeconds(delay);
             PlayerPrefs.SetString(timestampKey, triggerTime.ToBinary().ToString());
             PlayerPrefs.Save();

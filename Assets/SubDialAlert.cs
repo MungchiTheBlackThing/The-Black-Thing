@@ -13,6 +13,11 @@ public class SubDialAlert : MonoBehaviour
     [SerializeField] private List<Image> images;
 
     [SerializeField] private GameManager gameManager;
+    
+    [Header("Sub Skip")]
+    [SerializeField] private GameObject subSkipPopup;
+    [SerializeField] private Button subSkipYes;
+    [SerializeField] private Button subSkipNo;
 
     private int lastvalue = 0;
     void OnEnable()
@@ -73,10 +78,22 @@ public class SubDialAlert : MonoBehaviour
 
         }
     }
-
-    public void subtimeskip()
+        public void OnClickSubImage()
     {
+        subSkipPopup.SetActive(true);
+    }
+
+    // Yes -> 팝업 OFF + 서브 즉시
+    public void OnClickSubSkipYes()
+    {
+        if (subSkipPopup != null) subSkipPopup.SetActive(false);
         gameManager.SkipSubDialWaitAndShowNow();
+    }
+
+    // No -> 팝업 OFF
+    public void OnClickSubSkipNo()
+    {
+        if (subSkipPopup != null) subSkipPopup.SetActive(false);
     }
 
 

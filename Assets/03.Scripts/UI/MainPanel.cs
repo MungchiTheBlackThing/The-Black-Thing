@@ -382,7 +382,7 @@ public class MainPanel : MonoBehaviour
                     StartCoroutine(ShowPanelWithDelay(
                         DotPanel,
                         DotPanel.GetComponent<CanvasGroup>(),
-                        0.01f,
+                        0.5f,
                         new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null },
                         () => { DotTextUI.text = korText; },
                         waitVideo
@@ -395,7 +395,7 @@ public class MainPanel : MonoBehaviour
                         //[DEBUG]0.5f -> 0.01f
                         PlayPanel,
                         PlayPanel.GetComponent<CanvasGroup>(),
-                        0.01f,
+                        0.5f,
                         new List<Button> { MainClick ? MainClick.GetComponent<Button>() : null },
                         () => { PlayTextUI.text = korText; },
                         waitVideo
