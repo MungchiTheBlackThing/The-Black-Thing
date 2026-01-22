@@ -39,6 +39,7 @@ public class SubDialogue : MonoBehaviour
     private string preanimkey;
 
     public static bool isSubmoldtutoend = true;
+    public bool IsTutorialDialogue { get; private set; } = false;
 
     static readonly Dictionary<float, float> CameraXByDotPos = new Dictionary<float, float>
     {
@@ -151,6 +152,7 @@ public class SubDialogue : MonoBehaviour
 
     public void StartSub(string fileName, int index = 0)
     {
+        IsTutorialDialogue = (fileName == "tutorial_sub"); // 일반 서브면 false
         InputGuard.WorldInputLocked = true;
         dialogueData = null;
         SubPanel subPanel = this.transform.GetChild(0).GetComponent<SubPanel>();
@@ -434,6 +436,7 @@ public class SubDialogue : MonoBehaviour
     }
     public void Tuto_start(int index, float delay)
     {
+        IsTutorialDialogue = true;
         playerController.SetSubseq(1);
         dialogueData = null;
         SubPanel subPanel = this.transform.GetChild(0).GetComponent<SubPanel>();

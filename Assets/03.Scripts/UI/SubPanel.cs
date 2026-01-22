@@ -552,6 +552,14 @@ public class SubPanel : MonoBehaviour
     void NextDialogue()
     {
         var currentEntry = sub.GetData(dialogueIndex);
+        bool isTutorial = sub.IsTutorialDialogue;
+
+        if (!isTutorial && string.IsNullOrEmpty(currentEntry.NextLineKey))
+        {
+            Debug.Log("[SubPanel] Non-tutorial: NextLineKey null/empty -> DialEnd");
+            DialEnd();
+            return;
+        }
         if (currentEntry.NextLineKey != null)
         {
             if (!string.IsNullOrEmpty(currentEntry.DotAnim))

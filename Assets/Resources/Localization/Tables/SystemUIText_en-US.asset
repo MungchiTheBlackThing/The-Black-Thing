@@ -166,19 +166,18 @@ MonoBehaviour:
     m_Localized: "<size=90>CREDIT</size>\n\nCreated and Directed by Andiemae Lee\r\n\r\nArt
       Direction & Animation by Yoonsun Lee\r\n\nNarrative Design & Scriptwriting
       by\r\nAndiemae Lee, Sieun Lee and Eunseo Go\r\n\r\nGame Design & PM by Andiemae
-      Lee\r\nProgramming by \r\nJunhyun Sim, Suyoung Song and Heejin Jang and \n\r\nEnglish
-      Localization by Hansol Jang and Hae Seung Kie\n\rProduction & Playtest Support
-      by Yuri Choi\r\n\nDevelopment & Player Experience Support by Yuri Choi\r\nExternal
-      Programming Advisory by Jiwon Choi\r\n\nBackground Music\n\"Monster and Human\"
-      by Haksil\n\"Intro Theme Song\" by Wooyeol Choi\n\r\nAnimation BGM\r\nChapters
-      1, 2, 4 by Wooyeol Choi\r\nChapters 5, 6, 9, 11, 13 by Woochan Kim\r\nChapter
-      14 by Sam Shandley\r\nChapters 3, 7, 8, 10, 12 - using free assets from nojisuma\r\n\r\nExternal
-      QA and Play Testing by Kihyun Lee and JaeYeong Kim\r\n\nBeta Testing for Google
-      Playstore by\n(\uBCA0\uD0C0 \uD14C\uC2A4\uD130 \uCC38\uC5EC\uC790 \uC774\uB984
-      \uD45C\uAE30)\n\n\nSpecial Thanks to our loved ones,\r\nfriends and family,
-      \r\nand our backers from all over the world.\r\n\r\n(\uB4A4\uC5D0 \uD6C4\uC6D0\uC790
-      \uC774\uB984 \uD45C\uAE30)\r\n\r\n<color=#696969>\xA9 2025 moonstew games All
-      rights reserved.</color>\n"
+      Lee\r\nProgramming by \r\nJunhyun Sim, Suyoung Song and Heejin Jang\n\r\nEnglish
+      Localization by Hansol Jang and Hae Seung Kie\n\nDevelopment & Player Experience
+      Support by Yuri Choi\r\nExternal Programming Advisory by Jiwon Choi\r\n\nBackground
+      Music\n\"Monster and Human\" by Haksil\n\"Intro Theme Song\" by Wooyeol Choi\n\r\nAnimation
+      BGM\r\nChapters 1, 2, 4 by Wooyeol Choi\r\nChapters 5, 6, 9, 11, 13 by Woochan
+      Kim\r\nChapter 14 by Sam Shandley\r\nChapters 3, 7, 8, 10, 12 - using free
+      assets from nojisuma\r\n\r\nExternal QA and Play Testing by Kihyun Lee and
+      JaeYeong Kim\r\n\nBeta Testing for Google Playstore by\n(\uBCA0\uD0C0 \uD14C\uC2A4\uD130
+      \uCC38\uC5EC\uC790 \uC774\uB984 \uD45C\uAE30)\n\n\nSpecial Thanks to our loved
+      ones,\r\nfriends and family, \r\nand our backers from all over the world.\r\n\r\n(\uB4A4\uC5D0
+      \uD6C4\uC6D0\uC790 \uC774\uB984 \uD45C\uAE30)\r\n\r\n<color=#696969>\xA9 2025
+      moonstew games All rights reserved.</color>\n"
     m_Metadata:
       m_Items:
       - rid: 5827832305795465233
@@ -428,7 +427,7 @@ MonoBehaviour:
       m_Items:
       - rid: 5827832305795465233
   - m_Id: 52964753471
-    m_Localized: Time is relative. Fast-forward<br>through the long hours of wait?
+    m_Localized: Time is relative. Fast-forward\nthrough the long hours of wait?
     m_Metadata:
       m_Items:
       - rid: 5827832305795465233
@@ -515,7 +514,7 @@ MonoBehaviour:
       m_Items:
       - rid: 5827832305795465233
   - m_Id: 25432680089731072
-    m_Localized: Dot has <subcount> more chats to share.
+    m_Localized: 'Chats left until the next agenda :'
     m_Metadata:
       m_Items:
       - rid: 5827832305795465233
@@ -549,19 +548,20 @@ MonoBehaviour:
       m_Items:
       - rid: 5827832305795465233
   - m_Id: 36998756313284608
-    m_Localized: "\uB2E4\uC74C \uC7A1\uB2F4\uC774 \uC2DC\uC791\uB418\uAE30\uAE4C\uC9C0
-      <subtime>\uBD84 \uB0A8\uC558\uC5B4\uC694.\n\uBB49\uCE58\uB97C \uC7AC\uCD09\uD574
-      \uB2F9\uC7A5 \uB300\uD654\uB97C \uC2DC\uC791\uD560\uAE4C\uC694?"
+    m_Localized: '<subtime> minutes to go until your next chat.
+
+      Pester Dot
+      into starting it now?'
     m_Metadata:
       m_Items:
       - rid: 5827832305795465233
   - m_Id: 36999029601550336
-    m_Localized: "\uAE30\uB2E4\uB9B4\uAC8C\uC694."
+    m_Localized: No, I can wait.
     m_Metadata:
       m_Items:
       - rid: 5827832305795465233
   - m_Id: 36999033703579648
-    m_Localized: "\uB124, \uC88B\uC544\uC694."
+    m_Localized: Yes, please.
     m_Metadata:
       m_Items:
       - rid: 5827832305795465233
@@ -570,6 +570,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5827832305795465233
+  - m_Id: 41732287430082560
+    m_Localized: I see.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41732161273806848
+    m_Localized: 'You''ve filled your chat quota for now.
+
+      Enjoy the peace
+      and quiet.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

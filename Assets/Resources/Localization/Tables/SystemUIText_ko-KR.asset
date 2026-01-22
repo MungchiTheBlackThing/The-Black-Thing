@@ -170,19 +170,18 @@ MonoBehaviour:
     m_Localized: "<size=90>CREDIT</size>\n\nCreated and Directed by Andiemae Lee\r\n\r\nArt
       Direction & Animation by Yoonsun Lee\r\n\nNarrative Design & Scriptwriting
       by\r\nAndiemae Lee, Sieun Lee and Eunseo Go\r\n\r\nGame Design & PM by Andiemae
-      Lee\r\nProgramming by \r\nJunhyun Sim, Suyoung Song and Heejin Jang and \n\r\nEnglish
-      Localization by Hansol Jang and Hae Seung Kie\n\rProduction & Playtest Support
-      by Yuri Choi\r\n\nDevelopment & Player Experience Support by Yuri Choi\r\nExternal
-      Programming Advisory by Jiwon Choi\r\n\nBackground Music\n\"Monster and Human\"
-      by Haksil\n\"Intro Theme Song\" by Wooyeol Choi\n\r\nAnimation BGM\r\nChapters
-      1, 2, 4 by Wooyeol Choi\r\nChapters 5, 6, 9, 11, 13 by Woochan Kim\r\nChapter
-      14 by Sam Shandley\r\nChapters 3, 7, 8, 10, 12 - using free assets from nojisuma\r\n\r\nExternal
-      QA and Play Testing by Kihyun Lee and JaeYeong Kim\r\n\nBeta Testing for Google
-      Playstore by\n(\uBCA0\uD0C0 \uD14C\uC2A4\uD130 \uCC38\uC5EC\uC790 \uC774\uB984
-      \uD45C\uAE30)\n\n\nSpecial Thanks to our loved ones,\r\nfriends and family,
-      \r\nand our backers from all over the world.\r\n\r\n(\uB4A4\uC5D0 \uD6C4\uC6D0\uC790
-      \uC774\uB984 \uD45C\uAE30)\r\n\r\n<color=#696969>\xA9 2025 moonstew games All
-      rights reserved.</color>\n"
+      Lee\r\nProgramming by \r\nJunhyun Sim, Suyoung Song and Heejin Jang\n\r\nEnglish
+      Localization by Hansol Jang and Hae Seung Kie\n\nDevelopment & Player Experience
+      Support by Yuri Choi\r\nExternal Programming Advisory by Jiwon Choi\r\n\nBackground
+      Music\n\"Monster and Human\" by Haksil\n\"Intro Theme Song\" by Wooyeol Choi\n\r\nAnimation
+      BGM\r\nChapters 1, 2, 4 by Wooyeol Choi\r\nChapters 5, 6, 9, 11, 13 by Woochan
+      Kim\r\nChapter 14 by Sam Shandley\r\nChapters 3, 7, 8, 10, 12 - using free
+      assets from nojisuma\r\n\r\nExternal QA and Play Testing by Kihyun Lee and
+      JaeYeong Kim\r\n\nBeta Testing for Google Playstore by\n(\uBCA0\uD0C0 \uD14C\uC2A4\uD130
+      \uCC38\uC5EC\uC790 \uC774\uB984 \uD45C\uAE30)\n\n\nSpecial Thanks to our loved
+      ones,\r\nfriends and family, \r\nand our backers from all over the world.\r\n\r\n(\uB4A4\uC5D0
+      \uD6C4\uC6D0\uC790 \uC774\uB984 \uD45C\uAE30)\r\n\r\n<color=#696969>\xA9 2025
+      moonstew games All rights reserved.</color>\n"
     m_Metadata:
       m_Items:
       - rid: 5827832305795465234
@@ -462,7 +461,7 @@ MonoBehaviour:
       - rid: 5827832305795465234
   - m_Id: 52964753471
     m_Localized: "\uC2DC\uAC04\uC740 \uC0C1\uB300\uC801\uC778 \uAC83. \uB290\uB9AC\uAC8C
-      \uD750\uB974\uB294<br>\uC774 \uAE30\uB2E4\uB9BC\uC758 \uC2DC\uAC04\uC744 \uBE68\uB9AC
+      \uD750\uB974\uB294\\n\uC774 \uAE30\uB2E4\uB9BC\uC758 \uC2DC\uAC04\uC744 \uBE68\uB9AC
       \uAC10\uC544 \uB118\uAE38\uAE4C\uC694?"
     m_Metadata:
       m_Items:
@@ -551,7 +550,7 @@ MonoBehaviour:
       m_Items:
       - rid: 5827832305795465234
   - m_Id: 25432680089731072
-    m_Localized: "\uB2E4\uC74C \uD560 \uC77C\uAE4C\uC9C0 \uC774\uC57C\uAE30\n<subcount>\uAC1C\uAC00
+    m_Localized: "\uB2E4\uC74C \uD560 \uC77C\uAE4C\uC9C0 \uC7A1\uB2F4\n<subcount>\uAC1C\uAC00
       \uB0A8\uC544 \uC788\uC5B4\uC694."
     m_Metadata:
       m_Items:
@@ -609,6 +608,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5827832305795465234
+  - m_Id: 41732161273806848
+    m_Localized: "\uC774 \uC2DC\uAC04\uC5D0 \uB0A8\uC544 \uC788\uB294 \uBAA8\uB4E0
+      \uC7A1\uB2F4\uC744 \uD655\uC778\uD588\uC5B4\uC694.\r\n\uC7A0\uC2DC \uB3D9\uC548\uC740
+      \uACE0\uB3C5\uACFC \uCE68\uBB35\uC744 \uC990\uAE30\uB294 \uAC83\uB3C4 \uC88B\uC744
+      \uAC70\uC608\uC694."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41732287430082560
+    m_Localized: "\uADF8\uB807\uAD70\uC694."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
