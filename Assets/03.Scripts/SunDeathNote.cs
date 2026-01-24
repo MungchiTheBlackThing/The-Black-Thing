@@ -157,34 +157,43 @@ public class SunDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 	}
 
 	public void OnDrag(PointerEventData eventData)
-    {
-		// 드래그 시작 지점 저장
-		dragStartPosition = eventData.position;
-    }
+	{
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-		// 드래그가 끝났을 때의 위치 저장
-		Vector2 dragEndPosition = eventData.position;
-        float differenceX = dragEndPosition.x - dragStartPosition.x;
+	}
 
-		/// 오른쪽으로 스와이프하여 다음 페이지로 넘어갈 때
-		if (differenceX < 0 && currentPageIndex < pageCount - 1)
-        {
-            SetPage(currentPageIndex + 1);
-        }
-		// 왼쪽으로 스와이프하여 이전 페이지로 넘어갈 때
-		else if (differenceX > 0 && currentPageIndex > 0)
-        {
-            SetPage(currentPageIndex - 1);
-        }
-        if (currentPageIndex == pageCount - 1)
-        {
-            pagesContainer.GetChild(pageCount).gameObject.SetActive(true); //exit 버튼 활성화
+	public void OnEndDrag(PointerEventData eventData)
+	{
+		Vector2 start = eventData.pressPosition;
+		Vector2 end = eventData.position;
+
+		float dx = end.x - start.x;
+		float dy = end.y - start.y;
+
+		// 세로 스크롤/흔들림이면 무시
+		if (Mathf.Abs(dy) > Mathf.Abs(dx)) return;
+
+		// 너무 짧은 드래그는 무시(픽셀 기준)
+		const float MIN_SWIPE = 60f;
+		if (Mathf.Abs(dx) < MIN_SWIPE) return;
+
+		// 오른쪽으로 스와이프하여 다음 페이지로 넘어갈 때
+		if (dx < 0f && currentPageIndex < pageCount - 1)
+		{
+			SetPage(currentPageIndex + 1);
 		}
-    }
+		// 왼쪽으로 스와이프하여 이전 페이지로 넘어갈 때
+		else if (dx > 0f && currentPageIndex > 0)
+		{
+			SetPage(currentPageIndex - 1);
+		}
 
-    public void NextPage()
+		if (currentPageIndex == pageCount - 1)
+		{
+			pagesContainer.GetChild(pageCount).gameObject.SetActive(true); //exit 버튼 활성화
+		}
+	}
+
+	public void NextPage()
     {
         if (currentPageIndex >= pageCount - 1) return;
         SetPage(currentPageIndex + 1);

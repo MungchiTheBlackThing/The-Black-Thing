@@ -516,11 +516,11 @@ public class DotController : MonoBehaviour
         {
             Debug.Log("트리거 꺼짐");
             playAlert.SetActive(false);
+            manager.ScrollManager.MoveCamera(new Vector3(manager.ScrollManager.camLimitValue.y, 0, -10f), 2f);
+            manager.ScrollManager.stopscroll();
             //같이 책을 읽을래? 라는 문구 뜨고 안읽는다고하면 총총총 sleep으로
-            for (int i = 0; i < play.Length; i++)
-            {
-                play[i].SetActive(true);
-            }
+            StartCoroutine(playOnafterdelay());
+           
         }
 
         if (subAlert.activeSelf)
@@ -535,6 +535,15 @@ public class DotController : MonoBehaviour
 
 
             TriggerSub(false);
+        }
+    }
+
+    public IEnumerator playOnafterdelay()
+    {
+        yield return new WaitForSeconds(2f);
+        for (int i = 0; i < play.Length; i++)
+        {
+            play[i].SetActive(true);
         }
     }
 

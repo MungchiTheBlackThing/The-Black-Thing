@@ -15,25 +15,6 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
     private PlayerController playerController;
     private LANGUAGE LANGUAGE;
 
-    // private string activeTexts = "너는 기꺼이 너의 바다로 나를 이끌었고,"; //<multiple(0)>
-    // private string passiveTexts = "너는 기꺼이 너의 바다에 나를 초대했고,";
-    // private string lowTexts = "난 그 드넓은 수면에 몸을 띄운 채 잔잔히 파도를 거슬러 보았어."; //<multiple(1)>
-    // private string highTexts = "난 마음껏 그 수면을 뛰놀며 자잘한 파도를 일렁여 보았어."; //<multiple(1)>
-
-    // private List<string> abcd = new List<string> {
-    //     "찰나의 미소띤 잔상","파도 속 낯선 안식처","비좁고 다정한 암흑","미약한 용기의 불씨" //<multiple(2)>
-    // };
-
-    // //--EN---------
-    // private string activeTextsen = "pulled me into your sea,"; //<multiple(0)>
-    // private string passiveTextsen = "called me into your sea,";
-    // private string lowTextsen = "and I would run about its vast surface and create small ripples all around."; //<multiple(1)>
-    // private string highTextsen = "and I would drift upon its vast surface and gently paddle against the waves."; //<multiple(1)>
-
-    // private List<string> abcden = new List<string> {
-    //     "an afterimage of a pleasant daydream","a glimpse of an unlit haven","a moment of loving darkness","an ember of faint courage" //<multiple(2)>
-    // };
-
     void OnEnable()
     {
         playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
@@ -84,13 +65,13 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
                 // 먼저 MoonDeath1~4 키로 로컬라이징된 텍스트 가져오기
                 string pageKey = $"MoonDeath{i + 1}";
                 string localizedText = GetLocalizedString("MoonDeath", pageKey);
-                
+
                 // 로컬라이징 텍스트가 있으면 사용, 없으면 원본 텍스트 사용
                 string baseText = string.IsNullOrEmpty(localizedText) ? textMesh.text : localizedText;
-                
+
                 // 조건부 텍스트 패턴 처리: (passive: ...)(active: ...)
                 baseText = ProcessConditionalText(baseText, passive > active);
-                
+
                 // 변수 치환
                 string modifiedText = baseText.Replace("<multiple0>", multiple0)
                                               .Replace("<multiple1>", multiple1)
@@ -135,26 +116,35 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        // 드래그 시작 지점 저장
-        dragStartPosition = eventData.position;
+ 
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        // 드래그가 끝났을 때의 위치 저장
-        Vector2 dragEndPosition = eventData.position;
-        float differenceX = dragEndPosition.x - dragStartPosition.x;
+        Vector2 start = eventData.pressPosition;
+        Vector2 end = eventData.position;       
+
+        float dx = end.x - start.x;
+        float dy = end.y - start.y;
+
+        // 세로 스크롤/흔들림이면 무시
+        if (Mathf.Abs(dy) > Mathf.Abs(dx)) return;
+
+        // 너무 짧은 드래그는 무시(픽셀 기준)
+        const float MIN_SWIPE = 60f;
+        if (Mathf.Abs(dx) < MIN_SWIPE) return;
 
         // 오른쪽으로 스와이프하여 다음 페이지로 넘어갈 때
-        if (differenceX < 0 && currentPageIndex < pageCount - 1)
+        if (dx < 0f && currentPageIndex < pageCount - 1)
         {
             SetPage(currentPageIndex + 1);
         }
         // 왼쪽으로 스와이프하여 이전 페이지로 넘어갈 때
-        else if (differenceX > 0 && currentPageIndex > 0)
+        else if (dx > 0f && currentPageIndex > 0)
         {
             SetPage(currentPageIndex - 1);
         }
+
         if (currentPageIndex == pageCount - 1)
         {
             pagesContainer.GetChild(pageCount).gameObject.SetActive(true); //exit 버튼 활성화
@@ -186,7 +176,6 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
         pagesContainer.GetChild(pageCount).gameObject.SetActive(showExit);
     }
 
-
     void OnDisable()
     {
         currentPageIndex = 0;
@@ -196,5 +185,4 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
             pagesContainer.GetChild(pageCount).gameObject.SetActive(true); //exit 버튼 활성화
         }
     }
-
 }

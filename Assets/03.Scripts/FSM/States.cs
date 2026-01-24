@@ -242,7 +242,7 @@ public class Play : GameState, ILoadingInterface
     {
         this.dot = dot;
         manager.ObjectManager.PlayThinking();
-        manager.ScrollManager.StopCameraByPlayPhase(true);
+        //manager.ScrollManager.StopCameraByPlayPhase(true);
         //카메라 고정
         Debug.Log("트리거 켜짐");
         dot.TriggerPlay(true);

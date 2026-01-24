@@ -22,7 +22,7 @@ public class ScrollManager : MonoBehaviour
 
     [SerializeField]
     [Tooltip("LimitValue (minVal,maxVal)")]
-    Vector2 camLimitValue;
+    public Vector2 camLimitValue;
 
     [SerializeField]
     [Tooltip("Scroll Speed")]
