@@ -45,7 +45,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,EngText,KorText,
 2,28,44,1,Dot,Sub,anim_eyesblink,text,Subjective?,주관적인 기억?,45,,,,Sub_Ch5,S5_L0044
 2,28,45,1,Player,Sub,,text,"See, you feel a sense of\nrejection from lemons.","봐, 레몬을 생각하면 뭉치는\n거부당하는 느낌이 들잖아.",46,,,,Sub_Ch5,S5_L0045
 2,28,46,1,Player,Sub,,text,But others feel\ndifferently about it.,하지만 다르게 생각하는 사람들도 있어.,47,,,,Sub_Ch5,S5_L0046
-2,28,47,1,Dot,Sub,,text,"Really? Wait, what do\nyou think of lemons?","정말? 잠깐, 그럼 <nickname 너는\n레몬에 대해 어떻게 생각하는데?",48,,,,Sub_Ch5,S5_L0047
+2,28,47,1,Dot,Sub,,text,"Really? Wait, what do\nyou think of lemons?","정말? 잠깐, 그럼 <nickname 너는\n레몬을 생각하면 어떤 느낌이 들어?",48,,,,Sub_Ch5,S5_L0047
 2,28,48,1,Player,Sub,,textbox,"To me, lemons are...",레몬은 나에게......,49,,,,Sub_Ch5,S5_L0048
 2,28,49,1,Dot,Sub,anim_eyescorner_turn,text,Huh.,그렇구나.,50,,,,Sub_Ch5,S5_L0049
 2,28,50,1,Dot,Sub,anim_eyesblink,text,I understand. Lemons really\ncould be all these things.,이해했어. 레몬은 정말\n수많은 것들이 될 수 있겠어.,51,,,,Sub_Ch5,S5_L0050
@@ -67,7 +67,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,EngText,KorText,
 3,29,66,0,Dot,Sub,,text,"And then I blinked, and\nI was sucked into it.",생각하며 눈 깜빡 감았다 떴는데\n그 속으로 빨려들어가 버렸어.,67,,,,Sub_Ch5,S5_L0066
 3,29,67,0,Dot,Sub,anim_omg,text,Into a nightmare of a world.,악몽 같은 세상이었어.,68,,,,Sub_Ch5,S5_L0067
 3,29,68,0,Dot,Sub,anim_eyesblink,text,"Everything was red, like looking\nthrough red cellophane.","붉은 셀로판지로 바라본 것처럼,\n모든 것이 붉었고.",69,,,,Sub_Ch5,S5_L0068
-3,29,69,0,Player,Sub,,selection,(Picture blood.)|(Picture fruit juice.),(피를 상상한다.)|(과일 즙을 상상한다.),70|95,moon|sun,,,Sub_Ch5,S5_L0069
+3,29,69,0,Player,Sub,,selection,(A world soaked with crimson blood.)|(A world soaked with raspberry juice.),(새빨간 피로 물든 세상이 떠올라.)|(산딸기 즙으로 절여진 세상이 떠올라.),70|95,moon|sun,,,Sub_Ch5,S5_L0069
 3,29,70,0,Dot,Sub,,text,It was like being inside\nan ancient myth.,오랜 신화 속이었던 것 같아.,71,,,,Sub_Ch5,S5_L0070
 3,29,71,0,Dot,Sub,,text,"A giant lay on the ground,\nstabbed by a brave warrior’s sword.",용맹한 전사의 칼에 찔려\n죽은 거인이 누워 있었어.,72,,,,Sub_Ch5,S5_L0071
 3,29,72,0,Dot,Sub,,text,"Its bloodshot eyes gazed\nat the red, rancid stream","그는 핏발 선 눈을 하고, 자기 목에서\n솟구치는 시뻘겋고 비릿한 물줄기를",73,,,,Sub_Ch5,S5_L0072

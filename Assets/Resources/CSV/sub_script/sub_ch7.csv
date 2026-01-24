@@ -1,7 +1,7 @@
 Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
 1,39,1,0,Dot,Sub,anim_sub_ch7_1,text,......,......,2,,,,Sub_Ch7,S7_L0001
-1,39,2,0,Dot,Sub,,text,곰팡이.,Mold.,3,,,,Sub_Ch7,S7_L0002
-1,39,3,0,Dot,Sub,,text,창문 너머로 불어오는 바람을 온몸으로\n맞이하다 먼지 투성이가 되어 버렸어.,"I confronted the wind ripping through the\nopen window, and now I’m covered in dust.",4,,,,Sub_Ch7,S7_L0003
+1,39,2,0,Dot,Sub,,text,곰팡이야.,Mold.,3,,,,Sub_Ch7,S7_L0002
+1,39,3,0,Dot,Sub,,text,나... 창문 너머로 불어오는 바람을 온몸으로\n맞이하다 먼지투성이가 되어 버렸어.,"I confronted the wind ripping through the\nopen window, and now I’m covered in dust.",4,,,,Sub_Ch7,S7_L0003
 1,39,4,0,Dot,Sub,,text,"음, 음, 아주 신선한 경험이야. 도시\n곳곳을 다녔지만 이런 적은 처음이었어.","Hm. Hm. It’s a novel experience. I’ve seen the\ncity’s nooks and crannies, but this was a first.",5,,,,Sub_Ch7,S7_L0004
 1,39,5,0,Dot,Sub,,text,바람이 얼마나 맹렬하던지!,Such fierce winds!,6,,,,Sub_Ch7,S7_L0005
 1,39,6,0,Dot,Sub,,text,...,...,7,,,,Sub_Ch7,S7_L0006
@@ -120,14 +120,14 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 3,41,119,0,Dot,Default,,text,“동생은 몸을 숨길 장롱을 찾으려 하지만...\n그들이 먼저 자기를 잡아 버린대.” 아이는 시무룩해졌어.,"She tries to find a closet to hide... but\nthey catch her first,” the boy frowned.",120,,,,Sub_Ch7,S7_L0119
 3,41,120,0,Player,Sub,anim_eyesblink,selection,못된 꿈이네. 어린 아이가 많이 무섭겠다.|그 나이에는 다 괴물들을 무서워하지.,What an awful dream. She must be so scared.|All children that age are afraid of monsters.,121|121,sun|moon,,,Sub_Ch7,S7_L0120
 3,41,121,0,Dot,Sub,,text,"나는 뭉클해진 마음으로, “닿을지는 모르겠지만\n그 말을 전달해 주려 노력해 볼게.” 했지.","So I said, “I’m not sure if I can\nreach them from here, but I’ll try.”",122,,,,Sub_Ch7,S7_L0121
-3,41,122,0,Player,Sub,,selection,(따뜻한 이야기에 감동한다.)|(해결책을 고민해 본다.),(Be moved by the story.)|(Think of a solution.),123|126,sun|moon,,,Sub_Ch7,S7_L0122
-3,41,123,0,Player,Sub,,text,따뜻하고 사랑스러운 아이야...\n꼭 소원이 이루어지도록 돕고 싶어.,"What a sweet, lovely child... I would\nreally like to make his wish come true.",124,,,,Sub_Ch7,S7_L0123
+3,41,122,0,Player,Sub,,selection,(따뜻한 이야기야... 마음이 뭉클해지네.)|(이 이야기를 달나라에 전할 뾰족한 수가 없을까?),(A heartwarming story... Truly.)|(How do we tell the Moon about this?),123|126,sun|moon,,,Sub_Ch7,S7_L0122
+3,41,123,0,Player,Sub,,text,마음이 참 사랑스러운 아이구나...\n꼭 소원이 이루어지도록 돕고 싶어.,"What a sweet, lovely child... I would\nreally like to make his wish come true.",124,,,,Sub_Ch7,S7_L0123
 3,41,124,0,Player,Sub,,text,"아, 달 송신기를 사용해서 그 애의 소원을 전달할\n수 있겠어! 오늘 밤 달에 편지를 보내 볼게.","Oh, how about using the Moon\nradio! I’ll send a letter tonight.",125,,,,Sub_Ch7,S7_L0124
 3,41,125,0,Dot,Sub,,text,"너의 따뜻함은 나를 언제나\n감동하게 해. 고마워, <nickname>!","Your kindness always moves\nme. Thank you, <nickname>!",129,,,,Sub_Ch7,S7_L0125
 3,41,126,0,Player,Sub,,text,그 아이의 소원이 이루어질\n방법이 있으려나...,I wonder if there’s a way\nfor his wish to come true...,127,,,,Sub_Ch7,S7_L0126
-3,41,127,0,Player,Sub,,text,"아, 달 송신기를 사용해서 그 애의 소원을 전달할\n수 있겠어! 오늘 밤 달에 편지를 보내 볼게.","Oh, how about using the Moon\nradio? I’ll send a letter tonight.",128,,,,Sub_Ch7,S7_L0127
-3,41,128,0,Dot,Sub,,text,"너의 현명함은 언제나 나에게\n큰 영감이 돼. 고마워, <nickname>!","Your wiseness always inspires\nme. Thank you, <nickname>!",129,,,,Sub_Ch7,S7_L0128
-3,41,129,0,Player,Sub,,text,"하하, 내 손으로 두 아이를 행복하게 할 수\n있다면야! 아무튼, 다시 이야기해 줄래?","I’m glad I could help!\nAnyways, back to the story?",130,,,,Sub_Ch7,S7_L0129
+3,41,127,0,Dot,Sub,,text,"아, <nickname>! 달나라 송신기를 사용하면\n그 애의 소원을 전달할 수 있지 않을까?","Oh, <nickname>! How about we use the Moon\nTransmitter to relay his wish?",128,,,,Sub_Ch7,S7_L0127
+3,41,128,0,Player,Sub,,text,완전히 잊고 있었어! 좋은 생각인걸?,I had completely forgotten about that!\nGreat idea.,129,,,,Sub_Ch7,S7_L0128
+3,41,129,0,Player,Sub,,text,"응, 오늘 밤 송신기 불이 켜지면 편지를\n보내 볼게! 아무튼, 다시 이야기해 줄래?","Tonight I’ll try sending a message with\nthe transmitter. Anyway, please continue!",130,,,,Sub_Ch7,S7_L0129
 3,41,130,0,Dot,Sub,,text,"응, 응! 그런데 그때.","Yes, yes! It was just then.",131,,,,Sub_Ch7,S7_L0130
 3,41,131,0,Dot,Sub,,text,그 남자아이를 잡아채는 손길이\n나타났어. “엄마!” 아이가 외쳤지.,Someone tugged him from\nbehind. “Mom!” the boy yelled.,132,,,,Sub_Ch7,S7_L0131
 3,41,132,0,Dot,Sub,,text,“잠깐도 못 기다리고 쪼그려\n앉아서... 바지가 다 더러워졌잖니.”,“What were you doing crouched\non the floor! Your pants are all dirty.”,133,,,,Sub_Ch7,S7_L0132
@@ -135,9 +135,9 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 3,41,134,0,Dot,Sub,,text,"“그곳에 있는 꿈 공장에 대해서도 이야기\n해 줬어요!” 아이가 신나서 이야기하는데,",“They told me all about the Moon\nFactory there!” the child exclaimed.,135,,,,Sub_Ch7,S7_L0134
 3,41,135,0,Dot,Sub,,text,"“상상력이 풍부하구나. 그런데 말이다,\n그런 건 존재하지 않는단다.”","“That’s nice, dear. But Andy, none of\nthose things are real,” said the mother.",136,,,,Sub_Ch7,S7_L0135
 3,41,136,0,Dot,Sub,,text,"“책은 책으로만 읽어야지, 과도한 상상은\n좋지 않아. 집에 가자.” 엄마는 그를 타일렀지.","“They only exist in books. Let’s go home,”\nthe mother persuaded him,",137,,,,Sub_Ch7,S7_L0136
-3,41,137,0,Player,Sub,,selection,(아이에게 공감하며 탄식한다.)|(가만히 이야기를 듣는다.),(Sympathize with his predicament.)|(Keep on listening.),138|139,active|passive,,,Sub_Ch7,S7_L0137
-3,41,138,0,Player,Sub,,text,아이고... 꼬마가 제법 속상했겠어.,Oh no... he must have been quite upset.,140,,,,Sub_Ch7,S7_L0138
-3,41,139,0,Player,Sub,,text,그랬구나...,I see...,140,,,,Sub_Ch7,S7_L0139
+3,41,137,0,Player,Sub,,selection,(꼬마가 얼마나 속상했을까... 상상이 아니었는데.)|(뭉치의 존재를 단번에 믿긴 어려울 수 있으니... 이해는 돼.) ,(That must have upset him... He was telling the truth.)|(I understand. To believe in Dot’s being is no easy feat.),138|139,active|passive,,,Sub_Ch7,S7_L0137
+3,41,138,0,Player,Sub,,text,자신의 말이 통째로 부정당하다니...\n꼬마는 가뜩이나 속상했겠어.,To have his words completely denied...\nThe child must have been upset.,140,,,,Sub_Ch7,S7_L0138
+3,41,139,0,Player,Sub,,text,꼬마의 어머니는... 아쉽게도 뭉치를 볼 수 없었나 봐.\n그래서 믿기 어려웠던 것일지도 모르겠어.,"The child’s mother couldn’t see Dot, sadly.\nSo it may have been harder to believe him.",140,,,,Sub_Ch7,S7_L0139
 3,41,140,0,Dot,Sub,,text,뒤를 돌아보는 아이와 마지막으로\n눈을 맞추며 자문했어.,"The boy turned around one last time,\nand as our eyes met I asked myself.",141,,,,Sub_Ch7,S7_L0140
 3,41,141,0,Dot,Sub,anim_eyesup_turn,text,"어른이 된다는 건, 달 뒤편에서 온 생명체와\n꿈 공장의 존재를 믿지 못하게 된다는 걸까?","Does growing up mean no longer believing\nin the Moon Beings, in the Dream Factory... in me?",142,,,,Sub_Ch7,S7_L0141
 3,41,142,0,Player,Sub,anim_eyesblink,text,어른의 세계는 아이의 것보다 억세고 건조해.\n그래서 믿을 능력을 잃어버린 사람들이 많아.,Adults live in a tougher and drier world.\nSo lots of people lose the ability to believe.,143,,,,Sub_Ch7,S7_L0142
@@ -147,8 +147,8 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 3,41,146,0,Dot,Sub,,text,"‘으으, 걸리적거려.’","making him mutter, “Blegh, what a mess,”",147,,,,Sub_Ch7,S7_L0146
 3,41,147,0,Dot,Sub,,text,하며 깨끗하게 닦아내 버리고\n싶게 되는—그런 게 아닐까.,before wiping it away—\nor something like that.,148,,,,Sub_Ch7,S7_L0147
 3,41,148,0,Player,Sub,,text,순수를 잃은 어른들은 ‘못’\n믿게 되는 게 아닐 수 있겠어.,Perhaps it’s not that adults\n<i>can’t<\i> believe anymore.,149,,,,Sub_Ch7,S7_L0148
-3,41,149,0,Player,Sub,,text,"더 이상 보고 싶지 않기 때문에 부러 눈을\n감아 버리거나, 돌려 버리는 것 아닐까?",Perhaps they close their eyes or avert their\ngaze because they don’t want to see.,150,,,,Sub_Ch7,S7_L0149
-3,41,150,0,Player,Sub,anim_eyesclosed_turn,text,믿을 능력을 잃어버린 게\n아니라 스스로 버린 것일지도.,Perhaps they throw away the\nability to believe of their own will.,151,,,,Sub_Ch7,S7_L0150
+3,41,149,0,Player,Sub,,text,"더 이상 보고 싶지 않기 때문에 부러\n눈을 감아 버리거나, 돌려 버리는 거야.",Perhaps they close their eyes or avert their\ngaze because they don’t want to see.,150,,,,Sub_Ch7,S7_L0149
+3,41,150,0,Player,Sub,anim_eyesclosed_turn,text,믿을 능력을 잃어버린 게 아니라\n스스로 버리게 된 것일지도.,Perhaps they throw away the\nability to believe of their own will.,151,,,,Sub_Ch7,S7_L0150
 3,41,151,0,Dot,Default,anim_eyesclosed,text,... 그렇게 어떤 것들은 사라지겠지.,... And so some things are lost.,152,,,,Sub_Ch7,S7_L0151
 3,41,152,0,Dot,Sub,anim_eyesblink,text,아주 영영.,Forever.,,,,,Sub_Ch7,S7_L0152
 4,42,153,1,Dot,Sub,anim_sub_dreamcatcher2,text,말도 안 돼! 막 걸음마를 뗀\n아기 양의 솜털처럼 보드라워...,No way! It’s as soft as a lamb\nthat just took its first steps...,154,,,,Sub_Ch7,S7_L0153
@@ -158,7 +158,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 4,42,157,1,Dot,Sub,,text,눈을 떼기 어려울 정도로 말이야.,How mesmerizing it was.,158,,,,Sub_Ch7,S7_L0157
 4,42,158,1,Dot,Sub,,text,여리지만 우아해. 이것은 그의\n깃털을 엮어 만든 게 분명해!,Delicate but elegant. This thing\nmust be made out of its feathers!,159,,,,Sub_Ch7,S7_L0158
 4,42,159,1,Dot,Sub,anim_sub_dreamcatcher2,text,오로지 나를 위해 이 귀하고\n황홀한 선물을 가지고 와 준 거야?,You brought this precious\nglorious present just for me?,160,,,,Sub_Ch7,S7_L0159
-4,42,160,1,Player,Sub,,selection,(페가수스는 없다. 반박한다.)|(틀렸지만 뭉치의 행복을 지켜 준다.),"(Pegasi aren’t real. Refute.)|(Incorrect, but don’t tell Dot!)",161|166,moon|sun,,,Sub_Ch7,S7_L0160
+4,42,160,1,Player,Sub,,selection,(페가수스는 존재하지 않아. 사실을 짚어 주자.)|(완전히 틀렸지만 뭉치의 행복을 지켜 주기로 하자!),"(Pegasi aren’t real. Let’s make that clear.)|(Completely wrong, but let’s protect Dot’s happiness!)",161|166,moon|sun,,,Sub_Ch7,S7_L0160
 4,42,161,1,Player,Sub,,text,너만을 위한 선물을 맞아!,"It is a gift, just for you!",162,,,,Sub_Ch7,S7_L0161
 4,42,162,1,Player,Sub,,text,하지만 페가수스는 아마\n존재하지 않을 거야.,But I don’t think pegasi are real.,163,,,,Sub_Ch7,S7_L0162
 4,42,163,1,Dot,Sub,,text,그럼 이건 누구의 깃털이야?,Then whose feathers are these?,164,,,,Sub_Ch7,S7_L0163

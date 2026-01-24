@@ -1,167 +1,167 @@
-﻿Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,EngText,KorText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
-1,21,1,1,Dot,Default,anim_reading,text,The Moon’s gravity\nis stronger than one would think.,달의 중력은 상상보다 크다.,2,,,,Sub_Ch4,S4_L0001
-1,21,2,1,Dot,Default,,text,"When its pull affects Earth, this\ncauses the sea to rise towards it.","달의 중력이 지구에 미쳐, 바닷물을\n세게 끌어당기며 생기는 현상을...",3,,,,Sub_Ch4,S4_L0002
-1,21,3,1,Dot,Default,,text,This phenomenon is\ncalled the spring tide.,‘조석’이라고 하는데.,4,,,,Sub_Ch4,S4_L0003
-1,21,4,1,Player,Default,,text,"What are you up to, Dot?","뭉치, 뭐 하는 중이었어?",5,,,,Sub_Ch4,S4_L0004
-1,21,5,1,Dot,Default,,text,Oh.,앗.,6,,,,Sub_Ch4,S4_L0005
+Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
+1,21,1,1,Dot,Default,anim_reading,text,달의 중력은 상상보다 크다.,The Moon’s gravity\nis stronger than one would think.,2,,,,Sub_Ch4,S4_L0001
+1,21,2,1,Dot,Default,anim_reading,text,"달의 중력이 지구에 미쳐, 바닷물을\n세게 끌어당기며 생기는 현상을...","When its pull affects Earth, this\ncauses the sea to rise towards it.",3,,,,Sub_Ch4,S4_L0002
+1,21,3,1,Dot,Default,anim_reading,text,‘조석’이라고 하는데.,This phenomenon is\ncalled the spring tide.,4,,,,Sub_Ch4,S4_L0003
+1,21,4,1,Player,Default,anim_reading,text,"뭉치, 뭐 하는 중이었어?","What are you up to, Dot?",5,,,,Sub_Ch4,S4_L0004
+1,21,5,1,Dot,Default,anim_reading,text,앗.,Oh.,6,,,,Sub_Ch4,S4_L0005
 1,21,6,1,Dot,Sub,anim_eyesblink,text,...!,...!,7,,,,Sub_Ch4,S4_L0006
-1,21,7,1,Dot,Sub,,text,"<nickname>, you’re here.","<nickname>, 왔구나.",8,,,,Sub_Ch4,S4_L0007
-1,21,8,1,Dot,Sub,,text,"I was reading. Watched a documentary,\nand read a few more books before that.",독서하던 중이었어. 오늘 달에 관한\n책 열 권과 다큐멘터리 하나를 봤어.,9,,,,Sub_Ch4,S4_L0008
-1,21,9,1,Dot,Sub,,text,"You know, <nickname>.","있잖아, <nickname>",10,,,,Sub_Ch4,S4_L0009
-1,21,10,1,Dot,Sub,anim_eyescorner_turn,text,"To move someone, to become the\ndriving force behind a push or a pull.","누군가를 움직인다는 거, 어떠한\n울림과 흐름의 동력이 된다는 건 말이야-",11,,,,Sub_Ch4,S4_L0010
-1,21,11,1,Dot,Sub,anim_eyesblink,text,How breathtaking it must be.,그건 얼마나 벅차오르는 일일까.,12,,,,Sub_Ch4,S4_L0011
-1,21,12,1,Dot,Default,anim_move,text,Do you know the feeling? Have you\never moved someone deep within?,너도 그 벅참을 알아?\n타인의 마음을 움직여 본 적 있어?,13,,,,Sub_Ch4,S4_L0012
-1,21,13,1,Player,Sub,anim_eyesblink,selection,"Yes, I have.|No, not yet.","응, 있어.|아니, 아직은.",14|18,active|passive,,,Sub_Ch4,S4_L0013
-1,21,14,1,Dot,Sub,,text,How?,어떻게?,15,,,,Sub_Ch4,S4_L0014
-1,21,15,1,Player,Sub,,selection,I once guided someone.|I once comforted someone.,누군가를 이끌어 줬었어.|누군가를 따스하게 안아 줬었어.,16|17,moon|sun,,,Sub_Ch4,S4_L0015
-1,21,16,1,Player,Sub,,text,"I lit someone’s path, and\nled them forward like a lantern.",누군가의 길을 등불처럼 밝히며\n이끌어 주던 때가 있었어.,22,,,,Sub_Ch4,S4_L0016
-1,21,17,1,Player,Sub,,text,"I encouraged them, and\ncomforted them like a hearth.","누군가를 모닥불처럼 따스하게 데우고,\n행복하게 해 주던 때가 있었어.",22,,,,Sub_Ch4,S4_L0017
-1,21,18,1,Player,Sub,,text,But someday...,하지만 언젠가는...,19,,,,Sub_Ch4,S4_L0018
-1,21,19,1,Player,Sub,,selection,I want to guide someone.|I want to comfort someone.,현명함으로 누군가를 밝혀 주고 싶어.|따스함으로 누군가를 데워 주고 싶어.,20|21,moon|sun,,,Sub_Ch4,S4_L0019
-1,21,20,1,Player,Sub,,text,I hope my wisdom will be the\nlantern that lights their path.,나의 현명함이 누군가의 길을\n밝히는 등불이 될 수 있기를 바라.,22,,,,Sub_Ch4,S4_L0020
-1,21,21,1,Player,Sub,,text,"I hope my warmth will comfort\nsomeone, and encourage them.","나의 따스함이 누군가를 데우고,\n행복할 수 있게 하기를 바라.",22,,,,Sub_Ch4,S4_L0021
-1,21,22,1,Player,Sub,,text,"But what’s all this about, Dot?","그런데 뭉치, 이건 갑자기 왜?",23,,,,Sub_Ch4,S4_L0022
-1,21,23,1,Dot,Sub,,text,"Oh, oh, well.","아, 아, 음.",24,,,,Sub_Ch4,S4_L0023
-1,21,24,1,Dot,Sub,,text,"See, the Moon is moved\nby the Earth.","있지, 달의 동력은 지구야.",25,,,,Sub_Ch4,S4_L0024
-1,21,25,1,Dot,Sub,,text,"The gravity of the Earth,\nits blue-green beauty.","지구의 중력, 지구의 푸르름.",26,,,,Sub_Ch4,S4_L0025
-1,21,26,1,Dot,Sub,,text,The uncontrollable fondness you feel\ntowards those you can’t help but love.,어쩔 수 없이 사랑할 수밖에 없게 되는\n속성들을 향한 속절없는 애정.,27,,,,Sub_Ch4,S4_L0026
-1,21,27,1,Player,Sub,,text,You make the Moon\nsound like a true romantic.,달의 공전을 이렇게 이야기하니까...\n꽤나 낭만적인 순애보 같네.,28,,,,Sub_Ch4,S4_L0027
-1,21,28,1,Player,Sub,,text,Humans call it ’one-sided love.’,인간들은 그걸 짝사랑이라고 불러.,29,,,,Sub_Ch4,S4_L0028
-1,21,29,1,Dot,Sub,,text,"One, sided?","짝, 사랑?",30,,,,Sub_Ch4,S4_L0029
-1,21,30,1,Player,Sub,,text,Yes. When you pine for someone\nwho won’t return your feelings.,"응, 혼자 애타 하며 따라다니는 거.",31,,,,Sub_Ch4,S4_L0030
-1,21,31,1,Dot,Default,anim_move,text,"I see. One-sided, one-sided.\nIt has a funny ring to it.","그렇구나. 짝사랑, 짝, 사, 랑.\n발음이 재미있는 단어야!",32,,,,Sub_Ch4,S4_L0031
-1,21,32,1,Dot,Sub,anim_eyesblink,text,"And, and, <nickname>, today I learned\nfrom my books and the documentary,","그런데, 그런데, <nickname>, 오늘 읽었던 책\n두 권과 다큐멘터리에서 알게 되었던 건데.",33,,,,Sub_Ch4,S4_L0032
-1,21,33,1,Dot,Sub,,text,that the Moon can also move things.,달도 무언가의 동력이 될 수 있대.,34,,,,Sub_Ch4,S4_L0033
-1,21,34,1,Player,Sub,,text,Like what?,어떤 것의 동력?,35,,,,Sub_Ch4,S4_L0034
-1,21,35,1,Dot,Sub,,text,Like the sea! The sea is\nmoved by the Moon.,"응, 바다의 동력!\n바다의 동력이 달이래.",36,,,,Sub_Ch4,S4_L0035
-1,21,36,1,Dot,Sub,,text,"The gravity of the Moon,\nits... blue-gray mist.","달의 중력, 달의... 어슴푸레함.",37,,,,Sub_Ch4,S4_L0036
-1,21,37,1,Dot,Sub,anim_eyesside_turn,text,"When the Moon’s gravity affects Earth,\nand causes the sea to rise toward it...","달의 중력이 지구에 미쳐, 바닷물을\n세게 끌어당기며 생기는 현상을...",38,,,,Sub_Ch4,S4_L0037
-1,21,38,1,Dot,Sub,anim_eyesside,text,It creates a spring tide.,‘조석’이라고 한대.,39,,,,Sub_Ch4,S4_L0038
-1,21,39,1,Dot,Sub,anim_eyesblink,text,"And so the sea gently rises\nand falls in a gentle flow,",그것에 의해 바다에는 너른\n흐름으로 밀물과 썰물이 치고,40,,,,Sub_Ch4,S4_L0039
-1,21,40,1,Dot,Sub,,text,"drawing close, swelling... then\nquietly retreating, again and again","바다는 다가갔다가, 홀로 부풀었다가,\n슬며시 멀어지기를 반복하며",41,,,,Sub_Ch4,S4_L0040
-1,21,41,1,Dot,Sub,,text,and carrying the currents with it.,말없이 파도를 이는 거야.,42,,,,Sub_Ch4,S4_L0041
-1,21,42,1,Dot,Sub,,text,....,......,43,,,,Sub_Ch4,S4_L0042
-1,21,43,1,Dot,Sub,,text,"Does the sea love the Moon,","달이 지구를 짝사랑하듯,",44,,,,Sub_Ch4,S4_L0043
-1,21,44,1,Dot,Sub,,text,the way the Moon loves the Earth?,바다는 달을 짝사랑하려나?,45,,,,Sub_Ch4,S4_L0044
+1,21,7,1,Dot,Sub,,text,"<nickname>, 왔구나.","<nickname>, you’re here.",8,,,,Sub_Ch4,S4_L0007
+1,21,8,1,Dot,Sub,,text,독서하던 중이었어. 오늘 달에 관한\n책 열 권과 다큐멘터리 하나를 봤어.,"I was reading. Watched a documentary,\nand read a few more books before that.",9,,,,Sub_Ch4,S4_L0008
+1,21,9,1,Dot,Sub,,text,"있잖아, <nickname>","You know, <nickname>.",10,,,,Sub_Ch4,S4_L0009
+1,21,10,1,Dot,Sub,anim_eyescorner_turn,text,"누군가를 움직인다는 거, 어떠한\n울림과 흐름의 동력이 된다는 건 말이야-","To move someone, to become the\ndriving force behind a push or a pull.",11,,,,Sub_Ch4,S4_L0010
+1,21,11,1,Dot,Sub,anim_eyesblink,text,그건 얼마나 벅차오르는 일일까.,How breathtaking it must be.,12,,,,Sub_Ch4,S4_L0011
+1,21,12,1,Dot,Default,anim_move,text,너도 그 벅참을 알아?\n타인의 마음을 움직여 본 적 있어?,Do you know the feeling? Have you\never moved someone deep within?,13,,,,Sub_Ch4,S4_L0012
+1,21,13,1,Player,Sub,anim_eyesblink,selection,"응, 있어.|아니, 아직은.","Yes, I have.|No, not yet.",14|18,active|passive,,,Sub_Ch4,S4_L0013
+1,21,14,1,Dot,Sub,,text,어떻게?,How?,15,,,,Sub_Ch4,S4_L0014
+1,21,15,1,Player,Sub,,selection,나의 경험으로 누군가를 도와주었어.|누군가를 따스하게 안아 줬었어.,I used my experience to help others.|I held someone in a warm embrace.,16|17,moon|sun,,,Sub_Ch4,S4_L0015
+1,21,16,1,Player,Sub,,text,타인의 길에 작은 등불이 될 수 있단\n사실이 꽤나 보람찼던 것 같아.,Acting as someone’s guiding light\nfelt quite rewarding.,22,,,,Sub_Ch4,S4_L0016
+1,21,17,1,Player,Sub,,text,타인의 마음을 모닥불처럼 데워 줬던 시간은...\n돌고 돌아 나에게도 큰 힘이 되었어.,Acting as someone’s small bonfire...\nended up helping me as well.,22,,,,Sub_Ch4,S4_L0017
+1,21,18,1,Player,Sub,,text,하지만 언젠가는...,But someday...,19,,,,Sub_Ch4,S4_L0018
+1,21,19,1,Player,Sub,,selection,나의 경험으로 누군가를 도와주고 싶어.|누군가를 따스하게 안아 주고 싶어.,I want to use my experience to help others.|I want to hold someone in a warm embrace.,20|21,moon|sun,,,Sub_Ch4,S4_L0019
+1,21,20,1,Player,Sub,,text,타인의 길에 작은 등불이 될 수 있단\n사실은 꽤나 보람찰 것만 같거든.,Acting as someone’s guiding light\nmust feel quite rewarding.,22,,,,Sub_Ch4,S4_L0020
+1,21,21,1,Player,Sub,,text,"아늑한 모닥불처럼 누군가를 데우고,\n행복할 수 있게 하기를 바라.","Warm them up like a bonfire,\nand make them happy.",22,,,,Sub_Ch4,S4_L0021
+1,21,22,1,Player,Sub,,text,"그런데 뭉치, 이건 갑자기 왜?","But what brought this on, Dot?",23,,,,Sub_Ch4,S4_L0022
+1,21,23,1,Dot,Sub,,text,"아, 아, 음.","Oh, oh, well.",24,,,,Sub_Ch4,S4_L0023
+1,21,24,1,Dot,Sub,,text,"있지, 달의 동력은 지구야.","See, the Moon is moved\nby the Earth.",25,,,,Sub_Ch4,S4_L0024
+1,21,25,1,Dot,Sub,,text,"지구의 중력, 지구의 푸르름.","The gravity of the Earth,\nits blue-green beauty.",26,,,,Sub_Ch4,S4_L0025
+1,21,26,1,Dot,Sub,,text,어쩔 수 없이 사랑할 수밖에 없게 되는\n속성들을 향한 속절없는 애정.,The uncontrollable fondness you feel\ntowards those you can’t help but love.,27,,,,Sub_Ch4,S4_L0026
+1,21,27,1,Player,Sub,,text,달의 공전을 이렇게 이야기하니까...\n꽤나 낭만적인 순애보 같네.,You make the Moon\nsound like a true romantic.,28,,,,Sub_Ch4,S4_L0027
+1,21,28,1,Player,Sub,,text,인간들은 그걸 짝사랑이라고 불러.,Humans call it ’one-sided love.’,29,,,,Sub_Ch4,S4_L0028
+1,21,29,1,Dot,Sub,,text,"짝, 사랑?","One, sided?",30,,,,Sub_Ch4,S4_L0029
+1,21,30,1,Player,Sub,,text,"응, 혼자 애타 하며 따라다니는 거.",Yes. When you pine for someone\nwho won’t return your feelings.,31,,,,Sub_Ch4,S4_L0030
+1,21,31,1,Dot,Default,anim_move,text,"그렇구나. 짝사랑, 짝, 사, 랑.\n발음이 재미있는 단어야!","I see. One-sided, one-sided.\nIt has a funny ring to it.",32,,,,Sub_Ch4,S4_L0031
+1,21,32,1,Dot,Sub,anim_eyesblink,text,"그런데, 그런데, <nickname>, 오늘 읽었던 책\n두 권과 다큐멘터리에서 알게 되었던 건데.","And, and, <nickname>, today I learned\nfrom my books and the documentary,",33,,,,Sub_Ch4,S4_L0032
+1,21,33,1,Dot,Sub,,text,달도 무언가의 동력이 될 수 있대.,that the Moon can also move things.,34,,,,Sub_Ch4,S4_L0033
+1,21,34,1,Player,Sub,,text,어떤 것의 동력?,Like what?,35,,,,Sub_Ch4,S4_L0034
+1,21,35,1,Dot,Sub,,text,"응, 바다의 동력!\n바다의 동력이 달이래.",Like the sea! The sea is\nmoved by the Moon.,36,,,,Sub_Ch4,S4_L0035
+1,21,36,1,Dot,Sub,,text,"달의 중력, 달의... 어슴푸레함.","The gravity of the Moon,\nits... blue-gray mist.",37,,,,Sub_Ch4,S4_L0036
+1,21,37,1,Dot,Sub,anim_eyesside_turn,text,"달의 중력이 지구에 미쳐, 바닷물을\n세게 끌어당기며 생기는 현상을...","When the Moon’s gravity affects Earth,\nand causes the sea to rise toward it...",38,,,,Sub_Ch4,S4_L0037
+1,21,38,1,Dot,Sub,anim_eyesside,text,‘조석’이라고 한대.,It creates a spring tide.,39,,,,Sub_Ch4,S4_L0038
+1,21,39,1,Dot,Sub,anim_eyesblink,text,그것에 의해 바다에는 너른\n흐름으로 밀물과 썰물이 치고,"And so the sea gently rises\nand falls in a gentle flow,",40,,,,Sub_Ch4,S4_L0039
+1,21,40,1,Dot,Sub,,text,"바다는 다가갔다가, 홀로 부풀었다가,\n슬며시 멀어지기를 반복하며","drawing close, swelling... then\nquietly retreating, again and again",41,,,,Sub_Ch4,S4_L0040
+1,21,41,1,Dot,Sub,,text,말없이 파도를 이는 거야.,and carrying the currents with it.,42,,,,Sub_Ch4,S4_L0041
+1,21,42,1,Dot,Sub,,text,......,....,43,,,,Sub_Ch4,S4_L0042
+1,21,43,1,Dot,Sub,,text,"달이 지구를 짝사랑하듯,","Does the sea love the Moon,",44,,,,Sub_Ch4,S4_L0043
+1,21,44,1,Dot,Sub,,text,바다는 달을 짝사랑하려나?,the way the Moon loves the Earth?,45,,,,Sub_Ch4,S4_L0044
 1,21,45,1,Dot,Sub,,text,......,......,46,,,,Sub_Ch4,S4_L0045
-1,21,46,1,Dot,Sub,,text,"To move someone, to become the driving\n force behind their push or pull—","누군가를 움직인다는 거, 어떠한 울림과\n흐름의 동력이 된다는 건 말이야-",47,,,,Sub_Ch4,S4_L0046
-1,21,47,1,Dot,Sub,anim_eyesside_turn,text,How breathtaking it must be.,그건 얼마나 벅차오르는 일일까?,,,anim_reading,,Sub_Ch4,S4_L0047
-2,22,48,1,Dot,Sub,anim_eyesblink,text,The Moon Beings.,"달 사람들은 말이야,",49,,,,Sub_Ch4,S4_L0048
-2,22,49,1,Dot,Sub,,text,"Most of them spoke in a language that\nsounded clean-cut, like that of humans.","대개 인간의 언어를 닮은, 네모나고\n반듯한 소리의 언어를 사용했어.",50,,,,Sub_Ch4,S4_L0049
-2,22,50,1,Dot,Sub,,text,But one of them was different.,그런데 한 명은 달랐어.,51,,,,Sub_Ch4,S4_L0050
-2,22,51,1,Dot,Sub,,text,They called him “Sir Cello”.,"달 사람들은 그를\n‘첼로 경’이라 불렀는데,",52,,,,Sub_Ch4,S4_L0051
-2,22,52,1,Dot,Sub,,text,"His speech was composed\nof soft, layered melodies.",그의 언어는 켜켜이 쌓인 부드러운\n선율로 이루어져 있었어.,53,,,,Sub_Ch4,S4_L0052
-2,22,53,1,Dot,Sub,,text,"Of course, on some grumpy days, he’d\nlet out a grating combination of notes.",물론 가끔 기분이 나쁠 땐 듣기 싫은\n불협화음을 내기도 했던 것 같아.,54,,,,Sub_Ch4,S4_L0053
-2,22,54,1,Player,Sub,,text,Communicating via music... did\nthe Moon Beings understand him?,음악으로 소통한다... 달 사람들은\n그의 말을 알아들었어?,55,,,,Sub_Ch4,S4_L0054
-2,22,55,1,Dot,Sub,,text,"I was confused too, at first.",나도 처음에는 의아했어.,56,,,,Sub_Ch4,S4_L0055
-2,22,56,1,Dot,Sub,,text,I wondered how the others\ncomprehended him.,남들은 어떻게 이해하고\n있는 건지 궁금했지.,57,,,,Sub_Ch4,S4_L0056
-2,22,57,1,Dot,Sub,,text,"When to me, it all sounded like\nbeautiful melodies about nothing at all.","나에겐 언어의 기능이 없는,\n그저 아름답기만 한 선율이었거든.",58,,,,Sub_Ch4,S4_L0057
-2,22,58,1,Dot,Sub,,text,"And so I spent hours listening to Sir Cello’s\nmusic with no real understanding,",그렇게 아무런 이해 없이 첼로 경의\n음악 소리를 잠자코 듣기만 했던 시간들이,59,,,,Sub_Ch4,S4_L0058
-2,22,59,1,Dot,Sub,anim_eyesup_turn,text,"for hours and hours and hours,","한 시간, 두 시간...\n다섯 시간... 그렇게 지났지.",60,,,,Sub_Ch4,S4_L0059
-2,22,60,1,Dot,Sub,anim_eyesside_turn,text,with zero comprehension...,"그렇게 이해가 안 되고,\n이해가 안 되다가...",61,,,,Sub_Ch4,S4_L0060
-2,22,61,1,Dot,Sub,anim_eyesblink,text,until suddenly I could hear him.,그냥 어느 순간 ‘들리게’ 됐어.,62,,,,Sub_Ch4,S4_L0061
-2,22,62,1,Player,Sub,,text,But how?,대체 어떻게?,63,,,,Sub_Ch4,S4_L0062
-2,22,63,1,Dot,Default,anim_move,text,Ta-da!,빠밤- 하고.,64,,,,Sub_Ch4,S4_L0063
-2,22,64,1,Dot,Sub,anim_eyesblink,text,Just like that.,그냥 그렇게!,65,,,,Sub_Ch4,S4_L0064
-2,22,65,1,Dot,Sub,,text,"His language had no\nwrappers or patterns,",그의 언어에 포장지나\n규칙 같은 건 없었지만,66,,,,Sub_Ch4,S4_L0065
-2,22,66,1,Dot,Sub,,text,yet spoke of things deep and broad.,그럼에도 불구하고 깊고\n너른 것들을 담아 냈어.,67,,,,Sub_Ch4,S4_L0066
-2,22,67,1,Dot,Sub,,text,"Longing, affection, curiosity,\nregret... and so on.","사무치는 그리움, 애정, 호기심,\n후회... 이런 것들 말이야.",68,,,,Sub_Ch4,S4_L0067
-2,22,68,1,Dot,Sub,,text,I was taking his language the wrong way.,그의 언어를 내가 잘못\n받아들이고 있었던 거야.,69,,,,Sub_Ch4,S4_L0068
-2,22,69,1,Dot,Sub,,text,It had nothing to do with comprehension.\nI had to feel him simply by listening!,그건 ‘이해’의 영역이 아니었어.\n듣는 것 자체로 그를 느껴야 했던 거지!,70,,,,Sub_Ch4,S4_L0069
-2,22,70,1,Dot,Sub,,text,Only after this epiphany\ndid I look at Sir Cello,이런 변화를 느낀 후에\n첼로 경을 바라보니,71,,,,Sub_Ch4,S4_L0070
-2,22,71,1,Dot,Sub,,text,and see him for who he was.,그제서야 그를 알 것만 같았어.,72,,,,Sub_Ch4,S4_L0071
-2,22,72,1,Player,Sub,,text,And who was he?,그는 어떤 사람이었는데?,73,,,,Sub_Ch4,S4_L0072
-2,22,73,1,Dot,Sub,,text,"His mellow smiles never faltered,\nbut my ears told another story.",첼로 경은 항상 처진 눈을 하고\n푸근한 미소를 짓고 있었지만,74,,,,Sub_Ch4,S4_L0073
-2,22,74,1,Dot,Default,anim_eyesdown_turn,text,His silences were marked with the\nlasting grief of having lost someone.,"그의 정적 속에는 누군가를 잃은,\n지울 수 없는 슬픔이 새겨져 있었고",75,,,,Sub_Ch4,S4_L0074
-2,22,75,1,Dot,Default,,text,"His laughter was laced with the quiet relief\nof leaving a painful past behind him,","그의 웃음소리에는 오물과 악취, 고통스러운\n과거로 범벅된 구렁텅이를 지나...",76,,,,Sub_Ch4,S4_L0075
-2,22,76,1,Dot,Default,,text,"of reclaiming his muted, monotonous life.",먹먹한 삶의 관성을 되찾았다는\n안도가 서려 있었어.,77,,,,Sub_Ch4,S4_L0076
-2,22,77,1,Player,Sub,anim_eyesblink,selection,(Ask about their communication)|(Ask about their relationship),소통의 성공 여부가 궁금하다|첼로 경과 뭉치의 이야기가 궁금하다,78|80,moon|sun,,,Sub_Ch4,S4_L0077
-2,22,78,1,Player,Sub,,text,Sounds like there’s a story to that.,숨겨진 이야기가 있을 것만 같네.,79,,,,Sub_Ch4,S4_L0078
-2,22,79,1,Player,Sub,,text,"So, were you finally able\nto communicate with him?","그래서, 드디어 소통할 수 있게 된 거야?",82,,,,Sub_Ch4,S4_L0079
-2,22,80,1,Player,Sub,,text,Oh...,아이구...,81,,,,Sub_Ch4,S4_L0080
-2,22,81,1,Player,Sub,,text,"Sir Cello must have been happy, when\nyou appreciated him for who he was.","그를 알아준 뭉치를 보며, 첼로 경도,\n내심 행복했겠다. 그래서 어떻게 됐어?",82,,,,Sub_Ch4,S4_L0081
-2,22,82,1,Dot,Sub,,text,"Yes. I told him I understood him now,","응, 그래서 당신을 이해한다고 말해 줬더니",83,,,,Sub_Ch4,S4_L0082
-2,22,83,1,Dot,Default,anim_bounce,text,and he thumped his round belly\nwith delight and sang me a song.,그는 퉁퉁한 배를 두들겨\n리듬을 타며 노래를 불러 주었어.,84,,,,Sub_Ch4,S4_L0083
-2,22,84,1,Dot,Default,anim_eyesside_turn,text,"It was about a plain far away,\nsomewhere no longer within reach.","그 노래 안엔 더 이상 갈 수 없게 되어 버린,\n어느 먼 곳의 평야가 담겨 있었어.",85,,,,Sub_Ch4,S4_L0084
-2,22,85,1,Dot,Default,anim_eyeside,text,And on that plain stood\nSir Cello with a human girl.,그 위엔 첼로 경과 어떤 인간이 서 있었고.,86,,,,Sub_Ch4,S4_L0085
-2,22,86,1,Dot,Sub,anim_eyesblink,text,"Gazing at them from afar, I mused\nover each and every note he sang.","그들을 멀리서 바라보며, 난 첼로 경이\n불러주는 노래의 음표 하나하나를 곱씹었지.",87,,,,Sub_Ch4,S4_L0086
-2,22,87,1,Dot,Sub,anim_eyesclosed_turn,text,"It was a tale of beauty and melancholy,\nmajor and minor scales woven together.",첼로 경은 장음계와 단음계를 넘나들며\n아름답도록 슬픈 이야기를 들려주었고...,88,,,,Sub_Ch4,S4_L0087
-2,22,88,1,Dot,Sub,anim_eyesblink,text,"And when he finished with a passionate\nfortissimo and let out a long silence,","그가 격정적인 포르티시모의 강세로 마지막\n한마디를 하고 긴 침묵을 내쉬었을 때,",89,,,,Sub_Ch4,S4_L0088
-2,22,89,1,Dot,Sub,,text,I could caress his sorrow like my own.,나도 그의 슬픔을 나의\n것처럼 어루만질 수 있었어.,90,,,,Sub_Ch4,S4_L0089
-2,22,90,1,Dot,Sub,,text,I wanted to comfort him.,위로해 주고 싶었어.,91,,,,Sub_Ch4,S4_L0090
-2,22,91,1,Dot,Sub,,text,"So I approached him quietly, climbed\non his lap, and closed my eyes again.",그래서 조용히 다가가 그의 무릎에\n올라가서 다시 눈을 감아 봤어.,92,,,,Sub_Ch4,S4_L0091
-2,22,92,1,Dot,Default,anim_eyesclosed,text,Hoping he would\ncarry on with his song...,그가 그의 노래를\n계속 들려 주길 바라며...,,,anim_eyesclosed,,Sub_Ch4,S4_L0092
-3,23,93,1,Player,Sub,anim_eyesblink,text,"About your moon transmitter, Dot.","뭉치, 저 달나라 송신기 있잖아.",94,,,,Sub_Ch4,S4_L0093
-3,23,94,1,Player,Sub,,text,I’d like to know the story behind it.,저 물건에 대한 이야기가 궁금해.,95,,,,Sub_Ch4,S4_L0094
-3,23,95,1,Dot,Sub,,text,"Edison pinned it on me, before\nI left the Moon and headed for Earth.","저건 달에서 지구로 떠나 오기 전, 에디슨\n선생이 나의 몸에 꽂아 주었던 물건이야.",96,,,,Sub_Ch4,S4_L0095
-3,23,96,1,Player,Sub,,text,Pinned it on you?,몸에 꽂아 주었다?,97,,,,Sub_Ch4,S4_L0096
-3,23,97,1,Dot,Sub,,text,Yes. I was still adjusting\nto my new hands...,"응, 나는 태어난 지 얼마 되지\n않아 악력이 약했으니...",98,,,,Sub_Ch4,S4_L0097
-3,23,98,1,Dot,Default,anim_move,text,I guess she trusted the stickiness\nof my body over my shaky grip!,그녀는 어쩌면 내 손보다 내 몸의\n점성을 더 신뢰했을 수도 있겠어!,99,,,,Sub_Ch4,S4_L0098
-3,23,99,1,Player,Sub,anim_eyesblink,text,Did Edison make it herself?,에디슨 선생이 만든 물건이야?,100,,,,Sub_Ch4,S4_L0099
-3,23,100,1,Dot,Sub,,text,"Yes, she did. She was a very clever\nand talented scientist on the Moon.","응, 맞아. 그녀는 명석하고\n총명한 달나라 과학자였어.",101,,,,Sub_Ch4,S4_L0100
-3,23,101,1,Dot,Sub,,text,She studied everything there\nis to know about humans.,인간에 대한 모든 걸\n탐구하며 그들을 연구했지.,102,,,,Sub_Ch4,S4_L0101
-3,23,102,1,Dot,Sub,,text,Her love and affection for them shone\nthrough her research and inventions.,그녀의 논문과 발명품들에는 인간을\n향한 깊은 애정과 호기심이 담겨 있었어.,103,,,,Sub_Ch4,S4_L0102
-3,23,103,1,Dot,Sub,,text,"A lot of Moon Beings love humans, huh?",달에는 인간을 사랑하는\n이들이 정말 많구나?,104,,,,Sub_Ch4,S4_L0103
-3,23,104,1,Dot,Sub,,text,"Very much. All three Moon Beings\nthat kept me company loved humans,","응응, 내 옆을 지켜 주었던 세 명의\n달 청소부들은 전부 인간을 아주 사랑하고,",105,,,,Sub_Ch4,S4_L0104
-3,23,105,1,Dot,Sub,,text,and missed them too.,또 아주 그리워했어.,106,,,,Sub_Ch4,S4_L0105
-3,23,106,1,Dot,Sub,,text,"Edison said she invented this\nbecause she admired humans,","에디슨 선생은 인간에 대한 아주 큰 동경,\n그리고 그보다 거대한 그리움으로",107,,,,Sub_Ch4,S4_L0106
-3,23,107,1,Dot,Sub,,text,and missed them even more.,이 발명품을 만들었다고 했지.,108,,,,Sub_Ch4,S4_L0107
-3,23,108,1,Player,Sub,,text,Missed them? Have they\nmet humans before?,그리움? 그들이 인간을 전에 만난 적이 있던 거야?,109,,,,Sub_Ch4,S4_L0108
-3,23,109,1,Dot,Sub,,text,"Oh, yes. So to speak. Edison, and\neveryone that cleaned the Crater,","아, 응. 말하자면. 그녀, 그리고\n크레이터를 청소하던 모든 이들은",110,,,,Sub_Ch4,S4_L0109
-3,23,110,1,Dot,Sub,anim_eyesup_turn,text,"once looked after human’s dreams up\nin the factory, from what I’ve heard.",예전에 공장 위에서 인간의 꿈을\n관리하던 직원이었다고 들었어.,111,,,,Sub_Ch4,S4_L0110
-3,23,111,1,Dot,Sub,anim_eyesblink,text,I imagine they rooted for humans going\nabout their day with exuberance and love—,"그 당시에는 아주 활기차고 호기심\n많은 사랑으로 인간의 낮을 응원하다,",112,,,,Sub_Ch4,S4_L0111
-3,23,112,1,Dot,Sub,,text,"and once night fell, sculpted dreams\nfor humans with care and excitement.","밤이 찾아오면 인간을 위한 꿈을 사려 깊은\n손길로, 아주 신나게 조각하기 시작했겠지.",113,,,,Sub_Ch4,S4_L0112
-3,23,113,1,Dot,Default,anim_eyesdown,text,"And to think they can’t keep up with humans,\nor make dreams for them anymore.","그런데 더는 인간의 하루하루를 볼 수도,\n그들을 위한 꿈을 만들 수 없게 되었으니.",114,,,,Sub_Ch4,S4_L0113
-3,23,114,1,Player,Default,,text,What happened?,왜 그렇게 된 건데?,115,,,,Sub_Ch4,S4_L0114
-3,23,115,1,Dot,Default,anim_eyescorner_turn,text,Well...,그건...,116,,,,Sub_Ch4,S4_L0115
+1,21,46,1,Dot,Sub,,text,"누군가를 움직인다는 거, 어떠한 울림과\n흐름의 동력이 된다는 건 말이야-","To move someone, to become the driving\n force behind their push or pull—",47,,,,Sub_Ch4,S4_L0046
+1,21,47,1,Dot,Sub,anim_eyesside_turn,text,그건 얼마나 벅차오르는 일일까?,How breathtaking it must be.,,,anim_reading,,Sub_Ch4,S4_L0047
+2,22,48,1,Dot,Sub,anim_eyesblink,text,"달 사람들은 말이야,",The Moon Beings.,49,,,,Sub_Ch4,S4_L0048
+2,22,49,1,Dot,Sub,,text,"대개 인간의 언어를 닮은, 네모나고\n반듯한 소리의 언어를 사용했어.","Most of them spoke in a language that\nsounded clean-cut, like that of humans.",50,,,,Sub_Ch4,S4_L0049
+2,22,50,1,Dot,Sub,,text,그런데 한 명은 달랐어.,But one of them was different.,51,,,,Sub_Ch4,S4_L0050
+2,22,51,1,Dot,Sub,,text,"달 사람들은 그를\n‘첼로 경’이라 불렀는데,",They called him “Sir Cello”.,52,,,,Sub_Ch4,S4_L0051
+2,22,52,1,Dot,Sub,,text,그의 언어는 켜켜이 쌓인 부드러운\n선율로 이루어져 있었어.,"His speech was composed\nof soft, layered melodies.",53,,,,Sub_Ch4,S4_L0052
+2,22,53,1,Dot,Sub,,text,물론 가끔 기분이 나쁠 땐 듣기 싫은\n불협화음을 내기도 했던 것 같아.,"Of course, on some grumpy days, he’d\nlet out a grating combination of notes.",54,,,,Sub_Ch4,S4_L0053
+2,22,54,1,Player,Sub,,text,음악으로 소통한다... 달 사람들은\n그의 말을 알아들었어?,Communicating via music... did\nthe Moon Beings understand him?,55,,,,Sub_Ch4,S4_L0054
+2,22,55,1,Dot,Sub,,text,나도 처음에는 의아했어.,"I was confused too, at first.",56,,,,Sub_Ch4,S4_L0055
+2,22,56,1,Dot,Sub,,text,남들은 어떻게 이해하고\n있는 건지 궁금했지.,I wondered how the others\ncomprehended him.,57,,,,Sub_Ch4,S4_L0056
+2,22,57,1,Dot,Sub,,text,"나에겐 언어의 기능이 없는,\n그저 아름답기만 한 선율이었거든.","When to me, it all sounded like\nbeautiful melodies about nothing at all.",58,,,,Sub_Ch4,S4_L0057
+2,22,58,1,Dot,Sub,,text,그렇게 아무런 이해 없이 첼로 경의\n음악 소리를 잠자코 듣기만 했던 시간들이,"And so I spent hours listening to Sir Cello’s\nmusic with no real understanding,",59,,,,Sub_Ch4,S4_L0058
+2,22,59,1,Dot,Sub,anim_eyesup_turn,text,"한 시간, 두 시간...\n다섯 시간... 그렇게 지났지.","for hours and hours and hours,",60,,,,Sub_Ch4,S4_L0059
+2,22,60,1,Dot,Sub,anim_eyesside_turn,text,"그렇게 이해가 안 되고,\n이해가 안 되다가...",with zero comprehension...,61,,,,Sub_Ch4,S4_L0060
+2,22,61,1,Dot,Sub,anim_eyesblink,text,그냥 어느 순간 ‘들리게’ 됐어.,until suddenly I could hear him.,62,,,,Sub_Ch4,S4_L0061
+2,22,62,1,Player,Sub,,text,대체 어떻게?,But how?,63,,,,Sub_Ch4,S4_L0062
+2,22,63,1,Dot,Default,anim_move,text,빠밤- 하고.,Ta-da!,64,,,,Sub_Ch4,S4_L0063
+2,22,64,1,Dot,Sub,anim_eyesblink,text,그냥 그렇게!,Just like that.,65,,,,Sub_Ch4,S4_L0064
+2,22,65,1,Dot,Sub,,text,그의 언어에 포장지나\n규칙 같은 건 없었지만,"His language had no\nwrappers or patterns,",66,,,,Sub_Ch4,S4_L0065
+2,22,66,1,Dot,Sub,,text,그럼에도 불구하고 깊고\n너른 것들을 담아 냈어.,yet spoke of things deep and broad.,67,,,,Sub_Ch4,S4_L0066
+2,22,67,1,Dot,Sub,,text,"사무치는 그리움, 애정, 호기심,\n후회... 이런 것들 말이야.","Longing, affection, curiosity,\nregret... and so on.",68,,,,Sub_Ch4,S4_L0067
+2,22,68,1,Dot,Sub,,text,그의 언어를 내가 잘못\n받아들이고 있었던 거야.,I was taking his language the wrong way.,69,,,,Sub_Ch4,S4_L0068
+2,22,69,1,Dot,Sub,,text,그건 ‘이해’의 영역이 아니었어.\n듣는 것 자체로 그를 느껴야 했던 거지!,It had nothing to do with comprehension.\nI had to feel him simply by listening!,70,,,,Sub_Ch4,S4_L0069
+2,22,70,1,Dot,Sub,,text,이런 변화를 느낀 후에\n첼로 경을 바라보니,Only after this epiphany\ndid I look at Sir Cello,71,,,,Sub_Ch4,S4_L0070
+2,22,71,1,Dot,Sub,,text,그제서야 그를 알 것만 같았어.,and see him for who he was.,72,,,,Sub_Ch4,S4_L0071
+2,22,72,1,Player,Sub,,text,그는 어떤 사람이었는데?,And who was he?,73,,,,Sub_Ch4,S4_L0072
+2,22,73,1,Dot,Sub,,text,첼로 경은 항상 처진 눈을 하고\n푸근한 미소를 짓고 있었지만,"His mellow smiles never faltered,\nbut my ears told another story.",74,,,,Sub_Ch4,S4_L0073
+2,22,74,1,Dot,Default,anim_eyesdown_turn,text,"그의 정적 속에는 누군가를 잃은,\n지울 수 없는 슬픔이 새겨져 있었고",His silences were marked with the\nlasting grief of having lost someone.,75,,,,Sub_Ch4,S4_L0074
+2,22,75,1,Dot,Default,,text,"그의 웃음소리에는 오물과 악취, 고통스러운\n과거로 범벅된 구렁텅이를 지나...","His laughter was laced with the quiet relief\nof leaving a painful past behind him,",76,,,,Sub_Ch4,S4_L0075
+2,22,76,1,Dot,Default,,text,먹먹한 삶의 관성을 되찾았다는\n안도가 서려 있었어.,"of reclaiming his muted,\nmonotonous life.",77,,,,Sub_Ch4,S4_L0076
+2,22,77,1,Player,Sub,anim_eyesblink,text,어쩐지 숨겨진 이야기가 있을 것만 같네.,I feel like there’s more to the story.,78,,,,Sub_Ch4,S4_L0077
+2,22,78,1,Player,Sub,,text,......,......,79,,,,Sub_Ch4,S4_L0078
+2,22,79,1,Player,Sub,,text,자신의 언어를 결국 이해해 준 뭉치를 보며...,You understood his language.,80,,,,Sub_Ch4,S4_L0079
+2,22,80,1,Player,Sub,,text,첼로 경도 내심 감동했을 것 같아.,It must have given him comfort.,81,,,,Sub_Ch4,S4_L0080
+2,22,81,1,Player,Sub,,text,"그래서, 이후에 그와 더 가까워질 수 있었어?",So did the two of you\ngrow closer together?,82,,,,Sub_Ch4,S4_L0081
+2,22,82,1,Dot,Sub,,text,응! 그래서 당신을 이해한다고 말해 줬더니,"Yes! I told him I understood him,",83,,,,Sub_Ch4,S4_L0082
+2,22,83,1,Dot,Default,anim_bounce,text,그는 퉁퉁한 배를 두들겨\n리듬을 타며 노래를 불러 주었어.,and he thumped his round belly\nwith delight and sang me a song.,84,,,,Sub_Ch4,S4_L0083
+2,22,84,1,Dot,Default,anim_eyesside_turn,text,"그 노래 안엔 더 이상 갈 수 없게 되어 버린,\n어느 먼 곳의 평야가 담겨 있었어.","It was about a plain far away,\nsomewhere no longer within reach.",85,,,,Sub_Ch4,S4_L0084
+2,22,85,1,Dot,Default,anim_eyeside,text,그 위엔 첼로 경과 어떤 인간이 서 있었고.,And on that plain stood\nSir Cello with a human girl.,86,,,,Sub_Ch4,S4_L0085
+2,22,86,1,Dot,Sub,anim_eyesblink,text,"그들을 멀리서 바라보며, 난 첼로 경이\n불러주는 노래의 음표 하나하나를 곱씹었지.","Gazing at them from afar, I mused\nover each and every note he sang.",87,,,,Sub_Ch4,S4_L0086
+2,22,87,1,Dot,Sub,anim_eyesclosed_turn,text,첼로 경은 장음계와 단음계를 넘나들며\n아름답도록 슬픈 이야기를 들려주었고...,"It was a tale of beauty and melancholy,\nmajor and minor scales woven together.",88,,,,Sub_Ch4,S4_L0087
+2,22,88,1,Dot,Sub,anim_eyesblink,text,"그가 격정적인 포르티시모의 강세로 마지막\n한마디를 하고 긴 침묵을 내쉬었을 때,","And when he finished with a passionate\nfortissimo and let out a long silence,",89,,,,Sub_Ch4,S4_L0088
+2,22,89,1,Dot,Sub,,text,나도 그의 슬픔을 나의\n것처럼 어루만질 수 있었어.,I could caress his sorrow like my own.,90,,,,Sub_Ch4,S4_L0089
+2,22,90,1,Dot,Sub,,text,위로해 주고 싶었어.,I wanted to comfort him.,91,,,,Sub_Ch4,S4_L0090
+2,22,91,1,Dot,Sub,,text,그래서 조용히 다가가 그의 무릎에\n올라가서 다시 눈을 감아 봤어.,"So I approached him quietly, climbed\non his lap, and closed my eyes again.",92,,,,Sub_Ch4,S4_L0091
+2,22,92,1,Dot,Default,anim_eyesclosed,text,그가 그의 노래를\n계속 들려주길 바라며...,Hoping he would\ncarry on with his song...,,,anim_eyesclosed,,Sub_Ch4,S4_L0092
+3,23,93,1,Player,Sub,anim_eyesblink,text,"뭉치, 저 달나라 송신기 있잖아.","About your Moon radio, Dot.",94,,,,Sub_Ch4,S4_L0093
+3,23,94,1,Player,Sub,,text,저 물건에 대한 이야기가 궁금해.,I’d like to know the story behind it.,95,,,,Sub_Ch4,S4_L0094
+3,23,95,1,Dot,Sub,,text,"저건 달에서 지구로 떠나 오기 전, 에디슨\n선생이 나의 몸에 꽂아 주었던 물건이야.","Edison pinned it on me, before\nI left the Moon and headed for Earth.",96,,,,Sub_Ch4,S4_L0095
+3,23,96,1,Player,Sub,,text,몸에 꽂아... 주었다니?,Pinned it on you?,97,,,,Sub_Ch4,S4_L0096
+3,23,97,1,Dot,Sub,,text,"응, 나는 태어난 지 얼마 되지\n않아 악력이 약했으니...",Yes. I was still adjusting\nto my new hands...,98,,,,Sub_Ch4,S4_L0097
+3,23,98,1,Dot,Default,anim_move,text,그녀는 어쩌면 내 손보다 내 몸의\n점성을 더 신뢰했을 수도 있겠어!,I guess she trusted the stickiness\nof my body over my shaky grip!,99,,,,Sub_Ch4,S4_L0098
+3,23,99,1,Player,Sub,anim_eyesblink,text,에디슨 선생이 만든 물건이야?,Did Edison make it herself?,100,,,,Sub_Ch4,S4_L0099
+3,23,100,1,Dot,Sub,,text,"응, 맞아. 그녀는 명석하고\n총명한 달나라 과학자였어.","Yes, she did. She was a very clever\nand talented scientist on the Moon.",101,,,,Sub_Ch4,S4_L0100
+3,23,101,1,Dot,Sub,,text,인간에 대한 모든 걸\n탐구하며 그들을 연구했지.,She studied everything there\nis to know about humans.,102,,,,Sub_Ch4,S4_L0101
+3,23,102,1,Dot,Sub,,text,그녀의 논문과 발명품들에는 인간을\n향한 깊은 애정과 호기심이 담겨 있었어.,Her love and affection for them shone\nthrough her research and inventions.,103,,,,Sub_Ch4,S4_L0102
+3,23,103,1,Player,Sub,,text,달에는 인간을 사랑하는\n이들이 정말 많구나...,"A lot of Moon Beings love humans, huh?",104,,,,Sub_Ch4,S4_L0103
+3,23,104,1,Dot,Sub,,text,"응응, 내 옆을 지켜 주었던 세 명의\n달 청소부들은 전부 인간을 아주 사랑하고,","Very much. All three Moon Beings\nthat kept me company loved humans,",105,,,,Sub_Ch4,S4_L0104
+3,23,105,1,Dot,Sub,,text,또 아주 그리워했어.,and missed them too.,106,,,,Sub_Ch4,S4_L0105
+3,23,106,1,Dot,Sub,,text,"에디슨 선생은 인간에 대한 아주 큰 동경,\n그리고 그보다 거대한 그리움으로","Edison said she invented this\nbecause she admired humans,",107,,,,Sub_Ch4,S4_L0106
+3,23,107,1,Dot,Sub,,text,이 발명품을 만들었다고 했지.,and missed them even more.,108,,,,Sub_Ch4,S4_L0107
+3,23,108,1,Player,Sub,,text,그리움? 그들이 인간을 전에 만난 적이 있던 거야?,Missed them? Have they\nmet humans before?,109,,,,Sub_Ch4,S4_L0108
+3,23,109,1,Dot,Sub,,text,"아, 응. 말하자면. 그녀, 그리고\n크레이터를 청소하던 모든 이들은","Oh, yes. So to speak. Edison, and\neveryone that cleaned the Crater,",110,,,,Sub_Ch4,S4_L0109
+3,23,110,1,Dot,Sub,anim_eyesup_turn,text,예전에 공장 위에서 인간의 꿈을\n관리하던 직원이었대.,"once looked after human’s dreams up\nin the factory, from what I’ve heard.",111,,,,Sub_Ch4,S4_L0110
+3,23,111,1,Dot,Sub,anim_eyesblink,text,"그 당시에는 아주 활기차고 호기심\n많은 사랑으로 인간의 낮을 응원하다,",I imagine they rooted for humans going\nabout their day with exuberance and love—,112,,,,Sub_Ch4,S4_L0111
+3,23,112,1,Dot,Sub,,text,"밤이 찾아오면 인간을 위한 꿈을 사려 깊은\n손길로, 아주 신나게 조각하기 시작했겠지.","and once night fell, sculpted dreams\nfor humans with care and excitement.",113,,,,Sub_Ch4,S4_L0112
+3,23,113,1,Dot,Default,anim_eyesdown,text,"그런데 더는 인간의 하루하루를 볼 수도,\n그들을 위한 꿈을 만들 수 없게 되었으니.","And to think they can’t keep up with humans,\nor make dreams for them anymore.",114,,,,Sub_Ch4,S4_L0113
+3,23,114,1,Player,Default,,text,왜 그렇게 된 건데?,What happened?,115,,,,Sub_Ch4,S4_L0114
+3,23,115,1,Dot,Default,anim_eyescorner_turn,text,그건...,Well...,116,,,,Sub_Ch4,S4_L0115
 3,23,116,1,Dot,Default,anim_eyescorner,text,...,...,117,,,,Sub_Ch4,S4_L0116
 3,23,117,1,Dot,Default,,text,...,...,118,,,,Sub_Ch4,S4_L0117
-3,23,118,1,Player,Default,,text,"Not an easy story to tell, I see.",말하기 어려운 사연이 있구나.,119,,,,Sub_Ch4,S4_L0118
-3,23,119,1,Player,Sub,anim_eyesblink,selection,Tell me more about Edison?|Tell me more about the transmitter?,다시 에디슨 선생에 대해 이야기해 줄래?|다시 달나라 송신기에 대해 이야기해 줄래?,120|121,sun|moon,,,Sub_Ch4,S4_L0119
-3,23,120,1,Dot,Sub,,text,She made this so transmissions between\nhumans and the Moon could take place.,"응, 그녀는 인간과의 실시간 양방향\n송신에 대한 꿈을 가지고 이걸 만들었어.",123,,,,Sub_Ch4,S4_L0120
-3,23,121,1,Dot,Sub,,text,But the technology isn’t quite finished yet...,아직은 기술이 부족한 탓에...,122,,,,Sub_Ch4,S4_L0121
-3,23,122,1,Dot,Sub,,text,"so transmissions from the Moon to Earth,\nand vice versa can only be sent one at a time.","달에서 지구로, 또 지구에서 달로\n개별적인 전송만 가능하지만.",123,,,,Sub_Ch4,S4_L0122
-3,23,123,1,Player,Sub,,text,"From what you’ve told me,",네가 이야기해 준 그녀를 상상해 보자면,124,,,,Sub_Ch4,S4_L0123
-3,23,124,1,Player,Sub,,text,I think she’ll perfect\nthe technology someday.,그녀는 분명 언젠가 꿈을 이룰 것 같은걸?,125,,,,Sub_Ch4,S4_L0124
-3,23,125,1,Player,Sub,,selection,Missing someone moves you forward.|Loving someone moves you forward.,그리움은 커다란 원동력이거든.|애정은 커다란 원동력이거든.,126|126,moon|sun,,,Sub_Ch4,S4_L0125
-3,23,126,1,Dot,Default,anim_move,text,Really?,정말?,127,,,,Sub_Ch4,S4_L0126
-3,23,127,1,Dot,Sub,anim_eyesup_turn,text,Sometimes I picture it too.,실은 나도 가끔 그런 상상을 해.,128,,,,Sub_Ch4,S4_L0127
-3,23,128,1,Dot,Sub,anim_eyesblink,text,"Edison, working on an invention like this—\nor something even more incredible!",달에서 뚝딱뚝딱 연구하며 또 다른—\n어쩌면 더 멋진 무언가를 만들고 있을 그녀를!,,,,,Sub_Ch4,S4_L0128
-4,24,129,1,Dot,Sub,anim_sub_raggedyann2,text,"Oh, what do we have here...","어, 이건 뭐지...",130,,,,Sub_Ch4,S4_L0129
-4,24,130,1,Dot,Sub,anim_sub_raggedyann1,text,"<nickname>, what’s this?","<nickname>, 이게 뭐야?",131,,,,Sub_Ch4,S4_L0130
-4,24,131,1,Player,Sub,,text,That’s the doll I used to\nplay with as a kid.,어릴 때 가지고 놀던 인형이네.,132,,,,Sub_Ch4,S4_L0131
-4,24,132,1,Player,Sub,,selection,(Don’t need it anymore. Throw it away.)|(Childhood memories. Keep it safe.),(더는 필요 없으니 버린다.)|(그래도 소중했으니 간직한다.),133|152,moon|sun,,,Sub_Ch4,S4_L0132
-4,24,133,1,Player,Sub,,text,I took it wherever I went and played\nhouse with it. It was my best friend.,옛날에 어딜 가든지 들고 다니면서\n소꿉놀이를 하곤 했어. 진짜 좋아했었는데.,134,,,,Sub_Ch4,S4_L0133
-4,24,134,1,Player,Sub,,text,I don’t know where\nto put it now though...,그런데 지금 이걸 둘 곳이 있으려나...,135,,,,Sub_Ch4,S4_L0134
-4,24,135,1,Player,Sub,,text,"It was nice seeing it after so long,\nbut I guess I’ll have to throw it away.",오래간만에 다시 보니까 반갑지만\n어쩔 수 없이 버려야겠네.,136,,,,Sub_Ch4,S4_L0135
-4,24,136,1,Dot,Sub,anim_sub_raggedyann3,text,You’re throwing it away?,버리기로 한 거야?,137,,,,Sub_Ch4,S4_L0136
+3,23,118,1,Player,Default,,text,지금은 말하기 어려운 사연이 있구나.,"Not an easy story to tell, I see.",119,,,,Sub_Ch4,S4_L0118
+3,23,119,1,Player,Sub,anim_eyesblink,selection,다시 에디슨 선생에 대해 이야기해 줄래?|다시 달나라 송신기에 대해 이야기해 줄래?,Tell me more about Edison?|Tell me more about the transmitter?,120|121,sun|moon,,,Sub_Ch4,S4_L0119
+3,23,120,1,Dot,Sub,,text,"응, 그녀는 인간과의 실시간 양방향\n송신에 대한 꿈을 가지고 이걸 만들었어.",She made this so transmissions between\nhumans and the Moon could take place.,123,,,,Sub_Ch4,S4_L0120
+3,23,121,1,Dot,Sub,,text,아직은 기술이 부족한 탓에...,But the technology isn’t quite finished yet...,122,,,,Sub_Ch4,S4_L0121
+3,23,122,1,Dot,Sub,,text,"달에서 지구로, 또 지구에서 달로\n개별적인 전송만 가능하지만.","so transmissions from the Moon to Earth,\nand vice versa can only be sent one at a time.",123,,,,Sub_Ch4,S4_L0122
+3,23,123,1,Player,Sub,,text,네가 이야기해 준 그녀를 상상해 보자면,"From what you’ve told me,",124,,,,Sub_Ch4,S4_L0123
+3,23,124,1,Player,Sub,,text,그녀는 분명 언젠가 꿈을 이룰 것 같은걸?,I think she’ll perfect\nthe technology someday.,125,,,,Sub_Ch4,S4_L0124
+3,23,125,1,Player,Sub,,selection,그리움은 커다란 원동력이거든.|애정은 커다란 원동력이거든.,Missing someone moves you forward.|Loving someone moves you forward.,126|126,moon|sun,,,Sub_Ch4,S4_L0125
+3,23,126,1,Dot,Default,anim_move,text,정말?,Really?,127,,,,Sub_Ch4,S4_L0126
+3,23,127,1,Dot,Sub,anim_eyesup_turn,text,실은 나도 가끔 그런 상상을 해.,Sometimes I picture it too.,128,,,,Sub_Ch4,S4_L0127
+3,23,128,1,Dot,Sub,anim_eyesblink,text,달에서 뚝딱뚝딱 연구하며 또 다른—\n어쩌면 더 멋진 무언가를 만들고 있을 그녀를!,"Edison, working on an invention like this—\nor something even more incredible!",,,,,Sub_Ch4,S4_L0128
+4,24,129,1,Dot,Sub,anim_sub_raggedyann2,text,"어, 이건 뭐지...","Oh, what do we have here...",130,,,,Sub_Ch4,S4_L0129
+4,24,130,1,Dot,Sub,anim_sub_raggedyann1,text,"<nickname>, 이게 뭐야?","<nickname>, what’s this?",131,,,,Sub_Ch4,S4_L0130
+4,24,131,1,Player,Sub,,text,어릴 때 가지고 놀던 인형이네.,That’s the doll I used to\nplay with as a kid.,132,,,,Sub_Ch4,S4_L0131
+4,24,132,1,Player,Sub,,selection,(더는 필요 없으니 버리는 게 좋겠어.)|(한때 소중했던 물건이니... 어떻게든 보관할래.),(Don’t need it anymore. Throw it away.)|(Childhood memories. Keep it safe.),133|152,moon|sun,,,Sub_Ch4,S4_L0132
+4,24,133,1,Player,Sub,,text,옛날에 어딜 가든지 들고 다니면서\n소꿉놀이를 하곤 했어. 진짜 좋아했었는데.,I took it wherever I went and played\nhouse with it. It was my best friend.,134,,,,Sub_Ch4,S4_L0133
+4,24,134,1,Player,Sub,,text,그런데 지금 이걸 둘 곳이 있으려나...,I don’t know where\nto put it now though...,135,,,,Sub_Ch4,S4_L0134
+4,24,135,1,Player,Sub,,text,오래간만에 다시 보니까 반갑지만\n어쩔 수 없이 버려야겠네.,"It was nice seeing it after so long,\nbut I guess I’ll have to throw it away.",136,,,,Sub_Ch4,S4_L0135
+4,24,136,1,Dot,Sub,anim_sub_raggedyann3,text,버리기로 한 거야?,You’re throwing it away?,137,,,,Sub_Ch4,S4_L0136
 4,24,137,1,Dot,Sub,,text,...,...,138,,,,Sub_Ch4,S4_L0137
-4,24,138,1,Dot,Sub,,text,But doesn’t that doll carry traces of\na time that belonged solely to you?,그런데 저 인형에는 너만이 가진\n시간의 흔적들이 묻어 있지 않아?,139,,,,Sub_Ch4,S4_L0138
-4,24,139,1,Player,Sub,,selection,It reminds me of the playground.|It reminds me of my childhood bed.,놀이터의 흙 냄새가 느껴져.|이불자락의 포근함이 느껴져.,140|141,moon|sun,,,Sub_Ch4,S4_L0139
-4,24,140,1,Player,Sub,,text,"The earthy smell of it, and\nchildren laughing with delight.","응, 그때 그 놀이터의 흙 냄새와 또래들의\n함박웃음 소리가 느껴지는 것 같아.",142,,,,Sub_Ch4,S4_L0140
-4,24,141,1,Player,Sub,,text,"The snugness of the covers,\nand someone reading softly to me.","이불자락의 포근함, 누군가 가만가만\n책을 읽어 주던 소리가 느껴지는 것 같아.",142,,,,Sub_Ch4,S4_L0141
-4,24,142,1,Dot,Sub,anim_sub_raggedyann2,text,"The past itself is beyond your reach,","과거 그 자체는 네 손을 떠났지만,",143,,,,Sub_Ch4,S4_L0142
-4,24,143,1,Dot,Sub,,text,but it’s left traces of what once was.,그 시간들이 묻어 있는 지문은\n아직 남아 있는 거잖아.,144,,,,Sub_Ch4,S4_L0143
-4,24,144,1,Dot,Sub,,text,"Then that doll is a link\nto your past, isn’t it?",그렇다면 과거로의 소중한\n연결고리가 아닐까?,145,,,,Sub_Ch4,S4_L0144
-4,24,145,1,Dot,Sub,anim_sub_raggedyann3,text,"At least, that’s what I think.",적어도 나는 그렇게 생각해.,146,,,,Sub_Ch4,S4_L0145
-4,24,146,1,Player,Sub,,text,Really? Well... I still think\nI should throw it away.,그래? 음... 그래도 난\n버리는 게 나을 것 같아.,147,,,,Sub_Ch4,S4_L0146
-4,24,147,1,Player,Sub,,text,"The past is the past. What matters is right\nnow, and how to use space efficiently.",흔적은 흔적일 뿐이야. 중요한 건\n현재와 현재의 공간 효율성이지.,148,,,,Sub_Ch4,S4_L0147
-4,24,148,1,Dot,Sub,,text,Well... If that’s the problem...,그게 문제라면...,149,,,,Sub_Ch4,S4_L0148
-4,24,149,1,Dot,Sub,,text,I have room in my corner!,나의 모서리에 여분의 공간이 있어!,150,,,,Sub_Ch4,S4_L0149
-4,24,150,1,Dot,Sub,,text,"Maybe I could keep it there\nfor you. No, I know I can!","그곳에 보관할 수 있을 거야.\n아니, 꼭 보관할 수 있어!",151,,,,Sub_Ch4,S4_L0150
-4,24,151,1,Player,Sub,anim_sub_raggedyann2,text,"Well, alright. That’s what we’ll do.",그래. 그럼 그렇게 하자.,161,,,,Sub_Ch4,S4_L0151
-4,24,152,1,Player,Sub,anim_sub_raggedyann3,text,I can’t just throw this away. It reminds\nme of the days when I was little.,아무리 그래도 이걸 버릴 수는 없어.\n이걸 보니까 소꿉놀이 하던 시절이 떠올라.,153,,,,Sub_Ch4,S4_L0152
-4,24,153,1,Dot,Sub,anim_sub_raggedyann2,text,"That doll carries traces of a time that\n belonged solely to you, doesn’t it.",이 인형에는 너만이 가진\n시간의 흔적들이 묻어 있구나.,154,,,,Sub_Ch4,S4_L0153
-4,24,154,1,Dot,Sub,,text,"The past is beyond your reach,\nsomewhere you can never go back to,","과거는 너의 손을 떠나 다시는\n돌아올 수 없는 곳으로 흘렀지만,",155,,,,Sub_Ch4,S4_L0154
-4,24,155,1,Dot,Sub,,text,"but things stay behind, and help you\nrelive each moment time and time again.",그때를 함께했던 사물은 네게 남아\n그 시간을 몇 번이고 다시 살 수 있게 해.,156,,,,Sub_Ch4,S4_L0155
-4,24,156,1,Player,Sub,,text,"You’re right, so what if the\nhouse gets a little messy.","맞아, 집이 조금 어질러지면 어때.",157,,,,Sub_Ch4,S4_L0156
-4,24,157,1,Player,Sub,anim_sub_raggedyann3,text,Keeping a piece of my childhood\n around isn’t such a bad idea.,어린 시절의 작은 조각 하나쯤은\n집에 두어도 나쁘지 않을 거야.,158,,,,Sub_Ch4,S4_L0157
-4,24,158,1,Player,Sub,,text,"Let’s see, where should I put this?","보자, 이걸 어디에 두는 게 좋을까.",159,,,,Sub_Ch4,S4_L0158
-4,24,159,1,Dot,Sub,,text,I have room in my corner.,나의 모서리 깊은 곳에\n여분의 공간이 있어.,160,,,,Sub_Ch4,S4_L0159
-4,24,160,1,Dot,Sub,,text,"Maybe I could keep it there\nfor you. No, I know I can!","그곳에 보관할 수 있을 거야.\n아니, 꼭 보관할 수 있어!",161,,,,Sub_Ch4,S4_L0160
-4,24,161,1,Dot,Sub,anim_sub_raggedyann1,text,I want to brush the dust off your past.\nIt will let me see you with clarity.,네 과거에 쌓인 먼지를 살살 털어 줄\n수도 있을 거야. 널 더욱 잘 알게 되겠지!,162,,,,Sub_Ch4,S4_L0161
-4,24,162,1,Player,Sub,,text,"You know, that’s a nice thought.\nI’ll leave it to you then.",고마운 생각이네. 그럼 이\n인형은 너에게 맡길게.,163,,,,Sub_Ch4,S4_L0162
+4,24,138,1,Dot,Sub,,text,그런데 저 인형에는 너만이 가진\n시간의 흔적들이 묻어 있지 않아?,But doesn’t that doll carry traces of\na time that belonged solely to you?,139,,,,Sub_Ch4,S4_L0138
+4,24,139,1,Player,Sub,,selection,한바탕 뛰어놀던 놀이터의 흙내음이 떠올라.|이불자락의 포근함이 느껴지는 것만 같아.,It reminds me of the playground.|It reminds me of my childhood bed.,140|141,pasive|active,,,Sub_Ch4,S4_L0139
+4,24,140,1,Player,Sub,,text,함께 놀곤 했던\n친구들의 함박웃음도.,"The earthy smell of it, and\nchildren laughing with delight.",142,,,,Sub_Ch4,S4_L0140
+4,24,141,1,Player,Sub,,text,누군가 가만가만 책을\n읽어 주던 소리도.,"The snugness of the covers,\nand someone reading softly to me.",142,,,,Sub_Ch4,S4_L0141
+4,24,142,1,Dot,Sub,anim_sub_raggedyann2,text,"과거 그 자체는 네 손을 떠났지만,","The past itself is beyond your reach,",143,,,,Sub_Ch4,S4_L0142
+4,24,143,1,Dot,Sub,,text,그 시간들이 묻어 있는 지문은\n아직 남아 있는 거잖아.,but it’s left traces of what once was.,144,,,,Sub_Ch4,S4_L0143
+4,24,144,1,Dot,Sub,,text,그렇다면 과거로의 소중한\n연결고리가 아닐까?,"Then that doll is a link\nto your past, isn’t it?",145,,,,Sub_Ch4,S4_L0144
+4,24,145,1,Dot,Sub,anim_sub_raggedyann3,text,적어도 나는 그렇게 생각해.,"At least, that’s what I think.",146,,,,Sub_Ch4,S4_L0145
+4,24,146,1,Player,Sub,,text,그래? 음... 그래도 난\n버리는 게 나을 것 같아.,Really? Well... I still think\nI should throw it away.,147,,,,Sub_Ch4,S4_L0146
+4,24,147,1,Player,Sub,,text,흔적은 흔적일 뿐이야. 중요한 건\n현재와 현재의 공간 효율성이지.,"The past is the past. What matters is right\nnow, and how to use space efficiently.",148,,,,Sub_Ch4,S4_L0147
+4,24,148,1,Dot,Sub,,text,그게 문제라면...,Well... If that’s the problem...,149,,,,Sub_Ch4,S4_L0148
+4,24,149,1,Dot,Sub,,text,나의 모서리에 여분의 공간이 있어!,I have room in my corner!,150,,,,Sub_Ch4,S4_L0149
+4,24,150,1,Dot,Sub,,text,"그곳에 보관할 수 있을 거야.\n아니, 꼭 보관할 수 있어!","Maybe I could keep it there\nfor you. No, I know I can!",151,,,,Sub_Ch4,S4_L0150
+4,24,151,1,Player,Sub,anim_sub_raggedyann2,text,그래. 그럼 그렇게 할까?,"Well, alright. That’s what we’ll do.",161,,,,Sub_Ch4,S4_L0151
+4,24,152,1,Player,Sub,anim_sub_raggedyann3,text,아무리 그래도 이걸 버릴 수는 없어.\n이걸 보니까 소꿉놀이 하던 시절이 떠올라.,I can’t just throw this away. It reminds\nme of the days when I was little.,153,,,,Sub_Ch4,S4_L0152
+4,24,153,1,Dot,Sub,anim_sub_raggedyann2,text,이 인형에는 너만이 가진\n시간의 흔적들이 묻어 있구나.,"That doll carries traces of a time that\n belonged solely to you, doesn’t it.",154,,,,Sub_Ch4,S4_L0153
+4,24,154,1,Dot,Sub,,text,"과거는 너의 손을 떠나 다시는\n돌아올 수 없는 곳으로 흘렀지만,","The past is beyond your reach,\nsomewhere you can never go back to,",155,,,,Sub_Ch4,S4_L0154
+4,24,155,1,Dot,Sub,,text,그때를 함께했던 사물은 네게 남아\n그 시간을 몇 번이고 다시 살 수 있게 해.,"but things stay behind, and help you\nrelive each moment time and time again.",156,,,,Sub_Ch4,S4_L0155
+4,24,156,1,Player,Sub,,text,"맞아, 집이 조금 어질러지면 어때.","You’re right, so what if the\nhouse gets a little messy.",157,,,,Sub_Ch4,S4_L0156
+4,24,157,1,Player,Sub,anim_sub_raggedyann3,text,어린 시절의 작은 조각 하나쯤은\n집에 두어도 나쁘지 않을 거야.,Keeping a piece of my childhood\n around isn’t such a bad idea.,158,,,,Sub_Ch4,S4_L0157
+4,24,158,1,Player,Sub,,text,"보자, 이걸 어디에 두는 게 좋을까.","Let’s see, where should I put this?",159,,,,Sub_Ch4,S4_L0158
+4,24,159,1,Dot,Sub,,text,나의 모서리 깊은 곳에\n여분의 공간이 있어.,I have room in my corner.,160,,,,Sub_Ch4,S4_L0159
+4,24,160,1,Dot,Sub,,text,"그곳에 보관할 수 있을 거야.\n아니, 꼭 보관할 수 있어!","Maybe I could keep it there\nfor you. No, I know I can!",161,,,,Sub_Ch4,S4_L0160
+4,24,161,1,Dot,Sub,anim_sub_raggedyann1,text,난 네 과거에 쌓인 먼지를\n살살 털어 줄 수도 있을 거야!,I want to brush the dust off your past.\nIt will let me see you with clarity.,162,,,,Sub_Ch4,S4_L0161
+4,24,162,1,Player,Sub,,text,"그럼... 좋아, 이제 이\n인형은 뭉치에게 맡길게.","You know, that’s a nice thought.\nI’ll leave it to you then.",163,,,,Sub_Ch4,S4_L0162
 4,24,163,1,Dot,Sub,,text,...,...,164,,,,Sub_Ch4,S4_L0163
 4,24,164,1,Dot,Sub,,text,......,......,165,,,,Sub_Ch4,S4_L0164
-4,24,165,1,Dot,Sub,,text,A trace of <nickname>.,<nickname>의 흔적.,166,,,,Sub_Ch4,S4_L0165
-4,24,166,1,Dot,Sub,anim_sub_raggedyann2,text,So this is what a trace looks like.,흔적은 이런 모양으로 생겼구나.,,,anim_sub_raggedyann2,,Sub_Ch4,S4_L0166
+4,24,165,1,Dot,Sub,,text,<nickname>의 흔적.,A trace of <nickname>.,166,,,,Sub_Ch4,S4_L0165
+4,24,166,1,Dot,Sub,anim_sub_raggedyann2,text,흔적은 이런 모양으로 생겼구나.,So this is what a trace looks like.,,,anim_sub_raggedyann2,,Sub_Ch4,S4_L0166

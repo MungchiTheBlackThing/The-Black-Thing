@@ -6,7 +6,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 1,3,5,1,Dot,Sub,anim_eyesblink,text,‘곰팡이’가 뭐야? 네가\n이걸 싫어하는 게 느껴져.,What’s ‘mold’? I get the sense\nit’s something you don’t like.,6,,,,Sub_Ch1,S1_L0005
 1,3,6,1,Player,Sub,,text,"곰팡이는 습하거나 어두운 곳, 상하거나\n썩은 음식 등에서 피어나는 생물이야.","It’s what grows in damp or\ndark places. Or on spoiled, rotten food.",7,,,,Sub_Ch1,S1_L0006
 1,3,7,1,Player,Sub,,text,"으, 미안해.",Sorry about that.,8,,,,Sub_Ch1,S1_L0007
-1,3,8,1,Player,Sub,,text,지구에 온 첫날부터\n이런 걸 보게 하다니.,I hope it doesn’t give you the wrong idea\nabout Earth on your first day here.,9,,,,Sub_Ch1,S1_L0008
+1,3,8,1,Player,Sub,,text,지구에 온 첫날부터\n이런 걸 보게 하다니.,I hope this won’t give you the wrong idea\nabout Earth on your first day here.,9,,,,Sub_Ch1,S1_L0008
 1,3,9,1,Player,Sub,,text,얼른 치워야겠다. 그럼\n책상이 훨씬 깨끗해질 거야!,I’ll get rid of it. That’ll make\nthe desk much cleaner!,10,,,,Sub_Ch1,S1_L0009
 1,3,10,1,Dot,Default,anim_eyesdown_turn,text,습하거나 어두운 곳...,Damp or dark places...,11,,,,Sub_Ch1,S1_L0010
 1,3,11,1,Dot,Default,anim_eyescorner,text,상하거나 썩은 음식?,"Spoiled, rotten food?",12,,,,Sub_Ch1,S1_L0011
@@ -16,7 +16,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 1,3,15,1,Dot,Sub,,text,잠시만. 치우지 말아 줘.,Wait. Don’t get rid of it.,16,,,,Sub_Ch1,S1_L0015
 1,3,16,1,Dot,Sub,,text,"나, 얘와 시간을 보내 보고 싶어.",I’d like to spend time with it.,17,,,,Sub_Ch1,S1_L0016
 1,3,17,1,Dot,Sub,,text,......,......,18,,,,Sub_Ch1,S1_L0017
-1,3,18,1,Dot,Sub,,text,그래도 될까?,May I?,19,,,,Sub_Ch1,S1_L0018
+1,3,18,1,Dot,Sub,,text,그래도 될까?,Please?,19,,,,Sub_Ch1,S1_L0018
 1,3,19,1,Player,Sub,,text,응? 왜? 더럽고 징그럽지 않아?,But why? Isn’t it dirty and gross?,20,,,,Sub_Ch1,S1_L0019
 1,3,20,1,Dot,Sub,,text,"부탁이야, <nickname>.","Please, <nickname>.",21,,,,Sub_Ch1,S1_L0020
 1,3,21,1,Player,Sub,,text,(며칠 동안은 괜찮겠지...),(If it’s just for a few days...),22,,,,Sub_Ch1,S1_L0021
@@ -31,7 +31,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 1,3,30,1,Dot,Default,,text,... 도대체 왜?,... How?,31,,,,Sub_Ch1,S1_L0030
 1,3,31,1,Dot,Default,,text,이상해.,How very strange.,32,,,,Sub_Ch1,S1_L0031
 1,3,32,1,Dot,Default,,text,하지만 고마워.,But thank you.,33,,,,Sub_Ch1,S1_L0032
-1,3,33,1,Dot,Default,,text,좋다.,It’s nice.,34,,,,Sub_Ch1,S1_L0033
+1,3,33,1,Dot,Default,,text,좋다.,This feels nice.,34,,,,Sub_Ch1,S1_L0033
 1,3,34,1,Dot,Default,,text,우리는 닮아 있어.,"We’re alike, you and me.",35,,,,Sub_Ch1,S1_L0034
 1,3,35,1,Dot,Default,,text,인간들이 친구라고 부르는\n걸 우리도 할 수 있겠어.,Perhaps we can be what\nhumans call friends.,,,anim_mold2,,Sub_Ch1,S1_L0035
 2,4,36,1,Dot,Default,anim_move,text,<nickname>!,<nickname>!,37,,,,Sub_Ch1,S1_L0036
@@ -104,11 +104,11 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 3,5,103,1,Dot,Sub,anim_eyesblink,text,해 보고 싶은 게 생겼어.,I want to try something. Can you make\nme a sentence with these sets of words?,104,,,,Sub_Ch1,S1_L0103
 3,5,104,1,Dot,Sub,,text,"꿈, 꿈, 동화, 동화, 파란, 파란.\n이 단어들로 하나의 문장을 만들어 줄래?","Blue, blue, sound, sound,\nand present, present.",105,,,,Sub_Ch1,S1_L0104
 3,5,105,1,Dot,Sub,,text,"소통 오류의 가능성을 극대화하며,","A sentence that welcomes\nconfusion with open arms,",106,,,,Sub_Ch1,S1_L0105
-3,5,106,1,Dot,Sub,,text,인간 언어의 매력을 최대로\n증폭한 문장을 말이야!,and makes the human\nlanguage as charming as can be!,107,,,,Sub_Ch1,S1_L0106
-3,5,107,1,Player,Sub,,textbox,"우선, 꿈과 꿈을 사용해 보자면...","First, blue and blue.",108,,,,Sub_Ch1,S1_L0107
-3,5,108,1,Player,Sub,,textbox,다음은 동화와 동화였던가?,"Next, sound and sound.",109,,,,Sub_Ch1,S1_L0108
+3,5,106,1,Dot,Sub,,text,인간 언어의 매력을 최대로\n증폭한 문장을 말이야! 먼저 꿈-꿈!,and makes the human\nlanguage as charming as can be!,107,,,,Sub_Ch1,S1_L0106
+3,5,107,1,Player,Sub,,selection,음... 뭉치는 '꿈'이 되고 싶어 하는 '꿈'을 꾸지.|내 '꿈'은 '꿈' 공장에 놀러 가 보는 일이야!,Well... you dream of becoming a dream.|My dream is to visit the dream factory!,108|108,,,,Sub_Ch1,S1_L0107
+3,5,108,1,Player,Sub,,selection,두 번째는... 서로에게 '동화'되어 가는 '동화' 속 소녀들.|사실 난 '동화' 속 악당에게 마음이 '동화'되기도 했어.,I was sound asleep in spite of the sound.|That sound makes me feel safe and sound.,109|109,,,,Sub_Ch1,S1_L0108
 3,5,109,1,Player,Sub,,textbox,"마지막으로, 파란과 파란.","And finally, present and present.",110,,,,Sub_Ch1,S1_L0109
-3,5,110,1,Dot,Default,anim_bounce,text,두 배로 재미있어졌어!,Now its twice as much fun!,111,,,,Sub_Ch1,S1_L0110
+3,5,110,1,Dot,Default,anim_bounce,text,"세상에! 멋진 걸, <nickname>!\n모든 문장이 두 배로 재미있어졌어!",Now its twice as much fun!,111,,,,Sub_Ch1,S1_L0110
 3,5,111,1,Dot,Sub,anim_eyesblink,text,"<nickname>, 언어라는 건 날 들뜨게 하는 동시에...\n아주, 아주, 아주 어렵고 혼란하게 해.","<nickname>, language excites me...\nbut confuses me very, very, very much.",112,,,,Sub_Ch1,S1_L0111
 3,5,112,1,Dot,Sub,,text,"이제 다시 돌아갈게, 나의 머릿속으로.\n더 많은 구슬들을 발음해 보고 싶어.",I’ll return to my corner now. I’d like\nto try out more of these marbles.,,,,,Sub_Ch1,S1_L0112
 4,6,113,1,Dot,Default,anim_move,text,침대 아래 무언가 있는 것 같아!,What is that under the bed?,114,,,,Sub_Ch1,S1_L0113
@@ -119,24 +119,36 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 4,6,118,1,Dot,Sub,anim_eyesside_turn,text,"괜찮을 거야! 레드가 이야기해 주길, 잠은\n부르려 하면 도망가고 포기하려 할 때 찾아온대.",Don’t worry! Red told me sleep comes\njust when you’ve given up calling for it.,119,,,,Sub_Ch1,S1_L0118
 4,6,119,1,Dot,Sub,anim_eyesblink,text,히히. 어떤 저명한 작가는 이렇게 썼다고 해.,Ehem. They say that a celebrated\nnovelist wrote this one:,120,,,,Sub_Ch1,S1_L0119
 4,6,120,1,Dot,Sub,,text,“팝니다: 아기 신발. 신은 적 없음.”,“For sale: baby shoes. Never worn.”,121,,,,Sub_Ch1,S1_L0120
-4,6,121,1,Dot,Default,anim_eyesclosed_turn,text,"아기의 마지막 숨소리가 들리고,\n어머니의 텅 빈 슬픔이 내려앉아.","I can almost hear the baby’s final\nbreath, see the mother’s numb grief,",122,,,,Sub_Ch1,S1_L0121
-4,6,122,1,Dot,Default,,text,"끔찍하지. 방에 메아리치는 비탄과\n죽음의 손아귀, 그리고 정적...",feel the suffocating silence\necho in the empty nursery...,123,,,,Sub_Ch1,S1_L0122
-4,6,123,1,Dot,Default,,text,이 모든 걸 고작 여섯\n단어 안에 내포하다니.,All this in only six words.,124,,,,Sub_Ch1,S1_L0123
+4,6,121,1,Dot,Default,anim_eyesclosed,text,"아기의 마지막 숨소리가 들리고,\n어머니의 텅 빈 슬픔이 내려앉아.","I can almost hear the baby’s final\nbreath, see the mother’s numb grief,",122,,,,Sub_Ch1,S1_L0121
+4,6,122,1,Dot,Default,anim_eyesclosed,text,"끔찍하지. 방에 메아리치는 비탄과\n죽음의 손아귀, 그리고 정적...",feel the suffocating silence\necho in the empty nursery...,123,,,,Sub_Ch1,S1_L0122
+4,6,123,1,Dot,Default,anim_eyesclosed,text,이 모든 걸 고작 여섯\n단어 안에 내포하다니.,All this in only six words.,124,,,,Sub_Ch1,S1_L0123
 4,6,124,1,Dot,Sub,anim_eyesblink,text,단어 간 여백의 무게가 내 마음을\n꼭 쥔 채 묵직하게 짓누르고 있어.,The weight of what’s left unsaid. How it\nseizes the heart and refuses to let go.,125,,,,Sub_Ch1,S1_L0124
-4,6,125,1,Dot,Default,anim_move,text,"아름다운 천재성이야, 이건!",Pure genius!,126,,,,Sub_Ch1,S1_L0125
-4,6,126,1,Dot,Sub,anim_eyesblink,text,그래서... 나도 여섯 단어\n소설을 만들어 봤어!,So... I made up a six-word story too!,127,,,,Sub_Ch1,S1_L0126
-4,6,127,1,Dot,Sub,,text,그리고 하루 종일 내 이야기를 이어나갈\n수 있는 87가지의 갈래를 생각해 봤지.,Then I spent the rest of the day imagining\n87 ways my story could unfold.,128,,,,Sub_Ch1,S1_L0127
-4,6,128,1,Dot,Sub,,text,이건 16번째 아이디어야:,Here’s my 16th idea:,129,,,,Sub_Ch1,S1_L0128
-4,6,129,1,Dot,Sub,,text,“침대 아래 무언가 있는 것 같아.”\n라고 네가 중얼거렸어. 깜깜한 밤이었어.,"“What is that under the bed? It looks scary.”\nsaid <nickname>. It was a dark, dark night.",130,,,,Sub_Ch1,S1_L0129
+4,6,125,1,Dot,Default,anim_bounce,text,"아름다운 천재성이야, 이건!",Pure genius!,126,,,,Sub_Ch1,S1_L0125
+4,6,126,1,Dot,Sub,anim_bounce,text,그래서... 나도 여섯 단어\n소설을 만들어 봤어!,So... I made up a six-word story too!,127,,,,Sub_Ch1,S1_L0126
+4,6,127,1,Dot,Sub,anim_eyesblink,text,그리고 하루 종일 내 이야기를 이어나갈\n수 있는 87가지의 갈래를 생각해 봤지.,Then I spent the rest of the day imagining\n87 ways my story could unfold.,128,,,,Sub_Ch1,S1_L0127
+4,6,128,1,Dot,Sub,,text,이건 16번째 아이디어야:\n“침대 아래 무언가 있는 것 같아.”,Here’s my 16th idea:\n“What is that under the bed?”,129,,,,Sub_Ch1,S1_L0128
+4,6,129,1,Dot,Sub,,text,라고 네가 중얼거렸어.\n무섭고 깜깜한 밤이었어.,"said <nickname>. It was a dark, dark night.",130,,,,Sub_Ch1,S1_L0129
 4,6,130,1,Dot,Sub,,text,“무서워하지 마. 난 널 해치지 않아.”\n조그마한 목소리가 속삭였고.,“Don’t be scared. I won’t hurt you.”\nwhispered an echoing voice.,131,,,,Sub_Ch1,S1_L0130
-4,6,131,1,Dot,Sub,,text,“왜냐하면... 나인 걸! 놀랐지!”\n하고 내가 침대 밑에서 튀어나와!,"“It’s only... me! Boo!” said I, popping\nout from under the bed! Hehe.",132,,,,Sub_Ch1,S1_L0131
+4,6,131,1,Dot,Sub,anim_bounce,text,“왜냐하면... 나인 걸! 놀랐지!”\n하고 내가 침대 밑에서 튀어나와!,"“It’s only... me! Boo!” said I, popping\nout from under the bed! Hehe.",132,,,,Sub_Ch1,S1_L0131
 4,6,132,1,Dot,Default,anim_move,text,마음에 들어? 널 생각하면서 썼어.,Do you like it? I wrote it especially for you.,133,,,,Sub_Ch1,S1_L0132
-4,6,133,1,Player,Sub,anim_eyesblink,selection,물론 마음에 들지.|요상한 매력이 있어!,Of course I like it.|It has a strange charm to it!,134|134,passive|active,,,Sub_Ch1,S1_L0133
+4,6,133,1,Player,Sub,anim_eyesblink,selection,"우와, 뭉치에게 받은 첫 번째 선물인 셈이네!|더 끔찍한 게 있을 줄 알았는데... 천만다행이야.","Wow. A gift just for me!|I was prepared for the worst, so phew.",134|134,passive|active,,,Sub_Ch1,S1_L0133
 4,6,134,1,Dot,Default,anim_move,text,"<nickname>, <nickname>, 궁금해졌어.","<nickname>, <nickname>.\nI wonder.",135,,,,Sub_Ch1,S1_L0134
 4,6,135,1,Dot,Sub,anim_eyesblink,text,너라면 내 이야기를 어떻게 이어나갈 거야?,How would you continue\nmy six-word story?,136,,,,Sub_Ch1,S1_L0135
-4,6,136,1,Dot,Sub,,text,침대 아래 ‘무엇이’ 있는 걸까?,"That is, what <i>is<\i> that under the bed?",137,,,,Sub_Ch1,S1_L0136
-4,6,137,1,Player,Sub,,textbox,“침대 아래 무언가 있는 것 같아”,“There is something under the bed.”,138,,,,Sub_Ch1,S1_L0137
-4,6,138,1,Dot,Default,anim_move,text,오! 오와! 정말 놀라워!\n정말 멋진 아이디어야!,Oh! Oh! There you have it!\It’s a great idea!,139,,,,Sub_Ch1,S1_L0138
-4,6,139,1,Dot,Sub,anim_eyesblink,text,좋아. 이제 충분히 잠을 속인 것 같아.,Alright. That should have tricked\nsleep into thinking I’m in no hurry.,140,,,,Sub_Ch1,S1_L0139
-4,6,140,1,Dot,Sub,,text,잠이 슬그머니 찾아오면 맞이해 주어야 하니까.,I should be there to greet it\nwhen it sneaks up on me.,141,,,,Sub_Ch1,S1_L0140
-4,6,141,1,Dot,Sub,,text,나는 이만 눈을 꼭 감고 어둠을 청해 볼게. 지구에서의 첫 번째 잠을 위하여!,So now it’s time to nestle into the dark.\nHere’s to my very first night on Earth!,,,anim_eyesclosed,,Sub_Ch1,S1_L0141
+4,6,136,1,Dot,Default,,text,침대 아래 ‘무엇이’ 있는 걸까?,"That is, what <i>is<\i> that under the bed?",137,,,,Sub_Ch1,S1_L0136
+4,6,137,1,Player,Default,,text,으음... 침대 아래 무언가 있는 것 같아.,Hmm. There is something under the bed.,138,,,,Sub_Ch1,S1_L0137
+4,6,138,1,Player,Default,,selection,자세히 보니 아주 작은 문이 하나 보여.|무언가 스쳐간 것 같아. 누군가의... 손가락일까?,You see a very small door.|Was that a finger just now?,139|145,,,,Sub_Ch1,S1_L0138
+4,6,139,1,Player,Default,,text,... 신비로운 세계로 통하는 문인 걸까?,... A door to a mysterious world?,140,,,,Sub_Ch1,S1_L0139
+4,6,140,1,Player,Default,,text,뭉치가 고민하던 사이...\n끼익... 하고 문이 열렸어.,And creak... the door swings open.,141,,,,Sub_Ch1,S1_L0140
+4,6,141,1,Dot,Default,anim_move,text,세상에! 열렸는데? 열렸는데?,Oh! And? And?,142,,,,Sub_Ch1,S1_L0141
+4,6,142,1,Player,Default,,text,커다란 여행 가방을 멘 뭉치의\n달나라 친구들이 걸어나와!,And your three friends from\nthe Moon come marching out!,143,,,,Sub_Ch1,S1_L0142
+4,6,143,1,Dot,Default,anim_happy,text,"와! 너무, 너무, 너무 좋아! 레드, 에디슨,\n그리고 첼로 경이 나를 보러 와 줬다니!","Oh! I love it! Red, Edison, and\nSir Cello are here to see me!",144,,,,Sub_Ch1,S1_L0143
+4,6,144,1,Player,Default,anim_happy,text,(상상일 뿐인데도 저렇게나\n기뻐해 주다니. 괜스레 뿌듯하네.),"(It’s nice to see Dot so ecstatic,\neven if we’re playing pretend.)",151,,,,Sub_Ch1,S1_L0144
+4,6,145,1,Dot,Default,anim_move,text,... 설마. 무시무시한 귀신? 혹은 살인마?,... No. A ghost? Or a murderer?,146,,,,Sub_Ch1,S1_L0145
+4,6,146,1,Player,Default,,text,뭉치는 그 실체를 알기 위해 '그것'에게\n다가가. 가까이... 더 가까이.,You inch toward\nthe thing. Closer... closer.,147,,,,Sub_Ch1,S1_L0146
+4,6,147,1,Dot,Default,anim_move,text,"가, 가까이...... 대체 뭐였어? 뭐였던 거야?",C-Closer... What is it? Huh?,148,,,,Sub_Ch1,S1_L0147
+4,6,148,1,Player,Default,,text,으악! 커어다랗고 새까만 바퀴벌레가\n뭉치를 향해 온몸을 뒤틀고 있어!,"Gah! A large, black cockroach\ncomes skittering toward you!",149,,,,Sub_Ch1,S1_L0148
+4,6,149,1,Dot,Default,anim_happy,text,"와! 너무, 너무, 너무 좋아! 커다랗고 새까만\n바퀴벌레 선생이 나에게 인사를 해 주다니!","Oh! I just love it! A large, black\ncockroach is here to greet me!",150,,,,Sub_Ch1,S1_L0149
+4,6,150,1,Player,Default,anim_happy,text,(놀래킬 목적이었는데...\n왜 좋아하는 거지?),(Huh. That's not what I expected.),151,,,,Sub_Ch1,S1_L0150
+4,6,151,1,Dot,Sub,anim_sub_light,text,좋아. 이제 충분히 잠을 속인 것 같아.,Alright. That should have tricked\nsleep into thinking I’m in no hurry.,152,,,,Sub_Ch1,S1_L0151
+4,6,152,1,Dot,Sub,anim_eyesblink,text,잠이 슬그머니 찾아오면 맞이해 주어야 하니까.,I should be there to greet it\nwhen it sneaks up on me.,153,,,,Sub_Ch1,S1_L0152
+4,6,153,1,Dot,Sub,,text,나는 이만 눈을 꼭 감고 어둠을 청해 볼게.\n지구에서의 첫 번째 잠을 위하여!,So now it’s time to nestle into the dark.\nHere’s to my very first night on Earth!,,,,,Sub_Ch1,S1_L0153

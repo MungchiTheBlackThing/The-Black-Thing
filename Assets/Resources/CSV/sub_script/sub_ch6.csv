@@ -13,25 +13,25 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 1,33,12,0,Player,Sub,,selection,혐오인 거야?|공포인 거야?,Disgust?|Fear?,13|13,moon|sun,,,Sub_Ch6,S6_L0012
 1,33,13,0,Dot,Sub,,text,둘 다 정확하면서 부정확해.,Yes and no.,14,,,,Sub_Ch6,S6_L0013
 1,33,14,0,Dot,Sub,,text,"혐오, 공포. 불쾌함, 적개심? 자학, 미움.\n아니, 아니야. 그 모든 것일수도 있겠지만.","Revulsion, distaste, hostility? Fear, self-hatred,\nloathing. No, no. Perhaps all of the above.",15,,,,Sub_Ch6,S6_L0014
-1,33,15,0,Dot,Sub,,text,사전 속 어떤 단어로도 나의\n이 감정을 표현하기에는 부족해.,But no word in the dictionary could\nbe enough to express how I feel.,16,,,,Sub_Ch6,S6_L0015
+1,33,15,0,Dot,Sub,,text,사전 속 어떤 단어로도\n이 감정을 표현하기에는 부족해.,But no word in the dictionary could\nbe enough to express how I feel.,16,,,,Sub_Ch6,S6_L0015
 1,33,16,0,Player,Sub,,text,그럴 수 있겠다고 생각해.,I think I understand.,17,,,,Sub_Ch6,S6_L0016
-1,33,17,0,Player,Sub,,selection,(무슨 마음인지 알아. 공감한다.)|(뭉치의 생각을 바꿔 보려고 한다.),(I know how Dot feels. Be empathetic.)|(Try to make Dot see differently.),18|21,sun|moon,,,Sub_Ch6,S6_L0017
-1,33,18,0,Player,Sub,,text,나 역시 스스로를 바라보며\n혐오를 느낄 때가 있지.,There are times when I look at\nmyself and hate what I see.,19,,,,Sub_Ch6,S6_L0018
-1,33,19,0,Player,Sub,,textbox,"가장 최근의 경험을 이야기하자면,","Most recently,",20,,,,Sub_Ch6,S6_L0019
-1,33,20,0,Player,Sub,,text,그리고 위로가 될지는 모르겠지만...,And I don’t know if this will help...,22,,,,Sub_Ch6,S6_L0020
+1,33,17,0,Player,Sub,,selection,(무슨 마음인지 알 것만 같아. 나 역시도 나를...)|(뭉치가 자신을 끔찍하게 여기지 않으면 좋을 텐데...),(I know how it feels. I also...)|(I wish Dot wouldn’t feel this way...),18|21,sun|moon,,,Sub_Ch6,S6_L0017
+1,33,18,0,Player,Sub,,text,스스로를 바라보며 혐오감을\n느낀다는 게... 어떤 감정인지 알아.,I know what it’s like... to hate yourself.,19,,,,Sub_Ch6,S6_L0018
+1,33,19,0,Player,Sub,,text,그건... 정말 유쾌하지 못한 일이야. 정말로.,It’s not fun. That’s for sure.,20,,,,Sub_Ch6,S6_L0019
+1,33,20,0,Player,Sub,,text,이 말이 너에게 위로가 될지는 모르겠지만...,I don’t know if this will help...,22,,,,Sub_Ch6,S6_L0020
 1,33,21,0,Player,Sub,,text,"하지만 뭉치야, 그렇게까지\n싫어하는 이유를 잘 모르겠어.","But Dot, I don’t understand\nwhy you hate it so much.",22,,,,Sub_Ch6,S6_L0021
 1,33,22,0,Player,Sub,,selection,지구에서는 검정이 나쁘기만 한 색은 아니야.|나는 검정색을 좋아해. 당연 너의 검정도.,"On Earth, black isn’t all that bad.|I like the color black. Yours too.",23|27,moon|sun,,,Sub_Ch6,S6_L0022
 1,33,23,0,Player,Sub,,text,인간들은 검정을 멋지고 매력적인\n색으로 여기는 경우가 많아.,Lots of humans think\nblack is cool and attractive.,24,,,,Sub_Ch6,S6_L0023
 1,33,24,0,Player,Sub,,text,검정을 가만히 보고 있으면 마음이\n가라앉으면서 편안해지기도 하지.,Just looking at it can soothe them.,25,,,,Sub_Ch6,S6_L0024
 1,33,25,0,Dot,Sub,,text,인간들이 좋아하는 검정은 ‘나의’\n검정과 달라. 그것은 그저 색소잖아.,It’s different from my black.\nThat’s just a pigment.,26,,,,Sub_Ch6,S6_L0025
-1,33,26,0,Player,Sub,,selection,(머뭇거린다)|뭉치의 검정도 결국은 색소 아니야?,"(Hesitate.)|Isn't yours a pigment, too?",31|31,passive|active,,,Sub_Ch6,S6_L0026
-1,33,27,0,Player,Sub,,text,검정은 특별하고 개성 있잖아. 멋지고 고요해.\n그만의 강렬한 매력이 존재하거든.,Black is special and singular.\nIt’s cool and silent.,28,,,,Sub_Ch6,S6_L0027
+1,33,26,0,Player,Sub,,selection,(잠시 머뭇거린다. 왜 다르다는 거지?)|뭉치의 검정도 결국은 색소 아니야?,"(Hesitate. Different how?)|Isn't yours a pigment, too?",31|31,passive|active,,,Sub_Ch6,S6_L0026
+1,33,27,0,Player,Sub,,text,검정은 멋지고 고요한 색이잖아.\n그만의 강렬한 매력이 존재하거든.,Black is special and singular.\nIt’s cool and silent.,28,,,,Sub_Ch6,S6_L0027
 1,33,28,0,Player,Sub,,text,검정을 가만히 보고 있으면 마음이\n가라앉으면서 편안해지기도 하지.,Just looking at it soothes me.,29,,,,Sub_Ch6,S6_L0028
-1,33,29,0,Player,Sub,,text,"뭉치 같아. 작지만 똑똑하고,\n사랑스러운 ‘검정’ 덩어리!","It’s so very <i>you</i>. Small but clever,\na lovely ball of black!",30,,,,Sub_Ch6,S6_L0029
-1,33,30,0,Player,Sub,,text,이 문장의 모든 요소가 빠짐없이\n너다운걸. 특히 검다는 수식이 말이야.,Every part of this sentence resembles you.\nEspecially the black part.,31,,,,Sub_Ch6,S6_L0030
+1,33,29,0,Player,Sub,,text,게다가 뭉치가 파란색이라 초록색이었다면...,"I mean, if you were blue or green...",30,,,,Sub_Ch6,S6_L0029
+1,33,30,0,Player,Sub,,text,(잠시 상상해 봐도... 역시 검은색\n뭉치가 제일 잘 어울리는 것 같아.),"(Yep, no contest. Black suits Dot best.)",31,,,,Sub_Ch6,S6_L0030
 1,33,31,0,Dot,Sub,,text,......,......,32,,,,Sub_Ch6,S6_L0031
-1,33,32,0,Player,Sub,,text,"네가 나의 집의 구석을 점령한 ‘파스텔톤의’\n작은 덩어리든, 지금처럼 시커먼 덩어리든,","Whether you seized the corner of my room\nas a pastel lump or the dark one that you are,",33,,,,Sub_Ch6,S6_L0032
-1,33,33,0,Player,Sub,,text,나에게 너는 그냥 너야.\n그리고 난 뭉치의 검정이 좋아.,"to me, you’re you.\nAnd I like your black.",34,,,,Sub_Ch6,S6_L0033
+1,33,32,0,Player,Sub,,text,"네가 나의 집의 구석을 점령한 ‘파스텔톤의’\n작은 덩어리든, 지금처럼 시커먼 덩어리든,",It wouldn’t make a difference if\nmy gooey roomate was pastel-toned.,33,,,,Sub_Ch6,S6_L0032
+1,33,33,0,Player,Sub,,text,나에게 너는 그냥 너야.\n그리고 난 뭉치의 검정이 좋아.,"To me, you’re you.\nAnd I like your black.",34,,,,Sub_Ch6,S6_L0033
 1,33,34,0,Player,Sub,,text,(뭉치가 말이 없네...),(Dot isn’t saying anything...),35,,,,Sub_Ch6,S6_L0034
 1,33,35,0,Dot,Sub,,text,나의 검정이 좋다고?,You like <i>my</i> black?,36,,,,Sub_Ch6,S6_L0035
 1,33,36,0,Dot,Sub,,text,...... <nickname>.,...... <nickname>.,37,,,,Sub_Ch6,S6_L0036
@@ -43,29 +43,29 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 1,33,42,0,Dot,Sub,anim_eyesdown,text,"썩어 버린 토사물, 더러운 열등감 덩어리...\n꿈틀거리는 바퀴벌레.","This is rancid vomit, shameful\ninferiority... squirming cockroaches.",43,,,,Sub_Ch6,S6_L0042
 1,33,43,0,Dot,Sub,anim_eyesblink,text,생각해 봐. 인간으로서 생각해 보란 말이야.,Think. Think about it from\na human perspective.,44,,,,Sub_Ch6,S6_L0043
 1,33,44,0,Dot,Default,anim_omg,text,"네 몸뚱아리가 그들로부터 구성되고,\n네 몸을 볼 때마다 그들의 냄새가 난다고.","Imagine you’re made of them, and you smell\nthem every time you look at yourself.",45,,,,Sub_Ch6,S6_L0044
-1,33,45,0,Dot,Default,,text,불쾌하지 않아? 혐오스럽지 않아?,Isn’t it disgusting? Revolting?,46,,,,Sub_Ch6,S6_L0045
-1,33,46,0,Dot,Default,,text,당장이라도 네 몸을 한 겹\n한 겹 긁어 내고 싶지 않아?,Aren’t you seized with the urge to\nscratch your skin off layer by layer?,47,,,,Sub_Ch6,S6_L0046
-1,33,47,0,Dot,Default,,text,잘라 버리고 싶지 않아?,To chop it off?,48,,,,Sub_Ch6,S6_L0047
+1,33,45,0,Dot,Default,anim_omg,text,불쾌하지 않아? 혐오스럽지 않아?,Isn’t it disgusting? Revolting?,46,,,,Sub_Ch6,S6_L0045
+1,33,46,0,Dot,Default,anim_omg,text,당장이라도 네 몸을 한 겹\n한 겹 긁어 내고 싶지 않아?,Aren’t you seized with the urge to\nscratch your skin off layer by layer?,47,,,,Sub_Ch6,S6_L0046
+1,33,47,0,Dot,Default,anim_omg,text,잘라 버리고 싶지 않아?,To chop it off?,48,,,,Sub_Ch6,S6_L0047
 1,33,48,0,Dot,Sub,anim_eyesblink,text,욕조... 어쩌면 락스.,A bathtub... or just plain old bleach.,49,,,,Sub_Ch6,S6_L0048
 1,33,49,0,Dot,Sub,,text,뭐든 좋으니 잠겨서 제발 제발 제발 제발\n정화될 수 있기를 빌게 되지 않아?,Don’t you want to submerge yourself in anything\nand pray pray pray that it purifies you?,50,,,,Sub_Ch6,S6_L0049
 1,33,50,0,Dot,Default,anim_eyesdown,text,"아, 아, 아. 아...","Oh, oh, oh. Oh...",51,,,,Sub_Ch6,S6_L0050
-1,33,51,0,Dot,Default,,text,달 뒤편의 가장 추악하고 거대한 웅덩이가\n가진 ‘더러움’ 속에서 네가 태어났다면.,"If you’d been born from filth, from the foulest\nand largest pool on the dark side of the Moon.",52,,,,Sub_Ch6,S6_L0051
-1,33,52,0,Dot,Default,,text,그랬더라면 네가 지금 같은 말을 그다지도 \n쉽사리 내뱉을 수 있었을까.,Then you wouldn’t be able to\nsay these words so easily.,53,,,,Sub_Ch6,S6_L0052
-1,33,53,0,Player,Default,,text,뭉치야...,Dot...,54,,,,Sub_Ch6,S6_L0053
-1,33,54,0,Dot,Sub,anim_eyesblink,text,"아니, 아니. 그만 둬. 그건 얄팍한 연민이야.",You’re pitying me but you have\nno idea what it’s really like.,55,,,,Sub_Ch6,S6_L0054
-1,33,55,0,Dot,Sub,,text,편협한 오만이고.,"You’re being arrogant, thinking\nyou can fix anything. You can’t.",56,,,,Sub_Ch6,S6_L0055
-1,33,56,0,Dot,Sub,,text,...,...,57,,,,Sub_Ch6,S6_L0056
-1,33,57,0,Dot,Sub,,text,너라면 내 마음을 알 줄 알았어.,I thought you would understand.,58,,,,Sub_Ch6,S6_L0057
-1,33,58,0,Dot,Sub,,text,"아니, 아니, 아니지.","No, no, no.",59,,,,Sub_Ch6,S6_L0058
-1,33,59,0,Dot,Sub,,text,너라서 내 마음을 모르는 것일지도.,"Maybe you can’t understand,\nbecause you’re you.",60,,,,Sub_Ch6,S6_L0059
+1,33,51,0,Dot,Default,anim_mad,text,달 뒤편의 가장 추악하고 거대한 웅덩이가\n가진 ‘더러움’ 속에서 네가 태어났다면.,"If you’d been born from filth, from the foulest\nand largest pool on the dark side of the Moon.",52,,,,Sub_Ch6,S6_L0051
+1,33,52,0,Dot,Default,anim_mad,text,그랬더라면 네가 지금 같은 말을 그다지도 \n쉽사리 내뱉을 수 있었을까.,Then you wouldn’t be able to\nsay these words so easily.,53,,,,Sub_Ch6,S6_L0052
+1,33,53,0,Player,Default,anim_mad,text,뭉치야...,Dot...,54,,,,Sub_Ch6,S6_L0053
+1,33,54,0,Dot,Sub,anim_eyesblink,text,"아니, 아니. 그만 둬. 그건 얄팍한 연민이야.",You pity me but you have\nno idea what it’s really like.,55,,,,Sub_Ch6,S6_L0054
+1,33,55,0,Dot,Sub,anim_omg,text,편협한 오만이고.,You think you can fix this but you can’t.,56,,,,Sub_Ch6,S6_L0055
+1,33,56,0,Dot,Sub,anim_omg,text,...,...,57,,,,Sub_Ch6,S6_L0056
+1,33,57,0,Dot,Sub,anim_omg,text,너라면 내 마음을 알 줄 알았어.,I thought you might understand.,58,,,,Sub_Ch6,S6_L0057
+1,33,58,0,Dot,Sub,anim_eyesblink,text,"아니, 아니, 아니지.","No, no, no.",59,,,,Sub_Ch6,S6_L0058
+1,33,59,0,Dot,Sub,anim_omg,text,너라서 내 마음을 모르는 것일지도.,"Maybe you can’t understand,\nbecause you’re you.",60,,,,Sub_Ch6,S6_L0059
 1,33,60,0,Dot,Default,anim_eyesside,text,‘너’는 근본적으로 ‘내’가 될 수 없으니.,And you could never be me.,61,,,,Sub_Ch6,S6_L0060
 1,33,61,0,Dot,Default,anim_eyescorner,text,너는 인간이고.,Because you’re human.,62,,,,Sub_Ch6,S6_L0061
-1,33,62,0,Dot,Default,,text,나는...,And I’m...,63,,,,Sub_Ch6,S6_L0062
-1,33,63,0,Dot,Default,,text,나는.,I’m.,64,,,,Sub_Ch6,S6_L0063
+1,33,62,0,Dot,Default,anim_omg,text,나는...,And I’m...,63,,,,Sub_Ch6,S6_L0062
+1,33,63,0,Dot,Default,anim_omg,text,나는.,I’m.,64,,,,Sub_Ch6,S6_L0063
 1,33,64,0,Dot,Default,anim_eyesdown,text,괴물이니.,A monster.,65,,,,Sub_Ch6,S6_L0064
 1,33,65,0,Dot,Default,anim_eyesclosed,text,......,......,66,,,,Sub_Ch6,S6_L0065
-1,33,66,0,Dot,Default,,text,당장은 너를 보고 싶지 않아.,I don’t want to see you right now.,67,,,,Sub_Ch6,S6_L0066
-1,33,67,0,Dot,Sub,anim_eyesblink,text,나가 주면 좋겠어.,Leave. Please.,,,anim_mud_day5,,Sub_Ch6,S6_L0067
+1,33,66,0,Dot,Default,anim_eyesclosed,text,당장은 너를 보고 싶지 않아.,I don’t want to see you right now.,67,,,,Sub_Ch6,S6_L0066
+1,33,67,0,Dot,Sub,anim_eyesclosed,text,나가 주면 좋겠어.,Leave. Please.,,,anim_mud_day5,,Sub_Ch6,S6_L0067
 2,34,68,0,Dot,Sub,anim_eyesblink,text,"<nickname>, 유일하면 특별해?","<nickname>, is it special to be unique?",69,,,,Sub_Ch6,S6_L0068
 2,34,69,0,Dot,Sub,,text,유일하면 좋아?,Is being unique a good thing?,70,,,,Sub_Ch6,S6_L0069
 2,34,70,0,Player,Sub,,selection,"응, 유일하단 건 가치가 있다는 거야.|어떤 유일인지에 따라 다르겠지.","Yes, it’s a valuable thing.|Depends on what kind of unique.",71|72,sun|moon,,,Sub_Ch6,S6_L0070
@@ -77,12 +77,12 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 2,34,76,0,Dot,Sub,anim_eyesside_turn,text,"집 앞 공원에 산책을 가도, 머나먼\n나라의 숨겨진 해변가에 가도,","On a walk in the park near your house, or\non some hidden beach in a faraway land,",77,,,,Sub_Ch6,S6_L0076
 2,34,77,0,Dot,Sub,anim_eyesside,text,널 닮은 너의 종족들은 동질감을\n넘어 너라는 존재에 대한 확신을 줘.,your species resembles you and\nassure you of who you are.,78,,,,Sub_Ch6,S6_L0077
 2,34,78,0,Dot,Default,anim_eyescorner,text,"너랑 닮은 그도, 그녀도, 그들도 여기\n있고, 쟤도 얘도 모두가 여기 있지.","He, she, and them,\nhere there and everywhere.",79,,,,Sub_Ch6,S6_L0078
-2,34,79,0,Dot,Default,anim_eyesblink,text,"다들 너랑 비슷한 모양을 하고,\n그물처럼 엮이고 엮이며 살아가.","They all look like you, and their\nlives interlace with yours like a net.",80,,,,Sub_Ch6,S6_L0079
+2,34,79,0,Dot,Default,anim_eyesblink,text,"다들 너랑 비슷한 모양을 한 채,\n그물처럼 엮이고 엮이며 살아가.","They all look like you, and their\nlives interlace with yours like a net.",80,,,,Sub_Ch6,S6_L0079
 2,34,80,0,Dot,Sub,,text,...,...,81,,,,Sub_Ch6,S6_L0080
 2,34,81,0,Dot,Sub,anim_eyesblink,text,확신. 그렇다면 나 또한 이곳에 존재하는\n게 옳구나. 우연이 아닌 당연.,"Assurance. That I too can and should\nexist. Not as a coincidence, but a fact.",82,,,,Sub_Ch6,S6_L0081
 2,34,82,0,Dot,Sub,,text,존재. 그저 존재함으로서\n세상을 구성할 자격이 있구나.,That my existence in itself grants me\nthe right to make up part of this universe.,83,,,,Sub_Ch6,S6_L0082
 2,34,83,0,Dot,Sub,,text,그런 마음을 느낄 수 있는 건\n동족 있는 자들의 특권일 거야.,It’s a privilege only\nthose with kin are given.,84,,,,Sub_Ch6,S6_L0083
-2,34,84,0,Player,Sub,,selection,"(맞아, 동족의 존재는 나에게 위안이 됐어.)|(과연 ‘동족’이 좋기만 한 존재들일까?)",(They have always been comforting.)|(But are they always good for you?),85|93,sun|moon,,,Sub_Ch6,S6_L0084
+2,34,84,0,Player,Sub,,selection,"(맞아, 동족의 존재는 나에게 위안이 됐어.)|(과연 ‘동족’이 마냥 이로운 존재들일까?)",(They have always been comforting.)|(But are they always good for you?),85|93,sun|moon,,,Sub_Ch6,S6_L0084
 2,34,85,0,Player,Sub,,text,그렇게 생각할 수 있지. 공감해.,One could think that. I agree with you.,86,,,,Sub_Ch6,S6_L0085
 2,34,86,0,Player,Sub,,text,인간들은... 어쩌면 전부 달라 보이는\n방식으로 비슷한 존재들이거든.,Humans... are like one another\nin each and every unique way.,87,,,,Sub_Ch6,S6_L0086
 2,34,87,0,Player,Sub,,text,"온전한 기쁨은 타인과 함께\n나누며 환호하기도 하고,","Happiness is shared by\nroaring together in ecstasy,",88,,,,Sub_Ch6,S6_L0087
@@ -120,7 +120,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 2,34,119,0,Dot,Default,anim_omg,text,쓸모없고,useless,120,,,,Sub_Ch6,S6_L0119
 2,34,120,0,Dot,Sub,anim_eyesblink,text,또 누구도 먹기 싫어해. 바구니 밑바닥에\n남아 햇빛에 녹고 눌러붙는 이상한 맛의 사탕처럼.,"and no one wants me. Like a nasty piece of\ncandy, stuck to the bottom of a picnic basket.",121,,,,Sub_Ch6,S6_L0120
 2,34,121,0,Player,Sub,,text,뭉치야...,Dot...,122,,,,Sub_Ch6,S6_L0121
-2,34,122,0,Player,Sub,,text,...,...,123,,,,Sub_Ch6,S6_L0122
+2,34,122,0,Player,Sub,,text,......,...,123,,,,Sub_Ch6,S6_L0122
 2,34,123,0,Dot,Sub,,text,난 유일해.,I’m unique.,124,,,,Sub_Ch6,S6_L0123
 2,34,124,0,Dot,Sub,,text,하나뿐이야.,One of a kind.,125,,,,Sub_Ch6,S6_L0124
 2,34,125,0,Dot,Sub,,text,"아무도 필요로 하지 않기 때문에\n하나밖에 존재하지 않는,","Singular because no one needs me,",126,,,,Sub_Ch6,S6_L0125
@@ -146,51 +146,51 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 3,35,145,0,Dot,Sub,,text,나는 알면서도 정말이지 그 사실을\n생각하면 심장이 허망하게 사무쳐서,The mere thought of it being true\nmade my heart ache with desolation.,146,,,,Sub_Ch6,S6_L0145
 3,35,146,0,Dot,Sub,,text,"‘이 생각은 아주 틀렸어!’라고 외칠 수 있는\n단서, 예외들을 찾아 나서는 중이었어.","So I was searching for clues, exceptions\nthat would exclaim, “Preposterous!”",147,,,,Sub_Ch6,S6_L0146
 3,35,147,0,Dot,Sub,,text,"예외가 세상에 단 하나라도 없다면, 나는\n그렇게 존재의 근본적인 고독을 느끼며","If there truly is no exception, am I confined\nto a fundamentally solitary existence,",148,,,,Sub_Ch6,S6_L0147
-3,35,148,0,Dot,Sub,,text,"홀로 버려진 채 서서히 메말라 버리지 않을까?\n아니, 그럴 수 없지. 예외를 찾아야지!","abandoned and left alone to slowly dry out?\nNo, not a chance. Seek the exception I shall!",149,,,,Sub_Ch6,S6_L0148
+3,35,148,0,Dot,Sub,,text,"홀로 버려진 채 서서히 메말라 버릴 테니까.\n아니, 그럴 수는 없지. 예외를 찾아야지!","abandoned and left alone to slowly dry out?\nNo, not a chance. Seek the exception I shall!",149,,,,Sub_Ch6,S6_L0148
 3,35,149,0,Player,Sub,,text,... 너와 닮았다고 느껴지는 책\n속 인물들을 찾아 다닌 것처럼?,... The way you searched for characters\nin books that resemble you?,150,,,,Sub_Ch6,S6_L0149
 3,35,150,0,Dot,Sub,,text,응.,Yes.,151,,,,Sub_Ch6,S6_L0150
 3,35,151,0,Dot,Sub,,text,"나는 나밖에 못 되고,\n너는 너밖에 못 되는 게 아니야.","I’m not just bound to me, and\nyou’re not just bound to you.",152,,,,Sub_Ch6,S6_L0151
 3,35,152,0,Dot,Default,anim_move,text,우리는 서로가 될 수 있어!,We can be each other!,153,,,,Sub_Ch6,S6_L0152
-3,35,153,0,Player,Sub,anim_eyesblink,selection,하지만 그는 그저 책 속의 인물일 뿐인걸.|다만 창작된 괴물 캐릭터가 좋은 예시일까?,But he’s only a character from a book.|But can a man-made monster back your logic?,154|154,moon|sun,,,Sub_Ch6,S6_L0153
+3,35,153,0,Player,Sub,anim_eyesblink,selection,하지만 그는 실제가 아닌 책 속의 인물일 뿐인걸.|... 과연 인간이 창작한 괴물 캐릭터가 좋은 예시일까?,But he’s just a character from a book.|... Is a man-made monster the best example?,154|154,moon|sun,,,Sub_Ch6,S6_L0153
 3,35,154,0,Player,Sub,anim_eyesdown_turn,text,"그는 활자와 책의 표면으로 존재해,",Characters exist as print on the pages of a book.,155,,,,Sub_Ch6,S6_L0154
 3,35,155,0,Player,Sub,anim_eyesblink,text,입체감 있는 자아나 주체를\n가진 인간과는 다르지.,"They don’t contain multitudes, they don’t live\nor breathe, and they don’t interact with you.",156,,,,Sub_Ch6,S6_L0155
-3,35,156,0,Player,Sub,,text,"뭉치가 적혀진 글을 읽고\n깊이 공감했을 수 있겠지만,","You might have been deeply\ntouched by reading that book,",157,,,,Sub_Ch6,S6_L0156
-3,35,157,0,Player,Sub,,text,너와 하나처럼 공명한 건... 그저 그에게\n투영된 너의 조각 중 하나가 아닐까.,but the way you resonated... might just\nbe you projecting a piece of you onto him.,158,,,,Sub_Ch6,S6_L0157
+3,35,156,0,Player,Sub,,text,"뭉치가 적혀진 글을 읽고\n깊이 공감했을 수 있겠지만,","That book might have\ntouched something in you,",157,,,,Sub_Ch6,S6_L0156
+3,35,157,0,Player,Sub,,text,너와 하나처럼 공명한 건... 그저 그에게\n투영된 너의 조각 중 하나가 아닐까.,but it might also be you projecting\na piece of yourself onto him.,158,,,,Sub_Ch6,S6_L0157
 3,35,158,0,Dot,Sub,,text,그치만...,But...,159,,,,Sub_Ch6,S6_L0158
 3,35,159,0,Dot,Default,anim_eyesside,text,그렇지만.,But.,160,,,,Sub_Ch6,S6_L0159
 3,35,160,0,Dot,Default,anim_eyescorner,text,난 그 순간만큼은 충만해졌는걸...,In that moment I felt whole...,161,,,,Sub_Ch6,S6_L0160
-3,35,161,0,Player,Sub,anim_eyesblink,selection,(뭉치를 조용히 쓰다듬는다.)|(뭉치를 조용히 바라본다.),(Pat Dot.)|(Watch Dot.),162|162,active|passive,,,Sub_Ch6,S6_L0161
+3,35,161,0,Player,Sub,anim_eyesblink,selection,(실망시키기 싫었지만... 거짓말을 할 순 없었어.)|(그 외로움을 알기에... 어떤 말도 할 수가 없어.),(I feel bad... but I couldn’t lie to Dot.)|(How lonely Dot must feel. What do I say?),162|162,active|passive,,,Sub_Ch6,S6_L0161
 3,35,162,0,Dot,Sub,,text,"찰나의 만끽, 찰나의 착각이었던 걸까.","Was it a moment of fulfillment,\na moment of illusion?",163,,,,Sub_Ch6,S6_L0162
 3,35,163,0,Dot,Sub,anim_eyesdown_turn,text,"아, 아... 모든 고유한 존재들에는\n필연적인 외로움이 있어. 알아. 알아. 알아.","Oh, oh... All unique beings are inevitably\nlonely. I know, I know, I know.",164,,,,Sub_Ch6,S6_L0163
 3,35,164,0,Dot,Sub,anim_eyesblink,text,"알면서도, 그럴 수밖에 없다는 걸 알면서도,","I know, I know it has to be so, and yet.",165,,,,Sub_Ch6,S6_L0164
 3,35,165,0,Dot,Default,anim_eyesclosed,text,"이건 격렬히 깨 부수고 싶은 벽이야.\n갈증이고, 갈망이야.","It’s a wall I desperately want to\ntear down. I thirst, and I desire.",166,,,,Sub_Ch6,S6_L0165
-3,35,166,0,Player,Default,anim_eyesclosed,selection,(조용히 옆에 있어 준다.)|(뭉치에게 혼자만의 시간을 준다.),(Stay by Dot’s side.)|(Give Dot some space.),,active|passive,,,Sub_Ch6,S6_L0166
+3,35,166,0,Player,Default,anim_eyesclosed,selection,(... 조용히 옆에 있어 줘야겠어.)|(뭉치에게 혼자만의 시간을 줘야겠어.),(I should stay by Dot’s side.)|(I should give Dot some space.),,active|passive,,,Sub_Ch6,S6_L0166
 4,36,167,1,Dot,Sub,anim_sub_caterpillar2,text,"<nickname>, 여길 봐!","<nickname>, look over here!",168,,,,Sub_Ch6,S6_L0167
 4,36,168,1,Player,Sub,,text,응?,Hmm?,169,,,,Sub_Ch6,S6_L0168
 4,36,169,1,Dot,Sub,,text,어때?,What do you think?,170,,,,Sub_Ch6,S6_L0169
-4,36,170,1,Player,Sub,,selection,"(오, 세상에. 벌레다.)|(히익! 이게 뭐야!)",(Oh my. A bug.)|(Gah! What is that!),171|171,passive|active,,,Sub_Ch6,S6_L0170
-4,36,171,1,Player,Sub,,text,앗... 벌레구나.,Oh... a bug.,172,,,,Sub_Ch6,S6_L0171
-4,36,172,1,Player,Sub,,text,"어째서 벌레와 함께 있는 거야, 뭉치?","What are you doing with a bug, Dot?",173,,,,Sub_Ch6,S6_L0172
-4,36,173,1,Player,Sub,,text,"(얼른, 제발 떨어지라고 말하고 싶다.)","(Please, please get away from it.)",174,,,,Sub_Ch6,S6_L0173
+4,36,170,1,Player,Sub,,selection,"(오, 귀여운 애벌레네.)|(히익! 이게 뭐야!)",(Cool. A caterpillar.)|(Gah! What is that!),171|172,passive|active,,,Sub_Ch6,S6_L0170
+4,36,171,1,Player,Sub,,text,통통한 애벌레 친구를 새로 사귄 거야?,I see you’ve befriended a chubby caterpillar.,172,,,,Sub_Ch6,S6_L0171
+4,36,172,1,Player,Sub,,text,"어, 어째서 애벌레와 함께 있는 거야, 뭉치?","W-What are you doing with that caterpillar, Dot?",173,,,,Sub_Ch6,S6_L0172
+4,36,173,1,Player,Sub,,text,(그렇게 꼭 끌어안지 않으면 안 될까. 제발...!),(And does Dot really have to cuddle it so?),174,,,,Sub_Ch6,S6_L0173
 4,36,174,1,Dot,Sub,,text,"응, 우리 집 창문에 살고 있는\n거미 선생이 선물해 준 벌레야!","Yes, it’s a present from Dame Spider\nthat lives on our windowsill!",175,,,,Sub_Ch6,S6_L0174
 4,36,175,1,Dot,Sub,,text,인간들은 ‘애벌레’라고 부르는 것 같던데.,I think humans call this a ‘caterpillar’.,176,,,,Sub_Ch6,S6_L0175
 4,36,176,1,Dot,Sub,anim_sub_caterpillar1,text,애벌레의 몸을 봐. 통통하고 길고 유연해.,Look at it. It’s plump\nand long and flexible.,177,,,,Sub_Ch6,S6_L0176
 4,36,177,1,Dot,Sub,,text,이 꿈틀거리는 몸으로 얼마나\n많은 곳을 다녀왔을까?,Just how many places has it\nbeen to with its wriggling body?,178,,,,Sub_Ch6,S6_L0177
 4,36,178,1,Dot,Sub,,text,"창문 밖으로 보이는 편의점, 동네 묘지, 네가 가장\n좋아하는 식당까지 무리 없이 다녀왔을 것 같아.","The corner store, the local\ngraveyard, and then your favorite diner, easily.",179,,,,Sub_Ch6,S6_L0178
-4,36,179,1,Player,Sub,,selection,(상상하니 나름... 귀여운걸?)|(윽... 소름 돋아.),(I guess that sounds...cute?)|(Blegh... gives me the creeps.),180|185,sun|moon,,,Sub_Ch6,S6_L0179
-4,36,180,1,Player,Sub,,text,응... 그럴 수도 있겠다...,Yeah... I guess...,181,,,,Sub_Ch6,S6_L0180
-4,36,181,1,Dot,Sub,,text,애벌레의 이야기들을 꼭 듣고 싶어.\n모험 소설 같을 것 같아.,I want to hear what it has to say.\nIt must have had an adventure.,182,,,,Sub_Ch6,S6_L0181
-4,36,182,1,Dot,Sub,,text,나는 애벌레가 여기저기 괜한 훼방을\n놓는 사랑스러운 장난꾸러기일 것 같은데.,I like to think this caterpillar is a lovable\nprankster who gets up to mischief.,183,,,,Sub_Ch6,S6_L0182
-4,36,183,1,Dot,Sub,anim_sub_caterpillar2,text,너는 애벌레가 어떨 것 같아?,What do you think?,184,,,,Sub_Ch6,S6_L0183
-4,36,184,1,Player,Sub,,textbox,(딱히 상상하고 싶지는 않지만...),(Although I’d rather not think about it…),191,,,,Sub_Ch6,S6_L0184
-4,36,185,1,Player,Sub,,text,그러면 절대 안 되지!,"Dot, no!",186,,,,Sub_Ch6,S6_L0185
+4,36,179,1,Player,Sub,,selection,(상상하니 나름... 귀여운걸?)|(으악... 식당만은 안 돼.),(I guess that sounds...cute?)|(Blegh... not the diner.),180|185,sun|moon,,,Sub_Ch6,S6_L0179
+4,36,180,1,Player,Sub,,text,"뭉치, 꽤나 부지런한 탐험가 친구를 만났구나.",Sounds like your friend is quite the adventurer.,181,,,,Sub_Ch6,S6_L0180
+4,36,181,1,Dot,Sub,,text,"응, 응, 애벌레의 이야기를 꼭 듣고 싶어.",It really is. I want to hear its stories!,182,,,,Sub_Ch6,S6_L0181
+4,36,182,1,Dot,,,text,마치 장대한 모험 소설을 읽는 기분일 거야!,It must be like reading a grand novel!,183,,,,Sub_Ch6,S6_L0182
+4,36,183,1,Player,,,text,저 애벌레는 몸집이 아주 작으니까...,That caterpillar is quite little...,184,,,,Sub_Ch6,S6_L0183
+4,36,184,1,Player,,,selection,자기보다 곱절은 큰 적들과 맞서는 용사이지 않을까?|좁은 땅굴들을 탐색하는 보물 사냥꾼이지 않을까?,I bet it battles beasts that tower over it.|I bet it hunts treasures in narrow tunnels.,192|192,,,,Sub_Ch6,S6_L0184
+4,36,185,1,Player,Sub,,text,"뭉치야, 그것만은 안 돼!","Dot, no!",186,,,,Sub_Ch6,S6_L0185
 4,36,186,1,Player,Sub,,text,식당에 벌레가 있으면 어떡해!,Diners don’t allow bugs!,187,,,,Sub_Ch6,S6_L0186
-4,36,187,1,Dot,Sub,anim_sub_caterpillar1,text,왜? 애벌레도 배가 고플 수 있잖아.,Why not? Caterpillars get hungry too.,188,,,,Sub_Ch6,S6_L0187
+4,36,187,1,Dot,Sub,anim_sub_caterpillar1,text,왜 안 돼? 애벌레도 배가 고플 수 있는걸!,Why not? Caterpillars get hungry too!,188,,,,Sub_Ch6,S6_L0187
 4,36,188,1,Dot,Sub,anim_sub_caterpillar2,text,네가 생각하는 최고의 메뉴를\n이 친구에게 추천해 주는 건 어때?,What would be the best\ndish for our little friend here?,189,,,,Sub_Ch6,S6_L0188
-4,36,189,1,Player,Sub,,text,"음, 어... 최고의 메뉴?","Oh, um... the best dish?",190,,,,Sub_Ch6,S6_L0189
+4,36,189,1,Player,Sub,,text,(뭉치의 기대하는 눈망울을 차마 실망시킬 수 없어...),(Look at those shiny eyes.\nI have to come up with something.),190,,,,Sub_Ch6,S6_L0189
 4,36,190,1,Player,Sub,,textbox,애벌레를 위한 메뉴는...,"Uh, I guess it would be...",191,,,,Sub_Ch6,S6_L0190
-4,36,191,1,Dot,Sub,,text,... 마음에 꼭 들어!,... I like it!,192,,,,Sub_Ch6,S6_L0191
-4,36,192,1,Dot,Sub,,text,"있잖아,","You know,",193,,,,Sub_Ch6,S6_L0192
+4,36,191,1,Dot,Sub,,text,... 마음에 꼭 들어! 애벌레 친구도\n마음에 들어했으면 좋겠다.,... I like it! I hope my catepillar does too.,192,,,,Sub_Ch6,S6_L0191
+4,36,192,1,Dot,Sub,,text,"있잖아, <nickname>.","You know, <nickname>.",193,,,,Sub_Ch6,S6_L0192
 4,36,193,1,Dot,Sub,,text,내가 거미 선생과 조금은 더 친해진 것 같지?,"I’m on better terms with Dame\nSpider now, wouldn’t you say?",194,,,,Sub_Ch6,S6_L0193
 4,36,194,1,Dot,Sub,,text,"처음 스쳤던 이후로 마주칠 때마다 인사했는데,","I always said hello to her\nafter our first encounter,",195,,,,Sub_Ch6,S6_L0194
 4,36,195,1,Dot,Sub,,text,선생은 나를 잘 못 알아보는 것 같더라고.,but she didn’t seem to recognize me.,196,,,,Sub_Ch6,S6_L0195
@@ -199,10 +199,11 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 4,36,198,1,Dot,Sub,anim_sub_caterpillar1,text,그런데 오늘 갑자기 내 앞에\n이 벌레를 놓고 떠난 거야!,"Until today, when she dropped\nthis bug in front of me!",199,,,,Sub_Ch6,S6_L0198
 4,36,199,1,Dot,Sub,,text,...,...,200,,,,Sub_Ch6,S6_L0199
 4,36,200,1,Dot,Sub,,text,한마디 나눠 본 적 없어 알지 못했던 거미\n선생의 마음을 그제야 짐작할 수 있었어.,"Only then did I guess how Dame Spider felt,\nthough we haven’t said a word to each other.",201,,,,Sub_Ch6,S6_L0200
-4,36,201,1,Dot,Sub,anim_sub_caterpillar2,text,"역시 나와 조금은 친해졌다고 생각하고,\n친밀감의 증표로 애벌레를 선물한 것 같아.","She must think we’re closer now, and this\ncaterpillar must be a token of our friendship.",202,,,,Sub_Ch6,S6_L0201
-4,36,202,1,Dot,Sub,,text,...,...,203,,,,Sub_Ch6,S6_L0202
+4,36,201,1,Dot,Sub,anim_sub_caterpillar2,text,"역시 나와 조금은 친해졌다고 생각하고,\n친밀감의 증표로 애벌레를 선물한 것 같아.","She must think we’re friends now,\nand this must be a token of her affection.",202,,,,Sub_Ch6,S6_L0201
+4,36,202,1,Player,Sub,,text,......,...,203,,,,Sub_Ch6,S6_L0202
 4,36,203,1,Dot,Sub,,text,선생의 소중한 마음을 담은\n이 선물과 친한 친구가 되고 싶어.,"I would like to befriend this present,\nso kindly offered to me by the Dame.",204,,,,Sub_Ch6,S6_L0203
-4,36,204,1,Dot,Sub,,text,...,...,205,,,,Sub_Ch6,S6_L0204
+4,36,204,1,Player,Sub,,text,어...... 그렇구나.,...,205,,,,Sub_Ch6,S6_L0204
 4,36,205,1,Dot,Sub,anim_sub_caterpillar1,text,이 친구와 어떻게 친해질 수 있을까? 도와줘!,How should I go about\nbecoming friends? Help!,206,,,,Sub_Ch6,S6_L0205
-4,36,206,1,Player,Sub,anim_sub_caterpillar2,text,(이를 어떡하지...),(What do I do...),207,,,,Sub_Ch6,S6_L0206
-4,36,207,1,Player,Sub,,text,으음... 생각해 볼게...,Well... I’ll think about it...,,,,,Sub_Ch6,S6_L0207
+4,36,206,1,Player,Sub,anim_sub_caterpillar2,text,(어떻게 둘러대면 좋을까...)|(애벌레가 뭘 좋아하더라?),(I have to come up with something...)|(Huh. What do caterpillars like?),207,,,,Sub_Ch6,S6_L0206
+4,36,207,1,Player,Sub,,text,"음, 어떻게 친해지면 좋을까... 한번 생각해 볼게.",I’ll... get back to you on that.,208,,,,Sub_Ch6,S6_L0207
+4,36,208,1,Dot,Sub,,text,"고마워, <nickname>! 정말로!","Thank you, <nickname>! You're the best!",,,,,Sub_Ch6,S6_L0208

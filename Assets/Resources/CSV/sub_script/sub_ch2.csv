@@ -1,4 +1,4 @@
-﻿Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
+Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
 1,9,1,1,Dot,Default,anim_move,text,"<nickname>,","<nickname>,",2,,,,Sub_Ch2,S2_L0001
 1,9,2,1,Dot,Sub,anim_eyesblink,text,비밀을 알려 줄게.,I’ll tell you a secret.,3,,,,Sub_Ch2,S2_L0002
 1,9,3,1,Dot,Sub,,text,난 너의 생각을 읽을 수 있어.,I can read your thoughts.,4,,,,Sub_Ch2,S2_L0003
@@ -76,7 +76,7 @@
 1,9,75,1,Dot,Sub,,text,어디로 가고 있는지보단 누구와\n함께하는지를 중요시한다는 뜻이야.,it means you value who you are\nwith over where you are going.,76,,,,Sub_Ch2,S2_L0075
 1,9,76,1,Dot,Sub,,text,누구와 함께하는지...,Who you are with...,77,,,,Sub_Ch2,S2_L0076
 1,9,77,1,Dot,Sub,,text,거기에 나도 해당돼?,Do I count?,78,,,,Sub_Ch2,S2_L0077
-1,9,78,1,Player,Sub,anim_eyesblink,text,물론이지.|글쎄...,Of course.|Well...,79|81,,,,Sub_Ch2,S2_L0078
+1,9,78,1,Player,Sub,anim_eyesblink,selection,물론이지.|글쎄...,Of course.|Well...,79|81,,,,Sub_Ch2,S2_L0078
 1,9,79,1,Dot,Sub,anim_bounce,text,정말? 정말? 이 순간을 잊지 않을래!,Really? You mean it?\nI won’t forget this moment!,80,,,,Sub_Ch2,S2_L0079
 1,9,80,1,Dot,Sub,anim_eyesblink,text,나는 이제 저 구석에서\n잠깐 동안 기뻐하고 있을게.,I’ll be quietly celebrating\nin the corner over there.,,,anim_happy,,Sub_Ch2,S2_L0080
 1,9,81,1,Dot,Default,anim_eyescorner_turn,text,안녕. 나는 저 구석에서 울고 있을게.,Goodbye. For now.\nI’ll be crying over there.,82,,,,Sub_Ch2,S2_L0081
@@ -89,7 +89,7 @@
 1,9,88,1,Dot,Sub,,text,그 옆에 있는 종이엔 이렇게 적혀있지.,A note beside it says:,89,,,,Sub_Ch2,S2_L0088
 1,9,89,1,Dot,Sub,,text,“당신에겐 두 손이 있겠지요. 하지만\n다음 행인을 위해 하나만 가져가세요.”,"“You may wish to take two,\nbut can only take one.”",90,,,,Sub_Ch2,S2_L0089
 1,9,90,1,Dot,Sub,,text,오직 하나만 선택할 수 있나 봐.\n어떤 걸 가져갈래?,It seems you can choose only one.\nWhich would you take with you?,91,,,,Sub_Ch2,S2_L0090
-1,9,91,1,Player,Sub,,selection,물론 물 주머니지.| 강아지.,"The pouch of water, of course.|The dog.",92|123,moon|sun,,,Sub_Ch2,S2_L0091
+1,9,91,1,Player,Sub,,selection,물론 물 주머니지.| 강아지.,"The pouch of water, of course.|The dog.",92|124,moon|sun,,,Sub_Ch2,S2_L0091
 1,9,92,1,Player,Sub,,text,갈 길이 멀지도 모르니까.,I may have a long way to go.,93,,,,Sub_Ch2,S2_L0092
 1,9,93,1,Dot,Default,anim_move,text,신기하다!,Fascinating!,94,,,,Sub_Ch2,S2_L0093
 1,9,94,1,Dot,Sub,anim_eyesblink,text,"자, 같이 결과를 보자.","Now, let’s take a look at the results.",95,,,,Sub_Ch2,S2_L0094
@@ -120,8 +120,8 @@
 1,9,119,1,Dot,Default,anim_eyescorner_turn,text,안녕. 나는 저 구석에서 울고 있을게.,Goodbye. For now.\nI’ll be crying over there.,120,,,,Sub_Ch2,S2_L0119
 1,9,120,1,Dot,Sub,anim_eyesblink,text,신경 안 써도 돼.,Just in case you care.,,,anim_mud_day1,,Sub_Ch2,S2_L0120
 1,9,121,1,Dot,Sub,anim_eyesblink,text,다행이다.,I’m glad.,122,,,,Sub_Ch2,S2_L0121
-1,9,122,1,Dot,Sub,anim_bounce,text,내가 물 주머니보단 의미\n있는 존재라니 기뻐!,It’s nice to know that I mean more\nto you than a pouch of water!,,,anim_happy,,Sub_Ch2,S2_L0122
-1,9,123,1,Dot,Sub,anim_eyesblink,text,나는 이제 저 구석에서\n잠깐 동안 기뻐하고 있을게.,I’ll be quietly celebrating\nin the corner over there.,124,,,,Sub_Ch2,S2_L0123
+1,9,122,1,Dot,Sub,anim_bounce,text,내가 물 주머니보단 의미\n있는 존재라니 기뻐!,It’s nice to know that I mean more\nto you than a pouch of water!,123,,anim_happy,,Sub_Ch2,S2_L0122
+1,9,123,1,Dot,Sub,anim_eyesblink,text,나는 이제 저 구석에서\n잠깐 동안 기뻐하고 있을게.,I’ll be quietly celebrating\nin the corner over there.,,,,,Sub_Ch2,S2_L0123
 1,9,124,1,Dot,Sub,anim_eyesblink,text,신기하다!,Fascinating!,125,,,,Sub_Ch2,S2_L0124
 1,9,125,1,Dot,Sub,,text,"자, 같이 결과를 보자.","Now, let’s take a look at the results.",126,,,,Sub_Ch2,S2_L0125
 1,9,126,1,Dot,Sub,,text,첫 번째 질문은 너의 가장\n깊은 두려움을 드러내.,The first choice reveals\nyour deepest fear.,127,,,,Sub_Ch2,S2_L0126
@@ -151,7 +151,7 @@
 2,10,150,1,Player,Sub,,text,뭔데?,What is it?,151,,,,Sub_Ch2,S2_L0150
 2,10,151,1,Dot,Sub,anim_sub_roundthings3,text,짠.,Ta-da.,152,,,,Sub_Ch2,S2_L0151
 2,10,152,1,Dot,Sub,,text,나의 수집품이야.,It’s my collection.,153,,,,Sub_Ch2,S2_L0152
-2,10,153,1,Dot,Sub,anim_sub_roundthings1,text,인간들은 ‘수집’이란\n걸 한다고 들었어.,I heard some humans ’collect’ things.,154,,,,Sub_Ch2,S2_L0153
+2,10,153,1,Dot,Sub,anim_sub_roundthings1,text,인간들은 ‘수집’이란\n걸 한다고 들었어.,I heard some humans ‘collect’ things.,154,,,,Sub_Ch2,S2_L0153
 2,10,154,1,Dot,Sub,,text,특별한 쓸모가 없더라도 본인의 기쁨을\n위해 물건을 모으고 바라보고 만진다며.,"Not for practical reasons, but simply\nbecause it makes them happy.",155,,,,Sub_Ch2,S2_L0154
 2,10,155,1,Dot,Sub,,text,나도 그러한 기쁨이\n궁금해서 수집을 시작했어.,I’ve started collecting to get\na taste of that happiness.,156,,,,Sub_Ch2,S2_L0155
 2,10,156,1,Dot,Sub,,text,내 수집 품목은 작고 동그란\n물건이야. 나랑 닮은!,Right now I’m collecting small\nand round objects. Just like me!,157,,,,Sub_Ch2,S2_L0156
@@ -163,9 +163,9 @@
 2,10,162,1,Dot,Sub,,text,동전은 다른 아이들에 비해 조금\n납작하지만 끼고 싶어해서 넣어줬어.,The coin is flatter than the others\nbut it didn’t want to be left out.,163,,,,Sub_Ch2,S2_L0162
 2,10,163,1,Dot,Sub,,text,"그리고 꼭 추가하고\n싶은 게 하나 있는데,","And something I’d really like\nto add to my collection,",164,,,,Sub_Ch2,S2_L0163
 2,10,164,1,Dot,Sub,anim_sub_roundthings3,text,바로 너의 눈알이야.,is your eyeball.,165,,,,Sub_Ch2,S2_L0164
-2,10,165,1,Player,Sub,,selection,(뭉치를 설득한다)|(기겁한다.),(Dissuade Dot)|(Freak out),166|167,active|passive,,,Sub_Ch2,S2_L0165
+2,10,165,1,Player,Sub,,selection,(심장이 순간 쪼그라들었지만 침착하게 설득해 본다.)|(기겁하며 황급히 두 손으로 눈을 가린다.),"(You swallow a scream and reason with Dot.)|(Quick, slap a hand over your eyes!)",166|167,active|passive,,,Sub_Ch2,S2_L0165
 2,10,166,1,Player,Sub,,text,"(오, 세상에!) 하지만 뭉치, 눈알이\n없으면 난 세상을 볼 수 없는걸.","(Yikes!) But Dot, without my eye\nI wouldn’t be able to see the world.",168,,,,Sub_Ch2,S2_L0166
-2,10,167,1,Player,Sub,,text,"세상에! 뭉치야, 대체 왜\n그런 걸 원하는 거야?","What? Dot, why on earth would\nyou want something ike that?",168,,,,Sub_Ch2,S2_L0167
+2,10,167,1,Player,Sub,,text,"세상에! 뭉치야, 대체 왜\n그런 걸 원하는 거야?","Whoa! Dot, why on earth would\nyou want something ike that?",168,,,,Sub_Ch2,S2_L0167
 2,10,168,1,Dot,Sub,,text,왜냐하면...,Because...,169,,,,Sub_Ch2,S2_L0168
 2,10,169,1,Dot,Sub,,text,히히...,Hehe...,170,,,,Sub_Ch2,S2_L0169
 2,10,170,1,Dot,Sub,,text,너라면 드넓은 세상을 두 눈알로\n마구 봤을 거라 생각했어.,I thought you would have seen the\nwide world with your two eyes.,171,,,,Sub_Ch2,S2_L0170
@@ -174,11 +174,11 @@
 2,10,173,1,Dot,Sub,,text,그리고 그 세상이 ‘너의 시선’으로 담겨져서\n더 특별하게 느껴졌거든. 너의 눈알에!,"And if it were your gaze, that would make\nit even more special. Hence your eyeball!",174,,,,Sub_Ch2,S2_L0173
 2,10,174,1,Player,Sub,,text,...,...,175,,,,Sub_Ch2,S2_L0174
 2,10,175,1,Dot,Sub,anim_sub_roundthings1,text,그럼 부족하겠지만... 언젠간\n나의 분필 눈알이라도 수집해야겠다.,"I guess my chalk-drawn eyeball\nwill have to do, someday.",176,,,,Sub_Ch2,S2_L0175
-2,10,176,1,Player,Sub,,text,(무시무시한 생각이다...) 다시 한 번 생각해 보는 건 어떨까?,(Well that’s terrifying...)\nWhy don’t you think it over?,177,,,,Sub_Ch2,S2_L0176
-2,10,177,1,Player,Sub,,text,(제발...!),(Please...!),,,anim_sub_roundthings2,,Sub_Ch2,S2_L0177
+2,10,176,1,Player,Sub,,text,(무시무시한 생각이다...) 다시 한 번 생각해 보는 건 어떨까?,(Well. That’s terrifying...)\nWhy don’t you think it over?,177,,,,Sub_Ch2,S2_L0176
+2,10,177,1,Player,Sub,,text,(작고 귀엽다고 방심했다.\n끝까지 경계를 늦춰선 안 되겠어...),(I better not let my guard\ndown in front of Dot.),,,anim_bounce,,Sub_Ch2,S2_L0177
 3,11,178,1,Dot,Sub,anim_eyesblink,text,<nickname>. 완전함이라는 건 뭘까?,"<nickname>, what does\nit mean to be complete?",179,,,,Sub_Ch2,S2_L0178
 3,11,179,1,Player,Sub,,selection,모든 게 갖추어진 것.|부족함이 없는 것.,To be whole.|To be flawless.,180|180,sun|moon,,,Sub_Ch2,S2_L0179
-3,11,180,1,Dot,Sub,,text,모든 게 갖추어지고 부족함이 없다는 건,And does being whole and flawless mean,181,,,,Sub_Ch2,S2_L0180
+3,11,180,1,Dot,Sub,,text,그렇다는 건...,And does being so mean,181,,,,Sub_Ch2,S2_L0180
 3,11,181,1,Dot,Sub,,text,"채우고, 삼키고, 칠하고, 성장해서","that one fills, swallows,\npaints, and grows,",182,,,,Sub_Ch2,S2_L0181
 3,11,182,1,Dot,Sub,,text,더 이상 어떤 결함도 없는\n상태를 말하는 거야?,until there are no more imperfections?,183,,,,Sub_Ch2,S2_L0182
 3,11,183,1,Dot,Sub,,text,...,...,184,,,,Sub_Ch2,S2_L0183
@@ -191,7 +191,7 @@
 3,11,190,1,Dot,Sub,anim_eyesup_turn,text,그런데 <nickname>. 완전해지는\n건 곧 성장이라고 부를 수 있을까?,But <nickname>. Can completion\nalso be called growth?,191,,,,Sub_Ch2,S2_L0190
 3,11,191,1,Dot,Sub,anim_eyesblink,text,성장이란 어쩌면 그냥 다른\n모양을 경험하는 건 아닐지.,Perhaps growth is just\nexperiencing another form.,192,,,,Sub_Ch2,S2_L0191
 3,11,192,1,Dot,Default,anim_eyescorner,text,마음에 들지 않는 나에서\n마음에 드는 나로.,From someone you don’t like\ninto someone you can.,193,,,,Sub_Ch2,S2_L0192
-3,11,193,1,Dot,Default,anim_eyesside,text,미숙하고 치기 어린 나에서\n여유롭고 관능적인 나로.,"From an inexperienced, foolish\nme to a relaxed, mature me.",194,,,,Sub_Ch2,S2_L0193
+3,11,193,1,Dot,Default,anim_eyesside,text,미숙하고 치기 어린 나에서\n여유롭고 성숙한 나로.,"From an inexperienced, foolish\nme to a relaxed, mature me.",194,,,,Sub_Ch2,S2_L0193
 3,11,194,1,Dot,Sub,anim_eyesblink,text,"더 나아지고 있다는 믿음으로 모습을 바꾸는\n와중에, 이전의 순수함을 동경하게 된다면","If, while changing into what I believe\nis a better me, I long for who I used to be",195,,,,Sub_Ch2,S2_L0194
 3,11,195,1,Dot,Sub,,text,그때는 다시 돌아가기엔\n늦은 때가 아닐까?,won’t it be too late to go back?,196,,,,Sub_Ch2,S2_L0195
 3,11,196,1,Dot,Sub,anim_eyesblink,text,음. <nickname>.,Hmm. <nickname>.,197,,,,Sub_Ch2,S2_L0196
@@ -199,8 +199,8 @@
 3,11,198,1,Player,Sub,,text,으음... 이를 테면 어떤 식으로?,Hmm... in what way?,199,,,,Sub_Ch2,S2_L0198
 3,11,199,1,Dot,Sub,,text,너 자신의 본래적인 형태를 그리워한 적이 있냐는 뜻이야.,"I mean, have you ever missed\nthe person you once were.",200,,,,Sub_Ch2,S2_L0199
 3,11,200,1,Dot,Sub,,text,지금 다시 떠올려 보는 거야. 가장\n‘너’와 가까웠던 ‘너’의 모습을.,Picture it again. The ‘you’\nthat was closest to ‘you’.,201,,,,Sub_Ch2,S2_L0200
-3,11,201,1,Player,Sub,,textbox,가장 때묻지 않은 나의 모습이라면...,Who I was when I was untainted...,202,,,,Sub_Ch2,S2_L0201
-3,11,202,1,Dot,Sub,,text,"조금 더 친해진 것 같아,\n내 마음이 꾸물거리고 있네.","I think I know you better now,\nand my heart is squirming.",203,,,,Sub_Ch2,S2_L0202
+3,11,201,1,Player,Sub,,text,가장 때묻지 않은 나의 모습이라...,Who I was when I was untainted...,202,,,,Sub_Ch2,S2_L0201
+3,11,202,1,Dot,Sub,,text,고민하는 너를 보니... 어쩐지\n내 마음이 꾸물거리고 있네.,"I think I know you better now,\nand my heart is squirming.",203,,,,Sub_Ch2,S2_L0202
 3,11,203,1,Dot,Sub,anim_move,text,아! <nickname>.,Oh! <nickname>.,204,,,,Sub_Ch2,S2_L0203
 3,11,204,1,Dot,Sub,,text,"또는, 어쩌면, 내가 보는\n너의 모습을 말해 주자면","If, perhaps, I might speak on\nwho I see when I look at you,",205,,,,Sub_Ch2,S2_L0204
 3,11,205,1,Dot,Sub,,text,네 안에는 여전히 아이일 때의\n투명한 눈짓이 남아 있는 건 아닐까?,could it be you still have that pure\ngaze from when you were a child?,206,,,,Sub_Ch2,S2_L0205
@@ -209,7 +209,7 @@
 4,12,208,0,Dot,Default,anim_mold2,text,......,......,209,,,,Sub_Ch2,S2_L0208
 4,12,209,0,Dot,Default,,text,......,......,210,,,,Sub_Ch2,S2_L0209
 4,12,210,0,Dot,Default,,text,난 이제 아주 오랫동안 미동 없이 앉아서\n저 곰팡이의 포자들이 부유하는 걸 바라볼 거야.,Now I’m going to be still and watch\nthose mold spores drift midair.,211,,,,Sub_Ch2,S2_L0210
-4,12,211,0,Dot,Default,,text,"그 어떤 것도 바라지\n않은 채, 바라만 볼 거야.","I won’t expect anything out\nof it. I’ll merely observe.",212,,,,Sub_Ch2,S2_L0211
+4,12,211,0,Dot,Default,,text,"그 어떤 것도 바라지\n않은 채, 바라만 볼 거야.",I won’t expect anything out\nof it. I’ll merely observe.,212,,,,Sub_Ch2,S2_L0211
 4,12,212,0,Player,Default,,selection,뭉치는 지루함을 좋아하는구나.|왜 바라만 보는데?,You must be fond of being bored.|Any reason?,213|218,passive|active,,,Sub_Ch2,S2_L0212
 4,12,213,0,Dot,Default,,text,응. 지루함은 찰기 없는 밀가루\n같은 감촉을 가지고 있거든.,"Yes. Boredom is like dry dough, before\nyou add water and make it sticky.",214,,,,Sub_Ch2,S2_L0213
 4,12,214,0,Dot,Default,,text,누워 놀기 좋아.,Good to roll around in.,215,,,,Sub_Ch2,S2_L0214
@@ -239,5 +239,5 @@
 4,12,238,0,Dot,Sub,anim_eyescorner_turn,text, ......,......,239,,,,Sub_Ch2,S2_L0238
 4,12,239,0,Dot,Sub,anim_eyesblink,text,그렇구나.,I see.,240,,,,Sub_Ch2,S2_L0239
 4,12,240,0,Dot,Sub,anim_mold2,text,"고마워, <nickname>.","Thank you, <nickname>.",241,,,,Sub_Ch2,S2_L0240
-4,12,241,0,Dot,Default,,text,난 이제 아주 오랫동안 미동 없이 앉아서\n얘네가 빵 위로 떨어지길 바라 볼 거야.,Now I’m going to be still and hope\nfor them to fall onto the bread.,242,,,,Sub_Ch2,S2_L0241
-4,12,242,0,Dot,Default,,text,아주 오랫동안.,For a very long time.,,,anim_mold2,,Sub_Ch2,S2_L0242
+4,12,241,0,Dot,Default,anim_mold2,text,난 이제 아주 오랫동안 미동 없이 앉아서\n얘네가 빵 위로 떨어지길 바라 볼 거야.,Now I’m going to be still and hope\nfor them to fall onto the bread.,242,,,,Sub_Ch2,S2_L0241
+4,12,242,0,Dot,Default,anim_mold2,text,아주 오랫동안.,For a very long time.,,,anim_mold2,,Sub_Ch2,S2_L0242

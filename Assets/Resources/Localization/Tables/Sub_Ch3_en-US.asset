@@ -189,7 +189,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678716010528
-    m_Localized: (This sounds familiar.)|(Where is this coming from?)
+    m_Localized: (Sounds familiar. A book, maybe?)|(Blue sky? A child forever? Huh?)
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
@@ -629,7 +629,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678716010612
-    m_Localized: "I don\u2019t understand.|What do you mean?"
+    m_Localized: You mean this morning?|Uh. What do you mean?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
@@ -645,17 +645,17 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678716010615
-    m_Localized: (Be honest.)|(Be playful.)
+    m_Localized: "(Oh, so Dot was being literal.\\nI honestly don\u2019t remember...)"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678716010616
-    m_Localized: "To be honest, I can\u2019t remember\\nwhat it was like at all."
+    m_Localized: "Well... I can\u2019t remember anything."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678716010617
-    m_Localized: "Foggy nothingness. Seems,\\nI\u2019ve misplaced that certain memory."
+    m_Localized: "Does anyone have memories of\\nbeing a baby? I wouldn\u2019t know."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
@@ -707,17 +707,18 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678716010627
-    m_Localized: What was it like to open\nyour eyes for the very first time?
+    m_Localized: If you remember opening your eyes\nfor the first time... what was
+      it like?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678716010628
-    m_Localized: "Share it with me?|Tell me. I\u2019m curious."
+    m_Localized: Alright. The very first time.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678716010629
-    m_Localized: Alright. The very first time.
+    m_Localized: ......
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
@@ -743,7 +744,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678716010634
-    m_Localized: A boy? Was he also a factory worker?
+    m_Localized: I think you mentioned him before.\nWas he one of the factory workers?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
@@ -803,13 +804,13 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678716010645
-    m_Localized: (Be impressed.)|(Be moved.)
+    m_Localized: (And it worked, just like that?)|(How sweet. No wonder Dot likes
+      him.)
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678716010646
-    m_Localized: "(Not at all the human way, but then\\nagain Dot isn\u2019t human.
-      Fascinating.)"
+    m_Localized: (Was the chalk special or something?\nOr... was the filth? I wonder.)
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
@@ -979,102 +980,122 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678720204817
-    m_Localized: Calm down, Dot.|Nothing will happen.
+    m_Localized: "I\u2019ve felt that way too.|That won\u2019t ever happen."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678720204818
+    m_Localized: Sometimes the dark terrifies me.\nEspecially what lurks inside it.
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543957
+  - m_Id: 678720204819
+    m_Localized: "I\u2019m scared they might swallow me whole."
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543957
+  - m_Id: 678720204820
+    m_Localized: "But... as long as we\u2019re\\ntogether, we\u2019ll be safe!"
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543957
+  - m_Id: 678720204821
+    m_Localized: "Fear of the dark only grows\\nwhen you\u2019re alone."
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543957
+  - m_Id: 678720204822
+    m_Localized: "You... You can\u2019t keep me safe.\\nNo one can..."
+    m_Metadata:
+      m_Items:
+      - rid: 3674199710174543957
+  - m_Id: 678720204823
     m_Localized: "You\u2019re safe. You have your own little corner,\\nand a snug
       spiderweb bed."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
-  - m_Id: 678720204819
+  - m_Id: 678720204824
     m_Localized: And you have me.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
-  - m_Id: 678720204820
+  - m_Id: 678720204825
     m_Localized: "The Dark can\u2019t hurt you."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
-  - m_Id: 678720204821
+  - m_Id: 678720204826
     m_Localized: My dark corner, my snug\nweb, and not even you
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
-  - m_Id: 678720204822
+  - m_Id: 678720204827
     m_Localized: "can\u2019t keep me safe."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
-  - m_Id: 678720204823
+  - m_Id: 678720204828
     m_Localized: "No, no, no. I became emotional\\nand was careless... I\u2019m sorry."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
-  - m_Id: 678720204824
+  - m_Id: 678720204829
     m_Localized: "I\u2019m thankful that you\u2019re here. But...\\nit\u2019s not
       that I am afraid of them."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
-  - m_Id: 678720204825
+  - m_Id: 678720204830
     m_Localized: "I... I can\u2019t be afraid of them."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
-  - m_Id: 678720204826
-    m_Localized: ...
-    m_Metadata:
-      m_Items:
-      - rid: 3674199710174543957
-  - m_Id: 678720204827
-    m_Localized: "It\u2019s a part of me..."
-    m_Metadata:
-      m_Items:
-      - rid: 3674199710174543957
-  - m_Id: 678720204828
-    m_Localized: The deep, sickening darkness of\nthat squelching filth...
-    m_Metadata:
-      m_Items:
-      - rid: 3674199710174543957
-  - m_Id: 678720204829
-    m_Localized: And I...
-    m_Metadata:
-      m_Items:
-      - rid: 3674199710174543957
-  - m_Id: 678720204830
-    m_Localized: Oh... oh.
-    m_Metadata:
-      m_Items:
-      - rid: 3674199710174543957
   - m_Id: 678720204831
-    m_Localized: I look at myself and I...
+    m_Localized: ...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678720204832
-    m_Localized: ...
+    m_Localized: "It\u2019s a part of me..."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678720204833
-    m_Localized: Vile. Filthy.
+    m_Localized: The deep, sickening darkness of\nthat squelching filth...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678720204834
-    m_Localized: "That\u2019s the kind of black this is."
+    m_Localized: And I...
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
   - m_Id: 678720204835
-    m_Localized: "That\u2019s... this is..."
+    m_Localized: Oh... oh.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543957
+  - m_Id: 44353233756307456
+    m_Localized: I look at myself and I...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353233781473280
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353233781473281
+    m_Localized: Vile. Filthy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353233781473282
+    m_Localized: "That\u2019s the kind of black this is."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353233781473283
+    m_Localized: "That\u2019s... this is..."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -1,119 +1,109 @@
-﻿Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
-1,57,1,0,Dot,,anim_default,text,"<nickname>, 돌아왔구나.","<nickname>, you’re back.",2,,,,Sub_Ch10,S10_L0001
-1,57,2,0,Dot,,anim_default,text,창밖의 거리를 구경하다 궁금한 게 생겼어.,Something from the streets\npiqued my curiosity.,3,,,,Sub_Ch10,S10_L0002
-1,57,3,0,Dot,,anim_default,text,인간들이 삼삼오오 모여 군집을\n이룬 채 웃고 있는 모습을 봤거든.,"I saw humans in groups, smiling.",4,,,,Sub_Ch10,S10_L0003
-1,57,4,0,Dot,,anim_default,text,그 순간은 그들에게 ‘추억’ 한 장이\n되어 고이고이 간직되겠지.,That moment will become a page in their\n‘memory’ and be stored preciously.,5,,,,Sub_Ch10,S10_L0004
-1,57,5,0,Dot,,anim_default,text,"있지, 너에게는 다른 인간 친구들도\n존재해? 그들과 추억을 나눠?",So… do you have human friends?\nDo you make memories with them?,6,,,,Sub_Ch10,S10_L0005
-1,57,6,0,Player,,anim_default,selection,"그럼, 당연하지.|음, 없는 것 같아.","Yes, sure.|Hm, I don’t think so.",7|16,,,,Sub_Ch10,S10_L0006
-1,57,7,0,Dot,,anim_default,text,…! 그렇구나.,…! I see.,8,,,,Sub_Ch10,S10_L0007
-1,57,8,0,Dot,,anim_default,text,그들과 ‘동질감’을 느끼며\n함께 웃음을 터트리기도 해?,Do you feel a ‘kinship’ with\nthem and laugh together?,9,,,,Sub_Ch10,S10_L0008
-1,57,9,0,Player,,anim_default,text,"응, 그게 친구의 묘미인 것 같아. 그\n사소하고 자잘한 웃음들이 모여서","Yes, I think that’s the best part of having\nfriends. Those little moments gather",10,,,,Sub_Ch10,S10_L0009
-1,57,10,0,Player,,anim_default,text,"우리는 친밀해지고, 더욱 고유한\n추억들을 함께 만들어 나가는 거야.","and bring us closer, and, in turn, we create\neven more special memories together.",11,,,,Sub_Ch10,S10_L0010
-1,57,11,0,Player,,anim_default,text,그렇게 관계의 밀도가\n깊어 간다고 생각해.,I believe that’s how relationships\nbecome more tight-knit.,12,,,,Sub_Ch10,S10_L0011
-1,57,12,0,Dot,,anim_default,text,추억….,Memory…,13,,,,Sub_Ch10,S10_L0012
-1,57,13,0,Dot,,anim_default,text,"누군가에게 확실하게, 오차 없이\n‘추억’으로서 존재하려면 어떻게 해야 해?",How do you become a ‘memory’\nfor someone without fail?,14,,,,Sub_Ch10,S10_L0013
-1,57,14,0,Player,,anim_default,text,오랫동안 함께하면 되지. 긴 시간을\n보내며 기억을 축적하면 돼.,Spend a long time together. Time spent\ntogether will accumulate as memories.,15,,,,Sub_Ch10,S10_L0014
-1,57,15,0,Player,,anim_default,text,우리도 추억을 만들어 가는 중인 걸?,"It’s what you and I are doing right now, see?",25,,,,Sub_Ch10,S10_L0015
-1,57,16,0,Dot,,anim_default,text,… 정말? 왜?,… Really? How?,17,,,,Sub_Ch10,S10_L0016
-1,57,17,0,Player,,anim_default,selection,타인과 관계 맺는 건 관심사가 아니야.|친구라 정의할 만큼 가까운 지인이 없어.,Relationships with humans don’t interest me.|There’s no one I feel close enough to call friend.,18|18,,,,Sub_Ch10,S10_L0017
-1,57,18,0,Dot,,anim_default,text,"비록 못나고 보잘것없는 몸이지만, 이런\n내가 무려 너의 유일한 친구인 거야?","Even though I’m ugly and useless,\nI’m your one and only friend?",19,,,,Sub_Ch10,S10_L0018
-1,57,19,0,Player,,anim_default,selection,"그런 셈이지.|응, 유일한 친구!","I guess so.|Yes, the one and only!",20|20,,,,Sub_Ch10,S10_L0019
-1,57,20,0,Dot,,anim_default,text,그렇다면 너도 나와의\n고유한 ‘추억’이 있는 거지?,Then you have a special\n‘memory’ with me as well?,21,,,,Sub_Ch10,S10_L0020
-1,57,21,0,Player,,anim_default,text,그럼. 정확히는 우리가 추억을\n만들어 나가는 중이라고 생각해.,"Of course. More accurately, I think we’re\nin the process of making memories.",22,,,,Sub_Ch10,S10_L0021
-1,57,22,0,Player,,anim_default,text,"내 기준이지만, 추억이라\n불리는 게 자연스러우려면…","This is a personal thought, but in\norder to call something a ‘memory,’",23,,,,Sub_Ch10,S10_L0022
-1,57,23,0,Player,,anim_default,text,지금보다는 훨씬 과거의\n일이 되어야 하는 것 같아.,I think it needs to be way back in the past.,24,,,,Sub_Ch10,S10_L0023
-1,57,24,0,Player,,anim_default,text,혹은 더 긴 시간 동안\n축적해 나가야 했거나.,Or it needs to have accumulated\nfor a longer period.,25,,,,Sub_Ch10,S10_L0024
-1,57,25,0,Dot,,anim_default,text,"… 응, 알 것 같아.","… Yes, I think I understand.",26,,,,Sub_Ch10,S10_L0025
-1,57,26,0,Dot,,anim_default,text,으음. 한 가지 질문이 또 생겼어.,Hm. I have another question.,27,,,,Sub_Ch10,S10_L0026
-1,57,27,0,Dot,,anim_default,text,긴 시간 동안 켜켜이 쌓이지 않았다면\n‘추억’이 될 수 없는 걸까?,"If it hasn’t accumulated for a long\nwhile, can it still be a ‘memory?’",28,,,,Sub_Ch10,S10_L0027
-1,57,28,0,Dot,,anim_default,text,아주 짧았던 찰나의 시간은?,What about moments?,29,,,,Sub_Ch10,S10_L0028
-1,57,29,0,Dot,,anim_default,text,그 시간에게도 추억이라 불릴\n가치나 자격이 존재할까?,Do those seconds deserve\nto be called a memory?,30,,,,Sub_Ch10,S10_L0029
-1,57,30,0,Player,,anim_default,text,"음… 그럼! 짧지만 강렬했던 어느\n아름다운 순간을 회상할 때,",Hm… sure! A short but electrifying\nand beautiful moment.,31,,,,Sub_Ch10,S10_L0030
-1,57,31,0,Player,,anim_default,text,그때에도 추억이라는\n이름을 붙여 주는 것 같아.,I think those deserve to called a memory.,32,,,,Sub_Ch10,S10_L0031
-1,57,32,0,Player,,anim_default,text,"여름 한 철 짝사랑했던\n사람을 떠올릴 때나,","A sweltering summer spent\non yearning for that someone,",33,,,,Sub_Ch10,S10_L0032
-1,57,33,0,Player,,anim_default,text,"단지 며칠 머물렀을 뿐인 낯선\n여행지의 풍경이 눈물 나게 포근했을 때,","or a few days spent at a\ncathartically cozy destination,",34,,,,Sub_Ch10,S10_L0033
-1,57,34,0,Player,,anim_default,textbox,혹은…,or…,35,,,,Sub_Ch10,S10_L0034
-1,57,35,0,Dot,,anim_default,text,아름다운 순간. 그리고 회상.,A beautiful moment. A recollection.,36,,,,Sub_Ch10,S10_L0035
-1,57,36,0,Dot,,anim_default,text,…….,……,37,,,,Sub_Ch10,S10_L0036
-1,57,37,0,Player,,anim_default,text,…….,……,38,,,,Sub_Ch10,S10_L0037
-1,57,38,0,Dot,,anim_default,text,그것뿐이어도 ‘추억’이\n되기엔 충분하구나.,That’s all it takes to become a ‘memory.’,39,,,,Sub_Ch10,S10_L0038
-1,57,39,0,Dot,,anim_default,text,모든 기억들은 분명\n추억이 되고 싶어 할 거야.,All experiences must want\nto become a memory.,40,,,,Sub_Ch10,S10_L0039
-1,57,40,0,Dot,,anim_default,text,"아름답게 왜곡되든,\n적나라하게 각인되든.","Whether they are lovingly\nenhanced, or frankly imprinted.",41,,,,Sub_Ch10,S10_L0040
-1,57,41,0,Dot,,anim_default,text,"그들은 오래도록 남아, 추억으로서 옅은\n미소와 함께 회상되기를 바랄 것만 같아.",I think they would want to remain and\nbe reminisced as a memory with a smile.,42,,,,Sub_Ch10,S10_L0041
-1,57,42,0,Dot,,anim_default,text,그 마음을….,That feeling…,43,,,,Sub_Ch10,S10_L0042
-1,57,43,0,Dot,,anim_default,text,그 마음을 나는….,I know that feeling…,,,,,Sub_Ch10,S10_L0043
-2,58,44,0,Dot,,anim_default,text,<nickname>,<nickname>,45,,,,Sub_Ch10,S10_L0044
-2,58,45,0,Dot,,anim_default,text,…….,…….,46,,,,Sub_Ch10,S10_L0045
-2,58,46,0,Dot,,anim_default,text,늦었네.,You’re late.,47,,,,Sub_Ch10,S10_L0046
-2,58,47,0,Dot,,anim_default,text,태양이 작열하고 있어. 기어코 창문을 넘었어.,The sun is scorching. It dared to creep in.,48,,,,Sub_Ch10,S10_L0047
-2,58,48,0,Dot,,anim_default,text,저 간드러지는 손끝은 날 쓰다듬으러 오지 않았어.,"Its fingertips aren’t made for petting, only hurting.",49,,,,Sub_Ch10,S10_L0048
-2,58,49,0,Dot,,anim_default,text,내 평화를 침범하고 낚아채고 질식시킬\n거야. 나만의 어둡고 묵직한 평화를.,"It’s here to invade my peace, my dark, heavy\npeace. To snatch it away and burn it up.",50,,,,Sub_Ch10,S10_L0049
-2,58,50,0,Dot,,anim_default,text,"천천히 내 눈을 멀게 하고, 내 온몸을 날카로운\n손톱으로 긁어대며 끽끽 끽끽 기어다닐 거야.","Little by little it will blind my sight,\nand inch by inch rake my skin.",51,,,,Sub_Ch10,S10_L0050
-2,58,51,0,Dot,,anim_default,text,…….,…….,52,,,,Sub_Ch10,S10_L0051
-2,58,52,0,Dot,,anim_default,text,"<nickname>, 저 창문 가리개를\n닫으려 했지만 몸이 닿지 않았어.","I tried to draw the blinds, <nickname>,\nbut they were just out of reach.",53,,,,Sub_Ch10,S10_L0052
-2,58,53,0,Dot,,anim_default,text,"정신이 새된 비명을 질러. 아, 아, 도와줘….",My mind is screaming at me. Help…,54,,,,Sub_Ch10,S10_L0053
-2,58,54,0,Player,,anim_default,text,(손을 뻗어 뭉치를 가려 준다.),,55,,,,Sub_Ch10,S10_L0054
-2,58,55,0,Player,,anim_default,text,(뭉치를 살살 쓰다듬어 준다.),,56,,,,Sub_Ch10,S10_L0055
-2,58,56,0,Dot,,anim_default,text,……,…….,57,,,,Sub_Ch10,S10_L0056
-2,58,57,0,Dot,,anim_default,text,부끄럽네. 아까의 모습은 잊어 줘.,That was unseemly. I hope you’ll forgive me.,58,,,,Sub_Ch10,S10_L0057
-2,58,58,0,Dot,,anim_default,text,…. 그리고 실례가 아니라면\n조금만 더 쓰다듬어 줄 수 있을까.,"And if you don’t mind, I also hope you’ll\nhold me for just a little while longer.",59,,,,Sub_Ch10,S10_L0058
-2,58,59,0,Player,,anim_default,text,(뭉치를 가만히 쓰다듬는다.\n조금 끈적하지만 따뜻하다.),,60,,,,Sub_Ch10,S10_L0059
-2,58,60,0,Dot,,anim_default,text,너의 손끝은 달라. 평화 같아.,Your hands are different. They speak of peace.,61,,,,Sub_Ch10,S10_L0060
-2,58,61,0,Dot,,anim_default,text,그런데 어둡지도 않아.,But nothing like the monochrome\npeace I’ve known so far.,62,,,,Sub_Ch10,S10_L0061
-2,58,62,0,Dot,,anim_default,text,"아, 이런 색을 가진 평화도 있구나.","Not dark, not heavy.",63,,,,Sub_Ch10,S10_L0062
-2,58,63,0,Dot,,anim_default,text,졸린 이끼처럼 온화하고…,"Warm, like moss on the verge of sleep…",64,,,,Sub_Ch10,S10_L0063
-2,58,64,0,Dot,,anim_default,text,잠에서 막 깬 기포처럼 가벼운 평화.,and light. Like bubbles that\nhave just blinked awake.,65,,,,Sub_Ch10,S10_L0064
-2,58,65,0,Dot,,anim_default,text,"고마워, <nickname>.","Thank you, <nickname>.",,,,,Sub_Ch10,S10_L0065
-3,59,66,0,Dot,,anim_default,text,그는 이렇게 했었죠?,"And then he went like this, didn’t he?",67,,,,Sub_Ch10,S10_L0066
-3,59,67,0,Dot,,anim_default,text,벽에.,Put his head.,68,,,,Sub_Ch10,S10_L0067
-3,59,68,0,Dot,,anim_default,text,머리를 대고.,Against the wall.,69,,,,Sub_Ch10,S10_L0068
-3,59,69,0,Dot,,anim_default,text,퍽. 퍽. 퍽.,Thump. Thump. Thump.,70,,,,Sub_Ch10,S10_L0069
-3,59,70,0,Dot,,anim_default,text,(반복적으로 철퍽 하는 소리가 난다.),"(Splat, splat. The noises continue.)",71,,,,Sub_Ch10,S10_L0070
-3,59,71,0,Dot,,anim_default,text,아.,Oh.,72,,,,Sub_Ch10,S10_L0071
-3,59,72,0,Dot,,anim_default,text,…….,……,73,,,,Sub_Ch10,S10_L0072
-3,59,73,0,Dot,,anim_default,text,…….,……,74,,,,Sub_Ch10,S10_L0073
-3,59,74,0,Dot,,anim_default,text,어지러워.,I’m feeling dizzy.,75,,,,Sub_Ch10,S10_L0074
-3,59,75,0,Dot,,anim_default,text,토할 구멍이 필요해요.,I need a hole to throw up in.,76,,,,Sub_Ch10,S10_L0075
-3,59,76,0,Dot,,anim_default,text,그러나 미약한 해방감이 기어들죠.,But faint abandonment creeps in.,77,,,,Sub_Ch10,S10_L0076
-3,59,77,0,Dot,,anim_default,text,벽에 머리를 대고…,Head against the wall…,78,,,,Sub_Ch10,S10_L0077
-3,59,78,0,Dot,,anim_default,text,그는 이렇게.,like this.,79,,,,Sub_Ch10,S10_L0078
-3,59,79,0,Dot,,anim_default,text,레드? 정말 어쩌면 좋을지 하나도\n모르겠어요. 하나도. 하나도.,Red? I don’t have the faintest idea\nwhat to do. Not a single clue. Not one.,80,,,,Sub_Ch10,S10_L0079
-3,59,80,0,Dot,,anim_default,text,섬광탄처럼 터지는 것. 엎질러진\n것. 박살이 나 우그러진 것.,That which explodes like a flare.\nHas been spilt. Smashed and crushed.,81,,,,Sub_Ch10,S10_L0080
-3,59,81,0,Dot,,anim_default,text,어지러워요.,I’m feeling dizzy.,82,,,,Sub_Ch10,S10_L0081
-3,59,82,0,Dot,,anim_default,text,당신의 인간도 이랬었나요?,Did your human feel this way too?,83,,,,Sub_Ch10,S10_L0082
-3,59,83,0,Dot,,anim_default,text,비대해지는 시계 바늘을 피하기 위해 몸을\n던졌지만 도리어 쿡 찢어지고 말았었나요?,Did he throw himself out of the way of the\nswelling clock needle but end up impaled on it?,84,,,,Sub_Ch10,S10_L0083
-3,59,84,0,Dot,,anim_default,text,아파요. 그런데 이상해요.,It hurts. And yet how strange.,85,,,,Sub_Ch10,S10_L0084
-3,59,85,0,Dot,,anim_default,text,나는 왜 고통에서 안락을 찾았죠?,Why do I find comfort in pain?,86,,,,Sub_Ch10,S10_L0085
-3,59,86,0,Dot,,anim_default,text,나는 왜 이래야만 하는 거죠?,Why must I be like this?,87,,,,Sub_Ch10,S10_L0086
-3,59,87,0,Dot,,anim_default,text,….,…,88,,,,Sub_Ch10,S10_L0087
-3,59,88,0,Dot,,anim_default,text,왜?,Why?,,,,,Sub_Ch10,S10_L0088
-4,60,89,0,Dot,,anim_default,text,죽고 싶지 않은데도 스스로를\n해칠 수 있는 걸까요?,Can you hurt yourself even\nwhen you don’t want to die?,90,,,,Sub_Ch10,S10_L0089
-4,60,90,0,Dot,,anim_default,text,정말이지 사라지고 싶은 것이 아닌데도?,Even when you truly don’t want to disappear?,91,,,,Sub_Ch10,S10_L0090
-4,60,91,0,Dot,,anim_default,text,당신을 만난 후로 다발적으로\n으깨지는 나의 생각을,Ever since I’ve met you I\ncan’t control these thoughts,92,,,,Sub_Ch10,S10_L0091
-4,60,92,0,Dot,,anim_default,text,도무지 주체할 수가 없어요.,that get crushed all at once.,93,,,,Sub_Ch10,S10_L0092
-4,60,93,0,Dot,,anim_default,text,죽고 싶지 않은데도 스스로를\n해칠 수 있는 거예요?,Can you hurt yourself even\nwhen you don’t want to die?,94,,,,Sub_Ch10,S10_L0093
-4,60,94,0,Dot,,anim_default,text,어째서 그렇죠?,How can that be?,95,,,,Sub_Ch10,S10_L0094
-4,60,95,0,Dot,,anim_default,text,무섭고 아프지만…,It’s scary and it hurts…,96,,,,Sub_Ch10,S10_L0095
-4,60,96,0,Dot,,anim_default,text,가렵고 어려운 감정들이\n언젠가 울컥 터져 나올 때,But when that feeling of\nhatred bursts outwardly,97,,,,Sub_Ch10,S10_L0096
-4,60,97,0,Dot,,anim_default,text,당신의 행동을 나도 모르게\n모방하게 돼요. 이끌려요.,I find myself mimicking\nyour actions. I’m drawn to it.,98,,,,Sub_Ch10,S10_L0097
-4,60,98,0,Dot,,anim_default,text,왜요? 왜 그런 일이 가능한 거죠?,How? How is that possible?,99,,,,Sub_Ch10,S10_L0098
-4,60,99,0,Dot,,anim_default,text,당신도 그랬나요? 찰나 만끽했던\n해방은 한 알의 빨간 사과 같았나요?,Was it the same for you? Was that moment\nof abandonment like a single red apple?,100,,,,Sub_Ch10,S10_L0099
-4,60,100,0,Dot,,anim_default,text,…….,……,101,,,,Sub_Ch10,S10_L0100
-4,60,101,0,Dot,,anim_default,text,당신은 어땠나요? 죽고 싶었기에\n스스로를 해칠 수 있었던 건가요?,What about you? Were you able to hurt\nyourself because you wanted to die?,102,,,,Sub_Ch10,S10_L0101
-4,60,102,0,Dot,,anim_default,text,그 정도로 지구가 미웠나요?,Did you hate Earth that much?,103,,,,Sub_Ch10,S10_L0102
-4,60,103,0,Dot,,anim_default,text,"시간이, 삶이, 혹은 당신이?","Time, life, or yourself?",104,,,,Sub_Ch10,S10_L0103
-4,60,104,0,Dot,,anim_default,text,그렇다면 나는…,Then I…,105,,,,Sub_Ch10,S10_L0104
-4,60,105,0,Dot,,anim_default,text,나는….,I….,106,,,,Sub_Ch10,S10_L0105
-4,60,106,0,Dot,,anim_default,text,…….,……,107,,,,Sub_Ch10,S10_L0106
-4,60,107,0,Dot,,anim_default,text,"아, 사르르 녹아 사라지기를 염원해\n왔지만 그것이 곧 죽음이었던 걸까요?","Oh, I’ve longed to melt away into\nnothing but did that mean death?",108,,,,Sub_Ch10,S10_L0107
-4,60,108,0,Dot,,anim_default,text,… 어째서 그렇죠?,… Why?,109,,,,Sub_Ch10,S10_L0108
-4,60,109,0,Dot,,anim_default,text,달이 보고 싶어요. 레드가\n보고 싶어요. 이곳은 이상해요.,I miss the moon. I miss Red. It’s strange here.,110,,,,Sub_Ch10,S10_L0109
-4,60,110,0,Dot,,anim_default,text,… 나만 너무 검고 역해요.,I’m the only one that’s black\nand disgusting. Just me.,111,,,,Sub_Ch10,S10_L0110
-4,60,111,0,Player,,anim_default,text,뭉치야?,Dot?,112,,,,Sub_Ch10,S10_L0111
-4,60,112,0,Dot,,anim_default,text,……,…..,113,,,,Sub_Ch10,S10_L0112
-4,60,113,0,Player,,anim_default,text,뭉치야아.,Doooot.,114,,,,Sub_Ch10,S10_L0113
-4,60,114,0,Dot,,anim_default,text,……,……,115,,,,Sub_Ch10,S10_L0114
-4,60,115,0,Player,,anim_default,selection,"(오늘은 대화하고 싶지 않은가 봐.)|(뭉치, 슬픈 꿈을 꾸고 있는 걸까?)",(Seems like Dot doesn’t want to talk.)|(Is Dot having a sad dream?),116|117,,,,Sub_Ch10,S10_L0115
-4,60,116,0,Dot,,anim_default,text,(뭉치에게 시간을 준다.),(Give them time.),,,,,Sub_Ch10,S10_L0116
-4,60,117,0,Dot,,anim_default,text,(내일 일어나면 이야기해 봐야겠다.),(We’ll talk in the morning.),118,,,,Sub_Ch10,S10_L0117
-4,60,118,0,Dot,,anim_default,text,"잘 자, 뭉치.","Good night, Dot.",,,,,Sub_Ch10,S10_L0118
+Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
+1,57,1,1,Dot,Default,anim_move,text,"<nickname>, 돌아왔구나.","<nickname>, you’re back.",2,,,,Sub_Ch10,S10_L0001
+1,57,2,1,Dot,Sub,anim_eyesup_turn,text,창밖의 거리를 구경하다 궁금한 게 생겼어.,Something from the streets\npiqued my curiosity.,3,,,,Sub_Ch10,S10_L0002
+1,57,3,1,Dot,Sub,anim_eyesblink,text,인간들이 삼삼오오 모여 군집을\n이룬 채 웃고 있는 모습을 봤거든.,"I saw humans in groups, smiling.",4,,,,Sub_Ch10,S10_L0003
+1,57,4,1,Dot,Sub,,text,그 순간은 그들에게 ‘추억’ 한 장이\n되어 고이고이 간직되겠지.,"It was a moment that will end up a page\nin their ‘memory’, one stored with care.",5,,,,Sub_Ch10,S10_L0004
+1,57,5,1,Dot,Default,anim_eyescorner_turn,text,"있지, 너에게는 다른 인간 친구들도\n존재해? 그들과 추억을 나눠?",So... do you have human friends?\nDo you make memories with them?,6,,,,Sub_Ch10,S10_L0005
+1,57,6,1,Player,Sub,anim_eyesblink,selection,"그럼, 당연하지.|음, 없는 것 같아.","Yes, of course.|Hm, not really.",7|16,active|passive,,,Sub_Ch10,S10_L0006
+1,57,7,1,Dot,Sub,,text,...! 그렇구나.,...! I see.,8,,,,Sub_Ch10,S10_L0007
+1,57,8,1,Dot,Sub,,text,그들과 ‘동질감’을 느끼며\n함께 웃음을 터트리기도 해?,Do you feel a ‘kinship’ with\nthem and laugh together?,9,,,,Sub_Ch10,S10_L0008
+1,57,9,1,Player,Sub,,text,"응, 그게 친구의 묘미인 것 같아. 그\n사소하고 자잘한 웃음들이 모여서","Yes, I think that’s the best part of having\nfriends. Those little moments gather",10,,,,Sub_Ch10,S10_L0009
+1,57,10,1,Player,Sub,,text,"우리는 친밀해지고, 더욱 고유한\n추억들을 함께 만들어 나가는 거야.","to bring us closer, and, in turn, we create\neven more special memories together.",11,,,,Sub_Ch10,S10_L0010
+1,57,11,1,Player,Sub,,text,그렇게 관계의 밀도가\n깊어 간다고 생각해.,That’s how I think relationships\nbecome more tight-knit.,12,,,,Sub_Ch10,S10_L0011
+1,57,12,1,Dot,Sub,,text,추억...,Memory...,13,,,,Sub_Ch10,S10_L0012
+1,57,13,1,Dot,Sub,,text,"누군가에게 확실하게, 오차 없이\n‘추억’으로서 존재하려면 어떻게 해야 해?",How do you become a ‘memory’\nto someone without fail?,14,,,,Sub_Ch10,S10_L0013
+1,57,14,1,Player,Sub,,text,오랫동안 함께하면 되지. 긴 시간을\n보내며 기억을 축적하면 돼.,Spend plenty of time together. Those\ntimes accumulate as memories.,15,,,,Sub_Ch10,S10_L0014
+1,57,15,1,Player,Sub,,text,우리도 추억을 만들어 가는 중인 걸?,"It’s what you and I\nare doing right now, see?",25,,,,Sub_Ch10,S10_L0015
+1,57,16,1,Dot,Sub,,text,... 정말? 왜?,... Really? How?,17,,,,Sub_Ch10,S10_L0016
+1,57,17,1,Player,Sub,,selection,타인과 관계 맺는 건 관심사가 아니야.|친구라 정의할 만큼 가까운 지인이 없어.,I’m not interested in making ties with people.|I don’t feel close enough with my acquaintances.,18|18,active|passive,,,Sub_Ch10,S10_L0017
+1,57,18,1,Dot,Sub,,text,"비록 못나고 보잘것없는 몸이지만, 이런\n내가 무려 너의 유일한 친구인 거야?","So even though I’m ugly and useless,\nI’m your one and only friend?",19,,,,Sub_Ch10,S10_L0018
+1,57,19,1,Player,Sub,,selection,"그런 셈이지.|응, 유일한 친구!","I guess so.|Yes, the one and only!",20|20,moon|sun,,,Sub_Ch10,S10_L0019
+1,57,20,1,Dot,Sub,,text,그렇다면 너도 나와의\n고유한 ‘추억’이 있는 거지?,Then you have a special\n‘memory’ with me as well?,21,,,,Sub_Ch10,S10_L0020
+1,57,21,1,Player,Sub,,text,그럼. 정확히는 우리가 추억을\n만들어 나가는 중이라고 생각해.,"Of course. More accurately, I think we’re\nin the process of making memories.",22,,,,Sub_Ch10,S10_L0021
+1,57,22,1,Player,Sub,,text,"내 기준이지만, 추억이라\n불리는 게 자연스러우려면...","This is just me, but to call\nsomething a ‘memory’",23,,,,Sub_Ch10,S10_L0022
+1,57,23,1,Player,Sub,,text,지금보다는 훨씬 과거의\n일이 되어야 하는 것 같아.,I think it needs to be\nway back in the past.,24,,,,Sub_Ch10,S10_L0023
+1,57,24,1,Player,Sub,,text,혹은 더 긴 시간 동안\n축적해 나가야 했거나.,Or it needs to have accumulated\nfor a longer period.,25,,,,Sub_Ch10,S10_L0024
+1,57,25,1,Dot,Sub,,text,"... 응, 알 것 같아.","... Yes, I think I understand.",26,,,,Sub_Ch10,S10_L0025
+1,57,26,1,Dot,Default,anim_eyesside_turn,text,으음. 한 가지 질문이 또 생겼어.,Hm. I have another question.,27,,,,Sub_Ch10,S10_L0026
+1,57,27,1,Dot,Sub,anim_eyesside,text,긴 시간 동안 켜켜이 쌓이지 않았다면\n‘추억’이 될 수 없는 걸까?,"If it hasn’t accumulated for a long\nwhile, can it still be a ‘memory?’",28,,,,Sub_Ch10,S10_L0027
+1,57,28,1,Dot,Sub,anim_eyesblink,text,아주 짧았던 찰나의 시간은?,What about moments?,29,,,,Sub_Ch10,S10_L0028
+1,57,29,1,Dot,Sub,,text,그 시간에게도 추억이라 불릴\n가치나 자격이 존재할까?,Do those seconds deserve\nto be called a memory?,30,,,,Sub_Ch10,S10_L0029
+1,57,30,1,Player,Sub,,text,"음... 그럼! 짧지만 강렬했던 어느\n아름다운 순간을 회상할 때,",Hm... sure! Brief but electrifying\nand beautiful moments.,31,,,,Sub_Ch10,S10_L0030
+1,57,31,1,Player,Sub,,text,그때에도 추억이라는\n이름을 붙여 주는 것 같아.,I think those deserve\nto be called a memory.,32,,,,Sub_Ch10,S10_L0031
+1,57,32,1,Player,Sub,,text,"여름 한 철 짝사랑했던\n사람을 떠올릴 때나,","A sweltering summer spent\nyearning for a special someone,",33,,,,Sub_Ch10,S10_L0032
+1,57,33,1,Player,Sub,,text,"단지 며칠 머물렀을 뿐인 낯선\n여행지의 풍경이 눈물 나게 포근했을 때,","or a few days spent at a\ncathartically cozy destination,",34,,,,Sub_Ch10,S10_L0033
+1,57,34,1,Player,Sub,,textbox,혹은...,or...,35,,,,Sub_Ch10,S10_L0034
+1,57,35,1,Dot,Default,anim_eyescorner_turn,text,아름다운 순간. 그리고 회상.,A beautiful moment. A recollection.,36,,,,Sub_Ch10,S10_L0035
+1,57,36,1,Dot,Default,anim_eyescorner,text,......,......,37,,,,Sub_Ch10,S10_L0036
+1,57,37,1,Player,Default,,text,......,......,38,,,,Sub_Ch10,S10_L0037
+1,57,38,1,Dot,Default,,text,그것뿐이어도 ‘추억’이\n되기엔 충분하구나.,That’s all it takes to become a ‘memory.’,39,,,,Sub_Ch10,S10_L0038
+1,57,39,1,Dot,Sub,anim_eyesblink,text,모든 기억들은 분명\n추억이 되고 싶어 할 거야.,All experiences must want\nto become memories.,40,,,,Sub_Ch10,S10_L0039
+1,57,40,1,Dot,Sub,,text,"아름답게 왜곡되든,\n적나라하게 각인되든.","Whether they are lovingly\ndistorted, or starkly etched.",41,,,,Sub_Ch10,S10_L0040
+1,57,41,1,Dot,Sub,,text,"그들은 오래도록 남아, 추억으로서 옅은\n미소와 함께 회상되기를 바랄 것만 같아.","They’d want to linger, reminisced\nwith a smile as a fond memory.",42,,,,Sub_Ch10,S10_L0041
+1,57,42,1,Dot,Sub,,text,그 마음을...,That feeling...,43,,,,Sub_Ch10,S10_L0042
+1,57,43,1,Dot,Sub,anim_eyesdown_turn,text,그 마음을 나는...,I know that feeling...,,,anim_eyesdown,,Sub_Ch10,S10_L0043
+2,58,44,0,Dot,Default,anim_omg,text,<nickname>,<nickname>,45,,,,Sub_Ch10,S10_L0044
+2,58,45,0,Dot,Default,,text,......,......,46,,,,Sub_Ch10,S10_L0045
+2,58,46,0,Dot,Default,,text,늦었네.,You’re late.,47,,,,Sub_Ch10,S10_L0046
+2,58,47,0,Dot,Default,,text,태양이 작열하고 있어. 기어코 창문을 넘었어.,The sun is scorching. It dared to creep in.,48,,,,Sub_Ch10,S10_L0047
+2,58,48,0,Dot,Default,,text,저 간드러지는 손끝은 날 쓰다듬으러 오지 않았어.,"Its fingertips aren’t made\nfor stroking, only hurting.",49,,,,Sub_Ch10,S10_L0048
+2,58,49,0,Dot,Default,,text,내 평화를 침범하고 낚아채고 질식시킬\n거야. 나만의 어둡고 묵직한 평화를.,"It’s here to invade my peace, my dark, heavy\npeace. To snatch it away and burn it up.",50,,,,Sub_Ch10,S10_L0049
+2,58,50,0,Dot,Default,,text,"천천히 내 눈을 멀게 하고, 내 온몸을 날카로운\n손톱으로 긁어대며 끽끽 끽끽 기어다닐 거야.","Little by little it will blind my sight,\nand inch by inch rake my skin.",51,,,,Sub_Ch10,S10_L0050
+2,58,51,0,Dot,Default,,text,......,......,52,,,,Sub_Ch10,S10_L0051
+2,58,52,0,Dot,Default,,text,"<nickname>, 저 창문 가리개를\n닫으려 했지만 몸이 닿지 않았어.","I tried to draw the blinds, <nickname>,\nbut they were just out of reach.",53,,,,Sub_Ch10,S10_L0052
+2,58,53,0,Dot,Default,,text,"정신이 새된 비명을 질러. 아, 아, 도와줘...",My mind is screaming at me. Help...,54,,,,Sub_Ch10,S10_L0053
+2,58,54,0,Player,Default,,text,(손을 뻗어 뭉치를 가려 준다.)|(뭉치를 살살 쓰다듬어 준다.),(Reach out and shield Dot.)|(Gently stroke Dot.),55,passive|active,,,Sub_Ch10,S10_L0054
+2,58,55,0,Player,Default,anim_eyesblink,text,......,......,56,,,,Sub_Ch10,S10_L0055
+2,58,56,0,Dot,Default,anim_eyesclosed_turn,text,......,......,57,,,,Sub_Ch10,S10_L0056
+2,58,57,0,Dot,Sub,anim_eyesblink,text,부끄럽네. 아까의 모습은 잊어 줘.,That was unseemly.\nI hope you’ll forgive me.,58,,,,Sub_Ch10,S10_L0057
+2,58,58,0,Dot,Sub,,text,... 그리고 실례가 아니라면\n조금만 더 쓰다듬어 줄 수 있을까.,"And if you don’t mind, I hope you’ll\nhold me for just a little longer.",59,,,,Sub_Ch10,S10_L0058
+2,58,59,0,Player,Sub,,text,(뭉치를 가만히 쓰다듬는다.\n조금 끈적하지만 따뜻하다.),"(Stroke Dot. It feels\nsticky, but warm.)",60,,,,Sub_Ch10,S10_L0059
+2,58,60,0,Dot,Default,anim_eyesclosed_turn,text,너의 손끝은 달라. 평화 같아.,Your hands are different.\nThey speak of peace.,61,,,,Sub_Ch10,S10_L0060
+2,58,61,0,Dot,Default,anim_eyesclosed,text,그런데 어둡지도 않아.,But nothing like the monochrome\npeace I’ve known so far.,62,,,,Sub_Ch10,S10_L0061
+2,58,62,0,Dot,Default,,text,"아, 이런 색을 가진 평화도 있구나.","Not dark, not heavy.",63,,,,Sub_Ch10,S10_L0062
+2,58,63,0,Dot,Default,,text,졸린 이끼처럼 온화하고...,"Warm, like moss on the verge of sleep...",64,,,,Sub_Ch10,S10_L0063
+2,58,64,0,Dot,Default,,text,잠에서 막 깬 기포처럼 가벼운 평화.,and light. Like bubbles that\nhave just blinked awake.,65,,,,Sub_Ch10,S10_L0064
+2,58,65,0,Dot,Sub,anim_eyesblink,text,"고마워, <nickname>.","Thank you, <nickname>.",,,anim_eyesclosed,,Sub_Ch10,S10_L0065
+3,65,66,0,Dot,Sub,anim_eyesclosed,text,색이 가득한 지구에서 보는 흑백\n영화는 한없이 고요하게 느껴져.,Watching monochrome films on\ncolor-filled Earth feels endlessly quiet.,67,,,,Sub_Ch10,S10_L0066
+3,65,67,0,Dot,Sub,,text,"그 고요함이 왜인지 편안해서,\n이번엔 흑백 사진을 찍어 봤어.",That comfortable quiet led me\nto take a black-and-white photo.,68,,,,Sub_Ch10,S10_L0067
+3,65,68,0,Dot,Sub,,text,선과 흑과 백만이 존재하는 지구.,"An Earth where only lines,\nblack, and white exist.",69,,,,Sub_Ch10,S10_L0068
+3,65,69,0,Dot,Sub,,text,사진 속의 지구는 우주\n속의 달과 닮아 있었어.,The Earth in the photo resembled\nthe Moon up there in space.,70,,,,Sub_Ch10,S10_L0069
+3,65,70,0,Dot,Sub,anim_eyesblink,text,"<nickname>, 너도 알고 있겠지만,\n나는 다채로운 색채를 갈망해.","<nickname>, as you know,\nI yearn for vivid colors.",71,,,,Sub_Ch10,S10_L0070
+3,65,71,0,Dot,Sub,,text,부드럽게 세상을 물들인\n그것을 사랑해 마지않아.,I so sincerely love them and\nthe way they softly paint the world.,72,,,,Sub_Ch10,S10_L0071
+3,65,72,0,Dot,Sub,anim_eyescorner_turn,text,하지만...,However...,73,,,,Sub_Ch10,S10_L0072
+3,65,73,0,Dot,Sub,anim_eyesblink,text,잠시 동안 상상해 봤어.\n오로지 회빛 뿐인 세상을.,"I imagined, just for a minute,\na black-and-white world.",74,,,,Sub_Ch10,S10_L0073
+3,65,74,0,Dot,Sub,,text,그 안의 나는 지금보다\n훨씬 덜 외로워 보였지.,The Dot in it seemed\nfar less lonesome.,75,,,,Sub_Ch10,S10_L0074
+3,65,75,0,Dot,Sub,,text,나도 알아.,I know.,76,,,,Sub_Ch10,S10_L0075
+3,65,76,0,Dot,Sub,anim_omg,text,색채를 사랑할수록 색채가 없는\n나는 더 외로워진다는 걸.,"The more I love color, the more lonely\na monochrome being like me becomes.",77,,,,Sub_Ch10,S10_L0076
+3,65,77,0,Dot,Sub,anim_eyesclosed,text,"그럼에도 색채를 끝없이\n더듬게 되는 이유는,","In spite of that, I blindly\nfeel for color endlessly.",78,,,,Sub_Ch10,S10_L0077
+3,65,78,0,Dot,Sub,anim_eyesclosed,text,그건 아마도...,Perhaps because...,,,,,Sub_Ch10,S10_L0078
+4,60,79,0,Dot,Default,anim_sleepy_spiderweb,text,죽고 싶지 않은데도 스스로를\n해칠 수 있는 걸까요?,Can you hurt yourself even\nwhen you don’t want to die?,80,,,,Sub_Ch10,S10_L0079
+4,60,80,0,Dot,Default,,text,정말이지 사라지고 싶은 것이 아닌데도?,Even when you truly\ndon’t want to disappear?,81,,,,Sub_Ch10,S10_L0080
+4,60,81,0,Dot,Default,,text,당신을 만난 후로 다발적으로\n으깨지는 나의 생각을,Ever since I’ve met you I\ncan’t control these thoughts,82,,,,Sub_Ch10,S10_L0081
+4,60,82,0,Dot,Default,,text,도무지 주체할 수가 없어요.,that get crushed all at once.,83,,,,Sub_Ch10,S10_L0082
+4,60,83,0,Dot,Default,,text,죽고 싶지 않은데도 스스로를\n해칠 수 있는 거예요?,Can you hurt yourself even\nwhen you don’t want to die?,84,,,,Sub_Ch10,S10_L0083
+4,60,84,0,Dot,Default,,text,어째서 그렇죠?,How can that be?,85,,,,Sub_Ch10,S10_L0084
+4,60,85,0,Dot,Default,,text,무섭고 아프지만...,It’s scary and it hurts...,86,,,,Sub_Ch10,S10_L0085
+4,60,86,0,Dot,Default,,text,가렵고 어려운 감정들이\n언젠가 울컥 터져 나올 때,But when that feeling of\nhatred bursts outwardly,87,,,,Sub_Ch10,S10_L0086
+4,60,87,0,Dot,Default,,text,당신의 행동을 나도 모르게\n모방하게 돼요. 이끌려요.,I find myself mimicking\nyour actions. I’m drawn to it.,88,,,,Sub_Ch10,S10_L0087
+4,60,88,0,Dot,Default,,text,왜요? 왜 그런 일이 가능한 거죠?,How? How is that possible?,89,,,,Sub_Ch10,S10_L0088
+4,60,89,0,Dot,Default,,text,당신도 그랬나요? 찰나 만끽했던\n해방은 한 알의 빨간 사과 같았나요?,Was it the same for you? Was that moment\nof abandonment like a single red apple?,90,,,,Sub_Ch10,S10_L0089
+4,60,90,0,Dot,Default,,text,......,......,91,,,,Sub_Ch10,S10_L0090
+4,60,91,0,Dot,Default,,text,당신은 어땠나요? 죽고 싶었기에\n스스로를 해칠 수 있었던 건가요?,What about you? Were you able to hurt\nyourself because you wanted death?,92,,,,Sub_Ch10,S10_L0091
+4,60,92,0,Dot,Default,,text,그 정도로 지구가 미웠나요?,Did you hate Earth that much?,93,,,,Sub_Ch10,S10_L0092
+4,60,93,0,Dot,Default,,text,"시간이, 삶이, 혹은 당신이?","Time, life, or yourself?",94,,,,Sub_Ch10,S10_L0093
+4,60,94,0,Dot,Default,,text,그렇다면 나는...,Then I...,95,,,,Sub_Ch10,S10_L0094
+4,60,95,0,Dot,Default,,text,나는...,I...,96,,,,Sub_Ch10,S10_L0095
+4,60,96,0,Dot,Default,,text,......,......,97,,,,Sub_Ch10,S10_L0096
+4,60,97,0,Dot,Phase,anim_sleep,text,"아, 사르르 녹아 사라지기를 염원해\n왔지만 그것이 곧 죽음이었던 걸까요?","Oh, I’ve longed to melt away into\nnothing but did that mean death?",98,,,,Sub_Ch10,S10_L0097
+4,60,98,0,Dot,Phase,,text,... 어째서 그렇죠?,... Why?,99,,,,Sub_Ch10,S10_L0098
+4,60,99,0,Dot,Phase,,text,달이 보고 싶어요. 레드가\n보고 싶어요. 이곳은 이상해요.,I miss the Moon. I miss Red.\nIt’s strange here.,100,,,,Sub_Ch10,S10_L0099
+4,60,100,0,Dot,Phase,,text,... 나만 너무 검고 역해요.,I’m the only one that’s black\nand disgusting. Just me.,101,,,,Sub_Ch10,S10_L0100
+4,60,101,0,Player,Phase,,text,뭉치야?,Dot?,102,,,,Sub_Ch10,S10_L0101
+4,60,102,0,Dot,Phase,,text,......,....,103,,,,Sub_Ch10,S10_L0102
+4,60,103,0,Player,Phase,,text,뭉치야아.,Doooot.,104,,,,Sub_Ch10,S10_L0103
+4,60,104,0,Dot,Phase,,text,......,......,105,,,,Sub_Ch10,S10_L0104
+4,60,105,0,Player,Phase,,selection,"(오늘은 대화하고 싶지 않은가 봐.)|(뭉치, 슬픈 꿈을 꾸고 있는 걸까?)",(Seems like Dot doesn’t want to talk.)|(Is Dot having a sad dream?),106|107,passive|active,,,Sub_Ch10,S10_L0105
+4,60,106,0,Player,Phase,,text,(뭉치에게 시간을 준다.),(Give them time.),,,,,Sub_Ch10,S10_L0106
+4,60,107,0,Player,Phase,,text,(내일 일어나면 이야기해 봐야겠다.),(We’ll talk in the morning.),108,,,,Sub_Ch10,S10_L0107
+4,60,108,0,Player,Phase,,text,"잘 자, 뭉치.","Good night, Dot.",,,,,Sub_Ch10,S10_L0108

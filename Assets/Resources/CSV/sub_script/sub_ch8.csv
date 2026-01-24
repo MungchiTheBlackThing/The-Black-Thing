@@ -41,7 +41,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 2,46,40,0,Dot,Sub,,text,멸종된 동물의 악몽이었다면\n이렇게 기쁘지는 않았을 거야!,"were to scatter me, I wouldn’t\nbe nearly as joyful!",41,,,,Sub_Ch8,S8_L0040
 2,46,41,0,Dot,Sub,anim_eyesclosed_turn,text,"파도에 휩쓸리면 바다는 나를 부드럽게 안고, 강렬하게 찢어 발기겠지.","The sea would tenderly carry me away,\nthen tear me apart without hesitation.",42,,,,Sub_Ch8,S8_L0041
 2,46,42,0,Dot,Sub,,text,그 거대한 아름다움을 만끽하는 것—\n그건 내가 진정으로 바라던 것일지 몰라.,"To relish such beauty—perhaps\nthat’s what I want, deep down...",43,,,,Sub_Ch8,S8_L0042
-2,46,43,0,Player,Sub,,selection,(뭉치를 말린다.)|(생각을 이어가도록 둔다.),(Talk Dot down.)|(Let Dot go on.),44|48,active|passive,,,Sub_Ch8,S8_L0043
+2,46,43,0,Player,Sub,,selection,(뭐? 그런 위험에 몸을 던지게 둘 순 없어.)|(바다에 안긴다면... 뭉치는 자유로울까?),(What? I can’t throw Dot into such danger.)|(If Dot embraced the sea... Would they be free?),44|48,active|passive,,,Sub_Ch8,S8_L0043
 2,46,44,0,Player,Sub,,text,"하지만 뭉치, 그 길은 위험해 보여.","But Dot, that road\nseems dangerous.",45,,,,Sub_Ch8,S8_L0044
 2,46,45,0,Dot,Sub,anim_eyesblink,text,그래 맞아. 쉽지만은 않은 일이야.\n그러려면 널 떠나야 하니까.,You’re right. It won’t be\neasy. I’d have to leave you.,46,,,,Sub_Ch8,S8_L0045
 2,46,46,0,Dot,Sub,anim_eyescorner,text,과묵하지만 따뜻한 친구였던 빵 곰팡이와,"And say goodbye to my silent\nbut kind companion, the mold",47,,,,Sub_Ch8,S8_L0046
@@ -68,30 +68,24 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 3,47,67,0,Dot,Sub,anim_eyesblink,text,"나의 검정은 왜... 왜 이럴까, <nickname>?","Why... why is my black like this,\n<nickname>?",68,,,,Sub_Ch8,S8_L0067
 3,47,68,0,Dot,Sub,anim_eyesdown_turn,text,볼품없어.,It’s ugly.,69,,,,Sub_Ch8,S8_L0068
 3,47,69,0,Dot,Sub,anim_omg,text,... 볼품없어.,... It’s ugly.,,,,,Sub_Ch8,S8_L0069
-4,48,70,0,Dot,Sub,anim_mold2,text,“듣지 않는 상대와 함께 있는 건\n혼자일 때보다 더 외로운 일이다.”,“Being with people who don’t\nlisten is lonelier than being alone.”,71,,,,Sub_Ch8,S8_L0070
+4,48,70,0,Dot,Sub,anim_sleepy_spiderweb,text,듣지 않는 상대와 함께 있는 건\n혼자일 때보다 더 외로운 일이래.,“Being with someone who doesn’t\nlisten is lonelier than being alone.”,71,,,,Sub_Ch8,S8_L0070
 4,48,71,0,Dot,Sub,,text,...,...,72,,,,Sub_Ch8,S8_L0071
-4,48,72,0,Dot,Sub,,text,놀랍도록 철학적이지 않아?,Isn’t that wonderfully profound?,73,,,,Sub_Ch8,S8_L0072
-4,48,73,0,Dot,Sub,,text,...,...,74,,,,Sub_Ch8,S8_L0073
-4,48,74,0,Dot,Sub,,text,"그래, 뭐, 꼭 내가 좋아한다고\n좋아할 필요는 없어.","Okay, well, you don’t have\nto like it because I like it.",75,,,,Sub_Ch8,S8_L0074
-4,48,75,0,Dot,Sub,,text,"듣지 않는 상대와 함께 있는 건 혼자일\n때보다 외로운 게 확실해, 그렇지?","Being with people who don’t listen\nis lonelier than being alone, isn’t it?",76,,,,Sub_Ch8,S8_L0075
-4,48,76,0,Dot,Sub,,text,...,...,77,,,,Sub_Ch8,S8_L0076
-4,48,77,0,Dot,Sub,,text,"그래, 오직 <nickname> 한 명과\n이야기를 나눠 본 난 확답을 줄 수 없겠지만.","Fine. I've only ever talked\nto you, so I wouldn’t know.",78,,,,Sub_Ch8,S8_L0077
-4,48,78,0,Dot,Sub,,text,그렇지만 분명 그럴\n거야. 외로울 거야.,"But it must be. Lonely, I mean.",79,,,,Sub_Ch8,S8_L0078
-4,48,79,0,Dot,Sub,,text,혼자 있을 때면 난 마음을 풀어\n헤치고 상상 속을 거닐어.,"When I’m alone, I let my mind wander.",80,,,,Sub_Ch8,S8_L0079
-4,48,80,0,Dot,Sub,anim_sub_light,text,"비 대신 반짝이가 내리는 낯선\n행성으로 여행을 떠나기도 하고,","I travel to foreign planets\nwhere it rains glitter,",81,,,,Sub_Ch8,S8_L0080
-4,48,81,0,Dot,Sub,,text,"심해 아귀와의 깜깜한 담소를 즐기기도 하고,\n1880년대의 어린 소녀가 되어 보기도 해.","chat with anglerfish in the deep dark ocean,\nand live as a little girl in the 1880s.",82,,,,Sub_Ch8,S8_L0081
-4,48,82,0,Dot,Sub,anim_eyescorner,text,"그리고 <nickname>과 함께일 때면,\n<nickname>만은 내 말을 들어줘.","And when I’m with <nickname>,\n<nickname> listens.",83,,,,Sub_Ch8,S8_L0082
-4,48,83,0,Dot,Sub,,text,"내 사색, 질문, 고해, 그 모든 걸.","Listens to my musings, questions\nand confessions, all of it.",84,,,,Sub_Ch8,S8_L0083
-4,48,84,0,Dot,Sub,anim_mold2,text,그렇지만 듣지 않는 상대는 어떨까?,But to be with someone\nwho doesn’t listen?,85,,,,Sub_Ch8,S8_L0084
-4,48,85,0,Dot,Sub,,text,꼭 벽이랑 대화하는 기분일 거야.,"It must feel as if you’re\ntalking to a wall,",86,,,,Sub_Ch8,S8_L0085
-4,48,86,0,Dot,Sub,,text,아니면 스치는 바람과 대화하는 기분.,or a gust of wind passing by.,87,,,,Sub_Ch8,S8_L0086
-4,48,87,0,Dot,Sub,,text,바쁜 도시 한가운데 유리 상자\n속 갇혀있는 기분일 거야.,"It must feel as if you are locked in a\nglass box in the middle of a busy city,",88,,,,Sub_Ch8,S8_L0087
-4,48,88,0,Dot,Sub,,text,"날카롭고 간절하게 소리치며 벽을 긁어\n보지만, 아무도 내 비명을 듣지 못하는.",where you’re screaming and\nscreaming but no one ever hears you.,89,,,,Sub_Ch8,S8_L0088
-4,48,89,0,Dot,Sub,,text,...,...,90,,,,Sub_Ch8,S8_L0089
-4,48,90,0,Dot,Sub,anim_mold1,text,"곰팡이, 난 절대 너를 외롭게 두지 않아.",I would never do that to you.,91,,,,Sub_Ch8,S8_L0090
-4,48,91,0,Dot,Sub,,text,알고 있지?,"You know that, right?",92,,,,Sub_Ch8,S8_L0091
-4,48,92,0,Dot,Sub,,text,...,...,93,,,,Sub_Ch8,S8_L0092
-4,48,93,0,Dot,Sub,,text,난 언제나 들을 준비가\n되어 있으니까.,I’m always ready to listen.,94,,,,Sub_Ch8,S8_L0093
-4,48,94,0,Dot,Sub,,text,...,...,95,,,,Sub_Ch8,S8_L0094
-4,48,95,0,Dot,Sub,,text,여기서 기다리고 있을게.,"I’ll be right here, waiting.",96,,,,Sub_Ch8,S8_L0095
-4,48,96,0,Dot,Sub,,text,네가 포자 흩뿌리는 소리밖에 못\n낼지라도. 나는 듣고 있을 거야.,Even if all I hear is the fluttering\nof your spores... I’ll be listening.,,,,,Sub_Ch8,S8_L0096
+4,48,72,0,Dot,Sub,,text,놀랍도록 철학적인 말이야.,It’s beautifully profound.,73,,,,Sub_Ch8,S8_L0072
+4,48,73,0,Player,Sub,,text,무슨 외로움인지 알 것 같아.|그런 외로움도 있을 수 있구나.,I think I know what loneliness that is.|I see there is such a loneliness.,74,,,,Sub_Ch8,S8_L0073
+4,48,74,0,Dot,Sub,,text,......,......,75,,,,Sub_Ch8,S8_L0074
+4,48,75,0,Player,Sub,,text,......,......,76,,,,Sub_Ch8,S8_L0075
+4,48,76,0,Dot,Sub,,text,"있지, 혼자 있을 때면 난 마음을 풀어\n헤치고 상상 속을 거닐어.","When I’m alone, I let my mind\nwander about my imagination.",77,,,,Sub_Ch8,S8_L0076
+4,48,77,0,Dot,Sub,,text,비 대신 반짝이가 내리는 낯선\n행성으로 여행을 떠나기도 하고...,"I travel to foreign planets\nwhere it rains glitter,",78,,,,Sub_Ch8,S8_L0077
+4,48,78,0,Dot,Sub,anim_sleep,text,"심해 아귀와의 깜깜한 담소를 즐기기도 하고,\n1880년대의 어린 소녀가 되어 보기도 해.","chat with anglerfish in the deep dark ocean,\nand live as a little girl in the 1880s.",79,,,,Sub_Ch8,S8_L0078
+4,48,79,0,Dot,Sub,,text,"그리고 너와 함께 있을 때면,\n<nickname> 너에게 그 모든 이야길 들려 주는 거야.","And when I’m with you, <nickname>,\nI tell you all those stories.",80,,,,Sub_Ch8,S8_L0079
+4,48,80,0,Dot,Sub,anim_sleepy_spiderweb,text,"내 사색, 질문, 고해, 그 모든 걸.","My musings, questions and\nconfessions, all of it.",81,,,,Sub_Ch8,S8_L0080
+4,48,81,0,Dot,Sub,,text,...... 이렇게 영양가 없는\n잠꼬대일지라도 말야.,...... Even though it sometimes is trivial drivel like this.,82,,,,Sub_Ch8,S8_L0081
+4,48,82,0,Player,Sub,,text,(가만히 뭉치의 이야기를 들어 주는 게 좋겠어.),"(Seems it would be good to listen to Dot, quietly.)",83,,,,Sub_Ch8,S8_L0082
+4,48,83,0,Dot,Sub,,text,"... <nickname>, 고마워.","... <nickname>, thank you.",84,,,,Sub_Ch8,S8_L0083
+4,48,84,0,Dot,Sub,anim_sleep,text,그리고 나 역시 절대 너를 외롭게 두지 않아.,And I too would never leave you lonely.,85,,,,Sub_Ch8,S8_L0084
+4,48,85,0,Dot,Sub,,text,알고 있지?,"You know that, right?",86,,,,Sub_Ch8,S8_L0085
+4,48,86,0,Dot,Sub,anim_sleepy_spiderweb,text,...,...,87,,,,Sub_Ch8,S8_L0086
+4,48,87,0,Dot,Sub,,text,난 언제나 들을 준비가\n되어 있으니까.,I’m always ready to listen.,88,,,,Sub_Ch8,S8_L0087
+4,48,88,0,Player,Sub,,text,"...... 응, 뭉치야.","...... I know, Dot.",89,,,,Sub_Ch8,S8_L0088
+4,48,89,0,Dot,Sub,,text,나의 그늘진 모퉁이에서... 또...\n나의 끈적한 거미줄 침대 위에서,In my shaded corner... and on\nmy sticky spiderweb bed...,90,,,,Sub_Ch8,S8_L0089
+4,48,90,0,Dot,Sub,anim_sleep,text,기다리고 있을게.\n나는 언제나... 들을 준비가...,I’ll be waiting. I’ll be ready...\nto listen... always.,,,anim_sleep,,Sub_Ch8,S8_L0090

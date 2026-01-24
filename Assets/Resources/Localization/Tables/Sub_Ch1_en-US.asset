@@ -41,7 +41,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696181092352
-    m_Localized: "What\u2019s \u201Cmold\u201D? I get the sense\\nit\u2019s something
+    m_Localized: "What\u2019s \u2018mold\u2019? I get the sense\\nit\u2019s something
       you don\u2019t like."
     m_Metadata:
       m_Items:
@@ -58,7 +58,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696181092355
-    m_Localized: "I hope it doesn\u2019t give you the wrong idea\\nabout Earth on
+    m_Localized: "I hope this won\u2019t give you the wrong idea\\nabout Earth on
       your first day here."
     m_Metadata:
       m_Items:
@@ -109,7 +109,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696181092365
-    m_Localized: May I?
+    m_Localized: Please?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
@@ -184,7 +184,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696181092380
-    m_Localized: "It\u2019s nice."
+    m_Localized: This feels nice.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
@@ -566,12 +566,14 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696185286658
-    m_Localized: First, blue and blue.
+    m_Localized: Well... you <i>dream</i> of becoming a <i>dream.</i>|My <i>dream
+      is to visit the <i>Dream</i> Factory!
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696185286659
-    m_Localized: Next, sound and sound.
+    m_Localized: I was <i>sound</i> asleep in spite of the <i>sound</i>.|The <i>sound</i>
+      makes me feel safe and <i>sound</i>.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
@@ -679,13 +681,12 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696185286679
-    m_Localized: "Here\u2019s my 16th idea:"
+    m_Localized: "Here\u2019s my 16th idea:\\n\u201CWhat is that under the bed?\u201D"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696185286680
-    m_Localized: "\u201CWhat is that under the bed? It looks scary.\u201D\\nsaid
-      <nickname>. It was a dark, dark night."
+    m_Localized: said <nickname>. It was a dark, dark night.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
@@ -707,7 +708,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696185286684
-    m_Localized: Of course I like it.|It has a strange charm to it!
+    m_Localized: Wow. A gift just for me!|I was prepared for the worst, so phew.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
@@ -722,37 +723,86 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696185286687
-    m_Localized: That is, what <i>is</i> that under the bed?
+    m_Localized: That is, what <i>is<\i> that under the bed?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696185286688
-    m_Localized: "\u201CThere is something under the bed.\u201D"
+    m_Localized: Hmm. There is something under the bed.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696185286689
-    m_Localized: "Oh! Oh! There you have it!\\nIt\u2019s a great idea!"
+    m_Localized: You see a very small door.|Was that a finger just now?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696185286690
-    m_Localized: "Alright. That should have tricked\\nsleep into thinking I\u2019m
-      in no hurry."
+    m_Localized: ... A door to a mysterious world?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696185286691
-    m_Localized: I should be there to greet it\nwhen it sneaks up on me.
+    m_Localized: And creak... the door swings open.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
   - m_Id: 696185286692
-    m_Localized: "So now it\u2019s time to nestle into the dark.\\nHere\u2019s to
-      my very first night on Earth!"
+    m_Localized: Oh! And? And?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543962
+  - m_Id: 44353319529824256
+    m_Localized: And your three friends from\nthe Moon come marching out!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353319563378688
+    m_Localized: Oh! I love it! Red, Edison, and\nSir Cello are here to see me!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353319563378689
+    m_Localized: "(It\u2019s nice to see Dot so ecstatic,\\neven if we\u2019re playing
+      pretend.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353319563378690
+    m_Localized: ... No. A ghost? Or a murderer?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353319563378691
+    m_Localized: You inch toward\nthe thing. Closer... closer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353319563378692
+    m_Localized: C-Closer... What is it? Huh?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353319563378693
+    m_Localized: Gah! A large, black cockroach\ncomes skittering toward you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353319563378694
+    m_Localized: Oh! I just love it! A large, black\ncockroach is here to greet me!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353319563378695
+    m_Localized: (Huh. That's not what I expected.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353319563378696
+    m_Localized: "Alright. That should have tricked\\nsleep into thinking I\u2019m
+      in no hurry."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353319563378697
+    m_Localized: I should be there to greet it\nwhen it sneaks up on me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44353319563378698
+    m_Localized: "So now it\u2019s time to nestle into the dark.\\nHere\u2019s to
+      my very first night on Earth!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
