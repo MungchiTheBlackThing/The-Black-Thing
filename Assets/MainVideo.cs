@@ -8,6 +8,12 @@ using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using System.IO;
+using UnityEngine.Networking;
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+using Google.Play.AssetDelivery;
+#endif
 
 public class MainVideo : MonoBehaviour
 {
@@ -41,6 +47,7 @@ public class MainVideo : MonoBehaviour
     [Header("Replay")]
     [SerializeField] Button replayButton;
     [SerializeField] Button nextButton;
+    [SerializeField] private double fallbackFps = 30.0;
 
     private bool isVideoPlaying = false;
     private bool skipArmed = false;
@@ -48,6 +55,14 @@ public class MainVideo : MonoBehaviour
     private Coroutine skipHintFadeCo;
     public event System.Action OnUserSkipRequested;
     Action videoEndEvent = null;
+
+    private const string PadPackName = "videos_pack";
+    private Coroutine prepareCo;
+    #if UNITY_ANDROID && !UNITY_EDITOR
+    private PlayAssetPackRequest _padReq;
+    private bool _padReady;
+    #endif
+
 
     private void Start()
     {
@@ -88,29 +103,15 @@ public class MainVideo : MonoBehaviour
         LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged_Subtitle;
 
         Rawimage.SetActive(false);
+        string rel = $"StoryAnimation/AnimDay{Day}.mp4";
 
-        string path = $"StoryAnimation/AnimDay{Day}";
-        VideoClip clip = Resources.Load<VideoClip>(path);
-
-        if (clip == null)
-        {
-            Debug.LogError($"VideoClip not found at Resources/{path}");
-            return;
-        }
-
-        // load subtitles for this chapter (use clip FPS, not videoPlayer FPS)
-        double fps = (clip.frameRate > 0) ? clip.frameRate : 30.0;
-        entries = MainVideoCsvLoader.Load(chapter, fps);
-
-        entryKeys = (entries != null) ? BuildEntryKeys(Day, entries.Count) : null;
-        RebuildLocalizedCache();
-
+        // ===== 자막/상태 초기화 =====
         lastIndex = -1;
         startsCache = null;
         EnsureSubtitleText();
         if (subtitleText != null) subtitleText.text = "";
 
-
+        // ===== VideoPlayer 초기화 =====
         videoPlayer.Stop();
         videoPlayer.time = 0;
         videoPlayer.frame = 0;
@@ -122,10 +123,11 @@ public class MainVideo : MonoBehaviour
         videoPlayer.SetDirectAudioMute(0, true);
         videoPlayer.SetDirectAudioVolume(0, 1.0f);
 
-        videoPlayer.clip = clip;
+        videoPlayer.source = VideoSource.Url;
+        videoPlayer.url = ""; // 선택: 이전 URL 흔적 제거
         videoPlayer.gameObject.SetActive(true);
-        videoPlayer.Prepare();
 
+        // ===== 이벤트 구독 =====
         videoPlayer.prepareCompleted -= OnPrepared;
         videoPlayer.prepareCompleted += OnPrepared;
 
@@ -137,7 +139,90 @@ public class MainVideo : MonoBehaviour
 
         videoPlayer.seekCompleted -= OnSeekCompleted;
         videoPlayer.seekCompleted += OnSeekCompleted;
+
+        // ===== PAD/StreamingAssets 경로 결정 + Prepare는 코루틴에서 =====
+        if (prepareCo != null) StopCoroutine(prepareCo);
+        prepareCo = StartCoroutine(SetUrlAndPrepare(rel));
     }
+
+    private IEnumerator SetUrlAndPrepare(string rel)
+    {
+        string fullPath = null;
+
+    #if UNITY_ANDROID && !UNITY_EDITOR
+        // PAD 먼저
+        yield return EnsurePackReady();
+
+        if (_padReady && _padReq != null)
+        {
+            var assetLoc = _padReq.GetAssetLocation(rel);
+            if (assetLoc != null)
+            {
+                fullPath = assetLoc.Path;
+            }
+            else
+            {
+                Debug.LogWarning($"[PAD] Asset not found -> fallback to StreamingAssets. rel={rel}");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"[PAD] Not ready -> fallback to StreamingAssets. pack={PadPackName}");
+        }
+
+        // apk용 fallback (direct streamingassets)
+        if (string.IsNullOrEmpty(fullPath))
+            fullPath = Path.Combine(Application.streamingAssetsPath, rel);
+
+    #else
+        fullPath = Path.Combine(Application.streamingAssetsPath, rel);
+    #endif
+
+        Debug.Log($"[MainVideo] VideoPath={fullPath}");
+        videoPlayer.source = VideoSource.Url;
+
+        // jar:file://... 형태면 ToFileUrl로 다시 감싸지 말고 그대로
+        videoPlayer.url =
+            (fullPath.StartsWith("file://", StringComparison.OrdinalIgnoreCase) ||
+            fullPath.StartsWith("jar:file://", StringComparison.OrdinalIgnoreCase))
+            ? fullPath
+            : ToFileUrl(fullPath);
+
+        Debug.Log($"[MainVideo] VideoURL={videoPlayer.url}");
+        videoPlayer.Prepare();
+        yield return null;
+    }
+
+    private static string ToFileUrl(string fullPath)
+    {
+        try { return new Uri(fullPath).AbsoluteUri; }
+        catch
+        {
+            fullPath = fullPath.Replace("\\", "/");
+            if (fullPath.StartsWith("file://")) return fullPath;
+            return "file://" + fullPath;
+        }
+    }
+
+    #if UNITY_ANDROID && !UNITY_EDITOR
+    private IEnumerator EnsurePackReady()
+    {
+        if (_padReady) yield break;
+
+        _padReq = PlayAssetDelivery.RetrieveAssetPackAsync(PadPackName);
+        while (!_padReq.IsDone) yield return null;
+
+        if (_padReq.Status != AssetDeliveryStatus.Available)
+        {
+            _padReady = false;
+            Debug.LogWarning($"[PAD] Pack not available (APK fallback expected). pack={PadPackName}, status={_padReq.Status}, error={_padReq.Error}");
+            yield break;
+        }
+
+        _padReady = true;
+    }
+    #endif
+
 
     public void PlayVideo(Action videoEndEvent = null)
     {
@@ -206,8 +291,22 @@ public class MainVideo : MonoBehaviour
 
     private void OnPrepared(VideoPlayer vp)
     {
-        Debug.Log("Video prepared.");
+        // URL 소스는 여기서 frameRate 읽으면 됨
+        double fps = vp.frameRate;
+        if (fps <= 0 || double.IsNaN(fps))
+            fps = fallbackFps;
+
+        Debug.Log($"[MainVideo] Prepared. fps={fps}");
+
+        // fps 확정 후 CSV 파싱
+        entries = MainVideoCsvLoader.Load(chapter, fps);
+
+        entryKeys = (entries != null) ? BuildEntryKeys(chapter, entries.Count) : null;
+
+        RebuildLocalizedCache();
+
         lastIndex = -1;
+        startsCache = null;
         if (subtitleText != null) subtitleText.text = "";
     }
 
@@ -279,18 +378,23 @@ public class MainVideo : MonoBehaviour
 
     public void OnNext()
     {
-        PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1); //프롤로그 재생 완료 플래그 설정
+        PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1);
         PlayerPrefs.Save();
+
         RecentManager.SetIsContinue(1);
-        
         isVideoPlaying = false;
         HideSkipHintImmediate();
-        StartCoroutine(FadeOutAndEnd(videoPlayer));
         replayButton.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
-        videoEndEvent?.Invoke();
+
+        StartCoroutine(FadeOutAndEndThenInvoke(videoPlayer));
     }
 
+    private IEnumerator FadeOutAndEndThenInvoke(VideoPlayer vp)
+    {
+        yield return StartCoroutine(FadeOutAndEnd(vp));
+        videoEndEvent?.Invoke();
+    }
     private IEnumerator FadeOutAndEnd(VideoPlayer vp)
     {
         vp.Stop();
@@ -490,7 +594,7 @@ public class MainVideo : MonoBehaviour
                 videoPlayer.frame = 0;
                 videoPlayer.SetDirectAudioMute(0, true);
 
-                if (videoPlayer.clip != null)
+                if (videoPlayer.source == VideoSource.Url && !string.IsNullOrEmpty(videoPlayer.url))
                 {
                     videoPlayer.Prepare();
                 }
