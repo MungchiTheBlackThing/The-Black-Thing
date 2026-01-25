@@ -100,7 +100,7 @@ namespace Tutorial
             }
             if (data.tutonum == 0)
             {
-                if (data != null && data.isContinue == 1)
+                if (data != null && data.index > 0)
                 {
                     manager.ScrollManager.stopscroll();
                     manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
@@ -116,6 +116,7 @@ namespace Tutorial
                         manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
                         Utility.Instance.InvokeAfterDelay(substart, 2f);
                         subdial = manager.subDialoguePanel;
+                        RecentManager.SetIsContinue(1);
                     });
                 }
             }

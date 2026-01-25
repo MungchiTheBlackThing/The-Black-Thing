@@ -381,7 +381,6 @@ public class MainVideo : MonoBehaviour
         PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1);
         PlayerPrefs.Save();
 
-        RecentManager.SetIsContinue(1);
         isVideoPlaying = false;
         HideSkipHintImmediate();
         replayButton.gameObject.SetActive(false);
