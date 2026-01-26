@@ -1,514 +1,613 @@
-id,moonNumber,actor,textKor,textEng,sfx
-1,1,edison,이렇게 하면....,And now...,
-1,1,edison,"아, 성공이군. 다들 와 봐.","Ah, success. Gather around.",
-1,1,red,우와아아아아!,Whoaaaa.,
-1,1,red,우와아아아아아아아아아아아!,WHOOOOOAAAAAAA!,
-1,1,red,"큼큼, 안녕, 인간. 나는 레드야.","Ahem. Hello, human. Red here.",
-1,1,red,달에 있는 모두가 인간을 사랑하지!,Everyone on the Moon loves humans!,
-1,1,red,그리고 나도! 인간을! 사랑한다!,And so! do! I!,
-1,1,red,(우당탕 하는 소리.),(A crash.),
-1,1,red,아야!,Ouch!,
-1,1,edison,진정. 인간 놀람. 그리고\n시끄러워. 귀 먹먹하다.,Calm down. Human startled.\nAnd too loud. Ears ringing.,
-1,1,sircello,~♫♮♭♩♫&?,~♫♮♭♩♫&?,
-1,1,edison,"응, 아직 오류가 많아서 언제\n신호가 끊어질지 모름.","Yes, number of errors\nmakes signal unsteady.",
-1,1,edison,"빨리 인사, 첼로.\n내가 통역한다.","Say hello, Cello.\nI translate.",
-1,1,sircello,~♫♮ (치지직-) ♩♫!!,~♫♮ (Zzz-) ♩♫!!,
-1,1,edison,잠시만. (치직) 끊기.... (치익),Wait. (Zz) Breaking.... (Zzzz),
-1,1,sircello,♩♫####...?!,♩♫####...?!,
-1,2,sircello,(구슬픈 음악이 들린다.),(Sad music can be heard.),
-1,2,sircello,♩♩......,♩♩......,
-1,2,sircello,♩♩♩♫♮......,♩♩♩♫♮......,
-1,2,edison,첫 번째 프로토타입이라\n오류가 많음.,"First prototype, prone\nto malfunction.",
-1,2,edison,켜지고 꺼지는 타이밍도 설정이\n안 되고. 어쩔 수 없음.,Settings for turning on\nand off not yet an option.,
-1,2,edison,"지금 슬픔은 견디고, 다음에\n켜지면 제일 먼저 인사해.",No need to be sad. Be\nthe first to say hello next.,
-1,2,sircello,♩♫♮ !!,♩♫♮ !!,
-1,2,red,첼로 경의 인삿말 궁금한걸.,Wonder how you’ll pull it off.,
-1,2,red,"하아아아아아음. 으, 시간이\n언제 이렇게. 일하기 싫어.","Yaaaawn. Ugh, look at the\ntime. I don’t wanna work.",
-1,2,red,너희는 일할 때 무슨\n생각 하면서 청소해?,What do you guys think of\nwhen you work?,
-1,2,edison,뭘 생각해. 그냥 하는 거지.,I don’t think. I do.,
-1,2,sircello,~♫♮♭♩,~♫♮♭♩,
-1,2,edison,노래를 부른다고?,Sing?,
-1,2,sircello,♮♭♫~~,♮♭♫~~,
-1,2,red,"맞아, 첼로 경이 노래하면 내가\n자막을 만들어서 같이 불러.","That’s right. When Sir Cello\nhums, I make up the lyrics.",
-1,2,red,이렇게!,Like this!,
-1,2,red,해괴한 호수는 차오른다!\n퍼 담고 굳히고 긁어 내자!,The filthy lake is swelling high!\nScoop it up and scrape it dry!,
-1,2,red,짝짝이 팔다리 비틀어진 등허리!\n달 뒤편의 아래의 구석을 지키는!,"Uneven arms, twisted back!\nNo room here to cut some slack!",
-1,2,red,우리는 달나라 청소부들!,We are the cleeeaners\nof the Moon!,
-1,2,edison,아. 잠시만. 켜진 것\n같음. 불 들어오네.,Ah. Wait. Seems to be on.\nLight is on.,
-1,2,edison,"첼로 경, 인사해.","Say hello, Sir Cello.",
-1,2,red,첼로 경! 인사해!! 얼른!,Sir Cello! Say hi!!,
-1,2,sircello,~♫♮♭,~♫♮♭,
-1,2,sircello,♩♫!! (치지직-),♩♫!! (Zzz-),
-1,2,edison,"(치직) 아, 또 (치이익)",(Zz) Not again (Zzzz),
-1,2,sircello,♬ ######!!!,♬ ######!!!,
-2,1,red,으흠. (신나는 허밍이 들린다),Hmm. (Hums excitely),
-2,1,red,흐흐흠.,Hmm-hmm.,
-2,1,red,흐허어워어음.,Hmm-mm-hmm-mm.,
-2,1,red,"인간! 아아, 아.\n크흠, 여기는 레드.","Human! Ah, ahem.\nRed here.",
-2,1,red,(경쾌하게 탁탁거리는 발걸음.),(Pattering footsteps.),
-2,1,red,송신기가 켜지자마자\n에디슨 몰래 훔쳐 왔어.,I stole the transmitter while\nEdison had her back turned.,
-2,1,red,달나라를 보여 주고 싶어서.\n빨리! 시간이 없어!,I wanted to show you around.\nQuick! We don’t have time!,
-2,1,red,우선 저어기 (발걸음이 탁탁탁\n빨라진다) 보이는 건 꿈 공장이야!,First there’s (footsteps quicken)\nthe dream factory.,
-2,1,red,정말 아름답지? 대부분 인간의\n눈에는 보이지 않지만.,"Beautiful, right? It’s usually\ninvisible to the human eye.",
-2,1,red,하지만 뭉치를 볼 수 있다면\n이 공장도 볼 수 있을걸?,But if you can see Dot\nI bet you can see it too.,
-2,1,red,저기 빛을 내며 날아다니는\n친구들은 달나방들이야.,Those sparky friends over\nthere are the moon moths.,
-2,1,red,흐흐. 내 발밑엔 땅바닥...\n그리고 짠. 크레이터.,Hehe. And the ground under\nmy feet... and tada. The crater.,
-2,1,red,"검은 호수 같지? 다들 끔찍하다고\n싫어하지만, 난 뭐랄까,","Looks like a black lake, right?\nNo one likes it, but for me,",
-2,1,red,바라보고 있으면 이상하게\n마음이 편해진단 말이지.,"well, looking at it somehow...\nsoothes me.",
-2,1,edison,뭐 함?,What are you doing?,
-2,1,red,... !,... !,
-2,1,edison,...,...,
-2,1,red,......,......,
-2,1,edison,......,......,
-2,1,red,뭐 하긴? 인간한테 달나라\n구경 시켜 주고 있다.,What does it look like? I’m\nshowing the human around.,
-2,1,red,왜. 뭐!,What. What!,
-2,1,red,"뭐, 뭐, 뭐뭐! 어쩌라고!",What! Why are you\ngiving me that look!,
-2,1,edison,무슨 구경.,Showing what.,
-2,1,red,공장이랑... 달나방이랑...\n땅바닥... 크레이터....,The Factory... the moths...\nthe ground... the craters...,
-2,1,red,"지구에선 달 뒤편이 안 보이니까,\n궁금하지 않을까 하고....",And I thought they’d like to see\nthe dark side of the moon...,
-2,1,edison,영상 정보는 송출 안 됨.,Visual information\nis not transmitted.,
-2,1,red,에? 거짓말!,What? You’re kidding!,
-2,1,edison,내놔.,Relinquish it to me.,
-2,1,red,(작은 한숨 소리) 아아. 싫어어.\n인간이랑 더 이야기할래.,(Sigh) Noooo. I wanna talk more.,
-2,1,edison,떨어뜨리기라도 했으면 어쩔 뻔\n했음? 크레이터에 빠트렸으면?,And if you dropped it?\nIf it fell into a crater?,
-2,1,edison,내놔.,Relinquish it.,
-2,1,edison,고장난 곳 없는지 봐야 하니까.,I need to check for damages.,
-2,1,red,(작은 한숨 소리),(Small sigh),
-2,2,red,"에디슨, 첼로 경!","Hey Edison, Sir Cello!",
-2,2,red,"아니, 글쎄, 동쪽 구역 청소를\n맡은 치커리 영감이 말이야.",You know old man Chicory\nthat cleans the east part of things?,
-2,2,red,어제 ‘귀신’을 봤대.,Says he saw a GHOST\nyesterday.,
-2,2,edison,귀신은 허상임.,Ghosts are illusions.,
-2,2,edison,또는 측두엽 뇌파\n변화의 일시적 현상.,Or temporary changes in\ntemporal lobe brain waves.,
-2,2,red,진짜라니까?,Are not.,
-2,2,edison,가짜.,False.,
-2,2,sircello,♮♭~♫♩...? (바들바들\n떨리는 선율),♮♭~♫♩...? (Trembling notes),
-2,2,edison,"믿지 마, 첼로 경.","Do not indulge him, Sir Cello.",
-2,2,edison,치커리 영감 정도라면\n환시를 볼 나이도 됐음.,"Hallucinations, not uncommon\nfor man of Chicory’s age.",
-2,2,edison,자러 가던 달나방 떼를\n귀신으로 착각했을 수 있음.,May have mistaken a swarm\nof moon moths for a ghost.,
-2,2,red,그런 거겠지? 안심이\n되는 것 같기도 하고.,"Yeah? Boy, that’s a relief.",
-2,2,red,그래도 우리 네 명이\n함께라 다행이야.,I’m sure glad the four of us\nare together though.,
-2,2,red,"진짜든 아니든,\n귀신은 무서우니까.","‘Cause real or no,\nghosts are SCARY.",
-2,2,edison,잠깐.,Wait.,
-2,2,edison,네 명?,Four?,
-2,2,red,어...? 방금. 분명......!,Wait...? There’s no way......!,
-2,2,edison,!!!,!!!,
-2,2,sircello,!!!,!!!,
-2,2,red,!!!,!!!,
-2,2,red,으아아아아아아아악!,AAAAHHHHHHHHHH!,
-3,1,red,해괴한 호수는 차오른다!\n퍼 담고 굳히고 긁어 내자!,The filthy lake is swelling high!\nScoop it up and scrape it dry!,
-3,1,red,짝짝이 팔다리 비틀어진 등허리!\n달 뒤편의 아래의 구석을 지키는!,"Uneven arms, twisted back!\nNo room here to cut some slack!",
-3,1,red,우리는 달나라 청소부들!,We are the cleeeaners of the Moon!,
-3,1,red,으악. 이러다 허리가 휘겠어.,"God, my back is killing me.",
-3,1,edison,이미 휜 편.,Not dead yet.,
-3,1,edison,그리고 그건 청소일\n때문이 아님.,And not due to cleaning.,
-3,1,edison,네가 쉬는 동안 허리 펴기 귀찮\n다고 구부정하게 앉아서 그럼.,You slouch during break times\nrather than sitting straight.,
-3,1,red,"하지만 종일 일, 일, 일인걸?","But it’s been work, work,\nwork all day with an\nextra scoop of work!",
-3,1,red,쉴 때엔 너무 피곤해서 웅크리고\n있어야만 살 것 같단 말이야.,I slouch because I’m just too\npooped to do anything else.,
-3,1,red,안 되겠어. 에디슨! 첼로 경!,I can’t take it anymore.\nEdison! Sir Cello!,
-3,1,red,이대로는 안 되겠어. 멋진\n어른 인간들을 본받자.,We gotta take a leaf from\nhumans and that book of theirs.,
-3,1,red,우리도 ‘집’과 ‘출퇴근’이라는\n제도를 만들어 보자!,"We’ll need a ‘home’,\nand ‘work hours’!",
-3,1,edison,음?,Hmm?,
-3,1,red,이 모닥불 구덩이를 우리의\n‘집’이라고 정하는 거야.,We’ll call this bonfire pit\nour ‘home.’,
-3,1,edison,그리고?,Then?,
-3,1,red,그리고 할당량이라는 걸 정하자.,Then we assign ourselves\nworkloads for each day.,
-3,1,red,크레이터에서 퍼다 나른 폐기물\n로 구덩이를 열 개 채우면,"Once we fill ten pits with\nMoon filth from the craters,",
-3,1,red,‘집’으로 퇴근!,we’re off the clock\nand get to go ‘home’!,
-3,1,sircello,♫♮♭♩♫!!,♫♮♭♩♫!!,
-3,1,red,별자리가 반의 반 뼘만큼 공전\n했을 때 다시 출근하는 거지!,We’ll go back to work\nwhen the constellations\nmove... THIS much.,
-3,1,edison,괜찮은 것 같음. 한번 해 봐.,Sounds interesting.\nSuggest you give it a try.,
-3,1,red,같이 하자.,"No, WE will.",
-3,1,red,다 같이 하자!,All three of us!,
-3,1,edison,.......,.......,
-3,1,edison,알았음.,Affirmative.,
-3,1,sircello,♩♫♮ ~~!,♩♫♮ ~~!,
-3,2,red,집이 생겼어. 따끈한 모닥불...\n잘 구워진 돌 의자.,We have a home now.\nA warm bonfire... a toasty stone chair.,
-3,2,edison,좋네.,Sweet.,
-3,2,sircello,♫♮♩... ♭♩?,♫♮♩... ♭♩?,
-3,2,edison,조금 허전한 것 같다고?,You think something’s missing?,
-3,2,red,휑하기는 하다.,Guess it’s pretty empty.,
-3,2,edison,이곳은 달 뒤편. 원래\n휑한 곳이다.,It’s the dark side of the moon.\nIt’s always going to be empty.,
-3,2,red,하지만 우리의 영혼까지\n휑해질 필요는 없지.,But that doesn’t mean\nour souls have to be empty.,
-3,2,red,"우리, 집을 꾸며 보는 건 어때?",Why don’t we give\nhome decorating a shot?,
-3,2,edison,뭐...,Hmm.,
-3,2,edison,... 좋음. 돌을 더 가지고 오겠다.,... Good.,
-4,1,red,대사가 아직 안 적혔어!,eng,
-4,1,edison,기다려라. 진행 중.,eng,
-4,1,sircello,♩♫♮ ~~,eng,
-4,2,edison,"레드, 질문.","Red, a question.",
-4,2,edison,그때.,Back then.,
-4,2,edison,뭉치를 지구로 보내자고\n제안한 이유는 무엇?,Why suggest sending Dot to Earth?,
-4,2,red,"우리가 뭉치를 우주로 던지기\n직전, 뭉치가 했던 말 기억해?","Right before we launched Dot into space,\ndo you remember what they said?",
-4,2,red,저기엔 꿈이랑...... 어쩌구.,Over there... Dreams...\nSomething like that.,
-4,2,edison,‘저기엔 나를 꿈으로 삼아 줄\n다른 존재가 있을지도 몰라요.’,"Over there, someone may\nwant me as their dream.'",
-4,2,red,"응, 맞아! 그거.","Yeah, right! That.",
-4,2,red,"뭉치는,","Dot,",
-4,2,red,뭉치는... 꿈을 꿀 줄 알아.,Dot... can dream.,
-4,2,edison,꿈?,Dream?,
-4,2,red,"폐기물에서 태어난 괴물....\n맞아, 유쾌한 존재는 아니지.",A monster born of filth...\nThey are not usually welcome.,
-4,2,red,그 검은 눈을 보고 있으면 희망...\n같은 무언가가 느껴졌어.,"But when I looked into their eyes,\nI felt hope... or something like it.",
-4,2,red,어둡지만 분명했어.,They were dark but certain.,
-4,2,red,"그걸 인간에게 보내면, 그 인간은\n분명 행복해질 것 같았어!","So I thought if a human met Dot,\nthey would become happy for sure!",
-4,2,edison,.............,.............,
-4,2,red,"그리고 뭉치, 못생겼지만 귀여워.","And Dot’s cute, in an ugly way.",
-4,2,sircello,(높은 스타카토.\n웃음소리와 흡사하다.),"(A string of high staccatos,\nakin to laughter.)",
-4,2,edison,...... 저런.,......,
-4,2,edison,나의 전구 머리로는 해독할 수\n없는 난해한 감상. 뭉치가 ‘귀엽다’니.,"Difficult to wrap my lightbulb head\naround this notion. Dot, 'cute.'",
-4,2,red,"에디슨, 그런 너는 내 제안을\n왜 흔쾌히 수락한 거야?","Okay, why did you accept my\nsuggestion so readily then, Edison?",
-4,2,edison,너의 무모하고 멍청하고\n위험하기까지 한 제안?,"Your reckless, stupid, dangerous\nsuggestion, you mean?",
-4,2,red,"(작게 투닥거리는 소리,\n레드가 궁시렁거린다.)","(Sounds of bickering arise,\nRed mumbles.)",
-4,2,edison,너를 믿었기 때문임.,It's because I believed in you.,
-4,2,edison,"너의 계획은 무모하고 멍청하고\n위험하기까지 했지만, 따뜻했다.","Your plan was reckless, stupid, and\ndangerous but still warmhearted.",
-4,2,edison,네 불꽃 대가리가 밝혀 낸 가능성에\n희망을 걸어 보고 싶었어.,I wanted to pin my hopes on the\nwarmth your flame-head illuminated.,
-4,2,edison,...... 인간을 보고 싶다는 열망이\n이성을 이겨 버린 후이기도 했고.,"...... Also, my desire to see a human\novercame my rational side.",
-5,1,red,에디슨! 같이 가!,Edison! Wait up!,
-5,1,red,헉... 헉...! 달나비들이\n갑자기 달려드는 바람에.,Huff... huff... moon butterflies\ncame at me all of a sudden.,
-5,1,edison,달-나비. 크레이터 주변에\n서식하는 날개 곤충.,Moon-butterflies.\nWinged insects inhabiting\nedge of craters.,
-5,1,edison,무엇에 반응한 거지?,Reacting to what?,
-5,1,red,"그, 청소 구역 표시해 둔\n표지판 말이지.","Well, you know that sign that\nmarks all the cleaning spots.",
-5,1,red,내가 불 조절을 실수해서\n조금 태워 버렸다!,I messed up and it\nkinda caught on fire.,
-5,1,edison,....조금? 확실해?,.....Kinda? Certain?,
-5,1,red,"크흠, 조금! 그래서 종이가\n타닥타닥 타들어 가는데...",Just a smidge! The paper\nwas burning away when...,
-5,1,red,서쪽에서 엄청나게 많은\n달나비들이 몰려오더라고!,a swarm of moon butterflies\ncame at me from the south!,
-5,1,red,그리고 순식간에 날 에워싸는 거야!,Before I knew it I was\nsurrounded by them.,
-5,1,red,눈앞이 은색 물결로\n가득 채워졌어.,Wave after wave of silver\nrippling before my eyes.,
-5,1,red,"혼란스러웠지만,\n정말 아름다웠어!","Confusing, but beautiful!",
-5,1,red,반짝이는 별가루를 떨어뜨리는\n달나비들의 비행이란!,Moon butterflies and their\nshimmering stardust flight.,
-5,1,red,....에디슨? 어디 가?,....Edison? Where you going?,
-5,1,edison,내 연구실.,My lab.,
-5,1,edison,달나비가 불에 타는 것에\n반응하는 이유를 탐구해야겠다.,To investigate why moon\nbutterflies burn in fire.,
-5,2,red,첼로 경은 왜 언어로 말하지 않게 된 거야?,...Why doesn’t Sir Cello\nspeak with words?,
-5,2,sircello,♫♮♭♩~,♫♮♭♩~,
-5,2,red,첼로로 아름다운 소리를 내던 인간?\n아! 첼로 경이 마지막으로 맡았던\n인간은 음악가였구나!,The human that created beauty with his cello?\nOh! So your last human was a musician!,
-5,2,sircello,♪~ ♩♭♫ !,♫♮♭♩...~♮♭,
-5,2,red,천재적인 실력? 세상에.......,An undeniable prodigy?\nOh my......,
-5,2,sircello,♭♫ ♪ ♫♭,♭♫ ♪ ♫♭,
-5,2,red,"그런데 거만했다니! 모든 천재 인간들은\n콧대가 높단 말이 있더라니, 역시였어!","But arrogant! It's true then, that all\ngeniuses look down on everyone else!",
-5,2,red,"어, 첼로 경! 송신기가 깜빡거려.","Oh, Sir Cello! The radio is blinking.",
-5,2,red,뭉치의 인간도 듣고 있을지 몰라.\n내가 첼로 경의 말을 번역해 줄까?,Dot's human may be listening.\nShall I interpret what you're saying?,
-5,2,sircello,...~♮♭,♫♮♭♩...~♮♭,
-5,2,red,"인간, 내가 첼로 경에게 왜 말을 하지\n않게 되었는지를 물어보고 있었어.","Human, I was asking Sir Cello why\nhe no longer speaks in words.",
-5,2,red,너에게도 이야기를 공유하고\n싶대! 번역해 줄게. 나만 믿어!,"He'd like to share the story with you as\nwell! I'll interpret it, you can count on me!",
-5,2,sircello,♫ ♫# ♮♭,♫ ♫# ♮♭,
-5,2,red,"그러던 어느 날, 첼로 경의 인간은\n사고로 손을 크게 다치고 말았어.","One day, he hurt his hand\nreal bad from an accident.",
-5,2,red,저런.... 오랜 기간 끝에 회복했지만\n다치기 전 실력은 되찾을 수 없었대.,He got better but could\nnever play like he used to.,
-5,2,sircello,♪ ♫#...,♪ ♫#...,
-5,2,red,"다른 이들은 그의 몰락을 지켜보며\n연민하기도, 유희처럼 즐기기도 했어.","Everyone watching his\ndownfall sympathized,\nbut they laughed too.",
-5,2,red,괴로워하는 인간의 꿈에서는\n끔찍한 소리만이 연주됐지.,Horrible melodies played in\nthe human’s nightmares.,
-5,2,sircello,♩♭♫ ♩♪...,♩♭♫ ♩♪...,
-5,2,red,"날카로운 말들로 가득찬 세상\n속에서 그를 위로할 수 있던 소리는\n첼로 선율만이 유일했지만,","Cello strings were the only source\nof comfort in a sea of cruel noises,",
-5,2,red,이젠 사랑하던 음악마저 그의\n현실만큼이나 지옥이 되어 버렸고,but the music he once loved\nwas now as stark as reality. ,
-5,2,sircello,♪♪♩♫ ♩♭...,♪♪♩♫ ♩♭...,
-5,2,red,끝끝내 인간은 자신의 삶을\n연주하기를 포기해 버렸대.,And in the end... the human\ngave up playing his life.,
-5,2,red,첼로 경은 그의 음악을\n사랑했던 만큼 깊게 슬퍼했어.,"Sir Cello mourned, as he\nwas in love with his music.",
-5,2,red,슬픔을 헤엄치는 과정에서\n선율을 얻은 거야.,And while navigating\nthat grief he found music.,
-5,2,sircello,♫♮ ♩♩,♫♮ ♩♩,
-5,2,red,"‘언젠가 그에게, 말보다\n아름다운 선율을\n들려주고 싶어.’","I shall play a tune vastly\nmore beautiful than\nwords alone, just for him.",
-5,2,red,라고 말하네.,says Sir Cello.,
-6,1,edison,할 이야기가 있다 다들\n원을 이루게 모여 보도록.,Announcement. Everyone\ngather around in a circle.,
-6,1,red,"오오, 에디슨이 부를\n정도라니! 무슨 일이야?","Oooh, Edison’s got\nhot gossip! What’s up?",
-6,1,sircello,♮ ♩♩ ♫ ?,♮ ♩♩ ♫ ?,
-6,1,edison,어제 구석에 있는\n크레이터를 청소하러 나갔음.,Went to clean the crater\nin the corner yesterday.,
-6,1,edison,거긴 오래 관리가\n안 되어 어두컴컴했다.,"A dark place, left unkempt for.",
-6,1,edison,"도구를 준비 하던 중, 크레이터 안에서\n무언가 뻗어 나온 것을 목격.",Witnessed something peeking\nout of the crater while preparing.,
-6,1,edison,"그건 희뿌옇고, 나뭇가지처럼\n가느다란 손이었다.","A pale, thin hand\nresembling a branch.",
-6,1,edison,마디가 기이할 정도로 길게 뻗은 그 손이\n나에게 인사를 건네고는 사라졌어.,Elongated fingers waved at\nme before disappearing.,
-6,1,edison,직후에 크레이터 안을 확인해\n봤지만... 아무것도 없었음.,Scanned the crater immediately...\nfound nothing.,
-6,1,edison,남은 것은 심연과 같은 어둠 뿐.,All that was left was\ndarkness like an abyss.,
-6,1,red,하하! 에디슨. 잘못 본 거 아니냐?\n연구하느라 눈이 나빠졌나 본데!,"Get outta here, Edison! Sure\nyou don’t need new glasses?",
-6,1,red,전혀 무섭지 않아. 전혀!,Like that’s supposed\nto scare me. No way!,
-6,1,sircello,♫♮♭....,♫♮♭....,
-6,1,red,"아냐, 첼로 경! 내 불이\n흔들리는 건 추워서야. 크흠.","No, Sir Cello! My fire’s\nflickering cause it’s CHILLY.",
-6,1,sircello,♫♮~ ♫♮♭...~♫♭.....,♫♮~ ♫♮♭...~♫♭.....,
-6,1,red,"이, 일부러 무서운\n음악 연주하는 거지? 그만!",Are-are you playing creepy\nmusic on purpose? Stop it!,
-6,2,red,음? 에디슨이 안 보이네.,Hmm? I can’t find Edison.,
-6,2,red,"첼로 경, 에디슨\n어디 있는지 알아?","Sir Cello, know where Edison is?",
-6,2,sircello,~♫ ♮♭,~♫ ♮♭,
-6,2,red,또 틀어 박혀서 연구하고 있군. 며칠째\n필라멘트 코빼기도 안 보이잖아!,Stuck in the lab again. We haven’t\nseen hide or filament of her for days!,
-6,2,red,"잠시만, 그렇다면....","Wait, does that mean...",
-6,2,red,우리도 매일 출근하지\n않아도 괜찮은 거야?,we don’t have to come\nto work every day?,
-6,2,sircello,♫&  ♪ !,♫&  ♪ !,
-6,2,red,넌 알고 있었다고? 말도 안돼!,You knew already? No way!,
-6,2,red,그럼 나도 오늘\n청소 일을 쉬겠어.,Then I’ll take a day off\nfrom cleaning too.,
-6,2,red,"일을 안 하고... 음, 집에서...",I’ll just go home and... well...,
-6,2,red,....뭘 하지?,....do what?,
-6,2,sircello,#♭♪ ♫&?,#♭♪ ♫&?,
-6,2,red,...맞아. 일이 없는 달의\n일상은 너무 무료해.,...You’re right. Life on the\nmoon with no work is boring.,
-6,2,red,"일이라고 부르지만, 사실은\n너희와의 산책과 다름 없으니까.","I call it work, when actually it’s\njust a nice stroll with you guys.",
-6,2,red,일하면서 슬픈 생각을\n잊는 것도 사실이고.,And I don’t have to think about\nsad things when I’m working.,
-6,2,red,"....쳇, 가자! 첼로 경.","....Ugh. Get those notes\nshaking, Sir Cello!",
-6,2,red,오늘은 동쪽의 작은\n크레이터부터 청소해야겠어.,Today’s a day for cleaning\nthe small crater in the east.,
-7,1,red,"에디슨, 첼로 경. \n내가 여기 있는 줄은 어떻게 알았어?","Edison, Sir Cello. What are\nyou doing all the way here?",
-7,1,red,아직 청소 덜 끝난 거 아니었어?,I thought you were\nstill cleaning?,
-7,1,edison,"내 눈동자에 비치는 네 모습을 봐, 레드.","Your reflection in my eyes, Red.",
-7,1,edison,시들시들해져서는\n 곧 꺼질 것 같다.,Flickering. About\nto be snuffed out.,
-7,1,edison,...그 인간 아이 생각이 나는 것?,... Thinking of the human child?,
-7,1,sircello,♫♮......,♫♮......,
-7,1,red,이런...! 걱정시켰네. 맞아.,Oh...! Didn’t mean to\nworry you. But you’re right.,
-7,1,red,오늘같이 우주가 얼어붙은 듯\n고요한 날엔 그 애가 생각나서 말이야.,"When it’s silent like the\nuniverse has frozen over,\nI’m reminded of him.",
-7,1,red,시린 물 한가운데로 스스로\n걸어 들어간 그 애가.,The boy that walked into the\nfreezing water willingly.,
-7,1,sircello,....♩♫#♫♮♭.,....♩♫#♫♮♭.,
-7,1,red,그래. 시간이 흘렀는데\n조금도 잊혀지지 않았어.,Yeah. Time has passed but\nI haven’t forgotten a thing.,
-7,1,red,그 애의 하루를 들여다볼 때면\n느껴지던 깊고 깊은 외로움이.,That deep deep loneliness I felt\nwhenever I peered into his day.,
-7,1,red,내가 찰나의 온기라도\n되어줄 수 있었다면...,If I could have been a\nmoment of warmth for him...,
-7,1,red,달라졌을까? 그 애는\n살아갈 수 있었을까?,Would things be different?\nCould he have lived on?,
-7,1,red,아직도 그런 생각을 해.,These thoughts keep\nme up even now.,
-7,1,edison,... 언제든 털어 놓아도 된다.,... You can always inform us.,
-7,1,edison,그런 후회를 하는 건\n크레이터를 치우는 이 공장\n아래의 모두가 마찬가지니까.,The same regrets apply to all of us.,
-7,2,sircello,♬♬ ♬♬♬♬,♬♬ ♬♬♬♬,
-7,2,sircello,(멀리서 날개 바스락거리는\n소리가 들린다.),(Rustling of wings),
-7,2,sircello,♫ ♪ ♫♪♫♪,♫ ♪ ♫♪♫♪,
-7,2,sircello,(더듬이 비비는 소리가 들려온다.\n달나방... 혹은 달나비일까?),(Squeaking of feelers),
-7,2,sircello,♩♩ ♩♩♭,♩♩ ♩♩♭,
-7,2,sircello,(날개 빠르게 팔락이는\n소리가 지나간다.),(Rapid flapping of wings),
-7,2,sircello,♫♮♭♩...♮♭....,♫♮♭♩...♮♭....,
-8,1,edison,뭐야. 또 켜져 있잖아? (치지직-),Hmm. Turned on again? (Zzzz-),
-8,1,edison,"들리나, 인간?\n제멋대로 작동되니... 이런.","Do you copy, human? ... It seems\nto be malfunctioning. Oh well.",
-8,1,edison,언제 꺼지는지 지켜보고\n수리를 해야겠음.,I will need to make adjustments\nafter observing the pattern\nin which it turns on and off.,
-8,1,edison,그동안 무슨 얘기를 해야 할까.,In the meantime.,
-8,1,edison,이곳 달 뒤편에는 인간의\n흥미를 돋울 만큼\n흥미로운 이야기는 없다만.......,"Here on the dark side, there's not\nmuch to pique a human's interest......",
-8,1,edison,"역시, 인간에 대한 이야기를\n해 주는 편이 좋으려나.",I suppose a story about\nhumans will suffice.,
-8,1,edison,.......,......,
-8,1,edison,나도 직원 시절 관찰했던\n인간 하나가 있었다.,I too observed a human\nduring my days as a worker.\nOne that studied the stars.,
-8,1,edison,"망원경이 발명된 지 얼마\n지나지 않았던 시절,\n별을 탐구하던 인간이었지.","During a time when binoculars\nhad just been invented,\nthe human was a scholar of stars.",
-8,1,edison,인간은 자주 애인과\n함께 밤하늘을 올려다봤어.,The human would gaze at the\nnight sky with her lover.,
-8,1,edison,하지만 그의 아름다운 애인은\n갑작스러운 사고로 생명을 잃었다.,But her lover lost their\nlife in a sudden accident.,
-8,1,edison,”나중에 저 별에서 다시\n만나는 거야.” 라는 말을 남기고.,"“That star is where I’m\nheaded after I die”,\nwere their last words.",
-8,1,edison,인간은 그들이 다시는\n만날 수 없다는 걸 알았다.,The human was not aware\nof the name of the star.,
-8,1,edison,"그래서 인간은 연구에 더\n몰두했지. 매일, 매 시간, 매 초를.",And so she threw herself into her work.\nEvery second of every hour\n... of every day.,
-8,1,edison,애인에 대한 그리움이\n비집고 들어오지 못하도록.,Her obsession over\nreuniting with her lover\ngrew and grew. Until...,
-8,1,edison,"나는 그의 상실을 온전히 이해하고\n있다고 판단했고,",I calculated that I understood\nthe entirety of her loss.,
-8,1,edison,그래서... 실수를 저질렀다.,And so I made mistakes.,
-8,1,edison,"멍청한 실수들을, 매일 밤, 수차례.","Foolish mistakes, again\nand again, every night.",
-8,1,edison,...... 더는 이야기해 줄 수 없지만,...... I can't bring myself\nto tell you more.,
-8,1,edison,이것만은 알아주길 바란다.,But know this:,
-8,1,edison,"그 실수를 반복하지 않으려고\n개발한 것이다. 인간, 너와의 송신기를.","This radio was made so as not to\nrepeat the same mistake, human.",
-8,1,edison,대화를 통한다면...\n무지는 언젠가 극복될 수 있으니까.,As the only method of overcoming\nignorance… is to converse.,
-8,2,red,만약에.,What if.,
-8,2,edison,만약에?,What if?,
-8,2,red,"만약에, 아주 투명한 영혼과\n순수한 마음을 가진 어느 인간이","What if a human, albeit one with a\ntransparent soul and a pure heart,",
-8,2,red,우주 비행사가 되어\n달의 뒤편에 착륙한다면 어떡하지?,What if they become an astronaut and\nland on the dark side of the Moon?,
-8,2,red,그리고 우리의 아름다운 공장과,"What if they discover\nour beautiful factory,",
-8,2,red,밑에서 폐기물 청소\n중인 우리를 발견한다면?,"And us, cleaning up filth?",
-8,2,red,우리는 숨어야 하려나?\n아니면 인사를 건네야 할까?,Should we hide? Say hello?,
-8,2,edison,인간 또한 강한 탐구욕을 가진 종족.,Humans possess\na strong sense of curiosity.,
-8,2,edison,그는 분명 다가와 우리에게\n많은 질문을 쏟아 낼 것.,Highly likely that they will\napproach and ask questions.,
-8,2,red,불꽃 머리를 화려하게 뽐내고\n있으면 눈에 띄겠지? 분명해!,"My flaming head will catch their\neye, right? I'm sure of it!",
-8,2,red,"NASA에 대서특필될 수도! 불꽃\n소년, 인간의 마음을 뜨겁게 데우다!",Maybe I'll headline newspapers!\n'Flameboy Warms Up Human's Heart!',
-8,2,edison,"아니, 그 전에 인간의\n표피를 뜨겁게 데울 듯하다.","Rather, your presence will\nburn the human’s skin.",
-8,2,edison,인간이 화상 입을 수도.\n인간의 외피는 우리의 생각보다 연약함.,Human may acquire a burn. Their\nexteriors are far more fragile\nthan our understanding.,
-8,2,edison,그들은 우주복 없인\n이곳에서 살아남을 수 없음.,They cannot survive here\nwithout spacesuits.,
-8,2,edison,네 불이 우주복에\n구멍이라도 뚫어 버린다면?,What if your flame were to burn\na hole through their spacesuit?,
-8,2,sircello,(베토벤의 비창이 흘러나온다.\n격렬한 불협화음이 섞여 있다.),(Cue Beethoven's Pathétique.\nThe cacophony is startling.),
-8,2,red,...... 흥.,......Hmph.,
-8,2,edison,"어찌 되었든, 긴급\n행동 요령이 필요하겠군.","Regardless, an emergency protocol\nseems necessary.",
-8,2,edison,다녀오겠다. 고민의\n시간이 필요해.,Excuse me. I need time\nto come up with one.,
-8,2,edison,"타당한 의문이었음, 레드.","It was a valid question, Red.",
-8,2,red,...... 그렇게 칭찬해도\n기분 안 풀리거든!,......That does not make\nme feel any better!,
-9,1,red,인간. 인가아아안.,Human. Humaaaan.,
-9,1,red,오늘따라 잠이 오질 않아서\n에디슨 몰래 송신기를 켜 봤어.,"Couldn’t sleep, so I snuck\naround Edison to turn this on.",
-9,1,red,아아- 크흠. 들리려나?,"Testing, one two three.\nCan ya hear me?",
-9,1,red,음... 마지막으로 꿈 제작을\n담당했던 아이가 자꾸 떠오르는 것 있지.,Hmm… I can’t stop thinking about\nthe last human I took care of.,
-9,1,red,나의 마지막 인간.,My last human.,
-9,1,red,"있잖아, 그 애는\n정말 따뜻한 아이였어!","You know, he really\nwas a sweet kid!",
-9,1,red,"친구들에게 마지막 남은 반찬을\n항상 양보할 정도로 마음이 넓었고,","Always sharing his food with his friends,",
-9,1,red,지나가는 고양이와 인사하기 위해\n선뜻 주저앉아 손을 내밀\n정도로 경계가 보드라웠어.,Always stooping down\nto say hi to a passing cat.,
-9,1,red,하지만 세상은 그 애에게\n따뜻하지 않았어.,But the world wasn’t sweet to him.,
-9,1,red,"원래 그렇게 이기적인 세상인 걸까,\n그 아이에게만 박했던 걸까?","Is it always that way, or\nwas the kid just unlucky?",
-9,1,red,약해서? 인간 세계의 기준으로\n‘가난한 자’에 속해서?,‘Cause he was weak? ‘Cause he was\n‘poorer’ than other humans?,
-9,1,red,뒤에 숨을 어른 가족이 없어서?,‘Cause he didn’t have\nadults to hide behind?,
-9,1,red,모르겠어. 이해할 수 없는\n아주 비겁한 이유였다고 생각해.,Don’t know. I bet it was a\nreally cowardly reason.,
-9,1,red,"그 아이를 에워싼 겨울도,\n주변의 어른들도. 결코 그에게\n온기를 되돌려주지 않았기에,",The winter cold and the adults\naround him didn’t do jack for him.,
-9,1,red,난 모든 경우를 생각하며\n그를 데워 주려 했지만\n내 온기는 닿지 않았어.,"So I tried everything to make him\nwarm, but nothing reached him.",
-9,1,red,내 머리가 나빠서였을까?,Was I just not smart enough?,
-9,1,red,아니면 달과 지구의\n거리가 너무 멀어서?,Or is the Moon too far from Earth?,
-9,1,red,...... 전부 나의 탓이야.,......It's all my fault.,
-9,1,red,그래서 난... 그를 위해\n더욱 강렬하고 뜨거운\n불이 되기로 결심했어.,"So I… decided I’d burn even\nfiercer and hotter, just for him.",
-9,1,red,혹시 모르잖아.\n그 애가 지금 먼먼 우주를\n떠돌고 있을 수도 있는 거잖아.,"Who knows. Maybe that kid is wandering\nin space, far away from here.",
-9,1,red,그렇게 우리가 언젠가\n만날 수도 있는 거잖아!,And maybe one day\nwe’ll run into each other!,
-9,1,red,"그때, 그때 비로소 그\n아이를 데워 주면 되니까.",And then I can finally\nwarm the kid up.,
-9,1,red,"그러니 인간, 그때까지\n내가 타오르길 응원해\n줘야 해! 그럴 거지?",So you better root for me to\nkeep burning on! Can\nI count on you?,
-9,2,red,그때 기억 나?,Do you remember?,
-9,2,red,삽이 땅 속 무언가에\n부딪혔을 때 말야.,When my shovel hit\nsomething in the ground.,
-9,2,sircello,♩ ♩♪ ♮♪ ?,♩ ♩♪ ♮♪ ?,
-9,2,edison,"맞아, 네가 땅속 무언가의\n정체를 몰라 우리를 불렀잖아.","Indeed, you had no idea\nwhat it was and summoned us.",
-9,2,edison,"난 그 자원을 이리저리 보고,\n냄새를 맡고, 만져보고,\n또 핥아보기까지 했지.","I studied, smelled, touched,\neven licked the resource.",
-9,2,edison,오감으로 관찰한 결과 나는 확신했다.,And my senses confirmed\nwhat I already suspected.,
-9,2,edison,이것은 달과 꿈 공장에 혁신을\n불러일으킬 신자원이라는 걸!,That this new resource would\nbring about innovation on the\nMoon and the Factory!,
-9,2,edison,바로 이를 연료화하기\n위한 실험에 돌입하려,I left at once to retrieve my\nequipment from the laboratory,
-9,2,edison,연구실로 실험 도구를\n가지러 떠났지.,to begin experimenting on\nhow to convert it into fuel.,
-9,2,edison,그런데 돌아오니까\n자원이 없어졌지 뭐야.,But I returned to discover\nthe resource missing.,
-9,2,edison,달을 샅샅이 뒤져보았지만\n낌새도 없이 사라져 있었음.,I searched the Moon\nbut it hadn’t left a trace.,
-9,2,edison,그때만큼 내 감정이 요동쳤던\n때를 찾기는 쉽지 않아.,My emotions had never\nbeen more intense.,
-9,2,edison,"그럼, 난 연구실로 복귀한다. 이만.","With that, I return to my lab.\nUntil the next time.",
-9,2,edison,(탁탁거리는 발소리가 멀어진다.),,
-9,2,red,...,...,
-9,2,sircello,...,...,
-9,2,sircello,♪♪ ♮♬ ?,♪♪ ♮♬ ?,
-9,2,red,"아니야, 말해주지 않길 잘 했어.","No, we made the right call\nby not telling her.",
-9,2,red,그 대단한 신자원이 고작\n‘얼음’이었다는 걸\n알았다면 에디슨은...,If Edison ever found out that\nher grand resource was just ice...,
-9,2,sircello,♫♮♭♮♭!!!!,♫♮♭♮♭!!!!,
-9,2,red,우리도 엄청 놀랐었잖아!\n잔뜩 기대했었는데....,We did too. You remember\nhow shocked I was.,
-9,2,red,에디슨은 그 실망과 충격을 영원히\n극복하지 못할 수도 있다고.,Edison may never get\nover it for the rest of time.,
-9,2,sircello,*♩♩ / ♪,*♩♩ / ♪,
-9,2,red,헤헤. 맞아.,Hehe. True.,
-9,2,red,이미 녹아 없어진 얼음을 찾아\n헤매는 에디슨의 뒷모습도\n재미있었지!,It was pretty funny watching Edison\nfreak out over the ice disappearing.,
-9,2,sircello,♪ ♮♪♭ ~,♪ ♮♪♭ ~,
-9,2,red,알았어. 그만 놀릴게....,Alright. I’ll lay off her...,
-10,1,red,오늘따라 꿈 공장\n직원이었던 때가 그리워.,It’s days like this I miss being a worker.,
-10,1,sircello,...... ♪,...... ♪,
-10,1,edison,"돌아갈 수도 없는 걸 그리워하면\n네 마음만 아픔. 일해라, 레드.",I am in agreement.\nNo point in missing\nwhat cannot be retrieved.,
-10,1,red,그래도!,Still!,
-10,1,red,그래도.,Still.,
-10,1,red,그때는 우리가 사랑하는 인간들에게\n사랑스런 꿈을 보내 줄 수 있었어.,"We weren’t outcasts,\nand we could send dear dreams\nto the humans dear to us.",
-10,1,red,꿈을 제조하기 전 그들의\n다채로운 하루를 재생해\n감상하던 업무는 매일의 낙이었지!,Nothing beat catching up on\nwhat they did each day\nbefore making dreams!,
-10,1,red,재수없는 공장 놈들이 우리를\n무시하지도 않았고 말이야.,And those factory shucks\ndidn't look down on us.,
-10,1,edison,... 그래.,...True.,
-10,1,edison,경이로운 속도로 진화하던\n그들의 기술을 관찰하는\n것 역시 즐거웠다.,It was a pleasure observing their\ntechnology develop so rapidly.,
-10,1,edison,"파이프 오르간과 반도체 칩,\n놀라울 만큼 정교했음.","Pipe organs and semi-conductive\nchips, all incredibly intricate.",
-10,1,edison,지성과 집념의 집약체였지.\n아직도 기억 속에 생생하다.,Beacons of intellect and will.\nI remember them clearly.,
-10,1,sircello,♪♫ !!,♪♫ !!,
-10,1,red,"그렇지, 우리가 만날 일은\n없었겠지만...... 그래도!","Right, then we never would\nhave met, but don’t you still miss it?",
-10,1,edison,하지만 우린 이미 만났음.,But we already have met.,
-10,1,edison,그리고 생각보다 나는\n너희를 좋아하고 있다.,And I am fonder of you two\nthan you are aware of.,
-10,1,edison,"자, 다시 청소하러 가자.","Now, back to the cleaning.",
-10,1,red,...,...,
-10,1,red,우와. 우와아.... 응!,Whoa. Whoa!,
-10,1,red,(타타닥 하는 발소리),(Scuffling sounds),
-10,1,red,"제대로 들은 것 맞지, 첼로 경?","Did I hear that right, Sir Cello?",
-10,1,첼로경.,♫♮,♫♮,
-10,2,red,대사가 아직 안 적혔어!,eng,
-10,2,edison,기다려라. 진행 중이라고 한다.,eng,
-10,2,sircello,♩♫♮ ~~,eng,
-11,1,red,그거 알아?,"Hey, guess what?",
-11,1,red,인간들은 우리가 사는\n달에 참 관심이 많대!,Humans are really interested\nin this Moon of ours.,
-11,1,sircello,♫♮♭♮♭,♫♮♭♮♭,
-11,1,red,그리스의 신화에서는\n달을 관장하는 세 명의\n여신들이 있다고 믿었대.,The Greek myths said three\ngoddesses looked over the Moon.,
-11,1,red,"아르테미스는 초승달,\n셀레네는 보름달,\n헤카테는 그믐달을 상징하지!","Artemis dealt with the cresent moon,\nSelene the full moon,\nand Hecate the waning moon.",
-11,1,red,너어무 멋있고 낭만적이야.,WAY too cool and romantic.,
-11,1,sircello,♫♮♭♮♭?,♫♮♭♮♭?,
-11,1,red,"그리고, 한국에서는 달에서\n토끼가 방아를 찧는다고 믿었대.","Well, in Korea they believed\nrabbits lived on the moon.",
-11,1,red,지구에서 보이는 달의 앞면을\n보며 그런 상상을 한 거야!,How’s that for creative and adorable?,
-11,1,sircello,*♩♩ / ♪,♫♮♭♮♭...,
-11,1,red,그러게... 이젠 과학의 발전으로\n신화나 동화를 믿는 인간이\n흔치 않아졌어.,True... science has made it\nrare for humans to believe in\nmyths or fairy tales.,
-11,1,red,"조금은, 아니, 꽤나 아쉬워.","It’s kinda disappointing.\nNo, very disappointing.",
-11,1,edison,글쎄.,I disagree.,
-11,1,edison,사실에 이야기를\n덧씌우는 것 역시 좋지만,"Stories cast over facts are acceptable,",
-11,1,edison,"사실에 다가가려고 하는 인간들의 태도,","but their dedication to the truth,",
-11,1,edison,바로 내가 인간을 사랑하고\n궁금해하는 이유 중 하나다.,is what I love to explore about humans.,
-11,2,red,대사가 아직 안 적혔어!,eng,
-11,2,edison,기다려라. 진행 중이라고 한다.,eng,
-11,2,sircello,♩♫♮ ~~,eng,
-12,1,edison,인간은 때때로 비합리적인 선택을 한다.,Humans make\nirrational choices at times.,
-12,1,edison,"발화기관이 아직 작동하지 않는\n태아와 대화를 나누고,",They speak with feti whose\nvocal chords are yet to operate.,
-12,1,edison,가장 절망적인 상황에서도\n아름다움을 좇으며 기쁨을 느낀다.,"And feel joy in the beauty\nof hopeless situations,",
-12,1,edison,아름다움이 무엇인지도 모르면서.,despite not grasping\nthe full concept of beauty.,
-12,1,edison,비합리성. 끼워지지 않는\n퍼즐조각 같은데도,"Irrationality. Like a puzzle\npiece that does not fit,",
-12,1,edison,묘하게 앉아 바라보고\n싶은 인간의 그 기묘한 특성.,eng,
-12,1,sircello,♮♭~♫♩...?,♮♭~♫♩...?,
-12,1,edison,"그래, 어쩌면 그들이\n비합리적이기에 나를 그토록\n매료시킨 것일지도 모르지.","Yes, perhaps it is their irrational\nways that charmed me so.",
-12,1,edison,"하지만 그것 알아, 첼로 경?","But are you aware, Sir Cello?",
-12,1,edison,가끔은 그들을 온전히 이해할\n수 없을지도 모른다는\n공포에 마비된다.,The fear that I may not understand\nthem fully paralyzes me at times.,
-12,1,edison,왜 그때... 그런 사고를 했으며\n그러한 선택을 했는지.,Why… why they made\nsuch a choice back then.,
-12,1,edison,"답 없는 메아리처럼 끊임없이\n짐작할 수밖에 없고, 당최\n이해도 납득도 되지 않을 때.","When all that is left is to ponder\nlike an echo with no reply,",
-12,1,edison,얼어붙는다.,I freeze.,
-12,1,sircello,♭  ♩ +,♭  ♩ +,
-12,1,edison,정말 그렇게 생각하나? 우리는 영원히\n그들을 이해할 수 없다고?,Is that truly what you think?\nThat we will never understand them?,
-12,1,edison,... 우리의 세계가 너무 단순하기 때문일까.,… Perhaps our world is far too simple.,
-12,1,sircello,♮ - -♫,♮ - -♫,
-12,1,edison,...... 그런 게 중요하지 않다면\n대체 무엇이 중요한 거지?,"…… If those are not\nof import, then what is?",
-12,1,sircello,"♩♩♩  *, ♩♩   *","♩♩♩  *, ♩♩   *",
-12,1,edison,정말 이해하기 위해서는 이해하지\n못한 채로 받아들여야 한다고?,True understanding occurs when one\nembraces without understanding?,
-12,1,edison,"이해하지 못한 채로,\n‘받아들여야’ 한다고?",<i>Embrace</i> without understanding?,
-12,1,edison,문장 내에 모순이 있다.,A sentence that contradicts itself.,
-12,1,sircello,....♩♫   ♮♭.,....♩♫   ♮♭.,
-12,1,edison,모순까지 받아들여라....,Embrace the contradiction itself...,
-12,1,edison,이런. 받아들이는 것 참 좋아하네.,"Boy. You really like embraces, huh.",
-12,1,sircello,(첼로 경이 연주를 시작한다.\n달의 새들이 모여드는 소리가 난다.),(Sir Cello’s music. The rustling of\nmoon birds flocking together.),
-12,1,sircello,(몽환적인 새소리가 어우러진다.),(The dreamy harmony of bird chirps.),
-12,2,red,"저 멀리의 우주 암석, 보여?",Gazing at the space rock wandering\nthrough space made me think.,
-12,2,red,언제부터 차디찬 우주에\n외로이 떠돌았을까?,How long has it been drifting\nin this cold universe all alone?,
-12,2,red,저 운석은 끝이 나는 것들의\n아름다움을 알고 있을까?,Does it know how beautiful\nit is that all things must end?,
-12,2,red,...,...,
-12,2,red,어제까진 나의 인간 아이도\n그렇게 우주를 떠돌고 있기를 바랐었어.,"Up ‘til yesterday, I hoped my human kid\nwas floating through space like that.",
-12,2,red,오래 오래 떠돌다 보면 언젠가는\n만날 수 있을지 모르니까.,I thought maybe someday\nhe could wander right into me.,
-12,2,red,하지만...,But...,
-12,2,red,"이젠 놓을래. 포기하는 게 아니야.\n그냥, 인정하는 거야.","I'm letting go now. Not\ngiving up. Just, facing facts.",
-12,2,red,"슬픔을 애써 희망으로 바꿔 왔지만,\n이건 그 애를 위하는 길이 아니었어.","I’ve tried to be hopeful instead of\nsad, but this isn’t right for him.",
-12,2,red,왜냐하면.... 왜냐하면.,Because.... because.,
-12,2,red,그 애가 살아간 찰나의 시간이\n너무나도 눈부셨거든.,That split second of his life\nshined so bright.,
-12,2,red,그 반짝임은 달에 있는\n나에게까지 닿을 정도였어.,So much that its light\nreached me on the Moon.,
-12,2,red,나는 그 애의 고유한 반짝임을\n지켜 주고 싶어. 그러니 나는.,I want to protect his special light.,
-12,2,red,"기억해야만 해. 그 아이가 어떻게\n시작되었고, 어떻게 끝났는지.","I have to remember. How he\nbegan, and how he ended.",
-12,2,red,끝과 함께 하나의 이야기로\n완성되었던 아이의 아름다운 인생을.,"His beautiful life that drew to\na close, a complete story.",
-12,2,red,그러니까 놓아 줄 거야.,So I’ll be letting go.,
-12,2,red,"다만 나의 가슴은 언제까지나\n조금은 찌릿할테고,","But there’ll always be\na lil’ pang in my heart,",
-12,2,red,눈에서 소금물이 흐르는\n날도 있을거야.,and sometimes saltwater\nwill leak from my eyes.,
-12,2,red,"그 정도는 괜찮겠지, 에디슨?","But that’s okay. Right, Edison?",
-12,2,edison,...,...,
-12,2,edison,네 머리가 뜨겁지만\n않았다면 쓰다듬었을 텐데.,"Were your head not made\nof flames, I would pat it.",
-12,2,edison,대신 등을 두드린다.,I will settle for your shoulder instead.,
-13,1,red,다가갈 수 없고 곁에 있을 수 없는\n내 자신을 많이 원망했어.,I hated myself for not being\nable to be near you.,
-13,1,red,하지만... 네가 나를 알았다면.\n우리가 친구였다면.,But... if you’d known me.\nIf we’d been friends.,
-13,1,red,"너는 내가 자책하는 걸 바라지\n않았을지도 모르겠다는 생각을,","It occured to me that you\nmight not have wanted this,",
-13,1,red,문득 해 버렸어.,me blaming myself.,
-13,1,red,"있잖아,","You know,",
-13,1,red,"점점 어두워져가는 네 꿈을\n보면서도, 네가 꺼져 가고 있다는\n생각을 한 적은 한 번도 없었어.","You dreams turned darker, but I never\nimagined you were petering out.",
-13,1,red,넌 마지막 날까지 강인한\n촛불처럼 따뜻했으니까.,You were as warm as\na strong flame to the very end.,
-13,1,red,"살고 싶다는, 살아 있는 존재들의\n끈질긴 본능만으로는","Just the will, and the\ndogged instinct to live",
-13,1,red,또 내가 아주 멀리서\n보내 주었던 꿈들만으로는,and the dreams I sent\nfrom far far away,
-13,1,red,네 온기가 끊어진 것을\n막을 수 없었던 거야.,weren’t enough to stop\nthat warmth from petering out.,
-13,1,red,"그래, 나의 탓이 아니었다는\n걸... 이제는 알 것 같다.","Yes, I know now... that\nit wasn’t my fault.",
-13,1,red,불운을 견디는 게 힘들었지.,It was hard to cope\nwith all the bad luck.,
-13,1,red,사실 나는 어른이 된 너의\n모습을 궁금해하고는 했는데.,I used to wonder what you\nwould be like as an adult.,
-13,1,red,앞으로도 영원히 궁금해할 거야.,And I always will.,
-13,1,red,너를 탓하지는 않아.,I don’t blame you.,
-13,1,red,하지만 너무 약했던\n너를 아무렇지 않게 짓눌렀던\n그의 몹쓸 강함이 밉고,But I resent that strength that\ncrushed you like it meant nothing,
-13,1,red,너를 당연히 지켜 줘야 했던\n사회란 게 그토록 허술한\n울타리일 뿐이었다는 사실도 밉고,and the careless fence of a society\nmeant to keep you safe,
-13,1,red,"차디찬 겨울밤, 손난로\n하나 건네 주던 사람이\n하나 없었다는 것도 너무, 너무 미워.",and that no one was there to hand you\na pair of mittens on that cold winter night.,
-13,1,red,넌 그 조그만 온기로도 다시\n타오를 소년이었다는 걸 알아서.,Because I know that warmth would have\nbeen all it took for you to light up again.,
-13,1,red,아아아아아아. 이런.,Ohhhhhh. Oh.,
-13,1,red,왜냐하면... 난 진짜\n어른이 된 네 모습이,Because... I wondered what\nyou would be like as an adult.,
-13,1,red,무척이나 궁금했거든.,I really really did.,
-13,2,red,대사가 아직 안 적혔어!,eng,
-13,2,edison,기다려라. 진행 중이라고 한다.,eng,
-13,2,sircello,♩♫♮ ~~,eng,
-14,1,red,"너희, 지구에 가 보고 싶어?",Do you guys ever\nwanna go to Earth?,
-14,1,edison,갑자기? 지구? 갈 방법이\n없는데 그걸 왜 상상해야 하지?,Earth? Now? Why think on it when\nwe have no means of going?,
-14,1,red,.......,…….,
-14,1,red,됐어. 됐어. 어차피\n나도 안 궁금했거든?,"Fine, whatever. It’s not like\nI was curious or anything!",
-14,1,edison,.... 지구는 흥미로운 미지 투성이다.,… Earth is full of mysteries.,
-14,1,edison,그러나 우주에서 나는 돌만큼이나\n내 연구에 실용적인 자원은 없다.,But the Moon offers resources\nof actual use for my research.,
-14,1,edison,인간 학자들의\n의견은 조금 궁금한걸....,Though human scholars and\ntheir ideas do intrigue me.…,
-14,1,sircello,♩♫♮ ~~,♩♫♮ ~~,
-14,1,red,첼로 경은 지구 상의\n선율들이 궁금하대.,Sir Cello wants to learn\nthe melodies of Earth.,
-14,1,red,특히 바람 소리나 빗소리처럼\n지구의 자연이 내는\n다정한 울림들이.,"Like the gentle tunes of nature, blowing\nin the wind or pouring in the rain.",
-14,1,sircello,(달 나비의 맑은 종소리 같은\n날갯짓이 먼 발치에서 들린다.),(The beating of moonfly wings rings\nfrom far away like clear bells.)  ,
-14,1,sircello,♮♭~♫ ♫♩,♮♭~♫ ♫♩,
-14,1,edison,동감함. 달에서만 특수히 공명하는\n선율들이 나 역시 그리워질 거다.,I concur. I too would miss the unique\nmelodies echoing on the Moon.,
-14,1,red,"나는 정말 가 보고 싶지만,\n지구에는 인간을 비롯한\n생물이 너무 많아.",I’d give anything to go. But there\nare too many creatures on Earth.,
-14,1,red,"너무, 너무.... 너무 많아!","Too, too…. TOO many!",
-14,1,red,내 불길이 뜨거워 누군가 다칠지도 몰라.,My flames could hurt any one of them.,
-14,1,red,"비좁지만, 척박해서 오히려\n널찍하게 느껴지는 달이\n나에겐 딱인걸.","The Moon, though cramped and barren,\nmight in fact be just wide enough for me.",
-14,1,red,"아, 마음대로 뛰어다닐 수도 있지.","Oh, and I can run anywhere\nand everywhere here.",
-14,1,red,뛰이이어어어어다아아니이이이이...\n(뛰는 발소리. 점점 작아진다.),I can ruuuuuuuuuuun…\n(Running footsteps grow quieter.),
-14,2,red,인간! 우리... 그러니까...\n마지막 인사하러 왔어.,eng,
-14,2,red,뭉치의 눈을 통해 틈틈이\n바라보았던 넌 정말 아름답고\n따스한 마음을 가진 인간이었어!,eng,
-14,2,edison,"그래, 그런 당신을\n만나게 되어 영광이었다.",eng,
-14,2,red,우리는 너를 사랑해!\n모두가 사랑하고 있어!,eng,
-14,2,red,"달의 뒤편에서, 영원히!",eng,
-14,2,sircello,♩♩♩  * ! !,eng,
-14,2,red,첼로 경 역시 영광이었대.\n많은 인간에게 우리가\n그들을 사랑한다고 전해 달래!,eng,
-14,2,edison,이런. 구식 회로를 사용해서\n그런가. 고장 나기 직전.,eng,
-14,2,edison,걱정 마. 머지않아 달나라\n송신기 ver 2.를 출시할 것이다.,eng,
-14,2,edison,"‘양방향 통신’ 기술이 개발에\n임박했으니까. 기다려라, 인간.",eng,
-14,2,red,그럼 이건... 곧 꺼지는 거야?,eng,
-14,2,edison,그렇다.,eng,
-14,2,red,인간...... 인간...!\n그리울 거야. 정말이야.,eng,
-14,2,sircello,(먹먹한 목소리를 가다듬듯\n첼로 조율하는 소리를 낸다.),eng,
-14,2,red,"아냐, 아냐! 우리 웃으며\n헤어지자고!",eng,
-14,2,red,그러니 우리 셋이 함께 특별한\n이별 노래를 불러 줄게. 알았지?,eng,
-14,2,red,"크흠, 크흠! 잘 들어야 해!\n인간에게도 익숙한 노래일 거야!",eng,
-14,2,red,"첼로 경, 음악 준비해 줘!",eng,
-14,2,sircello,♩♫♮ ~~,eng,
-14,2,red,아아- 안녕은\n영원한 헤어짐이 (-치직),eng,
-14,2,edison,(치익......) 다시 만나기\n위한 약속일 (치직... 칙),eng,
+id,moonNumber,actor,textKor,textEng
+1,1,edison,이렇게 하면....,And now...
+1,1,edison,"아, 성공이군. 다들 와 봐.","Ah, success. Gather around."
+1,1,red,우와아아아아!,Whoaaaa.
+1,1,red,우와아아아아아아아아아아아!,WHOOOOOAAAAAAA!
+1,1,red,"큼큼, 안녕, 인간. 나는 레드야.","Ahem. Hello, human. Red here."
+1,1,red,달에 있는 모두가 인간을 사랑하지!,Everyone on the Moon loves humans!
+1,1,red,그리고 나도! 인간을! 사랑한다!,And so! Do! I!
+1,1,red,(우당탕 하는 소리.),(A crash.)
+1,1,red,아야!,Ouch!
+1,1,edison,진정. 인간 놀람. 그리고\n시끄러워. 귀 먹먹하다.,Calm down. Human startled.\nAnd too loud. Ears ringing.
+1,1,sircello,~♫♮♭♩♫&?,~♫♮♭♩♫&?
+1,1,edison,"응, 아직 오류가 많아서 언제\n신호가 끊어질지 모름.",Yes. Numerous errors\nmaking signal unsteady.
+1,1,edison,"빨리 인사, 첼로.\n내가 통역한다.","Say hello, Cello.\nI will translate."
+1,1,sircello,~♫♮ (치지직-) ♩♫!!,~♫♮ (Zzz-) ♩♫!!
+1,1,edison,잠시만. (치직) 끊기.... (치익),Wait. (Zz) Breaking.... (Zzzz)
+1,1,sircello,♩♫####...?!,♩♫####...?!
+1,2,sircello,♩♫♮……,♩♫♮……
+1,2,sircello,♩♩......,♩♩......
+1,2,sircello,♩♩♩♫♮......,♩♩♩♫♮......
+1,2,edison,첫 번째 프로토타입이라\n오류가 많음.,"First prototype, prone\nto malfunction."
+1,2,edison,켜지고 꺼지는 타이밍도 설정이\n안 되고. 어쩔 수 없음.,Settings for turning on\nand off not yet an option.
+1,2,edison,"지금 슬픔은 견디고, 다음에\n켜지면 제일 먼저 인사해.",No need to be sad. Be\nthe first to say hello next.
+1,2,sircello,♩♫♮ !!,♩♫♮ !!
+1,2,red,첼로 경의 인삿말 궁금한걸.,Wonder how you’ll pull it off.
+1,2,red,"하아아아아아음. 으, 시간이\n언제 이렇게. 일하기 싫어.","Yaaaawn. Ugh, look at the\ntime. I don’t wanna work."
+1,2,red,너희는 일할 때 무슨\n생각 하면서 청소해?,What do you guys think of\nwhen you work?
+1,2,edison,뭘 생각해. 그냥 하는 거지.,I do not think. I do.
+1,2,sircello,~♫♮♭♩,~♫♮♭♩
+1,2,edison,노래를 부른다고?,Sing?
+1,2,sircello,♮♭♫~~,♮♭♫~~
+1,2,red,"맞아, 첼로 경이 노래하면 내가\n자막을 만들어서 같이 불러.","That’s right. When Sir Cello\nhums, I make up the lyrics."
+1,2,red,이렇게!,Like this!
+1,2,red,해괴한 호수는 차오른다!\n퍼 담고 굳히고 긁어 내자!,The filthy lake is swelling high!\nScoop it up and scrape it dry!
+1,2,red,짝짝이 팔다리 비틀어진 등허리!\n달 뒤편의 아래의 구석을 지키는!,"Uneven arms, twisted back!\nNo room here to cut some slack!"
+1,2,red,우리는 달나라 청소부들!,We are the cleeeaners\nof the Moon!
+1,2,edison,아. 잠시만. 켜진 것\n같음. 불 들어오네.,Ah. Wait. Seems to be on.\nLight is on.
+1,2,edison,"첼로 경, 인사해.","Say hello, Sir Cello."
+1,2,red,첼로 경! 인사해!! 얼른!,Sir Cello! Say hi!!
+1,2,sircello,~♫♮♭,~♫♮♭
+1,2,sircello,♩♫!! (치지직-),♩♫!! (Zzz-)
+1,2,edison,"(치직) 아, 또 (치이익)","(Zz) Not again, (Zzzz)"
+1,2,sircello,♬ ######!!!,♬ ######!!!
+2,1,red,으흠. (신나는 허밍이 들린다),Hmm. (Hums excitely)
+2,1,red,흐흐흠.,Hmm-hmm.
+2,1,red,흐허어워어음.,Hmm-mm-hmm-mm.
+2,1,red,"인간! 아아, 아.\n크흠, 여기는 레드.","Human! Ah, ahem.\nRed here."
+2,1,red,(경쾌하게 탁탁거리는 발걸음.),(Pattering footsteps.)
+2,1,red,송신기가 켜지자마자\n에디슨 몰래 훔쳐 왔어.,I stole the transmitter while\nEdison had her back turned.
+2,1,red,달나라를 보여 주고 싶어서.\n빨리! 시간이 없어!,I wanted to show you around.\nQuick! We don’t have time!
+2,1,red,우선 저어기 (발걸음이 탁탁탁\n빨라진다) 보이는 건 꿈 공장이야!,First there’s (footsteps quicken)\nthe Dream Factory.
+2,1,red,정말 아름답지? 대부분 인간의\n눈에는 보이지 않지만.,"Beautiful, right? It’s usually\ninvisible to the human eye."
+2,1,red,하지만 뭉치를 볼 수 있다면\n이 공장도 볼 수 있을걸?,"But if you can see Dot,\nI bet you can see it too."
+2,1,red,저기 빛을 내며 날아다니는\n친구들은 달나방들이야.,Those sparky friends over\nthere are the Moon moths.
+2,1,red,흐흐. 내 발밑엔 땅바닥...\n그리고 짠. 크레이터.,Hehe. And the ground under\nmy feet... and ta-da. The crater.
+2,1,red,"검은 호수 같지? 다들 끔찍하다고\n싫어하지만, 난 뭐랄까,","Looks like a black lake, right?\nNo one likes it. But me?"
+2,1,red,바라보고 있으면 이상하게\n마음이 편해진단 말이지.,"Well, looking at it somehow...\nsoothes me."
+2,1,edison,뭐 함?,What are you doing?
+2,1,red,... !,... !
+2,1,edison,...,...
+2,1,red,......,......
+2,1,edison,......,......
+2,1,red,뭐 하긴? 인간한테 달나라\n구경 시켜 주고 있다.,What does it look like? I’m\nshowing the human around.
+2,1,red,왜. 뭐!,What. What!
+2,1,red,"뭐, 뭐, 뭐뭐! 어쩌라고!",What! Why are you\ngiving me that look!
+2,1,edison,무슨 구경.,Showing what.
+2,1,red,공장이랑... 달나방이랑...\n땅바닥... 크레이터....,The Factory... the moths...\nthe ground... the craters...
+2,1,red,"지구에선 달 뒤편이 안 보이니까,\n궁금하지 않을까 하고....",And I thought they’d like to see\nthe dark side of the Moon...
+2,1,edison,영상 정보는 송출 안 됨.,Visual information\ncannot be transmitted.
+2,1,red,에? 거짓말!,What? You’re kidding!
+2,1,edison,내놔.,Hand it over.
+2,1,red,(작은 한숨 소리) 아아. 싫어어.\n인간이랑 더 이야기할래.,(Sigh) Noooo. I wanna talk more.
+2,1,edison,떨어뜨리기라도 했으면 어쩔 뻔\n했음? 크레이터에 빠트렸으면?,And if you dropped it?\nIf it fell into a crater?
+2,1,edison,내놔.,Hand it over.
+2,1,edison,고장난 곳 없는지 봐야 하니까.,I need to check for damages.
+2,1,red,(작은 한숨 소리),(Small sigh)
+2,2,red,"에디슨, 첼로 경!","Hey Edison, Sir Cello!"
+2,2,red,"아니, 글쎄, 동쪽 구역 청소를\n맡은 치커리 영감이 말이야.",You know Old Man Chicory\nthat cleans the east section?
+2,2,red,어제 ‘귀신’을 봤대.,Says he saw a GHOST\nyesterday.
+2,2,edison,귀신은 허상임.,Ghosts are illusions.
+2,2,edison,또는 측두엽 뇌파\n변화의 일시적 현상.,Or temporary changes in\ntemporal lobe brain waves.
+2,2,red,진짜라니까?,Are not.
+2,2,edison,가짜.,False.
+2,2,sircello,♮♭~ ♩...?,♮♭~♫♩...?
+2,2,edison,"믿지 마, 첼로 경.","Do not indulge him, Sir Cello."
+2,2,edison,치커리 영감 정도라면\n환시를 볼 나이도 됐음.,Hallucinations. Not uncommon\nfor a man of Chicory’s age.
+2,2,edison,자러 가던 달나방 떼를\n귀신으로 착각했을 수 있음.,May have mistaken a swarm\nof Moon moths for a ghost.
+2,2,red,그런 거겠지? 안심이\n되는 것 같기도 하고.,"Yeah? Boy, that’s a relief."
+2,2,red,그래도 우리 네 명이\n함께라 다행이야.,I’m sure glad the four of us\nare together though.
+2,2,red,"진짜든 아니든,\n귀신은 무서우니까.","‘Cause real or not,\nghosts are SCARY."
+2,2,edison,잠깐.,Wait.
+2,2,edison,네 명?,Four?
+2,2,red,어...? 방금. 분명......!,Wait...? There’s no way......!
+2,2,edison,!!!,!!!
+2,2,sircello,!!!,!!!
+2,2,red,!!!,!!!
+2,2,red,으아아아아아아아악!,AAAAHHHHHHHHHH!
+3,1,red,해괴한 호수는 차오른다!\n퍼 담고 굳히고 긁어 내자!,The filthy lake is swelling high!\nScoop it up and scrape it dry!
+3,1,red,짝짝이 팔다리 비틀어진 등허리!\n달 뒤편의 아래의 구석을 지키는!,"Uneven arms, twisted back!\nNo room here to cut some slack!"
+3,1,red,우리는 달나라 청소부들!,We are the cleeeaners of the Moon!
+3,1,red,으악. 이러다 허리가 휘겠어.,"God, my back is killing me."
+3,1,edison,이미 휜 편.,Perhaps.
+3,1,edison,그리고 그건 청소일\n때문이 아님.,But not due to cleaning.
+3,1,edison,네가 쉬는 동안 허리 펴기 귀찮\n다고 구부정하게 앉아서 그럼.,You slouch during break times\nrather than sitting straight.
+3,1,red,"하지만 종일 일, 일, 일인걸?","But it’s been work, work,\nwork all day with an\nextra scoop of work!"
+3,1,red,쉴 때엔 너무 피곤해서 웅크리고\n있어야만 살 것 같단 말이야.,I slouch because I’m just too\npooped to do anything else.
+3,1,red,안 되겠어. 에디슨! 첼로 경!,I can’t take it anymore.\nEdison! Sir Cello!
+3,1,red,이대로는 안 되겠어. 멋진\n어른 인간들을 본받자.,We gotta take a leaf from\nhumans and that book of theirs.
+3,1,red,우리도 ‘집’과 ‘출퇴근’이라는\n제도를 만들어 보자!,"We’ll need a ‘home’,\nand ‘work hours’!"
+3,1,edison,음?,Hmm?
+3,1,red,이 모닥불 구덩이를 우리의\n‘집’이라고 정하는 거야.,We’ll call this bonfire pit\nour ‘home.’
+3,1,edison,그리고?,Then?
+3,1,red,그리고 할당량이라는 걸 정하자.,Then we assign ourselves\nworkloads for each day.
+3,1,red,크레이터에서 퍼다 나른 폐기물\n로 구덩이를 열 개 채우면,"Once we fill ten pits with\nMoon filth from the craters,"
+3,1,red,‘집’으로 퇴근!,we’re off the clock\nand get to go ‘home’!
+3,1,sircello,♫♮♭♩♫!!,♫♮♭♩♫!!
+3,1,red,별자리가 반의 반 뼘만큼 공전\n했을 때 다시 출근하는 거지!,We’ll go back to work\nwhen the constellations\nmove... THIS much.
+3,1,edison,괜찮은 것 같음. 한번 해 봐.,Sounds interesting.\nSuggest you give it a try.
+3,1,red,같이 하자.,"No, WE will."
+3,1,red,다 같이 하자!,All three of us!
+3,1,edison,.......,.......
+3,1,edison,알았음.,Affirmative.
+3,1,sircello,♩♫♮ ~~!,♩♫♮ ~~!
+3,2,red,집이 생겼어. 따끈한 모닥불...\n잘 구워진 돌 의자.,We have a home now.\nA warm bonfire... a toasty stone chair.
+3,2,edison,좋네.,It is nice.
+3,2,sircello,♫♮♩... ♭♩?,♫♮♩... ♭♩?
+3,2,edison,조금 허전한 것 같다고?,You think something’s missing?
+3,2,red,휑하기는 하다.,Guess it’s pretty empty.
+3,2,edison,이곳은 달 뒤편. 원래\n휑한 곳이다.,It is the dark side of\nthe Moon. Always empty.
+3,2,red,하지만 우리의 영혼까지\n휑해질 필요는 없지.,But that doesn’t mean\nour souls have to be empty.
+3,2,red,"우리, 집을 꾸며 보는 건 어때?",Why don’t we give\nhome decor a shot?
+3,2,edison,뭐...,Hmm.
+3,2,edison,... 좋음. 돌을 더 가지고 오겠다.,... Good. Will fetch more pebbles.
+4,1,red,"에디슨, 첼로 경!","Edison, Sir Cello!"
+4,1,red,꿈 공장에서 일하던\n시절을 추억할 시간이다!,Time to remember\nthe good old factory days.
+4,1,red,가장 기억에 남는 하루 말하기 대회를 열자.,Let’s vote for\nA Day to Remember!
+4,1,sircello,♫♫♮ ?,♫♫♮ ?
+4,1,edison,그건 무슨 대회임?,A Day to Remember?
+4,1,red,꿈 공장 직원이었을 때 봤던 인간들의 하루 중,We’ll look back on humans\nand their days that\nwe saw in the factory.
+4,1,red,"가장 기억에 남는 하루를 말하고, 우리끼리 우승자를 정하는 거다!","We’ll each share a memory,\nthen decide which day\nwas the most memorable!"
+4,1,edison,......?,......?
+4,1,sircello,......?,......?
+4,1,edison,......,......
+4,1,red,"크흠, 나부터.",Ahem. I’ll start.
+4,1,red,내가 처음으로 담당했던 꼬마의 하루였어.,It was the first kid\nI was assigned to.
+4,1,red,그 꼬마는 차곡차곡 용돈을 모아 무려 일 년을 매진했고,She saved her allowance\nfor a whole year.
+4,1,red,결국 '띠부띠부 씰'을 전부 다 모으는 데 성공했다!,And got her hands on\na full set of baseball cards!
+4,1,red,학교 친구들의 부러움을 한몸에 받았지. 기세등등하던 꼬마의 하루가 아직도 생생해.,Her friends worshiped her.\nI still remember\nhow triumphant she was.
+4,1,red,"자, 다음 참가자는 에디슨이다.","Edison, you’re up next."
+4,1,edison,... 돌이켜보면 한 여덟 명 정도의 인간을 담당했던 것 같은데.,... I was assigned\na total of eight humans.
+4,1,edison,"그중 두 번째 맡았던 인간이 떠오른다. '노벨 물리학상'을 받는 게 그의 가장 절실한 꿈이었고,",The second human. His\nlifelong ambition was to\nwin the Nobel Prize in Physics.
+4,1,edison,그래서 난 그가 여덟 살일 때부터 일주일에 한 번씩 '노벨 물리학상'을 받는 꿈을 보내 주었었다.,"So ever since he was eight,\nI sent him that very dream\nonce a week."
+4,1,edison,그리고 그가 어른이 된 이후 정말 '노벨 물리학상'을 수상했음.,"And once he became of age,\nhe did win the Nobel Prize."
+4,1,red,노벨 물리학상? 그게 뭐야?,Nobel Prize? What’s that?
+4,1,edison,노벨'이란 인간이 다른 인간들에게 주는 상장이라고 함. 인간들에겐 아주 의미 있는 모양이다.,A human named Nobel\nhands out awards. They mean\na great deal to humans.
+4,1,edison,기쁨에 겨워 빙글빙글 돌던 그의 춤사위를 단 하루도 잊어 본 적이 없음.,I have never forgotten\nhis celebratory dance.
+4,1,red,첼로 경은? 약 마흔 명의 인간을 담당하지 않았어?,"And you, Sir Cello?\nDidn’t you look after,\nlike, 40 humans?"
+4,1,red,이야깃거리도 많을 것 같은데!,You must have lots of stories!
+4,1,sircello,♩♫  ♭♫~♫\n♩...♩♩♫……\n♫♮ ♭♩♫!,♩♫  ♭♫~♫\n♩...♩♩♫……\n♫♮ ♭♩♫!
+4,1,sircello,~♩♫♮ ♩♫♮\n……~♫♫♩!,~♩♫♮ ♩♫♮\n……~♫♫♩!
+4,1,edison,......!!!,......!!!
+4,1,red,"오와! 오와! 잠시만, 이걸 우리가 어떻게 이겨!",Whoa! Whoa! How are\nwe supposed to top that?
+4,1,sircello,♩♫♩♭!!,♩♫♩♭!!
+4,1,red,"마, 말도 안 돼. 거짓말! 거짓말!",Get out. You’re joking!
+4,1,red,<가장 기억에 남는 인간의 하루 말하기 대회> 우승자는... 첼로 경인 걸로 하자...,And the winner of A Day to\nRemember is... Sir Cello.
+4,1,sircello,♭♫~,♭♫~
+4,2,edison,"레드, 질문.","Red, a question."
+4,2,edison,그때.,Back then.
+4,2,edison,뭉치를 지구로 보내자고\n제안한 이유는 무엇?,Why suggest sending Dot to Earth?
+4,2,red,"우리가 뭉치를 우주로 던지기\n직전, 뭉치가 했던 말 기억해?","Right before we launched Dot into space,\ndo you remember what they said?"
+4,2,red,저기엔 꿈이랑...... 어쩌구.,Over there... Dreams...\nSomething like that.
+4,2,edison,‘저기엔 나를 꿈으로 삼아 줄\n다른 존재가 있을지도 몰라요.’,"‘Over there, someone may\nwant me as their dream.’"
+4,2,red,"응, 맞아! 그거.","Yeah, right! That."
+4,2,red,"뭉치는,","Dot,"
+4,2,red,뭉치는... 꿈을 꿀 줄 알아.,Dot... can dream.
+4,2,edison,꿈?,Dream?
+4,2,red,"폐기물에서 태어난 괴물....\n맞아, 유쾌한 존재는 아니지.",A monster born of filth...\nThey are not usually welcome.
+4,2,red,그 검은 눈을 보고 있으면 희망...\n같은 무언가가 느껴졌어.,"But when I looked into Dot's eyes,\nI felt hope... or something like it."
+4,2,red,어둡지만 분명했어.,They were dark but certain.
+4,2,red,"그걸 인간에게 보내면, 그 인간은\n분명 행복해질 것 같았어!","So I thought if a human met Dot,\nthey would become happy for sure!"
+4,2,edison,.............,.............
+4,2,red,"그리고 뭉치, 못생겼지만 귀여워.","And Dot’s cute, in an ugly way."
+4,2,sircello,(높은 스타카토.\n웃음소리와 흡사하다.),"(A string of high staccatos,\nakin to laughter.)"
+4,2,edison,...... 저런.,......
+4,2,edison,나의 전구 머리로는 해독할 수\n없는 난해한 감상. 뭉치가 ‘귀엽다’니.,"Difficult to wrap my lightbulb head\naround this notion. Dot, ‘cute.’"
+4,2,red,"에디슨, 그런 너는 내 제안을\n왜 흔쾌히 수락한 거야?","So why’d you give me\nthe okay then, Edison?"
+4,2,edison,너의 무모하고 멍청하고\n위험하기까지 한 제안?,"In spite of it being reckless,\nstupid, and dangerous?"
+4,2,red,"(작게 투닥거리는 소리,\n레드가 궁시렁거린다.)",(Bickering noises.\nRed grumbling.)
+4,2,edison,너를 믿었기 때문임.,Because I believed in you.
+4,2,edison,"너의 계획은 무모하고 멍청하고\n위험하기까지 했지만, 따뜻했다.","Your plan was reckless, stupid, and\ndangerous. But still warmhearted."
+4,2,edison,네 불꽃 대가리가 밝혀 낸 가능성에\n희망을 걸어 보고 싶었어.,Wanted to pin my hopes on the\nwarmth your flame-head illuminated.
+4,2,edison,...... 인간을 보고 싶다는 열망이\n이성을 이겨 버린 후이기도 했고.,"...... Also, my desire to see a human\novercame my rational side."
+5,1,red,에디슨! 같이 가!,Edison! Wait up!
+5,1,red,헉... 헉...! 달나비들이\n갑자기 달려드는 바람에.,Huff... huff... Moon butterflies\ncame at me all of a sudden.
+5,1,edison,달-나비. 크레이터 주변에\n서식하는 날개 곤충.,Moon-butterflies.\nWinged insects inhabiting\nedge of craters.
+5,1,edison,무엇에 반응한 거지?,Reacting to what?
+5,1,red,"그, 청소 구역 표시해 둔\n표지판 말이지.","Well, you know that sign that\nmarks all the cleaning spots."
+5,1,red,내가 불 조절을 실수해서\n조금 태워 버렸다!,I messed up and it\nkinda caught on fire.
+5,1,edison,....조금? 확실해?,.....Kinda? Certain?
+5,1,red,"크흠, 조금! 그래서 종이가\n타닥타닥 타들어 가는데...",Just a smidge! The paper\nwas burning away when...
+5,1,red,서쪽에서 엄청나게 많은\n달나비들이 몰려오더라고!,A swarm of Moon butterflies\ncame at me from the south!
+5,1,red,그리고 순식간에 날 에워싸는 거야!,Before I knew it I was\nsurrounded by them.
+5,1,red,눈앞이 은색 물결로\n가득 채워졌어.,Wave after wave of silver\nrippling before my eyes.
+5,1,red,"혼란스러웠지만,\n정말 아름다웠어!","Confusing, but beautiful!"
+5,1,red,반짝이는 별가루를 떨어뜨리는\n달나비들의 비행이란!,Moon butterflies and their\nshimmering stardust flight.
+5,1,red,....에디슨? 어디 가?,....Edison? Where you going?
+5,1,edison,내 연구실.,My lab.
+5,1,edison,달나비가 불에 타는 것에\n반응하는 이유를 탐구해야겠다.,Will investigate why Moon\nbutterflies burn in fire.
+5,2,red,첼로 경은 왜 언어로 말하지 않게 된 거야?,...Why doesn’t Sir Cello\nspeak with words?
+5,2,sircello,♫♮♭♩~,♫♮♭♩~
+5,2,red,첼로로 아름다운 소리를 내던 인간?\n아! 첼로 경이 마지막으로 맡았던\n인간은 음악가였구나!,The human that created beauty with\nhis cello? Oh! So your last\nhuman was a musician!
+5,2,sircello,♪~ ♩♭♫ !,♫♮♭♩...~♮♭
+5,2,red,천재적인 실력? 세상에.......,An undeniable prodigy?\nOh my......
+5,2,sircello,♭♫ ♪ ♫♭,♭♫ ♪ ♫♭
+5,2,red,"그런데 거만했다니! 모든 천재 인간들은\n콧대가 높단 말이 있더라니, 역시였어!",But arrogant! So it’s true.\nGeniuses do look down on everyone else!
+5,2,red,"어, 첼로 경! 송신기가 깜빡거려.","Oh, Sir Cello! The transmitter is blinking."
+5,2,red,뭉치의 인간도 듣고 있을지 몰라.\n내가 첼로 경의 말을 번역해 줄까?,Dot’s human might be listening.\nShould I translate for you?
+5,2,sircello,...~♮♭,♫♮♭♩...~♮♭
+5,2,red,"인간, 내가 첼로 경에게 왜 말을 하지\n않게 되었는지를 물어보고 있었어.","Human, I was asking Sir Cello why\nhe no longer speaks in words."
+5,2,red,너에게도 이야기를 공유하고\n싶대! 번역해 줄게. 나만 믿어!,"He’d like to share the story\nwith you as well! I’ll translate,\nyou can count on me!"
+5,2,sircello,♫ ♫# ♮♭,♫ ♫# ♮♭
+5,2,red,"그러던 어느 날, 첼로 경의 인간은\n사고로 손을 크게 다치고 말았어.","One day, he hurt his hand\nreal bad from an accident."
+5,2,red,저런.... 오랜 기간 끝에 회복했지만\n다치기 전 실력은 되찾을 수 없었대.,He got better but could\nnever play like he used to.
+5,2,sircello,♪ ♫#...,♪ ♫#...
+5,2,red,"다른 이들은 그의 몰락을 지켜보며\n연민하기도, 유희처럼 즐기기도 했어.","Everyone watching his\ndownfall sympathized,\nbut they laughed too."
+5,2,red,괴로워하는 인간의 꿈에서는\n끔찍한 소리만이 연주됐지.,Horrible melodies played in\nthe human’s nightmares.
+5,2,sircello,♩♭♫ ♩♪...,♩♭♫ ♩♪...
+5,2,red,"날카로운 말들로 가득찬 세상\n속에서 그를 위로할 수 있던 소리는\n첼로 선율만이 유일했지만,","Cello strings were the only source\nof comfort in a sea of cruel noises,"
+5,2,red,이젠 사랑하던 음악마저 그의\n현실만큼이나 지옥이 되어 버렸고,but the music he once loved\nwas now as stark as reality. 
+5,2,sircello,♪♪♩♫ ♩♭...,♪♪♩♫ ♩♭...
+5,2,red,끝끝내 인간은 자신의 삶을\n연주하기를 포기해 버렸대.,And in the end... the human\ngave up playing his life.
+5,2,red,첼로 경은 그의 음악을\n사랑했던 만큼 깊게 슬퍼했어.,"Sir Cello mourned, as he\nwas in love with his music."
+5,2,red,슬픔을 헤엄치는 과정에서\n선율을 얻은 거야.,And while navigating\nthat grief he found music.
+5,2,sircello,♫♮ ♩♩,♫♮ ♩♩
+5,2,red,"‘언젠가 그에게, 말보다\n아름다운 선율을\n들려주고 싶어.’","I shall play a tune vastly\nmore beautiful than\nwords alone, just for him."
+5,2,red,라고 말하네.,Says Sir Cello.
+6,1,edison,할 이야기가 있다 다들\n원을 이루게 모여 보도록.,Announcement. Everyone\ngather around in a circle.
+6,1,red,"오오, 에디슨이 부를\n정도라니! 무슨 일이야?","Oooh, Edison’s got\nhot gossip! What’s up?"
+6,1,sircello,♮ ♩♩ ♫ ?,♮ ♩♩ ♫ ?
+6,1,edison,어제 구석에 있는\n크레이터를 청소하러 나갔음.,Went to clean the crater\nin the corner yesterday.
+6,1,edison,거긴 오래 관리가\n안 되어 어두컴컴했다.,"A dark place, left unkempt."
+6,1,edison,"도구를 준비 하던 중, 크레이터 안에서\n무언가 뻗어 나온 것을 목격.",Witnessed something peeking\nout of the crater while preparing.
+6,1,edison,"그건 희뿌옇고, 나뭇가지처럼\n가느다란 손이었다.","A pale, thin hand\nresembling a branch."
+6,1,edison,마디가 기이할 정도로 길게 뻗은 그 손이\n나에게 인사를 건네고는 사라졌어.,Elongated fingers waved at\nme before disappearing.
+6,1,edison,직후에 크레이터 안을 확인해\n봤지만... 아무것도 없었음.,Scanned the crater immediately...\nfound nothing.
+6,1,edison,남은 것은 심연과 같은 어둠 뿐.,All that was left was\ndarkness like an abyss.
+6,1,red,하하! 에디슨. 잘못 본 거 아니냐?\n연구하느라 눈이 나빠졌나 본데!,"Get outta here, Edison! Need\nnew glasses or something?"
+6,1,red,전혀 무섭지 않아. 전혀!,Like that’s supposed\nto scare me. No way!
+6,1,sircello,♫♮♭....,♫♮♭....
+6,1,red,"아냐, 첼로 경! 내 불이\n흔들리는 건 추워서야. 크흠.","No, Sir Cello! My fire’s\nflickering cause it’s CHILLY."
+6,1,sircello,♫♮~ ♫♮♭...~♫♭.....,♫♮~ ♫♮♭...~♫♭.....
+6,1,red,"이, 일부러 무서운\n음악 연주하는 거지? 그만!",A-Are you playing creepy\nmusic on purpose? Stop it!
+6,2,red,음? 에디슨이 안 보이네.,Hmm? I can’t find Edison.
+6,2,red,"첼로 경, 에디슨\n어디 있는지 알아?","Sir Cello, know where Edison is?"
+6,2,sircello,~♫ ♮♭,~♫ ♮♭
+6,2,red,또 틀어 박혀서 연구하고 있군. 며칠째\n필라멘트 코빼기도 안 보이잖아!,Stuck in the lab again. We haven’t\nseen hide or filament of her for days!
+6,2,red,"잠시만, 그렇다면....","Wait, does that mean..."
+6,2,red,우리도 매일 출근하지\n않아도 괜찮은 거야?,We don’t have to come\nto work every day?
+6,2,sircello,♫&  ♪ !,♫&  ♪ !
+6,2,red,넌 알고 있었다고? 말도 안돼!,You knew already? No way!
+6,2,red,그럼 나도 오늘\n청소 일을 쉬겠어.,Then I’ll take a day off\nfrom cleaning too.
+6,2,red,"일을 안 하고... 음, 집에서...",I’ll just go home and... well...
+6,2,red,....뭘 하지?,....Do what?
+6,2,sircello,#♭♪ ♫&?,#♭♪ ♫&?
+6,2,red,...맞아. 일이 없는 달의\n일상은 너무 무료해.,...You’re right. Life on the\nMoon with no work is boring.
+6,2,red,"일이라고 부르지만, 사실은\n너희와의 산책과 다름 없으니까.","I call it work, when actually it’s\njust a nice stroll with you guys."
+6,2,red,일하면서 슬픈 생각을\n잊는 것도 사실이고.,And I don’t have to think about\nsad things when I’m working.
+6,2,red,"....쳇, 가자! 첼로 경.","....Ugh. Get those notes\nshaking, Sir Cello!"
+6,2,red,오늘은 동쪽의 작은\n크레이터부터 청소해야겠어.,Today’s a day for cleaning\nthe small crater in the east.
+7,1,red,"에디슨, 첼로 경. \n내가 여기 있는 줄은 어떻게 알았어?","Edison, Sir Cello. What are\nyou doing all the way here?"
+7,1,red,아직 청소 덜 끝난 거 아니었어?,I thought you were\nstill cleaning?
+7,1,edison,"내 눈동자에 비치는 네 모습을 봐, 레드.","Your reflection in my eyes, Red."
+7,1,edison,시들시들해져서는\n 곧 꺼질 것 같다.,Flickering. About\nto be snuffed out.
+7,1,edison,...그 인간 아이 생각이 나는 것?,... Thinking of the human child?
+7,1,sircello,♫♮......,♫♮......
+7,1,red,이런...! 걱정시켰네. 맞아.,Oh...! Didn’t mean to\nworry you. But you’re right.
+7,1,red,오늘같이 우주가 얼어붙은 듯\n고요한 날엔 그 애가 생각나서 말이야.,"When it’s silent like the\nuniverse has frozen over,\nI’m reminded of him."
+7,1,red,시린 물 한가운데로 스스로\n걸어 들어간 그 애가.,The boy that walked into\nthe freezing water willingly.
+7,1,sircello,....♩♫#♫♮♭.,....♩♫#♫♮♭.
+7,1,red,그래. 시간이 흘렀는데\n조금도 잊혀지지 않았어.,Yeah. Time has passed but\nI haven’t forgotten a thing.
+7,1,red,그 애의 하루를 들여다볼 때면\n느껴지던 깊고 깊은 외로움이.,That deep deep loneliness I felt\nwhenever I peered into his day.
+7,1,red,내가 찰나의 온기라도\n되어줄 수 있었다면...,If I could have been a\nmoment of warmth for him...
+7,1,red,달라졌을까? 그 애는\n살아갈 수 있었을까?,Would things be different?\nCould he have lived on?
+7,1,red,아직도 그런 생각을 해.,These thoughts keep\nme up even now.
+7,1,edison,... 언제든 털어 놓아도 된다.,... You can always confide in us.
+7,1,edison,그런 후회를 하는 건\n크레이터를 치우는 이 공장\n아래의 모두가 마찬가지니까.,We all have regrets.
+7,2,sircello,♬♬ ♬♬♬♬,♬♬ ♬♬♬♬
+7,2,sircello,(멀리서 날개 바스락거리는\n소리가 들린다.),(Rustling of wings from afar.)
+7,2,sircello,♫ ♪ ♫♪♫♪,♫ ♪ ♫♪♫♪
+7,2,sircello,(더듬이 비비는 소리가 들려온다.\n달나방... 혹은 달나비일까?),(Squeaking of feelers.\nMoon moths or butterflies?)
+7,2,sircello,♩♩ ♩♩♭,♩♩ ♩♩♭
+7,2,sircello,(날개 빠르게 팔락이는\n소리가 지나간다.),(Rapid flapping of wings.)
+7,2,sircello,♫♮♭♩...♮♭....,♫♮♭♩...♮♭....
+8,1,edison,뭐야. 또 켜져 있잖아? (치지직-),Hmm. Is this on? (Zzzz-)
+8,1,edison,"들리나, 인간?\n제멋대로 작동되니... 이런.","Do you copy, human? ... Seems\nto be malfunctioning. Oh well."
+8,1,edison,언제 꺼지는지 지켜보고\n수리를 해야겠음.,Will need to make adjustments\nafter observing the pattern\nin which it turns on and off.
+8,1,edison,그동안 무슨 얘기를 해야 할까.,In the meantime.
+8,1,edison,이곳 달 뒤편에는 인간의\n흥미를 돋울 만큼\n흥미로운 이야기는 없다만.......,"Here on the dark side, there’s not\nmuch to pique a human’s interest......"
+8,1,edison,"역시, 인간에 대한 이야기를\n해 주는 편이 좋으려나.",Suppose a story about\nhumans will suffice.
+8,1,edison,.......,......
+8,1,edison,나도 직원 시절 관찰했던\n인간 하나가 있었다.,I too observed a human\nduring my days as a worker.\nOne that studied the stars.
+8,1,edison,"망원경이 발명된 지 얼마\n지나지 않았던 시절,\n별을 탐구하던 인간이었지.","During a time when binoculars\nhad just been invented,\nthe human was a scholar of stars."
+8,1,edison,인간은 자주 애인과\n함께 밤하늘을 올려다봤어.,The human would gaze at the\nnight sky with her lover.
+8,1,edison,하지만 그의 아름다운 애인은\n갑작스러운 사고로 생명을 잃었다.,But her lover lost their\nlife in a sudden accident.
+8,1,edison,‘나중에 저 별에서 다시\n만나는 거야.’ 라는 말을 남기고.,"‘That star is where I’m\nheaded after I die’,\nwere his last words."
+8,1,edison,인간은 그들이 다시는\n만날 수 없다는 걸 알았다.,The human was not aware\nof the name of the star.
+8,1,edison,"그래서 인간은 연구에 더\n몰두했지. 매일, 매 시간, 매 초를.",And so she threw herself into her work.\nEvery second of every hour\n... of every day.
+8,1,edison,애인에 대한 그리움이\n비집고 들어오지 못하도록.,Her obsession over\nreuniting with her lover\ngrew and grew. Until...
+8,1,edison,"나는 그의 상실을 온전히 이해하고\n있다고 판단했고,",I assumed that I understood\nthe entirety of her loss.
+8,1,edison,그래서... 실수를 저질렀다.,And so I made mistakes.
+8,1,edison,"멍청한 실수들을, 매일 밤, 수차례.","Foolish mistakes, again\nand again, every night."
+8,1,edison,...... 더는 이야기해 줄 수 없지만,...... I cannot bring myself\nto tell you more.
+8,1,edison,이것만은 알아주길 바란다.,But know this:
+8,1,edison,"그 실수를 반복하지 않으려고\n개발한 것이다. 인간, 너와의 송신기를.","This transmitter was made so as not to\nrepeat the same mistake, human."
+8,1,edison,대화를 통한다면...\n무지는 언젠가 극복될 수 있으니까.,As the only method of overcoming\nignorance… is to converse.
+8,2,red,만약에.,What if.
+8,2,edison,만약에?,What if?
+8,2,red,"만약에, 아주 투명한 영혼과\n순수한 마음을 가진 어느 인간이","What if a human, one with a\ntransparent soul and a pure heart,"
+8,2,red,우주 비행사가 되어\n달의 뒤편에 착륙한다면 어떡하지?,becomes an astronaut and lands\non the dark side of the Moon?
+8,2,red,그리고 우리의 아름다운 공장과,"What if they discover\nour beautiful factory,"
+8,2,red,밑에서 폐기물 청소\n중인 우리를 발견한다면?,"And us, cleaning up filth?"
+8,2,red,우리는 숨어야 하려나?\n아니면 인사를 건네야 할까?,Should we hide? Say hello?
+8,2,edison,인간 또한 강한 탐구욕을 가진 종족.,Humans possess\na strong sense of curiosity.
+8,2,edison,그는 분명 다가와 우리에게\n많은 질문을 쏟아 낼 것.,Highly likely that they will\napproach and ask questions.
+8,2,red,불꽃 머리를 화려하게 뽐내고\n있으면 눈에 띄겠지? 분명해!,"My flaming head will catch their\neye, right? I’m sure of it!"
+8,2,red,"NASA에 대서특필될 수도! 불꽃\n소년, 인간의 마음을 뜨겁게 데우다!",Maybe I’ll end up in the papers!\n‘Flame Boy Warms Up Human’s Heart!’
+8,2,edison,"아니, 그 전에 인간의\n표피를 뜨겁게 데울 듯하다.","Rather, your presence will\nburn the human’s skin."
+8,2,edison,인간이 화상 입을 수도.\n인간의 외피는 우리의 생각보다 연약함.,Human may acquire a burn.\nTheir exteriors are far more\nfragile than we think.
+8,2,edison,그들은 우주복 없인\n이곳에서 살아남을 수 없음.,They cannot survive here\nwithout spacesuits.
+8,2,edison,네 불이 우주복에\n구멍이라도 뚫어 버린다면?,What if your flame were to burn\na hole through their spacesuit?
+8,2,sircello,(베토벤의 비창이 흘러나온다.\n격렬한 불협화음이 섞여 있다.),(Cue Beethoven’s Pathétique.\nA startling cacophony.)
+8,2,red,...... 흥.,......Hmph.
+8,2,edison,"어찌 되었든, 긴급\n행동 요령이 필요하겠군.","Regardless, an emergency\nprotocol seems necessary."
+8,2,edison,다녀오겠다. 고민의\n시간이 필요해.,Excuse me. I need time\nto come up with one.
+8,2,edison,"타당한 의문이었음, 레드.","It was a valid question, Red."
+8,2,red,...... 그렇게 칭찬해도\n기분 안 풀리거든!,......That doesn’t make\nme feel any better!
+9,1,red,인간. 인가아아안.,Human. Humaaaan.
+9,1,red,오늘따라 잠이 오질 않아서\n에디슨 몰래 송신기를 켜 봤어.,"Couldn’t sleep, so I snuck\naround Edison to turn this on."
+9,1,red,아아- 크흠. 들리려나?,"Testing, one two three.\nCan ya hear me?"
+9,1,red,음... 마지막으로 꿈 제작을\n담당했던 아이가 자꾸 떠오르는 것 있지.,Hmm… I can’t stop thinking about\nthe last human I took care of.
+9,1,red,나의 마지막 인간.,My last human.
+9,1,red,"있잖아, 그 애는\n정말 따뜻한 아이였어!","You know, he really\nwas a sweet kid!"
+9,1,red,"친구들에게 마지막 남은 반찬을\n항상 양보할 정도로 마음이 넓었고,","Always sharing his food with his friends,"
+9,1,red,지나가는 고양이와 인사하기 위해\n선뜻 주저앉아 손을 내밀\n정도로 경계가 보드라웠어.,Always squatting down\nto say hi to a passing cat.
+9,1,red,하지만 세상은 그 애에게\n따뜻하지 않았어.,But the world wasn’t sweet to him.
+9,1,red,"원래 그렇게 이기적인 세상인 걸까,\n그 아이에게만 박했던 걸까?","Is it always that way, or\nwas the kid just unlucky?"
+9,1,red,약해서? 인간 세계의 기준으로\n‘가난한 자’에 속해서?,‘Cause he was weak? ‘Cause he was\n‘poorer’ than other humans?
+9,1,red,뒤에 숨을 어른 가족이 없어서?,‘Cause he didn’t have\nadults to hide behind?
+9,1,red,모르겠어. 이해할 수 없는\n아주 비겁한 이유였다고 생각해.,Don’t know. I bet it was a\nreally cowardly reason.
+9,1,red,"그 아이를 에워싼 겨울도,\n주변의 어른들도. 결코 그에게\n온기를 되돌려주지 않았기에,",The winter cold and the adults\naround him didn’t do jack for him.
+9,1,red,난 모든 경우를 생각하며\n그를 데워 주려 했지만\n내 온기는 닿지 않았어.,"So I tried everything to make him\nwarm, but nothing reached him."
+9,1,red,내 머리가 나빠서였을까?,Was I just not smart enough?
+9,1,red,아니면 달과 지구의\n거리가 너무 멀어서?,Or is the Moon too far from Earth?
+9,1,red,...... 전부 나의 탓이야.,......It’s all my fault.
+9,1,red,그래서 난... 그를 위해\n더욱 강렬하고 뜨거운\n불이 되기로 결심했어.,"So I… decided I’d burn even\nfiercer and hotter, just for him."
+9,1,red,혹시 모르잖아.\n그 애가 지금 먼먼 우주를\n떠돌고 있을 수도 있는 거잖아.,"Who knows. Maybe that kid is wandering\nin space, far away from here."
+9,1,red,그렇게 우리가 언젠가\n만날 수도 있는 거잖아!,And maybe one day\nwe’ll run into each other!
+9,1,red,"그때, 그때 비로소 그\n아이를 데워 주면 되니까.",And then I can finally\nwarm the kid up.
+9,1,red,"그러니 인간, 그때까지\n내가 타오르길 응원해\n줘야 해! 그럴 거지?",So you better root for me to\nkeep burning on! Can\nI count on you?
+9,2,red,그때 기억 나?,Do you remember?
+9,2,red,삽이 땅 속 무언가에\n부딪혔을 때 말야.,When my shovel hit\nsomething in the ground.
+9,2,sircello,♩ ♩♪ ♮♪ ?,♩ ♩♪ ♮♪ ?
+9,2,edison,"맞아, 네가 땅속 무언가의\n정체를 몰라 우리를 불렀잖아.",Yes. You had no idea\nwhat it was and summoned us.
+9,2,edison,"난 그 자원을 이리저리 보고,\n냄새를 맡고, 만져보고,\n또 핥아보기까지 했지.","I studied, smelled, touched,\neven licked the resource."
+9,2,edison,오감으로 관찰한 결과 나는 확신했다.,And my senses confirmed\nwhat I already suspected.
+9,2,edison,이것은 달과 꿈 공장에 혁신을\n불러일으킬 신자원이라는 걸!,That this new resource would\nbring about innovation on the\nMoon and the factory!
+9,2,edison,바로 이를 연료화하기\n위한 실험에 돌입하려,I left at once to retrieve my\nequipment from the laboratory
+9,2,edison,연구실로 실험 도구를\n가지러 떠났지.,to begin experimenting on\nhow to convert it into fuel.
+9,2,edison,그런데 돌아오니까\n자원이 없어졌지 뭐야.,But I returned to discover\nthe resource missing.
+9,2,edison,달을 샅샅이 뒤져보았지만\n낌새도 없이 사라져 있었음.,I searched the Moon\nbut it hadn’t left a trace.
+9,2,edison,그때만큼 내 감정이 요동쳤던\n때를 찾기는 쉽지 않아.,My emotions had never\nbeen more intense.
+9,2,edison,"그럼, 난 연구실로 복귀한다. 이만.","With that, I return to my lab.\nUntil the next time."
+9,2,edison,(탁탁거리는 발소리가 멀어진다.),(Pitter-patter of footsteps grows faint.)
+9,2,red,...,...
+9,2,sircello,...,...
+9,2,sircello,♪♪ ♮♬ ?,♪♪ ♮♬ ?
+9,2,red,"아니야, 말해주지 않길 잘 했어.","No, we made the right call\nby not telling her."
+9,2,red,그 대단한 신자원이 고작\n‘얼음’이었다는 걸\n알았다면 에디슨은...,If Edison ever found out that\nher grand resource was just ice...
+9,2,sircello,♫♮♭♮♭!!!!,♫♮♭♮♭!!!!
+9,2,red,우리도 엄청 놀랐었잖아!\n잔뜩 기대했었는데....,We did too! You remember\nhow excited I was.
+9,2,red,에디슨은 그 실망과 충격을 영원히\n극복하지 못할 수도 있다고.,Edison may never get\nover it for the rest of time.
+9,2,sircello,*♩♩ / ♪,*♩♩ / ♪
+9,2,red,헤헤. 맞아.,Hehe. True.
+9,2,red,이미 녹아 없어진 얼음을 찾아\n헤매는 에디슨의 뒷모습도\n재미있었지!,It was pretty funny watching Edison\nfreak out over the ice disappearing.
+9,2,sircello,♪ ♮♪♭ ~,♪ ♮♪♭ ~
+9,2,red,알았어. 그만 놀릴게....,Alright. I’ll lay off...
+10,1,red,오늘따라 꿈 공장\n직원이었던 때가 그리워.,It’s days like these\nI miss being a worker.
+10,1,sircello,...... ♪,...... ♪
+10,1,edison,"돌아갈 수도 없는 걸 그리워하면\n네 마음만 아픔. 일해라, 레드.","No point in missing\nwhat cannot come back.\nGet to work, Red."
+10,1,red,그래도!,Still!
+10,1,red,그래도.,Still.
+10,1,red,그때는 우리가 사랑하는 인간들에게\n사랑스런 꿈을 보내 줄 수 있었어.,Back then we could send dear dreams\nto the humans dear to us.
+10,1,red,꿈을 제조하기 전 그들의\n다채로운 하루를 재생해\n감상하던 업무는 매일의 낙이었지!,Nothing beat catching up on\nwhat they did each day\nbefore making dreams!
+10,1,red,재수없는 공장 놈들이 우리를\n무시하지도 않았고 말이야.,And those factory shucks\ndidn’t look down on us.
+10,1,edison,... 그래.,...True.
+10,1,edison,경이로운 속도로 진화하던\n그들의 기술을 관찰하는\n것 역시 즐거웠다.,It was a pleasure observing their\ntechnology develop so rapidly.
+10,1,edison,"파이프 오르간과 반도체 칩,\n놀라울 만큼 정교했음.","Pipe organs and semi-conductive\nchips, all incredibly intricate."
+10,1,edison,지성과 집념의 집약체였지.\n아직도 기억 속에 생생하다.,Beacons of intellect and will.\nI remember them clearly.
+10,1,sircello,♪♫ !!,♪♫ !!
+10,1,red,"그렇지, 우리가 만날 일은\n없었겠지만...... 그래도!","Right, then we never would\nhave met. But don’t you still miss it?"
+10,1,edison,하지만 우린 이미 만났음.,But we already have met.
+10,1,edison,그리고 생각보다 나는\n너희를 좋아하고 있다.,And I am fonder of you two\nthan you are aware of.
+10,1,edison,"자, 다시 청소하러 가자.","Now, back to work."
+10,1,red,...,...
+10,1,red,우와. 우와아.... 응!,Whoa. Whoa!
+10,1,red,(타타닥 하는 발소리),(Scuffling sounds)
+10,1,red,"제대로 들은 것 맞지, 첼로 경?","Did I hear that right, Sir Cello?"
+10,1,sircello,♫♮,♫♮
+10,2,red,"안녕, 인간! 오늘은 첼로 경이\n발을 잘려서 다시\n이어 붙여 주고 왔어. 칠칠맞긴!","Hi, human! Today Sir Cello\nsawed off his foot, so we had\nto put it back. What a clutz."
+10,2,red,첼로 경은 지금 잠들었고 말야.,He’s fast asleep now.
+10,2,red,"인간, 첼로 경이 말 대신 첼로\n선율로 소통한다는 것 알지?","You know Sir Cello speaks\nin cello strings, right?"
+10,2,red,실은 원래 말을 할 수 있었대.,But he used to talk.
+10,2,red,실은… 지금도 할 수 있대!,Actually... he still can!
+10,2,red,하지만 음악으로 말하길\n선택했다고 해.,But he chooses to be\nunderstood through music.
+10,2,red,첼로 경의 마지막 인간은\n첼리스트였거든.,"You see, Sir Cello’s\nfinal human was a cellist."
+10,2,red,그리고 음악은\n그의 인생이 시작되고\n꽃피우던 세계.,And music was what made\nthe human's life bloom.
+10,2,red,"그가 살아가던 이유도,\n사랑하던 모든 것도 음악이었어.","He lived for music,\nand loved with music."
+10,2,red,사고로… 음악을 연주하는 능력을\n잃게 되었을 때마저도,After the accident...\nhe had to give it up.
+10,2,red,음악만큼은 그 인간의 마지막\n위로이자 도피처였대.,Yet music was still his\nconsolance and escape.
+10,2,red,첼로 경이 그의 인간을 잃게 된 건,But eventually...
+10,2,red,결국 인간들의 언어 때문이었지.,Words took him away\nfrom Sir Cello.
+10,2,red,"... 물론! 인간들의 언어는 대부분\n아름답고 동그랗지만, 가끔은 정말\n날카롭고 끔찍해지기도 하거든.","… They are often round\nand beautiful, but at times\ncan be sharp and terrible."
+10,2,red,"그 뾰족한 언어들에\n다치다가, 다치다가...","And can hurt, and hurt until you just..."
+10,2,red,……,……
+10,2,red,"... 그래서 첼로 경은 음악을 언어로\n삼아서, 자기 마지막 인간을\n기억해 나가고 싶은 거래.","So Sir Cello wants to speak\nthrough music, and remember\nhis final human with it."
+10,2,red,"말의 세상엔 상처도, 거짓도 많지만","Words hurt, and words lie."
+10,2,red,음악은… 그냥 느끼면 되니까!,But with music...\nyou just have to feel!
+10,2,red,있는 그대로.,Feel it as it is.
+10,2,red,투명한 감정만 살아 숨 쉬니까.,Clear and alive.
+10,2,red,"… 멋진 아저씨잖아, 첼로 경!","Man, Sir Cello sure is cool."
+11,1,red,그거 알아?,"Hey, guess what?"
+11,1,red,인간들은 우리가 사는\n달에 참 관심이 많대!,Humans are really interested\nin this Moon of ours.
+11,1,sircello,♫♮♭♮♭,♫♮♭♮♭
+11,1,red,그리스의 신화에서는\n달을 관장하는 세 명의\n여신들이 있다고 믿었대.,The Greek myths said three\ngoddesses looked over the Moon.
+11,1,red,"아르테미스는 초승달,\n셀레네는 보름달,\n헤카테는 그믐달을 상징하지!","Artemis dealt with the crescent moon,\nSelene the full moon,\nand Hecate the waning moon."
+11,1,red,너어무 멋있고 낭만적이야.,WAY too cool and romantic.
+11,1,sircello,♫♮♭♮♭?,♫♮♭♮♭?
+11,1,red,"그리고, 한국에서는 달에서\n토끼가 방아를 찧는다고 믿었대.","Well, in Korea they believed\nrabbits lived on the moon."
+11,1,red,지구에서 보이는 달의 앞면을\n보며 그런 상상을 한 거야!,They came up with that just by\nlooking at the Moon’s surface!
+11,1,sircello,*♩♩ / ♪,♫♮♭♮♭...
+11,1,red,그러게... 이젠 과학의 발전으로\n신화나 동화를 믿는 인간이\n흔치 않아졌어.,True... science has made it\nrare for humans to believe in\nmyths or fairy tales.
+11,1,red,"조금은, 아니, 꽤나 아쉬워.","It’s kinda disappointing.\nNo, very disappointing."
+11,1,edison,글쎄.,I disagree.
+11,1,edison,사실에 이야기를\n덧씌우는 것 역시 좋지만,Storytelling to make sense of\nthe world is commendable.
+11,1,edison,"사실에 다가가려고 하는 인간들의 태도,","But their dedication to the truth,"
+11,1,edison,바로 내가 인간을 사랑하고\n궁금해하는 이유 중 하나다.,is what I love to explore about humans.
+11,2,red,"에디슨, 괜찮아?","Edison, you good?"
+11,2,edison,"레드, 넌 너의 소년이\n우주를 여행하리라 믿지.",Red. You believe your boy\nis traveling through space.
+11,2,red,응.,Yeah.
+11,2,edison,난 나의 인간이\n완전히 소멸했다고 생각함.,I believe my human\nis gone for good.
+11,2,red,……,……
+11,2,edison,"그가 사랑하던 여자 인간이 죽었을 때,\n난 그가 느끼던 고통을\n‘불가피한 과정’으로서 이해하지 못했다.","When the woman he loved\ndied, I did not understand his\ngrief was ‘a natural process.’"
+11,2,edison,꿈속에 그녀의 조각들을 잔뜩 심어\n두면 그가 분명 기뻐할 줄 알았고.,I thought planting her in\nhis dreams would give him joy.
+11,2,edison,금새 다시 행복해질 거라 믿었음.,I believed he would be\nhappy once more.
+11,2,edison,무지했던 것이지.,I was a fool.
+11,2,edison,"…… 모든 인간은 상실을 겪으며,\n그것을 지나오는 과정은\n반드시 필요하단 걸.","..... All humans go through\nloss, and grieve over it."
+11,2,edison,그 상실감을 피해다니며 영원한 환상을\n거닐다 보면 깨어나야만 하는 현실이\n점차 초라하고 끔찍해진단 걸.,But avoiding that grief and\nwandering in a fantasy\nonly makes reality worse.
+11,2,edison,당시엔 알지 못했다.,I did not know at the time.
+11,2,edison,현실이 견딜 수 없어진 그는…\n결국 그녀를 따라갔다.,He could not cope with\nreality... so he followed\nin her footsteps.
+11,2,edison,… 그는 내가 죽인 것이다.,... I killed him.
+11,2,edison,내가 보내 준 꿈들이 그를 죽게 한 거야.,My dreams killed him.
+11,2,edison,이젠 아니까.,I know now.
+11,2,edison,소멸을 멈추고,And I want him here.
+11,2,edison,그만 돌아오라 하고 싶어.,I want him back.
+11,2,red,……,……
+11,2,red,너의 인간은 별을 좋아하는\n사람이라고 했었지? ,"You said your human\nliked stars, right?"
+11,2,edison,응.,Affirmative.
+11,2,red,나의 소년은 저어어어기\n파란 별을 여행하고 있다.,My human kid is traveling that\nblue star waaaay over there.
+11,2,red,아마도 너의 인간은 저어어어기…,So your human’s\nsomewhere over...
+11,2,red,저어어…기 가느다랗게 빛나는\n노란 별. 아마도 그 언저리를\n여행하고 있을 거야!,There. That faint yellow star.\nHe’s probably traveling there!
+11,2,red,그가 사랑했던 여자 인간과 함께!,With the woman he loved!
+11,2,red,"어라, 봐! 방금\n선명하게 반짝였잖아!","Hey, look! It just winked at us!"
+11,2,edison,……,……
+11,2,red,……,……
+11,2,edison,"…… 고맙다, 레드.","...... Thank you, Red."
+12,1,edison,인간은 때때로\n비합리적인 선택을 한다.,Humans make\nirrational choices at times.
+12,1,edison,"발화기관이 아직 작동하지 않는\n태아와 대화를 나누고,",They speak with feti whose\nvocal chords are yet to operate.
+12,1,edison,가장 절망적인 상황에서도\n아름다움을 좇으며 기쁨을 느낀다.,"And look for beauty\nin hopeless situations,"
+12,1,edison,아름다움이 무엇인지도 모르면서.,despite not fully grasping\nthe true concept of beauty.
+12,1,edison,비합리성. 끼워지지 않는\n퍼즐조각 같은데도,"Irrationality. A puzzle\npiece that does not fit,"
+12,1,edison,묘하게 앉아 바라보고\n싶은 인간의 그 기묘한 특성.,and a human trait that makes\none want to contemplate it.
+12,1,sircello,♮♭~♫♩...?,♮♭~♫♩...?
+12,1,edison,"그래, 어쩌면 그들이\n비합리적이기에 나를 그토록\n매료시킨 것일지도 모르지.","Yes, perhaps it is their irrational\nways that charmed me so."
+12,1,edison,"하지만 그것 알아, 첼로 경?","But are you aware, Sir Cello?"
+12,1,edison,가끔은 그들을 온전히 이해할\n수 없을지도 모른다는\n공포에 마비된다.,The fear that I may not understand\nthem fully paralyzes me at times.
+12,1,edison,왜 그때... 그런 사고를 했으며\n그러한 선택을 했는지.,Why… why they made\nsuch a choice back then.
+12,1,edison,"답 없는 메아리처럼 끊임없이\n짐작할 수밖에 없고, 당최\n이해도 납득도 되지 않을 때.","When all that is left is to ponder\nlike an echo with no reply,"
+12,1,edison,얼어붙는다.,I freeze.
+12,1,sircello,♭  ♩ +,♭  ♩ +
+12,1,edison,정말 그렇게 생각하나? 우리는 영원히\n그들을 이해할 수 없다고?,Is that truly what you think?\nThat we will never understand them?
+12,1,edison,... 우리의 세계가 너무 단순하기 때문일까.,… Perhaps our world is far too simple.
+12,1,sircello,♮ - -♫,♮ - -♫
+12,1,edison,...... 그런 게 중요하지 않다면\n대체 무엇이 중요한 거지?,"…… If those are not\nof import, then what is?"
+12,1,sircello,"♩♩♩  *, ♩♩   *","♩♩♩  *, ♩♩   *"
+12,1,edison,정말 이해하기 위해서는 이해하지\n못한 채로 받아들여야 한다고?,True understanding occurs when one\nembraces without understanding?
+12,1,edison,"이해하지 못한 채로,\n‘받아들여야’ 한다고?",<i>Embrace</i> without understanding?
+12,1,edison,문장 내에 모순이 있다.,A sentence that contradicts itself.
+12,1,sircello,....♩♫   ♮♭.,....♩♫   ♮♭.
+12,1,edison,모순까지 받아들여라....,Embrace the contradiction itself...
+12,1,edison,이런. 받아들이는 것 참 좋아하네.,"Boy. You really like embraces, huh."
+12,1,sircello,(첼로 경이 연주를 시작한다.\n달의 새들이 모여드는 소리가 난다.),(Sir Cello’s music. The rustling of\nMoon birds flocking together.)
+12,1,sircello,(몽환적인 새소리가 어우러진다.),(The dreamy harmony of bird chirps.)
+12,2,red,"저 멀리의 우주 암석, 보여?",See that space rock over there?
+12,2,red,언제부터 차디찬 우주에\n외로이 떠돌았을까?,How long has it been drifting\nin this cold universe all alone?
+12,2,red,저 운석은 끝이 나는 것들의\n아름다움을 알고 있을까?,Does it know how beautiful\nit is that all things must end?
+12,2,red,...,...
+12,2,red,어제까진 나의 인간 아이도\n그렇게 우주를 떠돌고 있기를 바랐었어.,"Up ‘til yesterday, I hoped my human kid\nwas floating through space like that."
+12,2,red,오래 오래 떠돌다 보면 언젠가는\n만날 수 있을지 모르니까.,I thought maybe someday\nhe could wander right into me.
+12,2,red,하지만...,But...
+12,2,red,"이젠 놓을래. 포기하는 게 아니야.\n그냥, 인정하는 거야.",I’m letting go now. Not\ngiving up. Just facing facts.
+12,2,red,"슬픔을 애써 희망으로 바꿔 왔지만,\n이건 그 애를 위하는 길이 아니었어.","I’ve tried to be hopeful instead of\nsad, but this isn’t right for him."
+12,2,red,왜냐하면.... 왜냐하면.,Because.... because.
+12,2,red,그 애가 살아간 찰나의 시간이\n너무나도 눈부셨거든.,That split second of his life\nshined so bright.
+12,2,red,그 반짝임은 달에 있는\n나에게까지 닿을 정도였어.,So much that its light\nreached me on the Moon.
+12,2,red,나는 그 애의 고유한 반짝임을\n지켜 주고 싶어. 그러니 나는.,"I want to protect\nhis special light. So I,"
+12,2,red,"기억해야만 해. 그 아이가 어떻게\n시작되었고, 어떻게 끝났는지.","I have to remember. How he\nbegan, and how he ended."
+12,2,red,끝과 함께 하나의 이야기로\n완성되었던 아이의 아름다운 인생을.,"His beautiful life that drew to\na close, a complete story."
+12,2,red,그러니까 놓아 줄 거야.,So I’ll be letting go.
+12,2,red,"다만 나의 가슴은 언제까지나\n조금은 찌릿할테고,","But there’ll always be\na lil’ pang in my heart,"
+12,2,red,눈에서 소금물이 흐르는\n날도 있을거야.,and sometimes saltwater\nwill leak from my eyes.
+12,2,red,"그 정도는 괜찮겠지, 에디슨?","But that’s okay. Right, Edison?"
+12,2,edison,...,...
+12,2,edison,네 머리가 뜨겁지만\n않았다면 쓰다듬었을 텐데.,"Were your head not made\nof flames, I would pat it."
+12,2,edison,대신 등을 두드린다.,I will settle for your shoulder instead.
+13,1,red,다가갈 수 없고 곁에 있을 수 없는\n내 자신을 많이 원망했어.,I hated myself for not being\nable to be near you.
+13,1,red,하지만... 네가 나를 알았다면.\n우리가 친구였다면.,"But... if you’d known me.\nIf we’d been friends,"
+13,1,red,"너는 내가 자책하는 걸 바라지\n않았을지도 모르겠다는 생각을,",it occured to me that you\nmight not have wanted this.
+13,1,red,문득 해 버렸어.,Me blaming myself.
+13,1,red,"있잖아,","You know,"
+13,1,red,"점점 어두워져가는 네 꿈을\n보면서도, 네가 꺼져 가고 있다는\n생각을 한 적은 한 번도 없었어.","your dreams turned darker, but I never\nimagined you were petering out."
+13,1,red,넌 마지막 날까지 강인한\n촛불처럼 따뜻했으니까.,You were as warm as\na strong flame to the very end.
+13,1,red,"살고 싶다는, 살아 있는 존재들의\n끈질긴 본능만으로는","Just the will, and the\ndogged instinct to live"
+13,1,red,또 내가 아주 멀리서\n보내 주었던 꿈들만으로는,and the dreams I sent\nfrom far far away
+13,1,red,네 온기가 끊어진 것을\n막을 수 없었던 거야.,weren’t enough to stop\nthat warmth from petering out.
+13,1,red,"그래, 나의 탓이 아니었다는\n걸... 이제는 알 것 같다.","Yes, I know now... that\nit wasn’t my fault."
+13,1,red,불운을 견디는 게 힘들었지.,It was hard to cope\nwith all the bad luck.
+13,1,red,사실 나는 어른이 된 너의\n모습을 궁금해하고는 했는데.,I used to wonder what you\nwould be like as an adult.
+13,1,red,앞으로도 영원히 궁금해할 거야.,And I always will.
+13,1,red,너를 탓하지는 않아.,I don’t blame you.
+13,1,red,하지만 너무 약했던 너를\n아무렇지 않게 짓눌렀던\n그들의 몹쓸 강함이 밉고,But I resent that strength that\ncrushed you like it meant nothing
+13,1,red,너를 당연히 지켜 줘야 했던\n사회란 게 그토록 허술한\n울타리일 뿐이었다는 사실도 밉고,and the careless fence of a society\nmeant to keep you safe
+13,1,red,"차디찬 겨울밤, 손난로\n하나 건네 주던 사람이\n하나 없었다는 것도 너무, 너무 미워.",and that no one was there to hand you\na pair of mittens on that cold winter night.
+13,1,red,넌 그 조그만 온기로도 다시\n타오를 소년이었다는 걸 알아서.,Because I know that warmth would have\nbeen all it took for you to light up again.
+13,1,red,아아아아아아. 이런.,Ohhhhhh. Oh.
+13,1,red,왜냐하면... 난 진짜\n어른이 된 네 모습이,Because... I wanted to know\nwhat you’d be like as an adult.
+13,1,red,무척이나 궁금했거든.,I really really did.
+13,2,sircello,♩… ♫,♩… ♫
+13,2,edison,"그래, 레드가 그런 생각을\n하게 된 게 기특하면서도……","Yes, I feel proud of Red\nfor thinking so. And also..."
+13,2,edison,참 다행스러움.,Much relieved.
+13,2,sircello,♩♪    ♩♩?,♩♪    ♩♩?
+13,2,edison,응? 어... 나는...,Ah? Mm... As for me...
+13,2,edison,아마도 영원히 자책할 듯하다.,It seems I will\nforever berate myself.
+13,2,edison,당시의 상황도 상황이었지만.,"For what happened\nback then, but also..."
+13,2,edison,이 소모적이고 고통스러운\n마음을 기꺼이 느끼며,Entirely feeling this exhausting\nand agonizing emotion
+13,2,edison,그를 기억하는 게\n내 방식의 애정이니까.,"and so remembering him,\nis my way of caring."
+13,2,edison,... 무책임한 말을 하나 해도 될까.,... I have something\nself-serving to say.
+13,2,sircello,♪—♫,♪—♫
+13,2,edison,인간들이 죽지 않았으면 한다.,I do not want humans to die.
+13,2,edison,"음, 뱉고 보니 더욱 무책임하군.",Mm. It sounds even more\nself-serving out loud.
+13,2,sircello,♩♭ ♩♫♮...,♩♭ ♩♫♮...
+13,2,edison,모든 생명의 삶은 한 편의 이야기.,Every life is a single story.
+13,2,edison,"한 명이라도 그 이야길\n귀 기울여 듣고 있다면,","They say even if just one person is\nreally listening to your story,"
+13,2,edison,우린 살아갈 힘을\n잃지 않을 수 있다고 한다.,you will never completely lose\nthe will to live on.
+13,2,sircello,♩ ♮♮♮...♫,♩ ♮♮♮...♫
+13,2,edison,"... 그래, 우리 세 명이\n서로의 청자가 되어 주었듯이.",... Yes. Like how the three of us\nlistened to each other.
+13,2,edison,... 인간들이 알았으면 좋겠음.,... I want humans to know.
+13,2,edison,우리가 귀 기울이고 있다는 것을.,That we are listening.
+13,2,edison,매일 한 명 한 명의 인간을 위해\n꿈을 만드는 한 명 한 명의\n꿈 공장 직원들이 있으며...,"That there are dream factory workers\ncrafting dreams for each\nperson, for <i>you</i>."
+13,2,edison,"비록 그들을 더는 볼 수 없게 되었음에도,\n그들의 하루하루를 응원하고\n사랑하는 달 뒤편의 청소부들이 있다고.",That there are cleaners on the dark side\nof the Moon who root for\nand love all their days.
+13,2,edison,우리만으로는 충분하지 않을지라도...\n우리의 목소리가 너무 작아\n미처 닿지 못할지라도.,That even if we may not be\nenough... even if our voices\nare too weak to reach so far.
+13,2,edison,그렇다 할지라도.,Even so.
+13,2,edison,우리가 있으니...,We are still here...
+13,2,edison,죽지 않고 살아 주면 좋겠다고.,And we want them to live on.
+14,1,red,"너희, 지구에 가 보고 싶어?",Do you guys ever\nwanna go to Earth?
+14,1,edison,갑자기? 지구? 갈 방법이\n없는데 그걸 왜 상상해야 하지?,Earth? Now? Why think on it when\nwe have no means of going?
+14,1,red,......,......
+14,1,red,됐어. 됐어. 어차피\n나도 안 궁금했거든?,"Fine, whatever. It’s not like\nI was curious or anything!"
+14,1,edison,... 지구는 흥미로운 미지 투성이다.,… Earth is full of mysteries.
+14,1,edison,그러나 우주에서 나는 돌만큼이나\n내 연구에 실용적인 자원은 없다.,But the Moon offers resources\nof actual use for my research.
+14,1,edison,인간 학자들의\n의견은 조금 궁금한걸....,Though human scholars and\ntheir ideas do intrigue me.…
+14,1,sircello,♩♫♮ ~~,♩♫♮ ~~
+14,1,red,첼로 경은 지구 상의\n선율들이 궁금하대.,Sir Cello wants to learn\nthe melodies of Earth.
+14,1,red,특히 바람 소리나 빗소리처럼\n지구의 자연이 내는\n다정한 울림들이.,"Like the gentle tunes of\nnature, blowing in the wind\nor pouring in the rain."
+14,1,sircello,(달 나비의 맑은 종소리 같은\n날갯짓이 먼 발치에서 들린다.),(The beating of Moon butterfly\nwings rings from far away\nlike clear bells.)  
+14,1,sircello,♮♭~♫ ♫♩,♮♭~♫ ♫♩
+14,1,edison,동감함. 달에서만 특수히 공명하는\n선율들이 나 역시 그리워질 거다.,I concur. I too would miss the unique\nmelodies echoing on the Moon.
+14,1,red,"나는 정말 가 보고 싶지만,\n지구에는 인간을 비롯한\n생물이 너무 많아.",I’d give anything to go. But there\nare too many creatures on Earth.
+14,1,red,"너무, 너무.... 너무 많아!","Too, too…. TOO many!"
+14,1,red,내 불길이 뜨거워 누군가 다칠지도 몰라.,My flames could hurt any one of them.
+14,1,red,"비좁지만, 척박해서 오히려\n널찍하게 느껴지는 달이\n나에겐 딱인걸.","The Moon, though cramped\nand barren, might in fact be\njust wide enough for me."
+14,1,red,"아, 마음대로 뛰어다닐 수도 있지.","Oh, and I can run anywhere\nand everywhere here."
+14,1,red,뛰이이어어어어다아아니이이이이...\n(뛰는 발소리. 점점 작아진다.),I can ruuuuuuuuuuun…\n(Running footsteps grow quieter.)
+14,2,red,인간! 우리... 그러니까...\n마지막 인사하러 왔어.,Human! We’re here to...\nwell... say our goodbyes.
+14,2,red,뭉치의 눈을 통해 틈틈이\n바라보았던 넌 정말 아름답고\n따스한 마음을 가진 인간이었어!,"From what we’ve seen through\nDot’s eyes, you’ve been such\na beautiful and warm human."
+14,2,edison,"그래, 그런 당신을\n만나게 되어 영광이었다.","Yes, it was an honor to meet you."
+14,2,red,우리는 너를 사랑해!\n모두가 사랑하고 있어!,We love you!\nEveryone loves you!
+14,2,red,"달의 뒤편에서, 영원히!","Sincerely and forever, from\nthe dark side of the Moon!"
+14,2,sircello,♩♩♩  * ! !,♩♩♩  * ! !
+14,2,red,첼로 경 역시 영광이었대.\n많은 인간에게 우리가\n그들을 사랑한다고 전해 달래!,Sir Cello also says it was an\nhonor. He says to tell many\nhumans that we love them!
+14,2,edison,이런. 구식 회로를 사용해서\n그런가. 고장 나기 직전.,Oh. The transmitter is about\nto break down. Perhaps it is\nthe outdated circuits.
+14,2,edison,걱정 마. 머지않아 달나라\n송신기 ver 2.를 출시할 것이다.,No need for concern. Soon an updated\nversion will be released.
+14,2,edison,"‘양방향 통신’ 기술이 개발에\n임박했으니까. 기다려라, 인간.","‘Two-way communication’ is\non the horizon. Wait, human."
+14,2,red,그럼 이건... 곧 꺼지는 거야?,Then will this one... turn off soon?
+14,2,edison,그렇다.,Yes.
+14,2,red,인간...... 인간...!\n그리울 거야. 정말이야.,Human....... human..!\nI’m really gonna miss ya.
+14,2,sircello,(먹먹한 목소리를 가다듬듯\n첼로 조율하는 소리를 낸다.),(Cello tuning noises sound\nlike the clearing of a throat.)
+14,2,red,"아냐, 아냐! 우리 웃으며\n헤어지자고!",Nah! Let’s end things with a laugh!
+14,2,red,그러니 우리 셋이 함께 특별한\n이별 노래를 불러 줄게. 알았지?,So here’s a serenade\nfrom the three of us.
+14,2,red,"크흠, 크흠! 잘 들어야 해!\n인간에게도 익숙한 노래일 거야!",Ahem! Listen up!\nYou might know this song.
+14,2,red,"첼로 경, 음악 준비해 줘!","Sir Cello, cue music!"
+14,2,sircello,♩♫♮ ~~,♩♫♮ ~~
+14,2,red,아아- 안녕은\n영원한 헤어짐이 (-치직),"♫<i>So long, farewell\nAuf Wiedersehen, goodbye</i>♫"
+14,2,edison,(치익......) 다시 만나기\n위한 약속일 (치직... 칙),"♫<i>Goodbye, goodbye...... goodbye!</i>♫"
