@@ -55,13 +55,8 @@ public class MainVideo : MonoBehaviour
     private Coroutine skipHintFadeCo;
     public event System.Action OnUserSkipRequested;
     Action videoEndEvent = null;
+    private const string assetPackName = "videos_pack";
 
-    private const string PadPackName = "videos_pack";
-    private Coroutine prepareCo;
-    #if UNITY_ANDROID && !UNITY_EDITOR
-    private PlayAssetPackRequest _padReq;
-    private bool _padReady;
-    #endif
 
 
     private void Start()
@@ -145,41 +140,41 @@ public class MainVideo : MonoBehaviour
         prepareCo = StartCoroutine(SetUrlAndPrepare(rel));
     }
 
+    private Coroutine prepareCo;
+
+
     private IEnumerator SetUrlAndPrepare(string rel)
     {
-        string fullPath = null;
+        string fullPath = ""; 
+        // [각주 1] 유니티 표준 경로를 사용합니다. 
+        // 'Separate Assets' 옵션을 켜면 이 경로가 내부적으로 PAD 팩을 가리키게 됩니다.
+        string src = Path.Combine(Application.streamingAssetsPath, rel).Replace("\\", "/");
+        string dstPath = Path.Combine(Application.persistentDataPath, rel).Replace("\\", "/");
+        string dstDir = Path.GetDirectoryName(dstPath);
 
     #if UNITY_ANDROID && !UNITY_EDITOR
-        // PAD 먼저
-        yield return EnsurePackReady();
+        if (!Directory.Exists(dstDir)) Directory.CreateDirectory(dstDir);
 
-        if (_padReady && _padReq != null)
+        // [각주 2] 영상이 PAD(Install-time) 팩 안에 숨어있으므로, 
+        // VideoPlayer가 직접 읽지 못할 때를 대비해 캐시(persistentDataPath)로 복사합니다.
+        if (!File.Exists(dstPath))
         {
-            var assetLoc = _padReq.GetAssetLocation(rel);
-            if (assetLoc != null)
+            Debug.Log("[MainVideo] 캐시로 영상 복사 시작...");
+            using (UnityWebRequest request = UnityWebRequest.Get(src))
             {
-                fullPath = assetLoc.Path;
-            }
-            else
-            {
-                Debug.LogWarning($"[PAD] Asset not found -> fallback to StreamingAssets. rel={rel}");
+                var dh = new DownloadHandlerFile(dstPath);
+                dh.removeFileOnAbort = true;
+                request.downloadHandler = dh;
+                yield return request.SendWebRequest();
+
+                if (request.result == UnityWebRequest.Result.Success) fullPath = dstPath;
+                else fullPath = src; // 실패 시 원본 시도
             }
         }
-        else
-        {
-            Debug.LogWarning($"[PAD] Not ready -> fallback to StreamingAssets. pack={PadPackName}");
-        }
-
-        // apk용 fallback (direct streamingassets)
-        if (string.IsNullOrEmpty(fullPath))
-            fullPath = Path.Combine(Application.streamingAssetsPath, rel);
-
+        else { fullPath = dstPath; }
     #else
-        fullPath = Path.Combine(Application.streamingAssetsPath, rel);
+        fullPath = src;
     #endif
-
-        Debug.Log($"[MainVideo] VideoPath={fullPath}");
-        videoPlayer.source = VideoSource.Url;
 
         // jar:file://... 형태면 ToFileUrl로 다시 감싸지 말고 그대로
         videoPlayer.url =
@@ -188,9 +183,29 @@ public class MainVideo : MonoBehaviour
             ? fullPath
             : ToFileUrl(fullPath);
 
-        Debug.Log($"[MainVideo] VideoURL={videoPlayer.url}");
+        videoPlayer.source = VideoSource.Url;
         videoPlayer.Prepare();
+        
         yield return null;
+        }
+
+    private void DeleteVideoCache(int day)
+    {
+    #if UNITY_ANDROID && !UNITY_EDITOR
+        string rel = $"StoryAnimation/AnimDay{day}.mp4";
+        string path = Path.Combine(Application.persistentDataPath, rel).Replace("\\", "/");
+
+        if (File.Exists(path))
+        {
+            try {
+                File.Delete(path);
+                Debug.Log($"[MainVideo] 안드로이드 캐시 삭제 완료: {path}");
+            }
+            catch (System.Exception e) {
+                Debug.LogWarning($"[MainVideo] 캐시 삭제 실패: {e.Message}");
+            }
+        }
+    #endif
     }
 
     private static string ToFileUrl(string fullPath)
@@ -203,25 +218,6 @@ public class MainVideo : MonoBehaviour
             return "file://" + fullPath;
         }
     }
-
-    #if UNITY_ANDROID && !UNITY_EDITOR
-    private IEnumerator EnsurePackReady()
-    {
-        if (_padReady) yield break;
-
-        _padReq = PlayAssetDelivery.RetrieveAssetPackAsync(PadPackName);
-        while (!_padReq.IsDone) yield return null;
-
-        if (_padReq.Status != AssetDeliveryStatus.Available)
-        {
-            _padReady = false;
-            Debug.LogWarning($"[PAD] Pack not available (APK fallback expected). pack={PadPackName}, status={_padReq.Status}, error={_padReq.Error}");
-            yield break;
-        }
-
-        _padReady = true;
-    }
-    #endif
 
 
     public void PlayVideo(Action videoEndEvent = null)
@@ -380,6 +376,7 @@ public class MainVideo : MonoBehaviour
     {
         PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1);
         PlayerPrefs.Save();
+        DeleteVideoCache(chapter);
 
         isVideoPlaying = false;
         HideSkipHintImmediate();
@@ -619,6 +616,7 @@ public class MainVideo : MonoBehaviour
 
     private void OnDestroy()
     {
+        //Application.logMessageReceived -= HandleLog;
         EndGameNow();
         LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged_Subtitle;
     }
