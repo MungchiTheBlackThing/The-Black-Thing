@@ -201,94 +201,105 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,26,200,main_door_open,Player,Main,,face_mad,selection,"... 그치만, 나는 아직 살아 있는 걸?|... 그치만, 죽음은 한참이나 먼 얘기 같은 걸?",... But I’m still here.|... But that might not happen for a long time.,201|202,,,,Main_Ch5,M5_L0200
 3,26,201,main_door_open,Dot,Main,,face_omg,text,아직은. 살아 있지만.,You are. For now.,203,,,,Main_Ch5,M5_L0201
 3,26,202,main_door_open,Dot,Main,,face_omg,text,당장은. 그렇게 느껴지겠지만.,It is. For now.,203,,,,Main_Ch5,M5_L0202
-3,26,203,main_door_open,Dot,Main,,face_omg,text,<nickname>...,<nickname>...,204,,,,Main_Ch5,M5_L0203
-3,26,204,main_door_open,Dot,Main,,face_omg,text,내가 사랑해 마지않았던 너의 동전 앞면이,"What if your side of the coin that I loved so,",205,,,,Main_Ch5,M5_L0204
-3,26,205,main_door_open,Dot,Main,,face_omg,text,어떠한 예고도 없이 까마득하게 뒤집혀 버린다면?,were to flip without any kind of warning?,206,,,,Main_Ch5,M5_L0205
-3,26,206,main_door_open,Player,Main,,face_omg,text,......,......,207,,,,Main_Ch5,M5_L0206
-3,26,207,main_door_open,Dot,Main,,face_omg,text,"그래, 나는 이 질문에 대한 답을 이미 알고 있지.",I know. I know what’s coming.,208,,,,Main_Ch5,M5_L0207
-3,26,208,main_door_open,Dot,Main,,face_omg,text,‘어찌할 수 없다. 뒤집힌 동전은 불가역적이다.’,‘It’s fixed. A coin flipped can’t be reversed.’,209,,,,Main_Ch5,M5_L0208
-3,26,209,main_door_open,Dot,Main,,face_sad,text,"하지만 다른 누구도 아닌 너의 죽음이야.\n내가 가장 애착하는 인간인 <nickname>, 너의 죽음.","But this is your death we’re talking about.\nIt’s you, the human I love more than anyone.",210,,,,Main_Ch5,M5_L0209
-3,26,210,main_door_open,Dot,Main,,face_sad,text,지금까지 너와 내가 쌓아둔 수많은 시간들은\n어떻게 되는 거야? 어디로 가는 거야?,What about all the times we spent together?\nWhere do those hours go?,211,,,,Main_Ch5,M5_L0210
-3,26,211,main_door_open,Dot,Main,,face_sad,text,너와 나는 그대로 끊겨 버리는 거야?,Do you and I cease just like that?,212,,,,Main_Ch5,M5_L0211
-3,26,212,main_door_open,Dot,Main,,face_squeeze,text,"너와 즐겁게 대화하고, 눈빛과 손길을 주고받고,","Those chats, shared looks and warmth.",213,,,,Main_Ch5,M5_L0212
-3,26,213,main_door_open,Dot,Main,,face_sad,text,함께 달빛의 시원함을 느낄 수 있던 미래의\n‘만약에’들도 영영 되돌아오지 못하는 거야?,"And future ‘maybes,’ where you and I would enjoy\ncool moonlight. Will they be gone forever?",214,,,,Main_Ch5,M5_L0213
-3,26,214,main_door_open,Player,Main,,face_sad,selection,"애석하지만... 응, 되돌아오지 않을 거야.|(차마 확답할 수 없어. 어떻게 이야기해야 좋을까...)",It’s sad... but yes. Gone forever.|(How do I break this to them...),215|215,,,,Main_Ch5,M5_L0214
-3,26,215,main_door_open,Player,Main,body_default1,face_blink,text,뭉치야... 내가 죽는다는 건.,Dot... my death.,216,,,,Main_Ch5,M5_L0215
-3,26,216,main_door_open,Player,Main,,,selection,가늠하기 아득할 만큼 무서운 일이지만.|아무리 애써도 피할 수 없는 일이지만.,가늠하기 아득할 만큼 무서운 일이지만.|I can’t run from it no matter what.,217|217,,,,Main_Ch5,M5_L0216
-3,26,217,main_door_open,Player,Main,,,text,"살아 있던 건 모두 죽어. 아까도\n이야기했듯이, 나 역시 그 예외가 아니야.","But all living things die.\nAnd like I said, I’m no exception.",218,,,,Main_Ch5,M5_L0217
-3,26,218,main_door_open,Dot,Main,,,text,... 이젠 그걸 이해할 수 있지.,... I get it now.,219,,,,Main_Ch5,M5_L0218
-3,26,219,main_door_open,Dot,Main,,,text,이 우주 속 모두가 하나씩 나눠 가진\n죽음은 분명 너에게도 찾아올 거야.,"Everyone in the universe has their allotted death,\nand yours will come for you one day.",220,,,,Main_Ch5,M5_L0219
-3,26,220,main_door_open,Dot,Main,,,text,"별과 은하에게도, 수백억 명의 아름다운\n인간들과 크고 작은 생물들에게도 그러했듯이.","As it came for stars and galaxies, for tens of billions\nof wonderful humans and creatures big and little.",221,,,,Main_Ch5,M5_L0220
-3,26,221,main_door_open,Dot,Main,,,text,"그건 갑작스럽지만, 마땅히 놀랍지는 않은 일이지.","It will be sudden, if not surprising.",222,,,,Main_Ch5,M5_L0221
-3,26,222,main_door_open,Dot,Main,,,text,하지만 이 세계가 죽음에 대해 정립해 온 모든 법칙들은,But the laws of death that\nthe world has established.,223,,,,Main_Ch5,M5_L0222
-3,26,223,main_door_open,Dot,Main,,,text,네가 ‘정말로’ 죽게 되는 순간 모든 객관성을 잃어버릴 거야.,They’ll lose all objectivity once you truly die.,224,,,,Main_Ch5,M5_L0223
-3,26,224,main_door_open,Dot,Main,,face_eyeroll3,text,그리고... 터무니없이 개인적인 비극이 될 거야.,And... it will be an unfathomably unique tragedy.,225,,,,Main_Ch5,M5_L0224
-3,26,225,main_door_open,Dot,Main,,face_eyeroll3_stay,text,"죽음은... 우주에서 단 하나뿐인 너를,\n나에게서 영영 앗아갈 진짜 ‘끝’이니까.",Death... is the one true end that\nwill take you away from me.,226,,,,Main_Ch5,M5_L0225
-3,26,226,main_door_open,Dot,Main,,face_blink,text,그렇게.,And.,227,,,,Main_Ch5,M5_L0226
-3,26,227,main_door_open,Dot,Main,,,text,... 난 무너지겠지.,... I will crumble.,228,,,,Main_Ch5,M5_L0227
-3,26,228,main_door_open,Dot,Main,,,text,나를 도와줄 유일한 존재인 너조차 죽고 없어진 채.,With you no longer there to help me.,229,,,,Main_Ch5,M5_L0228
-3,26,229,main_door_open,Dot,Main,,face_omg,text,난 홀로 무너지고야 말 거야.,I will crumble all alone.,230,,,,Main_Ch5,M5_L0229
-3,26,230,main_door_open,Player,Main,,,text,"사랑하는 존재의 죽음을 지나오는 일은...\n그래, 정말 어려운 일이야.",To overcome the death of a loved one...\nit’s truly hard.,231,,,,Main_Ch5,M5_L0230
-3,26,231,main_door_open,Player,Main,,face_blink,text,견디는 것 말고는 뾰족한 선택지가 없으니까.,All you can do is cope.,232,,,,Main_Ch5,M5_L0231
-3,26,232,main_door_open,Player,Main,,,selection,하지만 그럼에도 너의 삶은 계속되는걸.|하지만 죽음 너머를 상상하는 일이 무의미한 건 아니야.,But your life will still go on.|But you can still imagine what comes after death.,233|242,,,,Main_Ch5,M5_L0232
-3,26,233,main_door_open,Player,Main,,,text,"내가 너의 곁에 있었을 때보단 공허한 하루하루가\n이어지고, 때로는 후회에 젖어들기도 할 거야.","The days might feel emptier than when I was by\nour side, and sometimes regret will seize you.",234,,,,Main_Ch5,M5_L0233
-3,26,234,main_door_open,Player,Main,,,text,"그때 그 말을 했더라면, 혹은 하지 않았더라면.",All the words left unsaid or spoken too soon.,235,,,,Main_Ch5,M5_L0234
-3,26,235,main_door_open,Player,Main,,,text,... 오늘까지도 살아 있었더라면.,... The days I never got.,236,,,,Main_Ch5,M5_L0235
-3,26,236,main_door_open,Player,Main,,,text,하지만 그 공허함과 슬픔은 점차 무뎌질 거야.,But that hollowness and sadness will lessen.,237,,,,Main_Ch5,M5_L0236
-3,26,237,main_door_open,Player,Main,,,text,"시간이 흘러 상실감을 다루는 너만의 방법을 찾게 될 수도, \n새로운 인간 친구를 만나게 될 수도 있겠지.","As time passes you’ll find your own way of\ndealing with the loss, or meet a new human friend.",238,,,,Main_Ch5,M5_L0237
-3,26,238,main_door_open,Player,Main,,,text,그러니 뭉치도 그날이 오게 되면... 아무것도 보이지\n않을지라도 그저 앞으로 나아가 봤으면 좋겠어.,"So when that day comes... I want you to keep\ngoing, even if the path ahead is unclear.",239,,,,Main_Ch5,M5_L0238
-3,26,239,main_door_open,Dot,Main,,face_eyeroll3,text,"아무것도 보이지 않을지라도, 그저 앞으로...","Keep going, even if the path is unclear...",240,,,,Main_Ch5,M5_L0239
-3,26,240,main_door_open,Dot,Main,,face_eyeroll3_stay,text,......,......,241,,,,Main_Ch5,M5_L0240
-3,26,241,main_door_open,Dot,Main,,face_blink,text,......!,......!,250,,,,Main_Ch5,M5_L0241
-3,26,242,main_door_open,Player,Main,,,text,"뭉치는 내가 바람이 되어, 혹은 새가 되어\n너를 지켜보고 있을 거라고 믿을 수도 있을 테고,","You can imagine me in the wind,\nor as a bird watching over you.",243,,,,Main_Ch5,M5_L0242
-3,26,243,main_door_open,Player,Main,,,text,죽고 나서 우주를 떠다니며 행성 간 여행을 하고 있을\n나의 영혼을 상상해 볼 수 있을 거야.,You can picture my soul floating through\nspace and travelling between planets.,244,,,,Main_Ch5,M5_L0243
-3,26,244,main_door_open,Player,Main,,,text,그게 진짜인지 아닌지는 중요하지 않아.,It doesn’t matter if it’s real or not.,245,,,,Main_Ch5,M5_L0244
-3,26,245,main_door_open,Player,Main,,,text,누군가를 사랑하고 기억하는 마음은 현재를\n더 힘차게 살아갈 힘이 되어 주기도 하거든.,Loving and reminiscing someone can\ngive you the strength to live on.,246,,,,Main_Ch5,M5_L0245
-3,26,246,main_door_open,Player,Main,,,text,"... 더는 옆에 없을지라도, 그게\n사랑이란 사실이 변하진 않으니까.","... Love stays, even when they’re gone.",247,,,,Main_Ch5,M5_L0246
-3,26,247,main_door_open,Dot,Main,,face_eyeroll3,text,상상과... 사랑의 힘을 믿으란 말인 거야?,So imagine... and believe in love?,248,,,,Main_Ch5,M5_L0247
-3,26,248,main_door_open,Dot,Main,,face_eyeroll3_stay,text,......,......,249,,,,Main_Ch5,M5_L0248
-3,26,249,main_door_open,Dot,Main,,face_blink,text,......!,......!,250,,,,Main_Ch5,M5_L0249
-3,26,250,main_door_open,Dot,Main,,,text,"<nickname>, 인간들만 그런 게 아니었어.","<nickname>, it’s not just humans.",251,,,,Main_Ch5,M5_L0250
-3,26,251,main_door_open,Dot,Main,body_bounce,,text,왜 잊고 있었을까?,How could I have forgotten?,252,,,,Main_Ch5,M5_L0251
-3,26,252,main_door_open,Dot,Main,body_default1,,text,"달 뒤편의 이들... 레드, 에디슨과 첼로 경을.","The Moon Beings... Red, Edison and Sir Cello.",253,,,,Main_Ch5,M5_L0252
-3,26,253,main_door_open,Dot,Main,,,text,그들도 상실을 살아남은 존재들이었어.,They survived their losses as well.,254,,,,Main_Ch5,M5_L0253
-3,26,254,main_door_open,Dot,Main,,,text,사랑하는 인간이 죽음의 심연 너머로\n자진해서 걸어들어가는 모습을,Their beloved humans chose\nto cross into the abyss of death.,255,,,,Main_Ch5,M5_L0254
-3,26,255,main_door_open,Dot,Main,,,text,그들은 그저 바라봐야만 했어.\n아무것도 할 수 없이. 아무것도.,And all they could do was watch.\nThere was nothing they could do.,256,,,,Main_Ch5,M5_L0255
-3,26,256,main_door_open,Player,Main,,,text,(그동안 상상조차 할 수 없었어.\n달에는 그런... 그런 아픔이 있었구나.),(I had no idea. The Moon... and all that hurt.),257,,,,Main_Ch5,M5_L0256
-3,26,257,main_door_open,Dot,Main,,face_eyeroll3,text,... 더는 인간의 꿈을 만들지도 못하게 되었지.,... They weren’t even allowed\nto make human dreams.,258,,,,Main_Ch5,M5_L0257
-3,26,258,main_door_open,Dot,Main,body_move,face_blink,text,"그럼에도 그들은, 공장 아래에서 하루도\n빠짐없이 갈퀴를 든 채 꿈 폐기물을 긁어 내.","But still, they rake through the filth\nunder the factory every day.",259,,,,Main_Ch5,M5_L0258
-3,26,259,main_door_open,Dot,Main,body_bounce,,text,"달나방들을 좇으며 노래를 부르고,\n달의 운석들을 연구하며 눈을 빛내.","They chase off the moon moths,\nsing, and observe the meteorites.",260,,,,Main_Ch5,M5_L0259
-3,26,260,main_door_open,Dot,Main,body_default1,,text,"... 레드는,","... Red,",261,,,,Main_Ch5,M5_L0260
-3,26,261,main_door_open,Dot,Main,,,text,레드는.,Red.,262,,,,Main_Ch5,M5_L0261
-3,26,262,main_door_open,Dot,Main,,,text,자신의 인간이 지금은 우주의 가장\n따뜻한 구석을 여행하고 있으리라 굳게 믿어.,He believes his human is traveling\nthe warmest corner of the universe.,263,,,,Main_Ch5,M5_L0262
-3,26,263,main_door_open,Dot,Main,,,text,그리고 자신의 몸을 불사르며 타오르길 멈추지 않아.,And he never stops burning.,264,,,,Main_Ch5,M5_L0263
-3,26,264,main_door_open,Player,Main,,,text,왜 타오르길 멈추지 않는데?,Why not?,265,,,,Main_Ch5,M5_L0264
-3,26,265,main_door_open,Dot,Main,,,text,언젠가 그의 인간을 다시 만나는 날이 오면...\n그를 따뜻하게 데워 주고 싶다는 꿈을 꾸거든.,Because he dreams of the day he’ll meet his\nhuman again...and use his flames to warm him up.,266,,,,Main_Ch5,M5_L0265
-3,26,266,main_door_open,Player,Main,,,text,"달의 이들은 강인하구나. 모든 것이\n절망적인 하루하루였을지라도,","The Moon Beings are strong.\nThey may have despaired every day,",267,,,,Main_Ch5,M5_L0266
-3,26,267,main_door_open,Player,Main,,,text,"그렇게 너를 발견하고, 또 다시\n희망을 품은 채 지구로 날려 보냈잖아.","yet they discovered you, and\nsent you to Earth with their hopes.",268,,,,Main_Ch5,M5_L0267
-3,26,268,main_door_open,Dot,Main,,,text,응... 그 모든 일이 있었음에도.,Yes... Inspite of everything.,269,,,,Main_Ch5,M5_L0268
-3,26,269,main_door_open,Dot,Main,,,text,레드가 나에게 분필 눈을 그려 주었을 때,When Red drew my chalk eyes,270,,,,Main_Ch5,M5_L0269
-3,26,270,main_door_open,Dot,Main,,,text,내가 세상에 태어나 처음 마주 보았던 건...,the first thing I saw in this world...,271,,,,Main_Ch5,M5_L0270
-3,26,271,main_door_open,Dot,Main,,,text,레드의 용감하고 호기심 어린 눈이었어.,"were his eyes, brave and curious.",272,,,,Main_Ch5,M5_L0271
-3,26,272,main_door_open,Dot,Main,,,text,나의 일부는 언제까지나 레드의 일부일 테야.,That part of Red will always be a part of me.,273,,,,Main_Ch5,M5_L0272
-3,26,273,main_door_open,Dot,Main,,face_eyeroll3,text,"그러니 그날이 오게 되면, 나도... 레드처럼...","So when the day comes... just like Red, I’ll...",274,,,,Main_Ch5,M5_L0273
-3,26,274,main_door_open,Player,Main,,face_blink,selection,(달의 이들은 뭉치에게 정말 소중한 존재구나.)|(한 번도 만난 적 없는 달의 이들이 궁금해져.),(The Moon Beings must mean a lot to Dot.)|(It makes me curious about the Moon Beings.),275|275,,,,Main_Ch5,M5_L0274
-3,26,275,main_door_open,Player,Main,,,text,(우리도 친구가 될 수 있었을까?),(Maybe we could have been friends too?),276,,,,Main_Ch5,M5_L0275
-3,26,276,main_door_open,Dot,Main,,,text,아마 나는 너의 소멸을 결코 온전히 받아들일 수 없을 거야.,"I’ll probably never accept\nyour death, not completely.",277,,,,Main_Ch5,M5_L0276
-3,26,277,main_door_open,Dot,Main,,,text,"이 검은 몸을 이끌고 달 뜬 창가에 앉아,\n닿지 않는 너에게 말을 걸겠지.","I’ll perch my black body on the moonlit window,\nand talk even when my words won’t reach you.",278,,,,Main_Ch5,M5_L0277
-3,26,278,main_door_open,Dot,Main,,,text,"오늘 보고 온 인간에 대해, 간밤 들었던\n기묘한 생각들에 대해.","About the humans I saw that day, and the\npeculiar thoughts I had the night before.",279,,,,Main_Ch5,M5_L0278
-3,26,279,main_door_open,Dot,Main,body_ch5_heartup,,text,너의 삶을 기억하는 일은 아마 계속 아프겠지만,And it will hurt to remember you.,280,,,,Main_Ch5,M5_L0279
-3,26,280,main_door_open,Dot,Main,body_ch5_heart,,text,그래도 그 고통은 내가 감당할 몫일 테고,But I’ll bear that hurt.,281,,,,Main_Ch5,M5_L0280
-3,26,281,main_door_open,Dot,Main,body_ch5_heart,,text,너를 잃은 슬픔이 나의 검정보다도 무겁게 젖어들 때면,"And when your loss weighs\nheavier than my black,",282,,,,Main_Ch5,M5_L0281
-3,26,282,main_door_open,Dot,Main,body_ch5_heart,face_thinking,text,달의 뒤편을 수놓던 그들의 적막한 발걸음을 떠올릴 거야.,I’ll recall the quiet footsteps\nthat crossed the Moon.,283,,,,Main_Ch5,M5_L0282
-3,26,283,main_door_open,Dot,Main,body_ch5_heartdown,face_blink,text,그렇게 나 혼자만으론 낼 수 없었던\n용기를... 낼 수 있을 것만 같아.,And I’ll find courage from them...\nthat I couldn’t have on my own.,284,,,,Main_Ch5,M5_L0283
-3,26,284,main_door_open,Player,Main,body_default1,,text,......,......,285,,,,Main_Ch5,M5_L0284
-3,26,285,main_door_open,Dot,Main,,,text,"이제 인사를 하자, <nickname>.","Now let’s say goodbye, <nickname>.",286,,,,Main_Ch5,M5_L0285
-3,26,286,main_door_open,Dot,Main,,,text,"우리는 오늘도, 내일도, 그 모레도\n인사를 나누기로 약속하는 거야.","We’ll say it today, tomorrow, and the day after.",287,,,,Main_Ch5,M5_L0286
-3,26,287,main_door_open,Dot,Main,,,text,"“그럼 다녀와, <nickname>!”","“See you, <nickname>!”",288,,,,Main_Ch5,M5_L0287
-3,26,288,main_door_open,Dot,Main,,face_smile,text,"“그래, 다녀올게.” 하고.","And you’ll say, “Yeah, see you.”",289,,,,Main_Ch5,M5_L0288
-3,26,289,main_door_open,Dot,Main,,face_blink,text,"온 마음 다해 너와의 내일이 존재할 것이라고,\n존재하지 않을 이유가 없다고.","We’ll believe that tomorrow we’ll come,\nbecause of course it will.",290,,,,Main_Ch5,M5_L0289
-3,26,290,main_door_open,Dot,Main,,,text,"그렇게 함부로 안심하고, 무작정 믿어 보는 거야.","And so we’ll feel relief, and have faith.",291,,,,Main_Ch5,M5_L0290
-3,26,291,main_door_open,Dot,Main,,,text,"그럼... 다녀와, <nickname>. 알았지?","So... see you, <nickname>. Okay?",292,,,,Main_Ch5,M5_L0291
-3,26,292,main_door_open,Player,Main,,,text,"...... 응, 뭉치야. 알았어.","...... Okay, Dot. Yeah.",293,,,,Main_Ch5,M5_L0292
-3,26,293,main_door_open,Player,Main,body_default1,face_blink,text,금방 다녀올게.,See you soon.,,,,,Main_Ch5,M5_L0293
+3,26,203,main_door_open,Dot,Main,body_default2_turn1,face_omg,text,<nickname>...,<nickname>...,204,,,,Main_Ch5,M5_L0203
+3,26,204,main_door_open,Dot,Main,body_default2,face_omg,text,내가 사랑해 마지않았던 너의 동전 앞면이,"What if your side of the coin that I loved so,",205,,,,Main_Ch5,M5_L0204
+3,26,205,main_door_open,Dot,Main,body_default2,face_omg,text,어떠한 예고도 없이 까마득하게 뒤집혀 버린다면?,were to flip without any kind of warning?,206,,,,Main_Ch5,M5_L0205
+3,26,206,main_door_open,Player,Main,body_default2,face_omg,text,......,......,207,,,,Main_Ch5,M5_L0206
+3,26,207,main_door_open,Dot,Main,body_default2,face_omg,text,"그래, 나는 이 질문에 대한 답을 이미 알고 있지.",I know. I know what’s coming.,208,,,,Main_Ch5,M5_L0207
+3,26,208,main_door_open,Dot,Main,body_default2,face_omg,text,‘어찌할 수 없다. 뒤집힌 동전은 불가역적이다.’,‘It’s fixed. A coin flipped can’t be reversed.’,209,,,,Main_Ch5,M5_L0208
+3,26,209,main_door_open,Dot,Main,body_default2,face_sad,text,"하지만 다른 누구도 아닌 너의 죽음이야.\n내가 가장 애착하는 인간인 <nickname>, 너의 죽음.","But this is your death we’re talking about.\nIt’s you, the human I love more than anyone.",210,,,,Main_Ch5,M5_L0209
+3,26,210,main_door_open,Dot,Main,body_default2,face_sad,text,지금까지 너와 내가 쌓아둔 수많은 시간들은\n어떻게 되는 거야? 어디로 가는 거야?,What about all the times we had together?\nWhere do those hours go?,211,,,,Main_Ch5,M5_L0210
+3,26,211,main_door_open,Player,Main,body_default2,,text,우리의 시간들은......,Those hours......,212,,,,Main_Ch5,M5_L0211
+3,26,212,main_door_open,Player,Main,body_default2,,selection,뭉치의 기억 속에서 살아갈 거야. 조금씩 변화하면서.|이미 지난 과거가 된 걸. 그러니 어디도 가지 않아.,They’ll live in your memory. Changing bit by bit.|They’re already in the past. They won’t go anywhere.,213|213,,,,Main_Ch5,M5_L0212
+3,26,213,main_door_open,Dot,Main,body_default2,face_mad,text,그럼 너와 나는? 우리는?,What about you and me? Us?,214,,,,Main_Ch5,M5_L0213
+3,26,214,main_door_open,Dot,Main,body_default2,face_mad,text,... 그대로 끊겨 버리는 거야?,... Do we end just like that?,215,,,,Main_Ch5,M5_L0214
+3,26,215,main_door_open,Dot,Main,body_default2,face_squeeze,text,"너와 즐겁게 대화하고, 눈빛과 손길을 주고받고,","Those chats, shared looks and warmth.",216,,,,Main_Ch5,M5_L0215
+3,26,216,main_door_open,Dot,Main,body_default2,face_squeeze,text,함께 달빛의 시원함을 느낄 수 있던 미래의\n‘만약에’들도 영영 되돌아오지 못하는 거야?,"And future ‘maybes,’ where you and I would enjoy\ncool moonlight. Will they be gone forever?",217,,,,Main_Ch5,M5_L0216
+3,26,217,main_door_open,Player,Main,body_default2,face_squeeze,text,......,,218,,,,Main_Ch5,M5_L0217
+3,26,218,main_door_open,Player,Main,body_default2,face_squeeze,selection,"애석하지만... 응, 되돌아오지 않을 거야.|(차마 확답할 수 없어. 어떻게 이야기해야 좋을까...)",It’s sad... but yes. Gone forever.|(How do I break this to them...),219|219,,,,Main_Ch5,M5_L0218
+3,26,219,main_door_open,Player,Main,body_default2_turn2,face_sad,text,뭉치야... 내가 죽는다는 건.,Dot... my death.,220,,,,Main_Ch5,M5_L0219
+3,26,220,main_door_open,Player,Main,body_default1,face_sad,selection,가늠하기 아득할 만큼 무서운 일이지만.|아무리 애써도 피할 수 없는 일이지만.,가늠하기 아득할 만큼 무서운 일이지만.|I can’t run from it no matter what.,221|221,,,,Main_Ch5,M5_L0220
+3,26,221,main_door_open,Player,Main,,face_eyeroll3,text,"살아 있던 건 모두 죽어. 아까도\n이야기했듯이, 나 역시 그 예외가 아니야.","But all living things die.\nAnd like I said, I’m no exception.",222,,,,Main_Ch5,M5_L0221
+3,26,222,main_door_open,Player,Main,,face_blink,text,그러니까...,So...,223,,,,Main_Ch5,M5_L0222
+3,26,223,main_door_open,Dot,Main,,,text,... 이젠 그걸 이해할 수 있지.,... I get it now.,224,,,,Main_Ch5,M5_L0223
+3,26,224,main_door_open,Dot,Main,,,text,이 우주 속 모두가 하나씩 나눠 가진\n죽음은 분명 너에게도 찾아올 거야.,"Everyone in the universe has their allotted death,\nand yours will come for you one day.",225,,,,Main_Ch5,M5_L0224
+3,26,225,main_door_open,Dot,Main,,,text,"별과 은하에게도, 수백억 명의 아름다운\n인간들과 크고 작은 생물들에게도 그러했듯이.","As it came for stars and galaxies, for tens of billions\nof wonderful humans and creatures big and little.",226,,,,Main_Ch5,M5_L0225
+3,26,226,main_door_open,Dot,Main,,,text,"그건 갑작스럽지만, 마땅히 놀랍지는 않은 일이지.","It will be sudden, if not surprising.",227,,,,Main_Ch5,M5_L0226
+3,26,227,main_door_open,Dot,Main,,,text,하지만 이 세계가 죽음에 대해 정립해 온 모든 법칙들은,But the laws of death that\nthe world has established.,228,,,,Main_Ch5,M5_L0227
+3,26,228,main_door_open,Dot,Main,,,text,네가 ‘정말로’ 죽게 되는 순간 모든 객관성을 잃어버릴 거야.,They’ll lose all objectivity once you truly die.,229,,,,Main_Ch5,M5_L0228
+3,26,229,main_door_open,Dot,Main,,face_eyeroll3,text,그리고... 터무니없이 개인적인 비극이 될 거야.,And... it will be an unfathomably unique tragedy.,230,,,,Main_Ch5,M5_L0229
+3,26,230,main_door_open,Dot,Main,,face_eyeroll3_stay,text,"죽음은... 우주에서 단 하나뿐인 너를,\n나에게서 영영 앗아갈 진짜 ‘끝’이니까.",Death... is the one true end that\nwill take you away from me.,231,,,,Main_Ch5,M5_L0230
+3,26,231,main_door_open,Player,Main,,,text,......,......,232,,,,Main_Ch5,M5_L0231
+3,26,232,main_door_open,Dot,Main,,face_blink,text,그렇게.,And.,233,,,,Main_Ch5,M5_L0232
+3,26,233,main_door_open,Dot,Main,body_move,,text,... 난 무너지겠지.,... I will crumble.,234,,,,Main_Ch5,M5_L0233
+3,26,234,main_door_open,Dot,Main,,,text,나를 도와줄 유일한 존재인 너조차 죽고 없어진 채.,With you no longer there to help me.,235,,,,Main_Ch5,M5_L0234
+3,26,235,main_door_open,Dot,Main,body_move,face_omg,text,난 홀로 무너지고야 말 거야.,I will crumble all alone.,236,,,,Main_Ch5,M5_L0235
+3,26,236,main_door_open,Player,Main,,,text,(이런 뭉치에게 내가\n해 줄 수 있는 최선의 답변은...),(The one thing I can\nsay to Dot right now...),237,,,,Main_Ch5,M5_L0236
+3,26,237,main_door_open,Player,Main,,,text,"사랑하는 존재의 죽음을 지나오는 일은...\n그래, 정말 어려운 일이야.",To overcome the death of a loved one...\nit’s truly hard.,238,,,,Main_Ch5,M5_L0237
+3,26,238,main_door_open,Player,Main,,face_blink,text,견디는 것 말고는 뾰족한 선택지가 없으니까.,All you can do is cope.,239,,,,Main_Ch5,M5_L0238
+3,26,239,main_door_open,Player,Main,,,selection,하지만 난 내 친구가 고통에 젖어 무너지길 바라진 않아.|하지만 '죽음 이후'를 상상하는 일이 무의미한 건 아니야.,But I don’t want my friend to crumble in pain.|But you can still imagine what comes after death.,240|252,,,,Main_Ch5,M5_L0239
+3,26,240,main_door_open,Player,Main,,,text,(어쩌면... 먼저 떠나는 모두가\n그런 마음일지도 모르겠네.),(I guess... everyone who leaves\nmight feel this way.),241,,,,Main_Ch5,M5_L0240
+3,26,241,main_door_open,Player,Main,,,text,내가 떠난 이후에도 너의 삶은 계속되는걸.,"But Dot, your life will still go on.",242,,,,Main_Ch5,M5_L0241
+3,26,242,main_door_open,Dot,Main,,,text,네가 곁에 있었을 때보다 끔찍하게\n지루하고 공허한 하루하루가 이어지겠지.,The days might feel duller and emptier\nthan when I was by your side.,243,,,,Main_Ch5,M5_L0242
+3,26,243,main_door_open,Player,Main,,,text,"그래, 매일이 후회뿐일지도 몰라.\n그때 그 말을 했더라면, 혹은 하지 않았더라면.","Yes, you might live in regret. All the\nwords left unsaid or spoken too soon.",244,,,,Main_Ch5,M5_L0243
+3,26,244,main_door_open,Dot,Main,body_move,,text,... 오늘까지도 살아 있었더라면.,... The days I never got.,245,,,,Main_Ch5,M5_L0244
+3,26,245,main_door_open,Player,Main,,,text,하지만 그 공허함과 슬픔은 점차 무뎌질 거야.,But that hollowness and sadness will lessen.,246,,,,Main_Ch5,M5_L0245
+3,26,246,main_door_open,Player,Main,,,selection,"비록 확신할 순 없지만, 그럴 거라고 믿어야 해.|확신해. 나 역시 그렇게 견뎌 냈었으니까.","I can’t be certain, but you have to believe it will.|I’m certain of it. That’s how I coped.",247|247,,,,Main_Ch5,M5_L0246
+3,26,247,main_door_open,Player,Main,,,text,"넌 시간이 흘러 상실감을 다루는 너만의 방법을 찾게 될 수도, \n새로운 인간 친구를 만나게 될 수도 있겠지.","As time passes you’ll find your own way of\ndealing with the loss, or meet a new human friend.",248,,,,Main_Ch5,M5_L0247
+3,26,248,main_door_open,Player,Main,,,text,그러니 뭉치도 그날이 오게 되면... 아무것도 보이지\n않을지라도 그저 앞으로 나아가 봤으면 좋겠어.,"So when that day comes... I want you to keep\ngoing, even if the path ahead is unclear.",249,,,,Main_Ch5,M5_L0248
+3,26,249,main_door_open,Dot,Main,,face_eyeroll3,text,"아무것도 보이지 않을지라도, 그저 앞으로...","Keep going, even if the path is unclear...",250,,,,Main_Ch5,M5_L0249
+3,26,250,main_door_open,Dot,Main,,face_eyeroll3_stay,text,......,......,251,,,,Main_Ch5,M5_L0250
+3,26,251,main_door_open,Dot,Main,body_move,face_blink,text,......!,......!,261,,,,Main_Ch5,M5_L0251
+3,26,252,main_door_open,Player,Main,,,text,"뭉치는 내가 바람이 되어, 혹은 새가 되어\n너를 지켜보고 있을 거라고 믿을 수도 있을 테고,","You can imagine me in the wind,\nor as a bird watching over you.",253,,,,Main_Ch5,M5_L0252
+3,26,253,main_door_open,Player,Main,,,text,죽고 나서 우주를 떠다니며 행성 간 여행을 하고 있을\n나의 영혼을 상상해 볼 수 있을 거야.,You can picture my soul floating through\nspace and travelling between planets.,254,,,,Main_Ch5,M5_L0253
+3,26,254,main_door_open,Dot,Main,,,text,그게 진짜인지 아닌지는 중요하지 않은 거야?,And it doesn’t matter if it’s real or not?,255,,,,Main_Ch5,M5_L0254
+3,26,255,main_door_open,Player,Main,,,text,응. 그 상상을 할 때 네가 행복하기만 하다면.,Yes. As long as it makes you happy.,256,,,,Main_Ch5,M5_L0255
+3,26,256,main_door_open,Player,Main,,,text,누군가를 사랑하고 기억하는 마음은 현재를\n더 힘차게 살아갈 힘이 되어 주기도 하거든.,Loving and reminiscing someone\ncan give you the strength to live on.,257,,,,Main_Ch5,M5_L0256
+3,26,257,main_door_open,Player,Main,,,text,"... 더는 옆에 없을지라도, 그게\n사랑이란 사실이 변하진 않으니까.","... Love stays, even when they’re gone.",258,,,,Main_Ch5,M5_L0257
+3,26,258,main_door_open,Dot,Main,,face_eyeroll3,text,상상과... 사랑의 힘을 믿으란 말인 거야?,So imagine... and believe in love?,259,,,,Main_Ch5,M5_L0258
+3,26,259,main_door_open,Dot,Main,,face_eyeroll3_stay,text,......,......,260,,,,Main_Ch5,M5_L0259
+3,26,260,main_door_open,Dot,Main,body_move,face_blink,text,......!,......!,261,,,,Main_Ch5,M5_L0260
+3,26,261,main_door_open,Dot,Main,,,text,"<nickname>, 인간들만 그런 게 아니었어.","<nickname>, it’s not just humans.",262,,,,Main_Ch5,M5_L0261
+3,26,262,main_door_open,Dot,Main,body_bounce,,text,왜 잊고 있었을까?,How could I have forgotten?,263,,,,Main_Ch5,M5_L0262
+3,26,263,main_door_open,Dot,Main,body_default1,,text,"달 뒤편의 이들... 레드, 에디슨과 첼로 경을.","The Moon Beings... Red, Edison and Sir Cello.",264,,,,Main_Ch5,M5_L0263
+3,26,264,main_door_open,Dot,Main,,,text,그들도 상실을 살아남은 존재들이었어.,They survived their losses as well.,265,,,,Main_Ch5,M5_L0264
+3,26,265,main_door_open,Dot,Main,,,text,사랑하는 인간이 죽음의 심연 너머로\n자진해서 걸어들어가는 모습을,Their beloved humans chose\nto cross into the abyss of death.,266,,,,Main_Ch5,M5_L0265
+3,26,266,main_door_open,Dot,Main,,,text,그들은 그저 바라봐야만 했어.\n아무것도 할 수 없이. 아무것도.,And all they could do was watch.\nThere was nothing they could do.,267,,,,Main_Ch5,M5_L0266
+3,26,267,main_door_open,Player,Main,,,text,(그동안 상상조차 할 수 없었어.\n달에는 그런... 그런 아픔이 있었구나.),(I had no idea. The Moon... and all that hurt.),268,,,,Main_Ch5,M5_L0267
+3,26,268,main_door_open,Dot,Main,,face_eyeroll3,text,... 더는 인간의 꿈을 만들지도 못하게 되었지.,... They weren’t even allowed\nto make human dreams.,269,,,,Main_Ch5,M5_L0268
+3,26,269,main_door_open,Dot,Main,body_move,face_blink,text,"그럼에도 그들은, 공장 아래에서 하루도\n빠짐없이 갈퀴를 든 채 꿈 폐기물을 긁어 내.","But still, they rake through the filth\nunder the factory every day.",270,,,,Main_Ch5,M5_L0269
+3,26,270,main_door_open,Dot,Main,body_bounce,,text,"달나방들을 좇으며 노래를 부르고,\n달의 운석들을 연구하며 눈을 빛내.","They chase off the moon moths,\nsing, and observe the meteorites.",271,,,,Main_Ch5,M5_L0270
+3,26,271,main_door_open,Dot,Main,body_default1,,text,"... 레드는,","... Red,",272,,,,Main_Ch5,M5_L0271
+3,26,272,main_door_open,Dot,Main,,,text,레드는.,Red.,273,,,,Main_Ch5,M5_L0272
+3,26,273,main_door_open,Dot,Main,,,text,자신의 인간이 지금은 우주의 가장\n따뜻한 구석을 여행하고 있으리라 굳게 믿어.,He believes his human is traveling\nthe warmest corner of the universe.,274,,,,Main_Ch5,M5_L0273
+3,26,274,main_door_open,Dot,Main,,,text,그리고 자신의 몸을 불사르며 타오르길 멈추지 않아.,And he never stops burning.,275,,,,Main_Ch5,M5_L0274
+3,26,275,main_door_open,Player,Main,,,text,왜 타오르길 멈추지 않는데?,Why not?,276,,,,Main_Ch5,M5_L0275
+3,26,276,main_door_open,Dot,Main,,,text,언젠가 그의 인간을 다시 만나는 날이 오면...\n그를 따뜻하게 데워 주고 싶다는 꿈을 꾸거든.,Because he dreams of the day he’ll meet his\nhuman again...and use his flames to warm him up.,277,,,,Main_Ch5,M5_L0276
+3,26,277,main_door_open,Player,Main,,,text,"달의 이들은 강인하구나. 모든 것이\n절망적인 하루하루였을지라도,","The Moon Beings are strong.\nThey may have despaired every day,",278,,,,Main_Ch5,M5_L0277
+3,26,278,main_door_open,Player,Main,,,text,"그렇게 너를 발견하고, 또 다시\n희망을 품은 채 지구로 날려 보냈잖아.","yet they discovered you, and\nsent you to Earth with their hopes.",279,,,,Main_Ch5,M5_L0278
+3,26,279,main_door_open,Dot,Main,,,text,응... 그 모든 일이 있었음에도.,Yes... Inspite of everything.,280,,,,Main_Ch5,M5_L0279
+3,26,280,main_door_open,Dot,Main,,,text,레드가 나에게 분필 눈을 그려 주었을 때,When Red drew my chalk eyes,281,,,,Main_Ch5,M5_L0280
+3,26,281,main_door_open,Dot,Main,,,text,내가 세상에 태어나 처음 마주 보았던 건...,the first thing I saw in this world...,282,,,,Main_Ch5,M5_L0281
+3,26,282,main_door_open,Dot,Main,,,text,레드의 용감하고 호기심 어린 눈이었어.,"were his eyes, brave and curious.",283,,,,Main_Ch5,M5_L0282
+3,26,283,main_door_open,Dot,Main,,,text,나의 일부는 언제까지나 레드의 일부일 테야.,That part of Red will always be a part of me.,284,,,,Main_Ch5,M5_L0283
+3,26,284,main_door_open,Dot,Main,,face_eyeroll3,text,"그러니 그날이 오게 되면, 나도... 레드처럼...","So when the day comes... just like Red, I’ll...",285,,,,Main_Ch5,M5_L0284
+3,26,285,main_door_open,Player,Main,,face_blink,selection,(달의 이들은 뭉치에게 정말 소중한 존재구나.)|(한 번도 만난 적 없는 달의 이들이 궁금해져.),(The Moon Beings must mean a lot to Dot.)|(It makes me curious about the Moon Beings.),286|286,,,,Main_Ch5,M5_L0285
+3,26,286,main_door_open,Player,Main,,,text,(우리도 친구가 될 수 있었을까?),(Maybe we could have been friends too?),287,,,,Main_Ch5,M5_L0286
+3,26,287,main_door_open,Dot,Main,,,text,아마 나는 너의 소멸을 결코 온전히 받아들일 수 없을 거야.,"I’ll probably never accept\nyour death, not completely.",288,,,,Main_Ch5,M5_L0287
+3,26,288,main_door_open,Dot,Main,,,text,"이 검은 몸을 이끌고 달 뜬 창가에 앉아,\n닿지 않는 너에게 말을 걸겠지.","I’ll perch my black body on the moonlit window,\nand talk even when my words won’t reach you.",289,,,,Main_Ch5,M5_L0288
+3,26,289,main_door_open,Dot,Main,,,text,"오늘 보고 온 인간에 대해, 간밤 들었던\n기묘한 생각들에 대해.","About the humans I saw that day, and the\npeculiar thoughts I had the night before.",290,,,,Main_Ch5,M5_L0289
+3,26,290,main_door_open,Dot,Main,body_ch5_heartup,,text,너의 삶을 기억하는 일은 아마 계속 아프겠지만,And it will hurt to remember you.,291,,,,Main_Ch5,M5_L0290
+3,26,291,main_door_open,Dot,Main,body_ch5_heart,,text,그래도 그 고통은 내가 감당할 몫일 테고,But I’ll bear that hurt.,292,,,,Main_Ch5,M5_L0291
+3,26,292,main_door_open,Dot,Main,body_ch5_heart,,text,너를 잃은 슬픔이 나의 검정보다도 무겁게 젖어들 때면,"And when your loss weighs\nheavier than my black,",293,,,,Main_Ch5,M5_L0292
+3,26,293,main_door_open,Dot,Main,body_ch5_heart,face_thinking,text,달의 뒤편을 수놓던 그들의 적막한 발걸음을 떠올릴 거야.,I’ll recall the quiet footsteps\nthat crossed the Moon.,294,,,,Main_Ch5,M5_L0293
+3,26,294,main_door_open,Dot,Main,body_ch5_heartdown,face_blink,text,그렇게 나 혼자만으론 낼 수 없었던\n용기를... 낼 수 있을 것만 같아.,And I’ll find courage from them...\nthat I couldn’t have on my own.,295,,,,Main_Ch5,M5_L0294
+3,26,295,main_door_open,Player,Main,body_default1,,text,......,......,296,,,,Main_Ch5,M5_L0295
+3,26,296,main_door_open,Dot,Main,,,text,"이제 인사를 하자, <nickname>.","Now let’s say goodbye, <nickname>.",297,,,,Main_Ch5,M5_L0296
+3,26,297,main_door_open,Dot,Main,,,text,"우리는 오늘도, 내일도, 그 모레도\n인사를 나누기로 약속하는 거야.","We’ll say it today, tomorrow, and the day after.",298,,,,Main_Ch5,M5_L0297
+3,26,298,main_door_open,Dot,Main,,,text,"“그럼 다녀와, <nickname>!”","“See you, <nickname>!”",299,,,,Main_Ch5,M5_L0298
+3,26,299,main_door_open,Dot,Main,,face_smile,text,"“그래, 다녀올게.” 하고.","And you’ll say, “Yeah, see you.”",300,,,,Main_Ch5,M5_L0299
+3,26,300,main_door_open,Dot,Main,,face_blink,text,"온 마음 다해 너와의 내일이 존재할 것이라고,\n존재하지 않을 이유가 없다고.","We’ll believe that tomorrow we’ll come,\nbecause of course it will.",301,,,,Main_Ch5,M5_L0300
+3,26,301,main_door_open,Dot,Main,,,text,"그렇게 함부로 안심하고, 무작정 믿어 보는 거야.","And so we’ll feel relief, and have faith.",302,,,,Main_Ch5,M5_L0301
+3,26,302,main_door_open,Dot,Main,,,text,"그럼... 다녀와, <nickname>. 알았지?","So... see you, <nickname>. Okay?",303,,,,Main_Ch5,M5_L0302
+3,26,303,main_door_open,Player,Main,,,text,"...... 응, 뭉치야. 알았어.","...... Okay, Dot. Yeah.",304,,,,Main_Ch5,M5_L0303
+3,26,304,main_door_open,Player,Main,body_default1,face_blink,text,금방 다녀올게.,See you soon.,,,,,Main_Ch5,M5_L0304

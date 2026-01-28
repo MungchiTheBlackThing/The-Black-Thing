@@ -36,7 +36,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543918
   - m_Id: 174020755458
-    m_Localized: It must have been packed with humans. You love humans.
+    m_Localized: It must have been packed\nwith humans. You love humans.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543918
@@ -56,7 +56,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543918
   - m_Id: 174020755462
-    m_Localized: It was nice to see humans all dressed up.
+    m_Localized: It was nice to see\nhumans all dressed up.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543918
@@ -210,7 +210,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543918
   - m_Id: 174020755492
-    m_Localized: Maybe she had plans after the party as well,
+    m_Localized: Maybe she had plans\nafter the party as well,
     m_Metadata:
       m_Items:
       - rid: 3674199710174543918
@@ -221,7 +221,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543918
   - m_Id: 174020755494
-    m_Localized: "Because... why wouldn\u2019t life go on?"
+    m_Localized: "Because... why\\nwouldn\u2019t life go on?"
     m_Metadata:
       m_Items:
       - rid: 3674199710174543918
@@ -326,7 +326,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543918
   - m_Id: 174020755514
-    m_Localized: Death has stayed by us since the dawn of time.
+    m_Localized: Death has stayed by us\nsince the dawn of time.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543918
@@ -336,7 +336,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543918
   - m_Id: 174020755516
-    m_Localized: "It\u2019s why we observe death through books and movies."
+    m_Localized: "It\u2019s why we observe\\ndeath through books and movies."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543918
@@ -754,8 +754,8 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543918
   - m_Id: 30176755808419856
-    m_Localized: "I can\u2019t imagine what it would feel like. Or rather, what it
-      would feel like <i>not</i> to feel."
+    m_Localized: "I can\u2019t imagine what it would feel like.\\nOr rather, what
+      it would feel like <i>not</i> to feel."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543918
@@ -981,7 +981,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093258
-    m_Localized: Even when you know all roads lead to death.
+    m_Localized: Even when you know\nall roads lead to death.
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093259
@@ -997,7 +997,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093262
-    m_Localized: "(I\u2019m being comforted by an alien monster.)"
+    m_Localized: "(I\u2019m being comforted\\nby an alien monster.)"
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093263
@@ -1059,7 +1059,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093277
-    m_Localized: were to flip without any kind of warning?
+    m_Localized: were to flip without\nany kind of warning?
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093278
@@ -1071,7 +1071,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093280
-    m_Localized: "\u2018It\u2019s fixed. A coin flipped can\u2019t be reversed.\u2019"
+    m_Localized: "\u2018It\u2019s fixed. A coin flipped\\ncan\u2019t be reversed.\u2019"
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093281
@@ -1080,357 +1080,404 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093282
-    m_Localized: What about all the times we spent together?\nWhere do those hours
+    m_Localized: What about all the times we had together?\nWhere do those hours
       go?
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093283
-    m_Localized: Do you and I cease just like that?
+    m_Localized: Those hours......
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093284
-    m_Localized: Those chats, shared looks and warmth.
+    m_Localized: "They\u2019ll live in your memory. Changing bit by bit.|They\u2019re
+      already in the past. They won\u2019t go anywhere."
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093285
+    m_Localized: What about you and me? Us?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093286
+    m_Localized: ... Do we end just like that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093287
+    m_Localized: Those chats, shared looks and warmth.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093288
     m_Localized: "And future \u2018maybes,\u2019 where you and I would enjoy\\ncool
       moonlight. Will they be gone forever?"
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093286
+  - m_Id: 42879991703093289
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093290
     m_Localized: "It\u2019s sad... but yes. Gone forever.|(How do I break this to
       them...)"
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093287
+  - m_Id: 42879991703093291
     m_Localized: Dot... my death.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093288
+  - m_Id: 42879991703093292
     m_Localized: "\uAC00\uB2A0\uD558\uAE30 \uC544\uB4DD\uD560 \uB9CC\uD07C \uBB34\uC11C\uC6B4
       \uC77C\uC774\uC9C0\uB9CC.|I can\u2019t run from it no matter what."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093289
+  - m_Id: 42879991703093293
     m_Localized: "But all living things die.\\nAnd like I said, I\u2019m no exception."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093290
+  - m_Id: 42879991703093294
+    m_Localized: So...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093295
     m_Localized: ... I get it now.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093291
+  - m_Id: 42879991703093296
     m_Localized: Everyone in the universe has their allotted death,\nand yours will
       come for you one day.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093292
+  - m_Id: 42879991703093297
     m_Localized: As it came for stars and galaxies, for tens of billions\nof wonderful
       humans and creatures big and little.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093293
+  - m_Id: 42879991703093298
     m_Localized: It will be sudden, if not surprising.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093294
+  - m_Id: 42879991703093299
     m_Localized: But the laws of death that\nthe world has established.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093295
-    m_Localized: "They\u2019ll lose all objectivity once you truly die."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093296
-    m_Localized: And... it will be an unfathomably unique tragedy.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093297
-    m_Localized: Death... is the one true end that\nwill take you away from me.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093298
-    m_Localized: And.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093299
-    m_Localized: ... I will crumble.
-    m_Metadata:
-      m_Items: []
   - m_Id: 42879991703093300
-    m_Localized: With you no longer there to help me.
+    m_Localized: "They\u2019ll lose all objectivity\\nonce you truly die."
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093301
-    m_Localized: I will crumble all alone.
+    m_Localized: And... it will be an unfathomably unique tragedy.
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093302
-    m_Localized: "To overcome the death of a loved one...\\nit\u2019s truly hard."
+    m_Localized: Death... is the one true end that\nwill take you away from me.
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093303
-    m_Localized: All you can do is cope.
+    m_Localized: ......
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093304
-    m_Localized: But your life will still go on.|But you can still imagine what comes
-      after death.
+    m_Localized: And.
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093305
-    m_Localized: The days might feel emptier than when I was by\nour side, and sometimes
-      regret will seize you.
+    m_Localized: ... I will crumble.
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093306
-    m_Localized: All the words left unsaid or spoken too soon.
+    m_Localized: With you no longer there to help me.
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093307
-    m_Localized: ... The days I never got.
+    m_Localized: I will crumble all alone.
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093308
-    m_Localized: But that hollowness and sadness will lessen.
+    m_Localized: (The one thing I can\nsay to Dot right now...)
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093309
+    m_Localized: "To overcome the death of a loved one...\\nit\u2019s truly hard."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093310
+    m_Localized: All you can do is cope.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093311
+    m_Localized: "But I don\u2019t want my friend to crumble in pain.|But you can
+      still imagine what comes after death."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093312
+    m_Localized: (I guess... everyone who leaves\nmight feel this way.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093313
+    m_Localized: But Dot, your life will still go on.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093314
+    m_Localized: The days might feel duller and emptier\nthan when I was by your
+      side.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093315
+    m_Localized: Yes, you might live in regret. All the\nwords left unsaid or spoken
+      too soon.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093316
+    m_Localized: ... The days I never got.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093317
+    m_Localized: But that hollowness and sadness will lessen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093318
+    m_Localized: "I can\u2019t be certain, but you have to believe it will.|I\u2019m
+      certain of it. That\u2019s how I coped."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093319
     m_Localized: "As time passes you\u2019ll find your own way of\\ndealing with
       the loss, or meet a new human friend."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093310
+  - m_Id: 42879991703093320
     m_Localized: So when that day comes... I want you to keep\ngoing, even if the
       path ahead is unclear.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093311
+  - m_Id: 42879991703093321
     m_Localized: Keep going, even if the path is unclear...
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093312
+  - m_Id: 42879991703093322
     m_Localized: ......
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093313
+  - m_Id: 42879991703093323
     m_Localized: ......!
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093314
+  - m_Id: 42879991703093324
     m_Localized: You can imagine me in the wind,\nor as a bird watching over you.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093315
+  - m_Id: 42879991703093325
     m_Localized: You can picture my soul floating through\nspace and travelling between
       planets.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093316
-    m_Localized: "It doesn\u2019t matter if it\u2019s real or not."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093317
-    m_Localized: Loving and reminiscing someone can\ngive you the strength to live
-      on.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093318
-    m_Localized: "... Love stays, even when they\u2019re gone."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093319
-    m_Localized: So imagine... and believe in love?
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093320
-    m_Localized: ......
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093321
-    m_Localized: ......!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093322
-    m_Localized: "<nickname>, it\u2019s not just humans."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093323
-    m_Localized: How could I have forgotten?
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093324
-    m_Localized: The Moon Beings... Red, Edison and Sir Cello.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 42879991703093325
-    m_Localized: They survived their losses as well.
-    m_Metadata:
-      m_Items: []
   - m_Id: 42879991703093326
-    m_Localized: Their beloved humans chose\nto cross into the abyss of death.
+    m_Localized: "And it doesn\u2019t matter if it\u2019s real or not?"
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093327
-    m_Localized: And all they could do was watch.\nThere was nothing they could do.
+    m_Localized: Yes. As long as it makes you happy.
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093328
-    m_Localized: (I had no idea. The Moon... and all that hurt.)
+    m_Localized: Loving and reminiscing someone\ncan give you the strength to live
+      on.
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093329
-    m_Localized: "... They weren\u2019t even allowed\\nto make human dreams."
+    m_Localized: "... Love stays, even when they\u2019re gone."
     m_Metadata:
       m_Items: []
   - m_Id: 42879991703093330
+    m_Localized: So imagine... and believe in love?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093331
+    m_Localized: ......
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093332
+    m_Localized: ......!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093333
+    m_Localized: "<nickname>, it\u2019s not just humans."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093334
+    m_Localized: How could I have forgotten?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093335
+    m_Localized: The Moon Beings... Red, Edison and Sir Cello.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093336
+    m_Localized: They survived their losses as well.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093337
+    m_Localized: Their beloved humans chose\nto cross into the abyss of death.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093338
+    m_Localized: And all they could do was watch.\nThere was nothing they could do.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093339
+    m_Localized: (I had no idea. The Moon... and all that hurt.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093340
+    m_Localized: "... They weren\u2019t even allowed\\nto make human dreams."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42879991703093341
     m_Localized: But still, they rake through the filth\nunder the factory every
       day.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093331
+  - m_Id: 42879991703093342
     m_Localized: They chase off the moon moths,\nsing, and observe the meteorites.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093332
+  - m_Id: 42879991703093343
     m_Localized: ... Red,
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093333
+  - m_Id: 42879991703093344
     m_Localized: Red.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093334
+  - m_Id: 42879991703093345
     m_Localized: He believes his human is traveling\nthe warmest corner of the universe.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093335
+  - m_Id: 42879991703093346
     m_Localized: And he never stops burning.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093336
+  - m_Id: 42879991703093347
     m_Localized: Why not?
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093337
+  - m_Id: 42879991703093348
     m_Localized: "Because he dreams of the day he\u2019ll meet his\\nhuman again...and
       use his flames to warm him up."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093338
+  - m_Id: 42879991707287552
     m_Localized: The Moon Beings are strong.\nThey may have despaired every day,
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093339
+  - m_Id: 42879991707287553
     m_Localized: yet they discovered you, and\nsent you to Earth with their hopes.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093340
+  - m_Id: 42879991707287554
     m_Localized: Yes... Inspite of everything.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093341
+  - m_Id: 42879991707287555
     m_Localized: When Red drew my chalk eyes
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093342
+  - m_Id: 42879991707287556
     m_Localized: the first thing I saw in this world...
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093343
+  - m_Id: 42879991707287557
     m_Localized: were his eyes, brave and curious.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093344
-    m_Localized: That part of Red will always be a part of me.
+  - m_Id: 42879991707287558
+    m_Localized: That part of Red\nwill always be a part of me.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093345
+  - m_Id: 42879991707287559
     m_Localized: "So when the day comes... just like Red, I\u2019ll..."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093346
+  - m_Id: 42879991707287560
     m_Localized: (The Moon Beings must mean a lot to Dot.)|(It makes me curious about
       the Moon Beings.)
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093347
+  - m_Id: 42879991707287561
     m_Localized: (Maybe we could have been friends too?)
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991703093348
+  - m_Id: 42879991707287562
     m_Localized: "I\u2019ll probably never accept\\nyour death, not completely."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287552
+  - m_Id: 42879991707287563
     m_Localized: "I\u2019ll perch my black body on the moonlit window,\\nand talk
       even when my words won\u2019t reach you."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287553
+  - m_Id: 42879991707287564
     m_Localized: About the humans I saw that day, and the\npeculiar thoughts I had
       the night before.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287554
+  - m_Id: 42879991707287565
     m_Localized: And it will hurt to remember you.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287555
+  - m_Id: 42879991707287566
     m_Localized: "But I\u2019ll bear that hurt."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287556
+  - m_Id: 42879991707287567
     m_Localized: And when your loss weighs\nheavier than my black,
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287557
+  - m_Id: 42879991707287568
     m_Localized: "I\u2019ll recall the quiet footsteps\\nthat crossed the Moon."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287558
+  - m_Id: 46091358371266560
     m_Localized: "And I\u2019ll find courage from them...\\nthat I couldn\u2019t
       have on my own."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287559
+  - m_Id: 46091358404820992
     m_Localized: ......
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287560
+  - m_Id: 46091358404820993
     m_Localized: "Now let\u2019s say goodbye, <nickname>."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287561
-    m_Localized: "We\u2019ll say it today, tomorrow, and the day after."
+  - m_Id: 46091358404820994
+    m_Localized: "We\u2019ll say it today, tomorrow,\\nand the day after."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287562
+  - m_Id: 46091358404820995
     m_Localized: "\u201CSee you, <nickname>!\u201D"
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287563
+  - m_Id: 46091358404820996
     m_Localized: "And you\u2019ll say, \u201CYeah, see you.\u201D"
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287564
+  - m_Id: 46091358404820997
     m_Localized: "We\u2019ll believe that tomorrow we\u2019ll come,\\nbecause of
       course it will."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287565
+  - m_Id: 46091358404820998
     m_Localized: "And so we\u2019ll feel relief, and have faith."
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287566
+  - m_Id: 46091358404820999
     m_Localized: So... see you, <nickname>. Okay?
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287567
+  - m_Id: 46091358404821000
     m_Localized: ...... Okay, Dot. Yeah.
     m_Metadata:
       m_Items: []
-  - m_Id: 42879991707287568
+  - m_Id: 46091358404821001
     m_Localized: See you soon.
     m_Metadata:
       m_Items: []
