@@ -40098,6 +40098,7 @@ GameObject:
   - component: {fileID: 1604353571}
   - component: {fileID: 1604353570}
   - component: {fileID: 1604353569}
+  - component: {fileID: 1604353572}
   m_Layer: 5
   m_Name: SubDialAlert
   m_TagString: Untagged
@@ -40149,6 +40150,8 @@ MonoBehaviour:
   subSkipPopup: {fileID: 2067601453}
   subSkipYes: {fileID: 1918446578}
   subSkipNo: {fileID: 128855036}
+  subTriggerIcon: {fileID: 1297682453}
+  cg: {fileID: 1604353572}
 --- !u!114 &1604353570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40187,6 +40190,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604353567}
   m_CullTransparentMesh: 1
+--- !u!225 &1604353572
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604353567}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1606072028
 GameObject:
   m_ObjectHideFlags: 0

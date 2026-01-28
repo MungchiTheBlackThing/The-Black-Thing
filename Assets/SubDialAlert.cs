@@ -1,9 +1,12 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Text.RegularExpressions;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
+
+
 
 public class SubDialAlert : MonoBehaviour
 {
@@ -19,74 +22,196 @@ public class SubDialAlert : MonoBehaviour
     [SerializeField] private GameObject subSkipPopup;
     [SerializeField] private Button subSkipYes;
     [SerializeField] private Button subSkipNo;
+    [SerializeField] private GameObject subTriggerIcon; // 뭉치 위 ‘서브 트리거’ 아이콘
+    [SerializeField] private CanvasGroup cg;
 
-    private int lastvalue = 0;
+
+    private string secondTextTemplate;
+    private bool canOpenPopup = true;
+    private Coroutine refreshCo;
+    void Awake()
+    {
+        if (secondText != null) secondTextTemplate = secondText.text;
+
+        if (player == null) player = GameObject.FindWithTag("Player")?.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            player.nextPhaseDelegate -= OnPhaseChanged;
+            player.nextPhaseDelegate += OnPhaseChanged; // 중복 구독 방지
+        }
+    }
+    
     void OnEnable()
+    {
+        SetVisible(false);
+        StartRefresh();
+
+    }
+
+    private void OnDestroy()
+    {
+        if (player != null) player.nextPhaseDelegate -= OnPhaseChanged;
+    }
+    private void OnDisable()
+    {
+        if (refreshCo != null) StopCoroutine(refreshCo);
+        refreshCo = null;
+    }
+
+    private void OnPhaseChanged(GamePatternState _)
+    {
+        StartRefresh(); // 페이즈 바뀔 때마다 갱신
+    }
+    private void StartRefresh()
+    {
+        if (!isActiveAndEnabled) return;
+        if (refreshCo != null) StopCoroutine(refreshCo);
+        refreshCo = StartCoroutine(RefreshCo());
+    }
+
+    private IEnumerator RefreshCo()
+    {
+
+        yield return LocalizationSettings.InitializationOperation;
+        RefreshNow();
+
+    }
+
+    void RefreshNow()
+
     {
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
-            gameObject.SetActive(false); 
-            return;
-        }
-        foreach (Image image in images)
-        {
-            image.gameObject.SetActive(true);
-        }
-        int findChapter = player.GetChapter();
-        ChapterInfo chapterInfo = DataManager.Instance.ChapterList.chapters[findChapter];
-        Debug.Log("챕터 정보: " + chapterInfo);
-        if (player == null || chapterInfo == null)
-        {
-            Debug.LogWarning("SubDialAlert: player 또는 chapterInfo가 비어 있음");
+            SetVisible(false);
             return;
         }
 
-        int phase = player.GetCurrentPhase();
-        List<int> subseq = player.GetWatchedList();
+        if (player == null) player = GameObject.FindWithTag("Player")?.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            player.nextPhaseDelegate -= OnPhaseChanged;
+            player.nextPhaseDelegate += OnPhaseChanged;
+        }
+        if (gameManager == null) gameManager = FindObjectOfType<GameManager>();
+
+        if (player == null || gameManager == null)
+        {
+            Debug.LogWarning("SubDialAlert: player/gameManager null");
+            return;
+        }
+
+        var phaseState = (GamePatternState)player.GetCurrentPhase();
+
+        // MainA/MainB/Play에서는 종이 자체 OFF
+        if (phaseState == GamePatternState.MainA ||
+            phaseState == GamePatternState.MainB ||
+            phaseState == GamePatternState.Play)
+        {
+                SetVisible(false);
+                return;
+        }
+
+        List<int> subs = gameManager.GetSubseqsForPhase(phaseState);
+        int count = (subs != null) ? subs.Count : 0;
+
+        // 슬롯 활성화: 서브 개수만큼만
+        for (int i = 0; i < images.Count; i++)
+        {
+            bool on = i < count;
+            images[i].gameObject.SetActive(on);
+            if (!on) images[i].sprite = null; // 과거 값 청소
+        }
+
+        int findChapter = player.GetChapter();
+        ChapterInfo chapterInfo = DataManager.Instance.ChapterList.chapters[findChapter];
+
+        if (chapterInfo == null)
+        {
+            Debug.LogWarning("SubDialAlert: chapterInfo null");
+            return;
+        }
+
+        // 남은 개수 = (현재 페이즈의 subs 중 아직 안 본 것)
+        int remaining = 0;
+        if (subs != null)
+        {
+            foreach (var id in subs)
+                if (!player.IsSubWatched(id)) remaining++;
+        }
+        canOpenPopup = (remaining > 0);
 
         if (secondText != null)
         {
-            lastvalue = (subseq.Count > 0) ? subseq[subseq.Count - 1] : 0;
-
-            int remain = Mathf.Max(0, GetPhaseLength(phase) - lastvalue);
-            secondText.text = secondText.text.Replace("<int>", remain.ToString());
+            if (remaining > 0)
+            {
+                string tpl = string.IsNullOrEmpty(secondTextTemplate) ? secondText.text : secondTextTemplate;
+                secondText.text = tpl.Replace("<int>", remaining.ToString());
+            }
+            else
+            {
+                // 남은 서브 0개면 완료 문구로 교체 (한/영)
+                string doneText = LocalizationSettings.StringDatabase.GetLocalizedString("SystemUIText", "subalert_n");
+                secondText.text = doneText;
+            }
         }
-
 
         // 성공 여부
         List<bool> successPhase = player.GetSubPhase(chapterInfo.id);
 
-        // 아이콘 적용
-        ApplySubPhaseIcons(chapterInfo, successPhase, phase);
+        // 아이콘 적용 (subs 기반)
+        ApplySubPhaseIcons(chapterInfo, successPhase, subs);
+        SetVisible(true);
+    }
+
+    private void SetVisible(bool on)
+    {
+        if (cg != null)
+        {
+            cg.alpha = on ? 1 : 0;
+            cg.blocksRaycasts = on;
+            cg.interactable = on;
+        }
+        else
+        {
+            gameObject.SetActive(on);
+        }
     }
 
 
-    private void ApplySubPhaseIcons(ChapterInfo chapterInfo, List<bool> successPhase, int phase)
-    {
-        List<int> allowed = GetAllowedIndices(phase); // 1-based
-        Debug.Log("allow: "+allowed);
-        Debug.Log(allowed.Count);
-        for (int i =0; i<allowed.Count; i++)
-        {
-            int allowindex = allowed[i];
-            Debug.Log("성공 페이즈: " + successPhase[allowindex]);
-            // 슬롯 세팅
-            if (successPhase[allowindex] && allowindex <= lastvalue - 1)
-            {
-                Debug.Log("성공 이미지 " + i + " " + chapterInfo.subFilePath[allowindex]);
-                images[i].sprite = Resources.Load<Sprite>(chapterInfo.subFilePath[allowindex]);
-            }
-            else
-            {
-                Debug.Log("실패 이미지 " + i + " " + chapterInfo.subLockFilePath[allowindex]);
-                images[i].sprite = Resources.Load<Sprite>(chapterInfo.subLockFilePath[allowindex]);
-            }
 
+    private void ApplySubPhaseIcons(ChapterInfo chapterInfo, List<bool> successPhase, List<int> subs)
+    {
+        if (subs == null) return;
+
+        for (int i = 0; i < subs.Count && i < images.Count; i++)
+        {
+            int subseqId = subs[i];    // 1..4
+            int idx = subseqId - 1;    // 0..3
+
+            bool watched = player.IsSubWatched(subseqId);
+            bool success = (successPhase != null && idx >= 0 && idx < successPhase.Count) ? successPhase[idx] : false;
+
+            string path = (watched && success)
+                ? chapterInfo.subFilePath[idx]
+                : chapterInfo.subLockFilePath[idx];
+
+            images[i].sprite = Resources.Load<Sprite>(path);
         }
     }
         public void OnClickSubImage()
     {
-        subSkipPopup.SetActive(true);
+        // 트리거 아이콘이 떠 있으면: 팝업 막고 lock 효과음만
+        if (subTriggerIcon != null && subTriggerIcon.activeSelf)
+        {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.lockClick, transform.position);
+            return;
+        }
+        if (!canOpenPopup)
+        {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.lockClick, transform.position);
+            return;
+        }
+        if (subSkipPopup != null) subSkipPopup.SetActive(true);
     }
 
     // Yes -> 팝업 OFF + 서브 즉시
@@ -102,26 +227,4 @@ public class SubDialAlert : MonoBehaviour
         if (subSkipPopup != null) subSkipPopup.SetActive(false);
     }
 
-
-    private List<int> GetAllowedIndices(int phase)
-    {
-        switch (phase)
-        {
-            case 2: return new List<int> { 0, 1 };
-            case 4: return new List<int> { 2 };
-            case 6: return new List<int> { 3 };
-            default: return new List<int>();
-        }
-    }
-
-    private int GetPhaseLength(int phase)
-    {
-        switch (phase)
-        {
-            case 2: return 2;
-            case 4: return 3;
-            case 6: return 4;
-            default: return 0;
-        }
-    }
 }
