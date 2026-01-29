@@ -106,8 +106,8 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,25,105,main_door_open,Dot,Main,,,text,뭐?,What?,106,,,,Main_Ch5,M5_L0105
 1,25,106,main_door_open,Dot,Main,body_move,,text,그렇다면 인간의 죽음이란... 어떤 건데?,Then what is human death\nas you understand it?,107,,,,Main_Ch5,M5_L0106
 1,25,107,main_door_open,Player,Main,body_default1,,selection,슬프지만... 모든 인간은 죽어.|죽음. 반드시 찾아오는 운명이지.,It’s sad... but all humans die.|Death. We’re fated for it.,108|108,,,,Main_Ch5,M5_L0107
-1,25,108,main_door_open,Dot,Main,,,text,"손을 쓸 수 없는 사고를 당한다거나, 돌이킬 수\n없는 병에 걸린다거나, 단지 수명을 다한다거나.","Accidents, illnesses, or simply old age.",109,,,,Main_Ch5,M5_L0108
-1,25,109,main_door_open,Dot,Main,,,text,방식은 다양하지만 우리는 모두 언젠가\n백골이 되어 땅에 스며들게 될 거야.,The causes vary. But eventually\nwe’ll all turn to dust six feet under.,110,,,,Main_Ch5,M5_L0109
+1,25,108,main_door_open,Player,Main,,,text,"손을 쓸 수 없는 사고를 당한다거나, 돌이킬 수\n없는 병에 걸린다거나, 단지 수명을 다한다거나.","Accidents, illnesses, or simply old age.",109,,,,Main_Ch5,M5_L0108
+1,25,109,main_door_open,Player,Main,,,text,방식은 다양하지만 우리는 모두 언젠가\n백골이 되어 땅에 스며들게 될 거야.,The causes vary. But eventually\nwe’ll all turn to dust six feet under.,110,,,,Main_Ch5,M5_L0109
 1,25,110,main_door_open,Player,Main,,,selection,어떤 인간에게도 예외는 없어.|두렵지만... 나에게도 일어날 일이고.,"Of course, I’m no exception.|It’s scary... but so will I.",111|111,,,,Main_Ch5,M5_L0110
 1,25,111,main_door_open,Dot,Main,,,text,뭐?,What?,112,,,,Main_Ch5,M5_L0111
 1,25,112,main_door_open,Dot,Main,body_trembling,,text,...,...,113,,,,Main_Ch5,M5_L0112

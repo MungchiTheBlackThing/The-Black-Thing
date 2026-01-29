@@ -52,7 +52,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 2,58,51,0,Dot,Default,,text,......,......,52,,,,Sub_Ch10,S10_L0051
 2,58,52,0,Dot,Default,,text,"<nickname>, 저 창문 가리개를\n닫으려 했지만 몸이 닿지 않았어.","I tried to draw the blinds, <nickname>,\nbut they were just out of reach.",53,,,,Sub_Ch10,S10_L0052
 2,58,53,0,Dot,Default,,text,"정신이 새된 비명을 질러. 아, 아, 도와줘...",My mind is screaming at me. Help...,54,,,,Sub_Ch10,S10_L0053
-2,58,54,0,Player,Default,,text,(손을 뻗어 뭉치를 가려 준다.)|(뭉치를 살살 쓰다듬어 준다.),(Reach out and shield Dot.)|(Gently stroke Dot.),55,passive|active,,,Sub_Ch10,S10_L0054
+2,58,54,0,Player,Default,,selection,(손을 뻗어 뭉치를 가려 준다.)|(뭉치를 살살 쓰다듬어 준다.),(Reach out and shield Dot.)|(Gently stroke Dot.),55|55,passive|active,,,Sub_Ch10,S10_L0054
 2,58,55,0,Player,Default,anim_eyesblink,text,......,......,56,,,,Sub_Ch10,S10_L0055
 2,58,56,0,Dot,Default,anim_eyesclosed_turn,text,......,......,57,,,,Sub_Ch10,S10_L0056
 2,58,57,0,Dot,Sub,anim_eyesblink,text,부끄럽네. 아까의 모습은 잊어 줘.,That was unseemly.\nI hope you’ll forgive me.,58,,,,Sub_Ch10,S10_L0057

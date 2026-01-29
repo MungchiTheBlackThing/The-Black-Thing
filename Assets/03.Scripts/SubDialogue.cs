@@ -399,8 +399,7 @@ public class SubDialogue : MonoBehaviour
             else
             {
                 Debug.Log("[SubDialogue] AfterScript가 재생 X, 이전 애니메이션으로 돌아감");
-                if (dot != null)
-                    dot.ChangeState(DotPatternState.Default, this.preanimkey, this.prePos);
+                dot.UpdateIdleAnimation();
             }
         }
 

@@ -106,7 +106,7 @@ public class DotTextReview : MonoBehaviour
             if (displayText.text.Contains("<nickname>"))
             {
                 string playerName = PlayerController.GetNickName();
-                displayText.text = displayText.text.Replace("<name>", playerName);
+                displayText.text = displayText.text.Replace("<nickname>", playerName);
             }
             yield return FadeIn();
 
