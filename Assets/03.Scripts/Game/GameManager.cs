@@ -286,6 +286,7 @@ public class GameManager : MonoBehaviour
         activeState = states[patternState];
         Debug.Log("스테이트 변경: " + patternState);
         activeState.Enter(this, dot);
+        ApplyPhaseUI(patternState);
 
         // 1일차 시 페이즈로 처음 진입할 때 다이어리 활성화
         if (patternState == GamePatternState.Play && Chapter == 1 && !pc.IsDiaryUnlockedForChapter1())
@@ -319,20 +320,6 @@ public class GameManager : MonoBehaviour
             if (uiTuto) uiTuto.gameObject.SetActive(true);
         }
 
-        //대화 페이즈가 아닐 때 TimeSkipUI가 꺼져있다면 켜주기
-        //TimeSkipUI 꺼줘야 하는 페이즈 여기서 설정
-        if (timeSkipUIController != null)
-        {
-            bool shouldShowTimeSkip = 
-                (patternState != GamePatternState.MainA && 
-                patternState != GamePatternState.MainB && 
-                patternState != GamePatternState.NextChapter &&
-                patternState != GamePatternState.End &&
-                patternState != GamePatternState.Play);
-            
-            if (timeSkipUIController.gameObject.activeSelf != shouldShowTimeSkip)
-                timeSkipUIController.gameObject.SetActive(shouldShowTimeSkip);
-        }
 
         if (dot.GetSubScriptListCount(patternState) != 0)
         {
@@ -359,6 +346,23 @@ public class GameManager : MonoBehaviour
                 timeSkipUIController.IsSkipButtonClicked = false;
             }
         }                   
+    }
+    private void ApplyPhaseUI(GamePatternState phase)
+    {
+            //대화 페이즈가 아닐 때 TimeSkipUI가 꺼져있다면 켜주기
+        //TimeSkipUI 꺼줘야 하는 페이즈 여기서 설정
+        if (timeSkipUIController != null)
+        {
+            bool shouldShowTimeSkip = 
+                (patternState != GamePatternState.MainA && 
+                patternState != GamePatternState.MainB && 
+                patternState != GamePatternState.NextChapter &&
+                patternState != GamePatternState.End &&
+                patternState != GamePatternState.Play);
+            
+            if (timeSkipUIController.gameObject.activeSelf != shouldShowTimeSkip)
+                timeSkipUIController.gameObject.SetActive(shouldShowTimeSkip);
+        }
     }
 
     public void StartMain()
@@ -495,6 +499,7 @@ public class GameManager : MonoBehaviour
         {
             door.SetDoorForDialogue(true);
         }
+        ApplyPhaseUI(patternState);
     }
 
     private void RestoreEndingFromSave(PlayerInfo info)
