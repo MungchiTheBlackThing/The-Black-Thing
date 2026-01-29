@@ -170,7 +170,7 @@ public class UITutorial : MonoBehaviour
             }
         }
     }
-    public void Guide7()
+    public void Guide7() // 서브 바로보기 튜토 추가할 거면 여기 침습!
     {
         if (index >= 7 && index < transform.childCount)
         {

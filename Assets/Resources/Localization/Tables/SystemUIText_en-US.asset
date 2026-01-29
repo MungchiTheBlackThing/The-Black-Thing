@@ -514,7 +514,7 @@ MonoBehaviour:
       m_Items:
       - rid: 5827832305795465233
   - m_Id: 25432680089731072
-    m_Localized: 'Chats left until the next agenda :'
+    m_Localized: 'Chats left until the next agenda : <int>'
     m_Metadata:
       m_Items:
       - rid: 5827832305795465233
@@ -548,7 +548,7 @@ MonoBehaviour:
       m_Items:
       - rid: 5827832305795465233
   - m_Id: 36998756313284608
-    m_Localized: '<subtime> minutes to go until your next chat.
+    m_Localized: 'A few more minutes to go until your next chat.
 
       Pester Dot
       into starting it now?'

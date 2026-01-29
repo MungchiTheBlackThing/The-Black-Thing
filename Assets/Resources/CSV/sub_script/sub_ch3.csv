@@ -147,7 +147,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 3,17,146,0,Player,Sub,anim_eyesblink,text,그러면 그 불 소년 ‘레드’가 네가 눈을\n뜨는 것을 도와주었던 거야?,So did the fire boy help you open your eyes?,147,,,,Sub_Ch3,S3_L0146
 3,17,147,0,Dot,Sub,,text,"응, <nickname>, 직감적으로 알 수 있었어.","Yes, <nickname>, I just knew.",148,,,,Sub_Ch3,S3_L0147
 3,17,148,0,Dot,Sub,,text,"손에 분필이 들려 있었던 것으로 보아,\n나에게 눈을 그려 주었던 건 그였을 거야.","From the chalk in his hands, I knew\nhe was the one to drew me my eyes.",149,,,,Sub_Ch3,S3_L0148
-3,17,149,0,Dot,Sub,,text,너에게 눈을 그려 준?,Draw you your eyes?,150,,,,Sub_Ch3,S3_L0149
+3,17,149,0,Player,Sub,,text,너에게 눈을 그려 준?,Draw you your eyes?,150,,,,Sub_Ch3,S3_L0149
 3,17,150,0,Dot,Default,anim_move,text,"응, 우연히 바닥에 떨어진 오물 방울에...\n그가 분필로 눈을 그려 주었어!","Yes, I was nothing but a drop of filth\non the floor... and he drew me my eyes!",151,,,,Sub_Ch3,S3_L0150
 3,17,151,0,Player,Sub,anim_eyesblink,selection,(대체 어떻게 그런 일이 가능한 거지?)|(따뜻한 마음씨네. 그래서 레드를 좋아했구나.),"(And it worked, just like that?)|(How sweet. No wonder Dot likes him.)",152|153,moon|sun,,,Sub_Ch3,S3_L0151
 3,17,152,0,Player,Sub,,text,(분필에 특별한 힘이라도 있던 걸까?\n아님... 그 오물에? 알 길은 없겠지만...),(Was the chalk special or something?\nOr... was the filth? I wonder.),154,,,,Sub_Ch3,S3_L0152

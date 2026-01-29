@@ -2,7 +2,7 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,49,1,main_table,Dot,Main,body_default2,face_squeeze,text,책장 안. 침대 위. 포스터 뒤쪽.,In the bookcase. On the bed.\nBehind the poster.,2,,,,Main_Ch9,M9_L0001
 1,49,2,main_table,Dot,Main,body_default2,face_squeeze,text,보이지 않아. 보이지 않아.\n어디에도 보이지 않아.,It’s not here. It’s not there.\nIt’s not anywhere.,3,,,,Main_Ch9,M9_L0002
 1,49,3,main_table,Dot,Main,body_default2,face_omg,text,"<nickname>. 너, 너, 너.\n혹시 ‘청소’라는 걸 했어?","<nickname>. You, you, you.\nDon’t tell me you cleaned?",4,,,,Main_Ch9,M9_L0003
-1,49,4,main_table,Player,Main,body_default2,face_omg,text,어어... 곰팡이를 치우긴 했는데...,So... I did get rid of the mold...,5|5,,,active|passive,Main_Ch9,M9_L0004
+1,49,4,main_table,Player,Main,body_default2,face_omg,text,어어... 곰팡이를 치우긴 했는데...,So... I did get rid of the mold...,5,,,,Main_Ch9,M9_L0004
 1,49,5,main_table,Dot,Main,body_default2,face_mad,text,안 돼. 안 돼. 그럴 수 없어. 그럴 수는 없어.,No. No. It can’t be. It just can’t.,6,,,,Main_Ch9,M9_L0005
 1,49,6,main_table,Dot,Main,body_default2,face_mad,text,그러면 옴폭한 접시에 몸을\n누이고 살아가던 나의 친구를....,"So my friend, the one that\nlounged on the plate....",7,,,,Main_Ch9,M9_L0006
 1,49,7,main_table,Player,Main,body_default2,face_mad,text,곰팡이를.,You mean the mold.,8,,,,Main_Ch9,M9_L0007
@@ -107,7 +107,7 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,50,106,main_door_open,Dot,Main,,,text,응. 응. 알고 있었어. 알고 있었어. 나는.,Yes. Yes. I knew it. I knew it. I.,107,,,,Main_Ch9,M9_L0106
 3,50,107,main_door_open,Dot,Main,,face_squeeze,text,하지만... 선명하게 받아들이지 못한 채\n외면하고 있었지. 추악하기 짝이 없게도.,But... I looked away and refused\nto accept it. How awful of me.,108,,,,Main_Ch9,M9_L0107
 3,50,108,main_door_open,Player,Main,,face_blink,selection,그 정도의 추악함은 가져도 돼. 덜 고통스러울 수 있다면.|추악하지 않아. 누구나 외면하고 싶을 수 있어.,"It’s okay to be awful sometimes, if the pain lessens.|You’re not awful. We all want to look away.",109|109,,,moon|sun,Main_Ch9,M9_L0108
-3,50,109,main_door_open,Dot,Main,,,text,"<nickname>, 곧대로 받아들이는 여정을 나와 함께해 줘.",Then accompany me on a journey of\naccepting things the way they are.,110|110,,,,Main_Ch9,M9_L0109
+3,50,109,main_door_open,Dot,Main,,,text,"<nickname>, 곧대로 받아들이는 여정을 나와 함께해 줘.",Then accompany me on a journey of\naccepting things the way they are.,110,,,,Main_Ch9,M9_L0109
 3,50,110,main_door_open,Player,Main,,,text,"얼마든지, 뭉치야.","With pleasure, Dot.",111,,,,Main_Ch9,M9_L0110
 3,50,111,main_door_open,Dot,Main,,,text,...,...,112,,,,Main_Ch9,M9_L0111
 3,50,112,main_door_open,Dot,Main,,,text,...,...,113,,,,Main_Ch9,M9_L0112
