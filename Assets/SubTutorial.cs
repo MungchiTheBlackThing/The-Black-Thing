@@ -231,6 +231,8 @@ public class SubTutorial : MonoBehaviour
                 SubDialogue.isSubmoldtutoend = true;
                 InputGuard.WorldInputLocked = false; 
                 this.gameObject.SetActive(false);
+                var menu = gameManager?.Menu ?? FindObjectOfType<MenuController>(true);
+                menu?.allon();
                 return;
             }
             Debug.Log(index);

@@ -287,6 +287,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("스테이트 변경: " + patternState);
         activeState.Enter(this, dot);
         ApplyPhaseUI(patternState);
+        ApplyMoldGateIfNeeded();
 
         // 1일차 시 페이즈로 처음 진입할 때 다이어리 활성화
         if (patternState == GamePatternState.Play && Chapter == 1 && !pc.IsDiaryUnlockedForChapter1())
@@ -500,6 +501,7 @@ public class GameManager : MonoBehaviour
             door.SetDoorForDialogue(true);
         }
         ApplyPhaseUI(patternState);
+        ApplyMoldGateIfNeeded();
     }
 
     private void RestoreEndingFromSave(PlayerInfo info)
@@ -654,6 +656,17 @@ public class GameManager : MonoBehaviour
             Debug.Log("시간 경과! 현재 스크립트 키: " + script.ScriptKey);
             dot.TriggerSub(true, script.DotAnim, script.DotPosition);
             pc.ProgressSubDial(script.ScriptKey);
+        }
+    }
+
+    private void ApplyMoldGateIfNeeded()
+    {
+        if (currentPattern == GamePatternState.Thinking
+            && Chapter == 1
+            && pc != null
+            && pc.GetSubseq() == 1)
+        {
+            menu?.moldOn(); // 스킵/타임 끄는 기존 로직
         }
     }
 

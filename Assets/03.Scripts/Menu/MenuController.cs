@@ -1,13 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Device;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
@@ -241,12 +238,6 @@ public class MenuController : MonoBehaviour
                 MenuDefault.SetActive(false);
                 TimeUI.SetActive(false);
             }
-            else if(PlayerController.currentReward == "sub_mold")
-            {
-                moldOn();
-                checkList.SetActive(true);
-                MenuDefault.SetActive(false);
-            }
             else
             {
                 TimeUI.SetActive(true);
@@ -254,8 +245,23 @@ public class MenuController : MonoBehaviour
                 MenuDefault.SetActive(false);
             }
         }
+        ApplyMoldGate();
         ApplyEndingOverride();
     }
+
+    private void ApplyMoldGate()
+    {
+        var gm = FindObjectOfType<GameManager>(true); // 최소: 필요할 때만 찾기
+        if (gm == null || PlayerController == null) return;
+
+        bool shouldMold =
+            gm.Chapter == 1 &&
+            gm.Pattern == GamePatternState.Thinking &&
+            PlayerController.GetSubseq() == 1;
+
+        if (shouldMold) moldOn();
+    }
+
     public void onDayProgressUI()
     {
         //DayProgressUI on,.,

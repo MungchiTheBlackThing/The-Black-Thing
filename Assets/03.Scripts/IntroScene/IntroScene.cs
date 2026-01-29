@@ -97,6 +97,8 @@ public class IntroScene : MonoBehaviour
         
         RecentManager.ResetFlagOnly();
         playerInfo.Replay();
+        
+        PlayerController.ClearAllSubTimestampsForNewGame();
         WritePlayerFile();
         data = RecentManager.Load();
         Play();

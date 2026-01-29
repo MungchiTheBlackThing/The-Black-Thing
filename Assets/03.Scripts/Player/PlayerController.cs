@@ -503,6 +503,26 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         LoadSceneManager.Instance.LoadScene("MainScene", "IntroScene", 0);
     }
 
+    // 새 게임 시작할 때 1회 호출
+    public static void ClearAllSubTimestampsForNewGame()
+    {
+        // Chapter 1~14
+        for (int ch = 1; ch <= 14; ch++)
+        {
+            foreach (GamePatternState phase in Enum.GetValues(typeof(GamePatternState)))
+            {
+                // subseq 1~4 (너 로직 기준)
+                for (int sub = 1; sub <= 4; sub++)
+                {
+                    string key = $"PendingEventTimestamp_{ch}_{phase}_{sub}";
+                    if (PlayerPrefs.HasKey(key)) PlayerPrefs.DeleteKey(key);
+                }
+            }
+        }
+        PlayerPrefs.Save();
+    }
+
+
     public bool IsSubWatched(int id)
     {
         return player.watchedSubseq.Contains(id);

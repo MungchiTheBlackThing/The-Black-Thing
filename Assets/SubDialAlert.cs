@@ -25,13 +25,10 @@ public class SubDialAlert : MonoBehaviour
     [SerializeField] private GameObject subTriggerIcon; // 뭉치 위 ‘서브 트리거’ 아이콘
     [SerializeField] private CanvasGroup cg;
 
-
-    private string secondTextTemplate;
     private bool canOpenPopup = true;
     private Coroutine refreshCo;
     void Awake()
     {
-        if (secondText != null) secondTextTemplate = secondText.text;
 
         if (player == null) player = GameObject.FindWithTag("Player")?.GetComponent<PlayerController>();
         if (player != null)
@@ -144,7 +141,12 @@ public class SubDialAlert : MonoBehaviour
         {
             if (remaining > 0)
             {
-                string tpl = string.IsNullOrEmpty(secondTextTemplate) ? secondText.text : secondTextTemplate;
+                // 템플릿은 UI 저장하지 말고 로컬라이즈 키에서 매번 가져오기
+                string tpl = LocalizationSettings.StringDatabase.GetLocalizedString("SystemUIText", "subcheck_text");
+
+                if (string.IsNullOrEmpty(tpl) || !tpl.Contains("<int>"))
+                    tpl = "<int>"; // 키 누락/값 오타 대비
+
                 secondText.text = tpl.Replace("<int>", remaining.ToString());
             }
             else
