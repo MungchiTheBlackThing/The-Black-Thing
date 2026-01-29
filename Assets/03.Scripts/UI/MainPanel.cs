@@ -186,6 +186,7 @@ public class MainPanel : MonoBehaviour
 
     public void OnSelectionClicked(int index)
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialougeSelect, transform.position);
         Debug.Log($"선택 클릭됨: {index}");
         var currentEntry = mainDialogue.GetData(dialogueIndex);
         Debug.Log("currentEntry.NextLineKey: " + currentEntry.NextLineKey);

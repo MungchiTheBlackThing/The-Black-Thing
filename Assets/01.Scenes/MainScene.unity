@@ -45417,11 +45417,11 @@ MonoBehaviour:
     Path: event:/SFX/sfx_paper_flip
   <DiaryButton>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1951395949
+      Data2: 1260766705
+      Data3: 1815506866
+      Data4: 421005345
+    Path: event:/SFX/sfx_diary_snapbutton
   <MenuOn>k__BackingField:
     Guid:
       Data1: -1242624989
@@ -45463,7 +45463,7 @@ MonoBehaviour:
       Data2: 1277322808
       Data3: 7068583
       Data4: 841574251
-    Path: event:/SFX/sfx_iook_click
+    Path: event:/SFX/sfx_lock_click
   <mold>k__BackingField:
     Guid:
       Data1: 1299314479
@@ -45506,6 +45506,20 @@ MonoBehaviour:
       Data3: 391378326
       Data4: 823941500
     Path: event:/SFX/sfx_object_binocular
+  <diary>k__BackingField:
+    Guid:
+      Data1: -1208149832
+      Data2: 1300661114
+      Data3: 868895150
+      Data4: 1513571120
+    Path: event:/SFX/sfx_object_diary
+  <mapradio>k__BackingField:
+    Guid:
+      Data1: -721025980
+      Data2: 1131507656
+      Data3: -65645158
+      Data4: 493352086
+    Path: event:/SFX/sfx_object_mapradio
   <mainEnter>k__BackingField:
     Guid:
       Data1: 466606281
@@ -45522,18 +45536,18 @@ MonoBehaviour:
     Path: event:/SFX/sfx_dialogue_default
   <dialougeSelect>k__BackingField:
     Guid:
-      Data1: 1401293294
-      Data2: 1109176742
-      Data3: -2103749217
-      Data4: 798625178
-    Path: event:/SFX/sfx_dialogue_default
+      Data1: -1162337176
+      Data2: 1177449952
+      Data3: 1855788735
+      Data4: 829749298
+    Path: event:/SFX/sfx_dialogue_select
   <dialouguecheckbox>k__BackingField:
     Guid:
-      Data1: -1508236631
-      Data2: 1187509536
-      Data3: 1273705605
-      Data4: -1541645942
-    Path: event:/AMB/AMB_Room
+      Data1: -846680856
+      Data2: 1295833830
+      Data3: -1195945328
+      Data4: -1157347147
+    Path: event:/SFX/sfx_menu_checklist_check
   <earthsend>k__BackingField:
     Guid:
       Data1: -1490756615
@@ -45555,6 +45569,41 @@ MonoBehaviour:
       Data3: 581036928
       Data4: -66118003
     Path: event:/SFX/sfx_moonradio_button_click
+  <moonbuttonlock>k__BackingField:
+    Guid:
+      Data1: 280056425
+      Data2: 1173429375
+      Data3: 1437488312
+      Data4: -882951419
+    Path: event:/SFX/sfx_moonradio_lock
+  <earthsent>k__BackingField:
+    Guid:
+      Data1: -1973475720
+      Data2: 1121342512
+      Data3: 271275199
+      Data4: -858505794
+    Path: event:/SFX/sfx_moonradio_sent
+  <red>k__BackingField:
+    Guid:
+      Data1: 1182097519
+      Data2: 1094167713
+      Data3: 86987931
+      Data4: 527866386
+    Path: event:/SFX/sfx_red
+  <edison>k__BackingField:
+    Guid:
+      Data1: 338931758
+      Data2: 1197415333
+      Data3: -2130057824
+      Data4: -822927014
+    Path: event:/SFX/sfx_eddie
+  <cello>k__BackingField:
+    Guid:
+      Data1: 547687895
+      Data2: 1328551433
+      Data3: -649479784
+      Data4: 1689286407
+    Path: event:/SFX/sfx_cello
   <binosuccess>k__BackingField:
   - Guid:
       Data1: -1580741269
@@ -45649,18 +45698,25 @@ MonoBehaviour:
     Path: event:/BGM/main_afterdeath
   <bgm_intro>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1065387155
+      Data2: 1186868371
+      Data3: -1204149339
+      Data4: -507133052
+    Path: event:/BGM/intro
+  <bgm_moonradio>k__BackingField:
+    Guid:
+      Data1: -1394793101
+      Data2: 1274582775
+      Data3: -1200974660
+      Data4: 990817869
+    Path: event:/BGM/moonradio
   <ambRoom>k__BackingField:
     Guid:
-      Data1: -1508236631
-      Data2: 1187509536
-      Data3: 1273705605
-      Data4: -1541645942
-    Path: event:/AMB/AMB_Room
+      Data1: 810136211
+      Data2: 1174811069
+      Data3: -1657782854
+      Data4: 1627549574
+    Path: event:/AMB/Morning
 --- !u!1 &1853110039
 GameObject:
   m_ObjectHideFlags: 0
@@ -45766,6 +45822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93f13c10ea46ba4ead1c624621d03be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmFadeSeconds: 0.5
+  muteFadeSeconds: 0.2
 --- !u!4 &1867576906
 Transform:
   m_ObjectHideFlags: 0

@@ -31,7 +31,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5098432455385140361}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -169,12 +168,11 @@ RectTransform:
   m_Children:
   - {fileID: 5098432455012925731}
   m_Father: {fileID: 5098432456019097396}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 338.99, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 338.99, y: -114.865}
+  m_SizeDelta: {x: 677.98, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5098432455385140367
 CanvasRenderer:
@@ -265,6 +263,9 @@ GameObject:
   - component: {fileID: 5098432455722081770}
   - component: {fileID: 5098432455722081771}
   - component: {fileID: 8111839411177631729}
+  - component: {fileID: 2892091767616064678}
+  - component: {fileID: -5360606989183164474}
+  - component: {fileID: -1406643733617980708}
   m_Layer: 5
   m_Name: Moon_Red
   m_TagString: Untagged
@@ -286,7 +287,6 @@ RectTransform:
   m_Children:
   - {fileID: 5098432456019097396}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -332,6 +332,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterText: {fileID: 5098432455012925728}
+--- !u!114 &2892091767616064678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098432455722081781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4bb747c7edfda42aac892c5e5301bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  revealSfx:
+    Guid:
+      Data1: 1182097519
+      Data2: 1094167713
+      Data3: 86987931
+      Data4: 527866386
+    Path: event:/SFX/sfx_red
+  animator: {fileID: 0}
+--- !u!225 &-5360606989183164474
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098432455722081781}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!95 &-1406643733617980708
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098432455722081781}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15ab3168401b38349bbb0603b63a284b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5098432456019097399
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,12 +418,11 @@ RectTransform:
   - {fileID: 5098432455385140361}
   - {fileID: 5098432456159383109}
   m_Father: {fileID: 5098432455722081770}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 462.99, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 462.99, y: -114.865}
+  m_SizeDelta: {x: 865.98, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5098432456019097386
 MonoBehaviour:
@@ -443,7 +495,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5098432456019097396}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

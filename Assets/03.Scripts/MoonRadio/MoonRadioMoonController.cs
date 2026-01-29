@@ -35,6 +35,7 @@ public class MoonRadioMoonController : MonoBehaviour
     }
     public void OnPopup()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.moonbuttonoff, transform.position);
         if(popupIdx>=popupUI.Length)
         {
             return;
@@ -46,6 +47,7 @@ public class MoonRadioMoonController : MonoBehaviour
 
     public void Exit()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.moonbuttonoff, transform.position);
         for (int i = 0; i < popupUI.Length; i++)
         {
             popupUI[i].SetActive(false);
@@ -59,6 +61,7 @@ public class MoonRadioMoonController : MonoBehaviour
 
     public void SetDial()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.moonbuttonclick, transform.position);
         exit.gameObject.SetActive(false);
         popupUI[0].SetActive(false);
         chatController.Reset(popupIdx + 1);

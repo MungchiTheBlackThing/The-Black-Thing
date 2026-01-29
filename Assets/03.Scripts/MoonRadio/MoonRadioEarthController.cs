@@ -101,6 +101,7 @@ public class MoonRadioEarthController : MonoBehaviour
 
         if (string.IsNullOrWhiteSpace(s))
         {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.moonbuttonlock, transform.position);
             StartCoroutine(CoShowEmptyAlert());
             return;
         }
@@ -110,6 +111,7 @@ public class MoonRadioEarthController : MonoBehaviour
         // 전송 시작: 두 애니메이터에 Send 트리거
         FireTrigger(sendUIAnimator, sendTrigger);
         FireTrigger(airplaneAnimator, sendTrigger);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.earthsend, transform.position);
 
         // 직선 플로우 시작
         StartCoroutine(CoTransmissionFlow());
@@ -153,6 +155,8 @@ public class MoonRadioEarthController : MonoBehaviour
         if (sendAlert != null)
         {
             sendAlert.SetActive(true);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.earthsent, transform.position);
+
             alertCG = sendAlert.GetComponent<CanvasGroup>();
             if (alertCG != null)
                 yield return StartCoroutine(CoFadeCanvasGroup(alertCG, 0f, 1f, alertFadeIn));
@@ -202,6 +206,7 @@ public class MoonRadioEarthController : MonoBehaviour
 
     private IEnumerator CoShowExceedAlertOnce()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.moonbuttonlock, transform.position);
         exceedAlertCoolingDown = true;
 
         if (exceedAlert != null) exceedAlert.SetActive(true);
@@ -215,17 +220,20 @@ public class MoonRadioEarthController : MonoBehaviour
     // ===== 채널 종료 =====
     public void ExitChannelBut()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.moonbuttonoff, transform.position);
         if (closePopup != null) closePopup.SetActive(true);
     }
 
     public void YesBut()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.moonbuttonoff, transform.position);
         if (closePopup != null) closePopup.SetActive(false);
         gameObject.SetActive(false);
     }
 
     public void NoBut()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.moonbuttonclick, transform.position);
         if (closePopup != null) closePopup.SetActive(false);
     }
 

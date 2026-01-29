@@ -23,6 +23,8 @@ public class FMODEvents : Singleton<FMODEvents>
     [field: SerializeField] public EventReference door { get; private set; }
     [field: SerializeField] public EventReference note { get; private set; }
     [field: SerializeField] public EventReference binocular { get; private set; }
+    [field: SerializeField] public EventReference diary { get; private set; }
+    [field: SerializeField] public EventReference mapradio { get; private set; }
 
     [field: Header("Dialogue")]
     [field: SerializeField] public EventReference mainEnter { get; private set; }
@@ -34,6 +36,13 @@ public class FMODEvents : Singleton<FMODEvents>
     [field: SerializeField] public EventReference earthsend { get; private set; }
     [field: SerializeField] public EventReference moonbuttonoff { get; private set; }
     [field: SerializeField] public EventReference moonbuttonclick { get; private set; }
+    [field: SerializeField] public EventReference moonbuttonlock { get; private set; }
+    [field: SerializeField] public EventReference earthsent { get; private set; }
+
+    [field: Header("Moonchat")]
+    [field: SerializeField] public EventReference red { get; private set; }
+    [field: SerializeField] public EventReference edison { get; private set; }
+    [field: SerializeField] public EventReference cello { get; private set; }
 
     [field: Header("BinoCular")]
     [field: SerializeField] public EventReference[] binosuccess { get; private set; }
@@ -47,8 +56,9 @@ public class FMODEvents : Singleton<FMODEvents>
     [field: SerializeField] public EventReference bgmmain_4 { get; private set; }
     [field: SerializeField] public EventReference bgmmain_death { get; private set; }
     [field: SerializeField] public EventReference bgm_intro { get; private set; }
+    [field: SerializeField] public EventReference bgm_moonradio { get; private set; }
 
-    // --- Ãß°¡: AMB ---
+    // --- ï¿½ß°ï¿½: AMB ---
     [field: Header("AMB")]
-    [field: SerializeField] public EventReference ambRoom { get; private set; }   // event:/AMB/AMB_Room (ÆÄ¶ó¹ÌÅÍ ÀüÈ¯¿ë)
+    [field: SerializeField] public EventReference ambRoom { get; private set; }   // event:/AMB/AMB_Room (ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½)
 }

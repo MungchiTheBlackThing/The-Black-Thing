@@ -86,9 +86,15 @@ public class MoonChatClickController : MonoBehaviour, IPointerDownHandler
             moonRadioObj.SetActive(false);
 
             if (i == 0)
+            {
                 moonRadioObj.SetActive(true);
+                var fx = moonRadioObj.GetComponent<MoonBubbleFX>();
+                if (fx != null) fx.PlayReveal();
+            }
             else
+            {
                 moonRadioObj.SetActive(false);
+            }
 
             radioScript.Add(moonRadioObj);
         }
@@ -110,6 +116,8 @@ public class MoonChatClickController : MonoBehaviour, IPointerDownHandler
             return;
         }
         radioScript[curIdx].gameObject.SetActive(true);
+        var fx = radioScript[curIdx].GetComponent<MoonBubbleFX>();
+        if (fx != null) fx.PlayReveal();
 
         StartCoroutine(ScrollToBottom()); // 주희 추가, 새 채팅 하단에 고정하도록
     }

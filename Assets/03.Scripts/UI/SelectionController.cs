@@ -21,6 +21,7 @@ public class SelectionController : MonoBehaviour
 
         // ✅ "Checking"만 토글
         Transform checkingTr = option.transform.Find("Checking");
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialouguecheckbox, transform.position);
         if (checkingTr == null)
         {
             Debug.LogError($"[SelectionController] 'Checking' not found under {option.name}");
