@@ -347,7 +347,7 @@ public class GameManager : MonoBehaviour
             }
         }                   
     }
-    private void ApplyPhaseUI(GamePatternState phase)
+    private void ApplyPhaseUI(GamePatternState patternState)
     {
             //대화 페이즈가 아닐 때 TimeSkipUI가 꺼져있다면 켜주기
         //TimeSkipUI 꺼줘야 하는 페이즈 여기서 설정
