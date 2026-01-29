@@ -22,6 +22,9 @@ public class BinocularController : BaseObject , IWatchingInterface
     PlayerController pc;
     DoorController door;
     Dictionary<int,int> Idx = new Dictionary<int,int>();
+
+    private Collider2D col2D;
+    private int lastChapterChecked = int.MinValue;
     public bool IsCurrentPattern(EWatching curPattern)
     {
         return curPattern == type;
@@ -42,6 +45,8 @@ public class BinocularController : BaseObject , IWatchingInterface
         if (playerObj != null) pc = playerObj.GetComponent<PlayerController>();
 
         StartCoroutine(InitWhenReady());
+        col2D = GetComponent<Collider2D>();
+        RefreshBinocularInteractable(force: true);
     }
 
     private IEnumerator InitWhenReady()
@@ -86,6 +91,57 @@ public class BinocularController : BaseObject , IWatchingInterface
             }
         }
     }
+
+    private int GetCurrentChapterNow()
+    {
+        if (pc != null) return pc.GetChapter();
+        var playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null) pc = playerObj.GetComponent<PlayerController>();
+        return (pc != null) ? pc.GetChapter() : 0;
+    }
+
+    private bool IsTodayBinocularByData(int chapter)
+    {
+        var list = DataManager.Instance?.Watchinginfo?.pattern;
+        if (list == null || list.Count == 0) return false;
+
+        // 중요: 지금 프로젝트는 원복 상태(기존에 잘 됐음)니까 "chapter를 그대로 인덱스로" 본다.
+        // (만약 여기서 밀림이 보이면 그때만 -1로 조정)
+        int idx = chapter;
+        if (idx < 0 || idx >= list.Count) return false;
+
+        return Enum.TryParse(list[idx], true, out EWatching today) && today == EWatching.Binocular;
+    }
+
+    private void SetColliderEnabled(bool enabled)
+    {
+        if (col2D != null) col2D.enabled = enabled;
+    }
+
+    private void RefreshBinocularInteractable(bool force)
+    {
+        if (pc == null) return;
+        if (DataManager.Instance?.Watchinginfo?.pattern == null) return;
+
+        int ch = GetCurrentChapterNow();
+        if (!force && ch == lastChapterChecked) return;
+        lastChapterChecked = ch;
+
+        bool inWatchingPhase = (GamePatternState)pc.GetCurrentPhase() == GamePatternState.Watching;
+        bool canClick = inWatchingPhase && IsTodayBinocularByData(ch);
+
+        // 오늘 아니면 클릭 자체 차단
+        SetColliderEnabled(canClick);
+
+        // 안전: 클릭 불가면 알럿도 꺼 버림
+        if (!canClick && alert != null) alert.SetActive(false);
+    }
+
+    private void Update()
+    {
+        RefreshBinocularInteractable(force: false);
+    }
+
     public void OpenWatching(int Chapter)
     {
         alert.SetActive(true);
@@ -97,15 +153,13 @@ public class BinocularController : BaseObject , IWatchingInterface
         if (InputGuard.BlockWorldInput()) return;
         if (pc == null) return;
 
-        GamePatternState curPhase = (GamePatternState)pc.GetCurrentPhase();
+        // chapterIdx/하드코딩 대신 현재 값으로 판정
+        int ch = GetCurrentChapterNow();
 
-        if (curPhase != GamePatternState.Watching || !IsValidBinoDay(chapterIdx))
-        
-            return;
+        if ((GamePatternState)pc.GetCurrentPhase() != GamePatternState.Watching) return;
+        if (!IsTodayBinocularByData(ch)) return;
 
-        if (phase != null)
-            return;
-
+        if (phase != null) return;
         alert.SetActive(false);
             //Ŭ����~
             // 문 렌더링 끄기
