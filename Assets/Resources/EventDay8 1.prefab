@@ -2084,7 +2084,7 @@ GameObject:
   - component: {fileID: 1023937142509193671}
   - component: {fileID: 3420461391710766543}
   - component: {fileID: 5495816282846019444}
-  - component: {fileID: 1829576626957237601}
+  - component: {fileID: 2291959525185919460}
   m_Layer: 5
   m_Name: button_text
   m_TagString: Untagged
@@ -2208,7 +2208,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1829576626957237601
+--- !u!114 &2291959525185919460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2222,9 +2222,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: GUID:202a62bf45dedc04f8d1bb61438b4371
+      m_TableCollectionName: GUID:53f24263995e7814999c61a5c76e8b28
     m_TableEntryReference:
-      m_KeyId: 1397438895046656
+      m_KeyId: 429759873024
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -2232,7 +2232,19 @@ MonoBehaviour:
   m_FormatArguments: []
   m_UpdateString:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5495816282846019444}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
