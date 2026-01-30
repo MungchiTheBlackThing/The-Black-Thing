@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7306341358375483923}
   - component: {fileID: 7306341358375483932}
-  - component: {fileID: 7306341358375483933}
+  - component: {fileID: -3243915417162826483}
+  - component: {fileID: -8144725499043057175}
   m_Layer: 0
   m_Name: ch_cupdot
   m_TagString: Untagged
@@ -25,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7306341358375483922}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.04, y: -2.85, z: 0}
+  m_LocalPosition: {x: -14, y: -3, z: 0}
   m_LocalScale: {x: 0.877966, y: 0.877966, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7306341358375483932
 SpriteRenderer:
@@ -85,7 +86,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7306341358375483933
+--- !u!114 &-3243915417162826483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7306341358375483922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef30553d4f6a7f4098febe6ae5dfb80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCupDot: 1
+  showFromChapter: 9
+  lastChapter: 12
+--- !u!114 &-8144725499043057175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,4 +113,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cc16f4d00290c4a9f52492ef4cf4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chapter: 000000000000000000000000000000
+  chapter: 000000000000000001010101000000

@@ -288,6 +288,7 @@ public class GameManager : MonoBehaviour
         activeState.Enter(this, dot);
         ApplyPhaseUI(patternState);
         ApplyMoldGateIfNeeded();
+        objectManager?.SettingChapter(Chapter, patternState);
 
         // 1일차 시 페이즈로 처음 진입할 때 다이어리 활성화
         if (patternState == GamePatternState.Play && Chapter == 1 && !pc.IsDiaryUnlockedForChapter1())
@@ -296,7 +297,7 @@ public class GameManager : MonoBehaviour
             pc.UnlockDiaryForChapter1();
             if (ObjectManager != null)
             {
-                ObjectManager.SettingChapter(Chapter);
+                ObjectManager.SettingChapter(Chapter, patternState);
             }
         }
 
@@ -477,8 +478,11 @@ public class GameManager : MonoBehaviour
             yield break; // 엔딩이면 여기서 끝. 아래 Enter/Timer/Sub 절대 돌리면 안 됨!!
         }
         Debug.Log($"초기 스테이트 설정: {patternState}");
+        
         activeState = states[patternState];
         activeState.Enter(this, dot);
+        ApplyPhaseUI(patternState);
+
         subDialogue.gameObject.SetActive(false);
 
         if (phaseTimerCoroutine != null) StopCoroutine(phaseTimerCoroutine);
@@ -500,8 +504,17 @@ public class GameManager : MonoBehaviour
         {
             door.SetDoorForDialogue(true);
         }
-        ApplyPhaseUI(patternState);
         ApplyMoldGateIfNeeded();
+
+        if (patternState == GamePatternState.Sleeping
+            && Chapter == 8
+            && day8 != null
+            && day8.ShouldRun())
+        {
+            Debug.Log("[Day8] Resume trigger on LoadDataAsync");
+            day8.TryStart();   // 내부에서 PausePhaseTimer() 처리하도록 유지
+            yield break;       
+        }
     }
 
     private void RestoreEndingFromSave(PlayerInfo info)

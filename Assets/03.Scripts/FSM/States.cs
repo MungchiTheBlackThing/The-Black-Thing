@@ -50,7 +50,7 @@ public class Watching : GameState, IResetStateInterface
         {
             objectManager = manager.ObjectManager;
         }
-        objectManager.SettingChapter(manager.Chapter);
+        objectManager.SettingChapter(manager.Chapter, manager.Pattern);
 
         EWatching currentPattern = pattern[manager.Chapter];
         

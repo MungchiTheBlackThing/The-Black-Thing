@@ -71,21 +71,21 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 4,48,70,0,Dot,Sub,anim_sleepy_spiderweb,text,듣지 않는 상대와 함께 있는 건\n혼자일 때보다 더 외로운 일이래.,“Being with someone who doesn’t\nlisten is lonelier than being alone.”,71,,,,Sub_Ch8,S8_L0070
 4,48,71,0,Dot,Sub,,text,...,...,72,,,,Sub_Ch8,S8_L0071
 4,48,72,0,Dot,Sub,,text,놀랍도록 철학적인 말이야.,It’s beautifully profound.,73,,,,Sub_Ch8,S8_L0072
-4,48,73,0,Player,Sub,,text,무슨 외로움인지 알 것 같아.|그런 외로움도 있을 수 있구나.,I think I know what loneliness that is.|I see there is such a loneliness.,74,,,,Sub_Ch8,S8_L0073
+4,48,73,0,Player,Sub,,selection,무슨 외로움인지 알 것 같아.|그런 외로움도 있을 수 있구나.,I think I know what loneliness that is.|I see there is such a loneliness.,74|74,,,,Sub_Ch8,S8_L0073
 4,48,74,0,Dot,Sub,,text,......,......,75,,,,Sub_Ch8,S8_L0074
 4,48,75,0,Player,Sub,,text,......,......,76,,,,Sub_Ch8,S8_L0075
-4,48,76,0,Dot,Sub,,text,"있지, 혼자 있을 때면 난 마음을 풀어\n헤치고 상상 속을 거닐어.","When I’m alone, I let my mind\nwander about my imagination.",77,,,,Sub_Ch8,S8_L0076
-4,48,77,0,Dot,Sub,,text,비 대신 반짝이가 내리는 낯선\n행성으로 여행을 떠나기도 하고...,"I travel to foreign planets\nwhere it rains glitter,",78,,,,Sub_Ch8,S8_L0077
+4,48,76,0,Dot,Sub,anim_sleep,text,"있지, 혼자 있을 때면 난 마음을 풀어\n헤치고 상상 속을 거닐어.","When I’m alone, I let my mind\nwander about my imagination.",77,,,,Sub_Ch8,S8_L0076
+4,48,77,0,Dot,Sub,anim_sleep,text,비 대신 반짝이가 내리는 낯선\n행성으로 여행을 떠나기도 하고...,"I travel to foreign planets\nwhere it rains glitter,",78,,,,Sub_Ch8,S8_L0077
 4,48,78,0,Dot,Sub,anim_sleep,text,"심해 아귀와의 깜깜한 담소를 즐기기도 하고,\n1880년대의 어린 소녀가 되어 보기도 해.","chat with anglerfish in the deep dark ocean,\nand live as a little girl in the 1880s.",79,,,,Sub_Ch8,S8_L0078
 4,48,79,0,Dot,Sub,,text,"그리고 너와 함께 있을 때면,\n<nickname> 너에게 그 모든 이야길 들려 주는 거야.","And when I’m with you, <nickname>,\nI tell you all those stories.",80,,,,Sub_Ch8,S8_L0079
-4,48,80,0,Dot,Sub,anim_sleepy_spiderweb,text,"내 사색, 질문, 고해, 그 모든 걸.","My musings, questions and\nconfessions, all of it.",81,,,,Sub_Ch8,S8_L0080
-4,48,81,0,Dot,Sub,,text,...... 이렇게 영양가 없는\n잠꼬대일지라도 말야.,...... Even though it sometimes is trivial drivel like this.,82,,,,Sub_Ch8,S8_L0081
+4,48,80,0,Dot,Sub,,text,"내 사색, 질문, 고해, 그 모든 걸.","My musings, questions and\nconfessions, all of it.",81,,,,Sub_Ch8,S8_L0080
+4,48,81,0,Dot,Sub,anim_sleepy_spiderweb,text,...... 이렇게 영양가 없는\n잠꼬대일지라도 말야.,...... Even though it sometimes is trivial drivel like this.,82,,,,Sub_Ch8,S8_L0081
 4,48,82,0,Player,Sub,,text,(가만히 뭉치의 이야기를 들어 주는 게 좋겠어.),"(Seems it would be good to listen to Dot, quietly.)",83,,,,Sub_Ch8,S8_L0082
-4,48,83,0,Dot,Sub,,text,"... <nickname>, 고마워.","... <nickname>, thank you.",84,,,,Sub_Ch8,S8_L0083
+4,48,83,0,Dot,Sub,anim_sleep,text,"... <nickname>, 고마워.","... <nickname>, thank you.",84,,,,Sub_Ch8,S8_L0083
 4,48,84,0,Dot,Sub,anim_sleep,text,그리고 나 역시 절대 너를 외롭게 두지 않아.,And I too would never leave you lonely.,85,,,,Sub_Ch8,S8_L0084
 4,48,85,0,Dot,Sub,,text,알고 있지?,"You know that, right?",86,,,,Sub_Ch8,S8_L0085
-4,48,86,0,Dot,Sub,anim_sleepy_spiderweb,text,...,...,87,,,,Sub_Ch8,S8_L0086
+4,48,86,0,Dot,Sub,anim_sleep,text,...,...,87,,,,Sub_Ch8,S8_L0086
 4,48,87,0,Dot,Sub,,text,난 언제나 들을 준비가\n되어 있으니까.,I’m always ready to listen.,88,,,,Sub_Ch8,S8_L0087
 4,48,88,0,Player,Sub,,text,"...... 응, 뭉치야.","...... I know, Dot.",89,,,,Sub_Ch8,S8_L0088
-4,48,89,0,Dot,Sub,,text,나의 그늘진 모퉁이에서... 또...\n나의 끈적한 거미줄 침대 위에서,In my shaded corner... and on\nmy sticky spiderweb bed...,90,,,,Sub_Ch8,S8_L0089
+4,48,89,0,Dot,Sub,anim_sleep,text,나의 그늘진 모퉁이에서... 또...\n나의 끈적한 거미줄 침대 위에서,In my shaded corner... and on\nmy sticky spiderweb bed...,90,,,,Sub_Ch8,S8_L0089
 4,48,90,0,Dot,Sub,anim_sleep,text,기다리고 있을게.\n나는 언제나... 들을 준비가...,I’ll be waiting. I’ll be ready...\nto listen... always.,,,anim_sleep,,Sub_Ch8,S8_L0090

@@ -252,6 +252,17 @@ public class ObjectManager : MonoBehaviour
                     active = active && ch_bread.ShouldBeActive(isCompleted);
                 }
 
+                // cup / cupdot 처리 로직
+
+                // 현재 페이즈 얻기 (pc가 들고있는 currentPhase int를 enum으로)
+                var phase = (GamePatternState)pc.GetCurrentPhase();
+
+                var cupSwap = newObj.GetComponent<ChCupSwapObject>();
+                if (cupSwap != null)
+                {
+                    active = active && cupSwap.ShouldBeActive(chapter, phase);
+                }
+
                 // Diary 활성화 로직 처리
                 var diary = newObj.GetComponent<DiaryController>();
                 if (diary != null)
@@ -370,7 +381,7 @@ public class ObjectManager : MonoBehaviour
     }
 
     //한 챕터를 넘겼을 때 호출되는 함수, 즉 Phase Watching일 때 호출한다. 
-    public void SettingChapter(int chapter)
+    public void SettingChapter(int chapter, GamePatternState phase)
     {
         List<GameObject> values = pool.GetValues();
 
@@ -388,6 +399,11 @@ public class ObjectManager : MonoBehaviour
             {
                 active = active && ch_bread.ShouldBeActive(isCompleted);
             }
+            // cup / cupdot 예외
+
+            var cupSwap = value.GetComponent<ChCupSwapObject>();
+            if (cupSwap != null)
+                active = active && cupSwap.ShouldBeActive(chapter, phase);
 
             // Diary 활성화 로직 처리
             var diary = value.GetComponent<DiaryController>();

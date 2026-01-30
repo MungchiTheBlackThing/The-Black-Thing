@@ -290,7 +290,7 @@ public class SubDialogue : MonoBehaviour
             if (text.Contains("<nickname>"))
             {
                 string playerName = playerController.GetNickName();
-                text = text.Replace("<name>", playerName);
+                text = text.Replace("<nickname>", playerName);
             }
         }
         return text;
