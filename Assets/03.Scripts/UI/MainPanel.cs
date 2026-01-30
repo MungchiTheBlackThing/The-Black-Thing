@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using Assets.Script.DialClass;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization.Components;
 
 public class MainPanel : MonoBehaviour
 {
@@ -40,6 +41,10 @@ public class MainPanel : MonoBehaviour
     [SerializeField] string backtag = "";
     int backChoiceIndex = -1;
     int backBranchStartIndex = -1;
+    int backVideoIndex = -1;
+
+    private LocalizeStringEvent backMsgLocalize;
+    private Coroutine backMsgRoutine;
 
     public int dialogueIndex = 0;
     public int Day = 0;
@@ -63,6 +68,12 @@ public class MainPanel : MonoBehaviour
     void OnEnable()
     {
         mainDialogue = (MainDialogue)gameManager.CurrentState;
+        backindex = -1;
+        backtag = "";
+        backChoiceIndex = -1;
+        backBranchStartIndex = -1;
+        backVideoIndex = -1;
+        
         MainClick = GameObject.Find("MainClick");
         DotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
         LANGUAGE = (int)pc.GetLanguage();
@@ -363,6 +374,8 @@ public class MainPanel : MonoBehaviour
         string animScene = mainDial.AnimScene;
         string background = mainDial.Background;
         bool waitVideo = animScene == "1";
+        if (waitVideo)
+            backVideoIndex = dialogueIndex;
 
         if (waitVideo)
         {
@@ -533,36 +546,49 @@ public class MainPanel : MonoBehaviour
 
     public void Maincontinue()
     {
-        if (dialogueIndex <= 0)
+        if (dialogueIndex <= 0) return;
+        // 1) 우선 1: 영상 라인 되감기 방지 (영상 다음 줄에서 Back 누르면 막기)
+        if (backVideoIndex >= 0 && dialogueIndex <= backVideoIndex + 1)
         {
+            ShowBackMessage("SystemUIText", "lock_video"); 
             return;
         }
-
-        if (dialogueIndex > backBranchStartIndex)
+        // 2) 선택 분기 전이면 킵고잉
+        if (backBranchStartIndex < 0)
         {
-            Debug.Log("뒤로가기");
             dialogueIndex--;
             ShowNextDialogue();
             return;
         }
 
-        if (dialogueIndex == backBranchStartIndex)
+        // 3) 선택 확정 후 backBranchStartIndex 이전으로 못 감
+        // backBranchStartIndex = 선택 후 점프한 첫 줄(nextIndex)
+        if (dialogueIndex > backBranchStartIndex)
         {
+            dialogueIndex--;
+            ShowNextDialogue();
             return;
         }
 
-        if (dialogueIndex <= backindex + 1)
-        {
-            if (!string.IsNullOrEmpty(backtag)) pc.DownArcheType(backtag);
-            ShowNextDialogue();
-            StartCoroutine(backmessage());
-        }
+        ShowBackMessage("SystemUIText", "lock_select");
+    }
+
+    private void ShowBackMessage(string table, string key)
+    {
+        if (!backMsgLocalize)
+            backMsgLocalize = BackBut.transform.GetChild(0).GetComponent<LocalizeStringEvent>();
+
+        backMsgLocalize.StringReference.TableReference = table;
+        backMsgLocalize.StringReference.TableEntryReference = key;
+        backMsgLocalize.RefreshString();
+
+        if (backMsgRoutine != null) StopCoroutine(backMsgRoutine);
+        backMsgRoutine = StartCoroutine(backmessage());
     }
 
     private IEnumerator backmessage()
     {
         Transform child = BackBut.transform.GetChild(0);
-
         child.gameObject.SetActive(true);
         yield return new WaitForSeconds(2f);
         child.gameObject.SetActive(false);
