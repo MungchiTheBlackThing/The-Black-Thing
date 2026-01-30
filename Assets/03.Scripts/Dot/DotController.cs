@@ -526,6 +526,7 @@ public class DotController : MonoBehaviour
         if (subAlert.activeSelf)
         {
             subDialogue.SetActive(true);
+            RefreshDustState(this.animKey); 
             string fileName = "sub_ch" + Chapter;
             Debug.Log(fileName);
             subDialogue.GetComponent<SubDialogue>().StartSub(fileName);
@@ -565,6 +566,7 @@ public class DotController : MonoBehaviour
             case AlertType.Sub:
                 // 기존 subAlert 분기 코드 그대로
                 subDialogue.SetActive(true);
+                RefreshDustState(this.animKey); 
                 string fileName = "sub_ch" + Chapter;
                 subDialogue.GetComponent<SubDialogue>().StartSub(fileName);
             
@@ -702,27 +704,32 @@ public class DotController : MonoBehaviour
         boxcollider.size = spriteSize;
         boxcollider.offset = spriteRenderer.sprite.bounds.center;
 
-        checksleep(OutAnimKey);
+        RefreshDustState(OutAnimKey);
     }
-    public void checksleep(string OutAnimKey)
+
+    public void RefreshDustState(string currentAnimKey)
     {
-        if (Dust == null)
-            return;
+        if (Dust == null) return;
 
-        var spawner = Dust.GetComponent<DustSpawner>();
-        if (spawner == null)
-            return;
+        // SubDialogue 패널이 켜져 있으면 무조건 OFF
+        bool blockBySubPanel = (subDialogue != null && subDialogue.activeSelf);
 
-        // anim_sleep만 예외로 유지, 나머지는 전부 정지
-        if (OutAnimKey == "anim_sleep")
+        bool shouldEnable = (currentAnimKey == "anim_sleep") && !blockBySubPanel;
+
+        if (shouldEnable)
         {
-            spawner.ResumeSpawner();
+            if (!Dust.activeSelf) Dust.SetActive(true);
+
+            var spawner = Dust.GetComponent<DustSpawner>();
+            if (spawner != null) spawner.ResumeSpawner();
         }
         else
         {
-            spawner.PauseSpawner();
+            // anim_sleep 아니면 DustSpawner 자체 OFF
+            if (Dust.activeSelf) Dust.SetActive(false);
         }
     }
+
 
     public void ChangeState(DotPatternState state = DotPatternState.Default, string OutAnimKey = "", float OutPos = -1, string OutExpression = "", bool force = false)
     {

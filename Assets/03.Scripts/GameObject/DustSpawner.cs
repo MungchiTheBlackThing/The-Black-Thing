@@ -5,227 +5,214 @@ using UnityEngine;
 
 public class DustSpawner : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] dustPrefab;
-
-    [SerializeField]
-    Dictionary<GameObject, Vector3> spawnDust;
-
-    [SerializeField]
-    int maxSpawnCnt;
-
-    [SerializeField]
-    [Tooltip("¹¶Ä¡¸¦ ±âÁØÀ¸·Î ÁÂÃø ¿ìÃøÀ¸·Î ³Êºñ¸¸Å­ ÀÌµ¿")]
-    float width;
-
-    [SerializeField]
-    [Tooltip("¹¶Ä¡¸¦ ±âÁØÀ¸·Î »ó´Ü¸¸Å­ ÀÌµ¿")]
-    float height;
-
-    [SerializeField]
-    [Tooltip("½ÇÁ¦ Àá¸ÕÁö »ý¼º °³¼ö")]
-    int spawnCount = 1;
-
-    [SerializeField]
-    [Tooltip("½ÇÁ¦ È°¼ºÈ­µÈ Àá¸ÕÁöÀÇ ÃÖ´ë °³¼ö")]
-    int activeMaxDustCnt = 10;
-
-    [SerializeField]
-    [Tooltip("È°¼ºÈ­ÇÏ±â À§ÇÑ ½Ã°£ ÃÊ")]
-    float randomSec;
-
-    [SerializeField]
-    [Tooltip("µî¼Óµµ/µî°¡¼Óµµ¿¡ »ç¿ëÇÒ ÀÏÁ¤ÇÑ ¿îµ¿ÀÇ ¼Óµµ°ª")]
-    float velocity;
+    [SerializeField] private GameObject[] dustPrefab;
+    [SerializeField] Dictionary<GameObject, Vector3> spawnDust;
+    [SerializeField] int maxSpawnCnt;
+    [SerializeField] float width;
+    [SerializeField] float height;
+    [SerializeField] int spawnCount = 1;
+    [SerializeField] int activeMaxDustCnt = 10;
+    [SerializeField] float randomSec;
+    [SerializeField] float velocity;
 
     const float duration = 1.0f;
-
     const float accelerationY = -600f;
 
     private bool isPaused = false;
 
-
     Vector2 initPos;
-
     int activeDustCnt;
-
     Queue<GameObject> order;
     const float spawnInterval = 2.0f;
-    DustSpawner() 
+
+    private bool _initialized = false;
+
+    DustSpawner()
     {
         order = new Queue<GameObject>();
         spawnDust = new Dictionary<GameObject, Vector3>();
     }
 
-    private void OnEnable()
+    private void Awake()
     {
-        initPos = transform.position;
-        Debug.Log(initPos);
-
-        activeDustCnt = 0;
-
-        SpawnDust();
-
-        if (spawnDust.Count != 0)
-            InvokeRepeating("DropRandom", 0.5f, spawnInterval);
+        InitOnce();
     }
 
-    /*
-     Àá¸ÕÁö »ý¼º °úÁ¤
-     */
-    void SpawnDust()
+    private void InitOnce()
     {
-        for (int i = 0; i < maxSpawnCnt; i++)
+        if (_initialized) return;
+
+        initPos = transform.position;
+        activeDustCnt = 0;
+
+        SpawnDust();          // âœ… í•œ ë²ˆë§Œ ìƒì„±
+        _initialized = true;
+    }
+
+    private void OnEnable()
+    {
+        InitOnce();
+
+        // ìž¬ì§„ìž… ì‹œ ìƒíƒœ ë¦¬ì…‹(ê¸°ì¡´ ë¨¼ì§€ë“¤ ìˆ¨ê¹€ + ì¹´ìš´íŠ¸/í ì´ˆê¸°í™”)
+        ResetRuntimeState();
+
+        // anim_sleepì¼ ë•Œë§Œ ì¼œì§ˆ ê±°ë¼ ê¸°ë³¸ì€ Resumeë¡œ ì‹œìž‘
+        isPaused = false;
+        StartSpawnLoop();
+    }
+
+    private void ResetRuntimeState()
+    {
+        CancelInvoke("DropRandom");
+        StopAllCoroutines();
+
+        order.Clear();
+        activeDustCnt = 0;
+
+        // ì´ë¯¸ ë§Œë“¤ì–´ì§„ ë¨¼ì§€ ì „ë¶€ ë¹„í™œì„±í™”
+        foreach (var kv in spawnDust)
         {
-            float randomX = Random.Range(initPos.x - width, initPos.x + width); //°¡¿îµ¥ ¹¶Ä¡¸¦ ±âÁØÀ¸·Î ¿ÞÂÊ, ¿À¸¥ÂÊÀ» ÀÇ¹Ì
-            Vector3 spawnPos = new Vector3(randomX, initPos.y + height, 0f); //2DÀÌ±â ¶§¹®¿¡ Z°ªÀº ¾øÀ½.
-            int idx = i / spawnCount;
-            GameObject dustObj = Instantiate(dustPrefab[idx], spawnPos, Quaternion.identity, transform);
-            dustObj.SetActive(false);
-            spawnDust.Add(dustObj, spawnPos); //ÃÊ±âÈ­ À§Ä¡µµ ÀúÀå
+            if (kv.Key != null) kv.Key.SetActive(false);
         }
     }
 
-    /*
-     * Àá¸ÕÁö°¡ ·£´ýÀ¸·Î È°¼ºÈ­, ºñÈ°¼ºÈ­ ÇÑ´Ù.
-     * ´ë·« nÃÊ¿¡ ÇÑ¹ø¾¿
-     */
+    void SpawnDust()
+    {
+        // (ì•ˆì „) ì´ë¯¸ ë­”ê°€ ë§Œë“¤ì–´ì ¸ ìžˆìœ¼ë©´ ì¤‘ë³µ ìƒì„± ë°©ì§€
+        if (spawnDust.Count > 0) return;
+
+        for (int i = 0; i < maxSpawnCnt; i++)
+        {
+            float randomX = UnityEngine.Random.Range(initPos.x - width, initPos.x + width);
+            Vector3 spawnPos = new Vector3(randomX, initPos.y + height, 0f);
+
+            int idx = i / spawnCount;
+            idx = Mathf.Clamp(idx, 0, dustPrefab.Length - 1);
+
+            GameObject dustObj = Instantiate(dustPrefab[idx], spawnPos, Quaternion.identity, transform);
+            dustObj.SetActive(false);
+            spawnDust.Add(dustObj, spawnPos);
+        }
+    }
+
     void DropRandom()
     {
-
-        //½ÇÁ¦ È°¼ºÈ­µÈ °³¼ö°¡ ÃÖ´ë °ªÀ» ³ÑÀ¸¸é, ºñÈ°¼ºÈ­ ½ÃÅ²´Ù.
         if (activeDustCnt >= activeMaxDustCnt)
         {
             DeactiveOldestDust();
             return;
         }
-        //ºñÈ°¼ºÈ­µÈ ¿ÀºêÁ§Æ® Áß ·£´ýÀ¸·Î È°¼ºÈ­ ½ÃÅ²´Ù.
         ActiveRandomDust();
     }
 
-
-    /*
-     *  °¡Àå ¿À·¡µÈ È°¼ºÈ­ ¿ÀºêÁ§Æ®¸¦ ºñÈ°¼ºÈ­·Î ¸¸µç´Ù.
-     */
     void DeactiveOldestDust()
     {
-        while(activeDustCnt >= activeMaxDustCnt)
+        while (activeDustCnt >= activeMaxDustCnt && order.Count > 0)
         {
-            GameObject dust = order.Dequeue(); //´­·¯¼­ ÀÌ¹Ì È°¼ºÈ­°¡ ²¨Á®ÀÖÀ» ¼öµµ ÀÖÀ½.
-            if (dust.activeSelf)
-                Deactive(dust);
+            GameObject dust = order.Dequeue();
+            if (dust != null && dust.activeSelf) Deactive(dust);
         }
     }
 
     public void Deactive(GameObject gameObject)
     {
+        if (gameObject == null) return;
         gameObject.SetActive(false);
-        activeDustCnt--;
+        activeDustCnt = Mathf.Max(0, activeDustCnt - 1);
     }
-
-    /*
-     * ·£´ýÀ¸·Î ¿ÀºêÁ§Æ®¸¦ È°¼ºÈ­ ½ÃÅ²´Ù. 
-     */
 
     void ActiveRandomDust()
     {
         List<GameObject> dusts = GetDeactiveDusts();
+        if (dusts.Count <= 0) return;
 
-        if(dusts.Count <= 0)
-        {
-            Debug.LogError("Current Deactive Dust is Null");
-            return;
-        }
-
-        int randomIndex = Random.RandomRange(1, dusts.Count);
+        // ê¸°ì¡´ ì½”ë“œ RandomRange(1, count) ëŠ” 0ë²ˆì„ ì˜ì›ížˆ ëª» ë½‘ê³ ,
+        // count-1 ì¸ë±ìŠ¤ë„ ìƒí™©ì— ë”°ë¼ ëˆ„ë½ë  ìˆ˜ ìžˆìŒ. 0..count-1 ë¡œ ê³ ì •.
+        int randomIndex = UnityEngine.Random.Range(0, dusts.Count);
 
         GameObject randomDust = dusts[randomIndex];
-        //È°¼ºÈ­ ½ÃÅ°±â Àü¿¡ ÇØ´ç °ªÀÇ À§Ä¡·Î ¼¼ÆÃ
         randomDust.transform.position = spawnDust[randomDust];
         randomDust.SetActive(true);
         order.Enqueue(randomDust);
-        //¿òÁ÷ÀÎ´Ù.
+
         StartCoroutine(MoveDust(randomDust.transform, spawnDust[randomDust]));
         activeDustCnt++;
     }
 
-    /*
-     * ºñÈ°¼ºÈ­ÀÎ dust ¿ÀºêÁ§Æ®¸¦ ¸ðµÎ °¡Á®¿Â´Ù.
-     */
-    
     List<GameObject> GetDeactiveDusts()
     {
         List<GameObject> list = new List<GameObject>();
-
-        foreach(var dust in spawnDust)
+        foreach (var dust in spawnDust)
         {
-            if(dust.Key.activeSelf == false)
-            {
-                list.Add(dust.Key);
-            }
+            if (dust.Key != null && !dust.Key.activeSelf) list.Add(dust.Key);
         }
-
         return list;
     }
-
-    /*
-     * µî¼Óµµ ¿îµ¿À» Àû¿ëÇØ¼­ ÀÚ¿¬½º·¯¿î ¶³¾îÁüÀ» ±¸Çö
-     */
 
     IEnumerator MoveDust(Transform dust, Vector3 position)
     {
         float elapsedTime = 0f;
-        Vector3 initPos = position;
+        Vector3 initPosLocal = position;
+        int direction = UnityEngine.Random.Range(0, 2) * 2 - 1;
 
-        int direction = Random.Range(0, 2) * 2 - 1; //¿ÞÂÊ, ¿À¸¥ÂÊÀ» ¹æÇâ ¼³Á¤
-
-        while(elapsedTime < duration)
+        while (elapsedTime < duration)
         {
-            float displacementX = velocity/2 * elapsedTime * direction; //¼Óµµ * ½Ã°£ * ¹æÇâ , ¼öÆò ¹æÇâÀº µî¼Óµµ ¿îµ¿À» ÁøÇà
-            float displacementY = 0.8f * velocity * elapsedTime * elapsedTime; //¼öÁ÷¹æÇâÀ¸·Î, ÀÏÁ¤ °¡¼Óµµ¿¡ ÀÇÇØ µî°¡¼Óµµ ¿îµ¿À» ÁøÇà
+            float displacementX = velocity / 2 * elapsedTime * direction;
+            float displacementY = 0.8f * velocity * elapsedTime * elapsedTime;
 
-            dust.position = initPos + new Vector3(displacementX, -displacementY, 0);
+            if (dust != null)
+                dust.position = initPosLocal + new Vector3(displacementX, -displacementY, 0);
 
-            elapsedTime += Time.deltaTime; //ÁøÇà ½Ã°£
-
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
     }
 
     private void OnDisable()
     {
-        spawnDust.Clear();
-        order.Clear();
-
-        //ÄÚ·çÆ¾À» Á¾·áÇÑ´Ù.
-        StopAllCoroutines();
         CancelInvoke("DropRandom");
+        StopAllCoroutines();
+        // ì—¬ê¸°ì„œëŠ” Destroy ì•ˆ í•¨ (í’€ ìœ ì§€)
+        // ë‹¤ìŒ OnEnableì—ì„œ ResetRuntimeStateê°€ ì •ë¦¬
     }
 
     public void PauseSpawner()
     {
-        if (isPaused)
-            return;
-
+        if (isPaused) return;
         isPaused = true;
         CancelInvoke("DropRandom");
     }
 
     public void ResumeSpawner()
     {
-        if (!isPaused)
-            return;
-
+        if (!isPaused) return;
         isPaused = false;
         StartSpawnLoop();
     }
 
     void StartSpawnLoop()
     {
-        if (isPaused)
-            return;
+        if (isPaused) return;
+        if (spawnDust.Count == 0) return;
 
         if (!IsInvoking("DropRandom"))
             InvokeRepeating("DropRandom", 0.5f, spawnInterval);
+    }
+
+    // ì™¸ë¶€ì—ì„œ ì™„ì „ ì¢…ë£Œ
+    public void PauseAndClear()
+    {
+        isPaused = true;
+        CancelInvoke("DropRandom");
+        StopAllCoroutines();
+
+        foreach (var kv in spawnDust)
+        {
+            if (kv.Key != null) kv.Key.SetActive(false);
+        }
+        order.Clear();
+        activeDustCnt = 0;
+
+        gameObject.SetActive(false);
     }
 }

@@ -406,7 +406,8 @@ public class SubDialogue : MonoBehaviour
         // 다음 서브 이벤트 타이머 시작
         manager.ShowSubDial();
         this.gameObject.SetActive(false);
-
+        if (dot != null)
+            dot.RefreshDustState(dot.AnimKey);
         
     }
 
