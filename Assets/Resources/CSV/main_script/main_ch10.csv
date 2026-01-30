@@ -110,13 +110,13 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 3,56,109,main_door_open,Dot,Main,,,text,살고 싶은데도 스스로를 해칠 수가 있는 거야?,How can you want to live\nand still hurt yourself?,110,,,,Main_Ch10,M10_L0109
 3,56,110,main_door_open,Dot,Main,,,text,죽고 싶지 않아도 자기를\n죽도록 미워할 수 있는 거야?,Can you hate yourself to death\nand still not want to die?,111,,,,Main_Ch10,M10_L0110
 3,56,111,main_door_open,Dot,Main,body_move,face_omg,text,"어째서? 어째서? 알고 싶지 않아.\n하지만 알고 있다면 부디 알려 줘, <nickname>.","How? How? I don’t want to know. But if\nyou do know, please tell me, <nickname>.",112,,,,Main_Ch10,M10_L0111
-3,56,112,main_door_open,Player,Main,,,selection,수많은 모순들 중 하나일 뿐이야.|(그저 함께 침묵한다.),Just one of many contradictions.|(Remain silent with Dot.),113|116,,,active|passive,Main_Ch10,M10_L0112
-3,56,113,main_door_open,Player,Main,,,text,정말 죽고 싶었다면 다른 방법을 썼을 거야.,"If he really wanted to die, he\nwould’ve used another method.",114,,,,Main_Ch10,M10_L0113
-3,56,114,main_door_open,Player,Main,,,text,이대로 죽고 싶지는 않기 때문에\n자기를 죽도록 미워한 거야.,He hated himself so because\nhe didn’t want to die.,115,,,,Main_Ch10,M10_L0114
-3,56,115,main_door_open,Player,Main,,,text,어쩌면 반대일지도. 죽도록 밉지만\n이대로 죽고 싶지는 않았던 나약한 마음...,"Or maybe the opposite. He hated himself,\nbut didn’t want to die in spite of it.",120,,,,Main_Ch10,M10_L0115
-3,56,116,main_door_open,Dot,Main,,,text,......,...,117,,,,Main_Ch10,M10_L0116
-3,56,117,main_door_open,Player,Main,,,text,무엇도 확실한 건 없어.\n감히 말을 얹을 수는 있을까?,Nothing is for certain.\nAnd I won’t dare judge.,118,,,,Main_Ch10,M10_L0117
-3,56,118,main_door_open,Player,Main,,,text,하지만 인간으로서 하나 정도는\n말해 줄 수 있을 것 같아.,But I have something to add\nas a fellow human.,119,,,,Main_Ch10,M10_L0118
+3,56,112,main_door_open,Player,Main,,,selection,수많은 모순들 중 하나 아닐까.|괴로움은... 다양한 모습으로 찾아오니까.,I guess it's just one of many contradictions.|Suffering doesn’t always make sense.,113|114,,,active|passive,Main_Ch10,M10_L0112
+3,56,113,main_door_open,Player,Main,,,text,정말 죽고 싶었다면 다른 방법을 썼을 거야.,"If he really wanted to die, he\nwould’ve used another method.",115,,,,Main_Ch10,M10_L0113
+3,56,114,main_door_open,Player,Main,,,text,그는 단지 필사적이었던 게 아닐까.,Maybe he was desperate.,115,,,,Main_Ch10,M10_L0114
+3,56,115,main_door_open,Player,Main,,,text,이대로 죽고 싶지는 않기 때문에\n자기를 죽도록 미워한 거야.,He hated himself so because\nhe didn’t want to die.,116,,,,Main_Ch10,M10_L0115
+3,56,116,main_door_open,Dot,Main,,,text,어쩌면 반대일지도. 죽도록 밉지만\n이대로 죽고 싶지는 않았던 나약한 마음...,"Or maybe the opposite. He hated himself,\nbut didn’t want to die in spite of it.",117,,,,Main_Ch10,M10_L0116
+3,56,117,main_door_open,Dot,Main,,,text,......,......,118,,,,Main_Ch10,M10_L0117
+3,56,118,main_door_open,Player,Main,,,text,무엇도 확실한 건 없지만... 같은 인간으로서\n하나 정도는 말해 줄 수 있을 것 같아.,"Nothing is certain.\nBut as a fellow human, I can add one thing.",119,,,,Main_Ch10,M10_L0118
 3,56,119,main_door_open,Dot,Main,body_move,,text,어떤 거야?,What?,120,,,,Main_Ch10,M10_L0119
 3,56,120,main_door_open,Player,Main,,,text,정말... ‘그럴 수도 있어.’ 그뿐이야.,<i>It can happen.</i> That’s all.,121,,,,Main_Ch10,M10_L0120
 3,56,121,main_door_open,Dot,Main,,,text,...,...,122,,,,Main_Ch10,M10_L0121
