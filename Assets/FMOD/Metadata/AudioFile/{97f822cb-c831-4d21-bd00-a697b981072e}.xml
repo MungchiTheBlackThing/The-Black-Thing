@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{badfc5cb-553c-41fa-89f8-9c868a322d5b}">
+	<object class="AudioFile" id="{97f822cb-c831-4d21-bd00-a697b981072e}">
 		<property name="assetPath">
-			<value>sfx_dialogue_select.mp3</value>
+			<value>sfx_cello_bubble.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.47020408163265304</value>
+			<value>0.86399999999999999</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{43364ee9-4226-457d-872d-c9efc1122b1e}</destination>
