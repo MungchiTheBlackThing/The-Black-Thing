@@ -126,6 +126,8 @@ public class DotController : MonoBehaviour
     [SerializeField]
     BoxCollider2D boxcollider;
 
+    public static event Action DiaryGateChanged; // 뭉치 상태 변경 쏴 주기 (일기용)
+
     private bool isAfterScriptPlaying = false;
     private bool isSubDialogueAnimPlaying = false;
     
@@ -586,6 +588,7 @@ public class DotController : MonoBehaviour
         {
             ChangeState(DotPatternState.Default, animKey, position, "", true);
         }
+        DiaryGateChanged?.Invoke();
     }
 
     public void TriggerMain(bool isActive)
@@ -595,6 +598,7 @@ public class DotController : MonoBehaviour
         mainAlert.SetActive(isActive);
         /*여기서 OnClick 함수도 연결해준다.*/
         //OutPos 가 있다면 해당 Position으로 바껴야함.
+        DiaryGateChanged?.Invoke();
     }
     public void TriggerPlay(bool isActive)
     {
@@ -603,6 +607,7 @@ public class DotController : MonoBehaviour
         playAlert.SetActive(isActive);
         /*여기서 OnClick 함수도 연결해준다.*/
         //OutPos 가 있다면 해당 Position으로 바껴야함.
+        DiaryGateChanged?.Invoke();
     }
 
     public void alertOff()
@@ -634,6 +639,8 @@ public class DotController : MonoBehaviour
 
     private void _Internal_SetAnimation(DotPatternState state, string OutAnimKey, float OutPos, string OutExpression)
     {
+        string prevAnim = animKey; // 필드 백업(바뀌기 전)
+
         Debug.Log($"애니메이션 함수 호출: {new System.Diagnostics.StackTrace().GetFrame(1).GetMethod().Name}");
         Debug.Log("키: " + OutAnimKey + " 표현: " + OutExpression + " 위치: " + OutPos);
         position = OutPos;
@@ -704,7 +711,19 @@ public class DotController : MonoBehaviour
         boxcollider.size = spriteSize;
         boxcollider.offset = spriteRenderer.sprite.bounds.center;
 
-        RefreshDustState(OutAnimKey);
+            
+        if (!string.IsNullOrEmpty(OutAnimKey))
+        {
+            AnimKey = OutAnimKey; // 여기서 animKey 필드가 바뀜
+            // animator.Play...
+        }
+
+        if (prevAnim != AnimKey)
+        {
+            RefreshDustState(animKey);
+            DiaryGateChanged?.Invoke();
+        }
+        
     }
 
     public void RefreshDustState(string currentAnimKey)

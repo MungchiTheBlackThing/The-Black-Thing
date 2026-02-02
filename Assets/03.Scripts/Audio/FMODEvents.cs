@@ -14,6 +14,8 @@ public class FMODEvents : Singleton<FMODEvents>
     [field: SerializeField] public EventReference checklistSet { get; private set; }
     [field: SerializeField] public EventReference moonnote { get; private set; }
     [field: SerializeField] public EventReference buttonClick { get; private set; }
+    
+    [field: SerializeField] public EventReference iconClick { get; private set; }
     [field: SerializeField] public EventReference lockClick { get; private set; }
 
     [field: Header("Object")]
@@ -21,6 +23,7 @@ public class FMODEvents : Singleton<FMODEvents>
     [field: SerializeField] public EventReference hourglass { get; private set; }
     [field: SerializeField] public EventReference dreamcatcher { get; private set; }
     [field: SerializeField] public EventReference door { get; private set; }
+
     [field: SerializeField] public EventReference note { get; private set; }
     [field: SerializeField] public EventReference binocular { get; private set; }
     [field: SerializeField] public EventReference diary { get; private set; }

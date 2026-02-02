@@ -11,10 +11,11 @@ public class UITutorial : MonoBehaviour
     [SerializeField] GameObject progressBut;
     [SerializeField] ProgressUIController progressUIController;
     [SerializeField] GameObject icon;
-    [SerializeField] GameObject Ch1;
     [SerializeField] GameObject DayProgress;
     [SerializeField] GameObject Subicon;
     [SerializeField] PlayerController player;
+    [SerializeField] private GameObject TutoCh1Object;
+
     CanvasGroup tutorialMaskGroup;
     CanvasGroup Spider;
     CanvasGroup Progress;
@@ -27,6 +28,10 @@ public class UITutorial : MonoBehaviour
     private bool G4 = false;
     private bool G5 = false;
     private bool G6 = false;
+
+    private bool _guide1Ready = false;     // Guide1을 정상적으로 시작했는지
+    private bool _guide1UIShown = false;   // Guide1의 Guideline[0]이 실제로 켜졌는지(보험)
+
     int index = 0;
     // Start is called before the first frame update
     void Awake()
@@ -57,11 +62,13 @@ public class UITutorial : MonoBehaviour
         G6 = false;
         if (progressUIController) progressUIController.guide1 = false;
         if (progressUIController) progressUIController.guide2 = false;
+        _guide1Ready = false;
+        _guide1UIShown = false;
     }
 
     private void Update()
     {
-        if (!G2 && MenuController.isOpening)
+        if (!G2 && _guide1Ready && _guide1UIShown && MenuController.isOpening)
         {
             Guide2();
             G2 = true;  // �� �� ����� �Ŀ��� ����
@@ -92,7 +99,9 @@ public class UITutorial : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Guideline[0].SetActive(true);
+        _guide1UIShown = Guideline[0].activeInHierarchy;
         Guide1();
+        _guide1Ready = true;
     }
     public void Guide1()
     {
@@ -121,20 +130,20 @@ public class UITutorial : MonoBehaviour
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
+
         progressBut.transform.SetParent(preparent.transform);
         progressBut.transform.SetSiblingIndex(presibling);
+
         progressUIController.tutorial = true;
         yield return new WaitForSeconds(0.1f);
-        originalPosition = icon.transform.GetChild(0).position;
-        Ch1 = Instantiate(icon.transform.GetChild(0).gameObject);
-        Ch1.transform.SetParent(this.transform);
-        Ch1.transform.SetAsLastSibling();
-        Ch1.transform.position = originalPosition;
-        Ch1.GetComponent<Button>().onClick.AddListener(progressUIController.onClickdragIcon);
-        Debug.Log("Guide3");
+
+        TutoCh1Object.SetActive(true);
+        TutoCh1Object.transform.SetAsLastSibling();
+        TutoCh1Object.GetComponent<Button>().onClick.AddListener(progressUIController.onClickdragIcon);
     }
     public void Guide4()
     {
+        
         if (index == 2)
         {
             progressUIController.tutorial = false;
@@ -148,8 +157,7 @@ public class UITutorial : MonoBehaviour
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
-        Ch1.SetActive(false);
-        Destroy(Ch1);
+        TutoCh1Object.SetActive(false);
         preparent = DayProgress.transform.parent.gameObject;
         DayProgress.transform.SetParent(this.transform);
         DayProgress.transform.SetAsLastSibling();

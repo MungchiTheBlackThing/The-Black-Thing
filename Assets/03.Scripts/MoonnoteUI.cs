@@ -74,20 +74,25 @@ public class MoonnoteUI : MonoBehaviour
 
     public void Exit()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        
-        if (!ischeck)
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
+        var scene = SceneManager.GetActiveScene().name;
+
+        // 1) 메인(또는 튜토가 아닌 모든 씬): 그냥 닫기만
+        if (scene != "Tutorial")
         {
-            menuController.onlyskipoff();
-            menuController.LaterON();
-            menuController.tuto();
-            //dotController.tutorial = false;
-            gameManager.ScrollManager.scrollable();
-            Moonnote.disappear();
-            ischeck = true;
+            gameObject.SetActive(false);
+            return;
         }
-        
-        this.gameObject.SetActive(false);
+
+        // 2) 튜토 씬: 복귀 정리 후 닫기
+        menuController?.onlyskipoff();
+        menuController?.LaterON();
+        menuController?.tuto();
+        gameManager?.ScrollManager?.scrollable();
+        Moonnote?.disappear();
+
+        ischeck = true;
+        gameObject.SetActive(false);
     }
 
     void UpdatePageButtons()
@@ -113,6 +118,7 @@ public class MoonnoteUI : MonoBehaviour
     }
     public void NextPage()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         if (currentPage >= totalPages - 1) return;
         currentPage++;
         UpdatePageButtons();
@@ -120,6 +126,7 @@ public class MoonnoteUI : MonoBehaviour
 
     public void PreviousPage()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         if (currentPage <= 0) return;
         currentPage--;
         UpdatePageButtons();

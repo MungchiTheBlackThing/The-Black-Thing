@@ -54,6 +54,7 @@ public class Replay : MonoBehaviour
     }
     public void OnClick()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.iconClick, this.transform.position);
         if (popup.activeSelf == false)
         {
             popup.SetActive(true);
@@ -62,13 +63,14 @@ public class Replay : MonoBehaviour
 
     public void NoClick()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         popup.SetActive(false);
     }
 
     public void YesClick()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         popup.SetActive(false);
         playerController.Replay();
-        dotController.gameObject.SetActive(true);
     }
 }

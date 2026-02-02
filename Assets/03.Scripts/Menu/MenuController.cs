@@ -209,6 +209,7 @@ public class MenuController : MonoBehaviour
     }
     public void offMenu()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         if(ExitBut != null)
         {
             ExitBut.GetComponent<Button>().enabled = false;
@@ -264,6 +265,7 @@ public class MenuController : MonoBehaviour
 
     public void onDayProgressUI()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.iconClick, this.transform.position);
         //DayProgressUI on,.,
         DayProgressUI.SetActive(true);
         DayProgressUI.GetComponent<ProgressUIController>().RefreshProgressUI();
@@ -283,11 +285,13 @@ public class MenuController : MonoBehaviour
 
     public void onClickHelper()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.iconClick, this.transform.position);
         Helper.SetActive(true);
     }
 
     public void onClickMypage()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.iconClick, this.transform.position);
         MyPageUI.SetActive(true);
     }
 

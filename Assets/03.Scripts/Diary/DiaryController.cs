@@ -29,6 +29,24 @@ public class DiaryController : BaseObject, ISleepingInterface
     PlayerController playerController;
     DotController dotController;
 
+    void OnEnable()
+    {
+        DotController.DiaryGateChanged += OnDiaryGateChanged;
+    }
+
+    void OnDisable()
+    {
+        DotController.DiaryGateChanged -= OnDiaryGateChanged;
+    }
+
+    void OnDiaryGateChanged()
+    {
+        // 애니메이션/패널 토글 프레임 꼬임 방지
+        StopCoroutine(nameof(CoUpdateLightNextFrame));
+        StartCoroutine(CoUpdateLightNextFrame());
+    }
+
+
     void Start()
     {
         Init();
@@ -111,36 +129,35 @@ public class DiaryController : BaseObject, ISleepingInterface
             dotController = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
         }
 
-        isClicked = playerController.GetIsDiaryCheck(); //다이어리를 읽었는지 가져온다.
+        isClicked = playerController.GetIsDiaryCheck();
         isDiaryUpdated = playerController.GetIsUpdatedDiary();
-        //다이어리가 업데이트 되어있지만, 클릭하지 않았을 경우 다이어리는 지속적으로 불빛이 들어온다.
-        if (isDiaryUpdated)
-        {
-            if(isClicked == false)
-            {
-                OpenSleeping();
-                return;
-            }
-        }
+        UpdateDiaryLight();
 
-        //클릭했거나, 업데이트가 안됐으면 아무 의미없음
+        /**
+        일기 불빛 로직 수정 - 피로함 개선
+
+        isDiaryUpdated == true (새로 업데이트됨)
+
+        isClicked == false (아직 안 읽음)
+
+        canOpen == true (지금 훔쳐보기 가능: 외출 Watching OR anim_sleep)
+
+        => 이 3개가 모두 true일 때만 light ON, 나머지는 전부 OFF.
+        **/
     }
     public void OpenSleeping()
     {
-        //Play에서 다이어리가 업데이트
-        //다이어리가 업데이트 되었기 때문에 Sleeping으로 들어올땐 항상 다이어리 불빛이 들어온다.
-        //다이어리 불빛이 들어온다.    
-        if(light.activeSelf == false)
-        {
-            light.SetActive(true);
-            isDiaryUpdated = true;
+        isDiaryUpdated = true;
+        if (playerController) playerController.SetIsUpdatedDiary(true);
 
-            if(playerController)
-            {
-                //플레이어 정보도 업데이트 한다.
-                playerController.SetIsUpdatedDiary(isDiaryUpdated);
-            }
-        }
+        StopCoroutine(nameof(CoUpdateLightNextFrame));
+        StartCoroutine(CoUpdateLightNextFrame());
+    }
+
+    IEnumerator CoUpdateLightNextFrame()
+    {
+        yield return new WaitForEndOfFrame();
+        UpdateDiaryLight();
     }
 
     public void OnMouseUp()
@@ -151,13 +168,15 @@ public class DiaryController : BaseObject, ISleepingInterface
             if (diaryUI == null)
                 diaryUI = GameObject.Find("Diary").GetComponent<DiaryUIController>();
 
-            if (light != null) light.SetActive(false);
+            if (light != null) UpdateDiaryLight();
 
             if (playerController == null)
                 playerController = GameObject.Find("PlayerController")?.GetComponent<PlayerController>();
 
             if (playerController != null)
                 playerController.SetIsDiaryCheck(true);
+            
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.diary, this.transform.position);
 
             diaryUI.SetActiveCloseDiary();
             return;
@@ -172,59 +191,27 @@ public class DiaryController : BaseObject, ISleepingInterface
             diaryUI = GameObject.Find("Diary").GetComponent<DiaryUIController>();
         }
 
-        //클릭했을 때 현재 뭉치가 외출 중인가, Sleeping인가에 따라서 마우스 클릭을 막아야한다.
-        GamePatternState CurrentPhase = (GamePatternState)playerController.GetCurrentPhase();
-
-        //인터페이스로 빼자
-        if (CurrentPhase != GamePatternState.Watching && CurrentPhase != GamePatternState.Sleeping)
+        // canOpen = (외출 Watching) OR (anim_sleep)
+        bool canOpen = CanOpenDiaryNow();
+        if (!canOpen)
         {
             OpenAlert();
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.lockClick, transform.position);
             return;
         }
 
-        // Sleeping 페이즈에서 subseq 진입 애니메이션이나 AfterScript 애니메이션이 재생 중이면 diary 열람 막기
-        if (CurrentPhase == GamePatternState.Sleeping)
+        if (!canOpen)
         {
-            // if (dotController == null)
-            // {
-            //     dotController = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
-            // }
-            
-            // GameObject subDialogueObj = GameObject.Find("SubDialogue");
-            // bool isSubDialogueActive = subDialogueObj != null && subDialogueObj.activeSelf;
-            
-            // if (dotController != null)
-            // {
-            //     if (dotController.IsSubDialogueAnimPlaying || dotController.IsAfterScriptPlaying || isSubDialogueActive)
-            //     {
-            //         return;
-            //     }
-            // }
-            // else if (isSubDialogueActive)
-            // {
-            //     return;
-            // }
-        }
-
-        if (CurrentPhase == GamePatternState.Watching)
-        {
-            //AtHome일 때 return;
-            string WatchState = DataManager.Instance.Watchinginfo.pattern[playerController.GetChapter()];
-
-            EWatching watch;
-            if (Enum.TryParse(WatchState, true, out watch))
-            {
-                if (watch == EWatching.StayAtHome)
-                {
-                    return;
-                }
-            }
+            OpenAlert();
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.lockClick, this.transform.position);
+            return;
         }
 
         isClicked = true;
         //플레이어 정보도 업데이트 한다.
-        light.SetActive(false);
-        playerController.SetIsDiaryCheck(isClicked);
+        if (light != null) UpdateDiaryLight();
+        playerController.SetIsDiaryCheck(true);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.diary, this.transform.position);
         diaryUI.SetActiveCloseDiary();
     }
 
@@ -241,5 +228,41 @@ public class DiaryController : BaseObject, ISleepingInterface
     {
         yield return new WaitForSeconds(1.5f);
         alert.SetActive(false);
+    }
+
+    bool CanOpenDiaryNow()
+    {
+        // 0) 서브 패널 켜져 있으면 무조건 불가 + 라이트도 꺼져야 함
+        if (dotController == null)
+            dotController = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
+
+        if (dotController != null && dotController.subDialogue != null && dotController.subDialogue.activeSelf)
+            return false;
+        // 1) 외출 Watching이면 OK
+        var phase = (GamePatternState)playerController.GetCurrentPhase();
+
+        if (phase == GamePatternState.Watching)
+        {
+            string watchStateStr = DataManager.Instance.Watchinginfo.pattern[playerController.GetChapter()];
+            if (Enum.TryParse(watchStateStr, true, out EWatching watch))
+                return watch != EWatching.StayAtHome;
+        }
+
+        // 2) anim_sleep이면 페이즈 무관 OK
+        if (dotController == null)
+            dotController = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
+
+        return dotController != null && dotController.AnimKey == "anim_sleep";
+    }
+
+    void UpdateDiaryLight()
+    {
+        bool shouldLight =
+            isDiaryUpdated &&
+            !isClicked &&
+            CanOpenDiaryNow();
+
+        if (light != null)
+            light.SetActive(shouldLight);
     }
 }

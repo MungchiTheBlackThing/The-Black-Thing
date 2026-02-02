@@ -7,13 +7,12 @@ using TMPro;
 public class SubTutorial : MonoBehaviour
 {
     public List<GameObject> Guideline = new List<GameObject>();
-
+    [SerializeField] private GameObject TutoCh1Object; // 하이라키에 미리 만들어둔 챕터1 하이라이트(기본 OFF)
     [SerializeField] MenuController MenuController;
     [SerializeField] GameObject menuBut;
     [SerializeField] GameObject progressBut;
     [SerializeField] ProgressUIController progressUIController;
     [SerializeField] GameObject icon;
-    [SerializeField] GameObject Ch1;
     [SerializeField] GameObject DayProgress;
     [SerializeField] GameObject Subicon;
     [SerializeField] GameManager gameManager;
@@ -179,29 +178,37 @@ public class SubTutorial : MonoBehaviour
         Debug.Log("Guide2");
     }
 
-    public IEnumerator Guide3() // 클릭 클릭 클릭
-    { 
+    public IEnumerator Guide3()
+    {
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
+
         progressBut.transform.SetParent(preparent.transform);
         progressBut.transform.SetSiblingIndex(presibling);
+
+        progressUIController.tutorial = false;
         yield return new WaitForSeconds(0.1f);
-        originalPosition = icon.transform.GetChild(0).position;
-        Ch1 = Instantiate(icon.transform.GetChild(0).gameObject);
-        Ch1.transform.SetParent(this.transform);
-        Ch1.transform.SetAsLastSibling();
-        Ch1.transform.position = originalPosition;
-        Ch1.GetComponent<Button>().onClick.AddListener(progressUIController.onClickdragIcon);
-        Debug.Log("Guide3");
+
+        TutoCh1Object.SetActive(true);
+        var redDot = TutoCh1Object.transform.Find("SubRedDot");
+        if (redDot != null) redDot.gameObject.SetActive(true);
+
+        TutoCh1Object.transform.SetAsLastSibling();
+        var btn = TutoCh1Object.GetComponent<Button>();
+        if (btn != null)
+        {
+            btn.onClick.RemoveListener(progressUIController.onClickdragIcon);
+            btn.onClick.AddListener(progressUIController.onClickdragIcon);
+        }
     }
     public void Guide5()
     {
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
-        Ch1.SetActive(false);
-        Destroy(Ch1);
+        TutoCh1Object.SetActive(false);
+
         preparent = Subicon.transform.parent.gameObject;
         Subicon.transform.SetParent(this.transform);
         Subicon.transform.SetAsLastSibling();

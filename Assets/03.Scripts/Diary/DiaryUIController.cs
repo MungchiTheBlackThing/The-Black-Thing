@@ -39,17 +39,19 @@ public class DiaryUIController : MonoBehaviour
     }
     public void OnClickPopupUIOpen()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.DiaryButton, this.transform.position);
         popupUI.SetActive(true);
     }
 
     public void OnClickDiary()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         popupUI.SetActive(false);
         openDiaryUI.SetActive(true);
         ScreenShield.Off();
-        //°¡ÀÌµå UI È°¼ºÈ­ Á¶°Ç
-        //ÀÏ±âÀå ÆäÀÌÁö°¡ 2Àå ÀÌ»óÀÏ ¶§
-        //Ã¹ 1È¸¸¸ È°¼ºÈ­
+        //ï¿½ï¿½ï¿½Ìµï¿½ UI È°ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½
+        //ï¿½Ï±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½
+        //Ã¹ 1È¸ï¿½ï¿½ È°ï¿½ï¿½È­
         float isShowGuide = PlayerPrefs.GetFloat("DiaryGuideShown");
         if (gameManger.Chapter >= 2 && isShowGuide == 0)
         {
@@ -60,6 +62,7 @@ public class DiaryUIController : MonoBehaviour
 
     public void Exit()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         GameObject button = EventSystem.current.currentSelectedGameObject;
         GameObject gameObject = button.transform.parent.gameObject;
         if(gameObject)

@@ -195,6 +195,7 @@ public class PoemController : MonoBehaviour
 
     public void Exit()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         playAnswerController = GameObject.FindWithTag("PlayAnswerController").GetComponent<PlayAnswerController>();
         playAnswerController.AfterReadingPoem();
         Destroy(gameObject.transform.parent.gameObject);

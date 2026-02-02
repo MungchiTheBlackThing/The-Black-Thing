@@ -102,6 +102,7 @@ public class DotTextReview : MonoBehaviour
 
         for (int i = 0; i < lines.Length; i++)
         {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialougueDefault, this.transform.position);
             displayText.text = lines[i].Trim();
             if (displayText.text.Contains("<nickname>"))
             {

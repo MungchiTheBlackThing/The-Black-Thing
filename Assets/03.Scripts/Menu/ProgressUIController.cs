@@ -187,10 +187,12 @@ public class ProgressUIController : MonoBehaviour
 
         if (day.GetComponent<DragIcon>().isLocking())
         {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.lockClick, this.transform.position);
             alter.SetActive(true);
         }
         else if (!tutorial)
         {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.iconClick, this.transform.position);
             dragScroller.transform.parent.gameObject.SetActive(false); //메인 다이얼로그 진행
             detailed_popup.SetActive(true); //서브 다이얼로그 설정(진행바)
             //정규식을 사용해서 문자열 내에 있는 숫자 찾기
@@ -216,6 +218,7 @@ public class ProgressUIController : MonoBehaviour
 
     public void exit()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         //현재 게임 오브젝트가 DayProgress_Default이면, DayProgressUI SetActive한다.
 
         if (detailed_popup.activeSelf)

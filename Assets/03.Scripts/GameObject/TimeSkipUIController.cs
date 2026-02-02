@@ -123,15 +123,18 @@ public class TimeSkipUIController : MonoBehaviour
         {
             popup.SetActive(true);
         }
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.iconClick, this.transform.position);
     }
 
     public void NoClick()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         popup.SetActive(false);
     }
 
     public void YesClick()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         IsSkipButtonClicked = true;
         popup.SetActive(false);
         playerController.NextPhase();
@@ -139,6 +142,7 @@ public class TimeSkipUIController : MonoBehaviour
     }
     public void TutoYesClick()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         const string anim = "anim_default";
         popup.SetActive(false);
         gameManager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 1f);
