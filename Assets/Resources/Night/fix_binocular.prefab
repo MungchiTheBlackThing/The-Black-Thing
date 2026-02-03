@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chapter: 010101010101010101010101010101
   type: 0
-  alert: {fileID: 0}
+  alert: {fileID: 7398253283069919649}
   watching:
   - {fileID: 3133030142863895759, guid: bbe10e29e8ab7a5458e7a5858eb319a0, type: 3}
   - {fileID: 7107071153817030958, guid: 84f7c0764a4ec68448e3980753e7d49e, type: 3}
@@ -229,5 +229,10 @@ PrefabInstance:
 --- !u!4 &2076153751094637440 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8614861961205126679, guid: d1b3f6ea9952551489c9cf97e2239bcc, type: 3}
+  m_PrefabInstance: {fileID: 7728697688236959127}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7398253283069919649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1002677297611744310, guid: d1b3f6ea9952551489c9cf97e2239bcc, type: 3}
   m_PrefabInstance: {fileID: 7728697688236959127}
   m_PrefabAsset: {fileID: 0}
