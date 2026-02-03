@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveCommunitySite : MonoBehaviour
 {
-    readonly string[] url = { "https://discord.gg/mfK4J9tsHK", 
+    readonly string[] url = { "https://discord.gg/gDnphBApmK", 
         "https://www.instagram.com/moonstew_games/", 
         "https://twitter.com/moonstew_games" };
     public enum Type : int
