@@ -185,6 +185,7 @@ public class MypageUIController : MonoBehaviour
 
     public void StoreName()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         //1. EditPopup으로부터 실제 저장할 Nickname을 가져온다.popup_namesetting - NameInput - TextBoxInput으로부터 text를 가져온다.
         userName = nicknameTxt.text;
 
@@ -207,6 +208,7 @@ public class MypageUIController : MonoBehaviour
         //4. 1.5초 뒤 꺼진다.
         editNamePopup.SetActive(false);
         closePopup.SetActive(true);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.checklistOn, this.transform.position);
         _nameSettingText.text = userName;
 
         Invoke("CloseAlter", 1.5f);
@@ -215,6 +217,7 @@ public class MypageUIController : MonoBehaviour
     /*Edit과 CancelEdit이 같이 사용*/
     public void ToggleEditName()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         if (editNamePopup.activeSelf)
         {
             editNamePopup.gameObject.SetActive(false);
@@ -225,6 +228,7 @@ public class MypageUIController : MonoBehaviour
 
     public void OpenLangPopup()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         if (LangPopup.activeSelf)
         {
             LangPopup.gameObject.SetActive(false);
@@ -235,11 +239,13 @@ public class MypageUIController : MonoBehaviour
 
     void CloseAlter()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         closePopup.SetActive(false);
     }
 
     public void NextPage()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         int nextIndex = pageIdx + 1;
 
         //한계 설정, 페이지 개수에 따라서 페이지를 넘을 경우 조절
@@ -263,6 +269,7 @@ public class MypageUIController : MonoBehaviour
 
     public void PrePage()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         int prevIndex = pageIdx - 1;
 
         if (pageIdx < 0)
@@ -281,6 +288,7 @@ public class MypageUIController : MonoBehaviour
 
     public void OnPushAlert()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         isEnableAlert = true;
         EnablePushAlertColor();
         player.SetisPushNotificationEnabled(isEnableAlert);
@@ -288,11 +296,13 @@ public class MypageUIController : MonoBehaviour
 
     public void OffPushAlert()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         alterPopup.SetActive(true);
     }
 
     public void Off()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         isEnableAlert = false;
         EnablePushAlertColor();
         player.SetisPushNotificationEnabled(isEnableAlert);
@@ -301,6 +311,7 @@ public class MypageUIController : MonoBehaviour
 
     public void On()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         isEnableAlert = true;
         EnablePushAlertColor();
         player.SetisPushNotificationEnabled(isEnableAlert);
@@ -324,6 +335,7 @@ public class MypageUIController : MonoBehaviour
     }
     public void Exit()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         this.gameObject.SetActive(false);
     }
 
@@ -431,6 +443,7 @@ public class MypageUIController : MonoBehaviour
 
     public void OpenTimeSettingPopup()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         if (TimeSetPopup == null) return;
 
         var popup = TimeSetPopup.GetComponent<TimeSettingPopupController>();
@@ -441,6 +454,7 @@ public class MypageUIController : MonoBehaviour
 
     private void ApplyTime(int hour24, int minute)
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         _uiHour24 = hour24;
         _uiMinute = minute;
 

@@ -111,6 +111,7 @@ public class LangPopup : MonoBehaviour
     // 드롭다운 값 변경시 호출 (언어 변경)
     void OnDropdownValueChanged(int index)
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         if (suppressDropdownEvent) return;
 
         ApplyLocaleByIndex(index, save: false);
@@ -178,6 +179,7 @@ public class LangPopup : MonoBehaviour
     // 적용 버튼: 현재 선택 언어를 저장하고 팝업 닫음
     void OnClickApply()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         int idx = myDropdown.value;
         ApplyLocaleByIndex(idx, save: true);
 
@@ -193,6 +195,7 @@ public class LangPopup : MonoBehaviour
     // 취소하기: 팝업 닫고 롤백
     void OnClickCancel()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         var prevLocale = FindLocaleByCode(preOpenLocaleCode);
         if (prevLocale != null)
         {

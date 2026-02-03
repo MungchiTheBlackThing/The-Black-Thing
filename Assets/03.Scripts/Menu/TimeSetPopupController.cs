@@ -61,6 +61,7 @@ public class TimeSettingPopupController : MonoBehaviour
 
     public void Cancel()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         Hour24ToTemp(_originalHour24, out _tempHour12, out _tempIsPM);
         _tempMinute = _originalMinute;
         gameObject.SetActive(false);
@@ -68,6 +69,7 @@ public class TimeSettingPopupController : MonoBehaviour
 
     public void Save()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         int hour24 = TempToHour24(_tempHour12, _tempIsPM);
         _onApplyTime?.Invoke(hour24, _tempMinute);
         gameObject.SetActive(false);
@@ -75,6 +77,7 @@ public class TimeSettingPopupController : MonoBehaviour
 
     private void ToggleAMPM()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         _tempIsPM = !_tempIsPM;
         ApplyTempToUI();
     }

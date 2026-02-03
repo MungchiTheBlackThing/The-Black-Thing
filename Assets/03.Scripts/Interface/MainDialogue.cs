@@ -60,11 +60,9 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         {
             dot.gameObject.SetActive(true);
         }
-        time = GameObject.Find("TimeSkip").GetComponent<TimeSkipUIController>();
-        if (time)
-        {
-            time.gameObject.SetActive(false);
-        }
+        time = manager.timeSkipUIController;
+        if (time != null) time.gameObject.SetActive(false);
+
         //n초 뒤에 아래가 뜬다.
         manager.ObjectManager.PlayThinking();
         Debug.Log("메인 부분");
@@ -347,7 +345,7 @@ public abstract class MainDialogue : GameState, ILoadingInterface
         else
         {
             playerController.NextPhase();
-            time.gameObject.SetActive(true);
+            if (time != null) time.gameObject.SetActive(true);
         }
         listclear();
     }
