@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{b3c2fcf4-a5ad-4b54-846c-ece152f512fc}">
+		<property name="assetPath">
+			<value>alert_pos.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0448979591836736</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{43364ee9-4226-457d-872d-c9efc1122b1e}</destination>
+		</relationship>
+	</object>
+</objects>

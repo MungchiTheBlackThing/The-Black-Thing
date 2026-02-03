@@ -16,6 +16,8 @@ public class FMODEvents : Singleton<FMODEvents>
     [field: SerializeField] public EventReference buttonClick { get; private set; }
     
     [field: SerializeField] public EventReference iconClick { get; private set; }
+    [field: SerializeField] public EventReference alert_p { get; private set; }
+    [field: SerializeField] public EventReference alert_n { get; private set; }
     [field: SerializeField] public EventReference lockClick { get; private set; }
 
     [field: Header("Object")]

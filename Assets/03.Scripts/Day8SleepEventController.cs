@@ -58,9 +58,6 @@ public class Day8SleepEventController : MonoBehaviour
     [SerializeField] private Button popup3SingleButton;
 
     [Header("Alerts (Spawn 30 then clear)")]
-    [SerializeField] private GameObject alertsRoot;
-    [SerializeField] private GameObject alertItemPrefab;
-    [SerializeField] private RectTransform alertSpawnArea;
     [SerializeField] private int alertCount = 30;
     [SerializeField] private float alertSpawnInterval = 0.03f;
     [SerializeField] private float alertLifetime = 2.5f;
@@ -68,6 +65,10 @@ public class Day8SleepEventController : MonoBehaviour
     [Header("Alert Localization")]
     [SerializeField] private string alertStringTable = "UI";
     [SerializeField] private string[] alertKeys = new[] { "DAY8_ALERT_01", "DAY8_ALERT_02", "DAY8_ALERT_03" };
+
+    [Header("Alerts (Single UI)")]
+    [SerializeField] private GameObject alertSingleRoot;   
+    [SerializeField] private TMP_Text alertSingleText;    
 
 
     // ===== runtime =====
@@ -240,7 +241,12 @@ public class Day8SleepEventController : MonoBehaviour
 
         bool clicked = false;
         subClickButton.onClick.RemoveAllListeners();
-        subClickButton.onClick.AddListener(() => clicked = true);
+        subClickButton.onClick.AddListener(() =>
+        {
+            // SFX: sub next
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialougueDefault, this.transform.position);
+            clicked = true;
+        });
 
         while (current <= endIndex)
         {
@@ -286,8 +292,19 @@ public class Day8SleepEventController : MonoBehaviour
         popup1ThrowButton.onClick.RemoveAllListeners();
         popup1KeepButton.onClick.RemoveAllListeners();
 
-        popup1ThrowButton.onClick.AddListener(() => { onPickedThrow?.Invoke(true); picked = true; });
-        popup1KeepButton.onClick.AddListener(() => { onPickedThrow?.Invoke(false); picked = true; });
+        popup1ThrowButton.onClick.AddListener(() =>
+        {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, transform.position);
+            onPickedThrow?.Invoke(true);
+            picked = true;
+        });
+        popup1KeepButton.onClick.AddListener(() =>
+        {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, transform.position);
+            onPickedThrow?.Invoke(false);
+            picked = true;
+        });
+
 
         while (!picked) yield return null;
 
@@ -306,11 +323,16 @@ public class Day8SleepEventController : MonoBehaviour
         }
 
         bool picked = false;
-        popup2OptionAButton.onClick.RemoveAllListeners();
-        popup2OptionBButton.onClick.RemoveAllListeners();
-
-        popup2OptionAButton.onClick.AddListener(() => picked = true);
-        popup2OptionBButton.onClick.AddListener(() => picked = true);
+        popup2OptionAButton.onClick.AddListener(() =>
+        {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, transform.position);
+            picked = true;
+        });
+        popup2OptionBButton.onClick.AddListener(() =>
+        {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, transform.position);
+            picked = true;
+        });
 
         while (!picked) yield return null;
 
@@ -330,7 +352,11 @@ public class Day8SleepEventController : MonoBehaviour
 
         bool picked = false;
         popup3SingleButton.onClick.RemoveAllListeners();
-        popup3SingleButton.onClick.AddListener(() => picked = true);
+        popup3SingleButton.onClick.AddListener(() =>
+        {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, transform.position);
+            picked = true;
+        });
 
         while (!picked) yield return null;
 
@@ -341,45 +367,22 @@ public class Day8SleepEventController : MonoBehaviour
     private IEnumerator PlayAlertsSpawn30AndClear()
     {
         SetSubClick(false);
-        SetActiveSafe(alertsRoot, true);
 
-        if (alertsRoot == null || alertItemPrefab == null || alertSpawnArea == null)
+        if (alertSingleRoot == null || alertSingleText == null)
             yield break;
 
-        var spawned = new List<GameObject>(alertCount);
+        alertSingleRoot.SetActive(true);
 
         for (int i = 0; i < alertCount; i++)
         {
-            string msg = GetLocalizedAlert(i);
-
-            GameObject go = Instantiate(alertItemPrefab, alertsRoot.transform);
-            spawned.Add(go);
-
-            TMP_Text t = go.GetComponentInChildren<TMP_Text>(true);
-            if (t != null)
-            {
-                t.text = msg;
-                t.gameObject.SetActive(true);
-            }
-
-            RectTransform rt = go.GetComponent<RectTransform>();
-            if (rt != null)
-                rt.anchoredPosition = RandomPointInRect(alertSpawnArea);
-
+            alertSingleText.text = GetLocalizedAlert(i);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.alert_n, transform.position);
             yield return WaitUnscaled(alertSpawnInterval);
         }
 
         yield return WaitUnscaled(alertLifetime);
 
-        for (int i = 0; i < spawned.Count; i++)
-            if (spawned[i] != null)
-                spawned[i].SetActive(false);
-
-        for (int i = 0; i < spawned.Count; i++)
-            if (spawned[i] != null)
-                Destroy(spawned[i]);
-
-        SetActiveSafe(alertsRoot, false);
+        alertSingleRoot.SetActive(false);
     }
 
     private string GetLocalizedAlert(int index)
@@ -389,14 +392,6 @@ public class Day8SleepEventController : MonoBehaviour
         if (string.IsNullOrEmpty(key)) return string.Empty;
 
         return LocalizationSettings.StringDatabase.GetLocalizedString(alertStringTable, key);
-    }
-
-    private Vector2 RandomPointInRect(RectTransform rect)
-    {
-        Rect r = rect.rect;
-        float x = Random.Range(r.xMin, r.xMax);
-        float y = Random.Range(r.yMin, r.yMax);
-        return new Vector2(x, y);
     }
 
     private void HideBreadMoldInScene()
@@ -556,7 +551,6 @@ public class Day8SleepEventController : MonoBehaviour
         SetActiveSafe(popupPhase1, false);
         SetActiveSafe(popupPhase2, false);
         SetActiveSafe(popupPhase3, false);
-        SetActiveSafe(alertsRoot, false);
     }
 
     private void ActivateOnly(GameObject panel)
@@ -564,7 +558,6 @@ public class Day8SleepEventController : MonoBehaviour
         SetActiveSafe(popupPhase1, panel == popupPhase1);
         SetActiveSafe(popupPhase2, panel == popupPhase2);
         SetActiveSafe(popupPhase3, panel == popupPhase3);
-        SetActiveSafe(alertsRoot, panel == alertsRoot);
     }
 
     private void SetActiveSafe(GameObject go, bool active)
