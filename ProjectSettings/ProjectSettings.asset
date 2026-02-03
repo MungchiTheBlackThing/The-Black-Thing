@@ -166,6 +166,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.MoonstewGames.TheBlackThing
     Standalone: com.DefaultCompany.2DProject
+    iPhone: com.Moonstew.TheBlackThing
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -249,7 +250,7 @@ PlayerSettings:
   iOSManualSigningProvisioningProfileType: 0
   tvOSManualSigningProvisioningProfileType: 0
   VisionOSManualSigningProvisioningProfileType: 0
-  appleEnableAutomaticSigning: 0
+  appleEnableAutomaticSigning: 1
   iOSRequireARKit: 0
   iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
