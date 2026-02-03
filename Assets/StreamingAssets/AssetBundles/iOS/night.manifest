@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 2220709552
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ffaae221af780b84f06612838ec37c66
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: d38ae446f336637646e2bfe7d5943b98
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ffaae221af780b84f06612838ec37c66
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/MainBackground/Night/main_table.prefab
+- Assets/Resources/MainBackground/Night/main_door_close.prefab
+- Assets/Resources/MainBackground/Night/main_door_open.prefab
+- Assets/Resources/MainBackground/Night/main_bed.prefab
+- Assets/Resources/MainBackground/Night/main_web.prefab
+Dependencies: []
