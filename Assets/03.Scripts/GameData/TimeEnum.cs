@@ -9,11 +9,11 @@ namespace Assets.Script.TimeEnum
     };
 
     public enum STime : int
-    { //½ÃÀÛ ½Ã°£
-        T_MORNING = 7, //7~16½Ã±îÁö
-        T_EVENING = 16, //16~17±îÁö
-        T_NIGHT = 20, //20~3½Ã±îÁö
-        T_DAWN = 3, //3~7½Ã±îÁö
+    { //ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
+        T_MORNING = 8, //8~16ï¿½Ã±ï¿½ï¿½ï¿½
+        T_EVENING = 16, //16~20ï¿½ï¿½ï¿½ï¿½
+        T_NIGHT = 20, //20~5ï¿½Ã±ï¿½ï¿½ï¿½
+        T_DAWN = 4, //4~8ï¿½Ã±ï¿½ï¿½ï¿½
     };
 
 

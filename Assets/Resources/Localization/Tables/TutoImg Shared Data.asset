@@ -38,11 +38,21 @@ MonoBehaviour:
   m_Metadata:
     m_Items:
     - rid: 5390753812534263814
+    - rid: 3584289245965844482
   m_KeyGenerator:
     rid: 5390753812534263810
   references:
     version: 2
     RefIds:
+    - rid: 3584289245965844482
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 2428669063168
+          m_TableCodes:
+          - en-US
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
     - rid: 5390753812534263810
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
