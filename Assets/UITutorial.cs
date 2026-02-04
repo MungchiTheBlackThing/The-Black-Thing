@@ -34,6 +34,8 @@ public class UITutorial : MonoBehaviour
 
     int index = 0;
     // Start is called before the first frame update
+
+    private bool _menuOpenedSignal = false;
     void Awake()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -48,6 +50,9 @@ public class UITutorial : MonoBehaviour
     void OnEnable()
     {
         ResetState();
+        _menuOpenedSignal = false;
+        MenuController.OnMenuOpened += HandleMenuOpened;
+
         ScreenShield.Off();
         StartCoroutine(guide());
     }
@@ -68,7 +73,7 @@ public class UITutorial : MonoBehaviour
 
     private void Update()
     {
-        if (!G2 && _guide1Ready && _guide1UIShown && MenuController.isOpening)
+        if (!G2 && _guide1Ready && _guide1UIShown && _menuOpenedSignal)
         {
             Guide2();
             G2 = true;  // �� �� ����� �Ŀ��� ����
@@ -207,6 +212,12 @@ public class UITutorial : MonoBehaviour
     }
     public void OnDisable()
     {
+        MenuController.OnMenuOpened -= HandleMenuOpened;
         ScreenShield.Off();
+    }
+
+    private void HandleMenuOpened()
+    {
+        _menuOpenedSignal = true;
     }
 }

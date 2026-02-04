@@ -89,6 +89,8 @@ public class MenuController : MonoBehaviour
 
     public void OnEnable()
     {
+        isOpening = false;
+        isprogress = false;
         if (PlayerController && PlayerController.GetChapter() >= 2)
         {
             tuto();
@@ -200,12 +202,20 @@ public class MenuController : MonoBehaviour
             MenuButAnim.SetBool("isDowning", true);
             ExitBut.GetComponent<Button>().enabled = true;
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.MenuOn, this.transform.position);
+            OnMenuOpened?.Invoke(); // 튜토 트리거
         }
         else
         {
             MenuDefault.transform.GetChild(1).gameObject.SetActive(false);
             MenuButAnim.SetBool("isDowning", false);
         }
+    }
+
+    private void OnDisable()
+    {
+        // 휘발성 상태는 끊어준다 (튜토/트리거 계열)
+        isOpening = false;
+        isprogress = false;
     }
     public void offMenu()
     {

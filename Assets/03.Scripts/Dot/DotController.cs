@@ -299,13 +299,17 @@ public class DotController : MonoBehaviour
     //백그라운드 전환시 애니메이션 변경
     void OnApplicationPause(bool pauseStatus)
     {
-        if (!pauseStatus) // 앱으로 복귀
-        {
-            // AfterScript는 PlayerPrefs로 상태가 유지되므로 별도 처리하지 않습니다.
-            // 그 외의 경우, IDLE 애니메이션을 갱신합니다.
-            Debug.Log("[DotController] 앱 복귀, IDLE 애니메이션을 업데이트합니다.");
-            UpdateIdleAnimation();
-        }
+        if (pauseStatus) return; // 백그라운드 진입이면 무시
+
+        // 서브/메인/알럿/서브애니 재생 중에는 절대 상태 갱신 금지
+        if (subDialogue != null && subDialogue.activeSelf) return;
+        if (subAlert != null && subAlert.activeSelf) return;
+        if (mainAlert != null && mainAlert.activeSelf) return;
+        if (playAlert != null && playAlert.activeSelf) return;
+        if (isSubDialogueAnimPlaying) return;
+        if (manager != null && manager.CurrentState is MainDialogue) return;
+
+        UpdateIdleAnimation();
     }
 
     public void DotControllerStart()
@@ -759,7 +763,7 @@ public class DotController : MonoBehaviour
             if (isSubDialogueAnimPlaying && state != DotPatternState.Sub && state != DotPatternState.Main)
             {
                 Debug.Log($"[DotController] ChangeState for '{OutAnimKey}' blocked by SubDialogue animation.");
-                //return;
+                return;
             }
             // 2. AfterScript
             if (isAfterScriptPlaying)
@@ -866,7 +870,7 @@ public class DotController : MonoBehaviour
     {
         Debug.Log($"[DotController] Starting Sub-dialogue animation: {animKey}");
         isSubDialogueAnimPlaying = true;
-        ChangeState(state, animKey, position, "", false); // force = true로 강제 실행
+        ChangeState(state, animKey, position, "", true); // force = true로 강제 실행
     }
 
     public void StopSubDialogueAnimation()
