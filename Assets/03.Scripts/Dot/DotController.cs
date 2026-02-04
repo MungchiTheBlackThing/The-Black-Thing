@@ -142,7 +142,7 @@ public class DotController : MonoBehaviour
         get { return isAfterScriptPlaying; }
     }
     private float _idleAnimationTimer;
-    private const float IDLE_ANIMATION_DURATION = 3f; //(단위: 초) 랜덤 재생 애니메이션 재생 시간 제한 (7분) //[DEBUG] 7분 -> 10초
+    private const float IDLE_ANIMATION_DURATION = 180f; //(단위: 초) 랜덤 재생 애니메이션 재생 시간 제한 (3분) //[DEBUG] 3분 -> 10초
 
     GamePatternState tmpState;
 
