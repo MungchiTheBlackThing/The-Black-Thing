@@ -303,6 +303,7 @@ public class DotController : MonoBehaviour
 
         // 서브/메인/알럿/서브애니 재생 중에는 절대 상태 갱신 금지
         if (subDialogue != null && subDialogue.activeSelf) return;
+        if (subPanel != null && subPanel.activeSelf) return;
         if (subAlert != null && subAlert.activeSelf) return;
         if (mainAlert != null && mainAlert.activeSelf) return;
         if (playAlert != null && playAlert.activeSelf) return;
