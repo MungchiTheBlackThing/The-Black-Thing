@@ -191,8 +191,6 @@ public class SubTutorial : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         TutoCh1Object.SetActive(true);
-        var redDot = TutoCh1Object.transform.Find("SubRedDot");
-        if (redDot != null) redDot.gameObject.SetActive(true);
 
         TutoCh1Object.transform.SetAsLastSibling();
         var btn = TutoCh1Object.GetComponent<Button>();

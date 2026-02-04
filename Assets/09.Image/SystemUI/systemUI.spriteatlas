@@ -55,7 +55,6 @@ SpriteAtlas:
     - 17dc02836ab2eaf44b95ae06aa1f2831: 21300000
     - 353b92141998d794f9cdf231c8670290: 21300000
     - 34755ba456a38cd408109576c3c86995: 21300000
-    - 4938e5b47b0fdd24ab836b2ff214fee7: 21300000
     - c56653852b4cfdf4bb8aed25f4c9c236: 21300000
     - ba1d89e5a9c1ef043bd82f16ca57344b: 21300000
     - 6ac017267d705b245a202544e59d6f0d: 21300000
@@ -65,6 +64,7 @@ SpriteAtlas:
     - f2263176d1b9bb141b59e30c205edd56: 21300000
     - 286b8476ab71e45f8914153fcbaf411b: 21300000
     - 3f4c66760d2f999479872b8cc84798f2: 21300000
+    - 0fc9b307f14bbc543ac0c0210befd031: 21300000
     - 269f9f171513e5347b50f291e75bd680: 21300000
     - 318cd1278e58b5944ac65881be094f17: 21300000
     - 16c6a277c7c634b1a976ef101e431246: 21300000
@@ -123,7 +123,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 17dc02836ab2eaf44b95ae06aa1f2831, type: 3}
   - {fileID: 21300000, guid: 353b92141998d794f9cdf231c8670290, type: 3}
   - {fileID: 21300000, guid: 34755ba456a38cd408109576c3c86995, type: 3}
-  - {fileID: 21300000, guid: 4938e5b47b0fdd24ab836b2ff214fee7, type: 3}
   - {fileID: 21300000, guid: c56653852b4cfdf4bb8aed25f4c9c236, type: 3}
   - {fileID: 21300000, guid: ba1d89e5a9c1ef043bd82f16ca57344b, type: 3}
   - {fileID: 21300000, guid: 6ac017267d705b245a202544e59d6f0d, type: 3}
@@ -133,6 +132,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: f2263176d1b9bb141b59e30c205edd56, type: 3}
   - {fileID: 21300000, guid: 286b8476ab71e45f8914153fcbaf411b, type: 3}
   - {fileID: 21300000, guid: 3f4c66760d2f999479872b8cc84798f2, type: 3}
+  - {fileID: 21300000, guid: 0fc9b307f14bbc543ac0c0210befd031, type: 3}
   - {fileID: 21300000, guid: 269f9f171513e5347b50f291e75bd680, type: 3}
   - {fileID: 21300000, guid: 318cd1278e58b5944ac65881be094f17, type: 3}
   - {fileID: 21300000, guid: 16c6a277c7c634b1a976ef101e431246, type: 3}
@@ -190,7 +190,6 @@ SpriteAtlas:
   - alert_moonradio
   - Rectangle 16 (1)
   - iconVideo_replay
-  - Sub Red Dot
   - iconVideo_next_click
   - icon_blackX
   - icon_trigger_sub
@@ -200,6 +199,7 @@ SpriteAtlas:
   - howto1
   - icon_letter
   - Ellipse 108_2693_1796
+  - reddot
   - chapterload_0
   - alert_moonradio
   - icon_findDot

@@ -34,6 +34,7 @@ public class UITutorial : MonoBehaviour
 
     int index = 0;
     // Start is called before the first frame update
+    private int step = 0;
 
     private bool _menuOpenedSignal = false;
     void Awake()
@@ -54,7 +55,7 @@ public class UITutorial : MonoBehaviour
         MenuController.OnMenuOpened += HandleMenuOpened;
 
         ScreenShield.Off();
-        StartCoroutine(guide());
+        StartCoroutine(StartGuide1());
     }
 
     void ResetState()
@@ -69,17 +70,17 @@ public class UITutorial : MonoBehaviour
         if (progressUIController) progressUIController.guide2 = false;
         _guide1Ready = false;
         _guide1UIShown = false;
+        _menuOpenedSignal = false;
+
+    // 여기 추가: 가이드라인 전부 끄기
+        for (int i = 0; i < Guideline.Count; i++)
+            if (Guideline[i]) Guideline[i].SetActive(false);
     }
 
     private void Update()
     {
-        if (!G2 && _guide1Ready && _guide1UIShown && _menuOpenedSignal)
-        {
-            Guide2();
-            G2 = true;  // �� �� ����� �Ŀ��� ����
-        }
 
-        if (!G3 && MenuController.isprogress)
+        if (!G3 && G2 && MenuController.isprogress)
         {
             StartCoroutine(Guide3());
             G3 = true;
@@ -100,13 +101,13 @@ public class UITutorial : MonoBehaviour
             progressUIController.guide2 = false;
         }
     }
-    IEnumerator guide()
+
+    IEnumerator StartGuide1()
     {
         yield return new WaitForSeconds(1f);
+        step = 0;
         Guideline[0].SetActive(true);
-        _guide1UIShown = Guideline[0].activeInHierarchy;
         Guide1();
-        _guide1Ready = true;
     }
     public void Guide1()
     {
@@ -218,6 +219,9 @@ public class UITutorial : MonoBehaviour
 
     private void HandleMenuOpened()
     {
-        _menuOpenedSignal = true;
+        if (step != 0) return;
+        step = 1;
+        Guide2();
+        G2 = true;
     }
 }
