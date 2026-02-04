@@ -307,8 +307,9 @@ public class DotController : MonoBehaviour
         if (mainAlert != null && mainAlert.activeSelf) return;
         if (playAlert != null && playAlert.activeSelf) return;
         if (isSubDialogueAnimPlaying) return;
-        if (manager != null && manager.CurrentState is MainDialogue) return;
-
+        bool isMainPhase = manager.Pattern == GamePatternState.MainA || manager.Pattern == GamePatternState.MainB;
+        if (isMainPhase) return;
+        
         UpdateIdleAnimation();
     }
 
@@ -870,7 +871,7 @@ public class DotController : MonoBehaviour
     {
         Debug.Log($"[DotController] Starting Sub-dialogue animation: {animKey}");
         isSubDialogueAnimPlaying = true;
-        ChangeState(state, animKey, position, "", true); // force = true로 강제 실행
+        ChangeState(state, animKey, position, "", false); // force = true로 강제 실행
     }
 
     public void StopSubDialogueAnimation()
