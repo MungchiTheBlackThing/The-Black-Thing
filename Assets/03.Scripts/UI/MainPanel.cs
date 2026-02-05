@@ -29,17 +29,13 @@ public class MainPanel : MonoBehaviour
     [SerializeField] GameObject Selection3Panel;
     [SerializeField] GameObject Selection4Panel;
     [SerializeField] DotController DotController;
-
-    [SerializeField] Button NextButton;
     [SerializeField] TMP_InputField Textinput;
 
     [SerializeField] GameObject MainClick;
     [SerializeField] GameObject BackBut;
     [SerializeField] public GameObject UITutorial;
 
-    [SerializeField] int backindex = -1;
-    [SerializeField] string backtag = "";
-    int backChoiceIndex = -1;
+    private Stack<int> backStack = new Stack<int>();
     int backBranchStartIndex = -1;
     int backVideoIndex = -1;
 
@@ -68,11 +64,10 @@ public class MainPanel : MonoBehaviour
     void OnEnable()
     {
         mainDialogue = (MainDialogue)gameManager.CurrentState;
-        backindex = -1;
-        backtag = "";
-        backChoiceIndex = -1;
         backBranchStartIndex = -1;
         backVideoIndex = -1;
+
+        backStack.Clear();
         
         MainClick = GameObject.Find("MainClick");
         DotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
@@ -213,26 +208,19 @@ public class MainPanel : MonoBehaviour
                     string firstTag = archeTags[0].Trim().ToLower();
                     string secondTag = archeTags[1].Trim().ToLower();
 
-                    if (index == 0) { backtag = firstTag; pc.UpdateArcheType(firstTag); }
-                    else if (index == 1) { backtag = secondTag; pc.UpdateArcheType(secondTag); }
                 }
                 else if (archeTags.Length == 4)
                 {
                     pc.checkdeath(index);
                 }
-                else backtag = "";
             }
-            else backtag = "";
 
             if (index < nextKeys.Length && int.TryParse(nextKeys[index], out int nextLineKey))
             {
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
                 if (nextIndex != -1)
                 {
-                    backChoiceIndex = dialogueIndex;
-                    backBranchStartIndex = nextIndex;
-
-                    backindex = dialogueIndex;
+                    backBranchStartIndex = Mathf.Max(backBranchStartIndex, nextIndex);
                     dialogueIndex = nextIndex;
                 }
                 else { Debug.Log("1"); DialEnd(); return; }
@@ -258,10 +246,10 @@ public class MainPanel : MonoBehaviour
 
     private IEnumerator DialEndSequence()
     {
+        backStack.Clear();
         mainDialogue.currentDialogueList.Clear();
         mainDialogue.DialogueEntries.Clear();
         dialogueIndex = 0;
-        backindex = -1;
 
         ScreenShield.Off();
         InputGuard.WorldInputLocked = false;
@@ -376,11 +364,6 @@ public class MainPanel : MonoBehaviour
         bool waitVideo = animScene == "1";
         if (waitVideo)
             backVideoIndex = dialogueIndex;
-
-        if (waitVideo)
-        {
-            backindex = dialogueIndex;
-        }
         if (BackBut) BackBut.SetActive(dialogueIndex > 0);
 
         switch (textType)
@@ -525,7 +508,11 @@ public class MainPanel : MonoBehaviour
             if (int.TryParse(currentEntry.NextLineKey, out int nextLineKey))
             {
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
-                if (nextIndex != -1) dialogueIndex = nextIndex;
+                if (nextIndex != -1)
+                {
+                    backStack.Push(dialogueIndex);   // 스택 관련 코드
+                    dialogueIndex = nextIndex;
+                }
                 else { Debug.Log("5"); DialEnd(); return; }
             }
             else { Debug.Log("6"); DialEnd(); return; }
@@ -554,24 +541,18 @@ public class MainPanel : MonoBehaviour
             ShowBackMessage("SystemUIText", "lock_video"); 
             return;
         }
-        // 2) 선택 분기 전이면 킵고잉
-        if (backBranchStartIndex < 0)
+
+        if (backStack.Count == 0) return;
+
+        // 선택 확정 후: 선택지 직후 대사(=backBranchStartIndex=35) 이하로는 back 금지
+        if (backBranchStartIndex >= 0 && dialogueIndex <= backBranchStartIndex)
         {
-            dialogueIndex--;
-            ShowNextDialogue();
+            ShowBackMessage("SystemUIText", "lock_select");
             return;
         }
 
-        // 3) 선택 확정 후 backBranchStartIndex 이전으로 못 감
-        // backBranchStartIndex = 선택 후 점프한 첫 줄(nextIndex)
-        if (dialogueIndex > backBranchStartIndex)
-        {
-            dialogueIndex--;
-            ShowNextDialogue();
-            return;
-        }
-
-        ShowBackMessage("SystemUIText", "lock_select");
+        dialogueIndex = backStack.Pop();   // ✅ 핵심
+        ShowNextDialogue();
     }
 
     private void ShowBackMessage(string table, string key)
