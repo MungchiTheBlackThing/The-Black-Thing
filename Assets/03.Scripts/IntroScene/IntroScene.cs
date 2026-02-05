@@ -93,6 +93,10 @@ public class IntroScene : MonoBehaviour
     public void InitStart()
     {
         PlayerPrefs.DeleteKey("PROLOGUE_PLAYED"); //프롤로그 다시 재생하도록 초기화
+        // AfterScript 복원용 PlayerPrefs 청소
+        PlayerPrefs.DeleteKey("AS_AnimKey");
+        PlayerPrefs.DeleteKey("AS_Pos");
+        PlayerPrefs.DeleteKey("AS_IsPlaying");
         PlayerPrefs.Save();
         
         RecentManager.ResetFlagOnly();

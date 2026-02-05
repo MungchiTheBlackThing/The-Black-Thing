@@ -213,14 +213,12 @@ public class Writing : GameState, ILoadingInterface, IResetStateInterface
     public void Write(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         manager.ObjectManager.PlayThinking();
-        manager.ObjectManager.ShowDiary(false);
         dot.ChangeState(DotPatternState.Phase, "anim_diary");
         //다이어리 업데이트
     }
    
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
-        manager.ObjectManager.ShowDiary(true);
     }
 
     public void ResetState(GameManager manager, DotController dot = null)

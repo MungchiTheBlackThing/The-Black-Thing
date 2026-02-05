@@ -105,15 +105,13 @@ public class MainPanel : MonoBehaviour
             }
         }
 
-        if (MainClick != null && BackBut != null && BackBut.transform.parent == transform)
-        {
-            BackBut.transform.SetSiblingIndex(transform.childCount - 1);
-            MainClick.transform.SetSiblingIndex(transform.childCount - 2);
-        }
-        else
-        {
-            if (MainClick) MainClick.transform.SetSiblingIndex(transform.childCount - 1);
-        }
+        BringSystemButtonsToTop();
+    }
+
+    void BringSystemButtonsToTop()
+    {
+        if (MainClick != null) MainClick.transform.SetAsLastSibling();
+        if (BackBut != null) BackBut.transform.SetAsLastSibling();
     }
     public void InitializePanels()
     {
@@ -343,6 +341,7 @@ public class MainPanel : MonoBehaviour
 
         beforeActivate?.Invoke();
         panel.SetActive(true);
+        BringSystemButtonsToTop();
 
         yield return StartCoroutine(FadeIn(cg, fadeSeconds, focusButtons));
 
@@ -356,6 +355,7 @@ public class MainPanel : MonoBehaviour
     public void ShowNextDialogue()
     {
         PanelOff();
+        BringSystemButtonsToTop();
         Debug.Log("다이얼: " + dialogueIndex + "리스트: " + mainDialogue.currentDialogueList.Count);
         if (dialogueIndex > mainDialogue.currentDialogueList.Count)
         {
@@ -381,6 +381,7 @@ public class MainPanel : MonoBehaviour
         {
             backindex = dialogueIndex;
         }
+        if (BackBut) BackBut.SetActive(dialogueIndex > 0);
 
         switch (textType)
         {

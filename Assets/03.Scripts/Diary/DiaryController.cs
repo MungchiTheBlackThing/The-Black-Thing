@@ -41,6 +41,8 @@ public class DiaryController : BaseObject, ISleepingInterface
 
     void OnDiaryGateChanged()
     {
+        if (!gameObject.activeInHierarchy) return;
+        if (!enabled) return;
         // 애니메이션/패널 토글 프레임 꼬임 방지
         StopCoroutine(nameof(CoUpdateLightNextFrame));
         StartCoroutine(CoUpdateLightNextFrame());
@@ -50,22 +52,6 @@ public class DiaryController : BaseObject, ISleepingInterface
     void Start()
     {
         Init();
-
-        // 튜토리얼 씬에서는 항상 비활성화
-        if (SceneManager.GetActiveScene().name == "Tutorial")
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-
-        // 1일차이고 잠금 해제되지 않았으면 비활성화
-        int currentChapter = playerController.GetChapter();
-        if (currentChapter == 1 && !playerController.IsDiaryUnlockedForChapter1())
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-
         translator = GameObject.FindWithTag("Translator").GetComponent<TranslateManager>();
         translator.translatorDel += Translate;
         
@@ -197,13 +183,6 @@ public class DiaryController : BaseObject, ISleepingInterface
         {
             OpenAlert();
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.lockClick, transform.position);
-            return;
-        }
-
-        if (!canOpen)
-        {
-            OpenAlert();
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.lockClick, this.transform.position);
             return;
         }
 

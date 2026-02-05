@@ -717,13 +717,6 @@ public class DotController : MonoBehaviour
         boxcollider.size = spriteSize;
         boxcollider.offset = spriteRenderer.sprite.bounds.center;
 
-            
-        if (!string.IsNullOrEmpty(OutAnimKey))
-        {
-            AnimKey = OutAnimKey; // 여기서 animKey 필드가 바뀜
-            // animator.Play...
-        }
-
         if (prevAnim != AnimKey)
         {
             RefreshDustState(animKey);
