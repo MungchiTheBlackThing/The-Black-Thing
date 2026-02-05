@@ -765,7 +765,7 @@ public class DotController : MonoBehaviour
             if (isSubDialogueAnimPlaying && state != DotPatternState.Sub && state != DotPatternState.Main)
             {
                 Debug.Log($"[DotController] ChangeState for '{OutAnimKey}' blocked by SubDialogue animation.");
-                return;
+                //return;
             }
             // 2. AfterScript
             if (isAfterScriptPlaying)
