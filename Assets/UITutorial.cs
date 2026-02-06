@@ -14,7 +14,6 @@ public class UITutorial : MonoBehaviour
     [SerializeField] GameObject DayProgress;
     [SerializeField] GameObject Subicon;
     [SerializeField] PlayerController player;
-    [SerializeField] private GameObject TutoCh1Object;
 
     CanvasGroup tutorialMaskGroup;
     CanvasGroup Spider;
@@ -102,6 +101,95 @@ public class UITutorial : MonoBehaviour
         }
     }
 
+    [SerializeField] private RectTransform _topLayer; // Canvas 최상단 패널(예: TutorialTopLayer) 드래그
+    private GameObject _ch1Clone;
+
+    private GameObject CreateCh1CloneOnTop(string originalName)
+    {
+        var originalGO = GameObject.Find(originalName);
+        if (!originalGO) { Debug.LogError($"[UITutorial] '{originalName}' not found"); return null; }
+
+        var src = originalGO.GetComponent<RectTransform>();
+        if (!src) { Debug.LogError("[UITutorial] original has no RectTransform"); return null; }
+
+        if (_topLayer == null)
+        {
+            // 대충이라도 최상단: 현재 캔버스의 루트 RectTransform
+            var canvas = GetComponentInParent<Canvas>();
+            _topLayer = canvas ? canvas.GetComponent<RectTransform>() : (RectTransform)transform;
+        }
+
+        // 이미 있으면 재사용
+        if (_ch1Clone) Destroy(_ch1Clone);
+
+        // 1) 클론 생성
+        _ch1Clone = Instantiate(originalGO, _topLayer);
+        _ch1Clone.name = originalGO.name + "_TUTO_CLONE";
+
+        // 2) 좌표/크기 복사 (스크린 기준으로 복사 -> parent가 달라도 맞게)
+        var dst = _ch1Clone.GetComponent<RectTransform>();
+
+        // dst를 "센터 기준"으로 고정해두면 기기별 삐뚤어짐이 줄어듦
+        dst.anchorMin = dst.anchorMax = new Vector2(0.5f, 0.5f);
+        dst.pivot = new Vector2(0.5f, 0.5f);
+
+        Vector3 srcCenterWorld = src.TransformPoint(src.rect.center);
+        Vector2 screen = RectTransformUtility.WorldToScreenPoint(null, srcCenterWorld);
+
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_topLayer, screen, null, out var local))
+            dst.anchoredPosition = local;
+
+        dst.sizeDelta = src.sizeDelta;
+
+        // 회전/스케일도 필요하면
+        dst.localRotation = Quaternion.identity;
+        dst.localScale = src.localScale;;
+
+        // 3) 최상단으로
+        _topLayer.SetAsLastSibling();
+        dst.SetAsLastSibling();
+
+        // 4) 클릭/드래그 막고 싶으면 여기서 GraphicRaycaster / Button 비활성 등 조정 가능
+        // 예: 원본의 버튼 이벤트는 제거하고 튜토용 이벤트만 넣기
+
+        return _ch1Clone;
+    }
+
+    private IEnumerator WaitForUI(string nameContains, float timeout)
+    {
+        float t = 0f;
+        while (t < timeout)
+        {
+            var go = FindByNameContains(nameContains); 
+            if (go != null) yield break;
+
+            t += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        Debug.LogWarning($"[UITutorial] WaitForUI timeout: {nameContains}");
+    }
+
+    private GameObject FindByNameContains(string key)
+    {
+        // 비활성 포함 전체 탐색
+        var all = Resources.FindObjectsOfTypeAll<GameObject>();
+        for (int i = 0; i < all.Length; i++)
+        {
+            var go = all[i];
+            if (go == null) continue;
+
+            // 에디터/프리팹 에셋 제외(런타임 씬 오브젝트만)
+            if (!go.scene.IsValid()) continue;
+
+            // key가 "ch1"이면 "ch1(Clone)"도 잡힘
+            if (go.name == key || go.name.Contains(key))
+                return go;
+        }
+        return null;
+    }
+
+
     IEnumerator StartGuide1()
     {
         yield return new WaitForSeconds(1f);
@@ -141,12 +229,18 @@ public class UITutorial : MonoBehaviour
         progressBut.transform.SetSiblingIndex(presibling);
 
         progressUIController.tutorial = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return StartCoroutine(WaitForUI("ch1", 1.0f));
+        Canvas.ForceUpdateCanvases();
 
-        TutoCh1Object.SetActive(true);
-        TutoCh1Object.transform.SetAsLastSibling();
-        TutoCh1Object.GetComponent<Button>().onClick.AddListener(progressUIController.onClickdragIcon);
+        var clone = CreateCh1CloneOnTop("ch1"); 
+        if (clone != null)
+        {
+            var btn = clone.GetComponent<Button>();
+            if (btn) { btn.onClick.RemoveAllListeners(); btn.onClick.AddListener(progressUIController.onClickdragIcon); }
+        }
     }
+
+    
     public void Guide4()
     {
         
@@ -163,7 +257,11 @@ public class UITutorial : MonoBehaviour
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
-        TutoCh1Object.SetActive(false);
+        if (_ch1Clone != null)
+        {
+            Destroy(_ch1Clone);
+            _ch1Clone = null;
+        }
         preparent = DayProgress.transform.parent.gameObject;
         DayProgress.transform.SetParent(this.transform);
         DayProgress.transform.SetAsLastSibling();

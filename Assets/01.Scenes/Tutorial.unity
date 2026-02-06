@@ -3495,6 +3495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785b8414f2aee584f95a986875930a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainCanvas: {fileID: 1193627963}
+  _canvasRect: {fileID: 1193627964}
   subDialogue: {fileID: 1418538262}
   subPanel: {fileID: 1483283895}
   touch: {fileID: 0}
@@ -3506,6 +3508,7 @@ MonoBehaviour:
   SystemUI: {fileID: 1705030965}
   playerController: {fileID: 2022455605}
   dotController: {fileID: 2046645039688417658}
+  _offsetDoorOpen: {x: 80, y: 0}
   prefabPath: TouchGuide
 --- !u!1 &201689321
 GameObject:
@@ -15306,6 +15309,7 @@ GameObject:
   - component: {fileID: 886942854}
   - component: {fileID: 886942853}
   - component: {fileID: 886942852}
+  - component: {fileID: 886942856}
   m_Layer: 0
   m_Name: screenshield
   m_TagString: Untagged
@@ -15437,6 +15441,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 606963711}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &886942856
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886942851}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &887579294
 GameObject:
   m_ObjectHideFlags: 0
@@ -21652,7 +21668,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 2796, y: 1290}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -33736,6 +33752,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1744663044}
+  - component: {fileID: 1744663046}
+  - component: {fileID: 1744663045}
   m_Layer: 5
   m_Name: popup_timeskip
   m_TagString: Untagged
@@ -33763,8 +33781,46 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 2796, y: 1290}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1744663045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744663043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1744663046
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744663043}
+  m_CullTransparentMesh: 1
 --- !u!1 &1754367860
 GameObject:
   m_ObjectHideFlags: 0
@@ -41090,13 +41146,10 @@ MonoBehaviour:
   Selection3Panel: {fileID: 0}
   Selection4Panel: {fileID: 0}
   DotController: {fileID: 0}
-  NextButton: {fileID: 0}
   Textinput: {fileID: 0}
   MainClick: {fileID: 809888060}
   BackBut: {fileID: 2050937777}
   UITutorial: {fileID: 0}
-  backindex: 0
-  backtag: 
   dialogueIndex: 0
   Day: 0
   LANGUAGE: 0

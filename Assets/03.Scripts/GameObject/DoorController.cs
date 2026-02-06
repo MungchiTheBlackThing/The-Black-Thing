@@ -142,11 +142,12 @@ public class DoorController : MonoBehaviour
             r.enabled = enable;
 
         // Dot 충돌 체크 강제 해제해서 뭉치가 메인할 때 보이도록 해야 함
-        if (!enable)
-        {
-            if (dot != null)
-                dot.GetComponent<DotController>()?.dotvicheck(false);
-        }
+        //if (!enable)
+        //{
+        //    if (dot != null)
+        //        dot.GetComponent<DotController>()?.dotvicheck(false);
+        //} 필요 없습니다 이미 뭉치보다 문이 위 레이어이며, 메인 때는 문 렌더링을 끄는 
+        // 방식으로 처리해 두어서 굳이 메인 때 문이 뭉치를 건드릴 필요 없음
     }
 
 
