@@ -11,13 +11,13 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,EngText,KorText,
 1,27,10,1,Player,Sub,,text,Could you draw them for me?,그림이라도 그려 줄래?,11,,,,Sub_Ch5,S5_L0010
 1,27,11,1,Dot,Sub,anim_eyesdown_turn,text,Hmm... Hmm! I’m not really a painter...,음... 음. 그림엔 소질이 없는데.,12,,,,Sub_Ch5,S5_L0011
 1,27,12,1,Dot,Sub,anim_eyesblink,text,How about this?,대신 이건 어때?,13,,,,Sub_Ch5,S5_L0012
-1,27,13,1,Dot,Sub,anim_sub_dottoflamingo,text,They looked like this.,이렇게 생겼었는데.,14,,,,Sub_Ch5,S5_L0013
-1,27,14,1,Dot,Sub,anim_sub_flamingo,text,I can’t recreate that beautiful pink...,그의 아름다운 분홍빛이\n결여되어 있다는 것만 제외하면...,15,,,,Sub_Ch5,S5_L0014
-1,27,15,1,Dot,Sub,,text,but I guess this will do.,그런 대로 비슷한 것 같아.,16,,,,Sub_Ch5,S5_L0015
-1,27,16,1,Dot,Sub,,text,Where on earth do these\npeople come from?,이런 인간은 어디에 사는 어떤 인간이야?,17,,,,Sub_Ch5,S5_L0016
-1,27,17,1,Player,Sub,,text,"Haha, Dot! That’s not a person!\nThat’s what we call a ’flamingo’.","하하, 뭉치! 그건 인간이 아니야!\n플라밍고라는 새를 본 것 같은데?",18,,,,Sub_Ch5,S5_L0017
-1,27,18,1,Dot,Sub,anim_sub_flamingotodot,text,A flamingo? So they aren’t human?,플라밍고? 인간이 아니야?,19,,,,Sub_Ch5,S5_L0018
-1,27,19,1,Dot,Sub,anim_eyesblink,text,Oh! Oh my.,"어, 부끄러워.",,,anim_eyesup,,Sub_Ch5,S5_L0019
+1,27,13,1,Dot,Sub,anim_sub_dottoflamingo,text,They looked like this.,이렇게 생겼었는데.,14,,,5.5,Sub_Ch5,S5_L0013
+1,27,14,1,Dot,Sub,anim_sub_flamingo,text,I can’t recreate that beautiful pink...,그의 아름다운 분홍빛이\n결여되어 있다는 것만 제외하면...,15,,,5.5,Sub_Ch5,S5_L0014
+1,27,15,1,Dot,Sub,,text,but I guess this will do.,그런 대로 비슷한 것 같아.,16,,,5.5,Sub_Ch5,S5_L0015
+1,27,16,1,Dot,Sub,,text,Where on earth do these\npeople come from?,이런 인간은 어디에 사는 어떤 인간이야?,17,,,5.5,Sub_Ch5,S5_L0016
+1,27,17,1,Player,Sub,,text,"Haha, Dot! That’s not a person!\nThat’s what we call a ’flamingo’.","하하, 뭉치! 그건 인간이 아니야!\n플라밍고라는 새를 본 것 같은데?",18,,,5.5,Sub_Ch5,S5_L0017
+1,27,18,1,Dot,Sub,anim_sub_flamingotodot,text,A flamingo? So they aren’t human?,플라밍고? 인간이 아니야?,19,,,5.5,Sub_Ch5,S5_L0018
+1,27,19,1,Dot,Sub,anim_bounce,text,Oh! Oh my.,"어, 부끄러워.",,,,,Sub_Ch5,S5_L0019
 2,28,20,1,Dot,Default,anim_bounce,text,"♫ I wonder how, I wonder why ♫","♫ I wonder how, I wonder why ♫",21,,,,Sub_Ch5,S5_L0020
 2,28,21,1,Dot,Default,,text,"♫ Yesterday, you told me\n’bout the blue, blue sky ♫","♫ Yesterday, you told me\n’bout the blue, blue sky ♫",22,,,,Sub_Ch5,S5_L0021
 2,28,22,1,Dot,Default,,text,♫ And all that I can see is\njust a yellow lemon tree ♫,♫ And all that I can see is\njust a yellow lemon tree ♫,23,,,,Sub_Ch5,S5_L0022

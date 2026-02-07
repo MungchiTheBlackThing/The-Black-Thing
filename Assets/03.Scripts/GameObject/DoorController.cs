@@ -83,6 +83,7 @@ public class DoorController : MonoBehaviour
     }
     public void close()
     {
+        isDoorOpen = false;
         int OpenIdx = Animator.StringToHash("isOpening");
         animator = this.transform.parent.GetComponent<Animator>();
         animator.SetFloat(Animator.StringToHash("speed"), 1.0f);
@@ -92,6 +93,7 @@ public class DoorController : MonoBehaviour
     }
     public void open()
     {
+        isDoorOpen = true;
         int OpenIdx = Animator.StringToHash("isOpening");
         animator = this.transform.parent.GetComponent<Animator>();
         animator.SetFloat(Animator.StringToHash("speed"), 1.0f);

@@ -1,22 +1,9 @@
 {
   "animations": [
-      {
-          "key": "anim_diary",
-          "value": {
-              "positions": [6]
-          }
-      },
-      {
-          "key": "anim_diary_omg",
-          "value": {
-              "positions": [6]
-          }
-      },
-      {
-          "key": "anim_watching",
-          "value": {
-              "positions": [1.5]
-          }
-      }
+    { "key": "anim_diary", "value": { "positions": [6] } },
+    { "key": "anim_diary_omg", "value": { "positions": [6] } },
+    { "key": "anim_sleep", "value": { "positions": [10] } },
+    { "key": "anim_sleep_mare", "value": { "positions": [10] } },
+    { "key": "anim_watching", "value": { "positions": [1.5] } }
   ]
 }

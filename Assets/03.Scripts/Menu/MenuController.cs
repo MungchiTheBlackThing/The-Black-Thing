@@ -348,8 +348,12 @@ public class MenuController : MonoBehaviour
     public void tuto()
     {
         if (!MenuButAnim)
+            MenuButAnim = GetComponent<Animator>();
+
+        if (!MenuButAnim)
         {
-            MenuButAnim = this.GetComponent<Animator>();
+            Debug.LogError("[MenuController] Animator(MenuButAnim) missing on this GameObject. tuto() skipped.");
+            return;
         }
         MenuButAnim.SetFloat("tuto", 1f);
     }

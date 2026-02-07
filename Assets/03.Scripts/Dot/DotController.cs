@@ -64,6 +64,8 @@ public class DotController : MonoBehaviour
     public GameObject subDialogue;
     [SerializeField]
     public GameObject subPanel;
+
+    
     [SerializeField]
     PlayerController playerController;
 
@@ -658,6 +660,7 @@ public class DotController : MonoBehaviour
         //outPos -1일경우 랜덤위치
         if (position == -1)
         {
+            bool picked = false;
             if (DotPositionKeyDic.TryGetValue(state, out var dic))
             {
                 if (dic.TryGetValue(OutAnimKey, out var list))
@@ -670,6 +673,7 @@ public class DotController : MonoBehaviour
                     Debug.LogWarning($"[DotController] '{OutAnimKey}'에 대한 위치 데이터가 {state} 상태에 정의되지 않았으므로 기본 위치 사용");
                 }
             }
+            if (position == -1) position = 4f; // fallback
         }
 
         //위치 조절
@@ -732,7 +736,8 @@ public class DotController : MonoBehaviour
         // SubDialogue 패널이 켜져 있으면 무조건 OFF
         bool blockBySubPanel = (subDialogue != null && subDialogue.activeSelf);
 
-        bool shouldEnable = (currentAnimKey == "anim_sleep") && !blockBySubPanel;
+        bool isSleepAnim = (currentAnimKey == "anim_sleep" || currentAnimKey == "anim_sleep_mare");
+        bool shouldEnable = isSleepAnim && !blockBySubPanel;
 
         if (shouldEnable)
         {
@@ -929,8 +934,9 @@ public class DotController : MonoBehaviour
         else if (manager.Pattern == GamePatternState.Writing)
         {
             // Writing 페이즈: AfterScript 종료 후 anim_diary로 복귀
-            Debug.Log("[DotController] Writing 페이즈: AfterScript 종료 후 anim_diary로 복귀");
-            ChangeState(DotPatternState.Phase, "anim_diary", -1, "", true);
+            string diaryKey = GetDiaryAnimKeyForChapter(chapter);
+            Debug.Log("[DotController] Writing 페이즈: AfterScript 종료 후 기본 일기 애니메이션으로 복귀");
+            ChangeState(DotPatternState.Phase, diaryKey, -1, "", true);
         }
         else
         {
@@ -939,7 +945,7 @@ public class DotController : MonoBehaviour
     }
 
     // Trigger 함수들에서 호출할 강제 종료 헬퍼 (UpdateIdleAnimation 호출 안 함)
-    private void ForceStopAfterScript()
+    public void ForceStopAfterScript()
     {
         if (isAfterScriptPlaying)
         {
@@ -984,17 +990,15 @@ public class DotController : MonoBehaviour
                 break;
             case GamePatternState.Sleeping:
                 // Sleeping 페이즈의 기본 애니메이션 복구
-                // Sleeping: 기본 애니메이션 anim_sleep 고정 (랜덤 X)
-                Debug.Log($"[DotController] Playing default animation for Sleeping phase: anim_sleep");
-                ChangeState(DotPatternState.Trigger, "anim_sleep", 10);
-                // Trigger 타입으로 재생하여 우선순위 확보
-                ChangeState(DotPatternState.Trigger, "anim_sleep", 10, "", true);
+                string sleepKey = GetSleepAnimKeyForChapter(chapter);
+                ChangeState(DotPatternState.Trigger, sleepKey, 10, "", true);
                 break;
             case GamePatternState.Writing:
                 // Writing 페이즈의 기본 애니메이션 복구
                 // Writing: 기본 애니메이션 anim_diary 고정 (랜덤 X)
-                Debug.Log($"[DotController] Playing default animation for Writing phase: anim_diary");
-                ChangeState(DotPatternState.Phase, "anim_diary", -1, "", true);
+                string diaryKey = GetDiaryAnimKeyForChapter(chapter);
+                Debug.Log($"[DotController] Playing default animation for Writing phase: {diaryKey}");
+                ChangeState(DotPatternState.Phase, diaryKey, -1, "", true);
                 break;
             default:
                 Debug.Log($"[DotController] No specific idle animation for phase '{manager.Pattern}'.");
@@ -1021,6 +1025,18 @@ public class DotController : MonoBehaviour
 
         //14일차 phase_watching 예외처리는 SubDialogue의 Subexit()에서 처리
         return false;
+    }
+
+    public string GetDiaryAnimKeyForChapter(int ch)
+    {
+        // 9~11일차만 예외
+        return (ch == 9 || ch == 10 || ch == 11) ? "anim_diary_omg" : "anim_diary";
+    }
+
+    public string GetSleepAnimKeyForChapter(int ch)
+    {
+        // 9~11일차만 예외
+        return (ch == 9 || ch == 10 || ch == 11) ? "anim_sleep_mare" : "anim_sleep";
     }
 
     private string GetRandomAnimationForChapter(int chapter)

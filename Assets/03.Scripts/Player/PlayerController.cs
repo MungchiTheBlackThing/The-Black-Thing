@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     string nickname;
     [SerializeField]
     private int currentChapter;
-    const float passTime = 1800f; //30분을 기준으로 한다.
+    private int _nextPhaseGuardFrame = -1;
 
     public delegate void NextPhaseDelegate(GamePatternState state);
     public NextPhaseDelegate nextPhaseDelegate;
@@ -130,6 +130,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
     public void NextPhase()
     {
+        if (_nextPhaseGuardFrame == Time.frameCount) return;
+        _nextPhaseGuardFrame = Time.frameCount;
         Debug.Log($"[NextPhase CALLER]\n{Environment.StackTrace}");
         if (GameManager.isend) return;
         foreach (var door in FindObjectsOfType<DoorController>()) //페이즈 넘어갈 때 (메인 끝나면 페이즈 넘어가니까 + 나머지 페이즈 전환은 상관 없으니까) 문 켜기
@@ -165,8 +167,9 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
 
             if (player.currentPhase == GamePatternState.NextChapter)
             {
+                WritePlayerFile();
                 Debug.Log("NextChapter 상태 진입 → ChangeGameState 호출");
-                gamemanger.GetComponent<GameManager>().ChangeGameState(GamePatternState.NextChapter);
+                nextPhaseDelegate?.Invoke(player.currentPhase);
                 return; // 더 이상 아래 로직 실행하지 않음
             }
         }
@@ -301,25 +304,7 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         return player.watchedSubseq;
     }
-    //시간 설정 : (현재 시간 - watching이 진행된 시간)+60분
-    public void PassWathingTime()
-    {
-        //현재 진행시간에 60분을 더한다.
-        //Time.deltaTime => 1초 
-        //1분 => 60초
-        //60분 => 60*60 => 3600초
-        //30분 => 60*30 => 1800초
-        //120분 => 60*120 => 7200초
-        elapsedTime += (passTime * 2); //1시간 Update
-    }
-    public void PassWriting()
-    {
-        elapsedTime += (passTime);
-    }
-    public void PassThinkingTime()
-    {
-        elapsedTime += (passTime * 4); //2시간 1800*4 => 7200
-    }
+
     public void EntryGame(DateTime dateTime)
     {
         if (player != null)
@@ -438,12 +423,6 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public void WritePlayerFile()
     {
         if (GameManager.isend) player.endingReached = true;
-
-        player.currentPhase =
-            player.currentPhase == GamePatternState.NextChapter
-                ? GamePatternState.Watching
-                : player.currentPhase;
-
         string jsonData = JsonUtility.ToJson(player);
 
         SavePaths.WriteAllTextAtomic(SavePaths.PlayerDataPath, jsonData);

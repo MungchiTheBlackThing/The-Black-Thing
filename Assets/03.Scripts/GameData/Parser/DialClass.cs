@@ -24,6 +24,7 @@ namespace Assets.Script.DialClass
         public string TextType;
         public string Text;
         public string NextLineKey;
+        public string Exeption;
     }
     [System.Serializable]
     public class DialogueEntry

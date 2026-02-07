@@ -213,7 +213,9 @@ public class Writing : GameState, ILoadingInterface, IResetStateInterface
     public void Write(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
         manager.ObjectManager.PlayThinking();
-        dot.ChangeState(DotPatternState.Phase, "anim_diary");
+
+        string diaryKey = dot != null ? dot.GetDiaryAnimKeyForChapter(dot.Chapter) : "anim_diary";
+        dot.ChangeState(DotPatternState.Phase, diaryKey);
         //다이어리 업데이트
     }
    
@@ -223,7 +225,8 @@ public class Writing : GameState, ILoadingInterface, IResetStateInterface
 
     public void ResetState(GameManager manager, DotController dot = null)
     {
-        dot.ChangeState(DotPatternState.Phase, "anim_diary");
+        string diaryKey = dot != null ? dot.GetDiaryAnimKeyForChapter(dot.Chapter) : "anim_diary";
+        dot.ChangeState(DotPatternState.Phase, diaryKey);
     }
 }
 
@@ -285,19 +288,18 @@ public class Sleeping : GameState, IResetStateInterface
         sleeping.OpenSleeping();
        
         this.dot = dot;
-        dot.ChangeState(DotPatternState.Trigger, "anim_sleep", 10);
-        dot.Dust.SetActive(true);
+        string sleepKey = (dot != null) ? dot.GetSleepAnimKeyForChapter(dot.Chapter) : "anim_sleep";
+        dot.ChangeState(DotPatternState.Trigger, sleepKey, 10);
     }
 
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
-        this.dot.Dust.SetActive(false);
     }
 
     public void ResetState(GameManager manager, DotController dot = null)
     {
-        dot.ChangeState(DotPatternState.Trigger, "anim_sleep", 10);
-        dot.Dust.SetActive(true);
+        string sleepKey = (dot != null) ? dot.GetSleepAnimKeyForChapter(dot.Chapter) : "anim_sleep";
+        dot.ChangeState(DotPatternState.Trigger, sleepKey, 10);
     }
 }
 

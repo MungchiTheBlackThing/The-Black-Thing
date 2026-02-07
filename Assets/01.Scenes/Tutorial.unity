@@ -15121,6 +15121,8 @@ MonoBehaviour:
   - {fileID: 8940817456850249698}
   - {fileID: 1600102976213365414}
   video: {fileID: 0}
+  videoCanvasGroup: {fileID: 0}
+  fadeInDuration: 0.25
 --- !u!1 &868027220
 GameObject:
   m_ObjectHideFlags: 0
@@ -17692,7 +17694,6 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   dotController: {fileID: 0}
   objectManager: {fileID: 606963712}
-  IsSkipButtonClicked: 0
 --- !u!114 &1007219010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40774,9 +40775,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC800\uAC74 \uCC98\uC74C \uBCF4\uB294 \uAE30\uACC4\uC778\uB370.... \uB2EC\uC5D0\uC11C
-    \uAC00\uC9C0\uACE0 \uC628 \uAC74\uAC00. \L\uC5B4, \uCABD\uC9C0\uAC00 \uBE5B\uB098\uACE0
-    \uC788\uC5B4. \uD655\uC778\uD574 \uBCFC\uAE4C?"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}
   m_sharedMaterial: {fileID: 1188920287867902073, guid: c3fac11693f8ac34a93047980ba59d17, type: 2}

@@ -2,11 +2,11 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,49,1,main_table,Dot,Main,body_default2,face_squeeze,text,책장 안. 침대 위. 포스터 뒤쪽.,In the bookcase. On the bed.\nBehind the poster.,2,,,,Main_Ch9,M9_L0001
 1,49,2,main_table,Dot,Main,body_default2,face_squeeze,text,보이지 않아. 보이지 않아.\n어디에도 보이지 않아.,It’s not here. It’s not there.\nIt’s not anywhere.,3,,,,Main_Ch9,M9_L0002
 1,49,3,main_table,Dot,Main,body_default2,face_omg,text,"<nickname>. 너, 너, 너.\n혹시 ‘청소’라는 걸 했어?","<nickname>. You, you, you.\nDon’t tell me you cleaned?",4,,,,Main_Ch9,M9_L0003
-1,49,4,main_table,Player,Main,body_default2,face_omg,text,어어... 곰팡이를 치우긴 했는데...,So... I did get rid of the mold...,5,,,,Main_Ch9,M9_L0004
+1,49,4,main_table,Player,Main,body_default2,face_omg,text,"응, 방이 조금 더 상쾌하지 않아?|어어... 곰팡이를 치우긴 했는데...","I did. Isn’t it refreshing?|So... I did get rid of the mold...",5|5,,,,Main_Ch9,M9_L0004
 1,49,5,main_table,Dot,Main,body_default2,face_mad,text,안 돼. 안 돼. 그럴 수 없어. 그럴 수는 없어.,No. No. It can’t be. It just can’t.,6,,,,Main_Ch9,M9_L0005
 1,49,6,main_table,Dot,Main,body_default2,face_mad,text,그러면 옴폭한 접시에 몸을\n누이고 살아가던 나의 친구를....,"So my friend, the one that\nlounged on the plate....",7,,,,Main_Ch9,M9_L0006
 1,49,7,main_table,Player,Main,body_default2,face_mad,text,곰팡이를.,You mean the mold.,8,,,,Main_Ch9,M9_L0007
-1,49,8,main_table,Dot,Main,body_default2,face_blink,text,나의 친구가 네게는 해악이었어?,Was my friend a hazard to you?,9,,,,Main_Ch9,M9_L0008
+1,49,8,main_table,Dot,Main,body_default2,face_blink,text,넌 나의 친구를 미워했던 거야?,Was my friend a hazard to you?,9,,,,Main_Ch9,M9_L0008
 1,49,9,main_table,Player,Main,body_default2,,text,....,....,10,,,,Main_Ch9,M9_L0009
 1,49,10,main_table,Player,Main,body_default2,,text,(하지만 곰팡이의 무덤을 더는 견딜\n수가 없었어. 이걸 어떻게 설명하지?),(But I couldn’t stand the mold.\nHow should I put this?),11,,,,Main_Ch9,M9_L0010
 1,49,11,main_table,Player,Main,body_default2,,text,"음, 뭉치야. 인간에게 곰팡이는 해악이야. 곰팡이는...","Well, Dot. Mold can be\nhazardous to people. It...",12,,,,Main_Ch9,M9_L0011
@@ -14,7 +14,7 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,49,13,main_table,Player,Main,body_default2,,text,으으...,Blegh...,14,,,,Main_Ch9,M9_L0013
 1,49,14,main_table,Dot,Main,body_default2,,text,"하지만 시간이 지나며 <nickname>,\n너와도 친구가 된 게 아니었어?",But.. I thought you’d\ngrown to be friends?,15,,,,Main_Ch9,M9_L0014
 1,49,15,main_table,Dot,Main,body_default2,,text,인간에게 나쁜 영향을\n준다곤 생각치 않았어.,I had no idea he was\nsuch a bad influence.,16,,,,Main_Ch9,M9_L0015
-1,49,16,main_table,Dot,Main,body_default2,,text,"난, 나는, 음, 그러게. 난 그것도\n모르고 그와 소중해졌네.","I, I, oh, I see. I got close to him without realizing.",n,,,,Main_Ch9,M9_L0016
+1,49,16,main_table,Dot,Main,body_default2,,text,"난, 나는, 음, 그러게. 난 그것도\n모르고 그와 소중해졌네.","I, I, oh, I see. I got close to him without realizing.",17,,,,Main_Ch9,M9_L0016
 1,49,17,main_table,Player,Main,body_default2_turn2,,text,......,......,18,,,,Main_Ch9,M9_L0017
 1,49,18,main_table,Dot,Main,body_default1,face_eyeroll3,text,"... 그래, 너에겐 한낱 빵에 핀 더러운 곰팡이였지만.",... To you he was just dirty mold on your bread.,19,,,,Main_Ch9,M9_L0018
 1,49,19,main_table,Dot,Main,,face_eyeroll3_stay,text,그치만 나의 친한 친구였어. 나의.. 친한 친구.,But he was my dear friend.\nMy... dear friend.,20,,,,Main_Ch9,M9_L0019
@@ -29,7 +29,7 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,49,28,main_table,Dot,Main,body_move,,text,그건 다르지. 나는 너와 영영 이별하지 않아!,That’s different. You and I will\nnever be apart for good!,29,,,,Main_Ch9,M9_L0028
 1,49,29,main_table,Dot,Main,body_move,,text,"내가 <nickname>의 꿈이 된다면, 네 안에\n흡수되어 영영 친구로 지낼 수 있어.","If I become your dream, I can live\non forever inside you as your friend.",30,,,,Main_Ch9,M9_L0029
 1,49,30,main_table,Player,Main,body_default1,,text,응? 정말 그런 거였어? 문학적인 표현이 아니었어?,What? You will? So it wasn’t just a figure of speech?,31,,,,Main_Ch9,M9_L0030
-1,49,31,main_table,Player,Main,,,text,(무언가 이상하다. 뭉치가 꿈에\n대해 잘못 알고 있는 것 같다.),(Something’s off. Dot seems to\nhave the wrong idea about dreams.),32,’,,,Main_Ch9,M9_L0031
+1,49,31,main_table,Player,Main,,,text,(무언가 이상하다. 뭉치가 꿈에\n대해 잘못 알고 있는 것 같다.),(Something’s off. Dot seems to\nhave the wrong idea about dreams.),32,,,,Main_Ch9,M9_L0031
 1,49,32,main_table,Player,Main,,,text,"(아니면, 내가 달나라의 ’꿈’에\n대해 모르고 있는 사실이 있거나.)",(Or there’s more to ‘dreams’ sent from\nthe Moon that I have yet to know of.),33,,,,Main_Ch9,M9_L0032
 1,49,33,main_table,Player,Main,,,text,"뭉치, 인간의 꿈이 뭐라고 생각해?",Dot. What do you think dreams are?,34,,,,Main_Ch9,M9_L0033
 1,49,34,main_table,Dot,Main,,face_close_turn,text,꿈.,Dreams.,35,,,,Main_Ch9,M9_L0034

@@ -411,8 +411,8 @@ public class ObjectManager : MonoBehaviour
 
         bool shouldShow = ShouldDiaryBeActive(ch, baseActive, pc);
 
-        // 2) 핵심: anim_diary면 숨김
-        if (dot != null && dot.AnimKey == "anim_diary")
+        // 2) 핵심: anim_diary or anim_diary_omg면 숨김
+        if (dot != null && (dot.AnimKey == "anim_diary" || dot.AnimKey == "anim_diary_omg"))
             shouldShow = false;
 
         if (_lastDiaryVisible == shouldShow) return;
@@ -471,7 +471,7 @@ public class ObjectManager : MonoBehaviour
             {
                 active = ShouldDiaryBeActive(chapter, active, pc);
                 if (dot == null) dot = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
-                if (dot != null && dot.AnimKey == "anim_diary") active = false;
+                if (dot != null && (dot.AnimKey == "anim_diary" || dot.AnimKey == "anim_diary_omg")) active = false;
             }
 
             value.SetActive(active);
