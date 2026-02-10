@@ -22,6 +22,9 @@ public class Watching : GameState, IResetStateInterface
     //뭉치의 외출 여부를 알아야한다.
     List<EWatching> pattern = new List<EWatching>();
     IWatchingInterface watching = null;
+
+    private Coroutine _retryEnterCo;
+    private int _retryEnterCount;
     public override void Init()
     {
         if (pattern.Count <= 0)
@@ -46,13 +49,31 @@ public class Watching : GameState, IResetStateInterface
 
     public override void Enter(GameManager manager, DotController dot = null, TutorialManager tutomanger = null)
     {
+        // 1) 먼저 init 시도
+        if (pattern.Count == 0) Init();
+
+        // 3) 인덱스 계산 (챕터 1~n → 0~n-1)
+
+        int idx = manager.Chapter;
+
+        // 4) 호출 이상한 경우 재시도하고 return
+        if (idx < 0 || idx >= pattern.Count)
+        {
+            if (_retryEnterCo == null && _retryEnterCount < 60)
+                _retryEnterCo = manager.StartCoroutine(RetryEnterNextFrame(manager, dot, tutomanger));
+            return;
+        }
+
+        _retryEnterCount = 0;
+        _retryEnterCo = null;
+
         if (objectManager == null)
         {
             objectManager = manager.ObjectManager;
         }
         objectManager.SettingChapter(manager.Chapter, manager.Pattern);
 
-        EWatching currentPattern = pattern[manager.Chapter];
+        EWatching currentPattern = pattern[idx];
         
         // StayAtHome일 때도 쪽지(Letter) 기능을 사용해야 하므로 Letter 컨트롤러를 가져오도록 설정
         EWatching targetController = currentPattern;
@@ -80,11 +101,19 @@ public class Watching : GameState, IResetStateInterface
         }
     }
 
+    private IEnumerator RetryEnterNextFrame(GameManager manager, DotController dot, TutorialManager tutomanger)
+    {
+        _retryEnterCount++;
+        yield return null;
+        _retryEnterCo = null;
+        Enter(manager, dot, tutomanger);
+    }
+
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)
     {
         if(watching != null)
         {
-            watching.CloseWatching();
+            watching.CloseWatching();     
         }
     }
 

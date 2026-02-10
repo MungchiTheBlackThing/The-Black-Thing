@@ -202,6 +202,9 @@ public class SubDialAlert : MonoBehaviour
     }
         public void OnClickSubImage()
     {
+        if (player == null) return;
+        if (!player.GetSubSkipModeEnabled()) return; // 모드 설정에 따라 모드 꺼져 있으면 리턴함
+
         // 트리거 아이콘이 떠 있으면: 팝업 막고 lock 효과음만
         if (subTriggerIcon != null && subTriggerIcon.activeSelf)
         {
@@ -214,11 +217,13 @@ public class SubDialAlert : MonoBehaviour
             return;
         }
         if (subSkipPopup != null) subSkipPopup.SetActive(true);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.iconClick, transform.position);
     }
 
     // Yes -> 팝업 OFF + 서브 즉시
     public void OnClickSubSkipYes()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, transform.position);
         if (subSkipPopup != null) subSkipPopup.SetActive(false);
         gameManager.SkipSubDialWaitAndShowNow();
     }
@@ -226,6 +231,7 @@ public class SubDialAlert : MonoBehaviour
     // No -> 팝업 OFF
     public void OnClickSubSkipNo()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, transform.position);
         if (subSkipPopup != null) subSkipPopup.SetActive(false);
     }
 

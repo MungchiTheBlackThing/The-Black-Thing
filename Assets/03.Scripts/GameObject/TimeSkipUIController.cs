@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class TimeSkipUIController : MonoBehaviour
 {
@@ -115,6 +116,10 @@ public class TimeSkipUIController : MonoBehaviour
     }
     public void OnClick()
     {
+        var sceneName = SceneManager.GetActiveScene().name;
+        // Tutorial 씬이 아니고 + 스킵모드 OFF면 막기
+        if (sceneName != "Tutorial" && !playerController.GetSkipModeEnabled())
+            return;
         if (GameManager.isend) return;
         if (popup.activeSelf == false)
         {

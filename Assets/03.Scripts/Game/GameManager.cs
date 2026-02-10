@@ -261,6 +261,7 @@ public class GameManager : MonoBehaviour
     }
     public void NextPhase()
     {
+        dot.ForceStopAfterScript();
         if (_nextPhaseRequested) return;
         _nextPhaseRequested = true;
         pc.NextPhase();
@@ -277,6 +278,7 @@ public class GameManager : MonoBehaviour
     //페이즈 변경
     public void ChangeGameState(GamePatternState patternState)
     {
+        EnsureVideoController(); 
         if (currentPattern == GamePatternState.NextChapter && patternState != GamePatternState.NextChapter)
         {
             videoController?.CloseIfShowing(SkipVideoIdx.SkipSleeping);
@@ -377,10 +379,9 @@ public class GameManager : MonoBehaviour
         //C#에서 명시적 형변환은 강제, as 할지말지를 결정.. 즉, 실패 유무를 알고 싶다면, as를 사용한다.
         //activeState가 ILoadingInterface를 구현하고 있는지 확인, 맞다면 loadingInterface에 할당하고 아니면 null
         //현재 상태가 비디오를 재생해야하는 로딩 관련 상태인지 확인하는 역할
-        ILoadingInterface loadingInterface = activeState as ILoadingInterface;
 
         //skip video 재생
-        if (loadingInterface != null && currentPattern == GamePatternState.NextChapter)
+        if (currentPattern == GamePatternState.NextChapter)
         {
             videoController.ShowSkipVideo(SkipVideoIdx.SkipSleeping, looping: true);
             
@@ -543,8 +544,9 @@ public class GameManager : MonoBehaviour
         }
         ApplyMoldGateIfNeeded();
 
-        ILoadingInterface loadingInterface = activeState as ILoadingInterface;
-        if (loadingInterface != null && patternState == GamePatternState.NextChapter)
+        EnsureVideoController();
+
+        if (currentPattern == GamePatternState.NextChapter)
         {
             videoController.ShowSkipVideo(SkipVideoIdx.SkipSleeping, looping: true);
         }
@@ -558,6 +560,12 @@ public class GameManager : MonoBehaviour
             day8.TryStart();   // 내부에서 PausePhaseTimer() 처리하도록 유지
             yield break;       
         }
+    }
+
+    private void EnsureVideoController()
+    {
+        if (videoController == null)
+            videoController = FindObjectOfType<VideoPlayerController>(true); // inactive 포함
     }
 
     private void RestoreEndingFromSave(PlayerInfo info)

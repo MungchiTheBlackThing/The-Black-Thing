@@ -163,19 +163,19 @@ MonoBehaviour:
       m_Items:
       - rid: 5827832305795465233
   - m_Id: 52964753426
-    m_Localized: "<size=90>CREDIT</size>\r\n\r\nCreated and Directed by Andiemae
-      Lee\r\n\r\nArt Direction & Animation by Yoonsun Lee\r\n\r\nNarrative Design
-      & Scriptwriting by\r\nAndiemae Lee, Sieun Lee, and Eunseo Go\r\n\r\nGame Design
-      & PM by Andiemae Lee\r\nProgramming by Junhyun Sim, Suyoung Song,\\nAndiemae
-      Lee, and Heejin Jang\n\r\nEnglish Localization by Hansol Jang and Hae Seung
-      Kie\r\n\r\nUX & Game Design Support by Yuri Choi\r\nQA Testing by Kihyun Lee\r\nPrologue
-      Narration by Charlie Leander \nProgramming Assistance by Jiwon Choi\r\n\r\nMusic
-      (Main BGM)\r\n\"Playground Abyss\" by Haksil\r\n\"Monster and Human\"\r\n\"Gooey
-      Footsteps\"\r\n\"A Dream within a Dream\"\r\n\"From the Moon and Back\" by
-      Wooyeol Choi\r\n\r\nMusic (Story Animation BGM)\r\nChapters 1, 2, 4 by Wooyeol
-      Choi\r\nChapters 5, 6, 9, 11, 13 by Woochan Kim\r\nChapter 14 by Sam Shandley\r\n\nPrologue
-      & Moon Transmitter BGM:\nfree assets by GregorQuendel\r\nChapters 3, 7, 8,
-      10, 12: free assets by nojisuma\r\n\r\n\nSpecial Thanks to our loved ones,\r\nfriends
+    m_Localized: "Created and Directed by Andiemae Lee\r\n\r\nArt Direction & Animation
+      by Yoonsun Lee\r\n\r\nNarrative Design & Scriptwriting by\r\nAndiemae Lee,
+      Sieun Lee, and Eunseo Go\r\n\r\nGame Design & PM by Andiemae Lee\r\nProgramming
+      by Junhyun Sim, Suyoung Song,\\nAndiemae Lee, and Heejin Jang\n\r\nEnglish
+      Localization by Hansol Jang and Hae Seung Kie\r\n\r\nUX & Game Design Support
+      by Yuri Choi\r\nQA Testing by Kihyun Lee\r\nPrologue Narration by Charlie Leander
+      \nProgramming Assistance by Jiwon Choi\r\n\r\nMusic (Main BGM)\r\n\"Playground
+      Abyss\" by Haksil\r\n\"Monster and Human\"\r\n\"Gooey Footsteps\"\r\n\"A Dream
+      within a Dream\"\r\n\"From the Moon and Back\" by Wooyeol Choi\r\n\r\nMusic
+      (Story Animation BGM)\r\nChapters 1, 2, 4 by Wooyeol Choi\r\nChapters 5, 6,
+      9, 11, 13 by Woochan Kim\r\nChapter 14 by Sam Shandley\r\n\nPrologue & Moon
+      Transmitter BGM:\nfree assets by GregorQuendel\r\nChapters 3, 7, 8, 10, 12:
+      free assets by nojisuma\r\n\r\n\nSpecial Thanks to our loved ones,\r\nfriends
       and family, \r\nand our backers from all over the world.\r\n"
     m_Metadata:
       m_Items:
@@ -583,6 +583,34 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 44665800055799808
     m_Localized: A dream, once ended, cannot be replayed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48340746091053056
+    m_Localized: TIME SKIP MODE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48340852743815168
+    m_Localized: INSTANT CHAT MODE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48663375310176256
+    m_Localized: "\uC2A4\uD0B5 \uBAA8\uB4DC \uD14D\uC2A4\uD2B8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48663378598510592
+    m_Localized: "\uC7A1\uB2F4 \uBC14\uB85C\uBCF4\uAE30 on \uBAA8\uB4DC \uD14D\uC2A4\uD2B8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48688533626372096
+    m_Localized: "\uC7A1\uB2F4 \uBC14\uB85C\uBCF4\uAE30 off \uBAA8\uB4DC \uD14D\uC2A4\uD2B8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48688547748593664
+    m_Localized: "\uB124, \uADF8\uB7F4\uAC8C\uC694."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48688551661879296
+    m_Localized: "\uC544\uB2C8\uC694."
     m_Metadata:
       m_Items: []
   references:

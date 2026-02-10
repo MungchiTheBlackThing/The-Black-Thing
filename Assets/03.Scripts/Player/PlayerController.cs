@@ -432,25 +432,25 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     {
         string path = SavePaths.PlayerDataPath;
 
-        if (SavePaths.TryReadAllText(path, out var json) && !string.IsNullOrEmpty(json))
+        if (SavePaths.TryReadAllTextWithBackup(path, out var json) && !string.IsNullOrEmpty(json))
         {
             try
             {
                 var loaded = JsonUtility.FromJson<PlayerInfo>(json);
                 if (loaded != null) player = loaded;
+                return;
             }
-            catch
+            catch (Exception e)
             {
-                // 깨졌으면 기본값으로 다시 저장
-                WritePlayerFile();
+                Debug.LogWarning($"[PlayerController] PlayerData parse failed: {e.Message}");
+                
+                return;
             }
         }
-        else
-        {
-            WritePlayerFile();
-        }
-    }
 
+        Debug.LogWarning("[PlayerController] PlayerData missing/unreadable. Using default in-memory state; not overwriting save.");
+
+    }
     void OnApplicationPause(bool pauseStatus)
     {
         if (pauseStatus)
@@ -461,13 +461,13 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     }
 
     private void OnApplicationQuit()
-    {
-        WritePlayerFile();
+    {     
+        //WritePlayerFile();
     }
 
     private void OnDestroy()
     {
-        WritePlayerFile();
+        //WritePlayerFile(); 강종 시 데이터 깨지고 초기화되는 오류 방지, 각주 처리
     }
 
     public ArcheType GetSunMoon()
@@ -565,4 +565,21 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
             Debug.LogWarning($"[PlayerController] Failed to find locale for code: {code}");
         }
     }
+
+    public bool GetSkipModeEnabled() => player != null && player.isSkipModeEnabled;
+    public void SetSkipModeEnabled(bool v)
+    {
+        if (player == null) return;
+        player.isSkipModeEnabled = v;
+        WritePlayerFile();
+    }
+
+    public bool GetSubSkipModeEnabled() => player != null && player.isSubSkipModeEnabled;
+    public void SetSubSkipModeEnabled(bool v)
+    {
+        if (player == null) return;
+        player.isSubSkipModeEnabled = v;
+        WritePlayerFile();
+    }
+
 }

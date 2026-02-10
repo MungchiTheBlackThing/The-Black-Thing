@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UITutorial : MonoBehaviour
 {
@@ -36,6 +37,9 @@ public class UITutorial : MonoBehaviour
     private int step = 0;
 
     private bool _menuOpenedSignal = false;
+
+    private bool _progressClicked = false;
+
     void Awake()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -79,11 +83,11 @@ public class UITutorial : MonoBehaviour
     private void Update()
     {
 
-        if (!G3 && G2 && MenuController.isprogress)
+        if (!G3 && G2 && _progressClicked)
         {
             StartCoroutine(Guide3());
             G3 = true;
-            MenuController.isprogress = false;
+            _progressClicked = false;
         }
 
         if (!G4 && progressUIController.guide1)
@@ -200,7 +204,7 @@ public class UITutorial : MonoBehaviour
     public void Guide1()
     {
         preparent = menuBut.transform.parent.gameObject;
-        presibling = 1;
+        presibling = menuBut.transform.GetSiblingIndex();
         Debug.Log("Guide1");
         menuBut.transform.SetParent(this.transform);
         menuBut.transform.SetAsLastSibling();
@@ -217,6 +221,22 @@ public class UITutorial : MonoBehaviour
         progressBut.transform.SetParent(this.transform);
         progressBut.transform.SetAsLastSibling();
         Debug.Log("Guide2");
+
+        _progressClicked = false;
+        var btn = progressBut.GetComponent<Button>();
+        if (btn)
+        {
+            btn.onClick.RemoveListener(OnClickProgressOnce);
+            btn.onClick.AddListener(OnClickProgressOnce);
+        }
+    }
+
+    private void OnClickProgressOnce()
+    {
+        _progressClicked = true;
+
+        var btn = progressBut.GetComponent<Button>();
+        if (btn) btn.onClick.RemoveListener(OnClickProgressOnce); // 1회성
     }
 
     public IEnumerator Guide3()
@@ -236,8 +256,27 @@ public class UITutorial : MonoBehaviour
         if (clone != null)
         {
             var btn = clone.GetComponent<Button>();
-            if (btn) { btn.onClick.RemoveAllListeners(); btn.onClick.AddListener(progressUIController.onClickdragIcon); }
+            if (btn) 
+            { 
+                btn.onClick.RemoveAllListeners(); 
+                btn.onClick.AddListener(OnClickCh1Clone); 
+            }
         }
+    }
+
+    private void OnClickCh1Clone()
+    {
+        // Guide3에서 첫 클릭이면 -> Guide4로만
+        if (!G4)
+        {
+            Guide4();
+            G4 = true;
+            return;
+        }
+
+        // Guide4에서 두 번째 클릭이면 -> 실제 기능 실행 + Guide5로 트리거
+        progressUIController.onClickdragIcon(); // 기존 기능 실행(하루 진행도 열기 등)
+        // onClickdragIcon 안에서 guide2 = true가 켜지니까 Update에서 Guide5로 넘어감
     }
 
     
@@ -313,6 +352,12 @@ public class UITutorial : MonoBehaviour
     {
         MenuController.OnMenuOpened -= HandleMenuOpened;
         ScreenShield.Off();
+
+        if (_ch1Clone != null)
+        {
+            Destroy(_ch1Clone);
+            _ch1Clone = null;
+        }
     }
 
     private void HandleMenuOpened()

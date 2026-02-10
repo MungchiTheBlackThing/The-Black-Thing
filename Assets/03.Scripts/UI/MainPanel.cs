@@ -36,8 +36,9 @@ public class MainPanel : MonoBehaviour
     [SerializeField] public GameObject UITutorial;
 
     private Stack<int> backStack = new Stack<int>();
-    int backBranchStartIndex = -1;
     int backVideoIndex = -1;
+
+    int backFloorIndex = 0; // 이 인덱스보다 아래로는 Back 금지 (선택 확정 후 nextIndex로 올라감)
 
     private LocalizeStringEvent backMsgLocalize;
     private Coroutine backMsgRoutine;
@@ -64,8 +65,9 @@ public class MainPanel : MonoBehaviour
     void OnEnable()
     {
         mainDialogue = (MainDialogue)gameManager.CurrentState;
-        backBranchStartIndex = -1;
+        backStack.Clear();
         backVideoIndex = -1;
+        backFloorIndex = 0;
 
         backStack.Clear();
         
@@ -220,7 +222,8 @@ public class MainPanel : MonoBehaviour
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
                 if (nextIndex != -1)
                 {
-                    backBranchStartIndex = Mathf.Max(backBranchStartIndex, nextIndex);
+                    backStack.Clear();           // 과거 히스토리 끊기
+                    backFloorIndex = nextIndex;  // 선택 이후 첫 줄보다 아래로는 Back 금지
                     dialogueIndex = nextIndex;
                 }
                 else { Debug.Log("1"); DialEnd(); return; }
@@ -510,7 +513,9 @@ public class MainPanel : MonoBehaviour
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
                 if (nextIndex != -1)
                 {
-                    backStack.Push(dialogueIndex);   // 스택 관련 코드
+                    if (dialogueIndex >= backFloorIndex)
+                    backStack.Push(dialogueIndex);
+
                     dialogueIndex = nextIndex;
                 }
                 else { Debug.Log("5"); DialEnd(); return; }
@@ -535,28 +540,82 @@ public class MainPanel : MonoBehaviour
     public void Maincontinue()
     {
         if (dialogueIndex <= 0) return;
+
+        // 선택 직후 첫 줄에서, 스택이 비면 더 이상 back 금지
+
+        if (dialogueIndex == backFloorIndex && backStack.Count == 0)
+        {
+            Debug.Log("[Back] blocked: at floor line");
+            ShowBackMessage("SystemUIText", "lock_select");
+            return;
+        }
         // 1) 우선 1: 영상 라인 되감기 방지 (영상 다음 줄에서 Back 누르면 막기)
         if (backVideoIndex >= 0 && dialogueIndex <= backVideoIndex + 1)
         {
+            Debug.Log("[Back] blocked: video");
             ShowBackMessage("SystemUIText", "lock_video"); 
             return;
         }
 
-        if (backStack.Count == 0) return;
+        int prev = -1;
 
-        // 선택 확정 후: 선택지 직후 대사(=backBranchStartIndex=35) 이하로는 back 금지
-        if (backBranchStartIndex >= 0 && dialogueIndex <= backBranchStartIndex)
+        if (backStack.Count > 0)
         {
+            prev = backStack.Peek(); // 아직 pop 하지 말고 먼저 확인
+        }
+        else
+        {
+            // 스택 누락 대비: 역링크로 prev 계산
+            prev = FindPrevIndexByReverseLink(dialogueIndex);
+        }
+
+        // 선택 확정 후: floor 아래(=선택지/그 이전)로는 절대 못 감
+        if (prev < backFloorIndex)
+        {
+            Debug.Log($"[Back] blocked: floor prev={prev} floor={backFloorIndex}");
             ShowBackMessage("SystemUIText", "lock_select");
+            return;
+        }   
+
+        if (prev == -1)
+        {
+            ShowBackMessage("SystemUIText", "lock_select"); // 혹은 lock_back 같은 새 키
             return;
         }
 
-        dialogueIndex = backStack.Pop();   // ✅ 핵심
+        // 이제 안전하니 실제 이동
+        if (backStack.Count > 0) backStack.Pop();
+        dialogueIndex = prev;
         ShowNextDialogue();
+    }
+
+    private int FindPrevIndexByReverseLink(int currentIdx)
+    {
+        if (mainDialogue == null || mainDialogue.currentDialogueList == null) return -1;
+        if (currentIdx < 0 || currentIdx >= mainDialogue.currentDialogueList.Count) return -1;
+
+        var cur = mainDialogue.GetData(currentIdx);
+        int curLineKey = cur.LineKey;
+
+        // "A -> B" 형태(단일 NextLineKey)만 역추적한다.
+        // 선택지("5|7") 같은 분기는 여기서 건드리지 않음.
+        for (int i = currentIdx - 1; i >= backFloorIndex; i--)
+        {
+            var e = mainDialogue.GetData(i);
+            if (string.IsNullOrEmpty(e.NextLineKey)) continue;
+            if (e.NextLineKey.Contains("|")) continue;
+
+            if (int.TryParse(e.NextLineKey, out int nextKey) && nextKey == curLineKey)
+                return i;
+        }
+
+        return -1;
     }
 
     private void ShowBackMessage(string table, string key)
     {
+        Debug.Log($"[BackMsg] ShowBackMessage called {table}:{key} BackBut={(BackBut?BackBut.name:"NULL")}");
+
         if (!backMsgLocalize)
             backMsgLocalize = BackBut.transform.GetChild(0).GetComponent<LocalizeStringEvent>();
 

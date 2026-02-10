@@ -32,6 +32,15 @@ public class MypageUIController : MonoBehaviour
 
     [SerializeField] GameManager gameManager;
 
+    [SerializeField] List<Button> skipModeButtons; // [0]=ON, [1]=OFF
+    [SerializeField] List<Button> subSkipButtons;  // [0]=ON, [1]=OFF
+
+    [SerializeField] GameObject popupSkipMode;  // popup_mode_skiptime (YES/NO)
+    [SerializeField] GameObject popupSubSkipOn;   // popup_mode_subskip_on (YES/NO)
+    [SerializeField] GameObject popupSubSkipOff;  // popup_mode_subskip_off (YES/NO)
+
+
+
 
 
 
@@ -105,6 +114,9 @@ public class MypageUIController : MonoBehaviour
 
         UpdateNavButtonsVisibility();
         UpdateNavButtonText();
+
+        EnableSkipModeColor();
+        EnableSubSkipModeColor();
     }
 
     void Init()
@@ -288,7 +300,7 @@ public class MypageUIController : MonoBehaviour
 
     public void OnPushAlert()
     {
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
+        if (GuardAlready(isEnableAlert, true)) return;
         isEnableAlert = true;
         EnablePushAlertColor();
         player.SetisPushNotificationEnabled(isEnableAlert);
@@ -296,7 +308,7 @@ public class MypageUIController : MonoBehaviour
 
     public void OffPushAlert()
     {
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
+        if (GuardAlready(isEnableAlert, false)) return;
         alterPopup.SetActive(true);
     }
 
@@ -360,6 +372,55 @@ public class MypageUIController : MonoBehaviour
             if (img != null) img.color = colors[1]; //1번 비활성화
         }
     }
+
+    void EnableSkipModeColor()
+    {
+        if (skipModeButtons == null || skipModeButtons.Count < 2) return;
+        if (colors == null || colors.Count < 2) return;
+
+        bool enabled = player != null && player.GetSkipModeEnabled();
+        int idx = Convert.ToInt32(enabled) % 2;
+
+        var onBtn  = skipModeButtons[idx];
+        var offBtn = skipModeButtons[(idx + 1) % 2];
+
+        if (onBtn != null)
+        {
+            var img = onBtn.GetComponent<Image>();
+            if (img != null) img.color = colors[0];
+        }
+
+        if (offBtn != null)
+        {
+            var img = offBtn.GetComponent<Image>();
+            if (img != null) img.color = colors[1];
+        }
+    }
+
+    void EnableSubSkipModeColor()
+    {
+        if (subSkipButtons == null || subSkipButtons.Count < 2) return;
+        if (colors == null || colors.Count < 2) return;
+
+        bool enabled = player != null && player.GetSubSkipModeEnabled();
+        int idx = Convert.ToInt32(enabled) % 2;
+
+        var onBtn  = subSkipButtons[idx];
+        var offBtn = subSkipButtons[(idx + 1) % 2];
+
+        if (onBtn != null)
+        {
+            var img = onBtn.GetComponent<Image>();
+            if (img != null) img.color = colors[0];
+        }
+
+        if (offBtn != null)
+        {
+            var img = offBtn.GetComponent<Image>();
+            if (img != null) img.color = colors[1];
+        }
+    }
+
 
     // void EnableLanguageColor()
     // {
@@ -471,8 +532,89 @@ public class MypageUIController : MonoBehaviour
         if (hour12 == 0) hour12 = 12;
 
         if (timeLabel != null)
-            timeLabel.text = $"{(isPM ? "PM" : "AM")} {hour12:00}:{_uiMinute:00}";
+            timeLabel.text = $"{hour12:00}:{_uiMinute:00} {(isPM ? "PM" : "AM")}";
     }
 
+    public void OnSkipModeOnClicked()
+    {
+        bool cur = player != null && player.GetSkipModeEnabled();
+        if (GuardAlready(cur, true)) return;
+        if (popupSkipMode != null) popupSkipMode.SetActive(true); // 팝업 뜸
+    }
+
+    public void OnSkipModeOffClicked()
+    {
+
+        bool cur = player != null && player.GetSkipModeEnabled();
+        if (GuardAlready(cur, false)) return;
+        ApplySkipMode(false); // 바로 OFF
+
+    }
+
+    public void OnSkipModeConfirmYes()
+    {
+        ApplySkipMode(true); // 스킵 모드 켬
+        ClosePopupSkips(popupSkipMode); 
+
+    }
+
+    public void OnSubSkipOnClicked()
+    {
+
+        bool cur = player != null && player.GetSubSkipModeEnabled();
+        if (GuardAlready(cur, true)) return;
+        // 서브 스킵 켤까요? 팝업
+        if (popupSubSkipOn != null) popupSubSkipOn.SetActive(true);
+    }
+
+    public void OnSubSkipOffClicked()
+    {
+        bool cur = player != null && player.GetSubSkipModeEnabled();
+        if (GuardAlready(cur, false)) return;
+        // 서브 스킵 끌까요? 팝업
+        if (popupSubSkipOff != null) popupSubSkipOff.SetActive(true);
+    }
+
+    // popupSubSkipOn - YES
+    public void OnSubSkipOnConfirmYes()
+    {
+        // 켤게요 - yes
+        ApplySubSkip(true);
+        ClosePopupSkips(popupSubSkipOn);
+
+    }
+
+    // popupSubSkipOff - YES
+    public void OnSubSkipOffConfirmYes()
+    {
+        // 끌게요 - yes
+        ApplySubSkip(false);
+        ClosePopupSkips(popupSubSkipOff);
+    }
+
+    public void ClosePopupSkips(GameObject popup) // 스킵들 팝업 닫는 함수
+    {
+        // 팝업만 끔
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, transform.position);
+        if (popup != null) popup.SetActive(false);
+    }
+
+    void ApplySkipMode(bool enabled)
+    {
+        if (player != null) player.SetSkipModeEnabled(enabled);
+        EnableSkipModeColor();
+    }
+
+    void ApplySubSkip(bool enabled)
+    {
+        if (player != null) player.SetSubSkipModeEnabled(enabled);
+        EnableSubSkipModeColor();
+    }
+
+    bool GuardAlready(bool currentEnabled, bool targetEnabled)
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, transform.position);
+        return currentEnabled == targetEnabled; // 같으면 이미 그 상태
+    }
 
 }
