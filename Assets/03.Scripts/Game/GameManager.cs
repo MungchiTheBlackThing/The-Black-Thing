@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
     public int dayStartHour = 11;
     public int dayStartMinute = 0;
     private bool _nextPhaseRequested = false;
+    private const float WatchingDurationSeconds = 2 * 3600f;
 
     protected GameManager()
     {
@@ -279,10 +280,6 @@ public class GameManager : MonoBehaviour
     public void ChangeGameState(GamePatternState patternState)
     {
         EnsureVideoController(); 
-        if (currentPattern == GamePatternState.NextChapter && patternState != GamePatternState.NextChapter)
-        {
-            videoController?.CloseIfShowing(SkipVideoIdx.SkipSleeping);
-        }
         Debug.Log($"[Test] ChangeGameState 실행: {patternState}");
         Debug.Log("스테이트 변경");
         if (states == null) return;
@@ -290,6 +287,10 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("없는 패턴 입니다.");
             return;
+        }
+        if (TryResolveNextChapterOverlayAndCatchup(ref patternState, persistResolvedState: true))
+        {
+            Debug.Log($"[NextChapter] Catch-up resolved phase: {patternState}");
         }
         if (activeState != null)
         {
@@ -380,12 +381,6 @@ public class GameManager : MonoBehaviour
         //activeState가 ILoadingInterface를 구현하고 있는지 확인, 맞다면 loadingInterface에 할당하고 아니면 null
         //현재 상태가 비디오를 재생해야하는 로딩 관련 상태인지 확인하는 역할
 
-        //skip video 재생
-        if (currentPattern == GamePatternState.NextChapter)
-        {
-            videoController.ShowSkipVideo(SkipVideoIdx.SkipSleeping, looping: true);
-            
-        }               
     }
     private void ApplyPhaseUI(GamePatternState patternState)
     {
@@ -509,6 +504,11 @@ public class GameManager : MonoBehaviour
         GamePatternState patternState = (GamePatternState)pc.GetCurrentPhase();
         currentPattern = patternState;
 
+        if (TryResolveNextChapterOverlayAndCatchup(ref patternState, persistResolvedState: true))
+        {
+            currentPattern = patternState;
+        }
+
         var info = pc.GetPlayerInfo();
         if (info != null && info.endingReached)
         {
@@ -544,13 +544,6 @@ public class GameManager : MonoBehaviour
         }
         ApplyMoldGateIfNeeded();
 
-        EnsureVideoController();
-
-        if (currentPattern == GamePatternState.NextChapter)
-        {
-            videoController.ShowSkipVideo(SkipVideoIdx.SkipSleeping, looping: true);
-        }
-
         if (patternState == GamePatternState.Sleeping
             && Chapter == 8
             && day8 != null
@@ -560,6 +553,70 @@ public class GameManager : MonoBehaviour
             day8.TryStart();   // 내부에서 PausePhaseTimer() 처리하도록 유지
             yield break;       
         }
+    }
+
+    private bool TryResolveNextChapterOverlayAndCatchup(ref GamePatternState patternState, bool persistResolvedState)
+    {
+        if (patternState != GamePatternState.NextChapter)
+            return false;
+
+        DateTime now = DateTime.Now;
+        GamePatternState resolved = ResolvePhaseFromDayStart(now);
+
+        bool shouldShowVideo = ShouldShowNextChapterVideo(now, resolved);
+        if (shouldShowVideo)
+        {
+            EnsureVideoController();
+            videoController?.ShowSkipVideo(SkipVideoIdx.SkipSleeping, looping: true);
+            MarkNextChapterVideoShown(now);
+        }
+
+        if (resolved != GamePatternState.NextChapter)
+        {
+            patternState = resolved;
+
+            if (persistResolvedState && pc != null)
+            {
+                pc.SetCurrentPhase(resolved, notify: false);
+            }
+        }
+
+        return true;
+    }
+
+    private GamePatternState ResolvePhaseFromDayStart(DateTime now)
+    {
+        DateTime dayStart = new DateTime(now.Year, now.Month, now.Day, dayStartHour, dayStartMinute, 0);
+        DateTime watchingEnd = dayStart.AddSeconds(WatchingDurationSeconds);
+
+        if (now < dayStart)
+            return GamePatternState.Sleeping;
+
+        if (now < watchingEnd)
+            return GamePatternState.Watching;
+
+        return GamePatternState.MainA;
+    }
+
+    private bool ShouldShowNextChapterVideo(DateTime now, GamePatternState resolvedPhase)
+    {
+        if (resolvedPhase == GamePatternState.Sleeping)
+            return false;
+
+        string key = GetNextChapterVideoShownKey(now);
+        return !PlayerPrefs.HasKey(key);
+    }
+
+    private void MarkNextChapterVideoShown(DateTime now)
+    {
+        string key = GetNextChapterVideoShownKey(now);
+        PlayerPrefs.SetInt(key, 1);
+        PlayerPrefs.Save();
+    }
+
+    private string GetNextChapterVideoShownKey(DateTime now)
+    {
+        return $"NextChapterVideoShown_{Chapter}_{now:yyyyMMdd}";
     }
 
     private void EnsureVideoController()
@@ -776,13 +833,6 @@ public class GameManager : MonoBehaviour
         {
             long binaryTime = Convert.ToInt64(PlayerPrefs.GetString(currentPhaseTimerKey));
             endTime = DateTime.FromBinary(binaryTime);
-
-            if (endTime <= DateTime.Now)
-            {
-                endTime = DateTime.Now.AddSeconds(duration);
-                PlayerPrefs.SetString(currentPhaseTimerKey, endTime.ToBinary().ToString());
-                PlayerPrefs.Save();
-            }
         }
         else
         {
@@ -834,7 +884,7 @@ public class GameManager : MonoBehaviour
     {
         switch (phase)
         {
-            case GamePatternState.Watching: return 2 * 3600f; // 2시간
+            case GamePatternState.Watching: return WatchingDurationSeconds; // 2시간
             case GamePatternState.Thinking: return 3 * 3600f; // 3시간
             case GamePatternState.Writing: return 1 * 3600f; // 1시간
             case GamePatternState.Sleeping:

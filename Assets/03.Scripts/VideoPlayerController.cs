@@ -21,6 +21,8 @@ public class VideoPlayerController : MonoBehaviour
     [SerializeField] private GameObject[] loading;
     [SerializeField] private GameObject video; // 루트 오브젝트 (캔버스 패널)
     [SerializeField] private CanvasGroup videoCanvasGroup; // 없으면 자동 추가
+    [SerializeField] private GraphicRaycaster videoGraphicRaycaster;
+
 
     [Header("Fade")]
     [SerializeField] private float fadeInDuration = 0.25f;
@@ -43,7 +45,10 @@ public class VideoPlayerController : MonoBehaviour
         {
             if (videoCanvasGroup == null) videoCanvasGroup = video.GetComponent<CanvasGroup>();
             if (videoCanvasGroup == null) videoCanvasGroup = video.AddComponent<CanvasGroup>();
+            if (videoGraphicRaycaster == null) videoGraphicRaycaster = video.GetComponent<GraphicRaycaster>();
             videoCanvasGroup.alpha = 0f;
+            videoCanvasGroup.blocksRaycasts = false;
+            if (videoGraphicRaycaster != null) videoGraphicRaycaster.enabled = false;
         }
 
         videoPlayer.waitForFirstFrame = true;
@@ -105,6 +110,9 @@ public class VideoPlayerController : MonoBehaviour
             loading[0].SetActive(true);
 
         video.SetActive(true);
+        InputGuard.WorldInputLocked = true;
+        if (videoCanvasGroup != null) videoCanvasGroup.blocksRaycasts = true;
+        if (videoGraphicRaycaster != null) videoGraphicRaycaster.enabled = true;
 
         if (videoImage != null) videoImage.enabled = false;
 
@@ -184,8 +192,14 @@ public class VideoPlayerController : MonoBehaviour
 
         if (videoPlayer != null) videoPlayer.Stop();
         if (loading != null && loading.Length > 0 && loading[0]) loading[0].SetActive(false);
-        if (videoCanvasGroup != null) videoCanvasGroup.alpha = 0f;
+        if (videoCanvasGroup != null)
+        {
+            videoCanvasGroup.alpha = 0f;
+            videoCanvasGroup.blocksRaycasts = false;
+        }
+        if (videoGraphicRaycaster != null) videoGraphicRaycaster.enabled = false;
         if (video != null) video.SetActive(false);
+        InputGuard.WorldInputLocked = false;
 
         var closedIdx = currentIdx;
         currentIdx = SkipVideoIdx.NoVideo;

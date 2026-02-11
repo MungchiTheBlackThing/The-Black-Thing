@@ -318,6 +318,22 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         return (int)player.currentPhase;
     }
 
+    public void SetCurrentPhase(GamePatternState phase, bool notify = true)
+    {
+        player.currentPhase = phase;
+        WritePlayerFile();
+
+        if (gamemanger != null && gamemanger.GetComponent<GameManager>())
+        {
+            gamemanger.GetComponent<GameManager>().SetPhase(player.currentPhase);
+        }
+
+        if (notify)
+        {
+            nextPhaseDelegate?.Invoke(player.currentPhase);
+        }
+    }
+
     public void SetIsDiaryCheck(bool isCheck)
     {
         player.isDiaryCheck = isCheck;
