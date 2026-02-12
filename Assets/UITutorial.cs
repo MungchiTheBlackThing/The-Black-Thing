@@ -304,6 +304,9 @@ public class UITutorial : MonoBehaviour
         preparent = DayProgress.transform.parent.gameObject;
         DayProgress.transform.SetParent(this.transform);
         DayProgress.transform.SetAsLastSibling();
+
+        if (Guideline[index] != null)
+            Guideline[index].transform.SetAsLastSibling();
     }
     public void Guide6()
     {
