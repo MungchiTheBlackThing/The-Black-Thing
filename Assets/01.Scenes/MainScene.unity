@@ -4479,7 +4479,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 199268581}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: NextPhase
+        m_MethodName: CommitNextChapterLanding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

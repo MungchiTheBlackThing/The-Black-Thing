@@ -82,10 +82,16 @@ public class TimeSkipUIController : MonoBehaviour
     public void SetTime(float remainingSeconds)
     {
         if (remainingSeconds < 0) remainingSeconds = 0;
+        remainingSeconds += 60f; // 표시용 버퍼(0초도 1분처럼)
+
         int hour = (int)remainingSeconds / HOUR;
         int min = ((int)remainingSeconds % HOUR) / MIN;
+
         if (timeText != null)
-            timeText.text = (hour).ToString() + "h " + (min).ToString() + "m";
+        {
+            if (hour <= 0) timeText.text = min.ToString() + "m";          // 59m
+            else           timeText.text = hour.ToString() + "h " + min.ToString("00") + "m"; // 1h 00m
+        }
     }
 
     public void SetSkipButtonActiveState(bool InActive)
@@ -138,6 +144,20 @@ public class TimeSkipUIController : MonoBehaviour
     {
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         popup.SetActive(false);
+
+        // 잠 스킵일 때만 NextChapter landing용 앵커/플래그 저장
+        var current = (GamePatternState)playerController.GetCurrentPhase();
+        var next = (GamePatternState)((int)current + 1);
+
+        if (current == GamePatternState.Sleeping && next == GamePatternState.NextChapter)
+        {
+            string anchorKey = $"NextChapterAnchor_{gameManager.Chapter}";
+            string skipKey   = $"NextChapterEnteredBySkip_{gameManager.Chapter}";
+
+            PlayerPrefs.SetString("NextChapterAnchor", DateTime.Now.ToBinary().ToString());
+            PlayerPrefs.SetInt("NextChapterEnteredBySkip", 1);
+            PlayerPrefs.Save();
+        }
 
         gameManager.BeginSkipPhaseTransition(); // 스킵 영상 후 페이즈 넘김
     }

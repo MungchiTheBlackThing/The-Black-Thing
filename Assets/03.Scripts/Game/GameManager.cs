@@ -53,6 +53,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public TimeSkipUIController timeSkipUIController;
 
+    private string NextChapterAnchorKey => $"NextChapterAnchor_{Chapter}";
+    private string NextChapterSkipKey   => $"NextChapterEnteredBySkip_{Chapter}";
 
 
     [SerializeField] private Day8SleepEventController day8;
@@ -790,9 +792,13 @@ public class GameManager : MonoBehaviour
                 // Sleeping은 NextChapter 오버레이로(기존 흐름 유지)
                 if (currentPattern == GamePatternState.Sleeping)
                 {
-                    // 자연 종료 진입 플래그/앵커는 (다음 단계에서) 여기서 저장하면 베스트.
-                    // 일단 최소 침습으로는 그냥 바로 BeginSkipPhaseTransition()만 호출해도 (0)은 해결됨.
+                    // 자연 종료로 NextChapter 오버레이 진입: anchor = Sleeping endTime(=dayStart), skip=false
+                    PlayerPrefs.SetString(NextChapterAnchorKey, endTime.ToBinary().ToString());
+                    PlayerPrefs.SetInt(NextChapterSkipKey, 0);
+                    PlayerPrefs.Save();
+
                     BeginSkipPhaseTransition();
+                    yield break;
                 }
                 else
                 {
@@ -829,6 +835,95 @@ public class GameManager : MonoBehaviour
             NextPhase();
         }
     }
+
+        private void SetPhaseTimerEnd(GamePatternState phase, DateTime endTime)
+    {
+        string key = $"PhaseTimer_{Chapter}_{phase}";
+        PlayerPrefs.SetString(key, endTime.ToBinary().ToString());
+        PlayerPrefs.Save();
+    }
+
+    public void ForceSetPhase(GamePatternState phase)
+    {
+
+        PausePhaseTimer(); //안전하게...
+        // 현재 NextChapter에서 빠져나가므로, 영상 루프 닫기
+        EnsureVideoController();
+        videoController?.CloseIfShowing(SkipVideoIdx.SkipSleeping);
+
+        // pc 상태 강제 세팅 + subseq 초기화는 기존 SetPhase 사용
+        pc.SetCurrentPhase(phase);
+        SetPhase(phase);
+
+        // 실제 씬 상태 진입
+        ChangeGameState(phase);
+    }
+
+    public void CommitNextChapterLanding()
+    {
+        // 0) 현재(=NextChapter 들어오기 전) 챕터를 고정해 둔다.
+        int chBefore = Chapter;
+        string anchorKey = $"NextChapterAnchor_{chBefore}";
+        string skipKey   = $"NextChapterEnteredBySkip_{chBefore}";
+
+        if (!PlayerPrefs.HasKey(anchorKey))
+        {
+            Debug.LogWarning("[NextChapterLanding] Anchor missing. Fallback to NextPhase().");
+            NextPhase(); // 그래도 챕터는 넘어가게
+            return;
+        }
+
+        // 1) 앵커/플래그를 먼저 로컬로 확보 (NextPhase가 뭔가 지워도 괜찮게)
+        DateTime now = DateTime.Now;
+
+        long anchorBin = Convert.ToInt64(PlayerPrefs.GetString(anchorKey));
+        DateTime anchor = DateTime.FromBinary(anchorBin);
+        bool enteredBySkip = PlayerPrefs.GetInt(skipKey, 0) == 1;
+
+        if (enteredBySkip) anchor = now;
+        DateTime watchingEnd = anchor.AddHours(2);
+
+        // 2) 먼저 "진짜" NextPhase를 실행해서 챕터+1 커밋(기존 안전 로직 유지)
+        NextPhase(); // NextChapter -> (phase overflow) -> Chapter++ & Watching 세팅이 여기서 일어남
+
+        // 3) 커밋 직후, 안착을 시간 기반으로 오버라이드
+        if (now < watchingEnd)
+        {
+            // 1) 일단 안착(이 과정에서 PhaseTimer가 now+2h로 잠깐 생성될 수 있음)
+            ForceSetPhase(GamePatternState.Watching);
+
+            // 2) 바로 PhaseTimer를 끊고(레이스 종료)
+            PausePhaseTimer();
+
+            // 3) 원하는 endTime으로 덮어쓴 뒤
+            SetPhaseTimerEnd(GamePatternState.Watching, watchingEnd);
+
+            // 4) 그 endTime 기준으로 PhaseTimer를 다시 시작
+            ResumePhaseTimer();
+
+            if (timeSkipUIController != null)
+            {
+                float remaining = (float)(watchingEnd - now).TotalSeconds;
+                if (remaining < 0) remaining = 0;
+                timeSkipUIController.SetTime(remaining);
+            }
+        }
+        else
+        {
+            ForceSetPhase(GamePatternState.MainA);
+
+            // 새 챕터의 Watching 타이머 혹시 생겼으면 제거(안전)
+            string wKey = $"PhaseTimer_{Chapter}_{GamePatternState.Watching}";
+            if (PlayerPrefs.HasKey(wKey)) PlayerPrefs.DeleteKey(wKey);
+            PlayerPrefs.Save();
+        }
+
+        // 4) 스탬프 청소(이전 챕터 키를 지워야 함)
+        PlayerPrefs.DeleteKey(anchorKey);
+        PlayerPrefs.DeleteKey(skipKey);
+        PlayerPrefs.Save();
+    }
+
 
 
     public void PausePhaseTimer()

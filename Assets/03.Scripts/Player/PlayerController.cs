@@ -582,4 +582,11 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         WritePlayerFile();
     }
 
+    public void SetCurrentPhase(GamePatternState phase)
+    {
+        player.currentPhase = phase;
+        WritePlayerFile();
+    }
+
+
 }
