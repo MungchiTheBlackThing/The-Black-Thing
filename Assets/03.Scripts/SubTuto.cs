@@ -355,17 +355,15 @@ public class SubTuto : MonoBehaviour
     public void skiptouchGuide()
     {
         GameObject touchguide = Resources.Load<GameObject>(prefabPath);
-        if (touchguide != null)
-        {
-            GameObject instance = Instantiate(touchguide, subPanel.gameObject.transform);
-            instance.transform.localPosition = guide3;
-            instance.SetActive(true);
-            touch = instance.GetComponent<TouchGuide>();
-        }
-        else
-        {
-            Debug.LogError("프리팹을 찾을 수 없습니다!");
-        }
+
+        GameObject instance = Instantiate(touchguide, subPanel.gameObject.transform);
+        var rt = instance.GetComponent<RectTransform>();
+        rt.anchoredPosition = new Vector2(-768f, -483f);
+        rt.localRotation = Quaternion.Euler(180f, 0f, 60.685f);
+        
+        instance.SetActive(true);
+        touch = instance.GetComponent<TouchGuide>();
+
         touch.skipGuide();
     }
 }
