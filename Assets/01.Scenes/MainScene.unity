@@ -1053,7 +1053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960701872681497866, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
       propertyPath: m_fontSize
-      value: 50
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 4960701872681497866, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
       propertyPath: m_fontAsset
@@ -1069,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960701872681497866, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
       propertyPath: m_fontSizeBase
-      value: 50
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 4960701872681497867, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -60022,9 +60022,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
-  dotCollider: {fileID: 2921298288689103228}
-  mainAlertCol: {fileID: 1094932321553057320}
-  subAlertCol: {fileID: 1297682456}
   dotExpression: 
   animKey: 
   mainAlert: {fileID: 1094932321553057318}
