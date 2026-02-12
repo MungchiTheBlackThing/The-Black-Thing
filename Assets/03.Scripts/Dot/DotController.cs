@@ -1098,15 +1098,10 @@ public class DotController : MonoBehaviour
     {
         if (chapter > 1)
         {
-            if (isAfterScriptPlaying && manager.Pattern == GamePatternState.Watching && chapter == 14)
+            if (isAfterScriptPlaying)
             {
                 Debug.Log($"[DotController] PlayMudAnimation is blocked because AfterScript is playing.");
                 return;
-            }
-
-            if (isAfterScriptPlaying)
-            {
-                ForceStopAfterScript(); // prefs까지 정리됨
             }
 
             int mudDay = chapter-1;
