@@ -170,6 +170,9 @@ public class GameManager : MonoBehaviour
         scrollManager = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<ScrollManager>();
         cameraZoom = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<CameraZoom>();
         subDialogue = subDialoguePanel.GetComponent<SubDialogue>();
+
+        LoadSceneManager.Instance.OnLoadingUIShown -= HandleLoadingUIShown;
+        LoadSceneManager.Instance.OnLoadingUIShown += HandleLoadingUIShown;
         
         if (timeSkipUIController == null)
         {
@@ -281,10 +284,6 @@ public class GameManager : MonoBehaviour
     public void ChangeGameState(GamePatternState patternState)
     {
         EnsureVideoController(); 
-        if (currentPattern == GamePatternState.NextChapter && patternState != GamePatternState.NextChapter)
-        {
-            videoController?.CloseIfShowing(SkipVideoIdx.SkipSleeping);
-        }
         Debug.Log($"[Test] ChangeGameState 실행: {patternState}");
         Debug.Log("스테이트 변경");
         if (states == null) return;
@@ -405,6 +404,14 @@ public class GameManager : MonoBehaviour
             if (timeSkipUIController.gameObject.activeSelf != shouldShowTimeSkip)
                 timeSkipUIController.gameObject.SetActive(shouldShowTimeSkip);
         }
+    }
+
+    private void HandleLoadingUIShown()
+    {
+        // NextChapter 루프 비디오가 떠있으면 로딩 UI가 덮은 뒤에 닫아버리기
+        EnsureVideoController();
+        if (videoController != null && videoController.CurrentIdx == SkipVideoIdx.SkipSleeping)
+            videoController.Close();
     }
 
     public void StartMain()
@@ -849,7 +856,6 @@ public class GameManager : MonoBehaviour
         PausePhaseTimer(); //안전하게...
         // 현재 NextChapter에서 빠져나가므로, 영상 루프 닫기
         EnsureVideoController();
-        videoController?.CloseIfShowing(SkipVideoIdx.SkipSleeping);
 
         // pc 상태 강제 세팅 + subseq 초기화는 기존 SetPhase 사용
         pc.SetCurrentPhase(phase);
@@ -1098,6 +1104,8 @@ public class GameManager : MonoBehaviour
     }
     private void OnDestroy()
     {
+        if (LoadSceneManager.Instance != null)
+            LoadSceneManager.Instance.OnLoadingUIShown -= HandleLoadingUIShown;
         if (pc != null) pc.nextPhaseDelegate -= ChangeGameState;
     }
 }
