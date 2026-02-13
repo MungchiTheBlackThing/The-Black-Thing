@@ -947,6 +947,15 @@ public class GameManager : MonoBehaviour
             phaseTimerCoroutine = StartCoroutine(PhaseTimer());
     }
 
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus) return;
+
+        PausePhaseTimer();
+        if (GetPhaseDuration(currentPattern) > 0f)
+            ResumePhaseTimer();
+    }
+
 
     // [DEBUG] 각 페이즈 당 시간
     private float GetPhaseDuration(GamePatternState phase)

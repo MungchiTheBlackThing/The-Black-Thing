@@ -5,16 +5,18 @@ using UnityEngine.EventSystems;
 
 public class DoorController : MonoBehaviour
 {
-
-    [SerializeField]
-    public bool isDoorOpen = true;
+    static bool _sharedDoorOpen = true;
+    public bool isDoorOpen => _sharedDoorOpen;
     [SerializeField]
     public GameObject dot;
-    [SerializeField]
+    [SerializeField] [HideInInspector]
     Collider2D targetCollider;
 
     Animator animator;
     BoxCollider2D doorCollider;
+
+    static float _lastDoorClickTime;
+    const float DOOR_CLICK_COOLDOWN = 0.2f;
 
     public void Awake()
     {
@@ -25,93 +27,54 @@ public class DoorController : MonoBehaviour
     private void OnEnable()
     {
         if (dot == null)
-        {
             dot = GameObject.FindWithTag("DotController");
-        }
-        CheckDot();
     }
 
-    public void CheckDot()
-    {
-        if (isDoorOpen == false)
-        {
-            Collider2D[] overlappingColliders = Physics2D.OverlapBoxAll(targetCollider.bounds.center, targetCollider.bounds.size, 0);
-
-            foreach (Collider2D collider in overlappingColliders)
-            {
-                if (collider != targetCollider && collider.gameObject == dot)
-                {
-                    dot.GetComponent<DotController>().dotvicheck(true);
-                }
-            }
-        }
-        else
-        {
-            if (dot.GetComponent<BoxCollider2D>())
-            {
-                dot.GetComponent<DotController>().dotvicheck(false);
-            }
-        }
-    }
-    private void Start()
-    {
-        CheckDot();
-    }
     //private void FixedUpdate()
     //{
     //    CheckDot();
     //}
     private void OnMouseDown()
     {
+        if (Time.unscaledTime - _lastDoorClickTime < DOOR_CLICK_COOLDOWN)
+            return;
+        _lastDoorClickTime = Time.unscaledTime;
+
         if (InputGuard.BlockWorldInput()) return;
+        if (dot == null) return;
 
+        if (dot.GetComponent<DotController>().tutorial) return;
 
-        if (!dot.GetComponent<DotController>().tutorial)
-        {
-            if (isDoorOpen)
-            {
-                //�������� ���, �ݾƾ���
-                close();
-            }
-            else
-            {
-                //�ݾ��ִ� ���, �������
-                open();
-            }
-        }
-
+        if (_sharedDoorOpen) close();
+        else open();
     }
     public void close()
     {
-        isDoorOpen = false;
+        _sharedDoorOpen = false;
         int OpenIdx = Animator.StringToHash("isOpening");
         animator = this.transform.parent.GetComponent<Animator>();
         animator.SetFloat(Animator.StringToHash("speed"), 1.0f);
         animator.SetBool(OpenIdx, false);
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.door, this.transform.position);
-        CheckDot();
     }
     public void open()
     {
-        isDoorOpen = true;
+        _sharedDoorOpen = true;
         int OpenIdx = Animator.StringToHash("isOpening");
         animator = this.transform.parent.GetComponent<Animator>();
         animator.SetFloat(Animator.StringToHash("speed"), 1.0f);
         animator.SetBool(OpenIdx, true);
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.door, this.transform.position);
-        CheckDot();
     }
 
     public void Touch()
     {
-        if (isDoorOpen)
+        if (_sharedDoorOpen)
         {
-            //�������� ���, �ݾƾ���
             close();
         }
         else
         {
-            //�ݾ��ִ� ���, �������
             open();
         }
     }
@@ -120,7 +83,7 @@ public class DoorController : MonoBehaviour
     {
         if (doorCollider != null)
         {
-            doorCollider.enabled = false; // ���� ���� ��ġ/Ŭ�� ��Ȱ��ȭ
+            doorCollider.enabled = false; 
         }
     }
 
@@ -128,7 +91,7 @@ public class DoorController : MonoBehaviour
     {
         if (doorCollider != null)
         {
-            doorCollider.enabled = true; // ���� ���� ��ġ/Ŭ�� Ȱ��ȭ
+            doorCollider.enabled = true;
         }
     }
 

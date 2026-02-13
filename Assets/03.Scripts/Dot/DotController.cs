@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System;
-using static Unity.Burst.Intrinsics.X86.Avx;
+//using static Unity.Burst.Intrinsics.X86.Avx;
 
 
 public class DotController : MonoBehaviour
@@ -73,6 +73,7 @@ public class DotController : MonoBehaviour
     private bool visible = true;
     public bool tutorial = false; //DoorController에 쓰임
     public bool isEndPlay = false;
+
     public GameObject Dust
     {
         get { return dust; }
@@ -515,11 +516,12 @@ public class DotController : MonoBehaviour
     private void OnMouseDown()
     {
         if (InputGuard.BlockWorldInput()) return;
+
         if (mainAlert.activeSelf)
         {
             mainAlert.SetActive(false);
-            //main 배경화면을 트리거한다.
             manager.StartMain();
+            return;
         }
 
         if (playAlert.activeSelf)
@@ -530,7 +532,7 @@ public class DotController : MonoBehaviour
             manager.ScrollManager.stopscroll();
             //같이 책을 읽을래? 라는 문구 뜨고 안읽는다고하면 총총총 sleep으로
             StartCoroutine(playOnafterdelay());
-           
+            return;
         }
 
         if (subAlert.activeSelf)
@@ -848,22 +850,11 @@ public class DotController : MonoBehaviour
     }
     public void dotvicheck(bool set)
     {
-        //inactive 상태일때 오류 방지
-        if (gameObject.activeInHierarchy)
-            StartCoroutine(DotvisibleCheck(set));
-
-    }
-    public IEnumerator DotvisibleCheck(bool setoff)
-    {
-        yield return new WaitForSeconds(0.01f);
-        if (setoff)
-        {
+        if (!gameObject.activeInHierarchy) return;
+        if (set)
             Invisible();
-        }
         else
-        {
             Visible();
-        }
     }
 
     public void StartSubDialogueAnimation(DotPatternState state, string animKey, float position)
