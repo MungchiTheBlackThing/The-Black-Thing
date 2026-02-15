@@ -779,9 +779,27 @@ public class GameManager : MonoBehaviour
 
             if (endTime <= DateTime.Now)
             {
-                endTime = DateTime.Now.AddSeconds(duration);
-                PlayerPrefs.SetString(currentPhaseTimerKey, endTime.ToBinary().ToString());
+                // 이미 시간이 지난 타이머는 리셋하지 않는다: 즉시 캐치업(다음 페이즈)
+                PlayerPrefs.DeleteKey(currentPhaseTimerKey);
                 PlayerPrefs.Save();
+
+                if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
+
+                Debug.Log($"[PhaseTimer] endTime already passed ({currentPattern}). Immediate catch-up transition.");
+
+                // Sleeping은 NextChapter 오버레이로(기존 흐름 유지)
+                if (currentPattern == GamePatternState.Sleeping)
+                {
+                    // 자연 종료 진입 플래그/앵커는 (다음 단계에서) 여기서 저장하면 베스트.
+                    // 일단 최소 침습으로는 그냥 바로 BeginSkipPhaseTransition()만 호출해도 (0)은 해결됨.
+                    BeginSkipPhaseTransition();
+                }
+                else
+                {
+                    NextPhase();
+                }
+
+                yield break; // ✅ 중요: 아래 while로 내려가지 않게 차단
             }
         }
         else
