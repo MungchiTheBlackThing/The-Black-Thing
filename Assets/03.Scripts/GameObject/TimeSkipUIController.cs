@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class TimeSkipUIController : MonoBehaviour
@@ -28,6 +28,10 @@ public class TimeSkipUIController : MonoBehaviour
     DotController dotController;
     [SerializeField]
     ObjectManager objectManager;
+
+    [SerializeField] Image skipIconImage;
+    [SerializeField] Sprite iconOn;
+    [SerializeField] Sprite iconOff;
 
     // 0 watch
     // A -> watching 흐름 따라간다.  1
@@ -67,11 +71,19 @@ public class TimeSkipUIController : MonoBehaviour
 
         translator.translatorDel += Translate;
         if (objectManager != null) objectManager.activeSystemUIDelegate += SetSkipButtonActiveState;
+        RefreshSkipIcon();
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        // 타이머 로직을 GameManager로 이전했으므로 Update 내용은 제거합니다.
+        RefreshSkipIcon();
+    }
+
+    void RefreshSkipIcon()
+    {
+        if (!skipIconImage) return;
+        bool enabled = playerController != null && playerController.GetSkipModeEnabled();
+        skipIconImage.sprite = enabled ? iconOn : iconOff;
     }
 
 

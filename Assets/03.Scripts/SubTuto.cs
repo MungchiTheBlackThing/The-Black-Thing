@@ -342,7 +342,7 @@ public class SubTuto : MonoBehaviour
 
     public IEnumerator Scroallable()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         //dot.GetComponent<DotController>().Invisible();
         UIBalloon.SetActive(true);
         moonnote.anion(UIBalloon);

@@ -40,14 +40,12 @@ public class CameraZoom : MonoBehaviour
     {
         animator.enabled = true;
         animator.SetTrigger("ZoomOut");
-        Debug.Log("Ä«¸Þ¶ó ÁÜ¾Æ¿ô");
     }
     public void ZoomOutEnd()
     {
         animator.enabled = false;
         Camera cam = Camera.main;
         cam.orthographicSize = 6.45f;
-        Debug.Log("ÁÜ¾Æ¿ô ³¡");
         dragGuide.SetActive(true);
     }
 }

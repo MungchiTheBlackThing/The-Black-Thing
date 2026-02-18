@@ -5892,6 +5892,11 @@ MonoBehaviour:
   TimeSetPopup: {fileID: 1292746488}
   timeLabel: {fileID: 1671534999}
   gameManager: {fileID: 0}
+  skipModeButtons: []
+  subSkipButtons: []
+  popupSkipMode: {fileID: 0}
+  popupSubSkipOn: {fileID: 0}
+  popupSubSkipOff: {fileID: 0}
   nicknameTxt: {fileID: 1737278307}
   closeTxt: {fileID: 446674819}
   popupPage:
@@ -17694,6 +17699,9 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   dotController: {fileID: 0}
   objectManager: {fileID: 606963712}
+  skipIconImage: {fileID: 1453179429}
+  iconOn: {fileID: 21300000, guid: 4cfdc5e279d0b9b44aaf5d252bead352, type: 3}
+  iconOff: {fileID: 21300000, guid: 832b03fc78ee7554d8a1274b88ab9f23, type: 3}
 --- !u!114 &1007219010
 MonoBehaviour:
   m_ObjectHideFlags: 0
