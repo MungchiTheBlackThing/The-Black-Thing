@@ -188,6 +188,7 @@ namespace Tutorial
             dot.TriggerMain(false);
             Debug.Log(tutomanger);
             manager.ScrollManager.StopCamera(false);
+            manager.StartCoroutine(FixCamAfterMain(manager));
             if (background)
             {
                 Debug.Log("현재 배경:" + background.name);
@@ -196,6 +197,17 @@ namespace Tutorial
             RecentManager.TutoNumChange();
             //manager.ObjectManager.activeSystemUIDelegate(true);
             //SystemUI.SetActive(true);
+        }
+
+        private IEnumerator FixCamAfterMain(GameManager manager)
+        {
+            // 월드 켜짐/패널 전환이 같은 프레임에 섞일 수 있으니 프레임 끝에서 확정
+            yield return new WaitForEndOfFrame();
+
+            var cam = Camera.main;
+
+            cam.orthographicSize = 6.45f; 
+            cam.transform.position = new Vector3(5.70f, 0, -10);  // 메인 나가기 전에 카메라 한 번 더 잡아 주기
         }
 
         public void changestate(GameManager manager)
