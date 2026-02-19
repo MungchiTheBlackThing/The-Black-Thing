@@ -271,7 +271,7 @@ public class ObjectManager : MonoBehaviour
                 var ch_bread = newObj.GetComponent<ChBreadObject>();
                 if (ch_bread != null)
                 {
-                    active = active && ch_bread.ShouldBeActive(isCompleted);
+                    active = ch_bread.ShouldBeActive(isCompleted); // baseActive 무시
                 }
 
                 // cup / cupdot 처리 로직
@@ -457,7 +457,7 @@ public class ObjectManager : MonoBehaviour
             var ch_bread = value.GetComponent<ChBreadObject>();
             if (ch_bread != null)
             {
-                active = active && ch_bread.ShouldBeActive(isCompleted);
+                active = ch_bread.ShouldBeActive(isCompleted); // baseActive 무시
             }
             // cup / cupdot 예외
 
