@@ -405,10 +405,22 @@ public class MenuController : MonoBehaviour
     IEnumerator later2()
     {
         ScrollManager camera = GameObject.FindWithTag("MainCamera").GetComponent<ScrollManager>();
-        camera.stopscroll();
-        camera.MoveCamera(new UnityEngine.Vector3(-5.5f, 0, -10), 2.5f);
+    
+        // 콜백 기반: 카메라 이동 완료 후 후속 작업
+        bool moveComplete = false;
+        camera.MoveCamera(
+            new UnityEngine.Vector3(-5.5f, 0, -10), 
+            2.5f,
+            onComplete: () => {
+                moveComplete = true;
+            }
+        );
+        
+        // 이동 완료 대기
+        while (!moveComplete)
+            yield return null;
+
         tuto();
-        yield return new WaitForSeconds(2.5f);
         skipon();
         GameObject.FindWithTag("GameController").GetComponent<SubTuto>().skiptouchGuide();
     }

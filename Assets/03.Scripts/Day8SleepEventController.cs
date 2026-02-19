@@ -438,7 +438,11 @@ public class Day8SleepEventController : MonoBehaviour
     private IEnumerator ResumeTimerNextFrame()
     {
         yield return null; // 1 frame
-        if (gm != null) gm.RestartSleepingTimer();
+        if (gm != null)
+        {
+            gm.RestartSleepingTimer();
+            PushScheduler.ScheduleForCurrentPhase(gm); // ← 추가
+        }
 
     }
 

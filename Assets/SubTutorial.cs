@@ -327,9 +327,12 @@ public class SubTutorial : MonoBehaviour
                 this.gameObject.SetActive(false);
                 var menu = gameManager?.Menu ?? FindObjectOfType<MenuController>(true);
                 menu?.allon();
+
+                gameManager.StartCoroutine(gameManager.DelayedAction(2f, () => PushNudgeController.TryShow(gameManager)));
                 return;
             }
             Debug.Log(index);
+
         }
     }
 }

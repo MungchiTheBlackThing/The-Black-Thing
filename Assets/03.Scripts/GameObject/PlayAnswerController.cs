@@ -46,9 +46,21 @@ public class PlayAnswerController : MonoBehaviour
 
     }
 
+    private void Awake() // Start -> Awake로 변경
+    {
+        dot = playDot.transform.parent.GetComponent<DotController>();
+    }
+
 
     private void OnEnable()
     {
+
+        // 버블 상태 초기화를 OnEnable에서 확실히 처리해야 한다
+        if (questionBubble != null) questionBubble.SetActive(false);
+        if (afterYesBubble != null) afterYesBubble.SetActive(false);
+        if (afterNoBubble != null) afterNoBubble.SetActive(false);
+        waitSleepTap = false;
+
         yesPoemBubble.onClick.AddListener(YesPoemBubbleClicked);
         noPoemBubble.onClick.AddListener(NoPoemBubbleClicked);
         playDotButton.onClick.AddListener(OnPlayDotClicked);
@@ -56,6 +68,7 @@ public class PlayAnswerController : MonoBehaviour
 
     public void EnterPoemQuestion()
     {
+
         if (questionBubble != null) questionBubble.SetActive(true);
         if (afterYesBubble != null) afterYesBubble.SetActive(false);
         if (afterNoBubble != null) afterNoBubble.SetActive(false);

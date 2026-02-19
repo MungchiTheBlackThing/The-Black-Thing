@@ -89,6 +89,16 @@ public class MoonRadio : MonoBehaviour
     }
     private void OnMouseDown()
     {
+
+        // 아무 버튼 클릭 시도 후 호출되는 곳에 임시로 추가
+        var results = new List<UnityEngine.EventSystems.RaycastResult>();
+        var pointerData = new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current)
+        {
+            position = Input.mousePosition
+        };
+        UnityEngine.EventSystems.EventSystem.current.RaycastAll(pointerData, results);
+        foreach (var r in results)
+            Debug.Log($"[Raycast] {r.gameObject.name} / {r.gameObject.layer}");
         // 0) 튜토리얼 씬이면 무조건 입력 차단
         if (IsTutorialScene()) return;
 

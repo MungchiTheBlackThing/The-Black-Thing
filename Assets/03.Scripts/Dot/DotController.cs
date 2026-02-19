@@ -528,10 +528,20 @@ public class DotController : MonoBehaviour
         {
             Debug.Log("트리거 꺼짐");
             playAlert.SetActive(false);
-            manager.ScrollManager.MoveCamera(new Vector3(manager.ScrollManager.camLimitValue.y, 0, -10f), 2f);
-            manager.ScrollManager.stopscroll();
-            //같이 책을 읽을래? 라는 문구 뜨고 안읽는다고하면 총총총 sleep으로
-            StartCoroutine(playOnafterdelay());
+            // 콜백 기반: 카메라 이동 완료 후 play UI 표시
+            manager.Menu.alloff();
+            manager.ScrollManager.MoveCamera(
+                new Vector3(manager.ScrollManager.camLimitValue.y, 0, -10f), 
+                2f,
+                onComplete: () => {
+                    for (int i = 0; i < play.Length; i++)
+                        play[i].SetActive(true);
+
+                    var playAnswer = FindObjectOfType<PlayAnswerController>(true);
+                    if (playAnswer != null)
+                        playAnswer.EnterPoemQuestion();
+                }
+            );
             return;
         }
 
@@ -551,14 +561,6 @@ public class DotController : MonoBehaviour
         }
     }
 
-    public IEnumerator playOnafterdelay()
-    {
-        yield return new WaitForSeconds(2f);
-        for (int i = 0; i < play.Length; i++)
-        {
-            play[i].SetActive(true);
-        }
-    }
 
     public void OnAlertClicked(AlertType type)
     {
@@ -572,7 +574,23 @@ public class DotController : MonoBehaviour
 
             case AlertType.Play:
                 playAlert.SetActive(false);
-                for (int i = 0; i < play.Length; i++) play[i].SetActive(true);
+                InputGuard.WorldInputLocked = true; // UI 입력 잠금
+
+                manager.Menu.alloff();
+                
+                // 카메라 이동 완료 후에 play UI 표시
+                manager.ScrollManager.MoveCamera(
+                    new Vector3(manager.ScrollManager.camLimitValue.y, 0, -10f),
+                    2f,
+                    onComplete: () => {
+                        for (int i = 0; i < play.Length; i++) 
+                            play[i].SetActive(true);
+
+                        var playAnswer = FindObjectOfType<PlayAnswerController>(true);
+                        if (playAnswer != null)
+                            playAnswer.EnterPoemQuestion();
+                    }
+                );
                 break;
 
             case AlertType.Sub:
@@ -1141,6 +1159,7 @@ public class DotController : MonoBehaviour
         SetPos("anim_eyesblink", 0, 1, 3, 5, 6, 8, 11);
         SetPos("anim_move", 0, 1, 3, 5, 6, 8, 11);
         SetPos("anim_sleep", 10);
+        SetPos("anim_sleep_mare", 10);
         SetPos("anim_sub_ch7_1", 0, 1, 3, 5, 6, 8, 11);
         SetPos("anim_sub_ch7_2", 0, 1, 3, 5, 6, 8, 11);
     }

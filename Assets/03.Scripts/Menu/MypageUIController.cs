@@ -10,6 +10,9 @@ using UnityEngine.UI;
 
 public class MypageUIController : MonoBehaviour
 {
+
+    [SerializeField] PushNudgePopup unknownPopup;
+    [SerializeField] PushNudgePopup deniedPopup;
     [SerializeField] GameObject menu;
 
     [SerializeField] GameObject editNamePopup;
@@ -87,6 +90,7 @@ public class MypageUIController : MonoBehaviour
         _prevButText = prevBut.GetComponent<TMP_Text>();
         _nameSettingText = nameSetting.GetComponent<TMP_Text>();
         popupPageName = new List<List<string>>();
+        PushNudgeController.RegisterPopups(unknownPopup, deniedPopup);
 
         Init();
     }
@@ -301,9 +305,27 @@ public class MypageUIController : MonoBehaviour
     public void OnPushAlert()
     {
         if (GuardAlready(isEnableAlert, true)) return;
+
+        var perm = NotificationService.GetPermissionState(forceSync: true);
+
+        if (perm == PushPermissionState.Granted)
+        {
+            ApplyPushOn();
+        }
+        else
+        {
+            PushNudgeController.TryShowFromSettings(gameManager, onGranted: ApplyPushOn);
+        }
+    }
+
+    void ApplyPushOn()
+    {
         isEnableAlert = true;
         EnablePushAlertColor();
-        player.SetisPushNotificationEnabled(isEnableAlert);
+        player.SetisPushNotificationEnabled(true);
+        PlayerPrefs.SetInt("PushEnabled", 1);
+        PlayerPrefs.Save();
+        PushScheduler.ScheduleForCurrentPhase(gameManager);
     }
 
     public void OffPushAlert()
@@ -317,7 +339,10 @@ public class MypageUIController : MonoBehaviour
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         isEnableAlert = false;
         EnablePushAlertColor();
-        player.SetisPushNotificationEnabled(isEnableAlert);
+        player.SetisPushNotificationEnabled(false);
+        PlayerPrefs.SetInt("PushEnabled", 0);
+        PlayerPrefs.Save();
+        NotificationService.CancelAll();
         alterPopup.SetActive(false);
     }
 

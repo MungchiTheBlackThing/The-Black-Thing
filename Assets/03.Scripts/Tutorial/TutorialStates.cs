@@ -98,23 +98,30 @@ namespace Tutorial
             {
                 InitEnter(manager, dot, tutomanger);
             }
+            
             if (data.tutonum == 0)
             {
                 if (data != null && data.index > 0)
                 {
-                    manager.ScrollManager.stopscroll();
-                    manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                    Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
+                    // 콜백 기반: 카메라 이동 완료 후 recentStart
+                    manager.ScrollManager.MoveCamera(
+                        new Vector3((float)5.70, 0, -10), 
+                        2f,
+                        onComplete: () => recentStart(data.index)
+                    );
                     subdial = manager.subDialoguePanel;
                 }
                 else
                 {
                     door.transform.GetChild(1).GetComponent<DoorController>().close();
-                    Utility.Instance.WaitForFirstTouch(() => //튜토리얼 시작 전(카메라 이동 전) 클릭 한 번 해야 넘어가도록 걸어줌
+                    Utility.Instance.WaitForFirstTouch(() =>
                     {
-                        manager.ScrollManager.stopscroll();
-                        manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                        Utility.Instance.InvokeAfterDelay(substart, 2f);
+                        // 콜백 기반: 카메라 이동 완료 후 substart
+                        manager.ScrollManager.MoveCamera(
+                            new Vector3((float)5.70, 0, -10), 
+                            2f,
+                            onComplete: substart
+                        );
                         subdial = manager.subDialoguePanel;
                         RecentManager.SetIsContinue(1);
                     });
@@ -140,9 +147,12 @@ namespace Tutorial
                 }
                 else
                 {
-                    manager.ScrollManager.stopscroll();
-                    manager.ScrollManager.MoveCamera(new Vector3((float)5.70, 0, -10), 2);
-                    Utility.Instance.InvokeAfterDelay(() => recentStart(data.index), 2f);
+                    // 콜백 기반: 카메라 이동 완료 후 recentStart
+                    manager.ScrollManager.MoveCamera(
+                        new Vector3((float)5.70, 0, -10), 
+                        2f,
+                        onComplete: () => recentStart(data.index)
+                    );
                     subdial = manager.subDialoguePanel;
                 }
             }
@@ -184,30 +194,18 @@ namespace Tutorial
 
         public override void Exit(GameManager manager, TutorialManager tutomanger)
         {
-            Debug.Log("메인 Exit2");
             dot.TriggerMain(false);
-            Debug.Log(tutomanger);
+
             manager.ScrollManager.StopCamera(false);
-            manager.StartCoroutine(FixCamAfterMain(manager));
-            if (background)
-            {
-                Debug.Log("현재 배경:" + background.name);
-                background.SetActive(false);
-            }
-            RecentManager.TutoNumChange();
+
             //manager.ObjectManager.activeSystemUIDelegate(true);
             //SystemUI.SetActive(true);
-        }
-
-        private IEnumerator FixCamAfterMain(GameManager manager)
-        {
-            // 월드 켜짐/패널 전환이 같은 프레임에 섞일 수 있으니 프레임 끝에서 확정
-            yield return new WaitForEndOfFrame();
-
             var cam = Camera.main;
+            cam.orthographicSize = 6.45f;
+            cam.transform.position = new Vector3(5.70f, 0, -10f);
 
-            cam.orthographicSize = 6.45f; 
-            cam.transform.position = new Vector3(5.70f, 0, -10);  // 메인 나가기 전에 카메라 한 번 더 잡아 주기
+            if (background) background.SetActive(false);
+            RecentManager.TutoNumChange();
         }
 
         public void changestate(GameManager manager)

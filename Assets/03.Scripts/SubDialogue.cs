@@ -185,7 +185,8 @@ public class SubDialogue : MonoBehaviour
             playerController.SetSubseq(4);
         }
 
-        bool needWait = false;
+        string[] lines = dialogueData.text.Split('\n');
+        LoadSubDialogue(lines);
 
         if (manager != null && manager.GetType() == typeof(GameManager))
         {
@@ -194,32 +195,30 @@ public class SubDialogue : MonoBehaviour
             float dPosition = sclist.DotPosition;
             Debug.Log("테스트2: " + dPosition);
             float camx = SclistGetCameraX(dPosition);
-            scroll.MoveCamera(new Vector3(camx, 0, -10), 1f);
-            scroll.stopscroll();
-            needWait = true;
+            scroll.MoveCamera(
+                new Vector3(camx, 0, -10), 
+                1f,
+                onComplete: () => {
+                    if (index == 0)
+                        subPanel.ShowNextDialogue();
+                    else
+                    {
+                        subPanel.dialogueIndex = index;
+                        subPanel.ShowNextDialogue();
+                    }
+                }
+            );
         }
         else
         {
             scroll.stopscroll();
-        }
-
-        string[] lines = dialogueData.text.Split('\n');
-        LoadSubDialogue(lines);
-
-        if (index == 0)
-        {
-            if (needWait)
-                StartCoroutine(_ShowNextAfterSeconds(subPanel, 1f));
-            else
+            if (index == 0)
                 subPanel.ShowNextDialogue();
-        }
-        else
-        {
-            subPanel.dialogueIndex = index;
-            if (needWait)
-                StartCoroutine(_ShowNextAfterSeconds(subPanel, 1f));
             else
+            {
+                subPanel.dialogueIndex = index;
                 subPanel.ShowNextDialogue();
+            }
         }
 
         //manager.ScrollManager.StopCamera(true); -> 자꾸 오류 발생함
@@ -227,11 +226,6 @@ public class SubDialogue : MonoBehaviour
             menuController.alloff();
     }
 
-    private IEnumerator _ShowNextAfterSeconds(SubPanel subPanel, float seconds)
-    {
-        yield return new UnityEngine.WaitForSeconds(seconds);
-        subPanel.ShowNextDialogue();
-    }
 
 
     public sub GetData(int idx)
@@ -417,6 +411,7 @@ public class SubDialogue : MonoBehaviour
     public void TutoExit()
     {
         InputGuard.WorldInputLocked = false;
+        ScreenShield.Off();
         if (menuController)
         {
             menuController.allon();

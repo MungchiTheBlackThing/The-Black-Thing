@@ -27,6 +27,7 @@ public enum GamePatternState
 };
 public class GameManager : MonoBehaviour
 {
+    
     [SerializeField]
     protected DotController dot;
     protected GameState activeState;
@@ -38,6 +39,8 @@ public class GameManager : MonoBehaviour
     protected GamePatternState currentPattern;
     public int TutoNum = 0;
     public SITime CurrentSITime => sltime;
+
+    private DateTime _phaseEndTime = DateTime.MinValue; // 외부에서 remainging time 받아오도록 접근 가능한 프로퍼티
 
     bool isready = false;
     public float targetTime;
@@ -207,6 +210,7 @@ public class GameManager : MonoBehaviour
         }
         dot.GoSleep();
     }
+
     public void BeginSkipPhaseTransition()
     {
         if (GameManager.isend) return;
@@ -307,6 +311,31 @@ public class GameManager : MonoBehaviour
 
         currentPattern = patternState;
 
+        // 새 페이즈 진입 시 이전 페이즈 알림 정리
+        switch (patternState)
+        {
+            case GamePatternState.Watching:
+                NotificationService.Cancel(PushIdType.Watching, Chapter);
+                break;
+            case GamePatternState.MainA:
+                // Watching이 끝나서 MainA 진입 = A 알림 필요 없음
+                NotificationService.Cancel(PushIdType.A, Chapter);
+                NotificationService.Cancel(PushIdType.A6, Chapter);
+                break;
+
+            case GamePatternState.MainB:
+                // Thinking이 끝나서 MainB 진입 = B 알림 필요 없음
+                NotificationService.Cancel(PushIdType.B, Chapter);
+                NotificationService.Cancel(PushIdType.B6, Chapter);
+                break;
+
+            case GamePatternState.Play:
+                // Writing이 끝나서 Sleeping 진입 = Night 알림 필요 없음
+                NotificationService.CancelGlobal(PushIdType.Night);
+                break;
+        }
+        _phaseEndTime = DateTime.MinValue;
+
         if (phaseTimerCoroutine != null)
         {
             StopCoroutine(phaseTimerCoroutine);
@@ -393,8 +422,11 @@ public class GameManager : MonoBehaviour
         {
             videoController.ShowSkipVideo(SkipVideoIdx.SkipSleeping, looping: true);
             
-        }               
+        }
+           
     }
+
+
     private void ApplyPhaseUI(GamePatternState patternState)
     {
             //대화 페이즈가 아닐 때 TimeSkipUI가 꺼져있다면 켜주기
@@ -444,6 +476,7 @@ public class GameManager : MonoBehaviour
     }
     private void InitGame()
     {
+        NotificationService.Init();
         // 새 게임 시 이전 타이머 기록이 남아있다면 삭제
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
@@ -739,6 +772,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public IEnumerator DelayedAction(float delay, Action action)
+    {
+        yield return new WaitForSeconds(delay);
+        action?.Invoke();
+    }
+
     private void ApplyMoldGateIfNeeded()
     {
         if (currentPattern == GamePatternState.Thinking
@@ -819,14 +858,19 @@ public class GameManager : MonoBehaviour
                     NextPhase();
                 }
 
-                yield break; // ✅ 중요: 아래 while로 내려가지 않게 차단
+                yield break; // 중요: 아래 while로 내려가지 않게 차단
             }
+            _phaseEndTime = endTime;
         }
         else
         {
             endTime = DateTime.Now.AddSeconds(duration);
             PlayerPrefs.SetString(currentPhaseTimerKey, endTime.ToBinary().ToString());
             PlayerPrefs.Save();
+            _phaseEndTime = endTime;
+
+            if (PlayerPrefs.GetInt("PushEnabled", 0) == 1)
+                PushScheduler.ScheduleForCurrentPhase(this); // 푸시 알럿 예약 - 푸시 안 오면 여기 걸 바꿔야 함
         }
 
         while (DateTime.Now < endTime)
@@ -1114,5 +1158,12 @@ public class GameManager : MonoBehaviour
         if (LoadSceneManager.Instance != null)
             LoadSceneManager.Instance.OnLoadingUIShown -= HandleLoadingUIShown;
         if (pc != null) pc.nextPhaseDelegate -= ChangeGameState;
+    }
+
+    public double GetPhaseRemainingSeconds()
+    {
+        if (_phaseEndTime == DateTime.MinValue) return 0;
+        double r = (_phaseEndTime - DateTime.Now).TotalSeconds;
+        return r > 0 ? r : 0;
     }
 }

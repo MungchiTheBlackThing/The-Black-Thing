@@ -29,13 +29,18 @@ public class DragGuide : MonoBehaviour
     {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         _scrollManager.stopscroll();
-        _scrollManager.MoveCamera(new Vector3(-5.5f, 0, -10), 2f);
-        StartCoroutine(SubStart());
+        _scrollManager.MoveCamera(
+            new Vector3(-5.5f, 0, -10), 
+            2f,
+            onComplete: () => {
+                StartCoroutine(SubStart());  // ì¹´ë©”ë¼ ì´ë™ ì™„ë£Œ í›„ ì‹¤í–‰
+            }
+        );
     }
     private IEnumerator SubStart()
     {
-        yield return new WaitForSeconds(0.5f); // 2ÃÊ ´ë±â
-        subDialogue.Tuto_start(69, 1.5f);  // ¿©±â ¼öÁ¤ 25.11.23 - ¼­ºê continue ¿À·ù ¸¹À½
+        yield return new WaitForSeconds(0.5f); 
+        subDialogue.Tuto_start(69, 1.5f); 
         Destroy(this.gameObject);
     }
 

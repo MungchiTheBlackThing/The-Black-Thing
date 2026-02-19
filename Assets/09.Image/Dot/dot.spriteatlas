@@ -639,6 +639,7 @@ SpriteAtlas:
     - da8c8da29edec499b8c0e43b5daf0b09: 21300000
     - e04aeda2bb0bdad4895e5e764f24f63c: 21300000
     - 2b112fa24b60a394f86231b630067194: 21300000
+    - 832b3fa29e01b174384368fc177c12c6: 21300000
     - 3a44f0b2f816be44ea86b8a7a5ccc62a: 21300000
     - 000201b240a0146d78d6432d507d595c: 21300000
     - 257312b279db6497fb82d7d60a5a16d6: 21300000
@@ -2917,6 +2918,7 @@ SpriteAtlas:
     - c178eb1d7314f4739953b003f8d3c68e: 21300000
     - 11e33d1d166c63e4da86555dc1d6e920: 21300000
     - 45f81e1d341e74834a195bf8419b2a2e: 21300000
+    - b229112d1bc4d45e3891025ef5656363: 21300000
     - 1650e12d4e305e04f8bfa847ac1b7eb0: 21300000
     - e973e22d32e2042c890ad4a5083f3ee8: 21300000
     - a21e262da00d04397a0ede2b22aed19d: 21300000
@@ -4117,6 +4119,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: da8c8da29edec499b8c0e43b5daf0b09, type: 3}
   - {fileID: 21300000, guid: e04aeda2bb0bdad4895e5e764f24f63c, type: 3}
   - {fileID: 21300000, guid: 2b112fa24b60a394f86231b630067194, type: 3}
+  - {fileID: 21300000, guid: 832b3fa29e01b174384368fc177c12c6, type: 3}
   - {fileID: 21300000, guid: 3a44f0b2f816be44ea86b8a7a5ccc62a, type: 3}
   - {fileID: 21300000, guid: 000201b240a0146d78d6432d507d595c, type: 3}
   - {fileID: 21300000, guid: 257312b279db6497fb82d7d60a5a16d6, type: 3}
@@ -6395,6 +6398,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c178eb1d7314f4739953b003f8d3c68e, type: 3}
   - {fileID: 21300000, guid: 11e33d1d166c63e4da86555dc1d6e920, type: 3}
   - {fileID: 21300000, guid: 45f81e1d341e74834a195bf8419b2a2e, type: 3}
+  - {fileID: 21300000, guid: b229112d1bc4d45e3891025ef5656363, type: 3}
   - {fileID: 21300000, guid: 1650e12d4e305e04f8bfa847ac1b7eb0, type: 3}
   - {fileID: 21300000, guid: e973e22d32e2042c890ad4a5083f3ee8, type: 3}
   - {fileID: 21300000, guid: a21e262da00d04397a0ede2b22aed19d, type: 3}
@@ -7594,6 +7598,7 @@ SpriteAtlas:
   - anim_sub_light_0033
   - anim_sub_roundthings3_0034
   - anim_watching_0020
+  - anim_eyescorner_0004
   - anim_sleep_mare_0034
   - anim_sub_caterpillar1_0046
   - anim_sub_light_0027
@@ -9872,6 +9877,7 @@ SpriteAtlas:
   - anim_eyesblink_0015
   - body_ch14_heart_3
   - anim_sub_raggedyann2_0022
+  - anim_sub_deadbug1_0021
   - anim_eyescorner_0044
   - anim_sub_raggedyann2_0014
   - anim_bed_0020

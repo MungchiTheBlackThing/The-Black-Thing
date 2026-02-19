@@ -231,7 +231,8 @@ public class DiaryController : BaseObject, ISleepingInterface
         if (dotController == null)
             dotController = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
 
-        return dotController != null && dotController.AnimKey == "anim_sleep";
+        return dotController != null && 
+            (dotController.AnimKey == "anim_sleep" || dotController.AnimKey == "anim_sleep_mare");
     }
 
     void UpdateDiaryLight()

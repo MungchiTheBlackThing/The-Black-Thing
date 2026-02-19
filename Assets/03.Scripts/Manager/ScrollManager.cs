@@ -174,13 +174,14 @@ public class ScrollManager : MonoBehaviour
         isScreenStatic = false;
     }
 
-    public void MoveCamera(Vector3 targetPosition, float duration)
+    public void MoveCamera(Vector3 targetPosition, float duration, System.Action onComplete = null)
     {
-        StartCoroutine(MoveCameraCoroutine(targetPosition, duration));
+        StartCoroutine(MoveCameraCoroutine(targetPosition, duration, onComplete));
     }
 
-    private IEnumerator MoveCameraCoroutine(Vector3 targetPosition, float duration)
+    private IEnumerator MoveCameraCoroutine(Vector3 targetPosition, float duration, System.Action onComplete = null)
     {
+        isScreenStatic = true; // 이동 중 스크롤 잠금
         Vector3 startPosition = transform.position;
         float elapsedTime = 0;
 
@@ -192,5 +193,7 @@ public class ScrollManager : MonoBehaviour
         }
         
         transform.position = targetPosition;
+        // 완료 콜백 호출 (스크롤 잠금은 유지 - 필요시 호출측에서 scrollable() 호출)
+        onComplete?.Invoke();
     }
 }
