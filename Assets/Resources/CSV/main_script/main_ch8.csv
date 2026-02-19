@@ -1,4 +1,4 @@
-Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
+﻿Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
 1,43,1,main_web,Dot,Main,body_spiderweb,face_blink,text,<nickname>.,<nickname>.,2,,,,Main_Ch8,M8_L0001
 1,43,2,main_web,Player,Main,body_spiderweb,,text,"뭉치, 왔구나!","Dot, you’re here!",3,,,,Main_Ch8,M8_L0002
 1,43,3,main_web,Dot,Main,body_spiderweb,,text,"응, <nickname>, 어젯밤엔 우리가\n약속했던 악몽을 꾸었니?","I am, <nickname>. Did you have a nightmare\nlike we agreed on yesterday?",4,,,,Main_Ch8,M8_L0003
@@ -62,8 +62,8 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,43,61,main_web,Dot,Main,body_spiderweb,face_eyeroll3,text,응...,Okay...,62,,,,Main_Ch8,M8_L0061
 1,43,62,main_web,Dot,Main,body_spiderweb,face_close_turn,text,이제야 알겠어.,Now I see.,63,,,,Main_Ch8,M8_L0062
 1,43,63,main_web,Dot,Main,body_spiderweb,face_open,text,"햇살이 궁금해서 혼자 구경을 갔다가,\n점차 자주 놀러 나가게 되는 것과는 달라.",It’s different from taking a peek at the\nsunlight and gradually venturing outside.,64,,,,Main_Ch8,M8_L0063
-1,43,64,main_web,Dot,Main,body_spiderweb,face_blink,text,"내 안에서 일어나지 않은, 외부로부터의 강제된 변화는","Changes from the outside, ones that didn’t\nstart from within me, would be yet more chains.",65,,,,Main_Ch8,M8_L0064
-1,43,65,main_web,Dot,Main,body_spiderweb,,text,"역시, 또 다른 억압이 될 거야.",,66,,,,Main_Ch8,M8_L0065
+1,43,64,main_web,Dot,Main,body_spiderweb,face_blink,text,"내 안에서 일어나지 않은, 외부로부터의 강제된 변화는","Changes from the outside, ones\nthat didn’t start from within me,",65,,,,Main_Ch8,M8_L0064
+1,43,65,main_web,Dot,Main,body_spiderweb,,text,"역시, 또 다른 억압이 될 거야.",would be yet more chains.,66,,,,Main_Ch8,M8_L0065
 1,43,66,main_web,Dot,Main,body_spiderweb,,text,그것을 구원이라 부르는 건...\n오만한 자들의 희망 사항이겠지.,Calling it salvation...\nwould be arrogant.,67,,,,Main_Ch8,M8_L0066
 1,43,67,main_web,Dot,Main,body_spiderweb,,text,나 역시 오만함으로 아이에게 더 큰 부담을 줄 뻔했어.,My arrogance almost put the child\nunder even greater pressure.,68,,,,Main_Ch8,M8_L0067
 1,43,68,main_web,Player,Main,body_spiderweb,,selection,오만이었을지도 모르지.|오만까지는 아닐 거야.,Perhaps it was arrogance.|I wouldn’t call it arrogance.,69|71,,,moon|sun,Main_Ch8,M8_L0068
