@@ -81,6 +81,12 @@ public class LetterController : BaseObject, IWatchingInterface
     {
         alert.SetActive(false);
 
+        if (noteUI != null)
+        {
+            noteUI.SetActive(false);
+            // createdNoteUI 여부랑 상관없이 그냥 숨김 처리만
+        }
+
         // if (noteUI != null)
         // {
         //     if (createdNoteUI)

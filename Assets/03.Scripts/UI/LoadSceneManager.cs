@@ -37,6 +37,8 @@ public class LoadSceneManager : MonoBehaviour
 
     private bool _isLoadChapterImage = false;
 
+    public event System.Action OnLoadingUIShown;
+
     void Awake()
     {
         if (Instance == null)
@@ -135,6 +137,7 @@ public class LoadSceneManager : MonoBehaviour
         }
 
         yield return FadeInAndWait(0.2f);
+        OnLoadingUIShown?.Invoke();
     }
 
     private void OpenChapterPanel()
@@ -285,9 +288,9 @@ public class LoadSceneManager : MonoBehaviour
     
     private IEnumerator LoadChapter()
     {
-        StartCoroutine(OpenLoadingUI());
+        yield return StartCoroutine(OpenLoadingUI());
 
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.3f);
 
         yield return StartCoroutine(LoadSceneCoroutine());
  

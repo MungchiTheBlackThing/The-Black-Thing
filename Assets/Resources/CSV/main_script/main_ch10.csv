@@ -1,5 +1,5 @@
 Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType,KorText,EngText,NextLineKey,AnimScene,AfterScript,DeathNote,LocTable,LocKey
-1,55,1,main_door_open,Dot,Main,body_default1,face_blink,text,"안녕, <nickname>.","Hello, <nickname>.",2,,,,Main_Ch10,M10_L0001
+1,55,1,main_door_open,Dot,Main,body_default1,face_omg,text,"안녕, <nickname>.","Hello, <nickname>.",2,,,,Main_Ch10,M10_L0001
 1,55,2,main_door_open,Dot,Main,,,text,저걸 좀 닫아 줄 수 있겠어?,Could you close that?,3,,,,Main_Ch10,M10_L0002
 1,55,3,main_door_open,Player,Main,,,text,뭐를 닫아 줄까?,Close what?,4,,,,Main_Ch10,M10_L0003
 1,55,4,main_door_open,Dot,Main,,,text,"안녕, <nickname>.","Hello, <nickname>.",5,,,,Main_Ch10,M10_L0004
@@ -20,9 +20,9 @@ Main,ScriptKey,LineKey,Background,Actor,AnimState,DotAnim,DotExpression,TextType
 1,55,19,main_door_close,Dot,Main,,,text,대체 그건 뭐였을까? 응?,"What was that? Really, what?",20,,,,Main_Ch10,M10_L0019
 1,55,20,main_door_close,Player,Main,,,text,조금 진정하는 게 좋을 것 같은데...,Maybe you should calm down...,21,,,,Main_Ch10,M10_L0020
 1,55,21,main_door_close,Dot,Main,,,text,대체 왜 그랬던 걸까? 조금 들어줄 수 있겠어?,"Why would he do that? Please, listen to this.",22,,,,Main_Ch10,M10_L0021
-1,55,22,main_door_open,Dot,Main,body_default1,face_omg,text,어쩐지 나를 닮은.,... That somehow resemble me.,23,1,,,Main_Ch10,M10_L0022
-1,55,23,main_door_open,Dot,Main,,,text,검디 검은 폐기물 덩어리.\n역시 파쇄해 버려야 마땅한.,"A black, black blob of waste. Something\nthat deserves to be destroyed.",24,,,,Main_Ch10,M10_L0023
-1,55,24,main_door_open,Player,Main,body_default1,face_blink,text,뭉치야. 정신 좀 차려 봐!,"Dot, get it together!",25,,,,Main_Ch10,M10_L0024
+1,55,22,main_door_close,Dot,Main,,,text,어쩐지 나를 닮은.,... That somehow resemble me.,23,1,,,Main_Ch10,M10_L0022
+1,55,23,main_door_close,Dot,Main,,,text,검디 검은 폐기물 덩어리.\n역시 파쇄해 버려야 마땅한.,"A black, black blob of waste. Something\nthat deserves to be destroyed.",24,,,,Main_Ch10,M10_L0023
+1,55,24,main_door_open,Player,Main,body_default1,face_omg,text,뭉치야. 정신 좀 차려 봐!,"Dot, get it together!",25,,,,Main_Ch10,M10_L0024
 1,55,25,main_door_open,Dot,Main,,,text,....,....,26,,,,Main_Ch10,M10_L0025
 1,55,26,main_door_open,Player,Main,,,text,"뭉치야, 정신이 좀 들어?","Dot, can you hear me?",27,,,,Main_Ch10,M10_L0026
 1,55,27,main_door_open,Dot,Main,,,text,....,....,28,,,,Main_Ch10,M10_L0027

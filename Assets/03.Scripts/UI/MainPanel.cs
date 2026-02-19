@@ -29,19 +29,16 @@ public class MainPanel : MonoBehaviour
     [SerializeField] GameObject Selection3Panel;
     [SerializeField] GameObject Selection4Panel;
     [SerializeField] DotController DotController;
-
-    [SerializeField] Button NextButton;
     [SerializeField] TMP_InputField Textinput;
 
     [SerializeField] GameObject MainClick;
     [SerializeField] GameObject BackBut;
     [SerializeField] public GameObject UITutorial;
 
-    [SerializeField] int backindex = -1;
-    [SerializeField] string backtag = "";
-    int backChoiceIndex = -1;
-    int backBranchStartIndex = -1;
+    private Stack<int> backStack = new Stack<int>();
     int backVideoIndex = -1;
+
+    int backFloorIndex = 0; // 이 인덱스보다 아래로는 Back 금지 (선택 확정 후 nextIndex로 올라감)
 
     private LocalizeStringEvent backMsgLocalize;
     private Coroutine backMsgRoutine;
@@ -68,11 +65,11 @@ public class MainPanel : MonoBehaviour
     void OnEnable()
     {
         mainDialogue = (MainDialogue)gameManager.CurrentState;
-        backindex = -1;
-        backtag = "";
-        backChoiceIndex = -1;
-        backBranchStartIndex = -1;
+        backStack.Clear();
         backVideoIndex = -1;
+        backFloorIndex = 0;
+
+        backStack.Clear();
         
         MainClick = GameObject.Find("MainClick");
         DotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
@@ -105,15 +102,13 @@ public class MainPanel : MonoBehaviour
             }
         }
 
-        if (MainClick != null && BackBut != null && BackBut.transform.parent == transform)
-        {
-            BackBut.transform.SetSiblingIndex(transform.childCount - 1);
-            MainClick.transform.SetSiblingIndex(transform.childCount - 2);
-        }
-        else
-        {
-            if (MainClick) MainClick.transform.SetSiblingIndex(transform.childCount - 1);
-        }
+        BringSystemButtonsToTop();
+    }
+
+    void BringSystemButtonsToTop()
+    {
+        if (MainClick != null) MainClick.transform.SetAsLastSibling();
+        if (BackBut != null) BackBut.transform.SetAsLastSibling();
     }
     public void InitializePanels()
     {
@@ -215,26 +210,20 @@ public class MainPanel : MonoBehaviour
                     string firstTag = archeTags[0].Trim().ToLower();
                     string secondTag = archeTags[1].Trim().ToLower();
 
-                    if (index == 0) { backtag = firstTag; pc.UpdateArcheType(firstTag); }
-                    else if (index == 1) { backtag = secondTag; pc.UpdateArcheType(secondTag); }
                 }
                 else if (archeTags.Length == 4)
                 {
                     pc.checkdeath(index);
                 }
-                else backtag = "";
             }
-            else backtag = "";
 
             if (index < nextKeys.Length && int.TryParse(nextKeys[index], out int nextLineKey))
             {
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
                 if (nextIndex != -1)
                 {
-                    backChoiceIndex = dialogueIndex;
-                    backBranchStartIndex = nextIndex;
-
-                    backindex = dialogueIndex;
+                    backStack.Clear();           // 과거 히스토리 끊기
+                    backFloorIndex = nextIndex;  // 선택 이후 첫 줄보다 아래로는 Back 금지
                     dialogueIndex = nextIndex;
                 }
                 else { Debug.Log("1"); DialEnd(); return; }
@@ -260,10 +249,10 @@ public class MainPanel : MonoBehaviour
 
     private IEnumerator DialEndSequence()
     {
+        backStack.Clear();
         mainDialogue.currentDialogueList.Clear();
         mainDialogue.DialogueEntries.Clear();
         dialogueIndex = 0;
-        backindex = -1;
 
         ScreenShield.Off();
         InputGuard.WorldInputLocked = false;
@@ -343,6 +332,7 @@ public class MainPanel : MonoBehaviour
 
         beforeActivate?.Invoke();
         panel.SetActive(true);
+        BringSystemButtonsToTop();
 
         yield return StartCoroutine(FadeIn(cg, fadeSeconds, focusButtons));
 
@@ -356,6 +346,7 @@ public class MainPanel : MonoBehaviour
     public void ShowNextDialogue()
     {
         PanelOff();
+        BringSystemButtonsToTop();
         Debug.Log("다이얼: " + dialogueIndex + "리스트: " + mainDialogue.currentDialogueList.Count);
         if (dialogueIndex > mainDialogue.currentDialogueList.Count)
         {
@@ -376,11 +367,7 @@ public class MainPanel : MonoBehaviour
         bool waitVideo = animScene == "1";
         if (waitVideo)
             backVideoIndex = dialogueIndex;
-
-        if (waitVideo)
-        {
-            backindex = dialogueIndex;
-        }
+        if (BackBut) BackBut.SetActive(dialogueIndex > 0);
 
         switch (textType)
         {
@@ -524,7 +511,13 @@ public class MainPanel : MonoBehaviour
             if (int.TryParse(currentEntry.NextLineKey, out int nextLineKey))
             {
                 int nextIndex = mainDialogue.currentDialogueList.FindIndex(entry => (entry as DialogueEntry)?.LineKey == nextLineKey);
-                if (nextIndex != -1) dialogueIndex = nextIndex;
+                if (nextIndex != -1)
+                {
+                    if (dialogueIndex >= backFloorIndex)
+                    backStack.Push(dialogueIndex);
+
+                    dialogueIndex = nextIndex;
+                }
                 else { Debug.Log("5"); DialEnd(); return; }
             }
             else { Debug.Log("6"); DialEnd(); return; }
@@ -547,34 +540,82 @@ public class MainPanel : MonoBehaviour
     public void Maincontinue()
     {
         if (dialogueIndex <= 0) return;
+
+        // 선택 직후 첫 줄에서, 스택이 비면 더 이상 back 금지
+
+        if (dialogueIndex == backFloorIndex && backStack.Count == 0)
+        {
+            Debug.Log("[Back] blocked: at floor line");
+            ShowBackMessage("SystemUIText", "lock_select");
+            return;
+        }
         // 1) 우선 1: 영상 라인 되감기 방지 (영상 다음 줄에서 Back 누르면 막기)
         if (backVideoIndex >= 0 && dialogueIndex <= backVideoIndex + 1)
         {
+            Debug.Log("[Back] blocked: video");
             ShowBackMessage("SystemUIText", "lock_video"); 
             return;
         }
-        // 2) 선택 분기 전이면 킵고잉
-        if (backBranchStartIndex < 0)
+
+        int prev = -1;
+
+        if (backStack.Count > 0)
         {
-            dialogueIndex--;
-            ShowNextDialogue();
+            prev = backStack.Peek(); // 아직 pop 하지 말고 먼저 확인
+        }
+        else
+        {
+            // 스택 누락 대비: 역링크로 prev 계산
+            prev = FindPrevIndexByReverseLink(dialogueIndex);
+        }
+
+        // 선택 확정 후: floor 아래(=선택지/그 이전)로는 절대 못 감
+        if (prev < backFloorIndex)
+        {
+            Debug.Log($"[Back] blocked: floor prev={prev} floor={backFloorIndex}");
+            ShowBackMessage("SystemUIText", "lock_select");
+            return;
+        }   
+
+        if (prev == -1)
+        {
+            ShowBackMessage("SystemUIText", "lock_select"); // 혹은 lock_back 같은 새 키
             return;
         }
 
-        // 3) 선택 확정 후 backBranchStartIndex 이전으로 못 감
-        // backBranchStartIndex = 선택 후 점프한 첫 줄(nextIndex)
-        if (dialogueIndex > backBranchStartIndex)
+        // 이제 안전하니 실제 이동
+        if (backStack.Count > 0) backStack.Pop();
+        dialogueIndex = prev;
+        ShowNextDialogue();
+    }
+
+    private int FindPrevIndexByReverseLink(int currentIdx)
+    {
+        if (mainDialogue == null || mainDialogue.currentDialogueList == null) return -1;
+        if (currentIdx < 0 || currentIdx >= mainDialogue.currentDialogueList.Count) return -1;
+
+        var cur = mainDialogue.GetData(currentIdx);
+        int curLineKey = cur.LineKey;
+
+        // "A -> B" 형태(단일 NextLineKey)만 역추적한다.
+        // 선택지("5|7") 같은 분기는 여기서 건드리지 않음.
+        for (int i = currentIdx - 1; i >= backFloorIndex; i--)
         {
-            dialogueIndex--;
-            ShowNextDialogue();
-            return;
+            var e = mainDialogue.GetData(i);
+            if (string.IsNullOrEmpty(e.NextLineKey)) continue;
+            if (e.NextLineKey.Contains("|")) continue;
+
+            if (int.TryParse(e.NextLineKey, out int nextKey) && nextKey == curLineKey)
+                return i;
         }
 
-        ShowBackMessage("SystemUIText", "lock_select");
+        return -1;
     }
 
     private void ShowBackMessage(string table, string key)
     {
+        Debug.Log($"[BackMsg] ShowBackMessage called {table}:{key} BackBut={(BackBut?BackBut.name:"NULL")}");
+
         if (!backMsgLocalize)
             backMsgLocalize = BackBut.transform.GetChild(0).GetComponent<LocalizeStringEvent>();
 

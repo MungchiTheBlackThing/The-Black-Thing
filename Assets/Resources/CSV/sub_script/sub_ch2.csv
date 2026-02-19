@@ -1,4 +1,4 @@
-Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
+﻿Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,NextLineKey,DeathNote,AfterScript,Exeption,LocTable,LocKey
 1,9,1,1,Dot,Default,anim_move,text,"<nickname>,","<nickname>,",2,,,,Sub_Ch2,S2_L0001
 1,9,2,1,Dot,Sub,anim_eyesblink,text,비밀을 알려 줄게.,I’ll tell you a secret.,3,,,,Sub_Ch2,S2_L0002
 1,9,3,1,Dot,Sub,,text,난 너의 생각을 읽을 수 있어.,I can read your thoughts.,4,,,,Sub_Ch2,S2_L0003
@@ -232,7 +232,7 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 4,12,231,0,Player,Sub,,text,"아니, 아니야. 고작 뭉치가 아닌 무려 뭉치지!","No, never. You’re so\nmuch more than mold!",232,,,,Sub_Ch2,S2_L0231
 4,12,232,0,Player,Sub,,selection,너는 나의 친구잖아.|너는 사랑스럽잖아.,You’re my friend.|You’re lovable.,233|233,moon|sun,,,Sub_Ch2,S2_L0232
 4,12,233,0,Player,Default,anim_omg,text,기관지에 해롭지도 않고.,"Plus, you have no effect\non lung capacity whatsoever.",234,,,,Sub_Ch2,S2_L0233
-4,12,234,0,Dot,Default,,text,그렇구나. 시간이 필요해. 잠시 혼자 있어야겠어.,I see. I need some time\nto think. Excuse me.,,,anim_mud_day1,,Sub_Ch2,S2_L0234
+4,12,234,0,Dot,Default,,text,그렇구나. 시간이 필요해. 잠시 혼자 있어야겠어.,I see. I need some time\nto think. Excuse me.,,,anim_mud_day2,,Sub_Ch2,S2_L0234
 4,12,235,0,Player,Sub,anim_eyesblink,text,저 빵 위로 떨어지는 애들도 있을걸.\n폭신한 침대에 뛰어드는 아이처럼!,I bet some of those spores fall onto the\nbread. Like children jumping on the bed.,236,,,,Sub_Ch2,S2_L0235
 4,12,236,0,Player,Sub,,text,그 아이들은 그들의 곰팡이 가족과\n폭신폭신 행복하게 살 수 있을 거야.,They’ll live their fluffy happy\ndays together with their family.,237,,,,Sub_Ch2,S2_L0236
 4,12,237,0,Dot,Default,anim_move,text,정말 그럴까?,You really think so?,238,,,,Sub_Ch2,S2_L0237

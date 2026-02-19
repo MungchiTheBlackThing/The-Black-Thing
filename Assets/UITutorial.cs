@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UITutorial : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class UITutorial : MonoBehaviour
     [SerializeField] GameObject DayProgress;
     [SerializeField] GameObject Subicon;
     [SerializeField] PlayerController player;
-    [SerializeField] private GameObject TutoCh1Object;
 
     CanvasGroup tutorialMaskGroup;
     CanvasGroup Spider;
@@ -34,8 +34,12 @@ public class UITutorial : MonoBehaviour
 
     int index = 0;
     // Start is called before the first frame update
+    private int step = 0;
 
     private bool _menuOpenedSignal = false;
+
+    private bool _progressClicked = false;
+
     void Awake()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -54,7 +58,7 @@ public class UITutorial : MonoBehaviour
         MenuController.OnMenuOpened += HandleMenuOpened;
 
         ScreenShield.Off();
-        StartCoroutine(guide());
+        StartCoroutine(StartGuide1());
     }
 
     void ResetState()
@@ -69,21 +73,21 @@ public class UITutorial : MonoBehaviour
         if (progressUIController) progressUIController.guide2 = false;
         _guide1Ready = false;
         _guide1UIShown = false;
+        _menuOpenedSignal = false;
+
+    // 여기 추가: 가이드라인 전부 끄기
+        for (int i = 0; i < Guideline.Count; i++)
+            if (Guideline[i]) Guideline[i].SetActive(false);
     }
 
     private void Update()
     {
-        if (!G2 && _guide1Ready && _guide1UIShown && _menuOpenedSignal)
-        {
-            Guide2();
-            G2 = true;  // �� �� ����� �Ŀ��� ����
-        }
 
-        if (!G3 && MenuController.isprogress)
+        if (!G3 && G2 && _progressClicked)
         {
             StartCoroutine(Guide3());
             G3 = true;
-            MenuController.isprogress = false;
+            _progressClicked = false;
         }
 
         if (!G4 && progressUIController.guide1)
@@ -100,18 +104,107 @@ public class UITutorial : MonoBehaviour
             progressUIController.guide2 = false;
         }
     }
-    IEnumerator guide()
+
+    [SerializeField] private RectTransform _topLayer; // Canvas 최상단 패널(예: TutorialTopLayer) 드래그
+    private GameObject _ch1Clone;
+
+    private GameObject CreateCh1CloneOnTop(string originalName)
+    {
+        var originalGO = GameObject.Find(originalName);
+        if (!originalGO) { Debug.LogError($"[UITutorial] '{originalName}' not found"); return null; }
+
+        var src = originalGO.GetComponent<RectTransform>();
+        if (!src) { Debug.LogError("[UITutorial] original has no RectTransform"); return null; }
+
+        if (_topLayer == null)
+        {
+            // 대충이라도 최상단: 현재 캔버스의 루트 RectTransform
+            var canvas = GetComponentInParent<Canvas>();
+            _topLayer = canvas ? canvas.GetComponent<RectTransform>() : (RectTransform)transform;
+        }
+
+        // 이미 있으면 재사용
+        if (_ch1Clone) Destroy(_ch1Clone);
+
+        // 1) 클론 생성
+        _ch1Clone = Instantiate(originalGO, _topLayer);
+        _ch1Clone.name = originalGO.name + "_TUTO_CLONE";
+
+        // 2) 좌표/크기 복사 (스크린 기준으로 복사 -> parent가 달라도 맞게)
+        var dst = _ch1Clone.GetComponent<RectTransform>();
+
+        // dst를 "센터 기준"으로 고정해두면 기기별 삐뚤어짐이 줄어듦
+        dst.anchorMin = dst.anchorMax = new Vector2(0.5f, 0.5f);
+        dst.pivot = new Vector2(0.5f, 0.5f);
+
+        Vector3 srcCenterWorld = src.TransformPoint(src.rect.center);
+        Vector2 screen = RectTransformUtility.WorldToScreenPoint(null, srcCenterWorld);
+
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_topLayer, screen, null, out var local))
+            dst.anchoredPosition = local;
+
+        dst.sizeDelta = src.sizeDelta;
+
+        // 회전/스케일도 필요하면
+        dst.localRotation = Quaternion.identity;
+        dst.localScale = src.localScale;;
+
+        // 3) 최상단으로
+        _topLayer.SetAsLastSibling();
+        dst.SetAsLastSibling();
+
+        // 4) 클릭/드래그 막고 싶으면 여기서 GraphicRaycaster / Button 비활성 등 조정 가능
+        // 예: 원본의 버튼 이벤트는 제거하고 튜토용 이벤트만 넣기
+
+        return _ch1Clone;
+    }
+
+    private IEnumerator WaitForUI(string nameContains, float timeout)
+    {
+        float t = 0f;
+        while (t < timeout)
+        {
+            var go = FindByNameContains(nameContains); 
+            if (go != null) yield break;
+
+            t += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        Debug.LogWarning($"[UITutorial] WaitForUI timeout: {nameContains}");
+    }
+
+    private GameObject FindByNameContains(string key)
+    {
+        // 비활성 포함 전체 탐색
+        var all = Resources.FindObjectsOfTypeAll<GameObject>();
+        for (int i = 0; i < all.Length; i++)
+        {
+            var go = all[i];
+            if (go == null) continue;
+
+            // 에디터/프리팹 에셋 제외(런타임 씬 오브젝트만)
+            if (!go.scene.IsValid()) continue;
+
+            // key가 "ch1"이면 "ch1(Clone)"도 잡힘
+            if (go.name == key || go.name.Contains(key))
+                return go;
+        }
+        return null;
+    }
+
+
+    IEnumerator StartGuide1()
     {
         yield return new WaitForSeconds(1f);
+        step = 0;
         Guideline[0].SetActive(true);
-        _guide1UIShown = Guideline[0].activeInHierarchy;
         Guide1();
-        _guide1Ready = true;
     }
     public void Guide1()
     {
         preparent = menuBut.transform.parent.gameObject;
-        presibling = 1;
+        presibling = menuBut.transform.GetSiblingIndex();
         Debug.Log("Guide1");
         menuBut.transform.SetParent(this.transform);
         menuBut.transform.SetAsLastSibling();
@@ -128,6 +221,22 @@ public class UITutorial : MonoBehaviour
         progressBut.transform.SetParent(this.transform);
         progressBut.transform.SetAsLastSibling();
         Debug.Log("Guide2");
+
+        _progressClicked = false;
+        var btn = progressBut.GetComponent<Button>();
+        if (btn)
+        {
+            btn.onClick.RemoveListener(OnClickProgressOnce);
+            btn.onClick.AddListener(OnClickProgressOnce);
+        }
+    }
+
+    private void OnClickProgressOnce()
+    {
+        _progressClicked = true;
+
+        var btn = progressBut.GetComponent<Button>();
+        if (btn) btn.onClick.RemoveListener(OnClickProgressOnce); // 1회성
     }
 
     public IEnumerator Guide3()
@@ -140,12 +249,37 @@ public class UITutorial : MonoBehaviour
         progressBut.transform.SetSiblingIndex(presibling);
 
         progressUIController.tutorial = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return StartCoroutine(WaitForUI("ch1", 1.0f));
+        Canvas.ForceUpdateCanvases();
 
-        TutoCh1Object.SetActive(true);
-        TutoCh1Object.transform.SetAsLastSibling();
-        TutoCh1Object.GetComponent<Button>().onClick.AddListener(progressUIController.onClickdragIcon);
+        var clone = CreateCh1CloneOnTop("ch1"); 
+        if (clone != null)
+        {
+            var btn = clone.GetComponent<Button>();
+            if (btn) 
+            { 
+                btn.onClick.RemoveAllListeners(); 
+                btn.onClick.AddListener(OnClickCh1Clone); 
+            }
+        }
     }
+
+    private void OnClickCh1Clone()
+    {
+        // Guide3에서 첫 클릭이면 -> Guide4로만
+        if (!G4)
+        {
+            Guide4();
+            G4 = true;
+            return;
+        }
+
+        // Guide4에서 두 번째 클릭이면 -> 실제 기능 실행 + Guide5로 트리거
+        progressUIController.onClickdragIcon(); // 기존 기능 실행(하루 진행도 열기 등)
+        // onClickdragIcon 안에서 guide2 = true가 켜지니까 Update에서 Guide5로 넘어감
+    }
+
+    
     public void Guide4()
     {
         
@@ -162,10 +296,17 @@ public class UITutorial : MonoBehaviour
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
-        TutoCh1Object.SetActive(false);
+        if (_ch1Clone != null)
+        {
+            Destroy(_ch1Clone);
+            _ch1Clone = null;
+        }
         preparent = DayProgress.transform.parent.gameObject;
         DayProgress.transform.SetParent(this.transform);
         DayProgress.transform.SetAsLastSibling();
+
+        if (Guideline[index] != null)
+            Guideline[index].transform.SetAsLastSibling();
     }
     public void Guide6()
     {
@@ -214,10 +355,19 @@ public class UITutorial : MonoBehaviour
     {
         MenuController.OnMenuOpened -= HandleMenuOpened;
         ScreenShield.Off();
+
+        if (_ch1Clone != null)
+        {
+            Destroy(_ch1Clone);
+            _ch1Clone = null;
+        }
     }
 
     private void HandleMenuOpened()
     {
-        _menuOpenedSignal = true;
+        if (step != 0) return;
+        step = 1;
+        Guide2();
+        G2 = true;
     }
 }

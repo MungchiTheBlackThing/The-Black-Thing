@@ -42,6 +42,8 @@ public class ObjectManager : MonoBehaviour
     string currentTime;
 
     PlayerController pc;
+    
+    private DotController dot;
 
     /*
      * [SerializeField] List<GooglePath> googlePath;
@@ -59,6 +61,26 @@ public class ObjectManager : MonoBehaviour
     {
         pc = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         pc.successSubDialDelegate += SuccessSubDial;
+        dot = GameObject.FindWithTag("DotController")?.GetComponent<DotController>(); // 추가
+    }
+
+        private void OnEnable()
+    {
+        DotController.DiaryGateChanged += OnDiaryGateChanged;
+    }
+
+    private void OnDisable()
+    {
+        DotController.DiaryGateChanged -= OnDiaryGateChanged;
+    }
+
+    private void OnDiaryGateChanged()
+    {
+        // 아직 로드 전이면 스킵(풀 비어있을 수 있음)
+        if (!isObjectLoadComplete) return;
+        if (pc == null) return;
+
+        RefreshDiaryVisibilityOnly();
     }
 
     void SuccessSubDial(int phases, string subTitle)
@@ -249,7 +271,7 @@ public class ObjectManager : MonoBehaviour
                 var ch_bread = newObj.GetComponent<ChBreadObject>();
                 if (ch_bread != null)
                 {
-                    active = active && ch_bread.ShouldBeActive(isCompleted);
+                    active = ch_bread.ShouldBeActive(isCompleted); // baseActive 무시
                 }
 
                 // cup / cupdot 처리 로직
@@ -305,6 +327,7 @@ public class ObjectManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         isObjectLoadComplete = true;
+        RefreshDiaryVisibilityOnly();
     }
 
     /*
@@ -364,8 +387,45 @@ public class ObjectManager : MonoBehaviour
         }
     }
 
+    private bool _lastDiaryVisible = true;
+
+    private void RefreshDiaryVisibilityOnly()
+    {
+        if (!isObjectLoadComplete) return;
+        if (pc == null) return;
+
+        if (dot == null)
+            dot = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
+
+        // 1) "존재 조건"은 기존 ShouldDiaryBeActive 그대로 사용
+        int ch = pc.GetChapter();
+
+        // 풀에서 phase_diary 하나만 찾기
+        GameObject diaryObj = pool.SearchMemory("phase_diary");
+        if (diaryObj == null) return;
+
+        // baseActive는 기존 BaseObject 챕터 조건 재활용
+        bool baseActive = true;
+        var baseObj = diaryObj.GetComponent<BaseObject>();
+        if (baseObj != null) baseActive = baseObj.IsCurrentChapter(ch);
+
+        bool shouldShow = ShouldDiaryBeActive(ch, baseActive, pc);
+
+        // 2) 핵심: anim_diary or anim_diary_omg면 숨김
+        if (dot != null && (dot.AnimKey == "anim_diary" || dot.AnimKey == "anim_diary_omg"))
+            shouldShow = false;
+
+        if (_lastDiaryVisible == shouldShow) return;
+        _lastDiaryVisible = shouldShow;
+
+        diaryObj.SetActive(shouldShow);
+    }
+
+
     private bool ShouldDiaryBeActive(int chapter, bool baseActive, PlayerController playerController)
     {
+        if (!baseActive) return false;
+
         // 튜토리얼 씬에서는 항상 비활성화
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Tutorial")
         {
@@ -397,7 +457,7 @@ public class ObjectManager : MonoBehaviour
             var ch_bread = value.GetComponent<ChBreadObject>();
             if (ch_bread != null)
             {
-                active = active && ch_bread.ShouldBeActive(isCompleted);
+                active = ch_bread.ShouldBeActive(isCompleted); // baseActive 무시
             }
             // cup / cupdot 예외
 
@@ -410,6 +470,8 @@ public class ObjectManager : MonoBehaviour
             if (diary != null)
             {
                 active = ShouldDiaryBeActive(chapter, active, pc);
+                if (dot == null) dot = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
+                if (dot != null && (dot.AnimKey == "anim_diary" || dot.AnimKey == "anim_diary_omg")) active = false;
             }
 
             value.SetActive(active);
@@ -480,17 +542,6 @@ public class ObjectManager : MonoBehaviour
         if(bookPile)
         {
             bookPile.SetActive(false);
-        }
-    }
-
-    public void ShowDiary(bool isActive)
-    {
-
-        GameObject diary = pool.SearchMemory("phase_diary");
-
-        if (diary)
-        {
-            diary.SetActive(isActive);
         }
     }
     public void Translate(LANGUAGE language)

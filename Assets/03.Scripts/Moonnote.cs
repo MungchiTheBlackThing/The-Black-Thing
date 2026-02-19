@@ -41,12 +41,14 @@ public class Moonnote : MonoBehaviour
     public void anion(GameObject Balloon)
     {
         UIBalloon = Balloon;
+        ScreenShield.Off();
         MoonnoteLight.SetActive(true);
     }
 
     public void disappear()
     {
         this.gameObject.GetComponent<Animator>().SetTrigger("Disappear");
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.earthsent, transform.position);
         StartCoroutine(off());
     }
 

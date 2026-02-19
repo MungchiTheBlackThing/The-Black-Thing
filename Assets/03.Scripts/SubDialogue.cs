@@ -264,6 +264,8 @@ public class SubDialogue : MonoBehaviour
         //subdata.LocTable = SubDialogueEntries[idx].LocTable;
         //subdata.LocKey = SubDialogueEntries[idx].LocKey;
 
+        subdata.Exeption = SubDialogueEntries[idx].Exeption;
+
         return subdata;
     }
 
@@ -385,9 +387,10 @@ public class SubDialogue : MonoBehaviour
         {
             if (manager.Pattern == GamePatternState.Writing)
             {
-                Debug.Log("[SubDialogue] Writing 페이즈, anim_diary로 복귀");
+                string diaryKey = (dot != null) ? dot.GetDiaryAnimKeyForChapter(dot.Chapter) : "anim_diary";
+                Debug.Log($"[SubDialogue] Writing 페이즈, {diaryKey}로 복귀");
                 if (dot != null)
-                    dot.ChangeState(DotPatternState.Phase, "anim_diary");
+                    dot.ChangeState(DotPatternState.Phase, diaryKey, -1, "", true);
             }
             else if (manager.Pattern == GamePatternState.Watching && manager.Chapter == 14)
             {

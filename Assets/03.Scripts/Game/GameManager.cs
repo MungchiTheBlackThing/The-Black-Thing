@@ -53,6 +53,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public TimeSkipUIController timeSkipUIController;
 
+    private string NextChapterAnchorKey => $"NextChapterAnchor_{Chapter}";
+    private string NextChapterSkipKey   => $"NextChapterEnteredBySkip_{Chapter}";
 
 
     [SerializeField] private Day8SleepEventController day8;
@@ -120,6 +122,7 @@ public class GameManager : MonoBehaviour
     public int dayStartHour = 11;
     public int dayStartMinute = 0;
     private bool _nextPhaseRequested = false;
+
     protected GameManager()
     {
         states = new Dictionary<GamePatternState, GameState>();
@@ -167,6 +170,9 @@ public class GameManager : MonoBehaviour
         scrollManager = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<ScrollManager>();
         cameraZoom = GameObject.FindWithTag("MainCamera").gameObject.GetComponent<CameraZoom>();
         subDialogue = subDialoguePanel.GetComponent<SubDialogue>();
+
+        LoadSceneManager.Instance.OnLoadingUIShown -= HandleLoadingUIShown;
+        LoadSceneManager.Instance.OnLoadingUIShown += HandleLoadingUIShown;
         
         if (timeSkipUIController == null)
         {
@@ -201,6 +207,46 @@ public class GameManager : MonoBehaviour
         }
         dot.GoSleep();
     }
+    public void BeginSkipPhaseTransition()
+    {
+        if (GameManager.isend) return;
+        if (videoController == null) return;
+
+        // 스킵 시작 순간: 타이머/서브 끊기
+        PausePhaseTimer();
+        if (!string.IsNullOrEmpty(currentPhaseTimerKey))
+        {
+            PlayerPrefs.DeleteKey(currentPhaseTimerKey);
+            PlayerPrefs.Save();
+            currentPhaseTimerKey = null;
+        }
+        StopSubDial();
+
+        var current = (GamePatternState)pc.GetCurrentPhase();
+        var next = (GamePatternState)((int)current + 1);
+
+        // Sleeping -> NextChapter : SkipSleeping(루프) + 페이드인 끝나자마자 NextPhase 커밋
+        if (next == GamePatternState.NextChapter)
+        {
+            videoController.PlaySkipTransition(
+                SkipVideoIdx.SkipSleeping,
+                looping: true,
+                commitAfterFadeIn: () => NextPhase(),
+                autoCloseOnEnd: false
+            );
+            return;
+        }
+
+        // 일반 스킵: SkipPhase(논루프) + 페이드인 끝나자마자 NextPhase 커밋 + 영상 끝나면 자동 Close
+        videoController.PlaySkipTransition(
+            SkipVideoIdx.SkipPhase,
+            looping: false,
+            commitAfterFadeIn: () => NextPhase(),
+            autoCloseOnEnd: true
+        );
+    }
+
+
     public void SetPhase(GamePatternState newPhase)
     {
         currentPattern = newPhase;
@@ -220,6 +266,7 @@ public class GameManager : MonoBehaviour
     }
     public void NextPhase()
     {
+        dot.ForceStopAfterScript();
         if (_nextPhaseRequested) return;
         _nextPhaseRequested = true;
         pc.NextPhase();
@@ -236,6 +283,7 @@ public class GameManager : MonoBehaviour
     //페이즈 변경
     public void ChangeGameState(GamePatternState patternState)
     {
+        EnsureVideoController(); 
         Debug.Log($"[Test] ChangeGameState 실행: {patternState}");
         Debug.Log("스테이트 변경");
         if (states == null) return;
@@ -301,6 +349,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // 2일차 sleeping 시작 시 다이어리 가이드 활성화 플래그
+        if (patternState == GamePatternState.Sleeping && Chapter == 2)
+        {
+            PlayerPrefs.SetFloat("DiaryGuideEligible", 1f);
+            PlayerPrefs.Save();
+        }
+
         // Day8: Sleeping 진입에서만 이벤트 실행
         if (patternState == GamePatternState.Sleeping
             && Chapter == 8
@@ -332,22 +387,13 @@ public class GameManager : MonoBehaviour
         //C#에서 명시적 형변환은 강제, as 할지말지를 결정.. 즉, 실패 유무를 알고 싶다면, as를 사용한다.
         //activeState가 ILoadingInterface를 구현하고 있는지 확인, 맞다면 loadingInterface에 할당하고 아니면 null
         //현재 상태가 비디오를 재생해야하는 로딩 관련 상태인지 확인하는 역할
-        ILoadingInterface loadingInterface = activeState as ILoadingInterface;
 
         //skip video 재생
-        if (loadingInterface != null)
+        if (currentPattern == GamePatternState.NextChapter)
         {
-            SkipVideoIdx videoIdx = (currentPattern == GamePatternState.NextChapter) ? SkipVideoIdx.SkipSleeping : SkipVideoIdx.SkipPhase;
-
-            // SkipSleeping 비디오는 항상 재생, SkipPhase 비디오는 버튼 클릭 시에만 재생
-            if (videoIdx == SkipVideoIdx.SkipSleeping || 
-               (videoIdx == SkipVideoIdx.SkipPhase && timeSkipUIController.IsSkipButtonClicked))
-            {
-                bool isLooping = (videoIdx == SkipVideoIdx.SkipSleeping);
-                videoController.ShowSkipVideo(videoIdx, isLooping);
-                timeSkipUIController.IsSkipButtonClicked = false;
-            }
-        }                   
+            videoController.ShowSkipVideo(SkipVideoIdx.SkipSleeping, looping: true);
+            
+        }               
     }
     private void ApplyPhaseUI(GamePatternState patternState)
     {
@@ -365,6 +411,14 @@ public class GameManager : MonoBehaviour
             if (timeSkipUIController.gameObject.activeSelf != shouldShowTimeSkip)
                 timeSkipUIController.gameObject.SetActive(shouldShowTimeSkip);
         }
+    }
+
+    private void HandleLoadingUIShown()
+    {
+        // NextChapter 루프 비디오가 떠있으면 로딩 UI가 덮은 뒤에 닫아버리기
+        EnsureVideoController();
+        if (videoController != null && videoController.CurrentIdx == SkipVideoIdx.SkipSleeping)
+            videoController.Close();
     }
 
     public void StartMain()
@@ -506,6 +560,13 @@ public class GameManager : MonoBehaviour
         }
         ApplyMoldGateIfNeeded();
 
+        EnsureVideoController();
+
+        if (currentPattern == GamePatternState.NextChapter)
+        {
+            videoController.ShowSkipVideo(SkipVideoIdx.SkipSleeping, looping: true);
+        }
+
         if (patternState == GamePatternState.Sleeping
             && Chapter == 8
             && day8 != null
@@ -515,6 +576,12 @@ public class GameManager : MonoBehaviour
             day8.TryStart();   // 내부에서 PausePhaseTimer() 처리하도록 유지
             yield break;       
         }
+    }
+
+    private void EnsureVideoController()
+    {
+        if (videoController == null)
+            videoController = FindObjectOfType<VideoPlayerController>(true); // inactive 포함
     }
 
     private void RestoreEndingFromSave(PlayerInfo info)
@@ -728,9 +795,31 @@ public class GameManager : MonoBehaviour
 
             if (endTime <= DateTime.Now)
             {
-                endTime = DateTime.Now.AddSeconds(duration);
-                PlayerPrefs.SetString(currentPhaseTimerKey, endTime.ToBinary().ToString());
+                // 이미 시간이 지난 타이머는 리셋하지 않는다: 즉시 캐치업(다음 페이즈)
+                PlayerPrefs.DeleteKey(currentPhaseTimerKey);
                 PlayerPrefs.Save();
+
+                if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
+
+                Debug.Log($"[PhaseTimer] endTime already passed ({currentPattern}). Immediate catch-up transition.");
+
+                // Sleeping은 NextChapter 오버레이로(기존 흐름 유지)
+                if (currentPattern == GamePatternState.Sleeping)
+                {
+                    // 자연 종료로 NextChapter 오버레이 진입: anchor = Sleeping endTime(=dayStart), skip=false
+                    PlayerPrefs.SetString(NextChapterAnchorKey, endTime.ToBinary().ToString());
+                    PlayerPrefs.SetInt(NextChapterSkipKey, 0);
+                    PlayerPrefs.Save();
+
+                    BeginSkipPhaseTransition();
+                    yield break;
+                }
+                else
+                {
+                    NextPhase();
+                }
+
+                yield break; // ✅ 중요: 아래 while로 내려가지 않게 차단
             }
         }
         else
@@ -751,8 +840,103 @@ public class GameManager : MonoBehaviour
 
         if (timeSkipUIController != null) timeSkipUIController.SetTime(0);
         Debug.Log("시간떔에 다음 페이즈 넘어감");
-        NextPhase();
+        if (currentPattern == GamePatternState.Sleeping)
+        {
+            BeginSkipPhaseTransition(); // 이 함수가 다음이 NextChapter면 SkipSleeping 루프로 처리
+        }
+        else
+        {
+            NextPhase();
+        }
     }
+
+        private void SetPhaseTimerEnd(GamePatternState phase, DateTime endTime)
+    {
+        string key = $"PhaseTimer_{Chapter}_{phase}";
+        PlayerPrefs.SetString(key, endTime.ToBinary().ToString());
+        PlayerPrefs.Save();
+    }
+
+    public void ForceSetPhase(GamePatternState phase)
+    {
+
+        PausePhaseTimer(); //안전하게...
+        // 현재 NextChapter에서 빠져나가므로, 영상 루프 닫기
+        EnsureVideoController();
+
+        // pc 상태 강제 세팅 + subseq 초기화는 기존 SetPhase 사용
+        pc.SetCurrentPhase(phase);
+        SetPhase(phase);
+
+        // 실제 씬 상태 진입
+        ChangeGameState(phase);
+    }
+
+    public void CommitNextChapterLanding()
+    {
+        // 0) 현재(=NextChapter 들어오기 전) 챕터를 고정해 둔다.
+        int chBefore = Chapter;
+        string anchorKey = $"NextChapterAnchor_{chBefore}";
+        string skipKey   = $"NextChapterEnteredBySkip_{chBefore}";
+
+        if (!PlayerPrefs.HasKey(anchorKey))
+        {
+            Debug.LogWarning("[NextChapterLanding] Anchor missing. Fallback to NextPhase().");
+            NextPhase(); // 그래도 챕터는 넘어가게
+            return;
+        }
+
+        // 1) 앵커/플래그를 먼저 로컬로 확보 (NextPhase가 뭔가 지워도 괜찮게)
+        DateTime now = DateTime.Now;
+
+        long anchorBin = Convert.ToInt64(PlayerPrefs.GetString(anchorKey));
+        DateTime anchor = DateTime.FromBinary(anchorBin);
+        bool enteredBySkip = PlayerPrefs.GetInt(skipKey, 0) == 1;
+
+        if (enteredBySkip) anchor = now;
+        DateTime watchingEnd = anchor.AddHours(2);
+
+        // 2) 먼저 "진짜" NextPhase를 실행해서 챕터+1 커밋(기존 안전 로직 유지)
+        NextPhase(); // NextChapter -> (phase overflow) -> Chapter++ & Watching 세팅이 여기서 일어남
+
+        // 3) 커밋 직후, 안착을 시간 기반으로 오버라이드
+        if (now < watchingEnd)
+        {
+            // 1) 일단 안착(이 과정에서 PhaseTimer가 now+2h로 잠깐 생성될 수 있음)
+            ForceSetPhase(GamePatternState.Watching);
+
+            // 2) 바로 PhaseTimer를 끊고(레이스 종료)
+            PausePhaseTimer();
+
+            // 3) 원하는 endTime으로 덮어쓴 뒤
+            SetPhaseTimerEnd(GamePatternState.Watching, watchingEnd);
+
+            // 4) 그 endTime 기준으로 PhaseTimer를 다시 시작
+            ResumePhaseTimer();
+
+            if (timeSkipUIController != null)
+            {
+                float remaining = (float)(watchingEnd - now).TotalSeconds;
+                if (remaining < 0) remaining = 0;
+                timeSkipUIController.SetTime(remaining);
+            }
+        }
+        else
+        {
+            ForceSetPhase(GamePatternState.MainA);
+
+            // 새 챕터의 Watching 타이머 혹시 생겼으면 제거(안전)
+            string wKey = $"PhaseTimer_{Chapter}_{GamePatternState.Watching}";
+            if (PlayerPrefs.HasKey(wKey)) PlayerPrefs.DeleteKey(wKey);
+            PlayerPrefs.Save();
+        }
+
+        // 4) 스탬프 청소(이전 챕터 키를 지워야 함)
+        PlayerPrefs.DeleteKey(anchorKey);
+        PlayerPrefs.DeleteKey(skipKey);
+        PlayerPrefs.Save();
+    }
+
 
 
     public void PausePhaseTimer()
@@ -927,6 +1111,8 @@ public class GameManager : MonoBehaviour
     }
     private void OnDestroy()
     {
+        if (LoadSceneManager.Instance != null)
+            LoadSceneManager.Instance.OnLoadingUIShown -= HandleLoadingUIShown;
         if (pc != null) pc.nextPhaseDelegate -= ChangeGameState;
     }
 }

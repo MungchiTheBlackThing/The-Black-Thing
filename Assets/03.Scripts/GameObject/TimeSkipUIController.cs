@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeSkipUIController : MonoBehaviour
 {
@@ -28,6 +29,10 @@ public class TimeSkipUIController : MonoBehaviour
     [SerializeField]
     ObjectManager objectManager;
 
+    [SerializeField] Image skipIconImage;
+    [SerializeField] Sprite iconOn;
+    [SerializeField] Sprite iconOff;
+
     // 0 watch
     // A -> watching 흐름 따라간다.  1
     // 1 thinking 2
@@ -42,13 +47,10 @@ public class TimeSkipUIController : MonoBehaviour
     float time = 0;
     const int HOUR = 3600;
     const int MIN = 60;
-    public bool IsSkipButtonClicked = false; //GameManager에서 사용 (스킵 버튼 클릭 시에만 스킵 영상 나오도록)
 
 
     private void Start()
     {
-        IsSkipButtonClicked = false;
-
         if(playerController == null)
         {
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
@@ -69,11 +71,19 @@ public class TimeSkipUIController : MonoBehaviour
 
         translator.translatorDel += Translate;
         if (objectManager != null) objectManager.activeSystemUIDelegate += SetSkipButtonActiveState;
+        RefreshSkipIcon();
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        // 타이머 로직을 GameManager로 이전했으므로 Update 내용은 제거합니다.
+        RefreshSkipIcon();
+    }
+
+    void RefreshSkipIcon()
+    {
+        if (!skipIconImage) return;
+        bool enabled = playerController != null && playerController.GetSkipModeEnabled();
+        skipIconImage.sprite = enabled ? iconOn : iconOff;
     }
 
 
@@ -84,10 +94,16 @@ public class TimeSkipUIController : MonoBehaviour
     public void SetTime(float remainingSeconds)
     {
         if (remainingSeconds < 0) remainingSeconds = 0;
+        remainingSeconds += 60f; // 표시용 버퍼(0초도 1분처럼)
+
         int hour = (int)remainingSeconds / HOUR;
         int min = ((int)remainingSeconds % HOUR) / MIN;
+
         if (timeText != null)
-            timeText.text = (hour).ToString() + "h " + (min).ToString() + "m";
+        {
+            if (hour <= 0) timeText.text = min.ToString() + "m";          // 59m
+            else           timeText.text = hour.ToString() + "h " + min.ToString("00") + "m"; // 1h 00m
+        }
     }
 
     public void SetSkipButtonActiveState(bool InActive)
@@ -118,6 +134,10 @@ public class TimeSkipUIController : MonoBehaviour
     }
     public void OnClick()
     {
+        var sceneName = SceneManager.GetActiveScene().name;
+        // Tutorial 씬이 아니고 + 스킵모드 OFF면 막기
+        if (sceneName != "Tutorial" && !playerController.GetSkipModeEnabled())
+            return;
         if (GameManager.isend) return;
         if (popup.activeSelf == false)
         {
@@ -135,10 +155,23 @@ public class TimeSkipUIController : MonoBehaviour
     public void YesClick()
     {
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
-        IsSkipButtonClicked = true;
         popup.SetActive(false);
-        playerController.NextPhase();
-        Debug.Log("스킵 클릭");
+
+        // 잠 스킵일 때만 NextChapter landing용 앵커/플래그 저장
+        var current = (GamePatternState)playerController.GetCurrentPhase();
+        var next = (GamePatternState)((int)current + 1);
+
+        if (current == GamePatternState.Sleeping && next == GamePatternState.NextChapter)
+        {
+            string anchorKey = $"NextChapterAnchor_{gameManager.Chapter}";
+            string skipKey   = $"NextChapterEnteredBySkip_{gameManager.Chapter}";
+
+            PlayerPrefs.SetString("NextChapterAnchor", DateTime.Now.ToBinary().ToString());
+            PlayerPrefs.SetInt("NextChapterEnteredBySkip", 1);
+            PlayerPrefs.Save();
+        }
+
+        gameManager.BeginSkipPhaseTransition(); // 스킵 영상 후 페이즈 넘김
     }
     public void TutoYesClick()
     {

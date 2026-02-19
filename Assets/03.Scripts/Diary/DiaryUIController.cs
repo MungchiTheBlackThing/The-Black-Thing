@@ -52,11 +52,13 @@ public class DiaryUIController : MonoBehaviour
         //���̵� UI Ȱ��ȭ ����
         //�ϱ��� �������� 2�� �̻��� ��
         //ù 1ȸ�� Ȱ��ȭ
-        float isShowGuide = PlayerPrefs.GetFloat("DiaryGuideShown");
-        if (gameManger.Chapter >= 2 && isShowGuide == 0)
+        float eligible = PlayerPrefs.GetFloat("DiaryGuideEligible", 0f);
+        float shown    = PlayerPrefs.GetFloat("DiaryGuideShown", 0f);
+        if (eligible >= 1f && shown < 1f)
         {
             SetActiveGuide();
             PlayerPrefs.SetFloat("DiaryGuideShown", 1);
+            PlayerPrefs.Save();
         }
     }
 

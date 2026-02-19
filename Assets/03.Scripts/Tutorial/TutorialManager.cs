@@ -25,6 +25,9 @@ public class TutorialManager : GameManager
     public TutorialState TutoPattern => tutostate;
     private static TutorialManager instance;
 
+    private bool _ready = false;
+    private TutorialState? _pendingState = null;
+
     public static TutorialManager Instance
     {
         get
@@ -83,7 +86,7 @@ public class TutorialManager : GameManager
         cameraZoom = Camera.main?.GetComponent<CameraZoom>();
         if (cameraZoom == null) Debug.LogError("CameraZoom를 찾을 수 없습니다!");
 
-        dot = GameObject.FindWithTag("DotController").GetComponent<DotController>();
+        dot = GameObject.FindWithTag("DotController")?.GetComponent<DotController>();
         if (dot == null) Debug.LogError("DotController를 찾을 수 없습니다!");
 
         timeSkipUIController = FindObjectOfType<TimeSkipUIController>(true);
@@ -94,6 +97,20 @@ public class TutorialManager : GameManager
 
     public void ChangeGameState(TutorialState patternState)
     {
+
+        if (!_ready)
+        {
+            _pendingState = patternState;
+            Debug.LogWarning($"[TutorialManager] queued state={patternState} (not ready yet)");
+            return;
+        }
+
+        if (dot == null)
+        {
+            _pendingState = patternState;
+            Debug.LogWarning($"[TutorialManager] queued state={patternState} (dot null)");
+            return;
+        }
         if (states == null)
         {
             Debug.LogError("states가 초기화되지 않았습니다.");
@@ -190,6 +207,15 @@ public class TutorialManager : GameManager
         if (phaseTimerCoroutine != null) StopCoroutine(phaseTimerCoroutine);
         currentPattern = (GamePatternState)patternState;
         phaseTimerCoroutine = StartCoroutine(PhaseTimer());
+
+        _ready = true;
+
+        if (_pendingState.HasValue)
+        {
+            var st = _pendingState.Value;
+            _pendingState = null;
+            ChangeGameState(st);
+        }
     }
 
     private IEnumerator TrackObjectLoadProgress(float weight)

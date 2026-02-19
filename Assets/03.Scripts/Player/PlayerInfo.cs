@@ -54,6 +54,10 @@ public class PlayerInfo
     public bool endingReached;          // 엔딩 트리거를 이미 탔는지
     public int deathnoteState;          // 0: 유서 보기 전, 1: 유서 본 후
 
+    // 스킵 모드
+    public bool isSkipModeEnabled;      // 기본 OFF
+    public bool isSubSkipModeEnabled;   // 기본 ON
+
     public PlayerInfo()
     {
         nickname = "default";
@@ -100,6 +104,9 @@ public class PlayerInfo
         diaryUnlockedInChapter1 = false;
         endingReached = false;
         deathnoteState = 0;
+
+        isSkipModeEnabled = false;   // 최초 기본값 OFF
+        isSubSkipModeEnabled = true; // 최초 기본값 ON
     }
 
     public void SetSubPhase(int phaseIdx)
@@ -154,6 +161,9 @@ public class PlayerInfo
         diaryUnlockedInChapter1 = false;
         endingReached = false;
         deathnoteState = 0;
+
+        isSkipModeEnabled = false;
+        isSubSkipModeEnabled = true;
     }
     public bool IsDiaryCheck { get => isDiaryCheck; set=>isDiaryCheck = value;}
     public float BgmVolume{ get=>bgmVolume; set=>bgmVolume = value; }
@@ -162,4 +172,8 @@ public class PlayerInfo
     public DateTime Datetime { get => datetime; set => datetime = value; }
     public string Nickname { get => nickname; set => nickname = value; }
     public int MoonRadioIdx { get=> moonRadioIdx; set => moonRadioIdx = value;}
+
+    public bool IsSkipModeEnabled { get => isSkipModeEnabled; set => isSkipModeEnabled = value; }
+    public bool IsSubSkipModeEnabled { get => isSubSkipModeEnabled; set => isSubSkipModeEnabled = value; }
+
 }

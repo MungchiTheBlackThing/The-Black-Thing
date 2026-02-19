@@ -177,6 +177,7 @@ public class MoonRadio : MonoBehaviour
         if (!alert.activeSelf)
         {
             alert.SetActive(true);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.lockClick, transform.position);
             StartCoroutine(CloseAlter(alert));
         }
     }

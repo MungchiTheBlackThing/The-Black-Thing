@@ -1,3 +1,4 @@
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
@@ -8,6 +9,9 @@ using System.Text.RegularExpressions;
 
 public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 {
+
+    [SerializeField] private Transform pagesRoot;   // 페이지만 담는 부모(1~4페이지만)
+    [SerializeField] private GameObject exitButton; // X 버튼
     public Transform pagesContainer; // 페이지들을 담고 있는 부모 Transform
     public int pageCount; // 페이지의 총 갯수
     public int currentPageIndex = 0; // 현재 페이지의 인덱스
@@ -15,24 +19,44 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
     private PlayerController playerController;
     private LANGUAGE LANGUAGE;
 
+    [Header("Nav Buttons")]
+    [SerializeField] private Button NextPageBut;
+    [SerializeField] private Button BackPageBut;
+
     void OnEnable()
     {
         playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
-        pageCount = pagesContainer.childCount - 1;
+        pageCount = pagesRoot.childCount;
+        currentPageIndex = 0;
 
-        // 초기화: 첫 페이지만 켜기
+        // 첫 페이지만 켜기
         for (int i = 0; i < pageCount; i++)
         {
-            pagesContainer.GetChild(i).gameObject.SetActive(i == 0);
+            pagesRoot.GetChild(i).gameObject.SetActive(i == 0);
         }
 
         UpdateAllText();
 
-        // 저장된 유서 읽음 상태를 런타임 플래그에 동기화
         DeathNoteClick.readDeathnote = (playerController.GetPlayerInfo().deathnoteState == 1);
 
-        // 두 번째(이후) 읽기면 X(닫기) 버튼을 즉시 보여주기
-        pagesContainer.GetChild(pageCount).gameObject.SetActive(DeathNoteClick.readDeathnote);
+        // X 버튼은 별도 오브젝트로 토글
+        if (exitButton != null)
+            exitButton.SetActive(DeathNoteClick.readDeathnote);
+
+        // 버튼 리스너
+        if (NextPageBut != null)
+        {
+            NextPageBut.onClick.RemoveAllListeners();
+            NextPageBut.onClick.AddListener(NextPage);
+        }
+        if (BackPageBut != null)
+        {
+            BackPageBut.onClick.RemoveAllListeners();
+            BackPageBut.onClick.AddListener(PrevPage);
+        }
+
+        RefreshNavButtons();
+
     }
 
     private void UpdateAllText()
@@ -57,7 +81,7 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 
         for (int i = 0; i < pageCount; i++)
         {
-            Transform page = pagesContainer.GetChild(i);
+            Transform page = pagesRoot.GetChild(i);
             TextMeshProUGUI[] texts = page.GetComponentsInChildren<TextMeshProUGUI>(true);
 
             foreach (TextMeshProUGUI textMesh in texts)
@@ -82,6 +106,17 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
             }
         }
     }
+
+    private void RefreshNavButtons()
+    {
+
+        bool isFirst = (currentPageIndex <= 0);
+        bool isLast  = (currentPageIndex >= pageCount - 1);
+
+        if (BackPageBut != null) BackPageBut.gameObject.SetActive(!isFirst);
+        if (NextPageBut != null) NextPageBut.gameObject.SetActive(!isLast);
+    }
+
 
     private string GetLocalizedString(string tableName, string key)
     {
@@ -127,12 +162,12 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
         float dx = end.x - start.x;
         float dy = end.y - start.y;
 
-        // 세로 스크롤/흔들림이면 무시
-        if (Mathf.Abs(dy) > Mathf.Abs(dx)) return;
+        // 1) 각도(대각선/스크롤) 필터 강화: dy가 dx의 0.6배보다 크면 취소
+        if (Mathf.Abs(dy) > Mathf.Abs(dx) * 0.6f) return;
 
-        // 너무 짧은 드래그는 무시(픽셀 기준)
-        const float MIN_SWIPE = 60f;
-        if (Mathf.Abs(dx) < MIN_SWIPE) return;
+        // 2) 거리 기준을 화면 비율로: 화면 너비의 15% 미만이면 취소
+        float minSwipe = Screen.width * 0.15f;
+        if (Mathf.Abs(dx) < minSwipe) return;
 
         // 오른쪽으로 스와이프하여 다음 페이지로 넘어갈 때
         if (dx < 0f && currentPageIndex < pageCount - 1)
@@ -147,7 +182,7 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 
         if (currentPageIndex == pageCount - 1)
         {
-            pagesContainer.GetChild(pageCount).gameObject.SetActive(true); //exit 버튼 활성화
+            if (exitButton != null) exitButton.SetActive(true); //exit 버튼 활성화
         }
     }
 
@@ -165,24 +200,22 @@ public class MoonDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 
     private void SetPage(int newIndex)
     {
-        pagesContainer.GetChild(currentPageIndex).gameObject.SetActive(false);
-        currentPageIndex = newIndex;
-        pagesContainer.GetChild(currentPageIndex).gameObject.SetActive(true);
+            pagesRoot.GetChild(currentPageIndex).gameObject.SetActive(false);
+            currentPageIndex = newIndex;
+            pagesRoot.GetChild(currentPageIndex).gameObject.SetActive(true);
 
-        UpdateAllText();
+            UpdateAllText();
 
-        // exit 버튼 토글 규칙
-        bool showExit = DeathNoteClick.readDeathnote || currentPageIndex == pageCount - 1;
-        pagesContainer.GetChild(pageCount).gameObject.SetActive(showExit);
+            bool showExit = DeathNoteClick.readDeathnote || currentPageIndex == pageCount - 1;
+            if (exitButton != null) exitButton.SetActive(showExit);
+
+            RefreshNavButtons();
     }
 
     void OnDisable()
     {
         currentPageIndex = 0;
-        pagesContainer.GetChild(pageCount).gameObject.SetActive(false);
-        if (DeathNoteClick.readDeathnote)
-        {
-            pagesContainer.GetChild(pageCount).gameObject.SetActive(true); //exit 버튼 활성화
-        }
+        if (exitButton != null)
+    	    exitButton.SetActive(DeathNoteClick.readDeathnote);
     }
 }

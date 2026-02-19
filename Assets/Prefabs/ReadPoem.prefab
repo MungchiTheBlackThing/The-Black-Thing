@@ -761,9 +761,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The question, O me! so sad, recurring - What good amid these, O me, O life?\n\nAnswer:\n\nThat
-    you are here - that life exists and identity,\nThat the powerful play\ngoes on,
-    and you may\ncontribute a verse.
+  m_text: "\u201CBe that word our sign of\\nparting, bird or fiend!\u201D\\nI shrieked,
+    upstarting-\\n\u201CGet thee back into the tempest\\nand the Night\u2019s Plutonian
+    shore!\r\\nLeave no black plume as a token of that lie\\nthy soul hath spoken!\r\\nLeave
+    my loneliness unbroken!-\\nquit the bust above my door!\r\\nTake thy beak from
+    out my\\nheart, and take thy form \\nfrom off my door!\u201D\r\\nQuoth the Raven
+    \u201CNevermore.\u201D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
   m_sharedMaterial: {fileID: 3461481825257306333, guid: 343fc763440445743a47d6f03dfabec8, type: 2}
@@ -790,12 +793,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58
+  m_fontSize: 55.15
   m_fontSizeBase: 58
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 53
-  m_fontSizeMax: 59
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 55
+  m_fontSizeMax: 58
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

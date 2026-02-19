@@ -4,9 +4,7 @@ using System.Runtime.Serialization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEngine.Localization.Components;
-using UnityEngine.Localization.Settings;
-using UnityEngine.Localization.Tables;
+using UnityEngine.Localization;
 
 public enum EChecklist
 {
@@ -69,7 +67,6 @@ public class ChecklistController : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         
         InitPhase((GamePatternState)pc.GetCurrentPhase());
-        UpdateSubcheckText();
     }
     public void CallbackActiveSystemUI(bool InActive)
     {
@@ -166,8 +163,6 @@ public class ChecklistController : MonoBehaviour
         {
             OnClickCheckListIcon();
         }
-
-        UpdateSubcheckText();
         yield return null;
     }
 
@@ -186,8 +181,6 @@ public class ChecklistController : MonoBehaviour
             {
                 subcheck.SetActive(true);
             }
-            UpdateSubcheckText();
-            StartCoroutine(CloseAlter(checkList));
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.checklistOn, this.transform.position);
         }
         else
@@ -201,56 +194,12 @@ public class ChecklistController : MonoBehaviour
         if (iconCheckListNoteObj != null)
         {
             bool isActive = iconCheckListNoteObj.activeSelf;
-            if (isActive && !wasIconCheckListNoteObjActive)
-            {
-                UpdateSubcheckText();
-            }
             wasIconCheckListNoteObjActive = isActive;
         }
     }
-    
-    private void UpdateSubcheckText()
-    {
-        // 튜토리얼에선 서브체크 텍스트 갱신 안 함, null 떠서 꺼지는 것 방지
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Tutorial")
-            return;
-        GamePatternState currentPhase = (GamePatternState)pc.GetCurrentPhase();
-        List<int> availableSubseqs = gameManager.GetSubseqsForPhase(currentPhase);
 
-        // 남은 subseq 개수 계산
-        int remainingCount = 0;
-        if (availableSubseqs != null && availableSubseqs.Count > 0)
-        {
-            foreach (int subseq in availableSubseqs)
-            {
-                if (!pc.IsSubWatched(subseq))
-                {
-                    remainingCount++;
-                }
-            }
-        }
 
-        Debug.Log($"[ChecklistController] remainingCount: {remainingCount}, currentPhase: {currentPhase}");
 
-        string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("SystemUIText", "subcheck_text");
-        
-        if (string.IsNullOrEmpty(localizedText))
-        {
-            Debug.LogError("[ChecklistController] 로컬라이징된 텍스트를 가져올 수 없음");
-            return;
-        }
-
-        localizedText = localizedText.Replace("<subcount>", remainingCount.ToString());
-        dial2Text.text = localizedText;
-    }
-
-    IEnumerator CloseAlter(GameObject checkList)
-    {
-        yield return new WaitForSeconds(5f);
-        if(subcheck)
-            subcheck.SetActive(false);
-        checkList.SetActive(false);
-    }
 
     private void OnDisable()
     {

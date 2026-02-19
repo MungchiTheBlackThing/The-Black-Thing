@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System;
-using static Unity.Burst.Intrinsics.X86.Avx;
+//using static Unity.Burst.Intrinsics.X86.Avx;
 
 
 public class DotController : MonoBehaviour
@@ -64,6 +64,8 @@ public class DotController : MonoBehaviour
     public GameObject subDialogue;
     [SerializeField]
     public GameObject subPanel;
+
+    
     [SerializeField]
     PlayerController playerController;
 
@@ -71,6 +73,7 @@ public class DotController : MonoBehaviour
     private bool visible = true;
     public bool tutorial = false; //DoorController에 쓰임
     public bool isEndPlay = false;
+
     public GameObject Dust
     {
         get { return dust; }
@@ -513,11 +516,12 @@ public class DotController : MonoBehaviour
     private void OnMouseDown()
     {
         if (InputGuard.BlockWorldInput()) return;
+
         if (mainAlert.activeSelf)
         {
             mainAlert.SetActive(false);
-            //main 배경화면을 트리거한다.
             manager.StartMain();
+            return;
         }
 
         if (playAlert.activeSelf)
@@ -528,7 +532,7 @@ public class DotController : MonoBehaviour
             manager.ScrollManager.stopscroll();
             //같이 책을 읽을래? 라는 문구 뜨고 안읽는다고하면 총총총 sleep으로
             StartCoroutine(playOnafterdelay());
-           
+            return;
         }
 
         if (subAlert.activeSelf)
@@ -658,6 +662,7 @@ public class DotController : MonoBehaviour
         //outPos -1일경우 랜덤위치
         if (position == -1)
         {
+            bool picked = false;
             if (DotPositionKeyDic.TryGetValue(state, out var dic))
             {
                 if (dic.TryGetValue(OutAnimKey, out var list))
@@ -670,6 +675,7 @@ public class DotController : MonoBehaviour
                     Debug.LogWarning($"[DotController] '{OutAnimKey}'에 대한 위치 데이터가 {state} 상태에 정의되지 않았으므로 기본 위치 사용");
                 }
             }
+            if (position == -1) position = 4f; // fallback
         }
 
         //위치 조절
@@ -717,13 +723,6 @@ public class DotController : MonoBehaviour
         boxcollider.size = spriteSize;
         boxcollider.offset = spriteRenderer.sprite.bounds.center;
 
-            
-        if (!string.IsNullOrEmpty(OutAnimKey))
-        {
-            AnimKey = OutAnimKey; // 여기서 animKey 필드가 바뀜
-            // animator.Play...
-        }
-
         if (prevAnim != AnimKey)
         {
             RefreshDustState(animKey);
@@ -739,7 +738,8 @@ public class DotController : MonoBehaviour
         // SubDialogue 패널이 켜져 있으면 무조건 OFF
         bool blockBySubPanel = (subDialogue != null && subDialogue.activeSelf);
 
-        bool shouldEnable = (currentAnimKey == "anim_sleep") && !blockBySubPanel;
+        bool isSleepAnim = (currentAnimKey == "anim_sleep" || currentAnimKey == "anim_sleep_mare");
+        bool shouldEnable = isSleepAnim && !blockBySubPanel;
 
         if (shouldEnable)
         {
@@ -765,7 +765,7 @@ public class DotController : MonoBehaviour
             if (isSubDialogueAnimPlaying && state != DotPatternState.Sub && state != DotPatternState.Main)
             {
                 Debug.Log($"[DotController] ChangeState for '{OutAnimKey}' blocked by SubDialogue animation.");
-                return;
+                //return;
             }
             // 2. AfterScript
             if (isAfterScriptPlaying)
@@ -850,22 +850,11 @@ public class DotController : MonoBehaviour
     }
     public void dotvicheck(bool set)
     {
-        //inactive 상태일때 오류 방지
-        if (gameObject.activeInHierarchy)
-            StartCoroutine(DotvisibleCheck(set));
-
-    }
-    public IEnumerator DotvisibleCheck(bool setoff)
-    {
-        yield return new WaitForSeconds(0.01f);
-        if (setoff)
-        {
+        if (!gameObject.activeInHierarchy) return;
+        if (set)
             Invisible();
-        }
         else
-        {
             Visible();
-        }
     }
 
     public void StartSubDialogueAnimation(DotPatternState state, string animKey, float position)
@@ -936,8 +925,9 @@ public class DotController : MonoBehaviour
         else if (manager.Pattern == GamePatternState.Writing)
         {
             // Writing 페이즈: AfterScript 종료 후 anim_diary로 복귀
-            Debug.Log("[DotController] Writing 페이즈: AfterScript 종료 후 anim_diary로 복귀");
-            ChangeState(DotPatternState.Phase, "anim_diary", -1, "", true);
+            string diaryKey = GetDiaryAnimKeyForChapter(chapter);
+            Debug.Log("[DotController] Writing 페이즈: AfterScript 종료 후 기본 일기 애니메이션으로 복귀");
+            ChangeState(DotPatternState.Phase, diaryKey, -1, "", true);
         }
         else
         {
@@ -946,7 +936,7 @@ public class DotController : MonoBehaviour
     }
 
     // Trigger 함수들에서 호출할 강제 종료 헬퍼 (UpdateIdleAnimation 호출 안 함)
-    private void ForceStopAfterScript()
+    public void ForceStopAfterScript()
     {
         if (isAfterScriptPlaying)
         {
@@ -991,17 +981,15 @@ public class DotController : MonoBehaviour
                 break;
             case GamePatternState.Sleeping:
                 // Sleeping 페이즈의 기본 애니메이션 복구
-                // Sleeping: 기본 애니메이션 anim_sleep 고정 (랜덤 X)
-                Debug.Log($"[DotController] Playing default animation for Sleeping phase: anim_sleep");
-                ChangeState(DotPatternState.Trigger, "anim_sleep", 10);
-                // Trigger 타입으로 재생하여 우선순위 확보
-                ChangeState(DotPatternState.Trigger, "anim_sleep", 10, "", true);
+                string sleepKey = GetSleepAnimKeyForChapter(chapter);
+                ChangeState(DotPatternState.Trigger, sleepKey, 10, "", true);
                 break;
             case GamePatternState.Writing:
                 // Writing 페이즈의 기본 애니메이션 복구
                 // Writing: 기본 애니메이션 anim_diary 고정 (랜덤 X)
-                Debug.Log($"[DotController] Playing default animation for Writing phase: anim_diary");
-                ChangeState(DotPatternState.Phase, "anim_diary", -1, "", true);
+                string diaryKey = GetDiaryAnimKeyForChapter(chapter);
+                Debug.Log($"[DotController] Playing default animation for Writing phase: {diaryKey}");
+                ChangeState(DotPatternState.Phase, diaryKey, -1, "", true);
                 break;
             default:
                 Debug.Log($"[DotController] No specific idle animation for phase '{manager.Pattern}'.");
@@ -1028,6 +1016,18 @@ public class DotController : MonoBehaviour
 
         //14일차 phase_watching 예외처리는 SubDialogue의 Subexit()에서 처리
         return false;
+    }
+
+    public string GetDiaryAnimKeyForChapter(int ch)
+    {
+        // 9~11일차만 예외
+        return (ch == 9 || ch == 10 || ch == 11) ? "anim_diary_omg" : "anim_diary";
+    }
+
+    public string GetSleepAnimKeyForChapter(int ch)
+    {
+        // 9~11일차만 예외
+        return (ch == 9 || ch == 10 || ch == 11) ? "anim_sleep_mare" : "anim_sleep";
     }
 
     private string GetRandomAnimationForChapter(int chapter)
@@ -1094,6 +1094,7 @@ public class DotController : MonoBehaviour
                 Debug.Log($"[DotController] PlayMudAnimation is blocked because AfterScript is playing.");
                 return;
             }
+
             int mudDay = chapter-1;
 
             string mudName = "anim_mud_day" + mudDay.ToString();

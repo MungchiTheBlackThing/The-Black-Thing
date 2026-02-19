@@ -332,7 +332,13 @@ public class SubPanel : MonoBehaviour
         int determine; // dot:0, player:1
 
         var currentEntry = sub.GetData(dialogueIndex);
-        dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim, prePos);
+        float posOverride = prePos;
+        if (TryParsePositionOverride(currentEntry.Exeption, out float parsedPos))
+        {
+            posOverride = parsedPos;
+        }
+
+        dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim, posOverride);
 
         switch (textType)
         {
@@ -565,7 +571,14 @@ public class SubPanel : MonoBehaviour
             if (!string.IsNullOrEmpty(currentEntry.DotAnim))
             {
                 prePos = dotcontroller.Position;
-                dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim, prePos);
+
+                float posOverride = prePos;
+                if (TryParsePositionOverride(currentEntry.Exeption, out float parsedPos))
+                {
+                    posOverride = parsedPos;
+                }
+
+                dotcontroller.ChangeState(DotPatternState.Sub, currentEntry.DotAnim, posOverride);
             }
 
             if (int.TryParse(currentEntry.NextLineKey, out int nextLineKey))
@@ -631,6 +644,22 @@ public class SubPanel : MonoBehaviour
         {
             ShowNextDialogue();
         }
+    }
+
+    private static bool TryParsePositionOverride(string exeptionRaw, out float pos)
+    {
+        pos = -1f;
+        if (string.IsNullOrWhiteSpace(exeptionRaw)) return false;
+
+        // 문자열에서 첫 번째 숫자(float)를 뽑아쓴다. (pos=10, "move 10", "10.5" 다 OK)
+        var m = System.Text.RegularExpressions.Regex.Match(
+            exeptionRaw,
+            @"-?\d+(\.\d+)?"
+        );
+
+        if (!m.Success) return false;
+        return float.TryParse(m.Value, System.Globalization.NumberStyles.Float,
+            System.Globalization.CultureInfo.InvariantCulture, out pos);
     }
 
     public void Resetinputfield(GameObject field)

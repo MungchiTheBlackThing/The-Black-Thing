@@ -168,6 +168,12 @@ public class ProgressUIController : MonoBehaviour
 
         SetActiveDragIcon(player.GetChapter()); //재사용
     }
+    public GameObject GetDragIcon(int chapter)
+    {
+        if (dragIconList != null && dragIconList.TryGetValue(chapter, out var go))
+            return go;
+        return null;
+    }
 
     public void RefreshProgressUI()
     {

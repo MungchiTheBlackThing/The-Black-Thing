@@ -7,7 +7,6 @@ using TMPro;
 public class SubTutorial : MonoBehaviour
 {
     public List<GameObject> Guideline = new List<GameObject>();
-    [SerializeField] private GameObject TutoCh1Object; // 하이라키에 미리 만들어둔 챕터1 하이라이트(기본 OFF)
     [SerializeField] MenuController MenuController;
     [SerializeField] GameObject menuBut;
     [SerializeField] GameObject progressBut;
@@ -20,6 +19,9 @@ public class SubTutorial : MonoBehaviour
     [SerializeField] private GameObject guide0BubbleRoot;
     [SerializeField] private Button guide0Button;
     [SerializeField] private TextMeshProUGUI guide0Text;
+
+    [SerializeField] private RectTransform _topLayer; // Canvas 최상단 패널
+    private GameObject _ch1Clone;
     CanvasGroup tutorialMaskGroup;
     CanvasGroup Spider;
     CanvasGroup Progress;
@@ -142,6 +144,90 @@ public class SubTutorial : MonoBehaviour
         b.interactable = true;
     }
 
+    private GameObject CreateCh1CloneOnTop(string originalName)
+    {
+        var originalGO = GameObject.Find(originalName);
+        if (!originalGO) { Debug.LogError($"[UITutorial] '{originalName}' not found"); return null; }
+
+        var src = originalGO.GetComponent<RectTransform>();
+        if (!src) { Debug.LogError("[UITutorial] original has no RectTransform"); return null; }
+
+        if (_topLayer == null)
+        {
+            // 대충이라도 최상단: 현재 캔버스의 루트 RectTransform
+            var canvas = GetComponentInParent<Canvas>();
+            _topLayer = canvas ? canvas.GetComponent<RectTransform>() : (RectTransform)transform;
+        }
+
+        // 이미 있으면 재사용
+        if (_ch1Clone) Destroy(_ch1Clone);
+
+        // 1) 클론 생성
+        _ch1Clone = Instantiate(originalGO, _topLayer);
+        _ch1Clone.name = originalGO.name + "_TUTO_CLONE";
+
+        // 2) 좌표/크기 복사 (스크린 기준으로 복사 -> parent가 달라도 맞게)
+        var dst = _ch1Clone.GetComponent<RectTransform>();
+
+        // dst를 "센터 기준"으로 고정해두면 기기별 삐뚤어짐이 줄어듦
+        dst.anchorMin = dst.anchorMax = new Vector2(0.5f, 0.5f);
+        dst.pivot = new Vector2(0.5f, 0.5f);
+
+        Vector3 srcCenterWorld = src.TransformPoint(src.rect.center);
+        Vector2 screen = RectTransformUtility.WorldToScreenPoint(null, srcCenterWorld);
+
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_topLayer, screen, null, out var local))
+            dst.anchoredPosition = local;
+
+        dst.sizeDelta = src.sizeDelta;
+
+        // 회전/스케일
+        dst.localRotation = Quaternion.identity;
+        dst.localScale = src.localScale;
+
+        // 3) 최상단으로
+        _topLayer.SetAsLastSibling();
+        dst.SetAsLastSibling();
+
+        // 4) 클릭/드래그 막고 싶으면 여기서 GraphicRaycaster / Button 비활성 등 조정 가능
+        // 예: 원본의 버튼 이벤트는 제거하고 튜토용 이벤트만 넣기
+
+        return _ch1Clone;
+    }
+
+    private IEnumerator WaitForUI(string nameContains, float timeout)
+    {
+        float t = 0f;
+        while (t < timeout)
+        {
+            var go = FindByNameContains(nameContains); 
+            if (go != null) yield break;
+
+            t += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        Debug.LogWarning($"[UITutorial] WaitForUI timeout: {nameContains}");
+    }
+
+    private GameObject FindByNameContains(string key)
+    {
+        // 비활성 포함 전체 탐색
+        var all = Resources.FindObjectsOfTypeAll<GameObject>();
+        for (int i = 0; i < all.Length; i++)
+        {
+            var go = all[i];
+            if (go == null) continue;
+
+            // 에디터/프리팹 에셋 제외(런타임 씬 오브젝트만)
+            if (!go.scene.IsValid()) continue;
+
+            // key가 "ch1"이면 "ch1(Clone)"도
+            if (go.name == key || go.name.Contains(key))
+                return go;
+        }
+        return null;
+    }
 
     public void Guide1() // 다시 이쪽으로 이쪽으로
     {
@@ -190,16 +276,13 @@ public class SubTutorial : MonoBehaviour
         progressUIController.tutorial = false;
         yield return new WaitForSeconds(0.1f);
 
-        TutoCh1Object.SetActive(true);
-        var redDot = TutoCh1Object.transform.Find("SubRedDot");
-        if (redDot != null) redDot.gameObject.SetActive(true);
+        Canvas.ForceUpdateCanvases();
 
-        TutoCh1Object.transform.SetAsLastSibling();
-        var btn = TutoCh1Object.GetComponent<Button>();
-        if (btn != null)
+        var clone = CreateCh1CloneOnTop("ch1"); 
+        if (clone != null)
         {
-            btn.onClick.RemoveListener(progressUIController.onClickdragIcon);
-            btn.onClick.AddListener(progressUIController.onClickdragIcon);
+            var btn = clone.GetComponent<Button>();
+            if (btn) { btn.onClick.RemoveAllListeners(); btn.onClick.AddListener(progressUIController.onClickdragIcon); }
         }
     }
     public void Guide5()
@@ -207,7 +290,11 @@ public class SubTutorial : MonoBehaviour
         Guideline[index].SetActive(false);
         index++;
         Guideline[index].SetActive(true);
-        TutoCh1Object.SetActive(false);
+        if (_ch1Clone != null)
+        {
+            Destroy(_ch1Clone);
+            _ch1Clone = null;
+        }
 
         preparent = Subicon.transform.parent.gameObject;
         Subicon.transform.SetParent(this.transform);

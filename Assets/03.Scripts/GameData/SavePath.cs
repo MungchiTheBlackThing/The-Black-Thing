@@ -66,39 +66,96 @@ public static class SavePaths
     public static void MigrateLegacyPlayerDataIfNeeded() { }
 #endif
 
+    private static readonly object _ioLock = new object();
+
     public static void WriteAllTextAtomic(string path, string contents)
     {
-        try
+        lock (_ioLock)
         {
-            var dir = Path.GetDirectoryName(path);
-            if (!string.IsNullOrEmpty(dir)) Directory.CreateDirectory(dir);
-
             string tmp = path + ".tmp";
-            File.WriteAllText(tmp, contents);
+            string bak = path + ".bak";
 
-            // 가능하면 Replace가 더 안전
-            if (File.Exists(path))
+            try
             {
-                try
+                var dir = Path.GetDirectoryName(path);
+                if (!string.IsNullOrEmpty(dir)) Directory.CreateDirectory(dir);
+
+                // (옵션) 이전 tmp가 남아있으면 정리
+                try { if (File.Exists(tmp)) File.Delete(tmp); } catch { }
+
+                // 1) tmp에 먼저 완전 쓰기
+                File.WriteAllText(tmp, contents);
+
+                // 2) 기존 파일이 있으면 bak로 백업(원본 보존)
+                if (File.Exists(path))
                 {
-                    File.Replace(tmp, path, null);
+                    try
+                    {
+                        if (File.Exists(bak)) File.Delete(bak);
+                        File.Move(path, bak);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogWarning($"[SavePaths] Backup move failed: {e.Message}");
+                        // 여기서 path가 남아있을 수 있음
+                    }
                 }
-                catch
+
+                // 3) tmp를 본 파일로 반영
+                // path가 아직 남아있으면(백업 실패 등) 덮어쓰기 가능한 방식으로 처리
+                if (File.Exists(path))
                 {
-                    File.Delete(path);
-                    File.Move(tmp, path);
+                    // 최후 안전: 기존 path를 한번 더 bak로 치우거나 삭제
+                    try
+                    {
+                        if (File.Exists(bak)) File.Delete(bak);
+                        File.Move(path, bak);
+                    }
+                    catch
+                    {
+                        try { File.Delete(path); } catch { }
+                    }
                 }
-            }
-            else
-            {
+
                 File.Move(tmp, path);
+
+                // 4) tmp 정리(정상적이면 없어야 하지만, 안전)
+                try { if (File.Exists(tmp)) File.Delete(tmp); } catch { }
             }
-        }
-        catch (Exception e)
-        {
-            Debug.LogWarning($"[SavePaths] WriteAllTextAtomic failed: {e.Message}");
+            catch (Exception e)
+            {
+                Debug.LogWarning($"[SavePaths] WriteAllTextAtomic failed: {e.Message}");
+                // 실패 시 tmp/bak로 복구 가능. tmp는 남겨둬도 됨(복구용).
+            }
         }
     }
+
+    /// <summary>
+    /// path 읽기 실패 시 bak, tmp 순으로 복구 시도
+    /// </summary>
+    public static bool TryReadAllTextWithBackup(string path, out string text)
+    {
+        lock (_ioLock)
+        {
+            // 1) main
+            if (TryReadAllText(path, out text) && !string.IsNullOrEmpty(text))
+                return true;
+
+            // 2) bak
+            string bak = path + ".bak";
+            if (TryReadAllText(bak, out text) && !string.IsNullOrEmpty(text))
+                return true;
+
+            // 3) tmp (마지막 수단)
+            string tmp = path + ".tmp";
+            if (TryReadAllText(tmp, out text) && !string.IsNullOrEmpty(text))
+                return true;
+
+            text = null;
+            return false;
+        }
+    }
+
 
     public static bool TryReadAllText(string path, out string text)
     {
