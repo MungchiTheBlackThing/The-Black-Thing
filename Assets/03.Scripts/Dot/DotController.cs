@@ -1137,14 +1137,14 @@ public class DotController : MonoBehaviour
 
         SetPos("anim_default", 0, 1, 3, 5, 6, 8, 11);
         SetPos("anim_bed", 6, 8);
-        SetPos("anim_reading", 0, 1, 3, 5, 6);
+        SetPos("anim_reading", 0, 1, 5, 6);
         SetPos("anim_writing", 6, 8);
         SetPos("anim_mold", 0.5f);
         SetPos("anim_bounce", 0, 1, 3, 5, 6, 8, 11);
         SetPos("anim_laptop", 7);
         SetPos("anim_walking", 5, 8);
         SetPos("anim_mold2", 0);
-        SetPos("anim_happy", 1, 3, 6, 8);
+        SetPos("anim_happy", 6, 8);
         SetPos("anim_spiderweb1", 10);
         SetPos("anim_spiderweb2", 10);
         SetPos("anim_eyesclosed", 0, 1, 3, 5, 6, 8, 11);

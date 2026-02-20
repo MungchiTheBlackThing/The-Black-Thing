@@ -44,6 +44,10 @@ public class ChecklistController : MonoBehaviour
     [SerializeField]
     checklist[] checklists;
 
+    [SerializeField] GameObject checklistGuide;
+
+    const string KEY_CHECKLIST_GUIDE_SHOWN = "ChecklistGuideShown";
+
     TranslateManager translator;
 
     [SerializeField]
@@ -58,6 +62,7 @@ public class ChecklistController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         pc = GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerController>();
         pc.nextPhaseDelegate -= NextPhase;
         pc.nextPhaseDelegate += NextPhase;
@@ -164,7 +169,7 @@ public class ChecklistController : MonoBehaviour
 
         if (checklists[Idx].eChecklist == EChecklist.Note)
         {
-            OnClickCheckListIcon();
+            OnClickCheckListIcon(isAuto: true);
             _autoCloseCo = StartCoroutine(AutoCloseChecklist());
         }
 
@@ -177,8 +182,14 @@ public class ChecklistController : MonoBehaviour
             checkList.SetActive(false);
     }
 
-    public void OnClickCheckListIcon()
+    public void OnClickCheckListIconManual()
     {
+        OnClickCheckListIcon(isAuto: false);
+    }
+
+    public void OnClickCheckListIcon(bool isAuto = false)
+    {
+        Debug.Log($"[Guide] isAuto={isAuto}, KEY={PlayerPrefs.GetInt(KEY_CHECKLIST_GUIDE_SHOWN, 0)}, chapter={pc.GetChapter()}, subWatched1={pc.IsSubWatched(1)}");
         if (GameManager.isend)
         {
             gameObject.SetActive(false);
@@ -195,6 +206,18 @@ public class ChecklistController : MonoBehaviour
 
             int ph = pc.GetCurrentPhase();
             checkList.SetActive(true);
+
+            if (!isAuto
+                && PlayerPrefs.GetInt(KEY_CHECKLIST_GUIDE_SHOWN, 0) == 0
+                && pc.GetChapter() >= 1
+                && pc.IsSubWatched(1)) // 곰팡이 봤고 직접 열었고 1일차면
+            {
+                PlayerPrefs.SetInt(KEY_CHECKLIST_GUIDE_SHOWN, 1);
+                PlayerPrefs.Save();
+                // 가이드 오브젝트 켜기
+                if (checklistGuide != null) checklistGuide.SetActive(true);
+            }
+
             if (ph == 0 || ph == 2 || ph == 4 || ph == 6)
             {
                 subcheck.SetActive(true);
