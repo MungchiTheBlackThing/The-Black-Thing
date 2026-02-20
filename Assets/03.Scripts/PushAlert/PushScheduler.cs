@@ -31,7 +31,7 @@ public static class PushScheduler
                 break;
 
             case GamePatternState.Sleeping:
-                ScheduleWatching(chapter, gm.dayStartHour, gm.dayStartMinute);
+                ScheduleWatching(chapter + 1, gm.dayStartHour, gm.dayStartMinute);
                 break;
 
             default:
@@ -41,6 +41,7 @@ public static class PushScheduler
 
     static void ScheduleWatching(int chapter, int hour, int minute)
     {
+        if (chapter > 14) return; // 마지막 챕터 이후엔 예약 안 함
         var (title, body) = PushText.GetWatching(chapter);
 
         var now = DateTime.Now;
