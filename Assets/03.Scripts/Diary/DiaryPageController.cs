@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class DiaryPageController : MonoBehaviour
+public class DiaryPageController : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     [SerializeField] DiaryPage page;
     [SerializeField] GameManager gameManager;
@@ -14,8 +16,19 @@ public class DiaryPageController : MonoBehaviour
     private int maxChapterIdx;
     private bool isTurning = false;
 
+    
+    public Image _dragRaycastImage;
+
+    private void Awake()
+    {
+        _dragRaycastImage = GetComponent<Image>();
+    }
+
     private void OnEnable()
     {
+        if (_dragRaycastImage != null)
+            _dragRaycastImage.raycastTarget = true;
+
         Debug.Log($"[DiaryPageController] OnEnable. GM Chapter: {gameManager.Chapter}, Pattern: {gameManager.Pattern}");
         maxChapterIdx = gameManager.Chapter - 1;
         if (gameManager.Pattern <= GamePatternState.Writing)
@@ -33,7 +46,12 @@ public class DiaryPageController : MonoBehaviour
         UpdatePageVisibility(); 
     }
 
- 
+    private void OnDisable()
+    {
+        if (_dragRaycastImage != null)
+            _dragRaycastImage.raycastTarget = false;
+    }
+
     public void NextPage()
     {
         if (isTurning) return;                      
@@ -48,7 +66,17 @@ public class DiaryPageController : MonoBehaviour
         StartCoroutine(TurnPage(-1));
     }
 
-    private System.Collections.IEnumerator TurnPage(int dir)
+    public void OnDrag(PointerEventData eventData) { }
+
+    [SerializeField] float minSwipeRatio = 0.1f;
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        TouchUtility.HandleHorizontalSwipe(eventData, NextPage, PrevPage,
+            verticalThresholdRatio: 0.8f, minSwipeScreenRatio: minSwipeRatio);
+    }
+
+    private IEnumerator TurnPage(int dir)
     {
         isTurning = true;
         yield return new WaitForSeconds(turnCooldown);

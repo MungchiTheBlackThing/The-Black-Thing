@@ -15,7 +15,6 @@ public class SunDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 	public Transform pagesContainer; // 페이지들을 담고 있는 부모 Transform
 	public int pageCount; // 페이지의 총 갯수
 	public int currentPageIndex = 0; // 현재 페이지의 인덱스
-	private Vector2 dragStartPosition; // 드래그 시작 위치
 	private PlayerController playerController;
 	private LANGUAGE LANGUAGE;
 
@@ -185,34 +184,10 @@ public class SunDeathNote : MonoBehaviour, IDragHandler, IEndDragHandler
 
 	public void OnEndDrag(PointerEventData eventData)
 	{
-		Vector2 start = eventData.pressPosition;
-		Vector2 end = eventData.position;
-
-		float dx = end.x - start.x;
-		float dy = end.y - start.y;
-
-        // 1) 각도(대각선/스크롤) 필터 강화: dy가 dx의 0.6배보다 크면 취소
-        if (Mathf.Abs(dy) > Mathf.Abs(dx) * 0.6f) return;
-
-        // 2) 거리 기준을 화면 비율로: 화면 너비의 15% 미만이면 취소
-        float minSwipe = Screen.width * 0.15f;
-        if (Mathf.Abs(dx) < minSwipe) return;
-
-		// 오른쪽으로 스와이프하여 다음 페이지로 넘어갈 때
-		if (dx < 0f && currentPageIndex < pageCount - 1)
-		{
-			SetPage(currentPageIndex + 1);
-		}
-		// 왼쪽으로 스와이프하여 이전 페이지로 넘어갈 때
-		else if (dx > 0f && currentPageIndex > 0)
-		{
-			SetPage(currentPageIndex - 1);
-		}
-
-		if (currentPageIndex == pageCount - 1)
-		{
-			if (exitButton != null) exitButton.SetActive(true); //exit 버튼 활성화
-		}
+		// 드래그 방향에 따라 이전/다음페이지로 이동
+		TouchUtility.HandleHorizontalSwipe(eventData, NextPage, PrevPage);
+		if (currentPageIndex == pageCount - 1 && exitButton != null)
+			exitButton.SetActive(true);
 	}
 	
     private void RefreshNavButtons()
