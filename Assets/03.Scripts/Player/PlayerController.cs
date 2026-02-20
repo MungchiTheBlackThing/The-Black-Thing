@@ -478,6 +478,8 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
     public void Replay()
     {
         PlayerPrefs.SetInt("FORCE_NEW_GAME", 1);
+    
+        PlayerPrefs.DeleteKey("ChecklistGuideShown");
         PlayerPrefs.Save();
         LoadSceneManager.Instance.LoadScene("MainScene", "IntroScene", 0);
     }
