@@ -295,6 +295,7 @@ public class SubDialogue : MonoBehaviour
     public void Subexit()
     {
         InputGuard.WorldInputLocked = false;
+        ScreenShield.Off();
 
         //이벤트가 완전히 종료되는 시점에 타이머 키를 삭제
         if (manager != null && playerController != null)
@@ -405,6 +406,9 @@ public class SubDialogue : MonoBehaviour
         this.gameObject.SetActive(false);
         if (dot != null)
             dot.RefreshDustState(dot.AnimKey);
+
+        ScreenShield.Off();
+        InputGuard.WorldInputLocked = false;
         
     }
 
