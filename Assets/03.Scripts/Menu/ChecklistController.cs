@@ -226,6 +226,7 @@ public class ChecklistController : MonoBehaviour
         }
         else
             checkList.SetActive(false);
+            if (checklistGuide != null) checklistGuide.SetActive(false);
     }
     
     private bool wasIconCheckListNoteObjActive = false;
