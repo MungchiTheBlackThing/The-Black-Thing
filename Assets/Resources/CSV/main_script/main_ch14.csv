@@ -13,7 +13,7 @@
 1,79,12,main_door_open,Dot,Main,body_bounce,,text,"죽음을 앞두고도 당차게\n인사하길 선택한, 나의 근사한 반항담 말이야!",A fantastic tale of rebellion\nagainst my looming death!,13,,,,Main_Ch14,M14_L0012
 1,79,13,main_door_open,Player,Main,body_default1,,text,"응, 준비됐어!","Yes, I’m ready!",14,,,,Main_Ch14,M14_L0013
 1,79,14,main_door_open,Dot,Main,,face_close_turn,text,그렇다면... 이제 나와 함께 상상해 줄래?,"Now... close your eyes.\nAnd picture if you will,",15,,,,Main_Ch14,M14_L0014
-1,79,15,main_door_open,Dot,Main,,,text,아주 색이 많은 우주를.,a universe bursting with colors.,16,1,,,Main_Ch14,M14_L0015
+1,79,15,main_door_open,Dot,Main,,face_close,text,아주 색이 많은 우주를.,a universe bursting with colors.,16,1,,,Main_Ch14,M14_L0015
 1,79,16,main_door_open,Dot,Main,body_default1,face_blink,text,내가 가장 사랑한 인간인 너의 죽음은 어떨까?,"What about your death,\nmy dearest human?",17,,,,Main_Ch14,M14_L0016
 1,79,17,main_door_open,Dot,Main,,,text,"몇십 년 후, 어느 폭신하고 새하얀 침대 위에서 늙어 죽을까?","Will it be decades from now,\non a soft white bed?",18,,,,Main_Ch14,M14_L0017
 1,79,18,main_door_open,Player,Main,,,selection,잠에 들 듯이 스르르...|덜컥 하고 순식간에...,Like drifting off to sleep...|Like an unexpected bang...,19|19,,,passive|active,Main_Ch14,M14_L0018
@@ -43,7 +43,7 @@
 1,79,42,main_door_open,Player,Main,,,selection,정말 반짝이는 별이었을지도 몰라.|정말 죽어 가는 운석이었을지도 몰라.,Maybe it really was a shining star.|Maybe it really was a dying meteor.,43|43,,,sun|moon,Main_Ch14,M14_L0042
 1,79,43,main_door_open,Dot,Main,body_bounce,face_thinking,text,"히히, 내 눈에 묻은, 채 닦이지 않은 분필 가루였을지도 모르지!",Or maybe just a bit of chalk dust\nclinging to my eyes! Hehe.,44,,,,Main_Ch14,M14_L0043
 1,79,44,main_door_open,Dot,Main,body_default1,face_close_turn,text,"하지만 <nickname>, 너희 인간들을 보며 나는 마침내 깨달아.","But <nickname>. Watching you humans,\nI’ve finally understood.",45,,,,Main_Ch14,M14_L0044
-1,79,45,main_door_open,Dot,Main,,,text,그 ‘나풀거리던 무언가’는....,That ‘flutter’ was in fact...,46,,,,Main_Ch14,M14_L0045
+1,79,45,main_door_open,Dot,Main,,face_close,text,그 ‘나풀거리던 무언가’는....,That ‘flutter’ was in fact...,46,,,,Main_Ch14,M14_L0045
 1,79,46,main_door_open,Dot,Main,,face_open,text,사실 아무것도 아니었다는 걸.,Nothing.,47,,,,Main_Ch14,M14_L0046
 1,79,47,main_door_open,Player,Main,,face_blink,text,아무것도 아니었다고?,Nothing?,48,,,,Main_Ch14,M14_L0047
 1,79,48,main_door_open,Dot,Main,,,text,응.,Yes.,49,,,,Main_Ch14,M14_L0048

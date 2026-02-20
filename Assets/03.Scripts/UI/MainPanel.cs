@@ -52,9 +52,8 @@ public class MainPanel : MonoBehaviour
     private const string PH_EN = "Please enter your thoughts.";
 
     private List<string> selection13 = new List<string> {
-        "찰나의 미소띤 잔상","파도 속 낯선 안식처","비좁고 다정한 암흑","미약한 용기의 불씨","A passing afterimage of a smile","An unlikely haven below waves","A small and caring darkness","A tiny ember of courage"
+        "찰나의 미소띤 잔상","파도 속 낯선 안식처","비좁고 다정한 암흑","미약한 용기의 불씨","an afterimage of a pleasant daydream","a glimpse of an unlit haven","a moment of loving darkness","an ember of faint courage"
     };
-
     void Awake()
     {
         mainCg = GetComponent<CanvasGroup>();
@@ -345,6 +344,7 @@ public class MainPanel : MonoBehaviour
 
     public void ShowNextDialogue()
     {
+        LANGUAGE = (int)pc.GetLanguage();
         PanelOff();
         BringSystemButtonsToTop();
         Debug.Log("다이얼: " + dialogueIndex + "리스트: " + mainDialogue.currentDialogueList.Count);
@@ -378,7 +378,10 @@ public class MainPanel : MonoBehaviour
                     if (korText.Contains("<nickname>") && pc)
                         korText = korText.Replace("<nickname>", pc.GetNickName());
                     if (korText.Contains("<selection13>") && pc)
+                    {
+                        Debug.Log($"[selection13] LANGUAGE={LANGUAGE}, deathnotesel={deathnotesel}, result={selection13[deathnotesel]}");
                         korText = korText.Replace("<selection13>", selection13[deathnotesel]);
+                    }
                     //[DEBUG]0.5f -> 0.01f
                     StartCoroutine(ShowPanelWithDelay(
                         DotPanel,

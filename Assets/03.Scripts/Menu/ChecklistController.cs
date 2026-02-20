@@ -32,6 +32,9 @@ public class ChecklistController : MonoBehaviour
     private PlayerController pc;
     private GameManager gameManager;
 
+    private Coroutine _autoCloseCo;
+
+
     [SerializeField]
     GameObject checkList;
     [SerializeField]
@@ -162,8 +165,16 @@ public class ChecklistController : MonoBehaviour
         if (checklists[Idx].eChecklist == EChecklist.Note)
         {
             OnClickCheckListIcon();
+            _autoCloseCo = StartCoroutine(AutoCloseChecklist());
         }
-        yield return null;
+
+    }
+
+    IEnumerator AutoCloseChecklist()
+    {
+        yield return new WaitForSeconds(4f);
+        if (checkList.activeSelf)
+            checkList.SetActive(false);
     }
 
     public void OnClickCheckListIcon()
@@ -175,6 +186,13 @@ public class ChecklistController : MonoBehaviour
         }
         if (checkList.activeSelf == false)
         {
+            // 자동닫기 코루틴 취소
+            if (_autoCloseCo != null)
+            {
+                StopCoroutine(_autoCloseCo);
+                _autoCloseCo = null;
+            }
+
             int ph = pc.GetCurrentPhase();
             checkList.SetActive(true);
             if (ph == 0 || ph == 2 || ph == 4 || ph == 6)

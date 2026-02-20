@@ -176,6 +176,7 @@ public class BinocularController : BaseObject , IWatchingInterface
 
     public void CloseWatching()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.iconClick, transform.position);
         alert.SetActive(false);
         DoorController door = FindObjectOfType<DoorController>();
         if (door != null)
