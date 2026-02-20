@@ -477,6 +477,13 @@ public class GameManager : MonoBehaviour
     private void InitGame()
     {
         NotificationService.Init();
+
+        var perm = NotificationService.GetPermissionState(forceSync: false);
+        if (perm != PushPermissionState.Granted)
+        {
+            PlayerPrefs.SetInt("PushEnabled", 0);
+            PlayerPrefs.Save();
+        }
         // 새 게임 시 이전 타이머 기록이 남아있다면 삭제
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {

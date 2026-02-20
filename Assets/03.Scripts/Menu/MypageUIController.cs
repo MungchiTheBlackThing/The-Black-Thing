@@ -97,6 +97,20 @@ public class MypageUIController : MonoBehaviour
 
     private void OnEnable()
     {
+
+        var perm = NotificationService.GetPermissionState(forceSync: true);
+        if (perm != PushPermissionState.Granted)
+        {
+            isEnableAlert = false;
+            PlayerPrefs.SetInt("PushEnabled", 0);
+            PlayerPrefs.Save();
+            player?.SetisPushNotificationEnabled(false);
+        }
+        else
+        {
+            isEnableAlert = PlayerPrefs.GetInt("PushEnabled", 0) == 1;
+        }
+        EnablePushAlertColor();
         //켜질때마다
         pageIdx = 0;
 
@@ -396,6 +410,26 @@ public class MypageUIController : MonoBehaviour
             var img = offBtn.GetComponent<Image>();
             if (img != null) img.color = colors[1]; //1번 비활성화
         }
+    }
+
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus) return;
+        if (!gameObject.activeInHierarchy) return;
+
+        var perm = NotificationService.GetPermissionState(forceSync: true);
+        if (perm != PushPermissionState.Granted)
+        {
+            isEnableAlert = false;
+            PlayerPrefs.SetInt("PushEnabled", 0);
+            PlayerPrefs.Save();
+            player?.SetisPushNotificationEnabled(false);
+        }
+        else
+        {
+            isEnableAlert = PlayerPrefs.GetInt("PushEnabled", 0) == 1;
+        }
+        EnablePushAlertColor();
     }
 
     void EnableSkipModeColor()

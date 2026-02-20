@@ -21,6 +21,9 @@ public class SubTutorial : MonoBehaviour
     [SerializeField] private TextMeshProUGUI guide0Text;
 
     [SerializeField] private RectTransform _topLayer; // Canvas 최상단 패널
+
+    [SerializeField] PushNudgePopup unknownPopup;
+    [SerializeField] PushNudgePopup deniedPopup;
     private GameObject _ch1Clone;
     CanvasGroup tutorialMaskGroup;
     CanvasGroup Spider;
@@ -324,11 +327,13 @@ public class SubTutorial : MonoBehaviour
                 ScreenShield.Off();
                 SubDialogue.isSubmoldtutoend = true;
                 InputGuard.WorldInputLocked = false; 
+
+                PushNudgeController.RegisterPopups(unknownPopup, deniedPopup);
                 this.gameObject.SetActive(false);
                 var menu = gameManager?.Menu ?? FindObjectOfType<MenuController>(true);
                 menu?.allon();
 
-                gameManager.StartCoroutine(gameManager.DelayedAction(2f, () => PushNudgeController.TryShow(gameManager)));
+                gameManager.StartCoroutine(gameManager.DelayedAction(5f, () => PushNudgeController.TryShow(gameManager)));
                 return;
             }
             Debug.Log(index);
