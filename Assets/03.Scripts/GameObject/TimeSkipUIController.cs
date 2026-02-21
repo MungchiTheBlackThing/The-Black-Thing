@@ -178,6 +178,10 @@ public class TimeSkipUIController : MonoBehaviour
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
         const string anim = "anim_default";
         popup.SetActive(false);
+
+        if (gameManager.Menu != null)
+            gameManager.Menu.alloff();
+        InputGuard.WorldInputLocked = true;
         
         // 콜백 기반: 카메라 이동 완료 후 후속 작업
         gameManager.ScrollManager.MoveCamera(

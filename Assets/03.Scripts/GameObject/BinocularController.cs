@@ -171,6 +171,8 @@ public class BinocularController : BaseObject , IWatchingInterface
 
         phase = Instantiate(watching[Idx[chapterIdx]], watchingBackground.transform);       
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.binocular, this.transform.position);
+
+        InputGuard.WorldInputLocked = true;
         
     }
 
@@ -183,6 +185,7 @@ public class BinocularController : BaseObject , IWatchingInterface
         {
             door.SetDoorForDialogue(true);
         }
+        InputGuard.WorldInputLocked = false;
     }
 
     private void OnDisable()
@@ -192,6 +195,7 @@ public class BinocularController : BaseObject , IWatchingInterface
         {
             door.SetDoorForDialogue(true);
         }
+        InputGuard.WorldInputLocked = false;
     }
 
 }
