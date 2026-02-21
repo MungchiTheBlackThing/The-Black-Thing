@@ -378,13 +378,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // 2일차 sleeping 시작 시 다이어리 가이드 활성화 플래그
-        if (patternState == GamePatternState.Sleeping && Chapter == 2)
-        {
-            PlayerPrefs.SetFloat("DiaryGuideEligible", 1f);
-            PlayerPrefs.Save();
-        }
-
         // Day8: Sleeping 진입에서만 이벤트 실행
         if (patternState == GamePatternState.Sleeping
             && Chapter == 8
