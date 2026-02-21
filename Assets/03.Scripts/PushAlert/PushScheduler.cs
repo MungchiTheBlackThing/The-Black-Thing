@@ -16,22 +16,25 @@ public static class PushScheduler
         double remaining = gm.GetPhaseRemainingSeconds();
         double t = Math.Max(remaining, MIN_DELAY_SEC);
 
+        var pc = UnityEngine.Object.FindObjectOfType<PlayerController>();
+        string nickname = pc != null ? pc.GetNickName() : null;
+
         switch (phase)
         {
             case GamePatternState.Watching:
-                ScheduleA(chapter, t);
+                ScheduleA(chapter, t, nickname);
                 break;
 
             case GamePatternState.Thinking:
-                ScheduleB(chapter, t);
+                ScheduleB(chapter, t, nickname);
                 break;
 
             case GamePatternState.Writing:
-                ScheduleNight(t);
+                ScheduleNight(t, nickname);
                 break;
 
             case GamePatternState.Sleeping:
-                ScheduleWatching(chapter + 1, gm.dayStartHour, gm.dayStartMinute);
+                ScheduleWatching(chapter + 1, gm.dayStartHour, gm.dayStartMinute, nickname);
                 break;
 
             default:
@@ -39,10 +42,10 @@ public static class PushScheduler
         }
     }
 
-    static void ScheduleWatching(int chapter, int hour, int minute)
+    static void ScheduleWatching(int chapter, int hour, int minute, string nickname = null)
     {
         if (chapter > 14) return; // 마지막 챕터 이후엔 예약 안 함
-        var (title, body) = PushText.GetWatching(chapter);
+        var (title, body) = PushText.GetWatching(chapter, nickname);
 
         var now = DateTime.Now;
         var fireTime = new DateTime(now.Year, now.Month, now.Day, hour, minute, 0);
@@ -55,10 +58,10 @@ public static class PushScheduler
         NotificationService.ScheduleAtLocalTime(PushIdType.Watching, chapter, title, body, fireTime);
     }
 
-    static void ScheduleA(int chapter, double t)
+    static void ScheduleA(int chapter, double t, string nickname = null)
     {
-        var (title, body) = PushText.GetA(chapter);
-        var (title6, body6) = PushText.GetA6(chapter);
+        var (title, body) = PushText.GetA(chapter, nickname);
+        var (title6, body6) = PushText.GetA6(chapter, nickname);
 
         NotificationService.Cancel(PushIdType.A, chapter);
         NotificationService.Cancel(PushIdType.A6, chapter);
@@ -67,10 +70,10 @@ public static class PushScheduler
         NotificationService.ScheduleAfterSeconds(PushIdType.A6, chapter, title6, body6, t + REMINDER_6H);
     }
 
-    static void ScheduleB(int chapter, double t)
+    static void ScheduleB(int chapter, double t, string nickname = null)
     {
-        var (title, body) = PushText.GetB(chapter);
-        var (title6, body6) = PushText.GetB6(chapter);
+        var (title, body) = PushText.GetB(chapter, nickname);
+        var (title6, body6) = PushText.GetB6(chapter, nickname);
 
         NotificationService.Cancel(PushIdType.B, chapter);
         NotificationService.Cancel(PushIdType.B6, chapter);
@@ -79,9 +82,9 @@ public static class PushScheduler
         NotificationService.ScheduleAfterSeconds(PushIdType.B6, chapter, title6, body6, t + REMINDER_6H);
     }
 
-    static void ScheduleNight(double t)
+    static void ScheduleNight(double t, string nickname = null)
     {
-        var (title, body) = PushText.GetNight();
+        var (title, body) = PushText.GetNight(nickname);
 
         NotificationService.CancelGlobal(PushIdType.Night);
         NotificationService.ScheduleAfterSeconds(PushIdType.Night, 0, title, body, t);

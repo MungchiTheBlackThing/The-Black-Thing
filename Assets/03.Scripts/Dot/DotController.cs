@@ -647,6 +647,14 @@ public class DotController : MonoBehaviour
 
     public void GoSleep()
     {
+        InputGuard.WorldInputLocked = false;
+
+        if (manager.Menu != null)
+            manager.Menu.allon();
+
+        if (manager.ScrollManager != null)
+            manager.ScrollManager.scrollable();
+            
         //잠자러 가는 애니메이션 실행.
         ChangeState(DotPatternState.Phase, "phase_sleep", 19);
         alertOff();
