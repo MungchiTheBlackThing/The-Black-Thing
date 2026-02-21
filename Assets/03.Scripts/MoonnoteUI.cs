@@ -118,7 +118,7 @@ public class MoonnoteUI : MonoBehaviour
     }
     public void NextPage()
     {
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.moonnote, this.transform.position);
         if (currentPage >= totalPages - 1) return;
         currentPage++;
         UpdatePageButtons();
@@ -126,7 +126,7 @@ public class MoonnoteUI : MonoBehaviour
 
     public void PreviousPage()
     {
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.moonnote, this.transform.position);
         if (currentPage <= 0) return;
         currentPage--;
         UpdatePageButtons();

@@ -11,6 +11,7 @@ public class FMODEvents : Singleton<FMODEvents>
     [field: Header("Menu")]
     [field: SerializeField] public EventReference MenuOn { get; private set; }
     [field: SerializeField] public EventReference checklistOn { get; private set; }
+    [field: SerializeField] public EventReference checklistOff { get; private set; }
     [field: SerializeField] public EventReference checklistSet { get; private set; }
     [field: SerializeField] public EventReference moonnote { get; private set; }
     [field: SerializeField] public EventReference buttonClick { get; private set; }

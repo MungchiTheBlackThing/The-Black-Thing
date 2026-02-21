@@ -40022,6 +40022,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9215142933249680019, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+      propertyPath: next
+      value: 
+      objectReference: {fileID: 1438847222}
+    - target: {fileID: 9215142933249680019, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+      propertyPath: prev
+      value: 
+      objectReference: {fileID: 1438847221}
+    - target: {fileID: 9215142933249680019, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+      propertyPath: nximage
+      value: 
+      objectReference: {fileID: 1438847220}
+    - target: {fileID: 9215142933249680019, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+      propertyPath: pvimage
+      value: 
+      objectReference: {fileID: 1438847219}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40037,6 +40053,50 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8279466841920894809, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
   m_PrefabInstance: {fileID: 1438847216}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1438847219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1930547489186817376, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+  m_PrefabInstance: {fileID: 1438847216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1438847220 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8279466841994669100, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+  m_PrefabInstance: {fileID: 1438847216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1438847221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2603617957272523998, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+  m_PrefabInstance: {fileID: 1438847216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1438847222 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4950478305152890797, guid: 82ecb4dd97c020542bddc43e37df71c5, type: 3}
+  m_PrefabInstance: {fileID: 1438847216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1440789594
 GameObject:
   m_ObjectHideFlags: 0
@@ -50849,6 +50909,13 @@ MonoBehaviour:
       Data3: -1485732464
       Data4: -1075519726
     Path: event:/SFX/sfx_menu_checklist_click
+  <checklistOff>k__BackingField:
+    Guid:
+      Data1: -2063250299
+      Data2: 1248319582
+      Data3: -1575680883
+      Data4: -77601484
+    Path: event:/SFX/sfx_menu_checklist_close
   <checklistSet>k__BackingField:
     Guid:
       Data1: -846680856
@@ -50872,25 +50939,25 @@ MonoBehaviour:
     Path: event:/SFX/sfx_button_click
   <iconClick>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1000245047
+      Data2: 1185504096
+      Data3: -144935286
+      Data4: 1626874967
+    Path: event:/SFX/sfx_icon_click
   <alert_p>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1435391658
+      Data2: 1186050717
+      Data3: 1213180065
+      Data4: 2031592931
+    Path: event:/SFX/alert_pos
   <alert_n>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1526786328
+      Data2: 1308627305
+      Data3: 1984050363
+      Data4: 1116806417
+    Path: event:/SFX/alert_day8
   <lockClick>k__BackingField:
     Guid:
       Data1: -1415655810

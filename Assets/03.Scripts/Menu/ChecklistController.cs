@@ -178,6 +178,7 @@ public class ChecklistController : MonoBehaviour
     IEnumerator AutoCloseChecklist()
     {
         yield return new WaitForSeconds(4f);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.checklistOff, this.transform.position);
         if (checkList.activeSelf)
             checkList.SetActive(false);
     }
@@ -225,8 +226,16 @@ public class ChecklistController : MonoBehaviour
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.checklistOn, this.transform.position);
         }
         else
+        {
+            if (_autoCloseCo != null)
+            {
+                StopCoroutine(_autoCloseCo);
+                _autoCloseCo = null;
+            }
             checkList.SetActive(false);
             if (checklistGuide != null) checklistGuide.SetActive(false);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.checklistOff, this.transform.position);
+        }
     }
     
     private bool wasIconCheckListNoteObjActive = false;

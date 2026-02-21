@@ -1084,6 +1084,13 @@ MonoBehaviour:
       Data3: -1485732464
       Data4: -1075519726
     Path: event:/SFX/sfx_menu_checklist_click
+  <checklistOff>k__BackingField:
+    Guid:
+      Data1: -2063250299
+      Data2: 1248319582
+      Data3: -1575680883
+      Data4: -77601484
+    Path: event:/SFX/sfx_menu_checklist_close
   <checklistSet>k__BackingField:
     Guid:
       Data1: -846680856
@@ -2152,6 +2159,8 @@ MonoBehaviour:
     diaryUnlockedInChapter1: 0
     endingReached: 0
     deathnoteState: 0
+    isSkipModeEnabled: 0
+    isSubSkipModeEnabled: 1
 --- !u!222 &940070199
 CanvasRenderer:
   m_ObjectHideFlags: 0
