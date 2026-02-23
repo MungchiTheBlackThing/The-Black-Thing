@@ -707,6 +707,17 @@ public class DotController : MonoBehaviour
             transform.position = DotPositionDic[position];
         }
 
+        var yOverrides = new Dictionary<string, float>
+        {
+            { "anim_sub_birdanddot", 0.5f },
+        };
+
+        if (yOverrides.TryGetValue(OutAnimKey, out float yOffset))
+        {
+            var p = transform.position;
+            transform.position = new Vector3(p.x, p.y + yOffset, p.z);
+        }
+
         if (!visible)
             return;
 
@@ -910,6 +921,18 @@ public class DotController : MonoBehaviour
         {
             Debug.Log($"[DotController] PlayAfterScript: Resetting isSubDialogueAnimPlaying to false.");
             isSubDialogueAnimPlaying = false;
+        }
+
+        var positionOverrides = new Dictionary<string, float>
+        {
+            { "anim_happy",      3.2f },
+            // 추가하고 싶은 애니메이션 여기에
+        };
+
+        if (positionOverrides.TryGetValue(animKey, out float overridePos))
+        {
+            position = overridePos;
+            Debug.Log($"[DotController] PlayAfterScript position overridden to {overridePos} for '{animKey}'");
         }
 
         Debug.Log($"[DotController] Starting AfterScript: {animKey} at {position}");
@@ -1149,7 +1172,7 @@ public class DotController : MonoBehaviour
         SetPos("anim_laptop", 7);
         SetPos("anim_walking", 5, 8);
         SetPos("anim_mold2", 0);
-        SetPos("anim_happy", 6, 8);
+        SetPos("anim_happy", 3.2f, 6, 8);
         SetPos("anim_spiderweb1", 10);
         SetPos("anim_spiderweb2", 10);
         SetPos("anim_eyesclosed", 0, 1, 3, 5, 6, 8, 11);
@@ -1168,4 +1191,9 @@ public class DotController : MonoBehaviour
         SetPos("anim_sub_ch7_1", 0, 1, 3, 5, 6, 8, 11);
         SetPos("anim_sub_ch7_2", 0, 1, 3, 5, 6, 8, 11);
     }
+
+    public void ClearSubAlert()
+    {
+        subAlert.SetActive(false);
+    } // 버그 픽싱 중 추가
 }

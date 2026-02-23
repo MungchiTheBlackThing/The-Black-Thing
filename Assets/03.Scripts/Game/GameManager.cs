@@ -260,7 +260,6 @@ public class GameManager : MonoBehaviour
         var subs = GetSubseqsForPhase(currentPattern);
         if (subs != null && subs.Count > 0)
         {
-            Debug.Log($"[SetPhase] Subseq 초기화됨: {subs[0]}");
             pc.SetSubseq(subs[0]);
         }
         else
@@ -290,6 +289,11 @@ public class GameManager : MonoBehaviour
         EnsureVideoController(); 
         Debug.Log($"[Test] ChangeGameState 실행: {patternState}");
         Debug.Log("스테이트 변경");
+        // 페이즈 전환 시 강제 초기화
+        InputGuard.WorldInputLocked = false;
+        dot.ClearSubAlert(); // subAlert만
+        if (subDialoguePanel != null) subDialoguePanel.SetActive(false);
+
         if (states == null) return;
         if (states.ContainsKey(patternState) == false)
         {
@@ -352,11 +356,14 @@ public class GameManager : MonoBehaviour
             pc.SetSubseq(subs[0]);
             
             // 새로운 페이즈 진입 시 이전 타이머가 남아있다면 제거하여 즉시 실행되는 문제 방지
-            string timestampKey = "PendingEventTimestamp_" + Chapter + "_" + currentPattern.ToString() + "_" + subs[0];
-            if (PlayerPrefs.HasKey(timestampKey))
+            foreach (int subseq in subs)
             {
-                PlayerPrefs.DeleteKey(timestampKey);
-                PlayerPrefs.Save();
+                string timestampKey = "PendingEventTimestamp_" + Chapter + "_" + currentPattern.ToString() + "_" + subseq;
+                if (PlayerPrefs.HasKey(timestampKey))
+                {
+                    PlayerPrefs.DeleteKey(timestampKey);
+                    PlayerPrefs.Save();
+                }
             }
         }
 
@@ -767,6 +774,7 @@ public class GameManager : MonoBehaviour
         if (!isSkipping)
         {
             Debug.Log("시간 경과! 현재 스크립트 키: " + script.ScriptKey);
+            dot.ForceStopAfterScript(); // 타이머 리셋 포함해서 먼저 종료
             dot.TriggerSub(true, script.DotAnim, script.DotPosition);
             pc.ProgressSubDial(script.ScriptKey);
         }

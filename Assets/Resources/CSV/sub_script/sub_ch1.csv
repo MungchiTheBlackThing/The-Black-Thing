@@ -141,14 +141,14 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 4,6,140,1,Player,Default,,text,뭉치가 고민하던 사이...\n끼익... 하고 문이 열렸어.,And creak... the door swings open.,141,,,,Sub_Ch1,S1_L0140
 4,6,141,1,Dot,Default,anim_move,text,세상에! 열렸는데? 열렸는데?,Oh! And? And?,142,,,,Sub_Ch1,S1_L0141
 4,6,142,1,Player,Default,,text,커다란 여행 가방을 멘 뭉치의\n달나라 친구들이 걸어나와!,And your three friends from\nthe Moon come marching out!,143,,,,Sub_Ch1,S1_L0142
-4,6,143,1,Dot,Default,anim_happy,text,"와! 너무, 너무, 너무 좋아! 레드, 에디슨,\n그리고 첼로 경이 나를 보러 와 줬다니!","Oh! I love it! Red, Edison, and\nSir Cello are here to see me!",144,,,,Sub_Ch1,S1_L0143
-4,6,144,1,Player,Default,anim_happy,text,(상상일 뿐인데도 저렇게나\n기뻐해 주다니. 괜스레 뿌듯하네.),"(It’s nice to see Dot so ecstatic,\neven if we’re playing pretend.)",151,,,,Sub_Ch1,S1_L0144
+4,6,143,1,Dot,Default,anim_happy,text,"와! 너무, 너무, 너무 좋아! 레드, 에디슨,\n그리고 첼로 경이 나를 보러 와 줬다니!","Oh! I love it! Red, Edison, and\nSir Cello are here to see me!",144,,,11.2,Sub_Ch1,S1_L0143
+4,6,144,1,Player,Default,anim_happy,text,(상상일 뿐인데도 저렇게나\n기뻐해 주다니. 괜스레 뿌듯하네.),"(It’s nice to see Dot so ecstatic,\neven if we’re playing pretend.)",151,,,11.2,Sub_Ch1,S1_L0144
 4,6,145,1,Dot,Default,anim_move,text,... 설마. 무시무시한 귀신? 혹은 살인마?,... No. A ghost? Or a murderer?,146,,,,Sub_Ch1,S1_L0145
 4,6,146,1,Player,Default,,text,뭉치는 그 실체를 알기 위해 '그것'에게\n다가가. 가까이... 더 가까이.,You inch toward\nthe thing. Closer... closer.,147,,,,Sub_Ch1,S1_L0146
 4,6,147,1,Dot,Default,anim_move,text,"가, 가까이...... 대체 뭐였어? 뭐였던 거야?",C-Closer... What is it? Huh?,148,,,,Sub_Ch1,S1_L0147
 4,6,148,1,Player,Default,,text,으악! 커어다랗고 새까만 바퀴벌레가\n뭉치를 향해 온몸을 뒤틀고 있어!,"Gah! A large, black cockroach\ncomes skittering toward you!",149,,,,Sub_Ch1,S1_L0148
-4,6,149,1,Dot,Default,anim_happy,text,"와! 너무, 너무, 너무 좋아! 커다랗고 새까만\n바퀴벌레 선생이 나에게 인사를 해 주다니!","Oh! I just love it! A large, black\ncockroach is here to greet me!",150,,,,Sub_Ch1,S1_L0149
-4,6,150,1,Player,Default,anim_happy,text,(놀래킬 목적이었는데...\n왜 좋아하는 거지?),(Huh. That's not what I expected.),151,,,,Sub_Ch1,S1_L0150
-4,6,151,1,Dot,Sub,anim_sub_light,text,좋아. 이제 충분히 잠을 속인 것 같아.,Alright. That should have tricked\nsleep into thinking I’m in no hurry.,152,,,,Sub_Ch1,S1_L0151
-4,6,152,1,Dot,Sub,anim_eyesblink,text,잠이 슬그머니 찾아오면 맞이해 주어야 하니까.,I should be there to greet it\nwhen it sneaks up on me.,153,,,,Sub_Ch1,S1_L0152
-4,6,153,1,Dot,Sub,,text,나는 이만 눈을 꼭 감고 어둠을 청해 볼게.\n지구에서의 첫 번째 잠을 위하여!,So now it’s time to nestle into the dark.\nHere’s to my very first night on Earth!,,,,,Sub_Ch1,S1_L0153
+4,6,149,1,Dot,Default,anim_happy,text,"와! 너무, 너무, 너무 좋아! 커다랗고 새까만\n바퀴벌레 선생이 나에게 인사를 해 주다니!","Oh! I just love it! A large, black\ncockroach is here to greet me!",150,,,11.2,Sub_Ch1,S1_L0149
+4,6,150,1,Player,Default,anim_happy,text,(놀래킬 목적이었는데...\n왜 좋아하는 거지?),(Huh. That's not what I expected.),151,,,11.2,Sub_Ch1,S1_L0150
+4,6,151,1,Dot,Sub,anim_sub_light,text,좋아. 이제 충분히 잠을 속인 것 같아.,Alright. That should have tricked\nsleep into thinking I’m in no hurry.,152,,,11,Sub_Ch1,S1_L0151
+4,6,152,1,Dot,Sub,anim_eyesblink,text,잠이 슬그머니 찾아오면 맞이해 주어야 하니까.,I should be there to greet it\nwhen it sneaks up on me.,153,,,11,Sub_Ch1,S1_L0152
+4,6,153,1,Dot,Sub,,text,나는 이만 눈을 꼭 감고 어둠을 청해 볼게.\n지구에서의 첫 번째 잠을 위하여!,So now it’s time to nestle into the dark.\nHere’s to my very first night on Earth!,,,,11,Sub_Ch1,S1_L0153

@@ -24,10 +24,10 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 1,15,23,1,Player,Sub,anim_eyesside,text,"거미가? 아니, 하하...\n예술가 선생이?","The spider? Wait, no... the artist?",24,,,,Sub_Ch3,S3_L0023
 1,15,24,1,Dot,Sub,anim_eyesblink,text,"응, 응! <nickname>, 털을 만지게 해 준 답례로\n나도 선물을 주고 싶은데...","Yes, that’s it, <nickname>. I’d like\nto give her a thank-you present.",25,,,,Sub_Ch3,S3_L0024
 1,15,25,1,Dot,Sub,anim_sub_spiderdot,text,"어때, 좀 닮았어? 그에\n대한 나의 존경을 담았어.",See the resemblance?\nIt’s a token of my respect.,26,,,,Sub_Ch3,S3_L0025
-1,15,26,1,Player,Sub,,selection,"오, 그럼. 그가 정말 기뻐할걸?|거미들의 취향은 잘 모르겠네.",Sure. I know she’ll be thrilled.|I’m not sure what spiders find appealing.,27|28,sun|moon,,,Sub_Ch3,S3_L0026
-1,15,27,1,Dot,Sub,anim_eyesblink,text,"한시름 놓을 수 있겠어. 고마워, <nickname>.","What a relief.\nThank you, <nickname>.",29,,,,Sub_Ch3,S3_L0027
-1,15,28,1,Dot,Sub,anim_eyesblink,text,"아무래도 그럴 수 있겠다.\n<nickname>, 너는 인간이니까.","I don’t blame you.\nYou are human, after all.",29,,,,Sub_Ch3,S3_L0028
-1,15,29,1,Dot,Default,anim_bounce,text,다녀올게. 행운을 빌어 줘!,"Well, I’ll be back.\nWish me luck!",,,anim_walking,,Sub_Ch3,S3_L0029
+1,15,26,1,Player,Sub,anim_sub_spiderdot_stay,selection,"오, 그럼. 그가 정말 기뻐할걸?|거미들의 취향은 잘 모르겠네.",Sure. I know she’ll be thrilled.|I’m not sure what spiders find appealing.,27|28,sun|moon,,,Sub_Ch3,S3_L0026
+1,15,27,1,Dot,Sub,anim_sub_spiderdot_stay,text,"한시름 놓을 수 있겠어. 고마워, <nickname>.","What a relief.\nThank you, <nickname>.",29,,,,Sub_Ch3,S3_L0027
+1,15,28,1,Dot,Sub,anim_sub_spiderdot_stay,text,"아무래도 그럴 수 있겠다.\n<nickname>, 너는 인간이니까.","I don’t blame you.\nYou are human, after all.",29,,,,Sub_Ch3,S3_L0028
+1,15,29,1,Dot,Default,anim_sub_spiderdot_stay,text,거미 선생을 다시 만날 그날이 기대돼. 행운을 빌어 줘!,"I can't wait for the day I meet Dame Spider again. Wish me luck!",,,,,Sub_Ch3,S3_L0029
 2,16,30,1,Dot,Default,anim_bounce,text,"아, 얼마나 황홀할까, <nickname>!","Oh, how splendid it\nmust be, <nickname>",31,,,,Sub_Ch3,S3_L0030
 2,16,31,1,Dot,Default,anim_sub_light,text,푸르른 하늘을 가로지르며\n구름 너머로 내달리는 삶이란!,To soar across the blue sky and\nrace far beyond the clouds!,32,,,,Sub_Ch3,S3_L0031
 2,16,32,1,Dot,Default,,text,"날 묶어 두는 어떠한 족쇄도 없이,\n그저 나로서 자유롭게 영원한 아이가 되어","To be a child forever,\nfree and whole and unchained,",33,,,,Sub_Ch3,S3_L0032

@@ -11,7 +11,7 @@ public class DustSpawner : MonoBehaviour
     [SerializeField] float width;
     [SerializeField] float height;
     [SerializeField] int spawnCount = 1;
-    [SerializeField] int activeMaxDustCnt = 10;
+    [SerializeField] int activeMaxDustCnt = 20;
     [SerializeField] float randomSec;
     [SerializeField] float velocity;
 
@@ -45,7 +45,7 @@ public class DustSpawner : MonoBehaviour
         initPos = transform.position;
         activeDustCnt = 0;
 
-        SpawnDust();          // ✅ 한 번만 생성
+        SpawnDust();          // 한 번만 생성
         _initialized = true;
     }
 
@@ -84,7 +84,8 @@ public class DustSpawner : MonoBehaviour
         for (int i = 0; i < maxSpawnCnt; i++)
         {
             float randomX = UnityEngine.Random.Range(initPos.x - width, initPos.x + width);
-            Vector3 spawnPos = new Vector3(randomX, initPos.y + height, 0f);
+            float randomY = UnityEngine.Random.Range(initPos.y + height + 0.1f, initPos.y + height + 0.4f);
+            Vector3 spawnPos = new Vector3(randomX, randomY, 0f);
 
             int idx = i / spawnCount;
             idx = Mathf.Clamp(idx, 0, dustPrefab.Length - 1);

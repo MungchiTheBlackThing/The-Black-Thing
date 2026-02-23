@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: anim_sub_spiderdot
-  serializedVersion: 6
+  serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -18,7 +18,8 @@ AnimationClip:
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
-  - curve:
+  - serializedVersion: 2
+    curve:
     - time: 0
       value: {fileID: 21300000, guid: e62331ade99c54293bb73e8a7ecfc1fa, type: 3}
     - time: 0.041666668
@@ -161,12 +162,11 @@ AnimationClip:
       value: {fileID: 21300000, guid: 82dc19f0380f44c749304b81aba185cf, type: 3}
     - time: 2.9166667
       value: {fileID: 21300000, guid: 9b533193109e94a879c2f89741a258ab, type: 3}
-    - time: 2.9583333
-      value: {fileID: 21300000, guid: b309c4c5db5744a81a94a5c0235f3d7e, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
+    flags: 2
   m_SampleRate: 24
   m_WrapMode: 0
   m_Bounds:
@@ -181,6 +181,8 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: 21300000, guid: e62331ade99c54293bb73e8a7ecfc1fa, type: 3}
     - {fileID: 21300000, guid: 9609664aab5c04cfe9f70c879c48b191, type: 3}
@@ -253,13 +255,12 @@ AnimationClip:
     - {fileID: 21300000, guid: 9a0320db49a654de591a881fdd7d4e60, type: 3}
     - {fileID: 21300000, guid: 82dc19f0380f44c749304b81aba185cf, type: 3}
     - {fileID: 21300000, guid: 9b533193109e94a879c2f89741a258ab, type: 3}
-    - {fileID: 21300000, guid: b309c4c5db5744a81a94a5c0235f3d7e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 3
+    m_StopTime: 2.9583335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

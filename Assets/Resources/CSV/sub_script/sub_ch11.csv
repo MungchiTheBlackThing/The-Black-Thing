@@ -37,8 +37,8 @@ Sub,ScriptNumber,LineKey,Color,Actor,AnimState,DotAnim,TextType,KorText,EngText,
 2,64,36,0,Dot,Default,,text,빛보다 빠르게 너의 곁에 닿을게.,I’ll be with you faster\nthan the speed of light.,37,,,,Sub_Ch11,S11_L0036
 2,64,37,0,Dot,Default,,text,홀로 뜬 네가 외롭지 않도록.,So you won’t be lonely up there.,38,,,,Sub_Ch11,S11_L0037
 2,64,38,0,Dot,Default,,text,그렇게 다시 만나는 거야.,Til we meet again.,,,anim_writing,,Sub_Ch11,S11_L0038
-3,63,39,1,Dot,Sub,anim_sub_birdanddot,text,"오, <nickname>. 내 정수리를 밟고\n서 있는 아기새를 봐 줄 수 있어?","Oh, <nickname>. Will you look at\nthis baby bird atop my head?",40,,,,Sub_Ch11,S11_L0039
-3,63,40,1,Dot,Sub,,text,"그게, 그게 말이지......","See, what happened was......",41,,,,Sub_Ch11,S11_L0040
+3,63,39,1,Dot,Sub,anim_sub_birdanddot,text,"오, <nickname>. 내 정수리를 밟고\n서 있는 아기새를 봐 줄 수 있어?","Oh, <nickname>. Will you look at\nthis baby bird atop my head?",40,,,1,Sub_Ch11,S11_L0039
+3,63,40,1,Dot,Sub,,text,"그게, 그게 말이지......","See, what happened was......",41,,,1.2,Sub_Ch11,S11_L0040
 3,63,41,1,Dot,Sub,,text,구름이 권태롭게 뒷짐을 지고 흘러가고 있었어.,The clouds were\ndrifting idly away.,42,,,,Sub_Ch11,S11_L0041
 3,63,42,1,Dot,Sub,,text,"난 깎아지르는 벼랑을 등반해,\n기필코 그에 닿아 보리라 결심했지!","I followed the treacherous route up the cliff\nfor a closer look, nearly losing an arm!",43,,,,Sub_Ch11,S11_L0042
 3,63,43,1,Player,Sub,,text,"어... 그러니까 창문 위에 어렵게\n올라가서 하늘을 봤다고, 뭉치야?","So... you made it up on the\nwindowsill to look at the sky, <nickname>?",44,,,,Sub_Ch11,S11_L0043
