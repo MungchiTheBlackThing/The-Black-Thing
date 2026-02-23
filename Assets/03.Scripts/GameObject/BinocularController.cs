@@ -185,7 +185,6 @@ public class BinocularController : BaseObject , IWatchingInterface
         {
             door.SetDoorForDialogue(true);
         }
-        InputGuard.WorldInputLocked = false;
     }
 
     private void OnDisable()

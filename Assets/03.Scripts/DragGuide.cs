@@ -33,6 +33,7 @@ public class DragGuide : MonoBehaviour
             new Vector3(-5.5f, 0, -10), 
             2f,
             onComplete: () => {
+                if (this != null)
                 StartCoroutine(SubStart());  // 카메라 이동 완료 후 실행
             }
         );

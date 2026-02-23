@@ -10,6 +10,7 @@ public class BinocularExitController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.iconClick, transform.position);
         DoorController door = FindObjectOfType<DoorController>();
         if (door != null)
         {
@@ -23,6 +24,7 @@ public class BinocularExitController : MonoBehaviour
         {
             camera.GetComponent<ScrollManager>().StopCamera(false);
         }
+        InputGuard.WorldInputLocked = false;
     }
 
 

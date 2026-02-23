@@ -181,6 +181,14 @@ public class TimeSkipUIController : MonoBehaviour
 
         if (gameManager.Menu != null)
             gameManager.Menu.alloff();
+
+        var touchGuide = GameObject.FindWithTag("TouchGuide");
+        if (touchGuide != null)
+        {
+            touchGuide.SetActive(false);
+            Destroy(touchGuide);
+        }
+
         InputGuard.WorldInputLocked = true;
         
         // 콜백 기반: 카메라 이동 완료 후 후속 작업
@@ -190,8 +198,8 @@ public class TimeSkipUIController : MonoBehaviour
             onComplete: () => {
                 dotController.Visible();
                 dotController.ChangeState(DotPatternState.Default, anim, 3);
-                Destroy(GameObject.FindWithTag("TouchGuide"));
-                StartCoroutine(subcontinue(0.1f));
+
+                gameManager.StartCoroutine(subcontinue(0.1f));
             }
         );
     }
