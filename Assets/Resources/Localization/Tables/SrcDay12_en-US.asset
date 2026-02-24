@@ -35,18 +35,19 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543978
   - m_Id: 16292056136810498
-    m_Localized: I dared try and make sense of the endless drop.
+    m_Localized: 'I dared to try and make sense of the endless drop. '
     m_Metadata:
       m_Items:
       - rid: 3674199710174543978
   - m_Id: 16292056141004800
-    m_Localized: Fit it in the palm of my hand, and lend an ear to its lonesome whispers.
+    m_Localized: To grasp it in the palm of my hand, and lend an ear to its lonely
+      whispers,
     m_Metadata:
       m_Items:
       - rid: 3674199710174543978
   - m_Id: 16292056141004801
-    m_Localized: I thought then I could accept my fate... that is, being devoured
-      by it.
+    m_Localized: "I thought then I could accept\u2026 my fate, and being eaten by
+      it."
     m_Metadata:
       m_Items:
       - rid: 3674199710174543978
@@ -76,7 +77,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543978
   - m_Id: 16292056141004807
-    m_Localized: Where things, far more crowded and woeful than death, lurk.
+    m_Localized: ' Where things much more sorrowful and packed lurk.'
     m_Metadata:
       m_Items:
       - rid: 3674199710174543978
@@ -86,7 +87,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543978
   - m_Id: 16292056141004809
-    m_Localized: And the fog. The nameless fog.
+    m_Localized: And fog. The nameless fog.
     m_Metadata:
       m_Items:
       - rid: 3674199710174543978
@@ -111,28 +112,45 @@ MonoBehaviour:
       m_Items:
       - rid: 3674199710174543978
   - m_Id: 16292056141004814
-    m_Localized: "\u201CWhy are dreams not dreams? Why bodiless and colorless? Do
-      they die when daylight comes?\u201D"
+    m_Localized: Why are dreams not dreams?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543978
   - m_Id: 16292056141004815
-    m_Localized: "\u201CAre all colors nothing but falsehood? Is the world merely
-      a cruel bystander?\u201D"
+    m_Localized: Why bodiless and colorless?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543978
   - m_Id: 16292056141004816
-    m_Localized: "\u201CThen what am I? What am I, what can I be?\u201D"
+    m_Localized: Are colors nothing but lies?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543978
   - m_Id: 16292056141004817
-    m_Localized: "\u201CIf nothing, then what does it mean to exist? Am I merely
-      a carcass-to-be?\u201D"
+    m_Localized: And the world a cruel bystander?
     m_Metadata:
       m_Items:
       - rid: 3674199710174543978
+  - m_Id: 53552672668598272
+    m_Localized: Then what am I?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53552672689569792
+    m_Localized: What am I?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53552672689569793
+    m_Localized: What can I be?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53552672689569794
+    m_Localized: If nothing,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53552672689569795
+    m_Localized: Am I just a carcass-to-be?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

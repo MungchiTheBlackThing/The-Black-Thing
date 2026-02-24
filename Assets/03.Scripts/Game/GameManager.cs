@@ -366,6 +366,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        AudioManager.Instance.UpdateBGMByChapter(Chapter, patternState); // Enter 전에
 
         activeState = states[patternState];
         Debug.Log("스테이트 변경: " + patternState);
@@ -572,6 +573,7 @@ public class GameManager : MonoBehaviour
             yield break; // 엔딩이면 여기서 끝. 아래 Enter/Timer/Sub 절대 돌리면 안 됨!!
         }
         Debug.Log($"초기 스테이트 설정: {patternState}");
+        AudioManager.Instance.UpdateBGMByChapter(Chapter, patternState);
         
         activeState = states[patternState];
         activeState.Enter(this, dot);

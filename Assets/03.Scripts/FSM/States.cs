@@ -319,6 +319,8 @@ public class Sleeping : GameState, IResetStateInterface
         this.dot = dot;
         string sleepKey = (dot != null) ? dot.GetSleepAnimKeyForChapter(dot.Chapter) : "anim_sleep";
         dot.ChangeState(DotPatternState.Trigger, sleepKey, 10);
+        if (manager.Menu != null)
+            manager.Menu.allon();
     }
 
     public override void Exit(GameManager manager, TutorialManager tutomanger = null)

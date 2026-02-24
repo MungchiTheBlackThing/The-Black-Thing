@@ -84,7 +84,6 @@ public class PlayerController : MonoBehaviour, IPlayerInterface
         currentChapter = GetChapter();
         currentChapter = player.CurrentChapter;
         nickname = player.Nickname;
-        AudioManager.Instance.UpdateBGMByChapter(gm.Chapter, gm.Pattern);
         AudioManager.Instance.SetBGMVolume(player.BgmVolume);
         AudioManager.Instance.SetSFXVolume(player.AcousticVolume);
         ChangeLocalizationLocale(GetLanguage());

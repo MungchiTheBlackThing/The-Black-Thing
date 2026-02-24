@@ -222,7 +222,7 @@
 3,68,221,main_door_open,Player,Main,,,text,(암흑으로 뛰어드는 자가 가장 강하다...),(Those who leap into the\nabyss are the strongest...),222,,,,Main_Ch12,M12_L0221
 3,68,222,main_door_open,Player,Main,,,text,(어둠으로부터 눈 돌리지 않는 자들. 내면과\n세계의 혼란을 낱낱이 그대로 바라보려는 자들.),(Those who don’t look away from the dark.\nThose who gaze within and beyond the self.),223,,,,Main_Ch12,M12_L0222
 3,68,223,main_door_open,Player,Main,,,selection,"(그래, 나 역시 한쪽 눈만 뜨고 살고 싶진 않아.)|(여전히 굳이 싶어. 하지만 용감하다는 건 부정할 수 없다.)",(Yes. I don’t want to live with only one eye open.)|(I don’t want to. But I have to admit that it’s braver.),224|224,,,active|passive,Main_Ch12,M12_L0223
-3,68,224,main_door_open,Player,Main,,,selection,"용감하다. 뭉치, 정말 강해졌구나.|이러다 뭉치가 아주 유명한 철학자가 되면 어쩌지...","That’s brave of you, Dot. You’ve really grown.|You’re on your way to becoming a philosopher...",225|225,,,active|passive,Main_Ch12,M12_L0224
+3,68,224,main_door_open,Player,Main,,,selection,"용감하다. 뭉치, 정말 강해졌구나.|이러다 뭉치가 아주 유명한 철학자가 되면 어쩌지...","That’s brave of you, Dot. You’ve really grown.|You’re on your way to becoming a philosopher...",227|225,,,active|passive,Main_Ch12,M12_L0224
 3,68,225,main_door_open,Dot,Main,,,text,그럴 일은 없을 거야. 난 꿈이 되어 죽을 테니까.,"No, I won’t. I’ll die as a dream.",226,,,,Main_Ch12,M12_L0225
 3,68,226,main_door_open,Player,Main,,,selection,응... 그렇지.|뭉치야... 그런 말은 하지 마.,"Well... yes.|Oh, Dot... Don’t say that.",227|227,,,moon|sun,Main_Ch12,M12_L0226
 3,68,227,main_door_open,Dot,Main,,face_smile,text,"... 헤헤, 하지만 무엇보다,\n너와 대화할 수 있다는 사실이 좋아.","But above all, I’m glad I can share it with you.",228,,,,Main_Ch12,M12_L0227

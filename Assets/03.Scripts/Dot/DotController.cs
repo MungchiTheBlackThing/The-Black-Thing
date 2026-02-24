@@ -649,9 +649,6 @@ public class DotController : MonoBehaviour
     {
         InputGuard.WorldInputLocked = false;
 
-        if (manager.Menu != null)
-            manager.Menu.allon();
-
         //잠자러 가는 애니메이션 실행.
         ChangeState(DotPatternState.Phase, "phase_sleep", 19);
         alertOff();
