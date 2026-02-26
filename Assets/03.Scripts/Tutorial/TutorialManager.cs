@@ -216,6 +216,8 @@ public class TutorialManager : GameManager
             _pendingState = null;
             ChangeGameState(st);
         }
+
+        AudioManager.Instance.UpdateBGMByChapter(pc.GetChapter(), currentPattern);
     }
 
     private IEnumerator TrackObjectLoadProgress(float weight)
