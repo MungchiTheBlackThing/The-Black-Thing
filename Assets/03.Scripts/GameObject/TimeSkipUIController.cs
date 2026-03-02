@@ -48,6 +48,12 @@ public class TimeSkipUIController : MonoBehaviour
     const int HOUR = 3600;
     const int MIN = 60;
 
+    [SerializeField] GameObject skipModeGuidePopup; // 새 팝업 오브젝트
+    const string SKIP_GUIDE_SHOWN_KEY = "SkipModeGuideShown";
+
+    [SerializeField] GameObject skipModeToastObject; // 토스트 오브젝트
+    const float TOAST_DURATION = 2f;
+
 
     private void Start()
     {
@@ -137,13 +143,50 @@ public class TimeSkipUIController : MonoBehaviour
         var sceneName = SceneManager.GetActiveScene().name;
         // Tutorial 씬이 아니고 + 스킵모드 OFF면 막기
         if (sceneName != "Tutorial" && !playerController.GetSkipModeEnabled())
-            return;
+        {
+            // 처음 한 번만 안내 팝업
+            if (PlayerPrefs.GetInt(SKIP_GUIDE_SHOWN_KEY, 0) == 0)
+            {
+                PlayerPrefs.SetInt(SKIP_GUIDE_SHOWN_KEY, 1);
+                PlayerPrefs.Save();
+                if (skipModeGuidePopup) skipModeGuidePopup.SetActive(true);
+            }
+            return; // 가이드 팝업 이후에도 스킵 팝업은 열지 않음
+        }
         if (GameManager.isend) return;
         if (popup.activeSelf == false)
         {
             popup.SetActive(true);
         }
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.iconClick, this.transform.position);
+    }
+
+    public void OnSkipModeGuideYes()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
+        if (skipModeGuidePopup) skipModeGuidePopup.SetActive(false);
+
+        playerController.SetSkipModeEnabled(true); // 모드 즉시 ON
+        RefreshSkipIcon();
+
+        if (skipModeToastObject)
+            StartCoroutine(ShowToast());
+    }
+
+    public void OnSkipModeGuideNo()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, this.transform.position);
+        if (skipModeGuidePopup) skipModeGuidePopup.SetActive(false);
+
+        if (skipModeToastObject)
+            StartCoroutine(ShowToast());
+    }
+
+    IEnumerator ShowToast()
+    {
+        skipModeToastObject.SetActive(true);
+        yield return new WaitForSeconds(TOAST_DURATION);
+        skipModeToastObject.SetActive(false);
     }
 
     public void NoClick()
