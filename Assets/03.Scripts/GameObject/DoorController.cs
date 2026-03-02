@@ -16,7 +16,7 @@ public class DoorController : MonoBehaviour
     BoxCollider2D doorCollider;
 
     static float _lastDoorClickTime;
-    const float DOOR_CLICK_COOLDOWN = 0.2f;
+    const float DOOR_CLICK_COOLDOWN = 0.5f;
 
     public void Awake()
     {
@@ -115,5 +115,22 @@ public class DoorController : MonoBehaviour
         // 방식으로 처리해 두어서 굳이 메인 때 문이 뭉치를 건드릴 필요 없음
     }
 
+    // 백그라운드 복귀 시 상태 동기화
+
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if (!pauseStatus)
+        {
+            EnableTouch();
+            SyncDoorState();
+        }
+    }
+
+    void SyncDoorState()
+    {
+        animator = this.transform.parent.GetComponent<Animator>();
+        if (animator != null)
+            animator.SetBool(Animator.StringToHash("isOpening"), _sharedDoorOpen);
+    }
 
 }

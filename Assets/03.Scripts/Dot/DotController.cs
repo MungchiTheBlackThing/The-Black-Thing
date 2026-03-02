@@ -515,6 +515,13 @@ public class DotController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        var door = FindObjectOfType<DoorController>();
+        if (door != null && !door.isDoorOpen)
+        {
+            door.Touch(); // 문 열기 위임
+            return;
+        }
+
         if (InputGuard.BlockWorldInput()) return;
 
         if (mainAlert.activeSelf)
@@ -564,6 +571,13 @@ public class DotController : MonoBehaviour
 
     public void OnAlertClicked(AlertType type)
     {
+        var door = FindObjectOfType<DoorController>();
+        if (door != null && !door.isDoorOpen)
+        {
+            door.Touch(); // 문 열기 위임
+            return;
+        }
+
         switch(type)
         {
             case AlertType.Main:

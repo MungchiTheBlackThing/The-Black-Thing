@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
+using System.Collections;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -47,10 +48,13 @@ public class ProgressUIController : MonoBehaviour
     public bool guide1 = false;
     public bool guide2 = false;
 
+    private bool isAlertShowing = false; // 변수 추가
+
     [Tooltip("Init Rect Size(width,height)")]
     Vector2 InitScrollSize;
 
     private string _stringTableName = "WatchingNoteUI";
+
 
     private void Awake()
     {
@@ -58,7 +62,7 @@ public class ProgressUIController : MonoBehaviour
         dragIconList = new Dictionary<int, GameObject>();
         iconWidth = dragIconPrefab.GetComponent<RectTransform>().rect.width;
         InitScrollSize = new Vector2(dragScroller.GetComponent<RectTransform>().rect.width, dragScroller.GetComponent<RectTransform>().rect.height);
-        //dragScroller.GetComponent<ScrollRect>().onValueChanged.AddListener(Scroll);
+        dragScroller.GetComponent<ScrollRect>().onValueChanged.AddListener(Scroll);
         //dotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
     }
 
@@ -194,7 +198,7 @@ public class ProgressUIController : MonoBehaviour
         if (day.GetComponent<DragIcon>().isLocking())
         {
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.lockClick, this.transform.position);
-            alter.SetActive(true);
+            StartCoroutine(ShowAlertAndClose());
         }
         else if (!tutorial)
         {
@@ -210,13 +214,23 @@ public class ProgressUIController : MonoBehaviour
         }
     }
 
-    //public void Scroll(Vector2 value)
-    //{
-    //    if(value.x>=1f)
-    //    {
-    //        alter.SetActive(true);
-    //    }
-    //}
+    private IEnumerator ShowAlertAndClose()
+    {
+        if (isAlertShowing) yield break;
+        isAlertShowing = true;
+        alter.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        alter.SetActive(false);
+        isAlertShowing = false;
+    }
+
+    public void Scroll(Vector2 value)
+    {
+        if(value.x>=1f)
+        {
+            StartCoroutine(ShowAlertAndClose());
+        }
+    }
 
     public void canceled(){
         alter.SetActive(false);
