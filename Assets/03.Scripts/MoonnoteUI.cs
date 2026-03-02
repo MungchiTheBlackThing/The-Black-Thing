@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class MoonnoteUI : MonoBehaviour
 {
     [Header("Page State")]
     [SerializeField] int currentPage = 0; // 현재 페이지
     [SerializeField] int totalPages = 5; // 전체 페이지
 
-    [Header("Page Buttons")]
-    [SerializeField] GameObject prevButton; //드래그해야 함...
+    [SerializeField] GameObject prevButton;
     [SerializeField] GameObject nextButton;
     [SerializeField] GameObject Menu;
 
@@ -49,7 +47,7 @@ public class MoonnoteUI : MonoBehaviour
                 ischeck = true;
             }
         }
-        catch (System.Exception ex)
+        catch (System.Exception)
         {
             Debug.Log("한번 봤거나 메인일 경우");
             ischeck = true;
@@ -66,11 +64,15 @@ public class MoonnoteUI : MonoBehaviour
         UpdatePageButtons();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnEnable()
     {
-        
+        currentPage = 0;
+        UpdatePageButtons();
+        var mc = GetComponentInChildren<MoonoteController>();
+        mc?.ResetToFirstPage();
     }
+
+    void Update() { }
 
     public void Exit()
     {
@@ -97,25 +99,24 @@ public class MoonnoteUI : MonoBehaviour
 
     void UpdatePageButtons()
     {
-        // 첫 페이지
+        if (prevButton == null || nextButton == null) return;
         if (currentPage <= 0)
         {
             prevButton.SetActive(false);
             nextButton.SetActive(true);
         }
-        // 마지막 페이지
         else if (currentPage >= totalPages - 1)
         {
             prevButton.SetActive(true);
             nextButton.SetActive(false);
         }
-        // 중간
         else
         {
             prevButton.SetActive(true);
             nextButton.SetActive(true);
         }
     }
+
     public void NextPage()
     {
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.moonnote, this.transform.position);

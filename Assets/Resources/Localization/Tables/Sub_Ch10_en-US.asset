@@ -566,15 +566,18 @@ MonoBehaviour:
   - m_Id: 640359100468
     m_Localized: (Reach out and shield Dot.)|(Gently stroke Dot.)
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543942
   - m_Id: 640359100469
     m_Localized: ......
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543942
   - m_Id: 640359100473
     m_Localized: (Stroke Dot. It feels\nsticky, but warm.)
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543942
   references:
     version: 2
     RefIds:
@@ -688,3 +691,6 @@ MonoBehaviour:
         - id: 640363294753
         - id: 640363294754
         - id: 640363294755
+        - id: 640359100468
+        - id: 640359100469
+        - id: 640359100473

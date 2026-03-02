@@ -1,101 +1,369 @@
-﻿Key,English (United States)(en-US),Korean (South Korea)(ko-KR)
-menu_title,MAIN MENU,메인 메뉴
-menu_howto,GUIDE BOOK,달나라 쪽지
-menu_progress,PROGRESS,하루 진행도
-menu_mypage,MY PAGE,마이 페이지
-settings_title,SETTINGS,게임 설정
-settings_name,NAME,이름
-settings_BGM,BGM,배경 음악
-settings_SFX,SFX,음향 효과
-settings_alert,PUSH ALERT,푸시 알림
-settings_namechanged,"Your name has been changed to '<nickname>.'
-Dot will now call you by this word.","‘<nickname>’(으)로 이름이 변경되었습니다.
+﻿Key,Id,English (United States)(en-US),Korean (South Korea)(ko-KR)
+menu_title,52855701504,MAIN MENU,메인 메뉴
+menu_howto,52956364800,GUIDE BOOK,달나라 쪽지
+menu_progress,52956364801,PROGRESS,하루 진행도
+menu_mypage,52956364802,MY PAGE,마이 페이지
+settings_title,52956364803,SETTINGS,게임 설정
+settings_name,52956364804,NAME,이름
+settings_BGM,52956364805,BGM,배경 음악
+settings_SFX,52956364806,SFX,음향 효과
+settings_alert,52956364807,PUSH ALERT,푸시 알림
+settings_namechanged,52964753408,"Your name has been changed to '{nickname}'.
+Dot will now call you by this word.","‘{nickname}’(으)로 이름이 변경되었습니다.
 뭉치가 당신을 이 단어로 부르게 됩니다."
-settings_namesetting_title,"Names describe you, and define you.\nWhat do you want Dot to call you?","이름이란 당신의 표지이자 심지.
+settings_namesetting_title,52964753409,"Names describe you, and define you.\nWhat do you want Dot to call you?","이름이란 당신의 표지이자 심지.
 뭉치에게 어떠한 이름으로 불리우고 싶나요?"
-settings_namesetting_placeholder,Suggestion: Your first name,권장: 성을 제외한 본명
-settings_namesetting_no,Cancel,취소하기
-settings_namesetting_yes,Save,저장하기
-settings_pushoff_title,"You won't be able to hear Dot's woeful cries.
-Will you really turn off the push alert?",뭉치의 애절한 부름을 들을 수 없게 됩니다.\n정말 푸시 알림을 끌까요?
-settings_pushoff_no,Turn it off.,무심하게 꺼 버린다.
-settings_pushoff_yes,Leave it on.,마음이 약해졌다. 켜 둔다.
-settings_language,LANGUAGE,언어
-community_title,COMMUNITY,커뮤니티
-community_instagram,"Enjoy our radio station-themed tidbits of text full of literature, philosophy, and humor!","제작자들의 문학, 철학, 해학이\n담긴 글들을 라디오 듣듯\n감상해 보세요!"
-community_discord,"<The Black Thing>'s Discord community. We invite you to our playground, your safe space.","게임 <뭉치>의 Discord 커뮤니티.\n그림자 진 놀이터,\n우리만의 안식처로 초대합니다."
-community_discordTip,For gameplay feedbacks or bug reports!,게임 플레이에 문제나\n버그가 있다면 여기로!
-community_x,Where Dot's uncomfortable and lovable fancies are wound up into spools of thread.,불유쾌하고 사랑스러운\n뭉치의 상상들이\n실타래처럼 엉켜 있는 곳.
-community_url_0,https://discord.gg/gDnphBApmK,https://discord.gg/gDnphBApmK
-community_url_1,https://www.instagram.com/moonstew_games/,https://www.instagram.com/moonstew_games/
-community_url_2,https://x.com/moonstew_games,https://x.com/moonstew_games
-credit_title,CREDIT,만든 사람들
-credit_text,"Director & Lead Designer: 이주희
-Art Director & Animator: 이윤선
-Narrative Designer: 이주희, 고은서, 이시은
-Programmer: 송수영, 심준현
-English Translation: 장한솔, 기혜승, 이주희
-System and Interface Design: 이주희, 최유리
+settings_namesetting_placeholder,52964753410,Suggestion: Your first name,권장: 성을 제외한 본명
+settings_namesetting_no,52964753411,Cancel,취소하기
+settings_namesetting_yes,52964753412,Save,저장하기
+settings_pushoff_title,52964753413,You won't be able to hear Dot's woeful cries.\nWill you really turn off the push alert?,뭉치의 애절한 부름을 들을 수 없게 됩니다.\n정말 푸시 알림을 끌까요?
+settings_pushoff_no,52964753414,Turn it off.,무심하게 꺼 버린다.
+settings_pushoff_yes,52964753415,Leave it on.,마음이 약해졌다. 켜 둔다.
+settings_language,52964753416,LANGUAGE,언어
+community_title,52964753417,COMMUNITY,커뮤니티
+community_instagram,52964753418,"Enjoy our tidbits of text\nfull of literature,\nphilosophy, and humor!",온통 네모난 세상 속\n유일하게 동그란 뭉치의\n 비하인드-더-씬 사진첩
+community_discord,52964753419,"Our Discord community.\nWe invite you to our \nplayground, your safe space.","게임 <뭉치>의 Discord 커뮤니티.\n그림자 진 놀이터,\n우리만의 안식처로 초대합니다."
+community_discordTip,52964753420,For gameplay feedbacks\nor bug reports!,게임 플레이에 문제나\n버그가 있다면 여기로!
+community_x,52964753421,Where Dot's uncomfortable and lovable fancies are wound up into spools of thread.,불유쾌하고 사랑스러운\n뭉치의 상상들이\n실타래처럼 엉켜 있는 곳.
+community_url_0,52964753422,https://discord.gg/gDnphBApmK,https://discord.gg/gDnphBApmK
+community_url_1,52964753423,https://www.instagram.com/moonstew_games/,https://www.instagram.com/moonstew_games/
+community_url_2,52964753424,https://x.com/moonstew_games,https://x.com/moonstew_games
+credit_title,52964753425,CREDITS,만든 사람들
+credit_text,52964753426,"Created and Directed by Andiemae Lee
 
-© 2025 moonstew games All rights reserved.","크리에이티브 디렉터: 이주희
-아트 디렉터 & 애니메이터: 이윤선
-대사 작성: 이주희, 고은서, 이시은
-프로그래머: 심준현, 장희진, 송수영
-영문 번역가: 장한솔, 기혜승, 이주희
-시스템 & UI 디자이너: 이주희, 최유리
+Art Direction & Animation by Yoonsun Lee
 
-© 2025 moonstew games All rights reserved."
-progress_alert,The future is never to be known.,미래는 결코 알 수 없는 것.
-progress_title_ch1,DAY 1 : Words,"제 1장, 언어"
-progress_title_ch2,DAY 2 : Holes,"제 2장, 결핍"
-progress_title_ch3,DAY 3 : Faces,"제 3장, 얼굴들"
-progress_title_ch4,DAY 4 : The Past,"제 4장, 과거"
-progress_title_ch5,DAY 5 : Silence,"제 5장, 허망"
-progress_title_ch6,DAY 6 : Us,"제 6장, 우리"
-progress_title_ch7,DAY 7 : Comedy,"제 7장, 코미디"
-progress_title_ch8,DAY 8 : Twin,"제 8장, 쌍둥이"
-progress_title_ch9,DAY 9 : Gone,"제 9장, 사라지는 것들"
-progress_title_ch10,DAY 10 : Walls,"제 10장, 벽"
-progress_title_ch11,DAY 11 : Eyes Closed,"제 11장, 환상"
-progress_title_ch12,DAY 12 : Abyss,"제 12장, 심연"
-progress_title_ch13,DAY 13 : What Remains,"제 13장, 남는 것들"
-progress_title_ch14,DAY 14 : Black,"
+Narrative Design & Scriptwriting by
+Andiemae Lee, Sieun Lee, and Eunseo Go
+
+Game Design & PM by Andiemae Lee
+
+Programming by Junhyun Sim, Andiemae Lee,
+Heejin Jang, and Suyoung Song
+
+English Localization by Hansol Jang and Hae Seung Kie
+
+UX & Game Design Support by Yuri Choi
+
+QA Testing by Kihyun Lee
+
+Prologue Narration by Charlie Leander
+
+Marketing by Andiemae Lee, Sieun Lee, 
+Yoonsun Lee, and Yuri Choi
+
+Programming Assistance by Jiwon Choi
+
+Main BGM
+""Playground Abyss"" by Haksil
+""Monster and Human""
+""Gooey Footsteps""
+""A Dream within a Dream""
+""From the Moon and Back"" by Wooyeol Choi
+
+Animation BGM
+Chapter 1 ""I ;ove y*u"",
+Chapter 2 ""The Ring Boy"",
+Chapter 4 ""Moonlit Tales"" by Wooyeol Choi
+Chapter 5 ""Red-Headed Girl"",
+Chapter 6 ""Forever Friends"",
+Chapter 9 ""Lullaby"",
+Chapter 11 ""Lucid Dream"",
+Chapter 13 ""Edelweiss"" by Woochan Kim
+Chapter 14 ""Celestial"" by Sam Shandley
+
+Chapters 3, 7, 8, 10, 12
+free assets by nojisuma
+
+Prologue & Moon Transmitter
+free assets by GregorQuendel
+
+
+Playtesting by Charlie Leander, 김재영, 최은혁, 담, Tus, 
+모노, Emzy, UtsuNova, Joshua Barretto, Loïc Belot, 
+Jemeni Colon, Vicky Chen, 채은진, 강현재, 
+Will~Praedyth, Avery Grover, Simon
+Carole NGUYEN VO, Marisa Bigelow
+
+
+Special thanks to our loved ones,
+friends and family, 
+and our backers from all over the world.
+
+
+Tumblbug Funders
+
+이경태, 김은주, 미카엘라, 김재영, 레미, 김기진, 
+정나정/모노, 비뚜, 큘리언, 달릿, 저점수남아요,
+AeonFlor, 이희정, 냥초, LadyCALLA, 
+LJLee37, 수민, 쿠빈, 청월적일, 임시저장,
+마구전쟁, 먼먉, 치킨마시쪙, 신민서, 기류, 권기범,
+유하란, 데봉, tlenoo, 은시, 지구에서 by장재은,
+주야비, 레드, 돼지토끼, 김오리, 랑새, 융이, 용용,
+덕구, 레논, 게임쿤_치지직, 돇o, 유자, hoyamaru,
+딱따구리, 하이, VNnotice, HaeRyeong_049,
+김규리, YJY, PAREN, 청월, 무쇼, 고등어, 
+슐레이, 곤뇽, 말랑쨘, 최예슬, 박보영, 이향기, 동동25, 
+노수빈, 뚭두바, 구운마시룸, Judy, Proxima, 미야옴,
+안소현, WSAD, 서준우, 미르스, syj.01, Pette, 도슬븜,
+snow, 임주원, 랑씨, 940, minseok, 들콩, 신형주,
+레르키노, 공, ㅁㅁ, 오성준, 소영1019,
+안목효, seongciel, 바퀴벌레생명력, 듀, 김선우,
+메가펌킹, KADO, 론 (ron), HANZO-장혜영, ppcwas
+
+Kickstarter Backers
+
+Charlie Peterson, Jason K, Jay Lee, Tussy,
+Noelle.K, minju, coolwallfall, Max Powers, 
+Nicolas Morrow, Magic Step, Erin Roberts,
+Emzy, berrywinkle, Loïc Belot, Giovanni Jajoute
+LJ Thomas Lee, GentleSage, Evangeline Waller,
+Andie's Dad, Pompom, Sam Kez Rossetto, 
+EC Glaceon, IronRequiem, Jonathan Capt'n Kurts, 
+Will~Praedyth, Jacob A. Pimentel, moicoloico,
+BatterR, Gustavo Lopes Mourelo Lessa - GhuS2, 
+Brenda Crespo Santiago, Nikki Petkopoulos, Linoluem, 
+Sami Jo Henning, Taiga Char, Dizzy, Sunshine, 
+Spoon, atomjenkins, Lachlan Bassula, HammyG, 
+Ethan ""R3DFOX01"" McCue, Gabriel Delos Angeles, 
+Mandi Wice, David Holon Lin, Oliver Mikis Sutton, 
+Fiku Vilchez, Jemeni Colon, Redcakes, Pk Insect,
+tygod100, Carole NGUYEN VO, Bookdragon21,
+Bailee Mayfield, Victoria Chen, StarBrightNight,
+Elyssa Kornienko, ZombiSkag, SubterraneanExhibit, 
+Wicken, TallFreak, Mak, LordPanda9259, 
+Gond, Princess NoRoute, Anthony Haevermaet, 
+Zachary Morningstar, Rapharazzle, Andrea.CG, 
+Jonathan Cortez, Lunaty ♡, Jiho, Hultrij, TwistArts, Sol, 
+Elias Albarracin, Hologramme, munchy598, SwordFirey
+
+
+
+
+
+
+
+","총괄 기획 및 제작: 이주희
+
+아트 디렉팅 & 애니메이션: 이윤선
+
+시나리오 & 대사: 이주희, 이시은, 고은서
+
+프로그래밍: 심준현, 이주희, 장희진, 송수영
+
+영문 로컬라이징: 장한솔, 기혜승
+
+UX & 게임 기획 지원: 최유리
+
+QA 테스팅: 이기현
+
+프롤로그 나레이션: Charlie Leander 
+
+마케팅: 이주희, 이시은, 이윤선, 최유리
+
+프로그래밍 지원: 최지원
+
+메인 BGM:
+
+""Playground Abyss"" - 학실
+""Monster and Human""
+""Gooey Footsteps""
+""A Dream within a Dream""
+""From the Moon and Back"" - 최우열
+
+애니메이션 BGM
+
+1장 ""I ;ove y*u"",
+2장 ""The Ring Boy"",
+4장 ""Moonlit Tales"" - 최우열
+5장 ""Red-Headed Girl"",
+6장 ""Forever Friends"",
+9장 ""Lullaby"",
+11장 ""Lucid Dream"",
+13장 ""Edelweiss"" - 김우찬
+14장 ""Celestial"" - Sam Shandley
+
+3, 7, 8, 10, 12장
+nojisuma 제공 무료 애셋 활용
+
+프롤로그 & 달나라 송신기 BGM:
+GregorQuendel 제공 무료 애셋 활용
+
+
+플레이테스팅: Charlie Leander, 김재영, 최은혁, 담, Tus, 
+모노, Emzy, UtsuNova, Joshua Barretto, Loïc Belot, 
+Jemeni Colon, Vicky Chen, 채은진, 강현재, 
+Will~Praedyth, Avery Grover, Simon
+Carole NGUYEN VO, Marisa Bigelow
+
+
+Special Thanks
+
+사랑하는 가족들, 친구들,
+그리고 뭉치의 긴 여정을 끝까지 함께해 주신 
+전 세계의 후원자 여러분께 온 마음 다해 감사드립니다.
+
+
+텀블벅 후원
+
+이경태, 김은주, 미카엘라, 김재영, 레미, 김기진, 
+정나정/모노, 비뚜, 큘리언, 달릿, 저점수남아요,
+AeonFlor, 이희정, 냥초, LadyCALLA, 
+LJLee37, 수민, 쿠빈, 청월적일, 임시저장,
+마구전쟁, 먼먉, 치킨마시쪙, 신민서, 기류, 권기범,
+유하란, 데봉, tlenoo, 은시, 지구에서 by장재은,
+주야비, 레드, 돼지토끼, 김오리, 랑새, 융이, 용용,
+덕구, 레논, 게임쿤_치지직, 돇o, 유자, hoyamaru,
+딱따구리, 하이, VNnotice, HaeRyeong_049,
+김규리, YJY, PAREN, 청월, 무쇼, 고등어, 
+슐레이, 곤뇽, 말랑쨘, 최예슬, 박보영, 이향기, 동동25, 
+노수빈, 뚭두바, 구운마시룸, Judy, Proxima, 미야옴,
+안소현, WSAD, 서준우, 미르스, syj.01, Pette, 도슬븜,
+snow, 임주원, 랑씨, 940, minseok, 들콩, 신형주,
+레르키노, 공, ㅁㅁ, 오성준, 소영1019,
+안목효, seongciel, 바퀴벌레생명력, 듀, 김선우,
+메가펌킹, KADO, 론 (ron), HANZO-장혜영, ppcwas
+
+킥스타터 후원
+
+Charlie Peterson, Jason K, Jay Lee, Tussy,
+Noelle.K, minju, coolwallfall, Max Powers, 
+Nicolas Morrow, Magic Step, Erin Roberts,
+Emzy, berrywinkle, Loïc Belot, Giovanni Jajoute
+LJ Thomas Lee, GentleSage, Evangeline Waller,
+Andie's Dad, Pompom, Sam Kez Rossetto, 
+EC Glaceon, IronRequiem, Jonathan Capt'n Kurts, 
+Will~Praedyth, Jacob A. Pimentel, moicoloico,
+BatterR, Gustavo Lopes Mourelo Lessa - GhuS2, 
+Brenda Crespo Santiago, Nikki Petkopoulos, Linoluem, 
+Sami Jo Henning, Taiga Char, Dizzy, Sunshine, 
+Spoon, atomjenkins, Lachlan Bassula, HammyG, 
+Ethan ""R3DFOX01"" McCue, Gabriel Delos Angeles, 
+Mandi Wice, David Holon Lin, Oliver Mikis Sutton, 
+Fiku Vilchez, Jemeni Colon, Redcakes, Pk Insect,
+tygod100, Carole NGUYEN VO, Bookdragon21,
+Bailee Mayfield, Victoria Chen, StarBrightNight,
+Elyssa Kornienko, ZombiSkag, SubterraneanExhibit, 
+Wicken, TallFreak, Mak, LordPanda9259, 
+Gond, Princess NoRoute, Anthony Haevermaet, 
+Zachary Morningstar, Rapharazzle, Andrea.CG, 
+Jonathan Cortez, Lunaty ♡, Jiho, Hultrij, TwistArts, Sol, 
+Elias Albarracin, Hologramme, munchy598, SwordFirey
+
+
+
+
+
+
+
+"
+progress_alert,52964753427,The future is never to be known.,미래는 결코 알 수 없는 것.
+progress_title_ch1,52964753428,DAY 1 : Words,"제 1장, 언어"
+progress_title_ch2,52964753429,DAY 2 : Ring Boy,"제 2장, 결핍"
+progress_title_ch3,52964753430,DAY 3 : Faces,"제 3장, 얼굴들"
+progress_title_ch4,52964753431,DAY 4 : The Past,"제 4장, 과거"
+progress_title_ch5,52964753432,DAY 5 : Death,"제 5장, 죽음"
+progress_title_ch6,52964753433,DAY 6 : Us,"제 6장, 우리"
+progress_title_ch7,52964753434,DAY 7 : Comedy,"제 7장, 코미디"
+progress_title_ch8,52964753435,DAY 8 : Twin,"제 8장, 쌍둥이"
+progress_title_ch9,52964753436,DAY 9 : Gone,"제 9장, 사라지는 것들"
+progress_title_ch10,52964753437,DAY 10 : Walls,"제 10장, 벽"
+progress_title_ch11,52964753438,DAY 11 : Eyes Closed,"제 11장, 환상"
+progress_title_ch12,52964753439,DAY 12 : Abyss,"제 12장, 심연"
+progress_title_ch13,52964753440,DAY 13 : What Remains,"제 13장, 남는 것들"
+progress_title_ch14,52964753441,DAY 14 : Black,"
 제 14장, 검정"
-progress_subtitle_ch1,¿▷よя▼&#ㅳ,¿▷よя▼&#ㅳ
-progress_subtitle_ch2,"Holes, Holes","동그라미, 동그라미"
-progress_subtitle_ch3,A Thousand Faces,감춰진 얼굴들
-progress_subtitle_ch4,Bygone Tales from the Moon,잿빛 달나라 이야기
-progress_subtitle_ch5,404 not found,404 not found
-progress_subtitle_ch6,The Veil in Between,야속한 표피 너머
-progress_subtitle_ch7,"Humans, Monsters, Scars",인간과 괴물과 상처
-progress_subtitle_ch8,Swallow swallow swallow,"삼켜, 삼켜, 삼켜"
-progress_subtitle_ch9,Practicing Farewell,그리울 연습
-progress_subtitle_ch10,"Break, If Breakable",깨지기 쉬우면 깨뜨려라
-progress_subtitle_ch11,"Wake Up, Morning's Coming",영원한 꿈의 종말
-progress_subtitle_ch12,The Secrets of a Manhole,맨홀 구멍 속 비밀
-progress_subtitle_ch13,Aftermath,그리고 이별이 남길 것들
-progress_subtitle_ch14,"Reeling, Freeing",어지럽고 자유로운
-progress_longtext_ch1,"But for some inexplicable\nreason, the man himself could\n not say the word 'I love you.'\nWhenever he tried,\nonly strange, incomprehensible \nsounds came out.","그는 알 수 없는 이유로\n‘사랑해’를 부를 수 없었어.\n그 이름을 부르려고 하면,\n그 누구도 이해할 수 없는\n이상한 소리만 나왔던 거야."
-progress_longtext_ch2,"Now stuck in his own circular\ntrap, he greedily swallowed\nall the circles of the world. \nWhat he radiated was... \nblank empathy. Engorged greed. \nDesperate hunger.","이제 그는 그만의 동그란 공백에 \n갇혀, 탐욕스럽게 세상의 모든 \n동그라미들을 삼켰어. 그런 그에게서 느껴지는 것은, 공허한 연민.\n비대한 욕심. 처절한 허기."
-progress_longtext_ch3,"She wasn’t afraid to show what was under her hat.\nShe was looking forward to it. \nTo someone seeing her and all\nher faces. And to be understood,\neach and every version of her.",그녀는 보여 주기를 두려워하지 \n않았어. 오히려 기대하고 있었지. 누군가가 자신의 모든 면들을 \n알아봐 주길. 매번 보여 주는 모습이 \n다른 자신이 이해받을 수 있기를.
-progress_longtext_ch4,"I found myself heading\ninstinctively to the corner of the\nmoon. I had hoped that waiting\nfor my death sentence here,\nI would be free from anxiety. That fear... and its razor-\nsharp edges wouldn’t invade.","괜찮아. 무서웠지만 괜찮아. \n그저 본능적으로 달의 모퉁이로 \n향했어. 사형 처분을 기다리게 될 \n이곳만큼은 불안으로부터 \n안전하기를, 날 선 공포가 \n침범하지 못하기를 바라며."
-progress_longtext_ch5,"Not knowing when you will die, \nhow are you not crawling on the floor every second, frightened\nout of your mind? Every step\nyou take must feel as if you're\nabout to fall into a sinkhole.","언제 죽을지 알 수 없다면,\n너는 어떻게 겁에 질려\n바닥을 기면서 살아가지 않는\n거야? 매순간 떼는 발걸음이\n싱크 홀을 눈앞에 둔 것만\n같은 기분이지 않겠어?"
-progress_longtext_ch6,"I long to know.\nWhat it is behind your face,\nyour words. What lies beyond\nthe cover page of your being,\nuniquely yours. What wavers\nand glimmers and bitters.","너무 궁금해. 너의 표정 속에, \n너의 말 뒤에. 네 존재의 ‘겉표지’ \n너머 존재할 너만의 내적인 일렁임. \n반짝임. 쓰라림. 수많은 감정들의 \n유체가 자유로이 표류하는 감각."
-progress_longtext_ch7,"Thinking that I feel good\ncan make me feel good!\nI had doubted its potential\nbefore, but it came through!\nLike how the man-made metallic\nbird can fly in the air.","‘기분이 좋다’고 생각하면 ‘기분이\n좋아’진다는 사실 말이야!\n이전까지 그건 말도 안 되는 \n일이라고 생각했지만, 끝내 성공\n했지! 인간들이 철로 만든 새가\n하늘을 나는 일이 그런 것처럼."
-progress_longtext_ch8,In his esophagus lived his twin\nbrother. The brother that died\nwhile growing inside their mother.,그 아이의 식도 안에는\n그의 쌍둥이 형이 살았어.\n어머니의 뱃속에서\n함께 자라나다 죽어 버린 형이.\n아이와 닮은 눈을 도록도록 굴리며\n식도 안에 살았어.
-progress_longtext_ch9,"Days that remain\nonly in a camera shutter.\nNow when I speak aloud,\neven my words are lonesome.",셔터 속에만 남은 나날들.\n이제 나의 혼잣말은\n정말 혼자가 되었구나.
-progress_longtext_ch10,"They looked like balled-up\nscreams from within him. \nBalled up screams.\nCinders from a dead flame,\nswarms of cockroaches,\nglobs of red-black blood…","그것들은 뭉쳐 있던 비명처럼\n보였어. 내면의 타고 남은 재,\n떼 지은 좀벌레, 시커먼 핏덩어리...\n어쩐지 나를 닮은.\n검디 검은 폐기물 덩어리. \n역시 파쇄해 버려야 마땅한...."
-progress_longtext_ch11,"Then… one day, the human\nstopped opening her eyes to reality, wishing to forever wander within her dream...\nHer dream became her \nforever companion!","그는 정말 꿈에서 살아가고 있었어.\n꿈의 냄새를 맡고, 꿈의 표면을 \n만지면서. 그의 꿈은 영원히 \n한 자리에서 그를 기다리고 \n있는 거야. 밤이 지나도 잊히지 \n않는 무한한 꿈이 된 거야!"
-progress_longtext_ch12,"The Dark. Where everything is\nthe same, eyes closed or open.\nWhere things much more\nsorrowful and packed lurk. Where there is nothing.\nAnd thus everything.",그곳은 수렁 같은 암흑. 눈을 떠도 \n감아도 똑같은 것이 보이는. \n죽음보다 훨씬 서럽고 빽빽한 \n것들이 도사리는. 아무것도 없는. \n그렇기에 모든 것이 있는.
-progress_longtext_ch13,"The human's life ends there. Their fates run parallel from here on. Still, it's dazzlingly beautiful... Isn't it?",둘의 인연은 먼 평행을 달리게 \n될 거야. 그렇지만 여전히 \n눈부시게 아름답구나....
-progress_longtext_ch14,"The vibrance of humanity,\ntied to the gravitational force of life. It is mesmerizing.\nBut beyond those hues\nlies a small, circular,\n'definite' black hole.",중력 같은 생명에 묶인 인간 종족의\n다채로움. 그게 나를 얼마나 \n감탄하게 하는지. 하지만 그 색들 \n너머에서… 동그랗고 작고 ‘확고한’ \n블랙홀 하나가 보여.
-howto_title,A Letter From the Moon,달나라에서 온 쪽지
-timeskip_popup,Time is relative. Fast-forward\nthrough the long hours of wait?,시간은 상대적인 것. 느리게 흐르는\n이 기다림의 시간을 빨리 감아 넘길까요?
-timeskip_yes,Yes.,네.
-timeskip_no,No.,기다릴게요.
-checklist_phase1,Observe,인간 관찰
-checklist_phase2,Think,자유 사색
-checklist_phase3,Write,하루 기록
-checklist_phase4,Sleep,취침 시간
-mapalert_moonRadio,"On moonlit nights, from 8 PM. until 3 AM.","달이 뜬 밤, 저녁 여덟 시부터\n새벽 세 시까지"
-mapalert_diary,You don’t want to\nbe caught peeking!,뭉치에게 들켜요!\n위험합니다.
+progress_subtitle_ch1,52964753442,¿▷よя▼&#ㅳ,¿▷よя▼&#ㅳ
+progress_subtitle_ch2,52964753443,"Holes, Holes","동그라미, 동그라미"
+progress_subtitle_ch3,52964753444,A Thousand Faces,감춰진 얼굴들
+progress_subtitle_ch4,52964753445,Bygone Tales from the Moon,잿빛 달나라 이야기
+progress_subtitle_ch5,52964753446,The Lucky Coin,행운의 동전 한 톨
+progress_subtitle_ch6,52964753447,The Veil in Between,야속한 표피 너머
+progress_subtitle_ch7,52964753448,"Humans, Monsters, Scars",인간과 괴물과 상처
+progress_subtitle_ch8,52964753449,Swallow Swallow Swallow,"삼켜, 삼켜, 삼켜"
+progress_subtitle_ch9,52964753450,Practicing Farewell,그리울 연습
+progress_subtitle_ch10,52964753451,"Break, If Breakable",깨지기 쉬우면 깨뜨려라
+progress_subtitle_ch11,52964753452,"Wake Up, Morning's Coming",영원한 꿈의 종말
+progress_subtitle_ch12,52964753453,The Secrets of a Manhole,맨홀 구멍 속 비밀
+progress_subtitle_ch13,52964753454,Aftermath,그리고 이별이 남길 것들
+progress_subtitle_ch14,52964753455,"Reeling, Freeing",어지럽고 자유로운
+progress_longtext_ch1,52964753456,"But for some inexplicable\nreason, the man himself could\n not say the word “I love you”\nWhenever he tried,\nonly strange, incomprehensible \nsounds came out.","그는 알 수 없는 이유로\n‘사랑해’를 부를 수 없었어.\n그 이름을 부르려고 하면,\n그 누구도 이해할 수 없는\n이상한 소리만 나왔던 거야."
+progress_longtext_ch2,52964753457,"Now stuck in his own circular\ntrap, he greedily swallowed\nall the circles of the world. \nWhat he radiated was... \nblank empathy. Engorged greed. \nDesperate hunger.","이제 그는 그만의 동그란 공백에 \n갇혀, 탐욕스럽게 세상의 모든 \n동그라미들을 삼켰어. 그런 그에게서 느껴지는 것은, 공허한 연민.\n비대한 욕심. 처절한 허기."
+progress_longtext_ch3,52964753458,"She wasn’t afraid to show what was under her hat.\nShe was looking forward to it. \nTo someone seeing her and all\nher faces. And to be understood,\neach and every version of her.",그녀는 보여 주기를 두려워하지 \n않았어. 오히려 기대하고 있었지. 누군가가 자신의 모든 면들을 \n알아봐 주길. 매번 보여 주는 모습이 \n다른 자신이 이해받을 수 있기를.
+progress_longtext_ch4,52964753459,"I found myself heading\ninstinctively to the corner of the\nMoon. I had hoped that waiting\nfor my death sentence here,\nI would be free from anxiety. That fear... and its razor-\nsharp edges wouldn’t invade.","괜찮아. 무서웠지만 괜찮아. \n그저 본능적으로 달의 모퉁이로 \n향했어. 사형 처분을 기다리게 될 \n이곳만큼은 불안으로부터 \n안전하기를, 날 선 공포가 \n침범하지 못하기를 바라며."
+progress_longtext_ch5,52964753460,"Not knowing when you will die, \nhow are you not crawling on the floor every second, frightened\nout of your mind? Every step\nyou take must feel as if you're\nabout to fall into a sinkhole.","언제 죽을지 알 수 없다면,\n너는 어떻게 겁에 질려\n바닥을 기면서 살아가지 않는\n거야? 매순간 떼는 발걸음이\n싱크 홀을 눈앞에 둔 것만\n같은 기분이지 않겠어?"
+progress_longtext_ch6,52964753461,"I long to know.\nWhat it is behind your face,\nyour words. What lies beyond\nthe cover page of your being,\nuniquely yours. What wavers\nand glimmers and bitters.","너무 궁금해. 너의 표정 속에, \n너의 말 뒤에. 네 존재의 ‘겉표지’ \n너머 존재할 너만의 내적인 일렁임. \n반짝임. 쓰라림. 수많은 감정들의 \n유체가 자유로이 표류하는 감각."
+progress_longtext_ch7,52964753462,"Thinking that I feel good\ncan make me feel good!\nI had doubted its potential\nbefore, but it came through!\nLike how the man-made metallic\nbird can fly in the air.","‘기분이 좋다’고 생각하면 ‘기분이\n좋아’진다는 사실 말이야!\n이전까지 그건 말도 안 되는 \n일이라고 생각했지만, 끝내 성공\n했지! 인간들이 철로 만든 새가\n하늘을 나는 일이 그런 것처럼."
+progress_longtext_ch8,52964753463,In his esophagus lived his twin\nbrother. The brother that died\nwhile growing inside their mother.,그 아이의 식도 안에는\n그의 쌍둥이 형이 살았어.\n어머니의 뱃속에서\n함께 자라나다 죽어 버린 형이.\n아이와 닮은 눈을 도록도록 굴리며\n식도 안에 살았어.
+progress_longtext_ch9,52964753464,"Days that remain\nonly in a camera shutter.\nNow when I speak aloud,\neven my words are lonesome.",셔터 속에만 남은 나날들.\n이제 나의 혼잣말은\n정말 혼자가 되었구나.
+progress_longtext_ch10,52964753465,"They looked like balled-up\nscreams from within him. \nBalled up screams.\nCinders from a dead flame,\nswarms of cockroaches,\nglobs of red-black blood…","그것들은 뭉쳐 있던 비명처럼\n보였어. 내면의 타고 남은 재,\n떼 지은 좀벌레, 시커먼 핏덩어리...\n어쩐지 나를 닮은.\n검디 검은 폐기물 덩어리. \n역시 파쇄해 버려야 마땅한...."
+progress_longtext_ch11,52964753466,"Then… one day, the human\nstopped opening her eyes to reality, wishing to forever wander within her dream...\nHer dream became her \nforever companion!","그는 정말 꿈에서 살아가고 있었어.\n꿈의 냄새를 맡고, 꿈의 표면을 \n만지면서. 그의 꿈은 영원히 \n한 자리에서 그를 기다리고 \n있는 거야. 밤이 지나도 잊히지 \n않는 무한한 꿈이 된 거야!"
+progress_longtext_ch12,52964753467,"The Dark. Where everything is\nthe same, eyes closed or open.\nWhere things much more\nsorrowful and packed lurk. Where there is nothing.\nAnd thus everything.",그곳은 수렁 같은 암흑. 눈을 떠도 \n감아도 똑같은 것이 보이는. \n죽음보다 훨씬 서럽고 빽빽한 \n것들이 도사리는. 아무것도 없는. \n그렇기에 모든 것이 있는.
+progress_longtext_ch13,52964753468,"The human’s life ends there. Their fates run parallel from here on. Still, it’s dazzlingly beautiful... Isn't it?",둘의 인연은 먼 평행을 달리게 \n될 거야. 그렇지만 여전히 \n눈부시게 아름답구나....
+progress_longtext_ch14,52964753469,"The vibrance of humanity,\ntied to the gravitational force of life. It is mesmerizing.\nBut beyond those hues\nlies a small, circular,\n“definite” black hole.",중력 같은 생명에 묶인 인간 종족의\n다채로움. 그게 나를 얼마나 \n감탄하게 하는지. 하지만 그 색들 \n너머에서… 동그랗고 작고 ‘확고한’ \n블랙홀 하나가 보여.
+howto_title,52964753470,A Letter From the Moon,달나라에서 온 쪽지
+timeskip_popup,52964753471,Time is relative. Fast forward\nthrough the long hours of wait?,시간은 상대적인 것. 느리게 흐르는\n이 기다림의 시간을 빨리 감아 넘길까요?
+timeskip_yes,52964753472,Yes.,"네, 좋아요."
+timeskip_no,52964753473,No.,기다릴게요.
+checklist_phase1,52964753474,Observe,인간 관찰
+checklist_phase2,52964753475,Think,자유 사색
+checklist_phase3,52964753476,Write,하루 기록
+checklist_phase4,52964753477,Sleep,취침 시간
+mapalert_moonRadio,52964753478,"On moonlit nights,\nfrom 8 PM to 4 AM.","달이 뜬 밤, 저녁 여덟 시부터\n새벽 네 시까지"
+mapalert_diary,52964753479,You don’t want to\nbe caught peeking!,뭉치에게 들켜요!\n위험합니다.
+mapalert_moonRadio_check,,The transmitter\nseems to be broken.,작동하지 않는다.\n송신기가 고장난 듯하다.
+settings_current_language,4.87717E+13,English,한국어
+skip_sleeping_title,11350737010245632,"Meanwhile, on the dark side of the Moon...","뭉치가 잠든 사이, 달나라 뒤편에서는......"
+skip_sleeping_exite,11353222051479552,BACK TO EARTH >>,지구로 돌아가기 >>
+mainvideo_next,11363186975391744,NEXT,다음으로
+mainvideo_replay,11363283670876160,REPLAY,다시 보기
+playerinput_placeholder,22964806309855232,Write what you think.,당신의 생각을 입력해 주세요.
+alert_reward,25431153644093440,"A new object has been
+placed in Dot and your room.","뭉치와 당신의 방을 채울
+새로운 오브젝트가 발견되었습니다."
+subcheck_title,25432610883715072,Chat with Dot,뭉치와의 수다
+subcheck_text,25432680089731072,Chats left until the next agenda : <int>,"다음 할 일까지 잡담
+<int>개가 남아 있어요."
+settings_time,27661208789139456,START OF THE DAY,하루 시작
+replay_title,30853825756610560,"Your memories of Dot are a moment in time 
+you can always revisit. Return to the beginning?","뭉치에 대한 당신의 기억은 언제든지 돌아갈 수 있는
+시간 속의 구슬 한 알. 처음부터 플레이를 다시 시작할까요?"
+replay_yes,30853858484764672,Yes. Turn back time.,"네, 시간을 되돌릴래요."
+replay_no,30853875295535104,No. I'll face the farewell.,아니요. 이별을 직시할게요.
+subalert_skip,36998756313284608,"A few more minutes to go until your next chat.
+Pester Dot into starting it now?","다음 잡담이 시작되기까지 조금 더 기다려야 해요.
+뭉치를 재촉해 당장 대화를 시작할까요?"
+subalert_no,36999029601550336,"No, I can wait.",기다릴게요.
+subalert_yes,36999033703579648,"Yes, please.","네, 좋아요."
+ending0,37273192157364224,Until the darkness settles for good.,어둠이 완전히 젖어들 때까지.
+subalert_n,41732161273806848,You've filled your chat quota for now.,"이 시간에 남아 있는 
+잡담이 없어요."
+New Entry,41732287430082560,I see.,그렇군요.
+lock_select,44665733676744704,Past choices cannot be undone.,과거의 선택은 돌이킬 수 없는 것.
+lock_video,44665800055799808,"A dream, once ended, cannot be replayed.",끝난 꿈은 다시 상영되지 않는다.
+skip_mode,48340746091053056,TIME SKIP MODE,시간 스킵 모드
+sub_skip_mode,48340852743815168,INSTANT CHAT MODE,잡담 바로보기 모드
+skips_1,48663375310176256,"Click the hourglass button to skip waiting time.
+This may alter the intended experience.","모래시계 버튼을 클릭하여 기다리는 시간을 스킵합니다. 
+제작자의 의도와 상이한 경험을 하게 될 수 있습니다."
+skips_2,48663378598510592,"Tap the chitchat image on the “Fly Checklist”
+and start chatting with Dot right away.","""파리 체크리스트""의 잡담 이미지를 클릭하여
+뭉치와의 잡담을 즉시 시작합니다. "
+skips_3,48688533626372096,"Turn off Instant Chat Mode. Enjoy unexpected 
+discoveries, but you may miss some chats.","잡담 바로보기 모드를 끕니다. 우연한 발견의 재미를 
+즐길 수 있지만, 몇몇 잡담을 놓칠 수도 있습니다."
+skips_yes,48688547748593664,Yes.,"네, 좋아요."
+skips_no,48688551661879296,No.,아니요.
+push_unknown,51851896602705920,"Dot will reach out when it's ready.
+Turn on notifications so you don't miss it?","뭉치는 모든 준비를 마친 뒤 말을 걸 거예요.
+놓치지 않으려면 알림을 켜 주세요."
+push_unknown_yes,51852213054554112,Sure.,알림 켜기
+push_unknown_no,51852214933602304,No thanks.,다음에 켜기
+push_denied,51852220092596224,"Dot's voice can't reach you.
+Allow notifications in your settings.","지금은 뭉치의 목소리가 닿지 않아요. 
+설정에서 알림 권한을 허용해 주세요."
+push_denied_yes,51852221002760192,Open settings.,설정 열기
+push_denied_no,51852221778706432,Not today.,다음에 켜기
+checklist_tuto,52189187544137728,"Tap the cover image to 
+start chatting right away!","표지 이미지를 클릭하면 기다림 
+없이 바로 잡담할 수 있다!"

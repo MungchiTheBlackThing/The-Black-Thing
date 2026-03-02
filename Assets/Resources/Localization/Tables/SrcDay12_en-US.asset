@@ -134,23 +134,28 @@ MonoBehaviour:
   - m_Id: 53552672668598272
     m_Localized: Then what am I?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543978
   - m_Id: 53552672689569792
     m_Localized: What am I?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543978
   - m_Id: 53552672689569793
     m_Localized: What can I be?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543978
   - m_Id: 53552672689569794
     m_Localized: If nothing,
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543978
   - m_Id: 53552672689569795
     m_Localized: Am I just a carcass-to-be?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543978
   references:
     version: 2
     RefIds:
@@ -428,3 +433,8 @@ MonoBehaviour:
         - id: 16292056141004815
         - id: 16292056141004816
         - id: 16292056141004817
+        - id: 53552672668598272
+        - id: 53552672689569792
+        - id: 53552672689569793
+        - id: 53552672689569794
+        - id: 53552672689569795

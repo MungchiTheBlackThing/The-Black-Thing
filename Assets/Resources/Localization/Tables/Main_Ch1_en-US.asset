@@ -1045,7 +1045,8 @@ MonoBehaviour:
   - m_Id: 47921168655532032
     m_Localized: ... I too have a color.\nA color... even for me.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543907
   references:
     version: 2
     RefIds:
@@ -1243,3 +1244,4 @@ MonoBehaviour:
         - id: 83545423884
         - id: 83545423885
         - id: 83545423886
+        - id: 47921168655532032

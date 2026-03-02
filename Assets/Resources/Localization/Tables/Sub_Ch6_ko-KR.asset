@@ -1236,7 +1236,8 @@ MonoBehaviour:
   - m_Id: 44353186075459584
     m_Localized: "\uACE0\uB9C8\uC6CC, <nickname>! \uC815\uB9D0\uB85C!"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543905
   references:
     version: 2
     RefIds:
@@ -1452,3 +1453,4 @@ MonoBehaviour:
         - id: 665055162391
         - id: 665055162392
         - id: 665055162393
+        - id: 44353186075459584

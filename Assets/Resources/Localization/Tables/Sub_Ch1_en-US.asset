@@ -755,54 +755,66 @@ MonoBehaviour:
   - m_Id: 44353319529824256
     m_Localized: And your three friends from\nthe Moon come marching out!
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   - m_Id: 44353319563378688
     m_Localized: Oh! I love it! Red, Edison, and\nSir Cello are here to see me!
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   - m_Id: 44353319563378689
     m_Localized: "(It\u2019s nice to see Dot so ecstatic,\\neven if we\u2019re playing
       pretend.)"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   - m_Id: 44353319563378690
     m_Localized: ... No. A ghost? Or a murderer?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   - m_Id: 44353319563378691
     m_Localized: You inch toward\nthe thing. Closer... closer.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   - m_Id: 44353319563378692
     m_Localized: C-Closer... What is it? Huh?
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   - m_Id: 44353319563378693
     m_Localized: Gah! A large, black cockroach\ncomes skittering toward you!
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   - m_Id: 44353319563378694
     m_Localized: Oh! I just love it! A large, black\ncockroach is here to greet me!
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   - m_Id: 44353319563378695
     m_Localized: (Huh. That's not what I expected.)
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   - m_Id: 44353319563378696
     m_Localized: "Alright. That should have tricked\\nsleep into thinking I\u2019m
       in no hurry."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   - m_Id: 44353319563378697
     m_Localized: I should be there to greet it\nwhen it sneaks up on me.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   - m_Id: 44353319563378698
     m_Localized: "So now it\u2019s time to nestle into the dark.\\nHere\u2019s to
       my very first night on Earth!"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543962
   references:
     version: 2
     RefIds:
@@ -952,3 +964,15 @@ MonoBehaviour:
         - id: 696185286690
         - id: 696185286691
         - id: 696185286692
+        - id: 44353319529824256
+        - id: 44353319563378688
+        - id: 44353319563378689
+        - id: 44353319563378690
+        - id: 44353319563378691
+        - id: 44353319563378692
+        - id: 44353319563378693
+        - id: 44353319563378694
+        - id: 44353319563378695
+        - id: 44353319563378696
+        - id: 44353319563378697
+        - id: 44353319563378698

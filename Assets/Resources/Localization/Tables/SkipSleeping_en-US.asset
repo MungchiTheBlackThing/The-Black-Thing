@@ -1055,11 +1055,13 @@ MonoBehaviour:
   - m_Id: 52633596008
     m_Localized: "\u266C\u266A\u266A\u2669-"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025746
   - m_Id: 52633596026
     m_Localized: "\u266B\u266E \u2669"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1040230458494025746
   references:
     version: 2
     RefIds:
@@ -1247,3 +1249,5 @@ MonoBehaviour:
         - id: 52637790234
         - id: 52637790235
         - id: 52637790236
+        - id: 52633596008
+        - id: 52633596026

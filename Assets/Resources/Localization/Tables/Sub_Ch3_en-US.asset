@@ -1079,23 +1079,28 @@ MonoBehaviour:
   - m_Id: 44353233756307456
     m_Localized: I look at myself and I...
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543957
   - m_Id: 44353233781473280
     m_Localized: ...
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543957
   - m_Id: 44353233781473281
     m_Localized: Vile. Filthy.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543957
   - m_Id: 44353233781473282
     m_Localized: "That\u2019s the kind of black this is."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543957
   - m_Id: 44353233781473283
     m_Localized: "That\u2019s... this is..."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3674199710174543957
   references:
     version: 2
     RefIds:
@@ -1307,3 +1312,8 @@ MonoBehaviour:
         - id: 678720204833
         - id: 678720204834
         - id: 678720204835
+        - id: 44353233756307456
+        - id: 44353233781473280
+        - id: 44353233781473281
+        - id: 44353233781473282
+        - id: 44353233781473283
