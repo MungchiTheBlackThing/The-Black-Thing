@@ -62,7 +62,6 @@ public class ProgressUIController : MonoBehaviour
         dragIconList = new Dictionary<int, GameObject>();
         iconWidth = dragIconPrefab.GetComponent<RectTransform>().rect.width;
         InitScrollSize = new Vector2(dragScroller.GetComponent<RectTransform>().rect.width, dragScroller.GetComponent<RectTransform>().rect.height);
-        dragScroller.GetComponent<ScrollRect>().onValueChanged.AddListener(Scroll);
         //dotController = GameObject.FindWithTag("DotController").GetComponent<DotController>();
     }
 
@@ -91,6 +90,7 @@ public class ProgressUIController : MonoBehaviour
             Debug.Log("[ProgressUIController] 아이콘 리스트가 비어있음");
         }
     }
+
     void Start()
     {
         /*Icon 14개를 모두 생성 및 초기화.*/
@@ -219,18 +219,11 @@ public class ProgressUIController : MonoBehaviour
         if (isAlertShowing) yield break;
         isAlertShowing = true;
         alter.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.3f);
         alter.SetActive(false);
         isAlertShowing = false;
     }
 
-    public void Scroll(Vector2 value)
-    {
-        if(value.x>=1f)
-        {
-            StartCoroutine(ShowAlertAndClose());
-        }
-    }
 
     public void canceled(){
         alter.SetActive(false);
