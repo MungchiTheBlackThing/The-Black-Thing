@@ -411,11 +411,11 @@ PrefabInstance:
     - target: {fileID: 4960701870914578052, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
       propertyPath: skipHintRoot
       value: 
-      objectReference: {fileID: 2079110564}
+      objectReference: {fileID: 0}
     - target: {fileID: 4960701870914578052, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
       propertyPath: skipHintText
       value: 
-      objectReference: {fileID: 2142647785}
+      objectReference: {fileID: 0}
     - target: {fileID: 4960701870914578053, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
       propertyPath: m_AspectRatio
       value: 5
@@ -609,7 +609,8 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7137142243079710124, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
@@ -5277,11 +5278,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074997011}
   m_CullTransparentMesh: 1
---- !u!1 &2079110564 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7137142243079710124, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
-  m_PrefabInstance: {fileID: 156264413}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2131310962
 GameObject:
   m_ObjectHideFlags: 0
@@ -5322,17 +5318,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2142647785 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9103506646723581591, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
-  m_PrefabInstance: {fileID: 156264413}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &4960701871060336967 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4960701870914578074, guid: fe1fd947064171c45b986bfcd423d821, type: 3}

@@ -1252,6 +1252,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -570
       objectReference: {fileID: 0}
+    - target: {fileID: 6029475514367692673, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6676539145350754594, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1259,6 +1263,10 @@ PrefabInstance:
     - target: {fileID: 7137142243079710124, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866790958276537560, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9103506646723581591, guid: fe1fd947064171c45b986bfcd423d821, type: 3}
       propertyPath: m_fontSize

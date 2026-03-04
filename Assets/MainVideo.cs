@@ -39,10 +39,36 @@ public class MainVideo : MonoBehaviour
     private string[] entryKeys;
     private string[] localizedCache;
 
-    [Header("Skip Hint")]
-    [SerializeField] private GameObject skipHintRoot;
-    [SerializeField] private TMP_Text skipHintText;
-    [SerializeField] private float skipHintFadeDuration = 2f;
+    [Header("YouTube-style Controls")]
+    [SerializeField] private GameObject controlsUI;
+    [SerializeField] private GameObject controlsContent;
+    [SerializeField] private GameObject pauseButton;  // PausePlayButton
+    [SerializeField] private GameObject playButton;   // PlayButton
+    [SerializeField] private float seekSeconds = 5f;
+    [SerializeField] private float controlsHideDuration = 3f;
+    [SerializeField] private GameObject clickArea;
+
+    [SerializeField] private Button fastForwardButton;
+    [SerializeField] private Image fastForwardImage;
+
+    [SerializeField] private GameObject rewindIndicator;
+    [SerializeField] private GameObject fastForwardIndicator;
+    private Coroutine rewindIndicatorCo;
+    private Coroutine fastForwardIndicatorCo;
+
+    [SerializeField] private float controlsFadeDuration = 0.2f;
+    [SerializeField] private float indicatorFadeDuration = 0.15f;
+    private Coroutine controlsFadeCo;
+
+    private bool isReplaying = false;
+
+    
+
+    private double maxReachedTime = 0;
+
+    private bool isPaused = false;
+    private Coroutine hideControlsCo;
+
 
     [Header("Replay")]
     [SerializeField] Button replayButton;
@@ -50,10 +76,7 @@ public class MainVideo : MonoBehaviour
     [SerializeField] private double fallbackFps = 30.0;
 
     private bool isVideoPlaying = false;
-    private bool skipArmed = false;
-    private bool allowSkip = false;
-    private Coroutine skipHintFadeCo;
-    public event System.Action OnUserSkipRequested;
+
     Action videoEndEvent = null;
     private const string assetPackName = "videos_pack";
 
@@ -79,7 +102,6 @@ public class MainVideo : MonoBehaviour
         if (text != null)
             subtitleText = text.GetComponentInChildren<TMP_Text>(true);
 
-        HideSkipHintImmediate();
     }
 
     public void Setting(int Day, LANGUAGE language)
@@ -222,21 +244,23 @@ public class MainVideo : MonoBehaviour
 
     public void PlayVideo(Action videoEndEvent = null)
     {
+        maxReachedTime = 0;
         this.videoEndEvent = videoEndEvent;
-        allowSkip = false;
+
+        isPaused = false;  
+        pauseButton.SetActive(true);  
+        playButton.SetActive(false);  
+        //                                      
+        if (hideControlsCo != null) StopCoroutine(hideControlsCo); 
+        if (controlsUI != null) controlsUI.SetActive(false);     
+        clickArea.SetActive(false);  
+
         Debug.Log("Video start");
         replayButton.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
         StartCoroutine(FadeInAndPlay());
     }
 
-    // 프롤로그 영상 재생 시 스킵 활성화 여부를 설정
-
-    public void SetAllowSkipForPrologue(bool enable)
-    {
-        allowSkip = enable;
-        Debug.Log($"[MainVideo] Prologue skip enabled: {enable}");
-    }
 
     private IEnumerator FadeInAndPlay()
     {
@@ -247,7 +271,7 @@ public class MainVideo : MonoBehaviour
 
         Rawimage.SetActive(true);
         text.SetActive(true);
-        HideSkipHintImmediate();
+        clickArea.SetActive(true);
 
         yield return null; // or: yield return new WaitForEndOfFrame();
         //Rawimage.transform.SetAsLastSibling();//
@@ -314,13 +338,197 @@ public class MainVideo : MonoBehaviour
     private void OnVideoEnd(VideoPlayer vp)
     {
         isVideoPlaying = false;
+        isReplaying = false;
+        if (hideControlsCo != null) StopCoroutine(hideControlsCo);
+        if (controlsUI != null) controlsUI.SetActive(false);
+
+        clickArea.SetActive(false);
+
         replayButton.gameObject.SetActive(true);
         nextButton.gameObject.SetActive(true);
         
     }
 
+    public void ToggleControlsUI()
+    {
+        if (controlsUI == null) return;
+
+        bool showing = !controlsUI.activeSelf;
+
+        if (showing)
+        {
+            controlsUI.SetActive(true); // 켤 때만 즉시 SetActive
+            if (controlsFadeCo != null) StopCoroutine(controlsFadeCo);
+            controlsFadeCo = StartCoroutine(FadeCanvasGroupAuto(controlsContent, 0f, 1f, controlsFadeDuration));
+            if (hideControlsCo != null) StopCoroutine(hideControlsCo);
+            hideControlsCo = StartCoroutine(AutoHideControls());
+        }
+        else
+        {
+            // SetActive(false) 여기서 하면 안 됨! FadeAndHide가 알아서 꺼줌
+            if (controlsFadeCo != null) StopCoroutine(controlsFadeCo);
+            controlsFadeCo = StartCoroutine(FadeAndHide(controlsContent, controlsUI, controlsFadeDuration));
+            if (hideControlsCo != null) StopCoroutine(hideControlsCo);
+        }
+    }
+
+    IEnumerator AutoHideControls()
+    {
+        yield return new WaitForSeconds(controlsHideDuration);
+        if (controlsUI != null)
+        {
+            if (controlsFadeCo != null) StopCoroutine(controlsFadeCo);
+            controlsFadeCo = StartCoroutine(FadeAndHide(controlsContent, controlsUI, controlsFadeDuration));
+        }
+    }
+
+    IEnumerator FlashIndicator(GameObject indicator)
+    {
+        CanvasGroup cg = indicator.GetComponent<CanvasGroup>();
+        if (cg == null) cg = indicator.AddComponent<CanvasGroup>();
+        
+        // 항상 0에서 시작
+        cg.alpha = 0f;
+        indicator.SetActive(true);
+        
+        // 페이드인
+        float t = 0f;
+        while (t < indicatorFadeDuration)
+        {
+            cg.alpha = Mathf.Lerp(0f, 1f, t / indicatorFadeDuration);
+            t += Time.deltaTime;
+            yield return null;
+        }
+        cg.alpha = 1f;
+        yield return new WaitForSeconds(0.35f);
+        
+        // 페이드아웃
+        t = 0f;
+        while (t < indicatorFadeDuration)
+        {
+            cg.alpha = Mathf.Lerp(1f, 0f, t / indicatorFadeDuration);
+            t += Time.deltaTime;
+            yield return null;
+        }
+        indicator.SetActive(false);
+    }
+
+    IEnumerator FadeCanvasGroupAuto(GameObject obj, float from, float to, float duration)
+    {
+        var cg = obj.GetComponent<CanvasGroup>() ?? obj.AddComponent<CanvasGroup>();
+        float t = 0f;
+        while (t < duration)
+        {
+            cg.alpha = Mathf.Lerp(from, to, t / duration);
+            t += Time.deltaTime;
+            yield return null;
+        }
+        cg.alpha = to;
+    }
+
+    IEnumerator FadeAndHide(GameObject fadeTarget, GameObject hideTarget, float duration)
+    {
+        var cg = fadeTarget.GetComponent<CanvasGroup>() ?? fadeTarget.AddComponent<CanvasGroup>();
+        float t = 0f;
+        float startAlpha = cg.alpha;
+        while (t < duration)
+        {
+            cg.alpha = Mathf.Lerp(startAlpha, 0f, t / duration);
+            t += Time.deltaTime;
+            yield return null;
+        }
+        cg.alpha = 0f;
+        hideTarget.SetActive(false);
+    }
+
+    public void OnPausePlay()
+    {
+        if (videoPlayer == null) return;
+        if (isPaused)
+        {
+            videoPlayer.Play();
+            isPaused = false;
+            pauseButton.SetActive(true);
+            playButton.SetActive(false);
+            if (hideControlsCo != null) StopCoroutine(hideControlsCo);
+            hideControlsCo = StartCoroutine(AutoHideControls());
+        }
+        else
+        {
+            videoPlayer.Pause();
+            isPaused = true;
+            pauseButton.SetActive(false);
+            playButton.SetActive(true);
+            if (hideControlsCo != null) StopCoroutine(hideControlsCo);
+            controlsUI.SetActive(true);
+            var cg = controlsContent?.GetComponent<CanvasGroup>();
+            if (cg != null) cg.alpha = 1f;
+            hideControlsCo = StartCoroutine(AutoHideControls());
+        }
+    }
+
+    public void OnRewind()
+    {
+        Debug.Log($"OnRewind called, rewindIndicator: {rewindIndicator}");
+        if (videoPlayer == null) return;
+        videoPlayer.time = Math.Max(0, videoPlayer.time - seekSeconds);
+        UpdateSubtitleAt(videoPlayer.time);
+        BumpControlsTimer();
+        ShowIndicator(rewindIndicator, ref rewindIndicatorCo);
+    }
+
+    public void OnFastForward()
+    {
+        if (videoPlayer == null) return;
+        if (!isReplaying && videoPlayer.time >= maxReachedTime - 0.5f) return;
+
+        double target = isReplaying 
+            ? videoPlayer.time + seekSeconds 
+            : Math.Min(maxReachedTime, videoPlayer.time + seekSeconds);
+        videoPlayer.time = target;
+        UpdateSubtitleAt(videoPlayer.time);
+        BumpControlsTimer();
+        ShowIndicator(fastForwardIndicator, ref fastForwardIndicatorCo);
+    }
+
+    void ShowIndicator(GameObject indicator, ref Coroutine co)
+    {
+        if (indicator == null) return;
+        if (co != null) StopCoroutine(co);
+        co = StartCoroutine(FlashIndicator(indicator)); // HideIndicator → FlashIndicator
+    }
+
+    void BumpControlsTimer()
+    {
+        if (!isPaused)
+        {
+            if (hideControlsCo != null) StopCoroutine(hideControlsCo);
+            hideControlsCo = StartCoroutine(AutoHideControls());
+        }
+    }
+
+    void UpdateSubtitleAt(double t)
+    {
+        if (entries == null || subtitleText == null) return;
+        lastIndex = -1;
+        int idx = FindIndexAtTime(t);
+        lastIndex = idx;
+        if (idx >= 0)
+        {
+            string loc = TryGetLocalized(idx);
+            subtitleText.text = !string.IsNullOrEmpty(loc)
+                ? loc
+                : (currentLanguage == LANGUAGE.ENGLISH ? entries[idx].EngText : entries[idx].KorText);
+        }
+        else
+        {
+            subtitleText.text = "";
+        }
+    }
+
     public void OnReplay()
     {
+        isReplaying = true;
         Debug.Log("[MainVideo] Replay requested");
 
         StopAllCoroutines();
@@ -328,18 +536,10 @@ public class MainVideo : MonoBehaviour
         // 스킵, 상태 초기화
         isVideoPlaying = false;
         waitingToPlay = false;
-        HideSkipHintImmediate();
-
+        isPaused = false;  
         // 비디오 완전 리셋
         ResetVideoInternalForReplay();
-
-        // 스킵 활성화 상태를 영구적으로 저장
-        PlayerPrefs.SetInt("PROLOGUE_SKIP_ENABLED", 1);
-        PlayerPrefs.Save();
-
-        // 다시 재생 (스킵 활성화 상태로)
         PlayVideo(videoEndEvent);
-        allowSkip = true;
     }
 
     private void ResetVideoInternalForReplay()
@@ -377,9 +577,11 @@ public class MainVideo : MonoBehaviour
         PlayerPrefs.SetInt("PROLOGUE_PLAYED", 1);
         PlayerPrefs.Save();
         DeleteVideoCache(chapter);
+        isPaused = false;          
+        if (controlsUI != null) controlsUI.SetActive(false); 
+        clickArea.SetActive(false);
 
         isVideoPlaying = false;
-        HideSkipHintImmediate();
         replayButton.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
 
@@ -416,7 +618,8 @@ public class MainVideo : MonoBehaviour
     private void OnDisable()
     {
         isVideoPlaying = false;
-        HideSkipHintImmediate();
+        isPaused = false; 
+        if (controlsUI != null) controlsUI.SetActive(false);
         if (videoPlayer != null)
         {
             videoPlayer.Stop();
@@ -455,7 +658,22 @@ public class MainVideo : MonoBehaviour
 
     private void Update()
     {
-        // subtitle sync
+
+        if (videoPlayer == null) return; // 이걸 먼저
+
+        if (videoPlayer.time > maxReachedTime)
+            maxReachedTime = videoPlayer.time;
+
+        if (fastForwardImage != null)
+        {
+            Color c = fastForwardImage.color;
+            c.a = (isReplaying || videoPlayer.time < maxReachedTime - 0.5f) ? 1f : 0.5f;
+            fastForwardImage.color = c;
+        }
+
+        if (fastForwardButton != null)
+            fastForwardButton.interactable = isReplaying || (videoPlayer.time < maxReachedTime - 0.5f);
+
         if (videoPlayer == null || entries == null || entries.Count == 0 || !videoPlayer.isPlaying) return;
         if (subtitleText == null) return;
 
@@ -481,22 +699,6 @@ public class MainVideo : MonoBehaviour
             else
             {
                 subtitleText.text = "";
-            }
-        }
-        //스킵 입력처리
-        if (isVideoPlaying && allowSkip)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (!skipArmed)
-                {
-                    ShowSkipHint();
-                }
-                else
-                {
-                    OnUserSkipRequested?.Invoke();
-                    OnNext();
-                }
             }
         }
     }
@@ -699,62 +901,10 @@ public class MainVideo : MonoBehaviour
         }
     }
 
-    private void ShowSkipHint()
-    {
-        skipArmed = true;
-
-        if (skipHintRoot == null)
-        {
-            Debug.LogWarning("[MainVideo] skipHintRoot is null.");
-            return;
-        }
-        var cg = skipHintRoot.GetComponent<CanvasGroup>() ?? skipHintRoot.AddComponent<CanvasGroup>();
-        cg.alpha = 1f;
-
-        skipHintRoot.SetActive(true);
-
-        if (skipHintFadeCo != null)
-        {
-            StopCoroutine(skipHintFadeCo);
-            skipHintFadeCo = null;
-        }
-
-        skipHintFadeCo = StartCoroutine(FadeOutSkipHint(cg, skipHintFadeDuration));
-    }
-
-    private IEnumerator FadeOutSkipHint(CanvasGroup cg, float duration)
-    {
-        float t = 0f;
-        while (t < duration)
-        {
-            t += Time.deltaTime;
-            cg.alpha = Mathf.Lerp(1f, 0f, t / duration);
-            yield return null;
-        }
-        cg.alpha = 0f;
-
-        if (skipHintRoot != null) skipHintRoot.SetActive(false);
-        skipArmed = false;
-        skipHintFadeCo = null;
-    }
-
-    private void HideSkipHintImmediate()
-    {
-        if (skipHintFadeCo != null)
-        {
-            StopCoroutine(skipHintFadeCo);
-            skipHintFadeCo = null;
-        }
-        if (skipHintRoot != null)
-        {
-            var cg = skipHintRoot.GetComponent<CanvasGroup>();
-            if (cg != null) cg.alpha = 0f;
-            skipHintRoot.SetActive(false);
-        }
-        skipArmed = false;
-    }
 
 }
+
+
 
 
 
